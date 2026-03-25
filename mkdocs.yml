@@ -4,6 +4,8 @@ site_author: Suresh Parekh
 
 theme:
   name: material
+  features:
+    - content.code.annotate
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -25,7 +27,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - tables
-  - content.code.annotate
 
 extra_javascript:
   - javascripts/mathjax.js
