@@ -21,8 +21,7 @@ theme:
         name: Switch to light mode
 
 markdown_extensions:
-  - pymdownx.math:
-      enable_dollar_math: true
+
   - pymdownx.arithmatex:
       generic: true
   - tables
