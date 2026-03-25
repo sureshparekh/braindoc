@@ -9,9 +9,20 @@ theme:
   features:
     - content.code.annotate
   palette:
-    scheme: default
-    primary: black
-    accent: black
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: black
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: white
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
 markdown_extensions:
 
