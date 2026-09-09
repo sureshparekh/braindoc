@@ -7,7 +7,7 @@ It has a Balmer jump at 3646 Å and it rises towards the red, so if it is presen
 and you do not model it, the fit compensates with the only knobs it has: dust
 and the star-formation history.
 
-BRAIN offers three levels of treatment, matching FADO's three modes.
+BRAIN offers three levels of treatment.
 
 ---
 
@@ -20,7 +20,7 @@ nebular_mode: "off"
 The emission lines are **not fitted at all**. They stay masked, and the model
 is purely stellar.
 
-This matches FADO's stellar-only mode. It is the fastest option and the correct
+It is the fastest option and the correct
 one for passive galaxies, or for any spectrum where the lines are weak enough
 that ignoring them costs nothing.
 

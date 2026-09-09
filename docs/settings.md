@@ -150,10 +150,11 @@ Leave `error_samples` at 0 while exploring and turn it up for final runs.
     benchmarking, not for science.
 
 !!! note "`enforce_simplex`"
-    FADO fits the normalisation flux with bounds, so its light fractions do not
-    sum to exactly 1 before renormalisation either. Forcing $\sum x = 1$ as a
-    hard constraint costs $\chi^2$ and pins $\sigma_\star$. BRAIN renormalises
-    the reported fractions to 100% regardless, so this is off by default.
+    The normalisation flux is itself fitted within bounds, so the light
+    fractions do not sum to exactly 1 before renormalisation. Forcing
+    $\sum x = 1$ as a hard constraint costs $\chi^2$ and pins $\sigma_\star$.
+    BRAIN renormalises the reported fractions to 100% regardless, so this is
+    off by default.
 
 ---
 

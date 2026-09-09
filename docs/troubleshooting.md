@@ -6,7 +6,7 @@
 
 **Every pixel was rejected.** Almost always the flag column convention.
 
-BRAIN uses **`0` to mean a good pixel**, following STARLIGHT and FADO. If your
+BRAIN uses **`0` to mean a good pixel**, the STARLIGHT convention. If your
 pipeline writes `1` for good pixels, invert column four.
 
 Also check that column three (the error) is positive everywhere — a zero or

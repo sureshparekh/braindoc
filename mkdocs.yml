@@ -13,25 +13,26 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: teal
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: teal
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.instant
+    - navigation.instant.progress
     - navigation.tracking
     - navigation.sections
     - navigation.top
     - navigation.indexes
     - toc.follow
+    - header.autohide
     - content.code.copy
     - content.code.annotate
     - search.suggest
@@ -56,6 +57,9 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -80,7 +84,6 @@ nav:
       - Method: method.md
       - Nebular modes: modes.md
       - Extinction laws: extinction.md
-      - Comparison with FADO: fado.md
   - Reference:
       - Performance and JAX: performance.md
       - Python API: api.md

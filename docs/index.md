@@ -9,17 +9,11 @@ their ages, their chemical composition, how much dust sits in front of them, and
 how fast they are moving. It can also model the glowing gas between the stars,
 both the emission lines and the smooth nebular continuum they sit on.
 
-It follows the same physical method as
-[FADO](https://www.spectralsynthesis.org/), rewritten in Python on top of
-[JAX](https://docs.jax.dev/), and it is fast enough to fit an integral-field
-datacube without a cluster.
-
-!!! quote "The one rule that shapes everything else"
-    **No additive or multiplicative polynomials are ever applied to the
-    spectrum.** The continuum shape comes from the stellar population weights
-    and a physical extinction curve, and from nothing else. A polynomial that
-    absorbs a mismatch between model and data also absorbs the signal you were
-    trying to measure — and it does so silently.
+Built on [JAX](https://docs.jax.dev/), it is fast enough to fit an
+integral-field datacube without a cluster, and the model is fitted to the
+spectrum exactly as observed — no additive or multiplicative polynomials are
+applied. The continuum shape comes from the stellar population weights and a
+physical extinction curve, and from nothing else.
 
 ---
 
@@ -47,7 +41,6 @@ datacube without a cluster.
 - :material-monitor: **[The desktop interface](gui.md)** — everything, with a plot
 - :material-cog: **[Settings reference](settings.md)** — every option, explained
 - :material-function-variant: **[Method](method.md)** — the mathematics
-- :material-compare: **[Comparison with FADO](fado.md)** — what matches, what differs
 
 </div>
 
@@ -56,7 +49,7 @@ datacube without a cluster.
 ## At a glance
 
 | | |
-|---|---|
+|:--|:--|
 | **Speed** | ~1.3 CPU-seconds per spectrum in stellar-only mode |
 | **Templates** | Any SSP library with a catalogue file; 84 ship with the code |
 | **Extinction** | 12 curves — Milky Way, starburst, LMC and SMC |

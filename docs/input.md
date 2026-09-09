@@ -23,7 +23,7 @@ Lines beginning with `#` are ignored.
 !!! danger "The flag convention catches everyone once"
     `0` = **use this pixel**. Any non-zero value rejects it.
 
-    This follows STARLIGHT and FADO. If your pipeline writes `1` for good
+    This is the STARLIGHT convention. If your pipeline writes `1` for good
     pixels, invert the column first, or every pixel will be thrown away and
     the log will read `Fitting 0/3199 pixels`.
 

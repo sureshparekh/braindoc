@@ -84,7 +84,7 @@ wavelength range it will actually use — without starting a fit.
 
 !!! warning "The flag column"
     BRAIN's input format uses **`0` to mark a good pixel**, following
-    STARLIGHT and FADO. If your data uses the opposite convention, every pixel
+    STARLIGHT. If your data uses the opposite convention, every pixel
     will be rejected and the log will say `Fitting 0/3199 pixels`. See
     [Input data](input.md).
 
