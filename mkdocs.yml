@@ -1,42 +1,87 @@
-nav:
-  - Home: index.md
-  - Library Overview:
-      - Methodology: methodology.md
-      - Performance & Results: performance.md
-
-site_name: BRAIN-v1
-site_description: Direct Pixel-Fitting Stellar Population Synthesis Pipeline
+site_name: BRAIN
+site_url: https://sureshparekh.github.io/braindoc/
+site_description: GPU-accelerated stellar population synthesis by direct pixel fitting
 site_author: Suresh Parekh
+repo_url: https://github.com/sureshparekh/brainv1
+repo_name: sureshparekh/brainv1
+edit_uri: ""
 
 theme:
   name: material
-  logo: brainlogo.png
-  favicon: brainlogo.png
-  features:
-    - content.code.annotate
+  logo: img/logo.png
+  favicon: img/logo.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: white
-      accent: black
+      primary: teal
+      accent: teal
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: white
+      primary: teal
+      accent: teal
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
-  - tables
+  - admonition
   - attr_list
   - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.arithmatex:
+      generic: true
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Installation: install.md
+      - Your first fit: quickstart.md
+      - Input data: input.md
+  - Using BRAIN:
+      - The desktop interface: gui.md
+      - Settings reference: settings.md
+      - Masks and weights: masks.md
+      - Understanding the output: output.md
+      - Batch and datacubes: batch.md
+  - The science:
+      - Method: method.md
+      - Nebular modes: modes.md
+      - Extinction laws: extinction.md
+      - Comparison with FADO: fado.md
+  - Reference:
+      - Performance and JAX: performance.md
+      - Python API: api.md
+      - Troubleshooting: troubleshooting.md
