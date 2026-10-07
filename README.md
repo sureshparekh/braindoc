@@ -1,20 +1,22 @@
-# BRAIN — documentation
+# BRAIN — documentation website
 
-Documentation for **BRAIN**, a GPU-accelerated stellar population synthesis
-code that fits galaxy spectra by direct pixel fitting.
+The documentation of **BRAIN** (the `brainsp` Python package): stellar
+population synthesis by full spectral fitting, for spectra and IFU
+datacubes, on a CPU or a GPU.
 
-### 📖 Read it at **<https://sureshparekh.github.io/braindoc/>**
+### Read it at **<https://sureshparekh.github.io/braindoc/>**
 
 ---
 
-This repository holds only the documentation source. The code lives at
-[sureshparekh/brainv1](https://github.com/sureshparekh/brainv1).
-
-To build these pages locally:
+This repository only serves the website. The site lives on the `gh-pages`
+branch, which GitHub Pages publishes; it is built from the documentation
+source in the code repository,
+[sureshparekh/brainv1](https://github.com/sureshparekh/brainv1)
+(`documentation/`), and pushed here by `documentation/publish.sh`:
 
 ```bash
-pip install -r requirements-docs.txt
-mkdocs serve
+# in a clone of brainv1, with the docs extras installed (pip install -e ".[docs]")
+documentation/publish.sh
 ```
 
-Then open <http://127.0.0.1:8000>.
+Nothing on this branch is built: edit the documentation in brainv1.
