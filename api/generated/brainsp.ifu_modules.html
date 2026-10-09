@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.ifu_modules &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.ifu_modules';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.ifu_output" href="brainsp.ifu_output.html" />
+    <link rel="prev" title="brainsp.brain_ifu" href="brainsp.brain_ifu.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.ifu_modules</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.ifu_modules">
+<span id="brainsp-ifu-modules"></span><h1>brainsp.ifu_modules<a class="headerlink" href="#module-brainsp.ifu_modules" title="Link to this heading">#</a></h1>
+<p>Pre-pass processing modules for BRAIN’s IFU mode.</p>
+<p>A module declares its own default configuration, is handed the open HDU list
+of one datacube, and returns the HDUs it produced. The runner appends them to
+that same list, so the list accumulates into a megacube. Configuration layers
+module defaults, then the constructor keywords, then the per-target overrides
+a targets CSV supplies, and a key that was never declared as a default is
+ignored rather than silently creating a setting nothing reads.</p>
+<p>The output extension names are those of the MaNGA megacubes of Riffel et
+al. (2023, MNRAS 524, 5640), so that tooling written against those megacubes
+reads a BRAIN megacube unchanged. Three choices are deliberate:
+dereddening uses BRAIN’s own twelve-curve registry in reddening_laws.py and applies the extinction the
+user asked for rather than a curve’s internal R_V; the signal-to-noise map is
+the mean per-pixel signal-to-noise, which is dimensionally a ratio; and the
+wavelength axis is read from a WAVE extension when one is present, because
+reconstructing it linearly from CD3_3 is wrong on any cube whose third axis
+is not linear.</p>
+<p>Degrading the resolution of the data is provided and warns every time it runs.</p>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.ifu_modules.from_sigma_like" title="brainsp.ifu_modules.from_sigma_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_sigma_like</span></code></a>(data, data_type)</p></td>
+<td><p>The inverse of to_sigma_like.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.ifu_modules.inverse_variance" title="brainsp.ifu_modules.inverse_variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_variance</span></code></a>(data, data_type)</p></td>
+<td><p>A statistical plane expressed as the inverse variance the fit weights with.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.ifu_modules.require_extension" title="brainsp.ifu_modules.require_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">require_extension</span></code></a>(hdu_list, ext_name, what)</p></td>
+<td><p>The named extension, or an error naming what is actually in the file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.ifu_modules.to_sigma_like" title="brainsp.ifu_modules.to_sigma_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_sigma_like</span></code></a>(data, data_type)</p></td>
+<td><p>Map any of the six data types onto the quantity that combines linearly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.ifu_modules.wavelength_axis" title="brainsp.ifu_modules.wavelength_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wavelength_axis</span></code></a>(hdu_list, ext_name)</p></td>
+<td><p>The wavelength of every plane of an extension, in Angstrom.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.ifu_modules.ButterworthFilter" title="brainsp.ifu_modules.ButterworthFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ButterworthFilter</span></code></a>(**kwargs)</p></td>
+<td><p>A low-pass Butterworth filter over the two spatial axes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.ifu_modules.DegradeResolution" title="brainsp.ifu_modules.DegradeResolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DegradeResolution</span></code></a>(**kwargs)</p></td>
+<td><p>The data convolved down to a coarser resolution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.ifu_modules.Dereddening" title="brainsp.ifu_modules.Dereddening"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dereddening</span></code></a>(**kwargs)</p></td>
+<td><p>Foreground extinction removed from the flux cube.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IFUModule</span></code></a>(**kwargs)</p></td>
+<td><p>Base class for a pre-pass module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.ifu_modules.SNMask" title="brainsp.ifu_modules.SNMask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SNMask</span></code></a>(**kwargs)</p></td>
+<td><p>Which spaxels carry enough signal to fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.ifu_modules.SpatialResampler" title="brainsp.ifu_modules.SpatialResampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpatialResampler</span></code></a>(**kwargs)</p></td>
+<td><p>Square blocks of spaxels summed into one.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.ifu_modules.SpectralResampler" title="brainsp.ifu_modules.SpectralResampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectralResampler</span></code></a>(**kwargs)</p></td>
+<td><p>A cube put onto a uniform wavelength step.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.IFUModule">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">IFUModule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#IFUModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.IFUModule" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Base class for a pre-pass module.</p>
+<p>Subclasses set <cite>name</cite>, fill <cite>self.default_parameters</cite> inside
+<cite>_set_default_parameters</cite>, and implement <cite>execute</cite>. <cite>progress_hook</cite> is set
+by the runner to a callable taking a fraction and a message; modules that
+take a noticeable time call it, and the default does nothing so a module
+can always call it.</p>
+<p><cite>spaxel_hook</cite> is the same idea one level finer: a stage that works through
+a cube spaxel by spaxel calls it with the flat indices it has just
+finished and the spatial shape those indices address, so that an interface
+can show the field filling in rather than a bar advancing. Only the fit
+has anything to say through it, and nothing in the pipeline depends on
+anybody listening.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.IFUModule.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'module'</span></span><a class="headerlink" href="#brainsp.ifu_modules.IFUModule.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.IFUModule.config">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#brainsp.ifu_modules.IFUModule.config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.IFUModule.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#IFUModule.setup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.IFUModule.setup" title="Link to this definition">#</a></dt>
+<dd><p>Override declared settings. Keys that were never declared are ignored,
+which is what lets one targets CSV carry a column for every module in
+the chain without each module having to know about the others.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.IFUModule.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#IFUModule.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.IFUModule.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.wavelength_axis">
+<span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">wavelength_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#wavelength_axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.wavelength_axis" title="Link to this definition">#</a></dt>
+<dd><p>The wavelength of every plane of an extension, in Angstrom.</p>
+<p>A WAVE extension of the right length is believed in preference to the
+world coordinate system, because it is the only description that is right
+whatever the sampling. Reconstructing the axis as
+<cite>CRVAL3 + k * CD3_3</cite> is correct only for a linearly sampled cube, and a
+MaNGA LOGCUBE is not one: the reconstruction ends roughly 1000 A short at
+the red end, which quietly drags H-alpha and the red sky forest into a
+window the user asked to be continuum.</p>
+<p>Without a WAVE extension the axis is built from the header. <cite>CTYPE3</cite>
+decides how: a name ending in <cite>-LOG</cite> is logarithmic, and the two
+conventions in circulation are told apart by the size of <cite>CRVAL3</cite> –
+a reference wavelength in Angstrom for the FITS form, a base-ten
+logarithm for the IRAF form.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.to_sigma_like">
+<span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">to_sigma_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#to_sigma_like"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.to_sigma_like" title="Link to this definition">#</a></dt>
+<dd><p>Map any of the six data types onto the quantity that combines linearly.</p>
+<p>A flux adds like a flux and a one-sigma error adds like a flux; an inverse
+variance does not. Every module that averages, sums or convolves planes
+therefore converts to flux or to sigma first, combines, and converts back.
+Non-finite values survive the round trip as NaN so that the combination
+step can decide what to do with them, rather than having them turn into
+zeros here where nothing can tell them from real zeros.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.from_sigma_like">
+<span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">from_sigma_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#from_sigma_like"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.from_sigma_like" title="Link to this definition">#</a></dt>
+<dd><p>The inverse of to_sigma_like.</p>
+<p>An inverse-variance or inverse-error plane that comes back non-finite is
+written as zero, because zero is what an inverse variance means when there
+is no information at that pixel, and it is what MaNGA already writes there.
+A flux-like plane keeps its NaN, because there zero is a measurement.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.inverse_variance">
+<span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">inverse_variance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#inverse_variance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.inverse_variance" title="Link to this definition">#</a></dt>
+<dd><p>A statistical plane expressed as the inverse variance the fit weights with.</p>
+<p>A cube may declare its uncertainty as an error, a variance or an
+inverse variance, and MUSE ships a variance plane where MaNGA ships an
+inverse variance, so a fitter that reads only one of them cannot fit half
+the instruments in use. The conversion is done once, here, on the way into
+the fit, so nothing downstream has to know which kind the file held.</p>
+<p>An inverse variance is returned untouched rather than round-tripped
+through sigma: the round trip is not the identity in floating point, and
+the weights the fit uses must be the numbers the file holds. For the other
+kinds a pixel that comes out non-finite is given zero, which is what an
+inverse variance means where there is no information and what MaNGA
+already writes there; the fit drops those pixels either way.</p>
+<p>‘flux’ and ‘inv_flux’ are not uncertainties and are refused rather than
+quietly interpreted as one.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.require_extension">
+<span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">require_extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">what</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#require_extension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.require_extension" title="Link to this definition">#</a></dt>
+<dd><p>The named extension, or an error naming what is actually in the file.</p>
+<p>A missing extension is the failure this pipeline makes easiest to reach:
+stages rename what they produce, so one wrong name in a targets CSV column
+surfaces as a KeyError from astropy several stages later with nothing in
+it to say which stage asked or what it could have asked for instead.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.Dereddening">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">Dereddening</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#Dereddening"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.Dereddening" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFUModule</span></code></a></p>
+<p>Foreground extinction removed from the flux cube. Writes <cite>FLUX_DRD</cite>.</p>
+<p>The curve comes from BRAIN’s own registry, so all twelve laws the fitter
+can use are available here too, and the one used is named in <cite>DRD_LAW</cite>
+beside <cite>DRD_EBV</cite> and <cite>DRD_RV</cite>. Every curve in that registry is
+k(lambda) = A_lambda / A_V, so the correction is
+10 ** (0.4 * A_V * k), with A_V = R_V * E(B-V) taken from the settings
+given rather than from a value buried in the curve: a run that writes
+R_V = 3.1 into its header has had R_V = 3.1 applied to it.</p>
+<p>The starburst curves CAL, CCC and HZ5 were derived with R_V = 4.05 and
+that is the value to pair them with; the module does not impose it,
+because silently overriding the user’s R_V while still recording it is
+exactly the trap this note exists to avoid.</p>
+<p>Configuration: <cite>hdu flux</cite> (FLUX), <cite>ebv</cite> (0.0), <cite>rv</cite> (3.1), <cite>law</cite> (CCM).</p>
+<p>The curve is the only thing in this file that is evaluated in JAX, so it
+and the double-precision switch it needs are imported here rather than at
+the top of the module. Every other stage is numpy and scipy, and a module
+list that started a JAX backend merely by being described would put one in
+the interface process, where the device has not been chosen yet.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.Dereddening.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Dereddening'</span></span><a class="headerlink" href="#brainsp.ifu_modules.Dereddening.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.Dereddening.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#Dereddening.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.Dereddening.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.ButterworthFilter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">ButterworthFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#ButterworthFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.ButterworthFilter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFUModule</span></code></a></p>
+<p>A low-pass Butterworth filter over the two spatial axes. Writes <cite>FLUX_BW</cite>.</p>
+<p>The transfer function is H = 1 - 1 / (1 + (range / r) ** (2 * order)) on
+the radius normalised to its largest value, with the zero frequency rolled
+to the corner to match the fast transform’s ordering. Pixels that are not
+finite are set to zero before the transform, because a single NaN
+propagates to the whole plane, and restored to NaN afterwards.</p>
+<p>Configuration: <cite>hdu flux</cite> (FLUX), <cite>order</cite> (3), <cite>range</cite> (0.3).</p>
+<p>This filter mixes neighbouring spaxels. Any chi-squared computed after it
+is assuming pixel noise that the filter has correlated, so it is logged as
+a warning every time it runs, like the resolution degrader.</p>
+<p>It is spatial only: nothing is done along the wavelength axis. At the
+default order and range the kernel spreads one spaxel’s light over about
+six of its neighbours – a point source keeps roughly a sixth of its peak
+– and that width is set by <cite>range</cite> in spaxels, not by the size of the
+field. On a field only a few spaxels across it is therefore the whole
+field, and light that lands on a spaxel which was not finite is dropped
+rather than returned, so a small cutout can come out of here at a small
+fraction of the flux it went in with. The fraction that survived is
+measured, written to <cite>BW_KEPT</cite> and logged, because a stage that quietly
+scales the data is exactly the kind of thing this code exists to catch.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.ButterworthFilter.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Butterworth</span> <span class="pre">filter'</span></span><a class="headerlink" href="#brainsp.ifu_modules.ButterworthFilter.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.ButterworthFilter.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#ButterworthFilter.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.ButterworthFilter.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SpectralResampler">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">SpectralResampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#SpectralResampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.SpectralResampler" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFUModule</span></code></a></p>
+<p>A cube put onto a uniform wavelength step. Writes <cite>&lt;EXTNAME&gt;_BIN</cite>.</p>
+<p>The new grid runs from the first wavelength in steps of <cite>resample size</cite>
+Angstrom, and the header it carries describes that grid: <cite>CRPIX3</cite> 1,
+<cite>CRVAL3</cite> the first wavelength, and the step in <cite>CDELT3</cite> or <cite>CD3_3</cite>,
+whichever the input used. <cite>RSP_SIZE</cite> records the step.</p>
+<p>Resampling is linear interpolation over the pixels that are finite, which
+is what it takes to reproduce an existing analysis. It is lossy and
+it is not what BRAIN’s fit does: the fit puts the flux onto its log grid
+with a flux-conserving integral, from whatever grid it is given. Run this
+stage when you are matching someone else’s processing, not to help the
+fit.</p>
+<p>Configuration: <cite>hdu target</cite> (FLUX), <cite>data type</cite> (flux),
+<cite>resample size</cite> (1.0).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SpectralResampler.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Spectral</span> <span class="pre">resampler'</span></span><a class="headerlink" href="#brainsp.ifu_modules.SpectralResampler.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SpectralResampler.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#SpectralResampler.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.SpectralResampler.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SpatialResampler">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">SpatialResampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#SpatialResampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.SpatialResampler" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFUModule</span></code></a></p>
+<p>Square blocks of spaxels summed into one. Writes <cite>&lt;EXTNAME&gt;_RSP</cite>.</p>
+<p>Each output spaxel is the sum over an N by N block, taken as a NaN-
+tolerant mean multiplied by N on each axis so that a block with missing
+spaxels is scaled up to a full block rather than being biased low. A block
+with no finite spaxel at all has nothing to scale up and stays NaN; the
+empty-slice warning numpy raises for it is expected and is silenced, since
+the NaN it returns is the right answer and carries the same information.
+Blocks that do not fit whole into the array are dropped, so
+the output is floor(n / N) on each axis.</p>
+<p>A data-quality mask cannot be carried through this stage, since a flag is
+not an additive quantity; the runner drops the mask and says so rather
+than passing on one that no longer lines up.</p>
+<p>Configuration: <cite>hdu target</cite> (FLUX), <cite>data type</cite> (flux),
+<cite>resample size</cite> (4).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SpatialResampler.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Spatial</span> <span class="pre">resampler'</span></span><a class="headerlink" href="#brainsp.ifu_modules.SpatialResampler.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SpatialResampler.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#SpatialResampler.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.SpatialResampler.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.DegradeResolution">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">DegradeResolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#DegradeResolution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.DegradeResolution" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFUModule</span></code></a></p>
+<p>The data convolved down to a coarser resolution. Writes <cite>&lt;EXTNAME&gt;_DEGR</cite>.</p>
+<p>The kernel width is sqrt(sigma_out ** 2 - sigma_in ** 2), clipped at zero
+where the data is already coarser than the target, and truncated at
+twenty sigma. Resolutions are given as a resolving power <cite>R</cite>, a <cite>FWHM</cite> in
+Angstrom or a <cite>sigma</cite> in Angstrom; an <cite>R</cite> with a reference wavelength is
+a constant width rather than a constant resolving power.</p>
+<p>This is not BRAIN’s route to matching a library to an instrument. BRAIN
+convolves the templates up to the data, which leaves the pixel noise
+uncorrelated; this smooths the data, which does not. It exists so that an
+existing analysis made that way can be reproduced, and it warns every
+time it runs. Asking for it and for <cite>instrumental_resolution</cite> at once is
+refused before the run starts, because that counts the instrument twice.</p>
+<p>Configuration: <cite>hdu target</cite> (FLUX), <cite>data type</cite> (flux), <cite>input type</cite> (R),
+<cite>input value</cite> (2200), <cite>input ref wave</cite> (None), <cite>output type</cite> (R),
+<cite>output value</cite> (1000), <cite>output ref wave</cite> (None).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.DegradeResolution.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Degrade</span> <span class="pre">resolution'</span></span><a class="headerlink" href="#brainsp.ifu_modules.DegradeResolution.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.DegradeResolution.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#DegradeResolution.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.DegradeResolution.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SNMask">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.ifu_modules.</span></span><span class="sig-name descname"><span class="pre">SNMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#SNMask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.SNMask" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFUModule</span></code></a></p>
+<p>Which spaxels carry enough signal to fit. Writes <cite>SN_MASKS_&lt;threshold&gt;</cite>.</p>
+<p>One integer plane per threshold, 1 where the signal-to-noise in the window
+exceeds it, and the continuous map they were cut from as <cite>SNMAP</cite>, which
+costs nothing to keep and every user otherwise recomputes.</p>
+<p>The default is the mean over the window of the per-pixel signal-to-noise,
+<cite>mean(flux * sqrt(ivar))</cite>. That is the standard definition, it is what the
+fitter sees pixel by pixel, and it degrades gracefully where the inverse
+variance is zero, which is how MaNGA marks an unusable pixel. A form
+that takes the square root a second time returns a quantity with units
+of the square root of a flux, which at a threshold of 10 selects zero of
+2387 spaxels of a real MaNGA cube where this form selects 605. <cite>median(flux * sqrt(ivar))</cite> is offered for windows
+with unavoidable sky residuals, and the mean of the ratio to an error or
+variance plane, and the flux mean over its standard deviation, for cubes
+that carry no error at all. <cite>SN_METH</cite> records which was used.</p>
+<p>The window is rest-frame: the wavelength axis is divided by 1 + z before
+it is applied.</p>
+<p>Configuration: <cite>hdu flux</cite> (FLUX), <cite>hdu ivar</cite> (IVAR), <cite>hdu var</cite> (VAR),
+<cite>hdu error</cite> (ERROR), <cite>sn window</cite> ([4000, 6000]), <cite>thresholds</cite> ([10]),
+<cite>redshift</cite> (0.0), <cite>method</cite> (ivar).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SNMask.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Signal-to-noise</span> <span class="pre">mask'</span></span><a class="headerlink" href="#brainsp.ifu_modules.SNMask.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.ifu_modules.SNMask.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/ifu_modules.html#SNMask.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.ifu_modules.SNMask.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.brain_ifu.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.brain_ifu</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.ifu_output.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.ifu_output</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.IFUModule"><code class="docutils literal notranslate"><span class="pre">IFUModule</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.IFUModule.name"><code class="docutils literal notranslate"><span class="pre">IFUModule.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.IFUModule.config"><code class="docutils literal notranslate"><span class="pre">IFUModule.config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.IFUModule.setup"><code class="docutils literal notranslate"><span class="pre">IFUModule.setup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.IFUModule.execute"><code class="docutils literal notranslate"><span class="pre">IFUModule.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.wavelength_axis"><code class="docutils literal notranslate"><span class="pre">wavelength_axis()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.to_sigma_like"><code class="docutils literal notranslate"><span class="pre">to_sigma_like()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.from_sigma_like"><code class="docutils literal notranslate"><span class="pre">from_sigma_like()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.inverse_variance"><code class="docutils literal notranslate"><span class="pre">inverse_variance()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.require_extension"><code class="docutils literal notranslate"><span class="pre">require_extension()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.Dereddening"><code class="docutils literal notranslate"><span class="pre">Dereddening</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.Dereddening.name"><code class="docutils literal notranslate"><span class="pre">Dereddening.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.Dereddening.execute"><code class="docutils literal notranslate"><span class="pre">Dereddening.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.ButterworthFilter"><code class="docutils literal notranslate"><span class="pre">ButterworthFilter</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.ButterworthFilter.name"><code class="docutils literal notranslate"><span class="pre">ButterworthFilter.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.ButterworthFilter.execute"><code class="docutils literal notranslate"><span class="pre">ButterworthFilter.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SpectralResampler"><code class="docutils literal notranslate"><span class="pre">SpectralResampler</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SpectralResampler.name"><code class="docutils literal notranslate"><span class="pre">SpectralResampler.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SpectralResampler.execute"><code class="docutils literal notranslate"><span class="pre">SpectralResampler.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SpatialResampler"><code class="docutils literal notranslate"><span class="pre">SpatialResampler</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SpatialResampler.name"><code class="docutils literal notranslate"><span class="pre">SpatialResampler.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SpatialResampler.execute"><code class="docutils literal notranslate"><span class="pre">SpatialResampler.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.DegradeResolution"><code class="docutils literal notranslate"><span class="pre">DegradeResolution</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.DegradeResolution.name"><code class="docutils literal notranslate"><span class="pre">DegradeResolution.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.DegradeResolution.execute"><code class="docutils literal notranslate"><span class="pre">DegradeResolution.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SNMask"><code class="docutils literal notranslate"><span class="pre">SNMask</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SNMask.name"><code class="docutils literal notranslate"><span class="pre">SNMask.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.ifu_modules.SNMask.execute"><code class="docutils literal notranslate"><span class="pre">SNMask.execute()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

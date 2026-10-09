@@ -1,0 +1,17 @@
+﻿brainsp.libraries
+=================
+
+.. automodule:: brainsp.libraries
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      agn_folder
+      available
+      info
+      install
+      path
+      search_path
+   

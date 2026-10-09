@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.megacube &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/megacube';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.megacube</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.megacube</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Reading a BRAIN megacube, and the emission-line diagnostics drawn from it.</span>
+
+<span class="sd">A *megacube* is the FITS file BRAIN writes for a fitted datacube</span>
+<span class="sd">(``&lt;cube&gt;-BRAIN_MEGACUBE.fits``): the input cube&#39;s own extensions, then the</span>
+<span class="sd">observed and synthetic spectra on a linear grid (``FLXOBS``, ``FLXSYN``), the</span>
+<span class="sd">population vectors (``PoPVecsL``, ``PoPVecsM``), the population maps and fit</span>
+<span class="sd">statistics (``PoPBins``), and, in a line-fitting mode, the emission-line</span>
+<span class="sd">products in the layout of Riffel et al. 2023 (``SOLUTION``, ``FLUX_M``,</span>
+<span class="sd">``EQW_M`` ...). :class:`Megacube` opens one and hands out any of its maps by</span>
+<span class="sd">name; :func:`brainsp.read_megacube` is the same thing.</span>
+
+<span class="sd">Nothing here fits anything or imports JAX or Qt, so it works on a machine</span>
+<span class="sd">with no display.</span>
+
+<span class="sd">The diagnostic curves, with their sources:</span>
+
+<span class="sd">    Kewley et al. 2001     [N II] BPT maximum starburst</span>
+<span class="sd">    Kauffmann et al. 2003  [N II] BPT pure star formation, to its asymptote</span>
+<span class="sd">                           at log [N II]/Halpha = 0.05</span>
+<span class="sd">    Cid Fernandes et al. 2010   LINER / Seyfert in the [N II] BPT</span>
+<span class="sd">    Kewley et al. 2006     [S II] BPT, star forming and Seyfert / LINER</span>
+<span class="sd">    Cid Fernandes et al. 2011   WHAN</span>
+
+<span class="sd">A diagnostic is drawn only where every line it needs has a positive model</span>
+<span class="sd">flux. BRAIN does not yet write line-flux uncertainties, so there is no S/N</span>
+<span class="sd">cut on the lines: a weak line the fit placed at a small positive flux is</span>
+<span class="sd">classified like a strong one.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+
+<span class="n">C_KMS</span> <span class="o">=</span> <span class="mf">299792.458</span>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># diagnostics: the published curves</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="kewley01">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.kewley01">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">kewley01</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.19</span> <span class="o">+</span> <span class="mf">0.61</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.47</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="kauffmann03">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.kauffmann03">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">kauffmann03</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.30</span> <span class="o">+</span> <span class="mf">0.61</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.05</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="cid10">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.cid10">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cid10</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.48</span> <span class="o">+</span> <span class="mf">1.01</span> <span class="o">*</span> <span class="n">x</span></div>
+
+
+
+<div class="viewcode-block" id="bpt_nii_class">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.bpt_nii_class">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">bpt_nii_class</span><span class="p">(</span><span class="n">n2ha</span><span class="p">,</span> <span class="n">o3hb</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;1 star forming, 2 composite, 3 LINER, 4 Seyfert, NaN undefined.&quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n2ha</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">n2ha</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">o3hb</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">sf</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n2ha</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">o3hb</span> <span class="o">&lt;</span> <span class="n">kauffmann03</span><span class="p">(</span><span class="n">n2ha</span><span class="p">))</span>
+        <span class="n">agn</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">sf</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">n2ha</span> <span class="o">&gt;=</span> <span class="mf">0.47</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">o3hb</span> <span class="o">&gt;</span> <span class="n">kewley01</span><span class="p">(</span><span class="n">n2ha</span><span class="p">)))</span>
+        <span class="n">comp</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">sf</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">agn</span>
+        <span class="n">sey</span> <span class="o">=</span> <span class="n">agn</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">o3hb</span> <span class="o">&gt;</span> <span class="n">cid10</span><span class="p">(</span><span class="n">n2ha</span><span class="p">))</span>
+        <span class="n">lin</span> <span class="o">=</span> <span class="n">agn</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">sey</span>
+    <span class="n">out</span><span class="p">[</span><span class="n">sf</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">comp</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">lin</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">sey</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="bpt_sii_class">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.bpt_sii_class">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">bpt_sii_class</span><span class="p">(</span><span class="n">s2ha</span><span class="p">,</span> <span class="n">o3hb</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;1 star forming, 2 LINER, 3 Seyfert, NaN undefined.&quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">s2ha</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">s2ha</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">o3hb</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">sf</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">s2ha</span> <span class="o">&lt;</span> <span class="mf">0.32</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">o3hb</span> <span class="o">&lt;</span> <span class="mf">0.72</span> <span class="o">/</span> <span class="p">(</span><span class="n">s2ha</span> <span class="o">-</span> <span class="mf">0.32</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.30</span><span class="p">)</span>
+        <span class="n">agn</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">sf</span>
+        <span class="n">sey</span> <span class="o">=</span> <span class="n">agn</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">o3hb</span> <span class="o">&gt;</span> <span class="mf">1.89</span> <span class="o">*</span> <span class="n">s2ha</span> <span class="o">+</span> <span class="mf">0.76</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">[</span><span class="n">sf</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">agn</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">sey</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">sey</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="whan_class">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.whan_class">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">whan_class</span><span class="p">(</span><span class="n">n2ha</span><span class="p">,</span> <span class="n">ew_ha</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;1 star forming, 2 retired, 3 weak AGN, 4 strong AGN (Cid Fernandes 2011).&quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n2ha</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">n2ha</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">ew_ha</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">rg</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ew_ha</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">sf</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">rg</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n2ha</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">)</span>
+        <span class="n">sagn</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">rg</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n2ha</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ew_ha</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="n">wagn</span> <span class="o">=</span> <span class="n">ok</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">rg</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n2ha</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ew_ha</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">[</span><span class="n">sf</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">rg</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">wagn</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">sagn</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<span class="n">SHORT</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;star forming&quot;</span><span class="p">:</span> <span class="s2">&quot;SF&quot;</span><span class="p">,</span> <span class="s2">&quot;composite&quot;</span><span class="p">:</span> <span class="s2">&quot;Comp&quot;</span><span class="p">,</span> <span class="s2">&quot;LINER&quot;</span><span class="p">:</span> <span class="s2">&quot;LINER&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Seyfert&quot;</span><span class="p">:</span> <span class="s2">&quot;Sy&quot;</span><span class="p">,</span> <span class="s2">&quot;retired&quot;</span><span class="p">:</span> <span class="s2">&quot;RG&quot;</span><span class="p">,</span> <span class="s2">&quot;weak AGN&quot;</span><span class="p">:</span> <span class="s2">&quot;wAGN&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;strong AGN&quot;</span><span class="p">:</span> <span class="s2">&quot;sAGN&quot;</span><span class="p">}</span>
+
+<span class="n">CLASS_STYLES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BPT [N II]&quot;</span><span class="p">:</span> <span class="p">([</span><span class="s2">&quot;star forming&quot;</span><span class="p">,</span> <span class="s2">&quot;composite&quot;</span><span class="p">,</span> <span class="s2">&quot;LINER&quot;</span><span class="p">,</span> <span class="s2">&quot;Seyfert&quot;</span><span class="p">],</span>
+                   <span class="p">[</span><span class="s2">&quot;#4c9be8&quot;</span><span class="p">,</span> <span class="s2">&quot;#3fb68b&quot;</span><span class="p">,</span> <span class="s2">&quot;#e0a33a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d6336c&quot;</span><span class="p">]),</span>
+    <span class="s2">&quot;BPT [S II]&quot;</span><span class="p">:</span> <span class="p">([</span><span class="s2">&quot;star forming&quot;</span><span class="p">,</span> <span class="s2">&quot;LINER&quot;</span><span class="p">,</span> <span class="s2">&quot;Seyfert&quot;</span><span class="p">],</span>
+                   <span class="p">[</span><span class="s2">&quot;#4c9be8&quot;</span><span class="p">,</span> <span class="s2">&quot;#e0a33a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d6336c&quot;</span><span class="p">]),</span>
+    <span class="s2">&quot;WHAN&quot;</span><span class="p">:</span> <span class="p">([</span><span class="s2">&quot;star forming&quot;</span><span class="p">,</span> <span class="s2">&quot;retired&quot;</span><span class="p">,</span> <span class="s2">&quot;weak AGN&quot;</span><span class="p">,</span> <span class="s2">&quot;strong AGN&quot;</span><span class="p">],</span>
+             <span class="p">[</span><span class="s2">&quot;#4c9be8&quot;</span><span class="p">,</span> <span class="s2">&quot;#8a8a93&quot;</span><span class="p">,</span> <span class="s2">&quot;#e0a33a&quot;</span><span class="p">,</span> <span class="s2">&quot;#d6336c&quot;</span><span class="p">]),</span>
+<span class="p">}</span>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># the file</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="Megacube">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Megacube</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A BRAIN megacube, read once, with its maps named and grouped.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path : str</span>
+<span class="sd">        A ``*-BRAIN_MEGACUBE.fits`` file.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path : str</span>
+<span class="sd">    shape : tuple of int</span>
+<span class="sd">        ``(n_y, n_x)``, the spatial shape.</span>
+<span class="sd">    wave : numpy.ndarray</span>
+<span class="sd">        Rest-frame wavelength of ``FLXOBS`` and ``FLXSYN``, in Angstrom.</span>
+<span class="sd">    groups : dict</span>
+<span class="sd">        Map names by group: ``&quot;Populations&quot;``, ``&quot;Kinematics&quot;``,</span>
+<span class="sd">        ``&quot;Fit quality&quot;``, ``&quot;Emission lines&quot;``, ``&quot;Diagnostics&quot;``.</span>
+<span class="sd">    maps : dict</span>
+<span class="sd">        Every map name, with the extension and plane it is read from.</span>
+<span class="sd">    lines : list of str</span>
+<span class="sd">        The emission lines fitted (empty in ``spop``).</span>
+<span class="sd">    ages : numpy.ndarray</span>
+<span class="sd">        Age of every template, in years, in population-vector order.</span>
+<span class="sd">    status : numpy.ndarray</span>
+<span class="sd">        1 where a spaxel was fitted, 0 where it was not.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import brainsp</span>
+<span class="sd">    &gt;&gt;&gt; cube = brainsp.read_megacube(&quot;mock_cube-BRAIN_MEGACUBE.fits&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; cube.groups[&quot;Kinematics&quot;]</span>
+<span class="sd">    [&#39;Sigma_star&#39;, &#39;vrot_star&#39;, &#39;Sigma_gas_g0&#39;, &#39;vrot_gas_g0&#39;, ...]</span>
+<span class="sd">    &gt;&gt;&gt; velocity = cube.plane(&quot;vrot_star&quot;)        # 2-D array, NaN where unfitted</span>
+<span class="sd">    &gt;&gt;&gt; obs, model, lines = cube.spectrum(8, 8)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;PoPBins&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="ow">or</span> <span class="s2">&quot;FLXOBS&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2"> is not a megacube: it &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;has no PoPBins or FLXOBS extension&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">groups</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maps</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">pop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DATA</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;plane </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Populations&quot;</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;_light&quot;</span><span class="p">,</span> <span class="s2">&quot;_mass&quot;</span><span class="p">))</span>
+                     <span class="ow">or</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;FC&quot;</span><span class="p">,</span> <span class="s2">&quot;AGN&quot;</span><span class="p">))</span>
+                     <span class="k">else</span> <span class="s2">&quot;Fit quality&quot;</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;Adev&quot;</span><span class="p">,</span> <span class="s2">&quot;ChiSqrt&quot;</span><span class="p">,</span> <span class="s2">&quot;SNR&quot;</span><span class="p">,</span>
+                                                    <span class="s2">&quot;Nl_eff&quot;</span><span class="p">,</span> <span class="s2">&quot;Niter&quot;</span><span class="p">,</span>
+                                                    <span class="s2">&quot;BadSpaxel&quot;</span><span class="p">)</span>
+                     <span class="k">else</span> <span class="s2">&quot;Kinematics&quot;</span> <span class="k">if</span> <span class="s2">&quot;Sigma&quot;</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;vrot&quot;</span> <span class="ow">in</span> <span class="n">name</span>
+                     <span class="k">else</span> <span class="s2">&quot;Populations&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;CHI2RED&quot;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="s2">&quot;Fit quality&quot;</span><span class="p">,</span> <span class="s2">&quot;chi2 reduced&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;CHI2RED&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;STATUS&quot;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="s2">&quot;Fit quality&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;STATUS&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s2">&quot;PARNAMES&quot;</span> <span class="ow">in</span> <span class="n">names</span> <span class="ow">and</span> <span class="s2">&quot;FLUX_M&quot;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+            <span class="n">pn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;PARNAMES&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pn</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">]</span>
+            <span class="n">cfg</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                   <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FITCONFIG&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rest</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">.rest_wavelength&quot;</span><span class="p">,</span> <span class="s2">&quot;nan&quot;</span><span class="p">))</span>
+                         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="s2">&quot;Emission lines&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">  flux&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;FLUX_M&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="s2">&quot;Emission lines&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">  EW&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;EQW_M&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="s2">&quot;Emission lines&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">  velocity&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;SOLUTION&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="s2">&quot;Emission lines&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">  sigma&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;SOLUTION&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;BPT [N II]&quot;</span><span class="p">,</span> <span class="s2">&quot;BPT [S II]&quot;</span><span class="p">,</span> <span class="s2">&quot;WHAN&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_diagnostic</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="s2">&quot;Diagnostics&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;DIAG&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLXOBS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">hd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLXOBS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLXOBS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wave</span> <span class="o">=</span> <span class="p">(</span><span class="n">hd</span><span class="p">[</span><span class="s2">&quot;CRVAL3&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">hd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CRPIX3&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+                     <span class="o">*</span> <span class="n">hd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CD3_3&quot;</span><span class="p">,</span> <span class="n">hd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CDELT3&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;BaseAgeMetal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fitted</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLUX&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BUNIT&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span> \
+            <span class="k">if</span> <span class="s2">&quot;FLUX&quot;</span> <span class="ow">in</span> <span class="n">names</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Which spaxels hold a fit: BRAIN&#39;s STATUS when the file has it.</span>
+
+<span class="sd">        A megacube written by another pipeline has no STATUS. Its unfitted</span>
+<span class="sd">        spaxels are zeros in every map, and counting them as fitted put</span>
+<span class="sd">        hundreds of zeros into every map&#39;s colour scale (an age map running</span>
+<span class="sd">        from 0 to 10 shows the whole galaxy in one colour). BADSPXL (0 for a</span>
+<span class="sd">        good fit) and a non-empty FLXOBS say which spaxels were fitted.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;STATUS&quot;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;STATUS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">fitted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLXOBS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="s2">&quot;BADSPXL&quot;</span> <span class="ow">in</span> <span class="n">names</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;BADSPXL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fitted</span> <span class="o">&amp;=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;BADSPXL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">fitted</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">where</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">where</span>
+
+<div class="viewcode-block" id="Megacube.line_flux">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.line_flux">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">line_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLUX_M&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">name</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_flux</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_flux</span><span class="p">(</span><span class="n">den</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">b</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">r</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">return</span> <span class="n">r</span>
+
+<div class="viewcode-block" id="Megacube.diagnostic_inputs">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.diagnostic_inputs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">diagnostic_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">n2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ratio</span><span class="p">(</span><span class="s2">&quot;[N II]_6583&quot;</span><span class="p">,</span> <span class="s2">&quot;Halpha_6563&quot;</span><span class="p">)</span>
+        <span class="n">o3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ratio</span><span class="p">(</span><span class="s2">&quot;[O III]_5007&quot;</span><span class="p">,</span> <span class="s2">&quot;Hbeta_4861&quot;</span><span class="p">)</span>
+        <span class="n">s2a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_flux</span><span class="p">(</span><span class="s2">&quot;[S II]_6716&quot;</span><span class="p">)</span>
+        <span class="n">s2b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_flux</span><span class="p">(</span><span class="s2">&quot;[S II]_6731&quot;</span><span class="p">)</span>
+        <span class="n">ha</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_flux</span><span class="p">(</span><span class="s2">&quot;Halpha_6563&quot;</span><span class="p">)</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">s2a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">s2b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ha</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+                <span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">s2a</span> <span class="o">+</span> <span class="n">s2b</span><span class="p">)</span> <span class="o">/</span> <span class="n">ha</span><span class="p">)</span>
+            <span class="n">s2</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">s2a</span> <span class="o">+</span> <span class="n">s2b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ha</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">ew</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="s2">&quot;Halpha_6563&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+            <span class="n">ew</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;EQW_M&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;Halpha_6563&quot;</span><span class="p">)],</span>
+                             <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">n2</span><span class="p">,</span> <span class="n">o3</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">ew</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_diagnostic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">n2</span><span class="p">,</span> <span class="n">o3</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">ew</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">diagnostic_inputs</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;BPT [N II]&quot;</span> <span class="ow">and</span> <span class="n">n2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">o3</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bpt_nii_class</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">o3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;BPT [S II]&quot;</span> <span class="ow">and</span> <span class="n">s2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">o3</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bpt_sii_class</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">o3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;WHAN&quot;</span> <span class="ow">and</span> <span class="n">n2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ew</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">whan_class</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">ew</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Megacube.names">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.names">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Every map this file can draw, in group order.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="Megacube.plane">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.plane">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plane</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        One map as a 2-D array, NaN where the spaxel was not fitted.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            A name from :meth:`names`, e.g. ``&quot;vrot_star&quot;``, ``&quot;xyy_light&quot;``,</span>
+<span class="sd">            ``&quot;Halpha_6563  flux&quot;`` or ``&quot;BPT [N II]&quot;``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ext</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;DIAG&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_diagnostic</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="n">ext</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span> <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">out</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+<div class="viewcode-block" id="Megacube.spectrum">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.spectrum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        One spaxel&#39;s observed and model spectra on :attr:`wave`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        observed, model : numpy.ndarray</span>
+<span class="sd">        lines : list of (str, numpy.ndarray)</span>
+<span class="sd">            Each fitted emission line&#39;s Gaussian profile, for lines with a</span>
+<span class="sd">            positive amplitude.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLXOBS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">syn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;FLXSYN&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="c1"># Wavelengths the cube does not cover are stored as exact zeros by</span>
+        <span class="c1"># some pipelines; drawn, they are a cliff down to zero.</span>
+        <span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">obs</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">obs</span><span class="p">)</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+            <span class="n">sol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;SOLUTION&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">):</span>
+                <span class="n">A</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">sol</span><span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">k</span><span class="p">:</span><span class="mi">3</span> <span class="o">*</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">])</span>
+                <span class="n">rest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="ow">and</span> <span class="n">A</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rest</span><span class="p">)):</span>
+                    <span class="k">continue</span>
+                <span class="n">lam_c</span> <span class="o">=</span> <span class="n">rest</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">v</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span>
+                <span class="n">sig</span> <span class="o">=</span> <span class="n">s</span> <span class="o">*</span> <span class="n">lam_c</span> <span class="o">/</span> <span class="n">C_KMS</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span> <span class="o">-</span> <span class="n">lam_c</span><span class="p">)</span> <span class="o">/</span> <span class="n">sig</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">syn</span><span class="p">,</span> <span class="n">lines</span></div>
+
+
+<div class="viewcode-block" id="Megacube.populations">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.populations">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">populations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;One spaxel&#39;s population vector: light fractions, and mass</span>
+<span class="sd">        fractions when the file has them, in :attr:`ages` order.&quot;&quot;&quot;</span>
+        <span class="n">light</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;PoPVecsL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;PoPVecsM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> \
+            <span class="k">if</span> <span class="s2">&quot;PoPVecsM&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">light</span><span class="p">,</span> <span class="n">mass</span></div>
+
+
+<div class="viewcode-block" id="Megacube.numbers">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.numbers">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Every PoPBins value at one spaxel, as {name: value}.&quot;&quot;&quot;</span>
+        <span class="n">pop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">]</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">out</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DATA</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Megacube.close">
+<a class="viewcode-back" href="../../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube.close">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+</div>
+
+
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

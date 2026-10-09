@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.selftest &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/selftest';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.selftest</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.selftest</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Check an installation by fitting mock data whose answer is known.</span>
+
+<span class="sd">    brainsp selftest              the full check: five spectra and the</span>
+<span class="sd">                                  16 x 16 datacube (a few minutes on a CPU)</span>
+<span class="sd">    brainsp selftest --quick      two spectra and the cube&#39;s brightest</span>
+<span class="sd">                                  spaxels (about a minute)</span>
+<span class="sd">    brainsp selftest --device gpu run it on the GPU</span>
+
+<span class="sd">or, from Python, ``brainsp.selftest()``.</span>
+
+<span class="sd">What is checked, in order:</span>
+
+<span class="sd">1. the environment: Python, JAX and its device, the other dependencies;</span>
+<span class="sd">2. the template libraries: BasesGM and the AGN continua are installed and</span>
+<span class="sd">   their catalogues are readable;</span>
+<span class="sd">3. the mock data are built (:mod:`brainsp.mock`);</span>
+<span class="sd">4. each mock spectrum is fitted and the answer compared with the truth it</span>
+<span class="sd">   was built from: stellar velocity and dispersion, extinction, mean age,</span>
+<span class="sd">   AGN fraction, and for the line spectra the gas velocity and the H-alpha</span>
+<span class="sd">   flux; the observed-frame mock must give the same answer as its</span>
+<span class="sd">   rest-frame twin once BRAIN removes the redshift and the Galactic dust;</span>
+<span class="sd">5. the datacube is fitted through the full pipeline (S/N masks, the fit,</span>
+<span class="sd">   the megacube) and its maps compared with the maps it was built from;</span>
+<span class="sd">6. the megacube is read back, a map and a diagnostic diagram are drawn, and</span>
+<span class="sd">   a run is written out as a script that validates.</span>
+
+<span class="sd">Every comparison has a tolerance, printed beside it, a few times the scatter</span>
+<span class="sd">measured on the same mocks; a check that fails prints what it got and what</span>
+<span class="sd">it expected. The run returns a :class:`Report` whose ``passed`` is True only</span>
+<span class="sd">when every check passed, and the command exits non-zero otherwise, so it can</span>
+<span class="sd">gate an installation script.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;Report&quot;</span><span class="p">]</span>
+
+<span class="c1"># name: (truth key, how to read the fit, tolerance, kind)</span>
+<span class="c1">#   kind &quot;abs&quot;: |fit - truth| &lt;= tol;  &quot;rel&quot;: |fit/truth - 1| &lt;= tol</span>
+<span class="n">SPECTRUM_CHECKS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;stellar velocity [km/s]&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;abs&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;stellar dispersion&quot;</span><span class="p">,</span> <span class="s2">&quot;sigma&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="s2">&quot;rel&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;A_V [mag]&quot;</span><span class="p">,</span> <span class="s2">&quot;av&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;abs&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;&lt;log age&gt;_L [dex]&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_log_age_light&quot;</span><span class="p">,</span>
+     <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s2">&quot;abs&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">FIT_OPTIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;mock_old_population&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">&quot;mock_young_mixture&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">&quot;mock_star_forming_lines&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span>
+                                    <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;mock_seyfert_agn&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>
+                             <span class="n">include_power_law</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="s2">&quot;mock_observed_frame&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">spectrum_redshift</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span>
+                                <span class="n">spectrum_in_rest_frame</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                <span class="n">galactic_ebv</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span>
+<span class="p">}</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Report</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The outcome of a self-test.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    passed : bool</span>
+<span class="sd">        True when every check passed.</span>
+<span class="sd">    checks : list of dict</span>
+<span class="sd">        One per check: ``section``, ``name``, ``ok``, ``detail``.</span>
+<span class="sd">    folder : str</span>
+<span class="sd">        Where the mock data and the fits were written.</span>
+<span class="sd">    seconds : float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">folder</span> <span class="o">=</span> <span class="n">folder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">checks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seconds</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">passed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">checks</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">checks</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">checks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">section</span><span class="o">=</span><span class="n">section</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">ok</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">ok</span><span class="p">),</span>
+                                <span class="n">detail</span><span class="o">=</span><span class="n">detail</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">ok</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">n_bad</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">checks</span><span class="p">)</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;PASSED&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">passed</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;FAILED (</span><span class="si">{</span><span class="n">n_bad</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;brainsp self-test </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">checks</span><span class="p">)</span><span class="si">}</span><span class="s2"> checks in &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seconds</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> s&gt;&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+    <span class="n">report</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="p">)</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;  [</span><span class="si">{</span><span class="s1">&#39;PASS&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;FAIL&#39;</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;34</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">detail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_compare</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">truth</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">fit</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">truth</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">fit</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;no value&quot;</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;rel&quot;</span><span class="p">:</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fit</span> <span class="o">/</span> <span class="n">truth</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">err</span> <span class="o">&lt;=</span> <span class="n">tol</span><span class="p">,</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fit</span><span class="si">:</span><span class="s2">9.3f</span><span class="si">}</span><span class="s2">  truth </span><span class="si">{</span><span class="n">truth</span><span class="si">:</span><span class="s2">9.3f</span><span class="si">}</span><span class="s2">  &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;off </span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">err</span><span class="si">:</span><span class="s2">4.1f</span><span class="si">}</span><span class="s2">%  (&lt;= </span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tol</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fit</span> <span class="o">-</span> <span class="n">truth</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">err</span> <span class="o">&lt;=</span> <span class="n">tol</span><span class="p">,</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fit</span><span class="si">:</span><span class="s2">9.3f</span><span class="si">}</span><span class="s2">  truth </span><span class="si">{</span><span class="n">truth</span><span class="si">:</span><span class="s2">9.3f</span><span class="si">}</span><span class="s2">  &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;off </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">6.3f</span><span class="si">}</span><span class="s2">  (&lt;= </span><span class="si">{</span><span class="n">tol</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_environment</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;1. Environment&quot;</span><span class="p">)</span>
+    <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="s2">&quot;brainsp&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s2">, Python </span><span class="si">{</span><span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">()</span><span class="si">}</span><span class="s2">, &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;scipy&quot;</span><span class="p">,</span> <span class="s2">&quot;astropy&quot;</span><span class="p">,</span> <span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span> <span class="s2">&quot;yaml&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;PySide6&quot;</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
+                  <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="s2">&quot;__version__&quot;</span><span class="p">,</span> <span class="s2">&quot;installed&quot;</span><span class="p">)),</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">),</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">brainsp</span><span class="o">.</span><span class="n">set_device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">jax</span>
+        <span class="n">jax</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;jax_enable_x64&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">default_backend</span><span class="p">()</span>
+        <span class="n">devices</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">())</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="s2">&quot;JAX&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">jax</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">backend</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">devices</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="s2">&quot;JAX&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">),</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span>
+        <span class="n">_gpu_computes</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">device</span> <span class="o">==</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="s2">&quot;GPU&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>
+              <span class="s2">&quot;asked for the GPU but JAX found none: install BRAIN with &quot;</span>
+              <span class="s2">&quot;the cuda extra, pip install </span><span class="se">\&quot;</span><span class="s2">brainsp[cuda] @ git+...</span><span class="se">\&quot;</span><span class="s2">, and &quot;</span>
+              <span class="s2">&quot;check the NVIDIA driver with nvidia-smi&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_gpu_computes</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run a double-precision product on the GPU and check the answer.</span>
+
+<span class="sd">    JAX can list a GPU it cannot compute on: a card newer than the CUDA build</span>
+<span class="sd">    JAX was compiled with (an RTX 50-series, Blackwell, with JAX older than</span>
+<span class="sd">    0.6) is found, and the first kernel then fails. Listing the device is not</span>
+<span class="sd">    the test; computing on it is.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">jax</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+    <span class="n">gpu</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="s2">&quot;device_kind&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">gpu</span><span class="p">))</span>
+    <span class="n">capability</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="s2">&quot;compute_capability&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;, compute capability </span><span class="si">{</span><span class="n">capability</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">capability</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">@</span> <span class="n">x</span><span class="p">))</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="n">value</span> <span class="o">==</span> <span class="mf">512.0</span> <span class="o">**</span> <span class="mi">3</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="s2">&quot;GPU computes&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: float64 product </span><span class="si">{</span><span class="s1">&#39;correct&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;WRONG (</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">)&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+              <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">,</span> <span class="s2">&quot;GPU computes&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">160</span><span class="p">]</span><span class="si">}</span><span class="s2"> -- a GPU newer than &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;this JAX build; update it: pip install -U </span><span class="se">\&quot;</span><span class="s2">jax[cuda12]</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span>
+              <span class="n">verbose</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_libraries</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">libraries</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. Template libraries&quot;</span><span class="p">)</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="n">libraries</span><span class="o">.</span><span class="n">available</span><span class="p">()</span>
+    <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;libraries&quot;</span><span class="p">,</span> <span class="s2">&quot;libraries found&quot;</span><span class="p">,</span> <span class="s2">&quot;BasesGM&quot;</span> <span class="ow">in</span> <span class="n">names</span><span class="p">,</span>
+          <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">libraries</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;BasesGM&quot;</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;libraries&quot;</span><span class="p">,</span> <span class="s2">&quot;BasesGM catalogue&quot;</span><span class="p">,</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;n_ssp&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;n_ssp&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> SSPs, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;ages_yr&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2"> ages x &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;metallicities&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2"> Z, &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;wavelength_min&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;wavelength_max&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">,</span>
+              <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;libraries&quot;</span><span class="p">,</span> <span class="s2">&quot;BasesGM catalogue&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">),</span>
+              <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">libraries</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;M13&quot;</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;libraries&quot;</span><span class="p">,</span> <span class="s2">&quot;M13 catalogue&quot;</span><span class="p">,</span>
+              <span class="n">info</span><span class="p">[</span><span class="s2">&quot;n_ssp&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">47</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;agn&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">10</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;n_ssp&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> SSPs, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;agn&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2"> AGN components &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;agn&#39;</span><span class="p">][:</span><span class="mi">3</span><span class="p">])</span><span class="si">}</span><span class="s2">, ...)&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;libraries&quot;</span><span class="p">,</span> <span class="s2">&quot;M13 catalogue&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">),</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.brain_settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_catalogue</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">agn</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">libraries</span><span class="o">.</span><span class="n">agn_folder</span><span class="p">())</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;libraries&quot;</span><span class="p">,</span> <span class="s2">&quot;AGN continua&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">agn</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">agn</span><span class="p">)</span><span class="si">}</span><span class="s2"> templates&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;libraries&quot;</span><span class="p">,</span> <span class="s2">&quot;AGN continua&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">),</span> <span class="n">verbose</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_spectra</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. Mock spectra&quot;</span><span class="p">)</span>
+    <span class="n">rest_twin</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;spectra&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.spec&quot;</span><span class="p">)</span>
+        <span class="n">truth</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;spectra&quot;</span><span class="p">,</span>
+                                            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.truth.json&quot;</span><span class="p">)))</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;fits&quot;</span><span class="p">),</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">make_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">FIT_OPTIONS</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: fit&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)[:</span><span class="mi">200</span><span class="p">],</span>
+                  <span class="n">verbose</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">  (</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> s, &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;chi2/N </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">chi2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">read</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">kind</span> <span class="ow">in</span> <span class="n">SPECTRUM_CHECKS</span><span class="p">:</span>
+            <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">_compare</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">truth</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">tol</span><span class="p">,</span> <span class="n">kind</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">truth</span><span class="p">[</span><span class="s2">&quot;agn_fraction&quot;</span><span class="p">]:</span>
+            <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">_compare</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">agn_fraction</span><span class="p">,</span>
+                                  <span class="mi">100</span> <span class="o">*</span> <span class="n">truth</span><span class="p">[</span><span class="s2">&quot;agn_fraction&quot;</span><span class="p">],</span> <span class="mf">8.0</span><span class="p">,</span> <span class="s2">&quot;abs&quot;</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;  AGN light fraction [%]&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="p">,</span>
+                  <span class="n">verbose</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">truth</span><span class="p">[</span><span class="s2">&quot;lines&quot;</span><span class="p">]:</span>
+            <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">_compare</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">v_gas</span><span class="p">,</span> <span class="n">truth</span><span class="p">[</span><span class="s2">&quot;v_gas&quot;</span><span class="p">],</span> <span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;abs&quot;</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;  gas velocity [km/s]&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+            <span class="n">observed</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">line_fluxes</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s2">&quot;normalised&quot;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ha</span> <span class="o">=</span> <span class="n">observed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Halpha_6563&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,))[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">_compare</span><span class="p">(</span><span class="n">ha</span><span class="p">,</span> <span class="n">truth</span><span class="p">[</span><span class="s2">&quot;lines&quot;</span><span class="p">][</span><span class="s2">&quot;Halpha_6563&quot;</span><span class="p">],</span> <span class="mf">0.15</span><span class="p">,</span>
+                                  <span class="s2">&quot;rel&quot;</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;  H-alpha flux (observed)&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="p">,</span>
+                  <span class="n">verbose</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;mock_old_population&quot;</span><span class="p">:</span>
+            <span class="n">rest_twin</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;mock_observed_frame&quot;</span> <span class="ow">and</span> <span class="n">rest_twin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">_compare</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">rest_twin</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="s2">&quot;abs&quot;</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;  same v as the rest-frame twin&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span>
+                  <span class="n">detail</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+            <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span> <span class="o">=</span> <span class="n">_compare</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> <span class="n">rest_twin</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;abs&quot;</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;  same A_V as the rest-frame twin&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span>
+                  <span class="n">detail</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_cube</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">quick</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5. Mock datacube (16 x 16)&quot;</span><span class="p">)</span>
+    <span class="n">cube</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span> <span class="s2">&quot;mock_cube.fits&quot;</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;cube_fit&quot;</span><span class="p">)</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="mi">20</span> <span class="k">if</span> <span class="n">quick</span> <span class="k">else</span> <span class="mi">3</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span>
+        <span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;spop&quot;</span> <span class="k">if</span> <span class="n">quick</span> <span class="k">else</span> <span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">make_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">written</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">CubePipeline</span><span class="p">(</span>
+            <span class="n">cube</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">settings</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>
+            <span class="n">sn_mask</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">fit_sn_threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="o">=</span><span class="n">out</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="k">lambda</span> <span class="n">text</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span> <span class="s2">&quot;pipeline&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)[:</span><span class="mi">300</span><span class="p">],</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">written</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">written</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span> <span class="s2">&quot;megacube written&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span>
+          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> s, </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">written</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+          <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">read_megacube</span><span class="p">(</span><span class="n">written</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">truth</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.fits&quot;</span><span class="p">,</span> <span class="s2">&quot;.truth.fits&quot;</span><span class="p">))</span>
+    <span class="c1"># The mask BRAIN measured on the noisy cube is what the fit used; the</span>
+    <span class="c1"># true S/N differs from it near the threshold, so it is the mask the</span>
+    <span class="c1"># count is checked against.</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;SN_MASKS_</span><span class="si">{</span><span class="n">threshold</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">fitted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">))</span>
+    <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span> <span class="s2">&quot;spaxels fitted = S/N mask&quot;</span><span class="p">,</span>
+          <span class="nb">int</span><span class="p">(</span><span class="n">fitted</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">selected</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
+          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">fitted</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> fitted, </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">selected</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2"> in &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;SN_MASKS_</span><span class="si">{</span><span class="n">threshold</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="n">both</span> <span class="o">=</span> <span class="n">fitted</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">truth</span><span class="p">[</span><span class="s2">&quot;INSIDE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">plane</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">tol</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="p">(</span><span class="s2">&quot;velocity map, median offset&quot;</span><span class="p">,</span> <span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;dispersion map, median offset&quot;</span><span class="p">,</span> <span class="s2">&quot;Sigma_star&quot;</span><span class="p">,</span> <span class="s2">&quot;SIGMA&quot;</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;A_V map, median offset&quot;</span><span class="p">,</span> <span class="s2">&quot;Av&quot;</span><span class="p">,</span> <span class="s2">&quot;AV&quot;</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">)):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="n">plane</span><span class="p">)</span> <span class="o">-</span> <span class="n">truth</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)[</span><span class="n">both</span><span class="p">]</span>
+        <span class="n">med</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">size</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;nan&quot;</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">med</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tol</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">med</span><span class="si">:</span><span class="s2">7.3f</span><span class="si">}</span><span class="s2">  (|.| &lt;= </span><span class="si">{</span><span class="n">tol</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">), rms &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">)))</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">)[</span><span class="n">both</span><span class="p">]</span>
+    <span class="n">tv</span> <span class="o">=</span> <span class="n">truth</span><span class="p">[</span><span class="s2">&quot;V&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">both</span><span class="p">]</span>
+    <span class="n">corr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">tv</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;nan&quot;</span><span class="p">)</span>
+    <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span> <span class="s2">&quot;velocity field correlation&quot;</span><span class="p">,</span> <span class="n">corr</span> <span class="o">&gt;</span> <span class="mf">0.97</span><span class="p">,</span>
+          <span class="sa">f</span><span class="s2">&quot;r = </span><span class="si">{</span><span class="n">corr</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">  (&gt; 0.97)&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_outputs</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">cube</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">6. Outputs&quot;</span><span class="p">)</span>
+    <span class="n">plots</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;plots&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cube</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span>
+                              <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plots</span><span class="p">,</span> <span class="s2">&quot;velocity.png&quot;</span><span class="p">))</span>
+            <span class="n">written</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">export_maps</span><span class="p">(</span>
+                <span class="n">cube</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plots</span><span class="p">,</span> <span class="s2">&quot;maps&quot;</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;Av&quot;</span><span class="p">],</span>
+                <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="s2">&quot;fits&quot;</span><span class="p">))</span>
+            <span class="n">ok</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">written</span><span class="p">)</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;map export (png, fits)&quot;</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span>
+                  <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">written</span><span class="p">)</span><span class="si">}</span><span class="s2"> files&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">fits_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;fits&quot;</span><span class="p">)</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fits_dir</span><span class="p">,</span> <span class="s2">&quot;mock_old_population_summary.txt&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">summary</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">read_result</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+            <span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plots</span><span class="p">,</span> <span class="s2">&quot;spectrum.png&quot;</span><span class="p">))</span>
+            <span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">sfh</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plots</span><span class="p">,</span> <span class="s2">&quot;sfh.png&quot;</span><span class="p">))</span>
+            <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;spectrum and SFH figures&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
+                  <span class="n">plots</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;figures&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)[:</span><span class="mi">200</span><span class="p">],</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">script</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;run_mock.py&quot;</span><span class="p">)</span>
+        <span class="n">brainsp</span><span class="o">.</span><span class="n">write_script</span><span class="p">(</span><span class="n">script</span><span class="p">,</span> <span class="n">spectra</span><span class="o">=</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;spectra&quot;</span><span class="p">,</span> <span class="s2">&quot;mock_old_population.spec&quot;</span><span class="p">)])</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="s2">&quot;--check&quot;</span><span class="p">],</span>
+                              <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;exported run script validates&quot;</span><span class="p">,</span>
+              <span class="n">done</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="p">(</span><span class="n">done</span><span class="o">.</span><span class="n">stdout</span> <span class="ow">or</span> <span class="n">done</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">120</span><span class="p">]</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">done</span><span class="o">.</span><span class="n">stdout</span> <span class="ow">or</span> <span class="n">done</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="s2">&quot;exported run script&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">),</span>
+              <span class="n">verbose</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="run">
+<a class="viewcode-back" href="../../api/generated/brainsp.selftest.run.html#brainsp.run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">quick</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run the self-test.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    quick : bool</span>
+<span class="sd">        Two spectra and the cube&#39;s brightest spaxels, in ``spop``, instead</span>
+<span class="sd">        of everything.</span>
+<span class="sd">    device : {&quot;auto&quot;, &quot;cpu&quot;, &quot;gpu&quot;}</span>
+<span class="sd">        Where to fit. Must be chosen before anything else in this Python</span>
+<span class="sd">        session has used JAX.</span>
+<span class="sd">    folder : str, optional</span>
+<span class="sd">        Where to write the mock data and the fits; a temporary folder by</span>
+<span class="sd">        default.</span>
+<span class="sd">    keep : bool, optional</span>
+<span class="sd">        Keep the folder afterwards. By default a temporary folder is removed</span>
+<span class="sd">        when everything passed and kept when something failed, so the</span>
+<span class="sd">        evidence is there to look at.</span>
+<span class="sd">    verbose : bool</span>
+<span class="sd">        Print each check as it runs.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Report</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">temporary</span> <span class="o">=</span> <span class="n">folder</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">folder</span> <span class="ow">or</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;brainsp-&quot;</span><span class="p">))</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">Report</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;brainsp self-test (</span><span class="si">{</span><span class="s1">&#39;quick&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">quick</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;full&#39;</span><span class="si">}</span><span class="s2">), &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;working in </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">quiet</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;NEWBRAIN&quot;</span><span class="p">)</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="n">quiet</span><span class="o">.</span><span class="n">level</span>
+    <span class="n">quiet</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">_environment</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">_libraries</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. Mock data&quot;</span><span class="p">)</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">brainsp</span><span class="o">.</span><span class="n">mock</span><span class="o">.</span><span class="n">write_examples</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">cube</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;mock&quot;</span><span class="p">,</span> <span class="s2">&quot;mock spectra and 16 x 16 cube written&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">([</span><span class="s2">&quot;mock_old_population&quot;</span><span class="p">,</span> <span class="s2">&quot;mock_star_forming_lines&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">quick</span>
+                 <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">FIT_OPTIONS</span><span class="p">))</span>
+        <span class="n">_spectra</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">cube</span> <span class="o">=</span> <span class="n">_cube</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">quick</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+        <span class="n">_outputs</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">cube</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">quiet</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+    <span class="n">report</span><span class="o">.</span><span class="n">seconds</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="n">n_bad</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">checks</span><span class="p">)</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">report</span><span class="o">.</span><span class="n">passed</span><span class="p">:</span>
+        <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;  ALL </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">checks</span><span class="p">)</span><span class="si">}</span><span class="s2"> CHECKS PASSED in &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">report</span><span class="o">.</span><span class="n">seconds</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> s. BRAIN is working.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">n_bad</span><span class="si">}</span><span class="s2"> OF </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">checks</span><span class="p">)</span><span class="si">}</span><span class="s2"> CHECKS FAILED. &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;The data and fits are in </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">checks</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">]:</span>
+                <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;section&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">: &quot;</span>
+                                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;detail&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">_print</span><span class="p">(</span><span class="n">verbose</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+    <span class="n">remove</span> <span class="o">=</span> <span class="p">(</span><span class="n">keep</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">keep</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">temporary</span> <span class="ow">and</span> <span class="n">report</span><span class="o">.</span><span class="n">passed</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">remove</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">report</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

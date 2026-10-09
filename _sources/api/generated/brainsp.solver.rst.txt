@@ -1,0 +1,15 @@
+﻿brainsp.solver
+==============
+
+.. automodule:: brainsp.solver
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      build_regularization_matrix
+      compute_residual_vector
+      solve_active_set
+      solve_nnls_regularized
+   

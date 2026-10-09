@@ -1,0 +1,33 @@
+﻿brainsp.ifu\_viewer
+===================
+
+.. automodule:: brainsp.ifu_viewer
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      FLASH_SECONDS
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      map_entries
+      orientation_text
+      plane_cards
+      safe_name
+      scaled
+      signal_name
+      sn_mask_convention
+      sn_mask_planes
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CubeService
+      CubeViewer
+      MapExport
+   

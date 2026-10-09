@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.ifu_output &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/ifu_output';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.ifu_output</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.ifu_output</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">BRAIN — the megacube&#39;s extensions, and the compatibility contract.</span>
+
+<span class="sd">A megacube is the cube that was fitted with the fit appended to it as extra</span>
+<span class="sd">extensions. The names, the mixed-case spelling, the DATA&lt;n&gt; cards inside</span>
+<span class="sd">PoPBins and the linear wavelength axis on FLXOBS follow the published MaNGA</span>
+<span class="sd">megacubes of Riffel et al. 2023 (MNRAS 524, 5640), because tooling written against those files reads</span>
+<span class="sd">extensions by name and takes its wavelength axis from FLXOBS&#39;s CRVAL3 and</span>
+<span class="sd">CD3_3 with no fallback. A BRAIN megacube that spells one of them differently,</span>
+<span class="sd">or leaves the WCS off, does not open at all.</span>
+
+<span class="sd">Two consequences run through this module. Extension names are set as header</span>
+<span class="sd">cards rather than through astropy&#39;s `name=`, which upper-cases them.  And</span>
+<span class="sd">FLXOBS and FLXSYN are written on a linear grid -- the only place BRAIN</span>
+<span class="sd">resamples an observed flux, for the output copy alone and never for the fit</span>
+<span class="sd">-- while BRAIN&#39;s own spectral extensions stay on the grid the cube arrived</span>
+<span class="sd">on, where no resolution is thrown away.</span>
+
+<span class="sd">The map quantities themselves are computed from the same per-template light</span>
+<span class="sd">and mass numbers io_utils.population_statistics gives the summary file, so a</span>
+<span class="sd">map value and that spaxel&#39;s summary line are the same arithmetic.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+
+<span class="n">AUTHORS</span> <span class="o">=</span> <span class="s2">&quot;Suresh Parekh (suresh.parekh@ufrgs.br)&quot;</span>
+<span class="n">SOFTWARE</span> <span class="o">=</span> <span class="s2">&quot;BRAIN v1.0&quot;</span>
+<span class="n">FORMAT_AFTER</span> <span class="o">=</span> <span class="s2">&quot;Megacube layout of Riffel et al. 2023, MNRAS 524, 5640&quot;</span>
+
+<span class="n">LINEAR_WAVELENGTH_STEP</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="n">DEFAULT_AGE_BINS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">&quot;xyy&quot;</span><span class="p">,</span> <span class="mf">9.0e5</span><span class="p">,</span> <span class="mf">1.0e7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;xyo&quot;</span><span class="p">,</span> <span class="mf">1.4e7</span><span class="p">,</span> <span class="mf">5.6e7</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;xiy&quot;</span><span class="p">,</span> <span class="mf">1.0e8</span><span class="p">,</span> <span class="mf">5.0e8</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;xii&quot;</span><span class="p">,</span> <span class="mf">6.3e8</span><span class="p">,</span> <span class="mf">8.0e8</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;xio&quot;</span><span class="p">,</span> <span class="mf">8.9e8</span><span class="p">,</span> <span class="mf">2.0e9</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;xo&quot;</span><span class="p">,</span> <span class="mf">5.0e9</span><span class="p">,</span> <span class="mf">1.3e10</span><span class="p">),</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="named">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.named">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">named</span><span class="p">(</span><span class="n">hdu</span><span class="p">,</span> <span class="n">extname</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Give an HDU a name with its capitalisation intact.</span>
+
+<span class="sd">    astropy&#39;s `name=` argument upper-cases what it is given, so an HDU built</span>
+<span class="sd">    that way is called POPBINS and not PoPBins. Lookup by name is</span>
+<span class="sd">    case-insensitive and would not notice, but anything that compares the</span>
+<span class="sd">    string -- a listing, a filter over extension names, a reader written</span>
+<span class="sd">    against the published megacubes -- would.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;EXTNAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extname</span>
+    <span class="k">if</span> <span class="n">summary</span><span class="p">:</span>
+        <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;SUMMARY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;AUTHORS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AUTHORS</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;SOFTWARE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SOFTWARE</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;FORMAT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">FORMAT_AFTER</span>
+    <span class="k">return</span> <span class="n">hdu</span></div>
+
+
+
+<div class="viewcode-block" id="linear_wavelength_grid">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.linear_wavelength_grid">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">linear_wavelength_grid</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">LINEAR_WAVELENGTH_STEP</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The linear grid the observed and synthetic spectra are written on.</span>
+
+<span class="sd">    It starts at the first whole multiple of the step inside the fitted</span>
+<span class="sd">    range and ends at the last one, so that CRVAL3 is a round number and</span>
+<span class="sd">    every point of the grid is covered by data. The step defaults to 1 A,</span>
+<span class="sd">    which is what the published megacubes use.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The linear wavelength step must be positive.&quot;</span><span class="p">)</span>
+    <span class="n">lo</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="n">hi</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">lo</span> <span class="o">/</span> <span class="n">step</span><span class="p">)</span> <span class="o">*</span> <span class="n">step</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">hi</span> <span class="o">-</span> <span class="n">first</span><span class="p">)</span> <span class="o">/</span> <span class="n">step</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;A step of </span><span class="si">{</span><span class="n">step</span><span class="si">}</span><span class="s2"> A leaves </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> points between </span><span class="si">{</span><span class="n">lo</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> and &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hi</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> A, which is not a spectrum.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">first</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="wcs_cards">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.wcs_cards">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wcs_cards</span><span class="p">(</span><span class="n">hdu</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The three cards megacube viewers build their wavelength axis from.&quot;&quot;&quot;</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;CRPIX3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;CRVAL3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;CD3_3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">step</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;WAT3_001&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;wtype=linear axtype=wave&quot;</span>
+    <span class="k">return</span> <span class="n">hdu</span></div>
+
+
+
+<div class="viewcode-block" id="resample_batch">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.resample_batch">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resample_batch</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A batch of spectra moved onto another wavelength grid, flux-conserving.</span>
+
+<span class="sd">    The same integral the fit itself uses to reach its log grid, not a linear</span>
+<span class="sd">    interpolation: between grids of unequal spacing the two are not</span>
+<span class="sd">    approximations of each other, and on this repository&#39;s reference spectrum</span>
+<span class="sd">    interpolation was wrong by 18.9 per cent at its worst pixel.</span>
+
+<span class="sd">    JAX is imported here rather than at the top of the module so that naming</span>
+<span class="sd">    an extension, reading a set of age bins or validating a pipeline costs</span>
+<span class="sd">    nothing: the runner and the desktop interface both do all three long</span>
+<span class="sd">    before any fitting starts, and importing JAX to do them would add seconds</span>
+<span class="sd">    to every `check`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">jax</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.spectral_engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">flux_conserving_resample</span>
+
+    <span class="n">source</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">spectra</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="n">resample</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">flux_conserving_resample</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">target</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">resample</span><span class="p">(</span><span class="n">batch</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="age_bin_membership">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.age_bin_membership">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">age_bin_membership</span><span class="p">(</span><span class="n">ages_yr</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">is_ssp</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Which templates belong to each age bin, as a boolean (n_bin, n_ssp).</span>
+
+<span class="sd">    The convention is the published one: min exclusive, max inclusive,</span>
+<span class="sd">    `min &lt; age &lt;= max`. It matters, because the standard bin sets put edges</span>
+<span class="sd">    exactly on template ages, and a `&gt;=` on the low edge would count such a</span>
+<span class="sd">    template in two bins at once.</span>
+
+<span class="sd">    A template that is not a stellar population -- the power law, when</span>
+<span class="sd">    `include_power_law` is on -- is never a member of any bin. Its light</span>
+<span class="sd">    belongs under its own card, and adding it to a population bin would</span>
+<span class="sd">    report accretion-disc light as stars.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ages_yr</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">stellar</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">ages</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_ssp</span> <span class="ow">is</span> <span class="kc">None</span>
+               <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">is_ssp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">ages</span> <span class="o">&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="n">lo</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ages</span> <span class="o">&lt;=</span> <span class="nb">float</span><span class="p">(</span><span class="n">hi</span><span class="p">))</span> <span class="o">&amp;</span> <span class="n">stellar</span>
+                     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="ow">in</span> <span class="n">bins</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="binned">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.binned">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">binned</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">membership</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Per-bin sums of a (n_spec, n_ssp) percentage array, as (n_bin, n_spec).&quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">values</span><span class="p">[:,</span> <span class="n">member</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                     <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">membership</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="featureless_parameter">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.featureless_parameter">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">featureless_parameter</span><span class="p">(</span><span class="n">short_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    What a featureless component&#39;s name says it is: (&quot;FC&quot;, exponent) for a</span>
+<span class="sd">    power law F_nu ~ nu^-alpha, (&quot;BB&quot;, temperature in K) for a blackbody, or</span>
+<span class="sd">    (None, None).</span>
+
+<span class="sd">    FC0.25 and FC1.50 give the exponent as written; the shipped library&#39;s</span>
+<span class="sd">    Power_150 writes it in hundredths; BB800 is an 800 K blackbody.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">short_name</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;POWER&quot;</span><span class="p">):</span>
+        <span class="n">digits</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;FC&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">)</span> <span class="k">if</span> <span class="n">digits</span> <span class="k">else</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(FC|BB)[_ ]?([0-9]*\.?[0-9]+(?:E[+-]?[0-9]+)?)$&quot;</span><span class="p">,</span>
+                     <span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span></div>
+
+
+
+<span class="c1"># The constants of the megacubes of Riffel et al. (2023), so that Mstar,</span>
+<span class="c1"># Mpcross and the SFR maps are computed exactly as theirs are.</span>
+<span class="n">SOLAR_LUMINOSITY</span> <span class="o">=</span> <span class="mf">3.826e33</span>          <span class="c1"># erg/s</span>
+<span class="n">MEGAPARSEC_CM</span> <span class="o">=</span> <span class="mf">3.08567758e24</span>
+
+
+<div class="viewcode-block" id="distance_factor">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.distance_factor">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">distance_factor</span><span class="p">(</span><span class="n">distance_mpc</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;4 pi d^2 / L_sun: an apparent mass (flux / template flux per Msun)</span>
+<span class="sd">    times this, and times the flux unit, is a mass in solar masses.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">distance_mpc</span><span class="p">)</span> <span class="o">*</span> <span class="n">MEGAPARSEC_CM</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> \
+        <span class="o">/</span> <span class="n">SOLAR_LUMINOSITY</span></div>
+
+
+
+<div class="viewcode-block" id="flux_unit_scale">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.flux_unit_scale">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">flux_unit_scale</span><span class="p">(</span><span class="n">bunit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The number a flux unit carries: 1e-17 for MaNGA&#39;s &#39;1E-17 erg/s/cm^2/</span>
+<span class="sd">    Angstrom/spaxel&#39;, 1 for a JWST cube&#39;s &#39;erg/s/cm^2/Angstrom&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\s*([0-9]*\.?[0-9]+(?:[eE][+-]?[0-9]+)?)\s*[*x]?\s*&quot;</span><span class="p">,</span>
+                     <span class="nb">str</span><span class="p">(</span><span class="n">bunit</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="mf">1.0</span></div>
+
+
+
+<div class="viewcode-block" id="unbinned_percent">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.unbinned_percent">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">unbinned_percent</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">membership</span><span class="p">,</span> <span class="n">is_ssp</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    How much of each spaxel&#39;s light or mass no age bin claims.</span>
+
+<span class="sd">    Age bins as published have gaps between them, and a template library</span>
+<span class="sd">    whose ages differ from the one the bins were drawn for can drop a lot of</span>
+<span class="sd">    light into those gaps. That is not visible in the maps themselves --</span>
+<span class="sd">    every bin looks reasonable -- so the number is computed here and</span>
+<span class="sd">    reported.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">unclaimed</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">membership</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_ssp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Featureless (AGN) light is in no bin by design, not a gap.</span>
+        <span class="n">unclaimed</span> <span class="o">&amp;=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">is_ssp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">values</span><span class="p">[:,</span> <span class="n">unclaimed</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="mean_log_age">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.mean_log_age">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mean_log_age</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">ages_yr</span><span class="p">,</span> <span class="n">is_ssp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">over_all</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The weighted mean of log10(age), which is not the log of the mean age.</span>
+
+<span class="sd">    Published maps report &lt;log age&gt;, so</span>
+<span class="sd">    a mean age computed the other way is a different quantity that looks like</span>
+<span class="sd">    the same one. Templates with a non-positive age -- a power law has no age</span>
+<span class="sd">    -- carry no term.</span>
+
+<span class="sd">    over_all chooses the normalisation. False divides by the weight of the</span>
+<span class="sd">    stellar templates alone, the mean age of the stars. True divides by the</span>
+<span class="sd">    weight of every component, featureless ones included, which is how the</span>
+<span class="sd">    megacubes of Riffel et al. (2023) define Mage_L: there 10 per cent of AGN</span>
+<span class="sd">    light lowers the map by about 0.94 dex.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ages_yr</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">usable</span> <span class="o">=</span> <span class="n">ages</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">is_ssp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">usable</span> <span class="o">&amp;=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">is_ssp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">usable</span><span class="p">]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">values</span> <span class="k">if</span> <span class="n">over_all</span> <span class="k">else</span> <span class="n">weight</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">logs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="n">usable</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weight</span> <span class="o">*</span> <span class="n">logs</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="mean_metallicity">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.mean_metallicity">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mean_metallicity</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">metallicities</span><span class="p">,</span> <span class="n">is_ssp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                     <span class="n">over_all</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The weighted mean of Z as a mass fraction, not of [Z/H].</span>
+
+<span class="sd">    Linear Z is what the published maps carry, and the two differ by more</span>
+<span class="sd">    than a constant because the average of a logarithm is not the logarithm</span>
+<span class="sd">    of the average. over_all as in mean_log_age.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">percentages</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">metals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">metallicities</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">usable</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">metals</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_ssp</span> <span class="ow">is</span> <span class="kc">None</span>
+              <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">is_ssp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">usable</span><span class="p">]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">values</span> <span class="k">if</span> <span class="n">over_all</span> <span class="k">else</span> <span class="n">weight</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weight</span> <span class="o">*</span> <span class="n">metals</span><span class="p">[</span><span class="n">usable</span><span class="p">][</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="signal_to_noise">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.signal_to_noise">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">signal_to_noise</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">inverse_sigma</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    S/N per pixel averaged over the normalisation window.</span>
+
+<span class="sd">    flux and inverse_sigma are the fit&#39;s own arrays, so this is the</span>
+<span class="sd">    signal-to-noise the fitter sees rather than a second estimate of it made</span>
+<span class="sd">    from the file. Pixels the fit excluded carry inverse_sigma 0 and are left</span>
+<span class="sd">    out; a spaxel with no usable pixel in the window reports 0.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)[:,</span> <span class="n">window</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inverse_sigma</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)[:,</span> <span class="n">window</span><span class="p">]</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">used</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">s</span> <span class="o">*</span> <span class="n">used</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_fits_comment</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">comment</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A comment cut to what is left of the 80 columns after the value.</span>
+
+<span class="sd">    astropy truncates an over-long comment and warns, which is a warning</span>
+<span class="sd">    nobody reads and a card that says something slightly different from what</span>
+<span class="sd">    the code asked for. Cutting it here keeps the two the same.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">field</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;8</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">8</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">),</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">room</span> <span class="o">=</span> <span class="mi">80</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DATA</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;= &quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">field</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot; / &quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">comment</span><span class="p">[:</span><span class="nb">max</span><span class="p">(</span><span class="n">room</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+
+
+<div class="viewcode-block" id="text_value">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.text_value">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">text_value</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A string card value cut so that the card keeps its comment.</span>
+
+<span class="sd">    A FITS card is eighty columns and holds the keyword, the value and the</span>
+<span class="sd">    comment; a value cut to what fits the value field alone leaves the</span>
+<span class="sd">    comment to be truncated instead, which is how a card ends up saying</span>
+<span class="sd">    &quot;see the BRAIN IFU documentati&quot;. The value is the part that varies, so</span>
+<span class="sd">    it is the part that gives way.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">room</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">65</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">comment</span><span class="p">),</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">room</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">text</span>
+    <span class="n">cut</span> <span class="o">=</span> <span class="n">text</span><span class="p">[:</span><span class="n">room</span> <span class="o">-</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">space</span> <span class="o">=</span> <span class="n">cut</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">space</span> <span class="o">&gt;</span> <span class="n">room</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">cut</span> <span class="o">=</span> <span class="n">cut</span><span class="p">[:</span><span class="n">space</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">cut</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot; ,;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="pop_bins_hdu">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.pop_bins_hdu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pop_bins_hdu</span><span class="p">(</span><span class="n">planes</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">unfitted</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The map stack, as one 3D extension addressed by DATA&lt;n&gt; cards.</span>
+
+<span class="sd">    planes is an ordered sequence of (name, comment, values), where values is</span>
+<span class="sd">    one number per fitted spaxel; shape is (n_y, n_x) and positions is the</span>
+<span class="sd">    (y, x) of each fitted spaxel.</span>
+
+<span class="sd">    A spaxel that was not fitted is 0, which is what the published megacubes</span>
+<span class="sd">    carry and what the viewers written against them scale their colour bars</span>
+<span class="sd">    to -- NaN limits break those viewers outright. Since 0 is also a</span>
+<span class="sd">    plausible value for several of these quantities, the stack carries a</span>
+<span class="sd">    BadSpaxel plane of its own, so that the question &quot;is this spaxel a</span>
+<span class="sd">    measurement&quot; can be answered inside the same extension as the maps, and</span>
+<span class="sd">    not only from BADSPXL and STATUS.</span>
+
+<span class="sd">    That plane is the one place where 0 is the wrong fill, and `unfitted`</span>
+<span class="sd">    names the planes whose background is something else: a spaxel nobody</span>
+<span class="sd">    fitted is a bad spaxel, so its BadSpaxel is 1 and not the 0 that would</span>
+<span class="sd">    otherwise be left there by never writing to it. Getting this wrong is</span>
+<span class="sd">    invisible -- the plane exists, it is full of zeros, and every unfitted</span>
+<span class="sd">    spaxel reads as a converged fit.</span>
+
+<span class="sd">    The card value is the quantity&#39;s name and the card&#39;s comment describes</span>
+<span class="sd">    it, which is the convention the analysis tools index the stack by.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_y</span><span class="p">,</span> <span class="n">n_x</span> <span class="o">=</span> <span class="n">shape</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">positions</span>
+    <span class="n">background</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">unfitted</span> <span class="ow">or</span> <span class="p">{})</span>
+    <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">planes</span><span class="p">),</span> <span class="n">n_y</span><span class="p">,</span> <span class="n">n_x</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cube</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">comment</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">planes</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">background</span><span class="p">:</span>
+            <span class="n">cube</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">background</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+        <span class="n">cube</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;DATA</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">_fits_comment</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">comment</span><span class="p">))</span>
+    <span class="n">hdu</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">cube</span>
+    <span class="k">return</span> <span class="n">named</span><span class="p">(</span><span class="n">hdu</span><span class="p">,</span> <span class="s2">&quot;PoPBins&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;Synthesis Parameters &amp; Binned Population Vectors&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="power_law_card">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.power_law_card">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">power_law_card</span><span class="p">(</span><span class="n">short_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The card a non-stellar component is reported under.</span>
+
+<span class="sd">    The published cubes call an F_nu ~ nu^-1.5 power law FC1.50, and the</span>
+<span class="sd">    shipped library calls the same component Power_150, so a power law named</span>
+<span class="sd">    that way has its exponent read out of the name. Every other name is used</span>
+<span class="sd">    unchanged: a blackbody BB800 is not a power law of exponent 8.00, and</span>
+<span class="sd">    reading the digits out of it filed hot dust under FC. Either way the</span>
+<span class="sd">    component is reported on its own card and never inside a population bin.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">short_name</span><span class="p">)</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;POWER&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">digits</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;FC</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100.0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="n">name</span><span class="p">[:</span><span class="mi">16</span><span class="p">]</span></div>
+
+
+
+<span class="n">TRUST_GOOD</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">TRUST_SN_CUT</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">TRUST_NOT_CONVERGED</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">TRUST_NO_VALUE</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">TRUST_MEANINGS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">TRUST_SN_CUT</span><span class="p">,</span> <span class="s2">&quot;below the chosen signal-to-noise threshold&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">TRUST_NOT_CONVERGED</span><span class="p">,</span> <span class="s2">&quot;not a converged fit&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">TRUST_NO_VALUE</span><span class="p">,</span> <span class="s2">&quot;the plane holds no finite value here&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">SPATIAL_WCS_CARDS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;WCSAXES&quot;</span><span class="p">,</span> <span class="s2">&quot;CRPIX1&quot;</span><span class="p">,</span> <span class="s2">&quot;CRPIX2&quot;</span><span class="p">,</span> <span class="s2">&quot;CRVAL1&quot;</span><span class="p">,</span> <span class="s2">&quot;CRVAL2&quot;</span><span class="p">,</span> <span class="s2">&quot;CDELT1&quot;</span><span class="p">,</span> <span class="s2">&quot;CDELT2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CD1_1&quot;</span><span class="p">,</span> <span class="s2">&quot;CD1_2&quot;</span><span class="p">,</span> <span class="s2">&quot;CD2_1&quot;</span><span class="p">,</span> <span class="s2">&quot;CD2_2&quot;</span><span class="p">,</span> <span class="s2">&quot;PC1_1&quot;</span><span class="p">,</span> <span class="s2">&quot;PC1_2&quot;</span><span class="p">,</span> <span class="s2">&quot;PC2_1&quot;</span><span class="p">,</span> <span class="s2">&quot;PC2_2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CTYPE1&quot;</span><span class="p">,</span> <span class="s2">&quot;CTYPE2&quot;</span><span class="p">,</span> <span class="s2">&quot;CUNIT1&quot;</span><span class="p">,</span> <span class="s2">&quot;CUNIT2&quot;</span><span class="p">,</span> <span class="s2">&quot;RADESYS&quot;</span><span class="p">,</span> <span class="s2">&quot;EQUINOX&quot;</span><span class="p">,</span> <span class="s2">&quot;LONPOLE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LATPOLE&quot;</span><span class="p">,</span> <span class="s2">&quot;MJDREF&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="trust_mask">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.trust_mask">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">trust_mask</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">sn_keep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">converged</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Why each spaxel of a map is or is not a measurement, as a bit field.</span>
+
+<span class="sd">    0 is a spaxel worth reading and every other value names a reason it is</span>
+<span class="sd">    not: the chosen signal-to-noise threshold threw it away, its fit did not</span>
+<span class="sd">    converge, or the plane carries nothing finite there. The reasons are bits</span>
+<span class="sd">    rather than an enumeration because a spaxel can fail all three at once</span>
+<span class="sd">    and a map that reported only the first would understate the damage.</span>
+
+<span class="sd">    This is the layer the maps need and did not have. A megacube writes 0</span>
+<span class="sd">    into a spaxel nobody fitted, and 0 is a plausible value for most of these</span>
+<span class="sd">    quantities, so a map without a companion mask cannot be read safely by</span>
+<span class="sd">    anything -- including a person.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sn_keep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">|=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sn_keep</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                         <span class="n">TRUST_SN_CUT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">converged</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">|=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">converged</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                         <span class="n">TRUST_NOT_CONVERGED</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">|=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">TRUST_NO_VALUE</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mask</span></div>
+
+
+
+<div class="viewcode-block" id="trusted_values">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.trusted_values">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">trusted_values</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The map with every untrustworthy spaxel blanked, as NaN.&quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span> <span class="o">!=</span> <span class="n">TRUST_GOOD</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+
+<div class="viewcode-block" id="spatial_wcs">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.spatial_wcs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spatial_wcs</span><span class="p">(</span><span class="n">header</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The celestial part of a cube&#39;s world coordinate system, as plain cards.</span>
+
+<span class="sd">    Only the two spatial axes are carried over: the third axis of a cube is</span>
+<span class="sd">    wavelength and a two-dimensional map that kept CRVAL3 would claim an axis</span>
+<span class="sd">    it does not have. A header with no celestial solution yields nothing,</span>
+<span class="sd">    which is the honest answer and is what the exported file then says.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">header</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">out</span>
+    <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">SPATIAL_WCS_CARDS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">card</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+            <span class="n">out</span><span class="p">[</span><span class="n">card</span><span class="p">]</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="n">card</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_settings_cards</span><span class="p">(</span><span class="n">hdu</span><span class="p">,</span> <span class="n">settings</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Record what produced a map, one card each, comments intact.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="p">)</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">text_value</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">comment</span><span class="p">),</span> <span class="n">comment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hdu</span>
+
+
+<div class="viewcode-block" id="plane_hdus">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.plane_hdus">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">plane_hdus</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">plane</span><span class="p">,</span> <span class="n">cube</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">wcs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    One map plane as a FITS file: the values, and the mask that qualifies them.</span>
+
+<span class="sd">    The primary array is the map as the interface draws it, which means</span>
+<span class="sd">    NaN wherever the mask says the spaxel is not a measurement, so a reader</span>
+<span class="sd">    that does nothing but `imshow` the primary sees what the interface saw.</span>
+<span class="sd">    The TRUST extension carries the reason bits, so a reader that wants the</span>
+<span class="sd">    excluded spaxels back knows exactly which they are and why each one went.</span>
+
+<span class="sd">    The header records which plane, which cube and which settings produced</span>
+<span class="sd">    the file, because a map in isolation is a picture of nothing: the same</span>
+<span class="sd">    array means different things under a different signal-to-noise cut, and</span>
+<span class="sd">    a file that does not say which cut it was written under cannot be</span>
+<span class="sd">    checked against the cube it came from.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">trusted_values</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+    <span class="n">primary</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">card</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span><span class="n">wcs</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="n">card</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;BUNIT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">units</span><span class="p">),</span> <span class="s2">&quot;unit of the map&quot;</span><span class="p">)</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;PLANE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">text_value</span><span class="p">(</span><span class="n">plane</span><span class="p">,</span> <span class="s2">&quot;the plane this map is&quot;</span><span class="p">),</span>
+                               <span class="s2">&quot;the plane this map is&quot;</span><span class="p">)</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;CUBEFILE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">text_value</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">cube</span><span class="p">),</span>
+                                             <span class="s2">&quot;the file it was read from&quot;</span><span class="p">),</span>
+                                  <span class="s2">&quot;the file it was read from&quot;</span><span class="p">)</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;CUBEPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">text_value</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s2">&quot;where that file was&quot;</span><span class="p">),</span>
+                                  <span class="s2">&quot;where that file was&quot;</span><span class="p">)</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;DATEEXP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span>
+            <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S&quot;</span><span class="p">),</span> <span class="s2">&quot;UTC, when this map was written&quot;</span><span class="p">)</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;BLANKED&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;NaN&quot;</span><span class="p">,</span> <span class="s2">&quot;untrusted spaxels are NaN here, see TRUST&quot;</span><span class="p">)</span>
+    <span class="n">_settings_cards</span><span class="p">(</span><span class="n">primary</span><span class="p">,</span> <span class="n">settings</span> <span class="ow">or</span> <span class="p">{})</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;AUTHORS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AUTHORS</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;SOFTWARE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SOFTWARE</span>
+
+    <span class="n">trust</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span>
+    <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;EXTNAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;TRUST&quot;</span>
+    <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;BUNIT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;flag&quot;</span><span class="p">,</span> <span class="s2">&quot;bit field, 0 is a measurement&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">bit</span><span class="p">,</span> <span class="n">meaning</span> <span class="ow">in</span> <span class="n">TRUST_MEANINGS</span><span class="p">:</span>
+        <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;BIT</span><span class="si">{</span><span class="n">bit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">meaning</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;set when bit </span><span class="si">{</span><span class="n">bit</span><span class="si">}</span><span class="s2"> is 1&quot;</span><span class="p">)</span>
+    <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;NGOOD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">mask</span> <span class="o">==</span> <span class="n">TRUST_GOOD</span><span class="p">)),</span>
+                             <span class="s2">&quot;spaxels with no reason against them&quot;</span><span class="p">)</span>
+    <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;NTOTAL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="s2">&quot;spaxels in the map&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">card</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span><span class="n">wcs</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="n">card</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;AUTHORS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">AUTHORS</span>
+    <span class="n">trust</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;SOFTWARE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SOFTWARE</span>
+    <span class="k">return</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">([</span><span class="n">primary</span><span class="p">,</span> <span class="n">trust</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="write_plane_fits">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.write_plane_fits">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_plane_fits</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">cards</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write one plane and its trust mask, overwriting what is there.&quot;&quot;&quot;</span>
+    <span class="n">plane_hdus</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">cards</span><span class="p">)</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+
+<div class="viewcode-block" id="map_figure">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.map_figure">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">map_figure</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">plane</span><span class="p">,</span> <span class="n">cube</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">colour_map</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span>
+               <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">cut</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+               <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    One map as a figure meant for print rather than for the screen.</span>
+
+<span class="sd">    White ground, black text and a stated unit on every axis, because the</span>
+<span class="sd">    interface&#39;s dark palette is a property of the interface and a figure</span>
+<span class="sd">    dropped into a paper is read on paper. The colour maps on offer are all</span>
+<span class="sd">    perceptually uniform, and the spaxels that are not measurements are grey</span>
+<span class="sd">    AND hatched AND counted in the caption, so none of the three states is</span>
+<span class="sd">    carried by colour alone.</span>
+
+<span class="sd">    Nothing is drawn that is not data or the scale it is read against: no</span>
+<span class="sd">    grid, no box around the legend, no frame around the figure.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.figure</span><span class="w"> </span><span class="kn">import</span> <span class="n">Figure</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">trusted_values</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+    <span class="n">n_y</span><span class="p">,</span> <span class="n">n_x</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">n_x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">n_y</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">figure</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">figure</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.13</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mf">0.76</span><span class="p">])</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">colour_map</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s2">&quot;#d9d9d9&quot;</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                        <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span>
+                        <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+
+    <span class="n">blanked</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span> <span class="o">!=</span> <span class="n">TRUST_GOOD</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">blanked</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">blanked</span><span class="p">):</span>
+        <span class="n">hatched</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_y</span><span class="p">),</span>
+                                <span class="n">blanked</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
+                                <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">hatches</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;///&quot;</span><span class="p">])</span>
+        <span class="n">hatched</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s2">&quot;#6e6e6e&quot;</span><span class="p">)</span>
+        <span class="n">hatched</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;column   [spaxel]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;row   [spaxel]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">spine</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+        <span class="n">spine</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">plane</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+    <span class="n">bar_axes</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.855</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.035</span><span class="p">,</span> <span class="mf">0.76</span><span class="p">])</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">bar_axes</span><span class="p">)</span>
+    <span class="n">bar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">units</span> <span class="ow">or</span> <span class="s2">&quot;map value&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="n">bar</span><span class="o">.</span><span class="n">outline</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">bar_axes</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">bar_axes</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">():</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">set_fontfamily</span><span class="p">(</span><span class="s2">&quot;monospace&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()</span> <span class="o">+</span> <span class="n">axes</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">():</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">set_fontfamily</span><span class="p">(</span><span class="s2">&quot;monospace&quot;</span><span class="p">)</span>
+
+    <span class="n">blanked_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">blanked</span><span class="p">))</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cube</span><span class="p">))]</span>
+    <span class="k">if</span> <span class="n">scale</span><span class="p">:</span>
+        <span class="n">note</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">scale</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">cut</span><span class="p">:</span>
+        <span class="n">note</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cut</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">blanked_n</span><span class="p">:</span>
+        <span class="n">plural</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">blanked_n</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;s&quot;</span>
+        <span class="n">note</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">blanked_n</span><span class="si">}</span><span class="s2"> spaxel</span><span class="si">{</span><span class="n">plural</span><span class="si">}</span><span class="s2"> blanked and hatched, &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;not a measurement&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">orientation</span><span class="p">:</span>
+        <span class="n">note</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">orientation</span><span class="p">))</span>
+    <span class="n">figure</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.13</span><span class="p">,</span> <span class="mf">0.045</span><span class="p">,</span> <span class="s2">&quot;;  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">note</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mf">5.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#404040&quot;</span><span class="p">,</span>
+                <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">figure</span></div>
+
+
+
+<div class="viewcode-block" id="write_map_image">
+<a class="viewcode-back" href="../../api/generated/brainsp.ifu_output.html#brainsp.ifu_output.write_map_image">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_map_image</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">cards</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write one map as PNG or PDF, whichever the suffix asks for.&quot;&quot;&quot;</span>
+    <span class="n">figure</span> <span class="o">=</span> <span class="n">map_figure</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">cards</span><span class="p">)</span>
+    <span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

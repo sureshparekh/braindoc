@@ -1,0 +1,103 @@
+# Quick start: Python
+
+Everything here runs on the mock data BRAIN ships a generator for, so it can
+be pasted as it is.
+
+## Some data
+
+```python
+import brainsp
+
+folder = brainsp.mock.write_examples()   # ~/.brainsp/examples
+print(folder)
+```
+
+This writes five mock spectra (`spectra/*.spec`, each with a
+`.truth.json` of the values it was built from), a table of per-spectrum
+corrections, an emission-line mask file and a 16 x 16 mock
+datacube. [](../user_guide/mock_data.md) describes each.
+
+## Fit a spectrum
+
+```python
+r = brainsp.fit_spectrum(f"{folder}/spectra/mock_old_population.spec")
+r
+# <FitResult mock_old_population.spec: v0=148.37 km/s, sigma=200.19 km/s, AV=0.2141, chi2=0.66>
+```
+
+The first fit in a Python session compiles the fit for this problem size,
+which takes some seconds; later fits of the same size reuse it.
+
+The result is a {class}`~brainsp.FitResult`:
+
+```python
+r.v0, r.sigma, r.av              # stellar velocity, dispersion (km/s), A_V (mag)
+r.mean_log_age_light             # <log t>_L
+r.mean_log_age_mass              # <log t>_M
+r.mean_metallicity_light         # <Z>_L
+r.chi2, r.adev                   # chi2 / N_eff and the mean deviation (%)
+r.populations                    # the population vector, one row per template
+r.wavelength, r.observed, r.model   # the spectra
+r.summary_file, r.fitted_file    # the two files the fit wrote
+```
+
+## Change settings
+
+Any setting can be given by name:
+
+```python
+r = brainsp.fit_spectrum(f"{folder}/spectra/mock_star_forming_lines.spec",
+                         nebular_mode="espop", wavelength_scale="vacuum",
+                         dust_range=[0, 3])
+r.lines["Halpha_6563"]           # (flux, error)
+r.v_gas, r.sigma_gas             # the gas kinematics
+```
+
+or collected in a {class}`~brainsp.Settings`, which checks every name and
+can be saved and loaded:
+
+```python
+s = brainsp.Settings(nebular_mode="espop", wavelength_scale="vacuum")
+s.save("my_settings.yaml")
+r = brainsp.fit_spectrum("galaxy.spec", s)
+print(brainsp.Settings.describe("wavelength_scale"))
+```
+
+## Many spectra
+
+```python
+results = brainsp.fit_spectra(f"{folder}/spectra/*.spec",
+                              corrections=f"{folder}/spectra/corrections.csv")
+```
+
+All of them in one process, compiled once: see
+[](../user_guide/batches.md).
+
+## A datacube
+
+```python
+cube = brainsp.fit_cube(f"{folder}/cube/mock_cube.fits", redshift=0.02,
+                        wavelength_scale="vacuum", sn_mask=[3, 10],
+                        fit_sn_threshold=3)
+velocity = cube.plane("vrot_star")       # a 16 x 16 array, NaN where unfitted
+cube.names()                             # every map in the megacube
+```
+
+## Figures
+
+```python
+brainsp.plots.spectrum(r, "fit.png")
+brainsp.plots.sfh(r, "sfh.png")
+brainsp.plots.map(cube, "vrot_star", "velocity.pdf", cmap="RdBu_r")
+brainsp.plots.diagnostic(cube, "BPT [N II]", "bpt.png")
+```
+
+## The same run, as a file
+
+```python
+brainsp.write_script("run.py", settings=s,
+                     spectra=[f"{folder}/spectra/mock_old_population.spec"])
+```
+
+`python run.py` then runs it anywhere brainsp is installed. Next:
+[](../tutorials/index.md).

@@ -1,0 +1,248 @@
+# Troubleshooting
+
+## `Fitting 0/3199 pixels`
+
+**Every pixel was rejected.** Almost always the flag column convention.
+
+BRAIN uses **`0` to mean a good pixel**. If your
+pipeline writes `1` for good pixels, invert column four.
+
+Also check that column three (the error) is positive everywhere — a zero or
+negative error rejects the pixel too.
+
+---
+
+## The fit is flat zero above some wavelength
+
+The templates do not reach that far. `BasesGM/` covers **3540–6996 Å**; outside
+that every template column is zero, so the model is identically zero.
+
+BRAIN detects this and warns:
+
+```
+281 pixels lie outside the template coverage (6996-7398 A) and were dropped.
+Narrow the fitting range or use a base library that reaches further.
+```
+
+That is the real message from the shipped example spectrum with
+`wavelength_max: 7400`. The numbers depend on your spectrum and your range.
+
+Narrow `wavelength_max`, or use a library that reaches further. The desktop
+interface prevents the situation by bounding the range slider.
+
+---
+
+## The velocity is wrong, or the fit looks shifted
+
+`velocity_range` must **contain** the galaxy's actual velocity. If you know the
+redshift $z$, it is roughly $z \times 300\,000$ km/s.
+
+A range of `[-2000, 5000]` covers $z \lesssim 0.017$. Beyond that, widen it.
+
+---
+
+## Nearly all populations are zero
+
+That is correct. The solver enforces non-negativity and finds a sparse
+solution — typically 10–20 non-zero populations out of 84. Stellar population
+fitting is degenerate, and a sparse answer is the honest one.
+
+If you want a smoother history, raise `smoothness`.
+
+---
+
+## `chi2/Nl_eff` is far below 1
+
+Your error bars are probably overestimated. $\chi^2/N \approx 0.5$ means the
+model is fitting the data twice as well as the quoted uncertainties suggest is
+possible.
+
+This does not affect the fitted parameters, but it does mean that Monte Carlo
+error bars derived from those uncertainties will be too large.
+
+---
+
+## `A_V` and the nebular continuum disagree with expectations
+
+If your range starts redward of 3646 Å, the Balmer jump is outside it and the
+nebular continuum is nearly degenerate with dust reddening. BRAIN warns:
+
+```
+Nebular continuum is weakly constrained: Balmer jump (3646 A) lies outside
+the fitted range. It may trade against A_V.
+```
+
+Extend the range below 3646 Å if your data allow it. Otherwise treat $A_V$ and
+the nebular strength as a joint constraint.
+
+---
+
+## The log says `nepop` partway through a `photopop` run
+
+Expected, and it is not a mode change. `photopop` always begins with one
+`nepop` fit, because the Case B penalty rows need line fluxes and a Q(H) to
+tie together and neither exists before the first fit. You will see both of
+these, in order:
+
+```
+Full mode bootstraps through one continuum-mode fit: the Case B penalty rows
+need line fluxes and a Q(H) to tie together, and neither exists before the
+first fit.
+...
+Promoting to full mode: hydrogen line amplitudes tied to the Case B
+prediction from Q(H).
+```
+
+The promotion is unconditional. Nothing in BRAIN downgrades `photopop` to
+`nepop` on the basis of the BPT classification, which is reported and never
+acted on. See
+[](modes.md).
+
+If the run ends without the second line, the fit did not reach the promotion
+step; read the log above it for the reason rather than assuming a deliberate
+downgrade.
+
+---
+
+## A line I expected is missing from the flux table
+
+BRAIN fits a line only when it can land on your wavelength grid at some
+velocity and dispersion inside `gas_velocity_range` and
+`gas_dispersion_range`. If it cannot, the line is dropped and named:
+
+```
+1 emission line(s) cannot reach the 4800-5100 A grid at any velocity or
+dispersion the fit is allowed, and are NOT fitted or reported: He II_4686 (4686 A)
+```
+
+This is the intended behaviour and not a failure. Widen `wavelength_min` and
+`wavelength_max` if the line really is in your data; check
+`gas_velocity_range` if the line sits just off the end and your object is at
+a velocity the bounds do not reach.
+
+A line that *is* listed, with a flux of zero, is a different statement: it was
+fitted, and the fit gave it no flux.
+
+---
+
+## Emission lines vanished from the fit
+
+A line whose fitted flux is exactly zero was fitted and given no flux; that is
+a statement about your spectrum, not a failure. Check the summary's
+`## Gas Kinematics ##` block next: it counts how many of each group's lines
+carry flux, and if a group's dispersion reads `unconstrained` then none of
+them do and that group's velocity and dispersion mean nothing either.
+
+This used to have a second cause. BRAIN drew each line by sampling a Gaussian
+at pixel centres, so a line narrower than one pixel lost most of its flux and
+the NNLS drove its amplitude towards zero; a floor on $\sigma_{\rm gas}$ at
+one pixel width held that off. The line is now integrated over the pixel and
+is exact at any width, so neither the symptom nor the floor exists.
+
+---
+
+## Every run recompiles
+
+You are changing something that alters array shapes — the wavelength range, the
+template selection, or the nebular mode. Fix them across a batch. See
+[](performance.md).
+
+Also confirm the cache is enabled and writable:
+
+```python
+from brainsp import brain_cache
+brain_cache.enable_jax_cache(verbose=True)
+```
+
+---
+
+## The GUI will not start
+
+```
+ModuleNotFoundError: No module named 'PySide6'
+```
+
+```bash
+pip install PySide6
+```
+
+(it is installed with brainsp; this means a different environment is running
+Python). On a headless machine there is no display to open a window on: use
+the command line or Python, or forward X11. On Linux, a missing `xcb` plugin
+needs `sudo apt install libxcb-cursor0 libxkbcommon-x11-0`.
+
+---
+
+## Fonts look wrong in the GUI
+
+BRAIN uses Qt precisely because Tk on many Linux builds cannot reach the
+system's TrueType fonts at all. If faces still look wrong, check what Qt
+resolved:
+
+```python
+from PySide6.QtWidgets import QApplication
+app = QApplication([])
+from brainsp import brain_theme
+print(brain_theme.font_report())
+```
+
+It falls back gracefully through a preference list, so a missing font is
+cosmetic, never fatal.
+
+---
+
+## Timings are much worse than documented
+
+Check the machine load: on a shared server, competing jobs inflate every
+measurement several-fold. On a CPU, check that `cpu_workers` is `auto` (or the
+cores you have) and that the log of a cube says it is using worker processes;
+see [](performance.md).
+
+---
+
+## Still stuck
+
+Run the validator, which reports every inconsistency at once:
+
+```bash
+brainsp check settings.yaml
+```
+
+and the self-test, which checks the installation end to end:
+
+```bash
+brainsp selftest --quick
+```
+
+Then open an issue at
+[github.com/sureshparekh/brainv1/issues](https://github.com/sureshparekh/brainv1/issues)
+with that output and the log of the failing run. A failed run in the
+interface also appends its full message to `brain_error.log` in the output
+folder.
+
+---
+
+## The datacube fit says the redshift is missing
+
+A cube's redshift is required: a blank one used to run at $z = 0$ and put an
+observed-frame cube's stars at the wrong velocity, with kinematics running
+into their limits. Give `redshift=` (0 for a cube already at rest), or a
+`redshift` column covering every cube in the table.
+
+---
+
+## Dragging on a cube's spectrum does not add a mask region
+
+Masks are in the rest frame, so the spaxel's spectrum must be: enter the
+redshift (step 2, Corrections; 0 for a rest-frame cube). The line above the
+spectrum says so when it is missing.
+
+---
+
+## An emission line is missing from the results
+
+The log says `emission line(s) lie under the mask or in a gap of the data
+and are NOT fitted`. The mask, or a gap in the spectrum, covers that line, so
+its flux cannot be measured and BRAIN leaves it out rather than report an
+arbitrary number. In the line-fitting modes do not mask the lines you want
+fitted (a mask made for `spop` masks all of them); see [](masks.md).

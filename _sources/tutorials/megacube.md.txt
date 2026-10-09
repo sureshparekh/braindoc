@@ -1,0 +1,90 @@
+# 8. Reading a megacube
+
+A megacube holds every map of a fit. {func}`brainsp.read_megacube` opens one
+and {mod}`brainsp.plots` draws anything in it, to any image format, without a
+display.
+
+```{literalinclude} ../../tutorials_src/t08_megacube.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t08_megacube.txt
+:language: text
+```
+
+## Maps
+
+{func}`brainsp.plots.map` draws one map. Spaxels that were not fitted are
+grey and hatched, never drawn as zero: a megacube stores 0 in an unfitted
+spaxel (as the published megacubes do) and 0 is a plausible value of most
+quantities, so `cube.plane()` returns NaN there instead.
+
+```{image} ../_static/tutorials/t08_velocity.png
+:alt: Stellar velocity map.
+:width: 60%
+```
+
+{func}`brainsp.plots.maps` puts several on one page:
+
+```{image} ../_static/tutorials/t08_page.png
+:alt: Six maps of the mock cube.
+```
+
+The rotation, the hot bulge, the dusty ring, the old centre and the H$\alpha$
+ring of the truth are all there.
+
+## One spaxel
+
+{func}`brainsp.plots.spaxel` draws a spaxel's observed spectrum, the model and
+every fitted emission line; {func}`brainsp.plots.sfh` its star-formation
+history (`y=`, `x=`).
+
+```{image} ../_static/tutorials/t08_spaxel_ring.png
+:alt: A spaxel in the star-forming ring, H-alpha region.
+```
+
+```{image} ../_static/tutorials/t08_sfh_centre.png
+:alt: Star-formation history of the central spaxel.
+```
+
+## Diagnostic diagrams
+
+{func}`brainsp.plots.diagnostic` draws the [N II] and [S II] BPT diagrams and
+the WHAN diagram, every spaxel coloured by its class, with the dividing
+curves (see [](../theory/diagnostics.md)). The ring falls among the star
+forming spaxels and the nucleus among the LINERs, as built.
+
+::::{grid} 1 3 3 3
+:::{grid-item}
+```{image} ../_static/tutorials/t08_BPT_N_II.png
+:alt: BPT [N II].
+```
+:::
+:::{grid-item}
+```{image} ../_static/tutorials/t08_BPT_S_II.png
+:alt: BPT [S II].
+```
+:::
+:::{grid-item}
+```{image} ../_static/tutorials/t08_WHAN.png
+:alt: WHAN.
+```
+:::
+::::
+
+The classification as a map:
+
+```{image} ../_static/tutorials/t08_bpt_map.png
+:alt: BPT [N II] class map.
+:width: 60%
+```
+
+## Exporting maps
+
+{func}`brainsp.plots.export_maps` writes each map as an image and as FITS. The
+FITS file carries the cube's sky coordinates (`RA---TAN`, `DEC--TAN`) and a
+`TRUST` extension whose bits say why a spaxel is not a measurement, so it can
+be used without the megacube. `formats=` takes any of `png`, `pdf`, `svg` and
+`fits`; without `names=` it writes every map.

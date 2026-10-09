@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.gas_diagnostics &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.gas_diagnostics';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.instrumental_lsf" href="brainsp.instrumental_lsf.html" />
+    <link rel="prev" title="brainsp.nebular" href="brainsp.nebular.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.gas_diagnostics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.gas_diagnostics">
+<span id="brainsp-gas-diagnostics"></span><h1>brainsp.gas_diagnostics<a class="headerlink" href="#module-brainsp.gas_diagnostics" title="Link to this heading">#</a></h1>
+<p>BRAIN — nebular diagnostics measured from the fitted emission lines.</p>
+<p>Two things BRAIN measures per spectrum that were previously taken from config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Electron</span> <span class="n">density</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="p">[</span><span class="n">S</span> <span class="n">II</span><span class="p">]</span> <span class="mi">6716</span><span class="o">/</span><span class="mi">6731</span> <span class="n">doublet</span> <span class="n">ratio</span><span class="p">,</span> <span class="ow">and</span> <span class="n">electron</span>
+   <span class="n">temperature</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="p">[</span><span class="n">O</span> <span class="n">III</span><span class="p">]</span> <span class="p">(</span><span class="mi">4959</span><span class="o">+</span><span class="mi">5007</span><span class="p">)</span><span class="o">/</span><span class="mi">4363</span> <span class="n">ratio</span><span class="o">.</span> <span class="n">BRAIN</span> <span class="n">measures</span> <span class="n">both</span>
+   <span class="n">on</span> <span class="n">the</span> <span class="n">fly</span> <span class="ow">and</span> <span class="n">only</span> <span class="n">falls</span> <span class="n">back</span> <span class="n">to</span> <span class="n">standard</span> <span class="n">conditions</span> <span class="p">(</span><span class="mi">100</span> <span class="n">cm</span><span class="o">^-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">^</span><span class="mi">4</span> <span class="n">K</span><span class="p">)</span>
+   <span class="n">when</span> <span class="n">the</span> <span class="n">lines</span> <span class="n">are</span> <span class="n">too</span> <span class="n">weak</span> <span class="n">to</span> <span class="n">be</span> <span class="n">trusted</span><span class="o">.</span>
+
+<span class="mf">2.</span> <span class="n">Spectral</span> <span class="n">classification</span> <span class="n">on</span> <span class="n">the</span> <span class="n">BPT</span> <span class="n">diagram</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">REPORTED</span><span class="p">,</span> <span class="ow">not</span> <span class="n">acted</span>
+   <span class="n">on</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">diagnostic</span><span class="p">,</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">continuum</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">dependent</span> <span class="n">one</span><span class="p">:</span> <span class="n">Hbeta</span> <span class="n">sits</span>
+   <span class="ow">in</span> <span class="n">deep</span> <span class="n">stellar</span> <span class="n">absorption</span><span class="p">,</span> <span class="n">so</span> <span class="n">its</span> <span class="n">measured</span> <span class="n">flux</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">the</span> <span class="n">continuum</span>
+   <span class="n">model</span><span class="p">,</span> <span class="ow">and</span> <span class="n">both</span> <span class="n">BPT</span> <span class="n">ratios</span> <span class="n">use</span> <span class="n">it</span><span class="o">.</span> <span class="n">The</span> <span class="n">same</span> <span class="n">spectrum</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">same</span> <span class="n">library</span>
+   <span class="n">can</span> <span class="n">change</span> <span class="k">class</span><span class="w"> </span><span class="nc">when</span> <span class="n">only</span> <span class="n">the</span> <span class="n">nebular</span> <span class="n">treatment</span> <span class="n">changes</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Both are guarded: a diagnostic that cannot be measured reliably returns the
+fallback and says so, rather than returning a confident wrong number.</p>
+<p>What gates the nebular work is Hbeta DETECTABILITY, not BPT class. If Hbeta
+cannot be measured then the Balmer decrement cannot be formed, so the nebular
+extinction and everything derived from it must not be attempted. That gate
+lives in brainv1 where the line fluxes are, and it is applied once. An earlier
+version had a class-based downgrade here AND a Balmer-detection guard in
+brainv1 that silently overrode it, so photopop mode ran on some spectra and not
+others for reasons that had nothing to do with either rule.</p>
+<p class="rubric">Module Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.BPT_FLAG" title="brainsp.gas_diagnostics.BPT_FLAG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BPT_FLAG</span></code></a></p></td>
+<td><p>Integer code for the BPT label, written to the summary file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.classify_bpt" title="brainsp.gas_diagnostics.classify_bpt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">classify_bpt</span></code></a>(lines[, min_snr_flux])</p></td>
+<td><p>Classify on the [O III]/Hb vs [N II]/Ha diagram.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.electron_density" title="brainsp.gas_diagnostics.electron_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">electron_density</span></code></a>(lines[, Te])</p></td>
+<td><p>Density from the [S II] doublet, via the Proxauf, Ottl &amp; Kimeswenger (2014) calibration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.electron_temperature" title="brainsp.gas_diagnostics.electron_temperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">electron_temperature</span></code></a>(lines[, ne])</p></td>
+<td><p>Temperature from the [O III] auroral-to-nebular ratio (Osterbrock &amp; Ferland 2006, Eq.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.gas_dispersion_text" title="brainsp.gas_diagnostics.gas_dispersion_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gas_dispersion_text</span></code></a>(entry)</p></td>
+<td><p>The token a summary or a log line prints in place of a gas dispersion.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.gas_kinematics_report" title="brainsp.gas_diagnostics.gas_kinematics_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gas_kinematics_report</span></code></a>(group_labels, ...[, ...])</p></td>
+<td><p>Turn each kinematic group's fitted sigma and v0 into something quotable, or say why it is not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.gas_velocity_text" title="brainsp.gas_diagnostics.gas_velocity_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gas_velocity_text</span></code></a>(entry)</p></td>
+<td><p>The same, for the group's velocity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.measure_conditions" title="brainsp.gas_diagnostics.measure_conditions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">measure_conditions</span></code></a>(lines[, verbose])</p></td>
+<td><p>Measure n_e and T_e together, iterating once because each depends on the other.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.gas_diagnostics.nebular_constrained" title="brainsp.gas_diagnostics.nebular_constrained"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nebular_constrained</span></code></a>(wavelength, inv_sigma, flux)</p></td>
+<td><p>Check whether the fit can actually distinguish a nebular continuum.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.electron_density">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">electron_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#electron_density"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.electron_density" title="Link to this definition">#</a></dt>
+<dd><p>Density from the [S II] doublet, via the Proxauf, Ottl &amp; Kimeswenger
+(2014) calibration.</p>
+<p>Returns (n_e, ok). <cite>ok</cite> is False when the lines are too weak or the ratio
+sits outside the density-sensitive window, in which case n_e is the
+default rather than an extrapolation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.electron_temperature">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">electron_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#electron_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.electron_temperature" title="Link to this definition">#</a></dt>
+<dd><p>Temperature from the [O III] auroral-to-nebular ratio (Osterbrock &amp;
+Ferland 2006, Eq. 5.4), solved iteratively because the collisional
+de-excitation correction itself depends on T_e.</p>
+<p>THE NUMERATOR IS THE NEBULAR SUM, F(4959) + F(5007), and a fitted
+doublet weight is not that. The [O III] column is built with its
+components’ ratios relative to 5007, so its weight is F(5007) alone,
+which is what the BPT diagram wants and what the line table reports.
+doublet_nebular_sum_factor supplies the missing F(4959), at the
+branching ratio the design matrix itself used, so the diagnostic and
+the model cannot drift apart.</p>
+<p>The error this repairs was one-sided. Using F(5007) where
+F(4959) + F(5007) belongs makes R low by a factor 1.33510, and
+T_e = 3.29e4 / ln(R corr / 7.90) RISES as R falls, so every measured
+temperature came out too hot, and by more the hotter the gas: a gas at
+10^4 K was reported at 10963 K and one at 2 x 10^4 K at 24263 K, high
+by 9.6 and 21.3 per cent of the right answer. It does
+not stop at a reported number. measure_conditions feeds T_e back into
+the density, and brainv1 rebuilds the NebularModel and refits whenever
+the measured conditions move by more than the tolerance there, so in
+nepop and photopop this sets the nebular continuum itself.</p>
+<p>The R &gt; 8 gate reads as a floor on a nebular-sum ratio now, which is
+how Eq. 5.4 is written; R is 1.33510 times larger than before, so
+ratios between 5.99 and 8.00 in the old units pass it that did not.
+Nothing is reported from that, because R that small implies T_e above
+10^5 K and the 5000-30000 K window below rejects it. The window is
+where the correction changes an answer: a spectrum whose old T_e fell
+between 30000 and 40735 K was discarded as unphysically hot and is now
+measured, and one whose old T_e fell between 5000 and 5230 K was
+measured and is now discarded as too cold.</p>
+<p>[O III] 4363 is intrinsically faint, so this fails far more often than it
+succeeds. Returns (T_e, ok).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.measure_conditions">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">measure_conditions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#measure_conditions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.measure_conditions" title="Link to this definition">#</a></dt>
+<dd><p>Measure n_e and T_e together, iterating once because each depends on the
+other. Returns a dict with the values and whether each was measured.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.classify_bpt">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">classify_bpt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_snr_flux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#classify_bpt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.classify_bpt" title="Link to this definition">#</a></dt>
+<dd><p>Classify on the [O III]/Hb vs [N II]/Ha diagram.</p>
+<p>Demarcations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Kauffmann</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="p">(</span><span class="mi">2003</span><span class="p">)</span>  <span class="n">pure</span> <span class="n">star</span><span class="o">-</span><span class="n">forming</span>
+<span class="n">Kewley</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="p">(</span><span class="mi">2001</span><span class="p">)</span>     <span class="n">maximum</span> <span class="n">starburst</span>
+<span class="n">Schawinski</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="p">(</span><span class="mi">2007</span><span class="p">)</span> <span class="n">Seyfert</span> <span class="o">/</span> <span class="n">LINER</span> <span class="n">split</span> <span class="n">above</span> <span class="n">Kewley</span>
+</pre></div>
+</div>
+<p>Returns (label, info) with label one of
+‘SF’, ‘composite’, ‘Seyfert’, ‘LINER’, ‘undetermined’.</p>
+<p>The label is a report, never a gate. It depends on the continuum model
+through Hbeta, which both ratios use and which sits in deep stellar
+absorption, so changing only the nebular treatment can change the class of
+an unchanged spectrum.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.BPT_FLAG">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">BPT_FLAG</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'LINER':</span> <span class="pre">2,</span> <span class="pre">'SF':</span> <span class="pre">0,</span> <span class="pre">'Seyfert':</span> <span class="pre">3,</span> <span class="pre">'composite':</span> <span class="pre">1,</span> <span class="pre">'undetermined':</span> <span class="pre">-999}</span></span><a class="headerlink" href="#brainsp.gas_diagnostics.BPT_FLAG" title="Link to this definition">#</a></dt>
+<dd><p>Integer code for the BPT label, written to the summary file.</p>
+<p>One code for each of the five classes (Not defined, Pure SF, SFComposite,
+LINER, Seyfert); -999 is “not defined”.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.nebular_constrained">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">nebular_constrained</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inv_sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_snr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#nebular_constrained"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.nebular_constrained" title="Link to this definition">#</a></dt>
+<dd><p>Check whether the fit can actually distinguish a nebular continuum.</p>
+<p>The nebular continuum is smooth and rises to the blue, which makes it
+nearly degenerate with dust. What breaks the degeneracy is the Balmer
+discontinuity at 3646 A: recombination to n=2 emits only at shorter
+wavelengths, so the nebular continuum is elevated blueward of the jump and
+drops sharply across it — a feature no reddening law or stellar template
+can mimic.</p>
+<p>If that region is outside the fitted range, or too noisy to measure, then
+a freely fitted nebular component is unconstrained and will silently trade
+against A_V. Measured on the reference spectrum: S/N ~ 0.5 below the jump
+against ~5.5 in the red, and the fit duly ran A_V to its lower bound.</p>
+<p>Returns (ok, info).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.gas_kinematics_report">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">gas_kinematics_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_kinematics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_group_positions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_fluxes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_wavelengths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lsf_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#gas_kinematics_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.gas_kinematics_report" title="Link to this definition">#</a></dt>
+<dd><p>Turn each kinematic group’s fitted sigma and v0 into something quotable,
+or say why it is not.</p>
+<p>The stellar side has refused to quote a bound since the line-spread
+function work: instrumental_lsf.dispersion_report writes ‘&lt;47.55’ with a
+leading ‘&lt;’ and the word UPPER LIMIT rather than a number a reader could
+mistake for a measurement, and writes ‘unknown’ when the instrument is not
+known. The gas side had nothing, and a sigma_gas sitting exactly on its
+lower bound printed as a plain number. This is that same refusal, for the
+gas, and it deliberately reads the same way; on_bound is imported rather
+than copied so the two cannot come to disagree about what a rail is.</p>
+<p>A group’s dispersion is not quotable for either of two reasons.</p>
+<dl class="simple">
+<dt>ON A BOUND</dt><dd><p>sigma_gas came back on an end of gas_dispersion_range. On the lower
+end the fit wanted a narrower line than it was allowed, so the value
+is an UPPER LIMIT and is written ‘&lt;’; on the upper end it wanted a
+broader one, so it is a LOWER LIMIT and is written ‘&gt;’. Neither is a
+width. This is not hypothetical: until the pixel-width floor was
+removed, both groups of the reference spectrum sat on 58.39 km/s and
+printed as measurements.</p>
+</dd>
+<dt>NO LINE DETECTED</dt><dd><p>The kinematics of a group are carried entirely by the lines in it. The
+non-negative solve puts a line at EXACTLY zero when no non-negative
+amplitude improves the fit, which is a statement and not a rounding,
+and a group whose lines all come back at zero has a flat likelihood in
+both sigma and v0: the optimiser returns whatever it started from or
+wandered to, converged, with nothing to say so. On the reference
+spectrum two of the high-ionisation group’s four lines ([Ne III] 3869
+and the [O III] doublet) fit at exactly zero, so that group’s
+kinematics rest on two lines at most; a spectrum where all four go to
+zero would report two numbers that mean nothing at all. The count of
+lines carrying flux is therefore reported alongside every group, and a
+group with none is refused outright, v0 as well as sigma.</p>
+</dd>
+</dl>
+<p>WHAT THE NUMBER IS A DISPERSION OF</p>
+<p>sigma_gas is OBSERVED. The instrumental line-spread function is still in
+it; nothing is deconvolved from the emission line, which is why the label
+written beside it states the convention rather than leaving it to be
+assumed. sigma_star in the same summary is INTRINSIC, the instrument taken
+out in quadrature, so the two numbers are not comparable as printed and
+the file has to say which is which.</p>
+<p>sigma_inst is reported next to sigma_gas, per group, whenever
+‘instrumental_resolution’ is set, and ‘unknown’ when it is not. That
+follows Westfall et al. (2019), who report the observed and the
+instrumental dispersion as separate maps and deliberately do not do the
+subtraction (Section 7.3: “we do not provide the corrected
+velocity dispersion … We leave it to the user”). Nothing here is
+clipped, floored or called zero when sigma_gas comes out below sigma_inst,
+which over the MaNGA line-spread function of 68.0-83.5 km/s is where every
+sigma_gas BRAIN currently reports lands: Westfall Section 7.6.3 is
+explicit that such a measurement is neither equivalent to nor a valid
+measurement of sigma = 0, and recommends carrying the negative sigma^2
+rather than clipping it. Both numbers are given so that the reader can do
+that arithmetic, and neither is done for them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>group_labels</strong><span class="classifier">list</span></dt><dd><p>The groups’ labels, in the POSITION order the fitted parameter vector
+lays them out. What the user called a group and where it sits in that
+vector are different things; see emission_lines.group_positions.</p>
+</dd>
+<dt><strong>group_kinematics</strong><span class="classifier">dict</span></dt><dd><p>{label: (sigma_gas, v0_gas)} in km/s, as the fit returned them.</p>
+</dd>
+<dt><strong>line_names</strong><span class="classifier">list of str</span></dt><dd><p>One name per fitted gas column.</p>
+</dd>
+<dt><strong>line_group_positions</strong><span class="classifier">sequence of int</span></dt><dd><p>The POSITION of each column’s group, one per column.</p>
+</dd>
+<dt><strong>line_fluxes</strong><span class="classifier">sequence of float</span></dt><dd><p>The fitted weight of each column, which is its flux.</p>
+</dd>
+<dt><strong>line_wavelengths</strong><span class="classifier">sequence of float</span></dt><dd><p>One wavelength per column, in Angstrom, for looking up the instrument.</p>
+</dd>
+<dt><strong>lower_bound, upper_bound</strong><span class="classifier">float</span></dt><dd><p>gas_dispersion_range, in km/s.</p>
+</dd>
+<dt><strong>lsf_info</strong><span class="classifier">dict or None</span></dt><dd><p>What instrumental_lsf.prepare_templates recorded about the data’s
+line-spread function. None, or a run with no ‘instrumental_resolution’,
+gives sigma_inst = None and the word ‘unknown’ in the output.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>list of dict, one per group, in the same position order as group_labels.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.gas_dispersion_text">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">gas_dispersion_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#gas_dispersion_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.gas_dispersion_text" title="Link to this definition">#</a></dt>
+<dd><p>The token a summary or a log line prints in place of a gas dispersion.</p>
+<p>A quotable dispersion is the number. A dispersion on the lower bound is
+written ‘&lt;value’, on the upper bound ‘&gt;value’, and a group with no
+detected line prints the word ‘unconstrained’ and no number at all –
+exactly as instrumental_lsf writes ‘&lt;47.55’ and ‘unknown’ for the stellar
+side, so that the two blocks of one summary file read alike. The value the
+optimiser returned for an unconstrained group is not lost; it is in the
+reason text, where it cannot be mistaken for a result.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.gas_diagnostics.gas_velocity_text">
+<span class="sig-prename descclassname"><span class="pre">brainsp.gas_diagnostics.</span></span><span class="sig-name descname"><span class="pre">gas_velocity_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/gas_diagnostics.html#gas_velocity_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.gas_diagnostics.gas_velocity_text" title="Link to this definition">#</a></dt>
+<dd><p>The same, for the group’s velocity.</p>
+<p>A velocity is not bounded in the way a dispersion is – a fit that reaches
+the end of gas_velocity_range has a different problem, and v0_star already
+reports its own – so the only refusal here is the group with no detected
+line, whose velocity is as unconstrained as its width.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.nebular.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.nebular</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.instrumental_lsf.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.instrumental_lsf</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.electron_density"><code class="docutils literal notranslate"><span class="pre">electron_density()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.electron_temperature"><code class="docutils literal notranslate"><span class="pre">electron_temperature()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.measure_conditions"><code class="docutils literal notranslate"><span class="pre">measure_conditions()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.classify_bpt"><code class="docutils literal notranslate"><span class="pre">classify_bpt()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.BPT_FLAG"><code class="docutils literal notranslate"><span class="pre">BPT_FLAG</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.nebular_constrained"><code class="docutils literal notranslate"><span class="pre">nebular_constrained()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.gas_kinematics_report"><code class="docutils literal notranslate"><span class="pre">gas_kinematics_report()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.gas_dispersion_text"><code class="docutils literal notranslate"><span class="pre">gas_dispersion_text()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.gas_diagnostics.gas_velocity_text"><code class="docutils literal notranslate"><span class="pre">gas_velocity_text()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

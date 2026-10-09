@@ -1,0 +1,73 @@
+# Mock data
+
+{mod}`brainsp.mock` builds spectra and a datacube whose right answer is
+known, for the tutorials, the self-test, and for testing an analysis before
+trusting it on real data.
+
+```python
+folder = brainsp.mock.write_examples()          # ~/.brainsp/examples
+```
+
+```bash
+brainsp examples [FOLDER]
+```
+
+| File | Built as | Fit with |
+|---|---|---|
+| `spectra/mock_old_population.spec` | 12.6, 8.9, 5 Gyr, $Z$ = 0.019–0.0315; $A_V$ 0.2; $v$ 150, $\sigma$ 200 km/s; S/N 100 | defaults |
+| `spectra/mock_young_mixture.spec` | 100 Myr, 1 Gyr, 12.6 Gyr; $A_V$ 0.6; $v$ −60, $\sigma$ 80; S/N 100 | defaults |
+| `spectra/mock_star_forming_lines.spec` | 10 Myr, 200 Myr, 5 Gyr; $A_V$ 0.45; H II-region lines, H$\alpha$ = 6, gas $v$ 50, $\sigma$ 60; S/N 100 | `espop`, `vacuum` |
+| `spectra/mock_seyfert_agn.spec` | old host + 25 % $F_\nu\propto\nu^{-1.5}$; Seyfert lines, gas $\sigma$ 250; S/N 100 | `espop`, `vacuum`, `include_power_law` |
+| `spectra/mock_observed_frame.spec` | the old population at $z$ = 0.03 behind $E(B-V)$ = 0.05 | `spectrum_redshift=0.03`, `spectrum_in_rest_frame=False`, `galactic_ebv=0.05` |
+| `spectra/corrections.csv` | each spectrum's redshift and Galactic $E(B-V)$ | `corrections=` |
+| `masks/emission_lines.sm` | the standard SDSS emission-line windows | `mask=` |
+| `cube/mock_cube.fits` | 16 x 16 MaNGA-like cube at $z$ = 0.02 (below) | `redshift=0.02`, `vacuum` |
+
+Each spectrum has a `.truth.json` beside it, the cube a `.truth.fits`.
+
+## The forward model
+
+Written out in {mod}`brainsp.mock`, independently of the fitter:
+
+1. **Population**: chosen BasesGM templates, each normalised to 1 at 5500 Å,
+   weighted by light fraction.
+2. **Dust**: multiplied by $10^{-0.4 A_V [q(\lambda) - q(5500)]}$ with the CCM
+   law (a NumPy copy, agreeing with BRAIN's to $4\times10^{-7}$).
+3. **Kinematics**: a Gaussian line-of-sight velocity distribution on a
+   logarithmic grid of 6.9 km/s per pixel, then shifted by $v_\star$.
+4. **Emission lines**: Gaussians at BRAIN's vacuum rest wavelengths, the
+   tied doublets at their atomic ratios, shifted and broadened by the gas
+   kinematics.
+5. **Redshift** ($\lambda \times (1+z)$, flux density not rescaled), then
+   **Galactic dust** at observed wavelengths.
+6. **Noise**: Gaussian, S/N given at 5500 Å, scaling as $\sqrt{F}$; 0.2 per
+   cent of pixels flagged bad.
+
+The model is built on a grid ten times finer than the output so that
+sampling it does not itself broaden the lines (sampling from a 69 km/s grid
+adds about 28 km/s in quadrature).
+
+## The cube
+
+A disc rotating at 220 km/s (turnover 2.5 spaxels) seen at 55° and position
+angle 30°; a bulge with $\sigma_\star$ from 200 km/s at the centre to 60 km/s;
+an old population dominating the centre, an intermediate one the disc, a
+young one in a ring at 5 spaxels; dust peaking in that ring; H II-region
+emission in the ring and LINER-like emission in the nucleus; S/N from 58 at
+the centre to 3 at the edge; spaxels outside a 7.4-spaxel radius empty
+(`MASK` bit 10 set, `IVAR` 0). Layout: `FLUX` (1e-17 erg/s/cm²/Å/spaxel),
+`IVAR`, `MASK`, `WAVE`, logarithmic at $\Delta\log_{10}\lambda = 10^{-4}$,
+celestial WCS with 0.5″ spaxels.
+
+## Your own
+
+```python
+wave, flux, err, flag, truth = brainsp.mock.make_spectrum(
+    population=[(1e9, 0.019, 0.6), (1e10, 0.019, 0.4)],
+    av=0.3, v=120, sigma=150, sn=50, lines="liner", halpha=3.0,
+    redshift=0.05, seed=7)
+brainsp.mock.write_spectrum("my_mock.spec", wave, flux, err, flag, truth)
+brainsp.mock.write_cube("my_cube.fits", n=24, redshift=0.01)
+```
+
+See {func}`brainsp.mock.make_spectrum` for every option.

@@ -1,0 +1,75 @@
+# Light and dark
+
+BRAIN has a light and a dark theme; the button at the top right of the window
+switches between them, and every control, plot and dialog follows. The
+documentation shows the light theme; these are the same views in the dark one.
+
+## Spectrum, step 1
+
+```{image} ../_static/gui/dark_spectrum_step1.png
+:alt: Spectrum, step 1, dark theme.
+:class: screenshot
+```
+
+## Spectrum, corrections
+
+```{image} ../_static/gui/dark_spectrum_step2_corrections.png
+:alt: Spectrum, corrections, dark theme.
+:class: screenshot
+```
+
+## Spectrum, masks
+
+```{image} ../_static/gui/dark_spectrum_step3_masks.png
+:alt: Spectrum, masks, dark theme.
+:class: screenshot
+```
+
+## Spectrum, model
+
+```{image} ../_static/gui/dark_spectrum_step4_model.png
+:alt: Spectrum, model, dark theme.
+:class: screenshot
+```
+
+## Spectrum, a fit
+
+```{image} ../_static/gui/dark_spectrum_fit.png
+:alt: Spectrum, a fit, dark theme.
+:class: screenshot
+```
+
+## Datacube, cubes
+
+```{image} ../_static/gui/dark_cube_step1_cubes.png
+:alt: Datacube, cubes, dark theme.
+:class: screenshot
+```
+
+## Datacube, masks
+
+```{image} ../_static/gui/dark_cube_step4_masks.png
+:alt: Datacube, masks, dark theme.
+:class: screenshot
+```
+
+## Datacube, a run in progress
+
+```{image} ../_static/gui/dark_cube_running.png
+:alt: Datacube, a run in progress, dark theme.
+:class: screenshot
+```
+
+## Results
+
+```{image} ../_static/gui/dark_results.png
+:alt: Results, dark theme.
+:class: screenshot
+```
+
+## Results, BPT diagram
+
+```{image} ../_static/gui/dark_results_bpt.png
+:alt: Results, BPT diagram, dark theme.
+:class: screenshot
+```

@@ -1,0 +1,23 @@
+﻿brainsp.instrumental\_lsf
+=========================
+
+.. automodule:: brainsp.instrumental_lsf
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      convolve_group_to_data_lsf
+      convolve_on_native_grid
+      dispersion_report
+      gaussian_filter1d
+      instrumental_dispersion_at
+      on_bound
+      parse_resolution
+      prepare_templates
+      read_library_headers
+      removed_redshift
+      sigma_angstrom
+      sigma_kms
+   

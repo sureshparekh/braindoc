@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.instrumental_lsf &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.instrumental_lsf';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.reddening_catalogue" href="brainsp.reddening_catalogue.html" />
+    <link rel="prev" title="brainsp.gas_diagnostics" href="brainsp.gas_diagnostics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.instrumental_lsf</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.instrumental_lsf">
+<span id="brainsp-instrumental-lsf"></span><h1>brainsp.instrumental_lsf<a class="headerlink" href="#module-brainsp.instrumental_lsf" title="Link to this heading">#</a></h1>
+<p>BRAIN — instrumental resolution and the line-spread function.</p>
+<p>The data and the template library almost never share a line-spread function,
+and the difference between them lands directly on the fitted stellar velocity
+dispersion. This module measures that difference, brings the library up to the
+data’s line-spread function once at load time, and refuses when the library is
+the broader of the two.</p>
+<p>Observed frame against rest frame. The templates live at rest wavelengths, and
+so does a spectrum that was de-redshifted before BRAIN saw it, but the
+spectrograph smeared the light at the wavelength it was recorded at. So
+sigma_inst is looked up at lambda_rest * (1 + z) while sigma_lib is looked up
+at lambda_rest, and the two are compared in km/s, a currency in which the
+(1 + z) factor cancels. <cite>spectrum_redshift</cite> is the redshift that was <em>removed</em>
+from the spectrum before BRAIN saw it.</p>
+<p>The data is never smoothed. The other way to match two line-spread functions is
+to degrade the better one, which when the library is broader means convolving
+the spectrum. Every chi2 in this code is formed with a diagonal inverse
+variance; smoothing correlates neighbouring noise samples, so chi2 drops for a
+reason that is not a better fit. When the library is broader BRAIN fits at the
+library’s native resolution and says in the summary what that costs.</p>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.convolve_group_to_data_lsf" title="brainsp.instrumental_lsf.convolve_group_to_data_lsf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convolve_group_to_data_lsf</span></code></a>(ssp_folder, ...)</p></td>
+<td><p>Rebuild one resolution group from its files: convolve, resample, normalise.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.convolve_on_native_grid" title="brainsp.instrumental_lsf.convolve_on_native_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convolve_on_native_grid</span></code></a>(lam, block, sigma_lam)</p></td>
+<td><p>Convolve templates at the sampling the library wrote them on.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.dispersion_report" title="brainsp.instrumental_lsf.dispersion_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispersion_report</span></code></a>(info, sigma_obs, ...[, ...])</p></td>
+<td><p>Turn the fitted dispersion into the three numbers that belong in a summary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.gaussian_filter1d" title="brainsp.instrumental_lsf.gaussian_filter1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaussian_filter1d</span></code></a>(values, sigma_pixels)</p></td>
+<td><p>Convolve along the first axis with a Gaussian whose dispersion varies pixel by pixel, exactly, including for widths well below one pixel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.instrumental_dispersion_at" title="brainsp.instrumental_lsf.instrumental_dispersion_at"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instrumental_dispersion_at</span></code></a>(info, wavelengths)</p></td>
+<td><p>The instrumental dispersion in km/s at a set of wavelengths, or None.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.on_bound" title="brainsp.instrumental_lsf.on_bound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_bound</span></code></a>(value, lower[, upper])</p></td>
+<td><p>Is a fitted dispersion sitting on the lower or the upper end of its range?</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.parse_resolution" title="brainsp.instrumental_lsf.parse_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_resolution</span></code></a>(value, setting_name)</p></td>
+<td><p>Turn one setting into a resolution descriptor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.prepare_templates" title="brainsp.instrumental_lsf.prepare_templates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_templates</span></code></a>(matrix, lam_grid, cfg, ...)</p></td>
+<td><p>Bring the templates to the data's line-spread function, or explain why not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.read_library_headers" title="brainsp.instrumental_lsf.read_library_headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_library_headers</span></code></a>(ssp_folder, bases_info)</p></td>
+<td><p>Read the resolution each template file states about itself.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.removed_redshift" title="brainsp.instrumental_lsf.removed_redshift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removed_redshift</span></code></a>(cfg)</p></td>
+<td><p>The redshift taken out of the data before the fit, whoever took it out.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.sigma_angstrom" title="brainsp.instrumental_lsf.sigma_angstrom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma_angstrom</span></code></a>(descriptor, lam[, lookup_lam])</p></td>
+<td><p>Evaluate a resolution descriptor as a dispersion in Angstrom.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.instrumental_lsf.sigma_kms" title="brainsp.instrumental_lsf.sigma_kms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma_kms</span></code></a>(descriptor, lam[, lookup_lam])</p></td>
+<td><p>The same width expressed as a velocity dispersion.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.removed_redshift">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">removed_redshift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#removed_redshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.removed_redshift" title="Link to this definition">#</a></dt>
+<dd><p>The redshift taken out of the data before the fit, whoever took it out.</p>
+<p>A spectrum’s is spectrum_redshift, whether you removed it before handing
+the spectrum over or BRAIN removed it (spectrum_in_rest_frame: false). A
+cube’s is cube_redshift, which BRAIN always removes itself. brain_settings
+refuses both at once, so at most one is non-zero.</p>
+<p>Only spectrum_redshift used to be read here. A cube fitted at z &gt; 0 has
+spectrum_redshift = 0, so the instrument’s resolution was looked up at the
+rest wavelength instead of the observed one: harmless for a constant R,
+wrong by a factor (1 + z) for a resolution given in Angstrom, and at the
+wrong place on a resolution curve.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.parse_resolution">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">parse_resolution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setting_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#parse_resolution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.parse_resolution" title="Link to this definition">#</a></dt>
+<dd><p>Turn one setting into a resolution descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>dict or None</dt><dd><p>Descriptor with a ‘kind’ of ‘angstrom’, ‘kms’ or ‘table’, plus a
+‘text’ field naming it for the log and the summary.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Accepted forms:</p>
+<dl class="simple">
+<dt>None</dt><dd><p>No information. Returns None.</p>
+</dd>
+<dt>a number</dt><dd><p>Full width at half maximum in Angstrom, constant with wavelength.</p>
+</dd>
+<dt>“2.51 A” / “2.51 A FWHM”</dt><dd><p>The same thing written out.</p>
+</dd>
+<dt>“2.51 A sigma”</dt><dd><p>A dispersion in Angstrom rather than a full width.</p>
+</dd>
+<dt>“45 km/s”</dt><dd><p>Constant in velocity. Read as a dispersion, because that is the
+convention every library that quotes one uses: template headers
+say <cite>vd (km/s)</cite>, and vd is a sigma. Write “45 km/s FWHM” if you mean
+a full width.</p>
+</dd>
+<dt>a path to a file</dt><dd><p>Two columns, wavelength in Angstrom and full width at half maximum in
+Angstrom, interpolated onto the fitted grid.</p>
+</dd>
+</dl>
+<p>The frame the tabulated wavelengths are read in is decided by the setting,
+not by this parser, which serves both. <cite>instrumental_resolution</cite> is
+evaluated at observed-frame wavelengths, lambda_rest * (1 + z), because a
+line-spread function is a property of the spectrograph and the spectrograph
+saw the light there. <cite>library_resolution</cite> is evaluated at rest wavelengths,
+because that is where the library lives.</p>
+<p>A unit is required on any string form. “2.51” and “2.51 FWHM” are refused
+rather than assumed to be Angstrom, because the same two characters of
+ambiguity between Angstrom and km/s is a factor of twenty on the answer.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.sigma_angstrom">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">sigma_angstrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookup_lam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#sigma_angstrom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.sigma_angstrom" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate a resolution descriptor as a dispersion in Angstrom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>descriptor</strong><span class="classifier">dict</span></dt><dd><p>From parse_resolution or read_library_headers.</p>
+</dd>
+<dt><strong>lam</strong><span class="classifier">1D array</span></dt><dd><p>The wavelengths the returned widths belong to. Widths come back in the
+units of this axis.</p>
+</dd>
+<dt><strong>lookup_lam</strong><span class="classifier">1D array or None</span></dt><dd><p>The wavelengths at which the descriptor is evaluated, when that differs
+from <cite>lam</cite>. This is how a line-spread function tabulated in the
+observed frame is used on a rest-frame grid: look up at
+lambda_rest * (1 + z), and the width returned is then rescaled by
+lam / lookup_lam to land back on the rest-frame axis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.sigma_kms">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">sigma_kms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookup_lam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#sigma_kms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.sigma_kms" title="Link to this definition">#</a></dt>
+<dd><p>The same width expressed as a velocity dispersion.</p>
+<p>Velocity widths are frame-invariant, so this is the currency in which the
+data and the library are compared and in which every reported number is
+quoted.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.read_library_headers">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">read_library_headers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssp_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases_info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#read_library_headers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.read_library_headers" title="Link to this definition">#</a></dt>
+<dd><p>Read the resolution each template file states about itself.</p>
+<p>Two header lines are understood, and a file may carry both:</p>
+<blockquote>
+<div><p># Spectral resolution: 2.51 (A) FWHM
+# smoothed by a vd (km/s) = 45.0</p>
+</div></blockquote>
+<p>The first is a full width at half maximum in Angstrom, constant with
+wavelength. The second is a velocity dispersion applied on top of it, and
+is constant in km/s. A file carrying both has been broadened twice, so the
+two add in quadrature.</p>
+<p>A file that states neither is returned as None. It is not guessed at: a
+library’s resolution is a measurable property of the library, and inventing
+a plausible number for it would produce exactly the kind of fit that looks
+right and is not. The caller is expected to say so and to name the
+<cite>library_resolution</cite> setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list</dt><dd><p>One descriptor (or None) per entry in bases_info, in the same order.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.gaussian_filter1d">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">gaussian_filter1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_pixels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#gaussian_filter1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.gaussian_filter1d" title="Link to this definition">#</a></dt>
+<dd><p>Convolve along the first axis with a Gaussian whose dispersion varies pixel
+by pixel, exactly, including for widths well below one pixel.</p>
+<p>Sub-pixel is the ordinary case here, not an edge case: a 2.51 A library
+against a 2.9 A spectrograph asks for 1.45 A of extra width, which is a
+third of a pixel where the BC03 grid opens out to 4 A. A kernel built by
+point-sampling a Gaussian at integer offsets and renormalising cannot
+deliver that, and neither can one built by integrating it over the pixel:
+the first collapses below about 0.7 pixels and reaches zero near 0.1, and
+the second converges to the pixel’s own top hat, delivering a variance
+wrong by dlam^2/12 in one direction or the other at every width. Either way
+the broadening that was asked for is silently not the one applied, and the
+difference lands on the fitted stellar dispersion.</p>
+<p>The construction here works in Fourier space, where a Gaussian of any
+width, undersampled or not, is the exact multiplier exp(-sigma^2 k^2 / 2).
+One transform cannot serve a width that changes with wavelength, so a set
+of sigma nodes is laid across the range of widths required, the whole array
+is convolved at each node, and every output pixel is a blend of the two
+nodes that bracket its own width.</p>
+<p>The blend is linear in VARIANCE, not in sigma. A mixture of two Gaussians
+has the weighted mean of their variances as its second moment, so weights
+f and 1 - f chosen from sigma^2 make the delivered second moment equal to
+the requested one exactly, at every pixel, at every width. Blending
+linearly in sigma would instead deliver a variance too large by
+f (1 - f) (sigma_1 - sigma_0)^2, which is a fraction of a per cent at a
+pixel of width but a factor of two at a twentieth of one.</p>
+<p>Nodes are spaced NODE_SPACING_PIXELS apart so the residual difference in
+SHAPE between the mixture and a true Gaussian stays negligible, and the
+count is capped at MAX_NODES. Only one node’s transform exists at a time,
+so the working set stays at the size of the input.</p>
+<p>The array is zero-padded on both sides by more than the widest kernel
+before the transform, so the periodic wrap-around an FFT convolution
+implies cannot reach any pixel of the input. Zero padding also darkens the
+ends, which is deliberate: the caller divides by this function applied to
+an array of ones, and that ratio renormalises the ends in one step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>values</strong><span class="classifier">array, (n_pix,) or (n_pix, n_column)</span></dt><dd><p>Spectra to convolve.</p>
+</dd>
+<dt><strong>sigma_pixels</strong><span class="classifier">1D array, (n_pix,)</span></dt><dd><p>Gaussian dispersion at each pixel, in pixels of this grid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.convolve_on_native_grid">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">convolve_on_native_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_lam</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#convolve_on_native_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.convolve_on_native_grid" title="Link to this definition">#</a></dt>
+<dd><p>Convolve templates at the sampling the library wrote them on.</p>
+<p>The width that separates two line-spread functions is quoted in Angstrom
+on the template’s own wavelength axis, so that is where it belongs. The
+return value carries the axis it was computed on, because for one class of
+library grid that axis cannot be the native one.</p>
+<p>Three grids, three answers:</p>
+<p>Uniform in wavelength – the shipped BasesGM, a clean 1 A step – and
+uniform in log wavelength are both handled on the native axis itself, with
+the requested width converted to pixels of that axis. Nothing is
+interpolated and nothing is moved.</p>
+<p>Everything else has no uniform sampling for the Fourier kernel to be exact
+on. BC03 is the example that matters: 1 A through the blue, opening out to
+2, 3, 5 and eventually 2e5 A in the infrared. Those are convolved on a
+uniform log-wavelength axis whose velocity step is the FINEST the native
+grid uses anywhere in its range, so the working axis never undersamples
+what the file contains, and the caller resamples from that axis instead of
+from the native one. That is one flux-conserving mapping onto a grid at
+least as fine as the input, which is a different thing from convolving on
+the coarse grid the fit runs on.</p>
+<p>The ends are renormalised rather than darkened: gaussian_filter1d
+zero-pads, so an array of ones convolved with the identical kernel is
+exactly the fraction of the kernel that landed inside the array, and
+dividing by it makes the operator preserve a constant end to end.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>axis</strong><span class="classifier">1D array</span></dt><dd><p>The wavelengths the convolved block belongs to.</p>
+</dd>
+<dt><strong>convolved</strong><span class="classifier">2D array</span></dt><dd><p>One column per input column.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.convolve_group_to_data_lsf">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">convolve_group_to_data_lsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssp_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#convolve_group_to_data_lsf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.convolve_group_to_data_lsf" title="Link to this definition">#</a></dt>
+<dd><p>Rebuild one resolution group from its files: convolve, resample, normalise.</p>
+<p>This is the order the correction has to happen in. The kernel that carries
+a library up to a spectrograph’s line-spread function is a width in
+Angstrom on the grid the library was written on, so it is applied there,
+at the library’s own sampling, before anything has been interpolated.
+Only then is the result mapped onto the fitted log-lambda grid, and only
+then is it divided by its own value at the normalisation wavelength.</p>
+<p>Doing it the other way round – resample, then convolve – applies the
+kernel on a grid whose Angstrom-per-pixel is not the one the width was
+quoted on, to flux that has already been through one interpolation, and it
+normalises before the operation that changes the number being normalised.</p>
+<p>The columns are built from the files rather than from the matrix that is
+already on the log grid, because the native sampling is the whole point and
+it does not survive that matrix. Every column the caller replaces is
+therefore resampled exactly once; the first resampling is discarded, not
+composed with a second.</p>
+<p>Each file is trimmed to the fitted range plus ten kernel dispersions before
+anything is convolved. The trim never cuts inside the fitted range, so
+which target pixels a template covers is exactly what it was, and the
+pixels it removes are ones the Gaussian tail reaches at the 1e-22 level.
+It matters for a library like BC03 that runs to 1.6e6 A: without it the
+working axis for a non-uniform grid would be laid across five decades of
+wavelength to serve a fit that uses one octave of it.</p>
+<p><cite>library_res</cite> is evaluated at rest wavelengths and <cite>data_res</cite> at
+lambda_rest * (1 + redshift), for the reason at the top of this module: the
+spectrograph smeared the light where it recorded it. Where the library is
+the broader of the two the difference is clipped to zero rather than
+sharpened. The caller has already refused any group for which that happens
+at a fitted pixel, so the clip can only bite outside the fitted window –
+on the BC03 infrared, say, where a library broadened in velocity overtakes
+an instrument of constant width in Angstrom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>columns</strong><span class="classifier">2D array, (n_grid, len(indices))</span></dt><dd><p>Normalised to exactly 1.0 at lam_grid[i_ref].</p>
+</dd>
+<dt><strong>factors</strong><span class="classifier">1D array, (len(indices),)</span></dt><dd><p>What each column was divided by. This is the column’s entry in
+fbase_norms: it is measured on the template that is actually fitted,
+because the convolution happened before it was measured.</p>
+</dd>
+<dt><strong>usable</strong><span class="classifier">1D bool array, (len(indices),)</span></dt><dd><p>False where the convolved column is zero or not finite at the
+normalisation wavelength and the 1.0 convention could not be restored.</p>
+</dd>
+<dt><strong>delta_lam</strong><span class="classifier">1D array</span></dt><dd><p>The broadening applied, in Angstrom, over the trimmed native grid of
+the first file in the group. Reported, not used.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.prepare_templates">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">prepare_templates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fbase_norms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#prepare_templates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.prepare_templates" title="Link to this definition">#</a></dt>
+<dd><p>Bring the templates to the data’s line-spread function, or explain why not.</p>
+<p>Called once, immediately after the templates have been mapped onto the
+log-lambda grid and after the pixels outside the template coverage have
+been dropped from the fit. The returned matrix has exactly the shape it
+came in with, so nothing downstream recompiles.</p>
+<p>With <cite>instrumental_resolution</cite> unset there is nothing to match to, the
+matrix and the normalisation factors are returned as the very objects they
+came in as, and the fit is bit-for-bit what it was.</p>
+<p><cite>fit_pixels</cite> is the boolean mask of pixels the fit will actually use, which
+is where the comparison is made. Judging it over the whole grid instead
+binds the decision to pixels no template covers and that are about to be
+thrown away: on the reference setup, widening <cite>wavelength_max</cite> from 6900 to
+9000 A flipped the module from correcting to refusing on the strength of
+379 pixels beyond 8445 A that are identically zero in every template.</p>
+<p>The decision is taken once per resolution group, not once for the library.
+A heterogeneous library is the normal case — the shipped one is 56 files at
+2.51 A FWHM and 28 at 0.3 A FWHM plus 45 km/s — and a global refusal lets
+one group that crosses the data’s line-spread function leave every other
+group uncorrected. Groups whose difference is real at every fitted pixel
+are convolved; the rest are left at their native resolution; which is which
+is recorded, reported, and carried into <cite>dispersion_report</cite>.</p>
+<p>A group that is corrected is rebuilt from its files by
+<cite>convolve_group_to_data_lsf</cite>: convolved at the library’s own sampling,
+then resampled onto lam_grid, then divided by its own value at the
+normalisation wavelength. The 1.0 at that wavelength and the matching
+entry in <cite>fbase_norms</cite> therefore hold by construction rather than by a
+correction applied afterwards — the factor is measured on the template
+that is actually fitted, because the convolution has already happened when
+it is measured. Everything downstream — the light fractions, Mini, Mcor,
+Q(H) — is written against that convention, and the physical SSP the column
+and its factor jointly describe is untouched.</p>
+<p><cite>fbase_norms</cite> may be None, in which case the returned array carries 1.0 for
+every group that was left alone and the measured factor for every group
+that was rebuilt.</p>
+<p>Pixels that were exactly zero before the correction are zero after it: a
+template covers the span its file covers, convolving does not change that
+span, and <cite>resample_template</cite> leaves everything outside it at zero. The
+pixels at the edge of that span are renormalised rather than darkened; see
+convolve_native_gaussian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>matrix</strong><span class="classifier">2D array</span></dt><dd><p>Corrected templates, or the input array itself when no correction was
+applied.</p>
+</dd>
+<dt><strong>fbase_norms</strong><span class="classifier">1D array</span></dt><dd><p>Normalisation factors, matching the columns that came back.</p>
+</dd>
+<dt><strong>info</strong><span class="classifier">dict</span></dt><dd><p>Everything the summary needs, including the per-pixel dispersions and
+the per-group verdicts that survive into the reported numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.on_bound">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">on_bound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#on_bound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.on_bound" title="Link to this definition">#</a></dt>
+<dd><p>Is a fitted dispersion sitting on the lower or the upper end of its range?</p>
+<p>Returns (on_lower, on_upper). A parameter at a bound is not a measurement
+of anything, and the stellar and the gas dispersions have to agree on when
+that has happened, so the test lives here once rather than in each of the
+two reports.</p>
+<p>The test is made to a tolerance of 1e-4 of the WIDTH of the allowed range
+rather than to an absolute one in km/s, because a range starting at 0
+makes any absolute tolerance either meaningless or arbitrary: the
+optimiser returns values like 5.6e-05 km/s on a railed fit, which an
+absolute 1e-6 km/s test misses and then reports as a measurement of 0.00.
+A range of zero width – the case where no upper bound was supplied –
+falls back to a relative test on the bound itself.</p>
+<p>A non-finite value is on neither bound; it is a failed fit, and the caller
+has to say so in its own words.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.instrumental_dispersion_at">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">instrumental_dispersion_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelengths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#instrumental_dispersion_at"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.instrumental_dispersion_at" title="Link to this definition">#</a></dt>
+<dd><p>The instrumental dispersion in km/s at a set of wavelengths, or None.</p>
+<p><cite>info[“sigma_inst_kms”]</cite> is the data’s line-spread function expressed as a
+velocity dispersion, sampled on <cite>info[“lam”]</cite>, which is the REST grid the
+fit runs on; the observed-frame lookup and the (1 + z) that cancels in
+km/s are already inside it. Interpolating it onto the rest wavelengths of
+a set of emission lines is therefore the whole of the operation, and it is
+written here rather than at the call site so that nothing else has to know
+which frame that array is indexed in.</p>
+<p>None when <cite>instrumental_resolution</cite> was not set, which is the state in
+which BRAIN knows nothing about the instrument and says so rather than
+guessing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.instrumental_lsf.dispersion_report">
+<span class="sig-prename descclassname"><span class="pre">brainsp.instrumental_lsf.</span></span><span class="sig-name descname"><span class="pre">dispersion_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">good</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_wavelength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5500.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/instrumental_lsf.html#dispersion_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.instrumental_lsf.dispersion_report" title="Link to this definition">#</a></dt>
+<dd><p>Turn the fitted dispersion into the three numbers that belong in a summary.</p>
+<p>sigma_obs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">What</span> <span class="n">the</span> <span class="n">kinematic</span> <span class="n">kernel</span> <span class="n">actually</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">library</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">the</span>
+<span class="n">number</span> <span class="n">BRAIN</span> <span class="n">has</span> <span class="n">always</span> <span class="n">reported</span> <span class="k">as</span> <span class="n">vd_min</span><span class="o">.</span> <span class="n">On</span> <span class="n">its</span> <span class="n">own</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">a</span>
+<span class="n">statement</span> <span class="n">about</span> <span class="n">the</span> <span class="n">templates</span><span class="p">,</span> <span class="ow">not</span> <span class="n">about</span> <span class="n">the</span> <span class="n">galaxy</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>delta_sigma_inst</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The signed quadrature difference between the data&#39;s line-spread
+function and the library&#39;s, as the library entered the fit, averaged
+over the fitted window. Positive means the data is the broader of the
+two. A group of templates that was pre-convolved contributes zero,
+because the library was brought to the data&#39;s line-spread function
+before the fit ever saw it and the correction is not counted twice; a
+group that was refused contributes sigma_inst^2 - sigma_lib^2, which is
+what is still there.
+
+Westfall et al. 2019 (AJ 158, 231) Eq. 6 is the quadrature relation
+this rests on, sigma_obs^2 = sigma_star^2 + delta_sigma_inst^2, and
+Eq. 7 averages it over the fitted channels. That average is an
+unweighted mean, 1/N_fit, and the paper names uniform weighting as its
+simplifying assumption. The weighting used here — by the model flux,
+and by each template group&#39;s share of the light — is BRAIN&#39;s own
+choice, on the grounds that a pixel with no light in it carries no
+information about the line-spread function the fit saw. It was checked
+against the unweighted mean and moves the answer by 0.4%.
+</pre></div>
+</div>
+<p>sigma_star</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">with</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sigma_obs</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">delta_sigma_inst</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">where</span>
+<span class="n">the</span> <span class="n">subtracted</span> <span class="n">quantity</span> <span class="n">keeps</span> <span class="n">the</span> <span class="n">sign</span> <span class="n">of</span> <span class="n">the</span> <span class="n">variance</span> <span class="n">difference</span><span class="o">.</span> <span class="n">A</span>
+<span class="n">negative</span> <span class="n">x</span> <span class="n">means</span> <span class="n">the</span> <span class="n">fit</span> <span class="n">applied</span> <span class="n">less</span> <span class="n">broadening</span> <span class="n">than</span> <span class="n">the</span> <span class="n">difference</span> <span class="ow">in</span>
+<span class="n">line</span><span class="o">-</span><span class="n">spread</span> <span class="n">functions</span> <span class="n">alone</span> <span class="n">demands</span><span class="p">,</span> <span class="n">which</span> <span class="n">no</span> <span class="n">astrophysical</span> <span class="n">dispersion</span>
+<span class="n">can</span> <span class="n">produce</span><span class="p">;</span> <span class="n">the</span> <span class="n">magnitude</span> <span class="ow">is</span> <span class="n">then</span> <span class="n">an</span> <span class="n">upper</span> <span class="n">limit</span><span class="p">,</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">measurement</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Both are reported as unknown, never as a number, when any template in the
+fit states no resolution. A number averaged over the subset that does state
+one is not a property of the fit that was run, and publishing it would
+contradict the log line that says no correction was applied. A power law or
+other featureless component is not a template of unknown resolution and
+does not trigger this; see _is_featureless.</p>
+<p>An upper limit is also reported whenever sigma_obs comes back sitting on
+the lower bound of its allowed range, because a parameter at a bound is not
+a measurement of anything. See on_bound for the test.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.gas_diagnostics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.gas_diagnostics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.reddening_catalogue.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.reddening_catalogue</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.removed_redshift"><code class="docutils literal notranslate"><span class="pre">removed_redshift()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.parse_resolution"><code class="docutils literal notranslate"><span class="pre">parse_resolution()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.sigma_angstrom"><code class="docutils literal notranslate"><span class="pre">sigma_angstrom()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.sigma_kms"><code class="docutils literal notranslate"><span class="pre">sigma_kms()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.read_library_headers"><code class="docutils literal notranslate"><span class="pre">read_library_headers()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.gaussian_filter1d"><code class="docutils literal notranslate"><span class="pre">gaussian_filter1d()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.convolve_on_native_grid"><code class="docutils literal notranslate"><span class="pre">convolve_on_native_grid()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.convolve_group_to_data_lsf"><code class="docutils literal notranslate"><span class="pre">convolve_group_to_data_lsf()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.prepare_templates"><code class="docutils literal notranslate"><span class="pre">prepare_templates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.on_bound"><code class="docutils literal notranslate"><span class="pre">on_bound()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.instrumental_dispersion_at"><code class="docutils literal notranslate"><span class="pre">instrumental_dispersion_at()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.instrumental_lsf.dispersion_report"><code class="docutils literal notranslate"><span class="pre">dispersion_report()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

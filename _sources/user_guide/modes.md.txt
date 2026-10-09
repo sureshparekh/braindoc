@@ -1,0 +1,306 @@
+# Nebular modes
+
+`nebular_mode` decides how much of the ionised gas BRAIN models: in Python
+`nebular_mode="espop"`, on the command line `--set nebular_mode=espop`, in the
+interface *Model > Nebular treatment*.
+
+| Mode | Fits | Needs |
+|---|---|---|
+| `spop` | stars, dust, stellar kinematics | nothing more (the default) |
+| `espop` | + every emission line, with its own kinematics | `wavelength_scale` |
+| `nepop` | + the nebular continuum, a free component | a library reaching below 911.76 Å |
+| `photopop` | + the gas tied to the stars' ionising photons | as `nepop` |
+
+The interface strikes through the modes the chosen library cannot run and
+says why.
+
+
+Young stars emit ultraviolet photons that ionise the gas around them, and that
+gas glows back — in emission lines, and in a smooth **nebular continuum** made
+of free-free, free-bound and two-photon emission. That continuum is not flat.
+It has a Balmer jump at 3646 Å and it rises towards the red, so if it is present
+and you do not model it, the fit compensates with the only knobs it has: dust
+and the star-formation history.
+
+BRAIN offers four levels of treatment.
+
+---
+
+## `spop` — stellar only
+
+```yaml
+nebular_mode: "spop"
+```
+
+The emission lines are **not fitted at all**. They stay masked, and the model
+is purely stellar.
+
+It is the fastest option and the correct
+one for passive galaxies, or for any spectrum where the lines are weak enough
+that ignoring them costs nothing.
+
+| | |
+|---|---|
+| Cost | See [performance](performance.md) — a few CPU-seconds per spectrum; the fastest mode |
+| Fits | Stars, dust, stellar kinematics |
+| Requires | Nothing beyond a spectrum |
+
+:::{note}
+Mask the emission lines when using this mode — the *Standard optical* mask
+in the interface does it in one click. Unmasked lines drag the continuum.
+:::
+---
+
+## `espop` — emission lines with the populations
+
+```yaml
+nebular_mode: "espop"
+fit_emission_lines: true
+```
+
+Every line in the catalogue is fitted from its rest position with a free,
+non-negative amplitude. Nothing is predicted from a photoionization model, so
+no ionising photon budget is needed and **`espop` is available for every
+template library**, whatever its blue coverage. The gas gets its own velocity
+and dispersion per kinematic group, independent of the stars.
+
+| | |
+|---|---|
+| Cost | See [performance](performance.md) — somewhat more than `spop`, for the added line amplitudes and gas kinematics |
+| Adds over `spop` | Emission lines, with free amplitudes and their own kinematics |
+| Needs | Nothing beyond `spop`. Any library |
+| Does not model | The nebular continuum |
+
+:::{admonition} There is no nebular continuum in `espop`
+:class: warning
+Ionised gas emits a smooth free-free, free-bound and two-photon continuum
+as well as lines. In `espop` that light has nowhere to go in the model, so
+it is absorbed into the stellar populations and the extinction. $A_V$ and
+the young populations carry whatever of it is present. If the lines are
+strong and your library reaches the Lyman limit, use `nepop` instead; run
+`brainsp check settings.yaml` to see which modes your library supports.
+:::
+Setting `fit_emission_lines: false` under `espop` is rejected at validation,
+because `espop` with the lines off is `spop` by a longer name.
+
+---
+
+## `nepop` — nebular continuum as a fitted component
+
+```yaml
+nebular_mode: "nepop"
+```
+
+Emission lines are fitted with free amplitudes, and the nebular continuum is
+added as an extra column in the linear system with a free weight of its own.
+Its **shape** is computed from the gas physics — temperature, density, helium
+abundance — but its **strength** is whatever the data prefer.
+
+Use this when the emission lines are strong. It is the right default for
+star-forming galaxies.
+
+| | |
+|---|---|
+| Cost | See [performance](performance.md) — on BC03, close to `espop` |
+| Adds | Emission lines, nebular continuum with a free weight |
+| Measures | $n_e$, $T_e$, Balmer decrement, BPT class |
+| Requires | A template library reaching below 911.76 Å |
+
+:::{admonition} The template library must contain the ionising continuum
+:class: danger
+The strength of the nebular continuum is set by the ionising photon rate
+$Q(H)$, and BRAIN obtains that by **integrating each SSP spectrum
+shortwards of the Lyman limit at 911.76 Å**:
+
+$$ Q = \int_0^{911.76\,\text{Å}} \frac{L_\lambda \lambda}{hc}\, d\lambda $$
+
+A library that starts in the optical has no ionising continuum to
+integrate. BRAIN refuses to run rather than returning a fit with an
+identically zero nebular component that looks converged.
+
+The bundled `BasesGM/` starts at 3540 Å and **cannot be used** in
+`nepop` or `photopop` mode. GALAXEV/BC03 spectra start at 91 Å and can.
+
+What decides this is the first wavelength in the **library files
+themselves**, not `wavelength_min` and not the fitted range. Check it
+directly:
+
+```bash
+brainsp libraries info your_library     # reaches_lyman: True or False
+```
+
+If it is False, point `base_folder` at a library that reaches further blue,
+or use `spop` or `espop`. BRAIN's error message says the same thing, with the
+actual starting wavelength of the library you gave it.
+:::
+:::{admonition} The Balmer jump matters
+:class: warning
+The nebular continuum's most distinctive feature is the jump at 3646 Å. If
+your fitting range starts redward of that, the continuum is a smooth,
+slowly rising function — nearly degenerate with dust reddening. BRAIN warns
+you when this is the case:
+
+> Nebular continuum is weakly constrained: Balmer jump (3646 Å) lies
+> outside the fitted range 3700–6898 Å. It may trade against A_V.
+
+The fit will still run. Treat the resulting $A_V$ and nebular strength as
+a joint constraint rather than two independent measurements.
+:::
+---
+
+## `photopop` — self-consistent
+
+```yaml
+nebular_mode: "photopop"
+```
+
+:::{admonition} Not ready for science use
+:class: danger
+The machinery runs end to end, but the nebular extinction $A_{V,\rm neb}$
+it reports is not currently a measurement. On all three example spectra
+tested it sits exactly on the lower bound of `nebular_dust_range`, and
+$\chi^2$ varies by only 4.5–6.2 across the *entire* 6-magnitude allowed
+range — the data barely constrain it. Use `nepop` for anything you
+intend to publish.
+:::
+Everything `nepop` does, plus tying the hydrogen line strengths and the
+nebular continuum to the **ionising photon budget** $Q(H)$ of the stellar
+populations the fit has found. It also requires `fit_emission_lines: true` —
+validation refuses the combination of `photopop` mode with emission lines turned
+off, because $Q(H)$ is derived from the fitted hydrogen amplitudes and there
+is nothing to derive it from otherwise.
+
+This is the physically complete picture. A stellar population that produces
+enough ultraviolet light to power the observed Hβ must be present in the fit,
+and one that is not cannot be — in principle. What BRAIN can currently show is
+only that $A_{V,\rm neb}$ is unconstrained on the spectra tested, not that the
+idea is wrong.
+
+| | |
+|---|---|
+| Cost | See [performance](performance.md) — by far the most expensive mode, dominated by the $A_{V,\rm neb}$ refit search below (measured at roughly 7× `spop` on the same library) |
+| Adds | $Q(H)$ self-consistency between stars and gas |
+| Runs | A golden-section search on $\chi^2$ over `nebular_dust_range`, refitting from a warm start at each trial, for up to `sc_max_iterations` refits |
+| Requires | `fit_emission_lines: true` |
+
+### Finding $A_{V,\rm neb}$
+
+An earlier version refitted, read the Balmer decrement back out of the fitted
+hydrogen line amplitudes, and fed it in again, hoping for a fixed point. It
+never found one, and not for a numerical reason: once the Case B penalty rows
+that tie the hydrogen amplitudes to $Q(H)$ are satisfied, that whole map
+reduces to the identity, so reading the decrement out returns exactly what
+was put in. The residual it was iterating on carries no information about
+$A_{V,\rm neb}$ at all.
+
+$\chi^2$ does carry that information, so BRAIN now finds $A_{V,\rm neb}$ by
+minimising $\chi^2$ directly — a golden-section search over
+`nebular_dust_range`, every trial a full refit from the same warm start. A
+minimum that lands on either bound of `nebular_dust_range` is reported as a
+bound, never as a converged fit. The summary carries which of `converged`,
+`LOWER_BOUND`, `UPPER_BOUND` or `BUDGET_EXHAUSTED` applies, how much $\chi^2$
+varies across the whole searched range (`dchi2 across the whole AV_neb
+range`), and the $A_{V,\rm neb}$ at which $\chi^2$ has risen by 1 above its
+minimum (`AV_neb at dchi2 = 1`) — the closest thing to an error bar the search
+can offer, and on the shipped examples it lies more than 1 mag away from the
+best-fit value (1.1–3.2 mag, against a lower bound of 0.0 mag).
+
+$\tau$, the ratio the old convergence test used, is kept in the log but is a
+diagnostic now, not a test: with the penalty rows satisfied it reduces to
+$10^{0.4 A_V (k_{\rm norm} - k_{\rm H\alpha})}$, a function of $A_V$ alone, and
+says nothing about $A_{V,\rm neb}$.
+
+### The BPT classification is a report, not a gate
+
+`photopop` only makes physical sense if stars are what ionise the gas. It is
+tempting to read that as "BRAIN should classify the spectrum on a BPT diagram
+and refuse, or downgrade, when the classification is not star-forming or
+composite" — and an earlier version did exactly that. It does not do that now,
+and the reason is worth knowing before you read the log.
+
+In every `nepop` or `photopop` fit, BRAIN classifies the spectrum on the
+[N II]/Hα vs. [O III]/Hβ diagram (Kauffmann et al. 2003, Kewley et al. 2001,
+Schawinski et al. 2007) and logs and records the result:
+
+```
+BPT class: undetermined (flag -999) — one or more BPT lines undetected
+```
+
+`BPT_class` — one of `SF`, `composite`, `LINER`, `Seyfert`, or `undetermined`
+when Hβ, [O III] λ5007, Hα or [N II] λ6584 cannot be measured — is written to
+the output alongside `bpt_flag` and `bpt_info`. `undetermined` is a normal
+outcome, not a failure: it means the forbidden lines needed for the diagram
+were not detected, and it is reported exactly as any other class would be.
+None of it changes the mode. The classification also depends on the
+continuum model, through Hβ, which sits in deep stellar absorption — the same
+spectrum and library can change class when only the nebular treatment
+changes, which makes it a poor switch to hang a mode decision on even before
+the mechanism below.
+
+What actually gates the nebular work is **Hβ detectability**, checked once,
+in `brainv1.py`, right after the bootstrap fit: if the fitted Hα and Hβ
+amplitudes don't both come back positive there is no Balmer decrement to
+derive $A_{V,\rm neb}$ from, and the code says so and moves on rather than
+attempting it. This is a different, narrower rule than a BPT-class gate, and
+the two used to coexist: one version of the code carried a class-based
+downgrade in the BPT-classification step *and* a separate Balmer-detection
+guard in `brainv1.py`, and the two silently overrode each other, so `photopop`
+ran end to end on some spectra and not others for reasons that had nothing to
+do with either rule. The class-based downgrade was removed; the Balmer gate
+is now the only one, and it is applied exactly once.
+
+### The bootstrap-and-promote schedule
+
+`photopop` still changes mode mid-fit, but on a fixed schedule that has
+nothing to do with BPT class. The Case B penalty rows that tie the hydrogen
+line amplitudes to $Q(H)$ need line fluxes and a $Q(H)$ to tie together, and
+neither exists before a first fit, so every `photopop` run bootstraps through
+one `nepop` fit first:
+
+```
+Full mode bootstraps through one continuum-mode fit: the Case B penalty rows
+need line fluxes and a Q(H) to tie together, and neither exists before the
+first fit.
+```
+
+That bootstrap fit is where the Balmer-decrement gate above is evaluated and
+where the BPT class is measured and logged. Once it completes, BRAIN
+promotes to the actual `photopop` model and refits from the bootstrap
+solution:
+
+```
+Promoting to full mode: hydrogen line amplitudes tied to the Case B
+prediction from Q(H).
+```
+
+If you asked for `photopop`, that promotion always happens — an
+`undetermined` or AGN-like BPT class in the log between those two messages is
+a diagnostic passing through, not a decision being made.
+
+---
+
+## Which to use
+
+| The spectrum | Use |
+|---|---|
+| no emission lines, or weak ones | `spop` (mask the lines) |
+| emission lines, library stops redward of 911.76 Å (BasesGM) | `espop` |
+| strong lines, library reaches the ionising UV, range covers 3646 Å | `nepop` |
+| strong lines, range starts redward of 3646 Å | `nepop`, expecting $A_V$ degeneracy |
+| star-formation-ionised gas, for the self-consistent experiment | `photopop` (see the warning) |
+
+---
+
+## Gas conditions
+
+In `nepop` and `photopop` mode BRAIN measures the gas conditions from the
+spectrum itself rather than assuming them:
+
+| Quantity | Diagnostic | Reference |
+|---|---|---|
+| Electron density $n_e$ | [S II] λ6716/λ6731 | Proxauf et al. (2014) |
+| Electron temperature $T_e$ | [O III] (λ4959+λ5007)/λ4363 | Osterbrock & Ferland, Eq. 5.4 |
+
+Where a diagnostic is unavailable — the lines too weak, or outside the range —
+the values from `gas_temperature` and `gas_density` in the settings file are
+used instead.

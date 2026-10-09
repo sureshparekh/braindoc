@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.fast_engine &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/fast_engine';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.fast_engine</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.fast_engine</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">NewBrain Fast Engine — unified 100% JAX forward model for all three</span>
+<span class="sd">photoionization modes.</span>
+
+<span class="sd">Replaces two things at once:</span>
+
+<span class="sd">  1. The scipy fallback that `nepop` and `photopop` modes used. The nebular</span>
+<span class="sd">     fixed point is now a `lax.fori_loop` with a constant trip count, so the</span>
+<span class="sd">     whole residual is traceable and the pure-JAX LM drives every mode.</span>
+
+<span class="sd">  2. The redundant work in the `spop`-mode forward model. `rfft(M_star)` is</span>
+<span class="sd">     hoisted out of the fit (M_star never changes), and the Jacobian only</span>
+<span class="sd">     re-broadens for the two parameters that can actually alter the stellar</span>
+<span class="sd">     broadening.</span>
+
+<span class="sd">The parameter vector is unchanged:</span>
+<span class="sd">    [Av, YAV, sigma_star, v0_star, sig_g0, v0_g0, sig_g1, v0_g1, ...]</span>
+
+<span class="sd">Modes:</span>
+<span class="sd">  &quot;spop&quot;     - stellar populations alone; emission lines are not fitted.</span>
+<span class="sd">  &quot;nepop&quot;    - nebular continuum carried as a free NNLS column, its amplitude</span>
+<span class="sd">                read back as Q_eff. Emission lines stay free and empirical.</span>
+<span class="sd">                The nebular light enters the model ONCE, through that column;</span>
+<span class="sd">                it is not also subtracted from the data.</span>
+<span class="sd">  &quot;photopop&quot; - as nepop, plus hydrogen line amplitudes tied to the Case B</span>
+<span class="sd">                prediction from the same Q(H) via augmented-NNLS penalty rows.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">NamedTuple</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jax.numpy.fft</span><span class="w"> </span><span class="kn">import</span> <span class="n">rfft</span><span class="p">,</span> <span class="n">irfft</span><span class="p">,</span> <span class="n">rfftfreq</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.emission_lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">_build_emission_jit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">_fista_nnls</span><span class="p">,</span> <span class="n">solve_active_set</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;NEWBRAIN&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ForwardConstants">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.ForwardConstants">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ForwardConstants</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Everything that is fixed for the duration of one optimize() call.</span>
+
+<span class="sd">    Registered as a pytree by virtue of being a NamedTuple, so it can be</span>
+<span class="sd">    passed straight through jit/vmap boundaries.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">M_fft</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">omega</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">velscale</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">yav_flags</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+
+    <span class="n">lam</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">flux</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">inv_sigma</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">dk</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">D_full</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+
+    <span class="n">rest_wl</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">ratios</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">n_comp</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">group_indices</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+
+    <span class="n">neb_shape</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">neb_col</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">neb_at_l0</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">qh_ratios</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">k_norm</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="n">H_gas_idx</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">H_ratios</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">H_dk</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ndarray</span>
+    <span class="n">C_Hbeta</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">av_neb</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">sc_weight</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">sc_damping</span><span class="p">:</span> <span class="nb">float</span></div>
+
+
+
+<div class="viewcode-block" id="ForwardShapes">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.ForwardShapes">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ForwardShapes</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="n">n_pix</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">n_pad</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">n_left</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">n_star</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">n_gas</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">n_par</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">max_comp</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">n_neb_iter</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">live</span><span class="p">:</span> <span class="nb">tuple</span>
+    <span class="n">n_neb</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">solver</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">simplex</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">fit_lines</span><span class="p">:</span> <span class="nb">bool</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_smooth_length</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">factors</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Smallest m &gt;= n whose only prime factors are in `factors`.&quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">m</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">m</span> <span class="o">//=</span> <span class="n">p</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_kinematic_reach</span><span class="p">(</span><span class="n">n_pix</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">v0_max</span><span class="p">,</span> <span class="n">sigma_max</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    How many pixels the broadening kernel reaches past either end.</span>
+
+<span class="sd">    An FFT convolution is periodic. Without padding the model at the blue end</span>
+<span class="sd">    of the window is built partly out of the template at the red end: measured</span>
+<span class="sd">    at sigma = 150 km/s and v0 = 0 on the reference grid, 18 pixels were wrong</span>
+<span class="sd">    by more than 0.1%, the last one by 315% and the first by 77%.</span>
+
+<span class="sd">    The reach is the velocity shift plus the tail of the Gaussian, both in</span>
+<span class="sd">    pixels, and it must be STATIC -- the transform of the padded template is</span>
+<span class="sd">    precomputed once at build time and its shape cannot depend on a traced</span>
+<span class="sd">    sigma. So it is derived from the bounds the fit is allowed to explore,</span>
+<span class="sd">    which is why `v0_max` and `sigma_max` are arguments here. They default to</span>
+<span class="sd">    the same numbers `brain_setup.yaml` defaults `velocity_range` and</span>
+<span class="sd">    `dispersion_range` to. A CALLER THAT WIDENS EITHER BOUND MUST WIDEN THESE</span>
+<span class="sd">    TOO, or the kernel will reach past the padding again at the far end of the</span>
+<span class="sd">    widened range.</span>
+
+<span class="sd">    Six dispersions rather than five: at five the Gaussian is 3.7e-6 of its</span>
+<span class="sd">    peak, at six 1.5e-8, and the extra pixels cost nothing next to the length</span>
+<span class="sd">    the transform is rounded up to anyway.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">reach</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">v0_max</span><span class="p">)</span> <span class="o">/</span> <span class="n">velscale</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="mf">6.0</span> <span class="o">*</span> <span class="n">sigma_max</span> <span class="o">/</span> <span class="n">velscale</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">reach</span><span class="p">,</span> <span class="n">n_pix</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_edge_pad</span><span class="p">(</span><span class="n">M_star</span><span class="p">,</span> <span class="n">n_left</span><span class="p">,</span> <span class="n">n_right</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extend a template matrix at both ends by holding its end values.</span>
+
+<span class="sd">    Zero-filling instead is the trap. A template padded with zeros is dragged</span>
+<span class="sd">    toward zero by the convolution, so the model darkens at both ends of the</span>
+<span class="sd">    fitted window -- an error that looks exactly like a continuum slope and is</span>
+<span class="sd">    fitted as one. Holding the first and last value says the template is flat</span>
+<span class="sd">    beyond the window, which is wrong in detail and right in magnitude, and it</span>
+<span class="sd">    leaves a flat template exactly flat end to end.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n_left</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">n_right</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">M_star</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">M_star</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_left</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">M_star</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:],</span> <span class="n">n_right</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">M_star</span><span class="p">,</span> <span class="n">right</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="build_constants">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.build_constants">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_constants</span><span class="p">(</span><span class="n">M_star</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">inv_sigma</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">dk</span><span class="p">,</span> <span class="n">D_full</span><span class="p">,</span>
+                    <span class="n">yav_flags</span><span class="p">,</span> <span class="n">line_table</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;spop&quot;</span><span class="p">,</span>
+                    <span class="n">qh_ratios</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">neb_template</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k_norm</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                    <span class="n">av_neb</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">f_capture</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                    <span class="n">H_gas_idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">H_ratios</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">H_dk</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">C_Hbeta</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                    <span class="n">sc_weight</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">sc_damping</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">n_neb_iter</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+                    <span class="n">v0_max</span><span class="o">=</span><span class="mf">5000.0</span><span class="p">,</span> <span class="n">sigma_max</span><span class="o">=</span><span class="mf">500.0</span><span class="p">,</span>
+                    <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;active_set&quot;</span><span class="p">,</span> <span class="n">simplex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fit_lines</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Precompute every constant the forward model needs.</span>
+
+<span class="sd">    On `simplex`: the constraint is sum(x_j) + y = 1, but the normalisation flux</span>
+<span class="sd">    F_lambda0 is itself a fitted parameter bounded to [0.5, 1.5] times the</span>
+<span class="sd">    measured value (fnormlow / fnormupp), so the equality pins the *fractions*</span>
+<span class="sd">    while F_lambda0 absorbs the overall scale. That is equivalent to leaving</span>
+<span class="sd">    the weights free with sum(w) inside [0.5, 1.5] — which is what BRAIN does,</span>
+<span class="sd">    and its sum lands at ~1.07. Imposing a hard sum(x)=1 instead is a</span>
+<span class="sd">    different, stricter condition: measured on the reference spectrum it costs</span>
+<span class="sd">    chi2 (1843 -&gt; 1992), pushes Av from 0.24 to 0.73 and pins sigma_star at its</span>
+<span class="sd">    lower bound. So it defaults off. The reported light fractions are</span>
+<span class="sd">    normalised to 100% regardless, as they always were.</span>
+
+<span class="sd">    The stellar templates are edge-padded at both ends before their transform</span>
+<span class="sd">    is taken, so the broadening is a linear convolution and not a periodic one.</span>
+<span class="sd">    `v0_max` and `sigma_max` set how far it has to reach; see</span>
+<span class="sd">    _kinematic_reach, which also says what happens if a caller widens the</span>
+<span class="sd">    fitted bounds past them.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">M_star</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_star</span><span class="p">)</span>
+    <span class="n">n_pix</span><span class="p">,</span> <span class="n">n_star</span> <span class="o">=</span> <span class="n">M_star</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">n_left</span> <span class="o">=</span> <span class="n">_kinematic_reach</span><span class="p">(</span><span class="n">n_pix</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">v0_max</span><span class="p">,</span> <span class="n">sigma_max</span><span class="p">)</span>
+    <span class="n">n_pad</span> <span class="o">=</span> <span class="n">_smooth_length</span><span class="p">(</span><span class="n">n_pix</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n_left</span><span class="p">)</span>
+    <span class="n">M_pad</span> <span class="o">=</span> <span class="n">_edge_pad</span><span class="p">(</span><span class="n">M_star</span><span class="p">,</span> <span class="n">n_left</span><span class="p">,</span> <span class="n">n_pad</span> <span class="o">-</span> <span class="n">n_pix</span> <span class="o">-</span> <span class="n">n_left</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fit_lines</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fit_lines</span> <span class="o">=</span> <span class="p">(</span><span class="n">mode</span> <span class="o">!=</span> <span class="s2">&quot;spop&quot;</span><span class="p">)</span>
+    <span class="n">n_gas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line_table</span><span class="p">[</span><span class="s1">&#39;names&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">fit_lines</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">n_neb</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;nepop&quot;</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="n">n_groups_max</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="n">live</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">yav_flags</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)):</span>
+        <span class="n">live</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">live</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">fit_lines</span> <span class="ow">and</span> <span class="n">n_gas</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">live</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n_groups_max</span><span class="p">))</span>
+    <span class="n">live</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">live</span><span class="p">)</span>
+    <span class="n">max_comp</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">line_table</span><span class="p">[</span><span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">line_table</span><span class="p">[</span><span class="s1">&#39;names&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;spop&quot;</span><span class="p">:</span>
+        <span class="n">neb_shape</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_pix</span><span class="p">)</span>
+        <span class="n">neb_col</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_pix</span><span class="p">)</span>
+        <span class="n">neb_at_l0</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">qh</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_star</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">neb_atten</span> <span class="o">=</span> <span class="p">(</span><span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av_neb</span> <span class="o">*</span> <span class="n">dk</span><span class="p">))</span> <span class="k">if</span> <span class="n">av_neb</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1.0</span>
+        <span class="n">neb_shape</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">neb_template</span><span class="p">)</span> <span class="o">*</span> <span class="n">f_capture</span> <span class="o">*</span> <span class="n">neb_atten</span>
+        <span class="n">i0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">dk</span><span class="p">))))</span>
+        <span class="n">neb_at_l0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">neb_shape</span><span class="p">[</span><span class="n">i0</span><span class="p">])</span>
+        <span class="n">neb_col</span> <span class="o">=</span> <span class="n">neb_shape</span> <span class="o">/</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">neb_at_l0</span><span class="p">),</span> <span class="mf">1e-300</span><span class="p">)</span>
+        <span class="n">qh</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">qh_ratios</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;photopop&quot;</span> <span class="ow">and</span> <span class="n">H_gas_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">H_gas_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Hg</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">H_gas_idx</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="n">Hr</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">H_ratios</span><span class="p">)</span>
+        <span class="n">Hd</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">H_dk</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Hg</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+        <span class="n">Hr</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">Hd</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">D_full</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">D_full</span><span class="p">)</span>
+    <span class="n">n_total</span> <span class="o">=</span> <span class="n">n_star</span> <span class="o">+</span> <span class="n">n_gas</span> <span class="o">+</span> <span class="n">n_neb</span>
+    <span class="k">if</span> <span class="n">D_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">n_total</span><span class="p">:</span>
+        <span class="n">D_full</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">D_full</span><span class="p">,</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_total</span> <span class="o">-</span> <span class="n">D_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+    <span class="k">elif</span> <span class="n">D_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">n_total</span><span class="p">:</span>
+        <span class="n">D_full</span> <span class="o">=</span> <span class="n">D_full</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_total</span><span class="p">]</span>
+
+    <span class="n">consts</span> <span class="o">=</span> <span class="n">ForwardConstants</span><span class="p">(</span>
+        <span class="n">M_fft</span><span class="o">=</span><span class="n">rfft</span><span class="p">(</span><span class="n">M_pad</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">omega</span><span class="o">=</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">rfftfreq</span><span class="p">(</span><span class="n">n_pad</span><span class="p">),</span>
+        <span class="n">velscale</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">velscale</span><span class="p">),</span>
+        <span class="n">yav_flags</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">yav_flags</span><span class="p">),</span>
+        <span class="n">lam</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span>
+        <span class="n">flux</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">flux</span><span class="p">),</span>
+        <span class="n">inv_sigma</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inv_sigma</span><span class="p">),</span>
+        <span class="n">dk</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">dk</span><span class="p">),</span>
+        <span class="n">D_full</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">D_full</span><span class="p">),</span>
+        <span class="n">rest_wl</span><span class="o">=</span><span class="n">line_table</span><span class="p">[</span><span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">],</span>
+        <span class="n">ratios</span><span class="o">=</span><span class="n">line_table</span><span class="p">[</span><span class="s1">&#39;ratios&#39;</span><span class="p">],</span>
+        <span class="n">n_comp</span><span class="o">=</span><span class="n">line_table</span><span class="p">[</span><span class="s1">&#39;n_components&#39;</span><span class="p">],</span>
+        <span class="n">group_indices</span><span class="o">=</span><span class="n">line_table</span><span class="p">[</span><span class="s1">&#39;group_indices&#39;</span><span class="p">],</span>
+        <span class="n">neb_shape</span><span class="o">=</span><span class="n">neb_shape</span><span class="p">,</span>
+        <span class="n">neb_col</span><span class="o">=</span><span class="n">neb_col</span><span class="p">,</span>
+        <span class="n">neb_at_l0</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">neb_at_l0</span><span class="p">),</span>
+        <span class="n">qh_ratios</span><span class="o">=</span><span class="n">qh</span><span class="p">,</span>
+        <span class="n">k_norm</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">k_norm</span><span class="p">),</span>
+        <span class="n">H_gas_idx</span><span class="o">=</span><span class="n">Hg</span><span class="p">,</span> <span class="n">H_ratios</span><span class="o">=</span><span class="n">Hr</span><span class="p">,</span> <span class="n">H_dk</span><span class="o">=</span><span class="n">Hd</span><span class="p">,</span>
+        <span class="n">C_Hbeta</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">C_Hbeta</span><span class="p">),</span>
+        <span class="n">av_neb</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">av_neb</span><span class="p">),</span>
+        <span class="n">sc_weight</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">sc_weight</span><span class="p">),</span>
+        <span class="n">sc_damping</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">sc_damping</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">shapes</span> <span class="o">=</span> <span class="n">ForwardShapes</span><span class="p">(</span>
+        <span class="n">n_pix</span><span class="o">=</span><span class="n">n_pix</span><span class="p">,</span> <span class="n">n_pad</span><span class="o">=</span><span class="n">n_pad</span><span class="p">,</span> <span class="n">n_left</span><span class="o">=</span><span class="n">n_left</span><span class="p">,</span> <span class="n">n_star</span><span class="o">=</span><span class="n">n_star</span><span class="p">,</span> <span class="n">n_gas</span><span class="o">=</span><span class="n">n_gas</span><span class="p">,</span>
+        <span class="n">n_par</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_comp</span><span class="o">=</span><span class="n">max_comp</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">n_neb_iter</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_neb_iter</span><span class="p">),</span>
+        <span class="n">live</span><span class="o">=</span><span class="n">live</span><span class="p">,</span> <span class="n">n_neb</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">n_neb</span><span class="p">),</span> <span class="n">solver</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">solver</span><span class="p">),</span> <span class="n">simplex</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">simplex</span><span class="p">),</span> <span class="n">fit_lines</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">fit_lines</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">consts</span><span class="p">,</span> <span class="n">shapes</span></div>
+
+
+
+<div class="viewcode-block" id="broaden">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.broaden">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;n_pad&#39;</span><span class="p">,</span> <span class="s1">&#39;n_pix&#39;</span><span class="p">,</span> <span class="s1">&#39;n_left&#39;</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">broaden</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">sigma_v</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">n_pad</span><span class="p">,</span> <span class="n">n_pix</span><span class="p">,</span> <span class="n">n_left</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Broaden + shift all stellar templates.</span>
+
+<span class="sd">    rfft(M_star) is supplied precomputed in C.M_fft, so this is a kernel</span>
+<span class="sd">    multiply plus one inverse transform — the single biggest saving in the</span>
+<span class="sd">    whole forward model.</span>
+
+<span class="sd">    C.M_fft is the transform of the EDGE-PADDED matrix, `n_left` pixels of it</span>
+<span class="sd">    before the first fitted pixel, so the window comes back out of the middle</span>
+<span class="sd">    of the result and not off its front. Slicing from 0 instead would return a</span>
+<span class="sd">    spectrum shifted by n_left pixels, which at 129 pixels and 58 km/s is</span>
+<span class="sd">    7500 km/s and would be anything but subtle; slicing from n_left + 1 would</span>
+<span class="sd">    be one pixel, which would not.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sigma_pix</span> <span class="o">=</span> <span class="n">sigma_v</span> <span class="o">/</span> <span class="n">C</span><span class="o">.</span><span class="n">velscale</span>
+    <span class="n">shift_pix</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">C</span><span class="o">.</span><span class="n">velscale</span>
+    <span class="n">kern</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">omega</span> <span class="o">*</span> <span class="n">sigma_pix</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">omega</span> <span class="o">*</span> <span class="n">shift_pix</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">irfft</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">M_fft</span> <span class="o">*</span> <span class="n">kern</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">n</span><span class="o">=</span><span class="n">n_pad</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span><span class="p">[</span><span class="n">n_left</span><span class="p">:</span><span class="n">n_left</span> <span class="o">+</span> <span class="n">n_pix</span><span class="p">]</span></div>
+
+
+
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;n_star&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_q_vector</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">yav</span><span class="p">,</span> <span class="n">n_star</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Per-SSP ionizing yield per unit NNLS weight, un-reddened.</span>
+
+<span class="sd">    Vectorised replacement for nebular.compute_Q_eff&#39;s 85-iteration Python</span>
+<span class="sd">    loop (which branched on device values, forcing a host sync per SSP).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">av_tot</span> <span class="o">=</span> <span class="n">av</span> <span class="o">+</span> <span class="n">yav</span> <span class="o">*</span> <span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">yav_flags</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">unredden</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av_tot</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">k_norm</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">qh_ratios</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unredden</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">qh_ratios</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;n_star&#39;</span><span class="p">,</span> <span class="s1">&#39;n_total&#39;</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_sc_rows</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">q_vec</span><span class="p">,</span> <span class="n">n_star</span><span class="p">,</span> <span class="n">n_total</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Augmented-NNLS penalty rows tying hydrogen line amplitudes to the Case B</span>
+<span class="sd">    prediction from Q(H).</span>
+
+<span class="sd">    For each hydrogen line L, the model&#39;s *observed* flux is</span>
+<span class="sd">        w_L * 10^(-0.4 * Av * dk_L)                       (gas block wears stellar Av)</span>
+<span class="sd">    and the Case B prediction, reddened by the nebular extinction, is</span>
+<span class="sd">        C_Hbeta * ratio_L * Q_eff * 10^(-0.4 * Av_neb * dk_L).</span>
+<span class="sd">    Equating them,</span>
+<span class="sd">        w_L = C_Hbeta * ratio_L * Q_eff * 10^(-0.4 * (Av_neb - Av) * dk_L)</span>
+<span class="sd">    so the residual row is  C_L * (q_vec . w_star) - w_L = 0, scaled by</span>
+<span class="sd">    sqrt(sc_weight) / expected_L to make the penalty relative.</span>
+
+<span class="sd">    Built as one outer product plus a scatter — no lax.map, no Python loop.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_H</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">H_gas_idx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">C_L</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">C_Hbeta</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">H_ratios</span> <span class="o">*</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">av_neb</span> <span class="o">-</span> <span class="n">av</span><span class="p">)</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">H_dk</span><span class="p">)</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="n">C_L</span> <span class="o">*</span> <span class="n">Q_eff</span>
+    <span class="n">active</span> <span class="o">=</span> <span class="p">(</span><span class="n">Q_eff</span> <span class="o">&gt;</span> <span class="mf">1e-10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">expected</span> <span class="o">&gt;</span> <span class="mf">1e-30</span><span class="p">)</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">active</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">sc_weight</span><span class="p">)</span> <span class="o">/</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="n">q_pad</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">q_vec</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_total</span> <span class="o">-</span> <span class="n">n_star</span><span class="p">)])</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">(</span><span class="n">C_L</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">q_pad</span><span class="p">[</span><span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">rows</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">jnp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_H</span><span class="p">),</span> <span class="n">n_star</span> <span class="o">+</span> <span class="n">C</span><span class="o">.</span><span class="n">H_gas_idx</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">-</span><span class="n">scale</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rows</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_H</span><span class="p">)</span>
+
+
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_design</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Assemble the dust-attenuated design matrix from an already-broadened M.&quot;&quot;&quot;</span>
+    <span class="n">av</span><span class="p">,</span> <span class="n">yav</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">gas_p</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+
+    <span class="n">atten</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">dk</span><span class="p">)</span>
+    <span class="n">atten_yav</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="p">(</span><span class="n">av</span> <span class="o">+</span> <span class="n">yav</span><span class="p">)</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">dk</span><span class="p">)</span>
+    <span class="n">M_star_dust</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="n">C</span><span class="o">.</span><span class="n">yav_flags</span><span class="p">[</span><span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">M_broad</span> <span class="o">*</span> <span class="n">atten_yav</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+        <span class="n">M_broad</span> <span class="o">*</span> <span class="n">atten</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span><span class="n">M_star_dust</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">fit_lines</span><span class="p">:</span>
+        <span class="n">M_gas</span> <span class="o">=</span> <span class="n">_build_emission_jit</span><span class="p">(</span>
+            <span class="n">C</span><span class="o">.</span><span class="n">lam</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">velscale</span><span class="p">,</span> <span class="n">gas_p</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">gas_p</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">],</span>
+            <span class="n">C</span><span class="o">.</span><span class="n">rest_wl</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">ratios</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">n_comp</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">group_indices</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">max_comp</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">M_gas</span> <span class="o">*</span> <span class="n">atten</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">n_neb</span><span class="p">:</span>
+        <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">neb_col</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">blocks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_linear_solve</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">ATA</span><span class="p">,</span> <span class="n">ATb</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">P_init</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Solve the linear sub-problem for the light fractions.</span>
+
+<span class="sd">    &quot;active_set&quot; is exact — it reaches the same optimum as scipy&#39;s</span>
+<span class="sd">    Lawson-Hanson to ~1e-12 — and with simplex=True it additionally enforces</span>
+<span class="sd">    sum(x) = 1 through the KKT system, so every weight is a light fraction in</span>
+<span class="sd">    [0, 1]. &quot;fista&quot; is the previous iterative solver, kept</span>
+<span class="sd">    only for reproducing older results; it does not converge on this problem.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">solver</span> <span class="o">==</span> <span class="s2">&quot;active_set&quot;</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">ATb</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">simplex</span><span class="p">:</span>
+            <span class="n">cvec</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">S</span><span class="o">.</span><span class="n">n_star</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cvec</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">solve_active_set</span><span class="p">(</span><span class="n">ATA</span><span class="p">,</span> <span class="n">ATb</span><span class="p">,</span> <span class="n">cvec</span><span class="p">,</span> <span class="n">P_init</span><span class="o">=</span><span class="n">P_init</span><span class="p">,</span>
+                                <span class="n">simplex</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="n">simplex</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_fista_nnls</span><span class="p">(</span><span class="n">ATA</span><span class="p">,</span> <span class="n">ATb</span><span class="p">),</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ATb</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_solve</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">M_full</span><span class="p">,</span> <span class="n">flux_eff</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">P_init</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Weighted, regularised NNLS.</span>
+
+<span class="sd">    Deliberately does NOT accept empty (0, n) augmentation blocks — stacking a</span>
+<span class="sd">    zero-row array measurably blocks XLA fusion (10.2 ms vs 4.5 ms per</span>
+<span class="sd">    evaluation on CPU). The SC-augmented path folds its rows in as a rank-n_H</span>
+<span class="sd">    Gram update instead, in forward_from_broad.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">M_full</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">inv_sigma</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">C</span><span class="o">.</span><span class="n">D_full</span><span class="p">])</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">flux_eff</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">inv_sigma</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">D_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+    <span class="k">return</span> <span class="n">_linear_solve</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">b</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">P_init</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="forward_from_broad">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.forward_from_broad">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">forward_from_broad</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Q_init</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">P_init</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Full forward model given an already-broadened stellar matrix.</span>
+
+<span class="sd">    Returns (residual, weights, Q_eff, M_full, P_out).</span>
+
+<span class="sd">    The nebular continuum enters exactly once, and the two modes put it in</span>
+<span class="sd">    different places. In &quot;nepop&quot; it is a column of M_full (built in</span>
+<span class="sd">    _design when S.n_neb is 1) and the NNLS fits its amplitude, so the</span>
+<span class="sd">    residual is formed against the untouched data. In &quot;photopop&quot; there is no such</span>
+<span class="sd">    column -- S.n_neb is 0 -- and the nebular is instead subtracted from the</span>
+<span class="sd">    data at the Q(H) the fixed point has reached. Subtracting in nepop mode</span>
+<span class="sd">    as well minimised flux - stellar - gas - 2*(nebular), which is chi2 plus a</span>
+<span class="sd">    shrinkage penalty ||nebular amplitude||^2 that the inner NNLS never sees;</span>
+<span class="sd">    the outer LM could only satisfy it by driving A_V, sigma and v0 to where</span>
+<span class="sd">    the NNLS wanted less nebular.</span>
+
+<span class="sd">    This is the function the Jacobian calls for the six parameters that cannot</span>
+<span class="sd">    change the stellar broadening (Av, YAV, and every gas kinematic), which is</span>
+<span class="sd">    where the speedup comes from: no FFT at all on this path.</span>
+
+<span class="sd">    `Q_init` warm-starts the nebular fixed point. With Q_init = 0 the loop</span>
+<span class="sd">    reproduces the original cold-start behaviour; the Jacobian passes the</span>
+<span class="sd">    converged Q* from the centre point so a single extra iteration suffices.</span>
+
+<span class="sd">    In photopop mode the loop runs a FIXED S.n_neb_iter passes, undamped, and</span>
+<span class="sd">    returns the Q it actually built the residual with -- not the Q the last</span>
+<span class="sd">    pass would have gone on to use. Those differ by a factor of about two when</span>
+<span class="sd">    the loop is truncated, and everything downstream (tau, the nebular</span>
+<span class="sd">    spectrum, f_neb, the Nebular_Fit column) wants the one that is physically</span>
+<span class="sd">    in the model.</span>
+
+<span class="sd">    On the trip count: the first pass starts from Q = 0, which deactivates the</span>
+<span class="sd">    SC penalty rows entirely, so it overshoots the fixed point by ~144x.</span>
+<span class="sd">    Averaging that iterate into every subsequent step, which is what</span>
+<span class="sd">    sc_damping &lt; 1 does, is what made the sequence non-monotone and slow --</span>
+<span class="sd">    abs(dQ)/Q &lt; 1e-10 took a median of 44 iterations at damping 0.5 against 7</span>
+<span class="sd">    undamped, over 25 parameter draws spanning the whole bounds box. Undamped</span>
+<span class="sd">    with 12 passes the fixed point is reached everywhere tested, and the trip</span>
+<span class="sd">    count is fixed, so the Jacobian runs the identical schedule to the residual</span>
+<span class="sd">    by construction rather than by argument.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_total</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">n_star</span> <span class="o">+</span> <span class="n">S</span><span class="o">.</span><span class="n">n_gas</span> <span class="o">+</span> <span class="n">S</span><span class="o">.</span><span class="n">n_neb</span>
+    <span class="n">M_full</span> <span class="o">=</span> <span class="n">_design</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;spop&quot;</span><span class="p">:</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">P_out</span> <span class="o">=</span> <span class="n">_solve</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">M_full</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">P_init</span><span class="p">)</span>
+        <span class="n">Q_eff</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">sc_resid</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">S</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;nepop&quot;</span><span class="p">:</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">P_out</span> <span class="o">=</span> <span class="n">_solve</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">M_full</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">P_init</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">Q_eff</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">neb_at_l0</span><span class="p">),</span> <span class="mf">1e-300</span><span class="p">)</span>
+        <span class="n">sc_resid</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">av</span><span class="p">,</span> <span class="n">yav</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">q_vec</span> <span class="o">=</span> <span class="n">_q_vector</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">yav</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_star</span><span class="p">)</span>
+        <span class="n">n_H</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">H_gas_idx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">use_sc</span> <span class="o">=</span> <span class="n">n_H</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+        <span class="n">A_base</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">M_full</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">inv_sigma</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">C</span><span class="o">.</span><span class="n">D_full</span><span class="p">])</span>
+        <span class="n">n_reg</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">D_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ATA_base</span> <span class="o">=</span> <span class="n">A_base</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A_base</span>
+        <span class="n">ATb_flux</span> <span class="o">=</span> <span class="n">A_base</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">C</span><span class="o">.</span><span class="n">flux</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">inv_sigma</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_reg</span><span class="p">)])</span>
+        <span class="n">ATb_neb</span> <span class="o">=</span> <span class="n">A_base</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">C</span><span class="o">.</span><span class="n">neb_shape</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">inv_sigma</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_reg</span><span class="p">)])</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">carry</span><span class="p">):</span>
+            <span class="n">Q_eff</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">P_cur</span> <span class="o">=</span> <span class="n">carry</span>
+            <span class="n">ATb</span> <span class="o">=</span> <span class="n">ATb_flux</span> <span class="o">-</span> <span class="n">Q_eff</span> <span class="o">*</span> <span class="n">ATb_neb</span>
+            <span class="k">if</span> <span class="n">use_sc</span><span class="p">:</span>
+                <span class="n">rows</span><span class="p">,</span> <span class="n">rhs</span> <span class="o">=</span> <span class="n">_sc_rows</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">q_vec</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_star</span><span class="p">,</span> <span class="n">n_total</span><span class="p">)</span>
+                <span class="n">ATA</span> <span class="o">=</span> <span class="n">ATA_base</span> <span class="o">+</span> <span class="n">rows</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">rows</span>
+                <span class="n">ATb</span> <span class="o">=</span> <span class="n">ATb</span> <span class="o">+</span> <span class="n">rows</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">rhs</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ATA</span> <span class="o">=</span> <span class="n">ATA_base</span>
+            <span class="n">w</span><span class="p">,</span> <span class="n">P_new</span> <span class="o">=</span> <span class="n">_linear_solve</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">ATA</span><span class="p">,</span> <span class="n">ATb</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">P_cur</span><span class="p">)</span>
+            <span class="n">Q_new</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">[:</span><span class="n">S</span><span class="o">.</span><span class="n">n_star</span><span class="p">]</span> <span class="o">*</span> <span class="n">q_vec</span><span class="p">)</span>
+            <span class="n">damped</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">sc_damping</span> <span class="o">*</span> <span class="n">Q_new</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">C</span><span class="o">.</span><span class="n">sc_damping</span><span class="p">)</span> <span class="o">*</span> <span class="n">Q_eff</span>
+            <span class="n">Q_out</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">Q_eff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="n">damped</span><span class="p">,</span> <span class="n">Q_new</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">Q_out</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">P_new</span><span class="p">)</span>
+
+        <span class="n">P_seed</span> <span class="o">=</span> <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_total</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span> <span class="k">if</span> <span class="n">P_init</span> <span class="ow">is</span> <span class="kc">None</span>
+                  <span class="k">else</span> <span class="n">P_init</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">Q_used</span><span class="p">,</span> <span class="n">P_out</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">lax</span><span class="o">.</span><span class="n">fori_loop</span><span class="p">(</span>
+            <span class="mi">0</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_neb_iter</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q_init</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+                                    <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_total</span><span class="p">),</span>
+                                    <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q_init</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+                                    <span class="n">P_seed</span><span class="p">))</span>
+        <span class="n">Q_eff</span> <span class="o">=</span> <span class="n">Q_used</span>
+
+        <span class="k">if</span> <span class="n">use_sc</span><span class="p">:</span>
+            <span class="n">rows</span><span class="p">,</span> <span class="n">rhs</span> <span class="o">=</span> <span class="n">_sc_rows</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">Q_used</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">q_vec</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_star</span><span class="p">,</span> <span class="n">n_total</span><span class="p">)</span>
+            <span class="n">sc_resid</span> <span class="o">=</span> <span class="n">rows</span> <span class="o">@</span> <span class="n">w</span> <span class="o">-</span> <span class="n">rhs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sc_resid</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">flux_eff</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">flux</span> <span class="o">-</span> <span class="n">C</span><span class="o">.</span><span class="n">neb_shape</span> <span class="o">*</span> <span class="n">Q_used</span>
+        <span class="n">fitted</span> <span class="o">=</span> <span class="n">M_full</span> <span class="o">@</span> <span class="n">w</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([(</span><span class="n">flux_eff</span> <span class="o">-</span> <span class="n">fitted</span><span class="p">)</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">inv_sigma</span><span class="p">,</span>
+                                 <span class="n">C</span><span class="o">.</span><span class="n">D_full</span> <span class="o">@</span> <span class="n">w</span><span class="p">,</span> <span class="n">sc_resid</span><span class="p">]),</span>
+                <span class="n">w</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">M_full</span><span class="p">,</span> <span class="n">P_out</span><span class="p">)</span>
+
+    <span class="n">fitted</span> <span class="o">=</span> <span class="n">M_full</span> <span class="o">@</span> <span class="n">w</span>
+    <span class="n">residual</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+        <span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">flux</span> <span class="o">-</span> <span class="n">fitted</span><span class="p">)</span> <span class="o">*</span> <span class="n">C</span><span class="o">.</span><span class="n">inv_sigma</span><span class="p">,</span>
+        <span class="n">C</span><span class="o">.</span><span class="n">D_full</span> <span class="o">@</span> <span class="n">w</span><span class="p">,</span>
+        <span class="n">sc_resid</span><span class="p">,</span>
+    <span class="p">])</span>
+    <span class="k">return</span> <span class="n">residual</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">M_full</span><span class="p">,</span> <span class="n">P_out</span></div>
+
+
+
+<div class="viewcode-block" id="forward">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.forward">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Q_init</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">P_init</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Forward model from parameters alone (broadens internally).&quot;&quot;&quot;</span>
+    <span class="n">M_broad</span> <span class="o">=</span> <span class="n">broaden</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">S</span><span class="o">.</span><span class="n">n_pad</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_pix</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_left</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">forward_from_broad</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Q_init</span><span class="p">,</span> <span class="n">P_init</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="residual_only">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.residual_only">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">residual_only</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">forward</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">S</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="jacobian">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.jacobian">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;n_par&#39;</span><span class="p">,</span> <span class="s1">&#39;central&#39;</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jacobian</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">n_par</span><span class="p">,</span> <span class="n">central</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">diff_step</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Central (or forward) differences, exploiting two pieces of structure.</span>
+
+<span class="sd">    1. Only params 2 and 3 (sigma_star, v0_star) alter M_broad. The remaining</span>
+<span class="sd">       n_par - 2 parameters reuse the centre point&#39;s broadened matrix, so of</span>
+<span class="sd">       the 2*n_par+1 evaluations only 4 pay for an inverse FFT.</span>
+
+<span class="sd">    2. The nebular fixed point runs the SAME number of iterations from the</span>
+<span class="sd">       SAME cold start (Q = 0) as the residual the LM is minimising.</span>
+
+<span class="sd">       This matters more than it looks. An earlier version converged Q* once</span>
+<span class="sd">       at the centre and warm-started each perturbation with a single extra</span>
+<span class="sd">       iteration — 1.5x faster, and wrong. The Jacobian then described a</span>
+<span class="sd">       different map than `residual_only`, so the predicted reduction never</span>
+<span class="sd">       matched the actual one, the gain ratio went to noise, and every LM step</span>
+<span class="sd">       was rejected: `photopop` mode terminated at its initial guess. Keep the two</span>
+<span class="sd">       maps identical; the fixed point is cheap now that the Gram matrix is</span>
+<span class="sd">       hoisted out of the loop.</span>
+
+<span class="sd">    3. The centre point&#39;s passive set P0 is reused as the warm start for every</span>
+<span class="sd">       perturbed linear solve. That is exact — solve_active_set purges an</span>
+<span class="sd">       illegal inherited set before it starts, so it reaches the same vertex</span>
+<span class="sd">       wherever it starts. Measured max|J_warm - J_cold| = 0 exactly in all</span>
+<span class="sd">       three modes, and it is cheaper in two of them (nepop Jacobian</span>
+<span class="sd">       91 ms against 125 ms cold). Before the purge existed this warm start</span>
+<span class="sd">       was NOT exact and inflated the photopop-mode A_V column by 19x.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">eps</span> <span class="o">=</span> <span class="n">diff_step</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">params</span><span class="p">),</span> <span class="n">diff_step</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
+    <span class="n">M_broad</span> <span class="o">=</span> <span class="n">broaden</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">S</span><span class="o">.</span><span class="n">n_pad</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_pix</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_left</span><span class="p">)</span>
+
+    <span class="n">P0</span> <span class="o">=</span> <span class="n">forward_from_broad</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
+
+    <span class="n">live</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">S</span><span class="o">.</span><span class="n">live</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n_par</span><span class="p">]</span>
+    <span class="n">no_fft</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">live</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+    <span class="n">fft_p</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">live</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+
+    <span class="n">rp_n</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">forward_from_broad</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span> <span class="o">+</span> <span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])(</span><span class="n">no_fft</span><span class="p">)</span>
+    <span class="n">rp_f</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">forward</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span> <span class="o">+</span> <span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">S</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])(</span><span class="n">fft_p</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">central</span><span class="p">:</span>
+        <span class="n">rm_n</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">forward_from_broad</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span> <span class="o">-</span> <span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])(</span><span class="n">no_fft</span><span class="p">)</span>
+        <span class="n">rm_f</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">forward</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span> <span class="o">-</span> <span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">S</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])(</span><span class="n">fft_p</span><span class="p">)</span>
+        <span class="n">d_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">rp_n</span> <span class="o">-</span> <span class="n">rm_n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">eps</span><span class="p">[</span><span class="n">no_fft</span><span class="p">][:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+        <span class="n">d_f</span> <span class="o">=</span> <span class="p">(</span><span class="n">rp_f</span> <span class="o">-</span> <span class="n">rm_f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">eps</span><span class="p">[</span><span class="n">fft_p</span><span class="p">][:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">r0</span> <span class="o">=</span> <span class="n">forward_from_broad</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">d_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">rp_n</span> <span class="o">-</span> <span class="n">r0</span><span class="p">)</span> <span class="o">/</span> <span class="n">eps</span><span class="p">[</span><span class="n">no_fft</span><span class="p">][:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+        <span class="n">d_f</span> <span class="o">=</span> <span class="p">(</span><span class="n">rp_f</span> <span class="o">-</span> <span class="n">r0</span><span class="p">)</span> <span class="o">/</span> <span class="n">eps</span><span class="p">[</span><span class="n">fft_p</span><span class="p">][:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+    <span class="n">J</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_par</span><span class="p">,</span> <span class="n">rp_n</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">no_fft</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">J</span> <span class="o">=</span> <span class="n">J</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">no_fft</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">d_n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fft_p</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">J</span> <span class="o">=</span> <span class="n">J</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">fft_p</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">d_f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">J</span><span class="o">.</span><span class="n">T</span></div>
+
+
+
+<div class="viewcode-block" id="lm_optimize">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.lm_optimize">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;n_par&#39;</span><span class="p">,</span> <span class="s1">&#39;central&#39;</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lm_optimize</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">bounds_lo</span><span class="p">,</span> <span class="n">bounds_hi</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">n_par</span><span class="p">,</span>
+                <span class="n">max_iter</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">ftol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">diff_step</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+                <span class="n">central</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Projected Levenberg-Marquardt, identical in structure and convergence</span>
+<span class="sd">    logic to optimizer._lm_optimize, but driving the unified forward model so</span>
+<span class="sd">    it serves all three photoionization modes.</span>
+
+<span class="sd">    `max_iter` is a TRACED runtime value, not a static one — it only bounds a</span>
+<span class="sd">    lax.while_loop, so it need not be baked into the compiled kernel. Together</span>
+<span class="sd">    with the bounds, tolerances, starting point, reddening curve and</span>
+<span class="sd">    regularisation strength (all already runtime arrays), this means the</span>
+<span class="sd">    entire tunable surface of a fit can change without recompiling. Verified:</span>
+<span class="sd">    max_iter 200 -&gt; 150 -&gt; 300 reuses the cached kernel and returns identical</span>
+<span class="sd">    results. Only the problem&#39;s *shape* forces a rebuild — pixel count,</span>
+<span class="sd">    template count, regularisation order, photoionization mode.</span>
+
+<span class="sd">    On the stagnation rule. `n_stag` counts consecutive iterations whose chi2</span>
+<span class="sd">    moved by less than ftol*100, and five of them end the fit as converged.</span>
+<span class="sd">    It advances only on ACCEPTED steps. A rejected trial leaves chi2 exactly</span>
+<span class="sd">    where it was, so counting rejections as stagnation turned the rule into a</span>
+<span class="sd">    five-rejection kill switch wearing a convergence label — and a rejection is</span>
+<span class="sd">    precisely the event LM answers by raising lambda, which is the recovery</span>
+<span class="sd">    mechanism, not a sign of convergence. Measured: a nepop fit took ten</span>
+<span class="sd">    accepted steps still improving at 2.2e-3 per iteration, hit five</span>
+<span class="sd">    rejections while lambda climbed from 5.1e-8 to 4.1e-6, and returned</span>
+<span class="sd">    &quot;converged&quot; having thrown away 0.12 in chi2 and 18% of A_V. Rejections are</span>
+<span class="sd">    already bounded by the n_rej &lt; 10 test in `cond`, which is the honest place</span>
+<span class="sd">    for that limit and which now also reports convergence rather than</span>
+<span class="sd">    &quot;max iter&quot;.</span>
+
+<span class="sd">    `step_norm` is measured against the width of the bounds box, not against</span>
+<span class="sd">    abs(x). Against abs(x) it is scale-broken: sigma_star converges onto its lower</span>
+<span class="sd">    bound of zero and yav is pinned at zero, so the denominator collapses to</span>
+<span class="sd">    1e-10 and step_norm reads 1e7 or more, which made the `classical` test</span>
+<span class="sd">    unreachable and left xtol with no effect at all.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">max_iter</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">max_iter</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resid</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">residual_only</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+
+    <span class="n">r0</span> <span class="o">=</span> <span class="n">resid</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+    <span class="n">chi2_0</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">init</span> <span class="o">=</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mf">1e-3</span><span class="p">),</span> <span class="n">chi2_0</span><span class="p">,</span> <span class="n">r0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="n">jnp</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_par</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">chi2_0</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cond</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">conv</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">n_rej</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">state</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">~</span><span class="n">conv</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n_rej</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">body</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">lam_lm</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">nfev</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">n_rej</span><span class="p">,</span> <span class="n">n_stag</span><span class="p">,</span> <span class="n">chi2_ref</span> <span class="o">=</span> <span class="n">state</span>
+
+        <span class="n">J</span> <span class="o">=</span> <span class="n">jacobian</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">n_par</span><span class="p">,</span> <span class="n">central</span><span class="p">,</span> <span class="n">diff_step</span><span class="p">)</span>
+        <span class="n">col_norms</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">J</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+        <span class="n">scale_new</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">col_norms</span><span class="p">)</span>
+        <span class="n">scale_safe</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">scale_new</span><span class="p">,</span> <span class="mf">1e-10</span><span class="p">)</span>
+
+        <span class="n">H</span> <span class="o">=</span> <span class="n">J</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">J</span> <span class="o">+</span> <span class="n">lam_lm</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">scale_safe</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">J</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">r</span><span class="p">))</span>
+        <span class="n">x_cand</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dp</span><span class="p">,</span> <span class="n">bounds_lo</span><span class="p">,</span> <span class="n">bounds_hi</span><span class="p">)</span>
+
+        <span class="n">r_cand</span> <span class="o">=</span> <span class="n">resid</span><span class="p">(</span><span class="n">x_cand</span><span class="p">)</span>
+        <span class="n">chi2_cand</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r_cand</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">dp_actual</span> <span class="o">=</span> <span class="n">x_cand</span> <span class="o">-</span> <span class="n">x</span>
+        <span class="n">pred_red</span> <span class="o">=</span> <span class="n">chi2</span> <span class="o">-</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">r</span> <span class="o">+</span> <span class="n">J</span> <span class="o">@</span> <span class="n">dp_actual</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">actual_red</span> <span class="o">=</span> <span class="n">chi2</span> <span class="o">-</span> <span class="n">chi2_cand</span>
+        <span class="n">gain</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">pred_red</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-30</span><span class="p">,</span> <span class="n">actual_red</span> <span class="o">/</span> <span class="n">pred_red</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="n">accept</span> <span class="o">=</span> <span class="n">chi2_cand</span> <span class="o">&lt;</span> <span class="n">chi2</span>
+        <span class="n">x_out</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">accept</span><span class="p">,</span> <span class="n">x_cand</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">chi2_out</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">accept</span><span class="p">,</span> <span class="n">chi2_cand</span><span class="p">,</span> <span class="n">chi2</span><span class="p">)</span>
+        <span class="n">r_out</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">accept</span><span class="p">,</span> <span class="n">r_cand</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">n_rej_out</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">accept</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n_rej</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">lam_new</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+            <span class="n">accept</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gain</span> <span class="o">&gt;</span> <span class="mf">0.75</span><span class="p">),</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">lam_lm</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">1e-12</span><span class="p">),</span>
+            <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">accept</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gain</span> <span class="o">&gt;</span> <span class="mf">0.25</span><span class="p">),</span> <span class="n">lam_lm</span><span class="p">,</span>
+                      <span class="n">jnp</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">lam_lm</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">1e10</span><span class="p">)))</span>
+
+        <span class="n">rel_chi2</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">accept</span><span class="p">,</span>
+                             <span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">actual_red</span><span class="p">)</span> <span class="o">/</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">step_norm</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dp_actual</span><span class="p">)</span>
+                            <span class="o">/</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">bounds_hi</span> <span class="o">-</span> <span class="n">bounds_lo</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">))</span>
+        <span class="n">classical</span> <span class="o">=</span> <span class="n">accept</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rel_chi2</span> <span class="o">&lt;</span> <span class="n">ftol</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">step_norm</span> <span class="o">&lt;</span> <span class="n">xtol</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">niter</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">window</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">chi2_ref</span> <span class="o">-</span> <span class="n">chi2_out</span><span class="p">)</span> <span class="o">/</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">chi2_ref</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">)</span>
+        <span class="n">big</span> <span class="o">=</span> <span class="n">window</span> <span class="o">&gt;</span> <span class="n">ftol</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">n_stag_out</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">accept</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">big</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n_stag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n_stag</span><span class="p">)</span>
+        <span class="n">chi2_ref_out</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">big</span><span class="p">,</span> <span class="n">chi2_out</span><span class="p">,</span> <span class="n">chi2_ref</span><span class="p">)</span>
+        <span class="n">stagnant</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_stag_out</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">niter</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">n_live</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">S</span><span class="o">.</span><span class="n">live</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n_par</span><span class="p">])</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x_out</span><span class="p">,</span> <span class="n">lam_new</span><span class="p">,</span> <span class="n">chi2_out</span><span class="p">,</span> <span class="n">r_out</span><span class="p">,</span> <span class="n">niter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="n">nfev</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n_live</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="n">classical</span> <span class="o">|</span> <span class="n">stagnant</span> <span class="o">|</span> <span class="p">(</span><span class="n">n_rej_out</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">),</span>
+                <span class="n">scale_new</span><span class="p">,</span> <span class="n">n_rej_out</span><span class="p">,</span> <span class="n">n_stag_out</span><span class="p">,</span> <span class="n">chi2_ref_out</span><span class="p">)</span>
+
+    <span class="n">final</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">lax</span><span class="o">.</span><span class="n">while_loop</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">init</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">final</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">final</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">final</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">final</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">final</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="grid_chi2">
+<a class="viewcode-back" href="../../api/generated/brainsp.fast_engine.html#brainsp.fast_engine.grid_chi2">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;n_groups&#39;</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">grid_chi2</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">v0_grid</span><span class="p">,</span> <span class="n">sigma_star_init</span><span class="p">,</span> <span class="n">av_init</span><span class="p">,</span> <span class="n">sigma_gas_init</span><span class="p">,</span>
+              <span class="n">S</span><span class="p">,</span> <span class="n">n_groups</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    chi2 across a velocity grid, vmapped.</span>
+
+<span class="sd">    Deliberately evaluated in &quot;spop&quot; mode regardless of the requested mode:</span>
+<span class="sd">    this only picks the velocity basin for the LM, the weights are discarded,</span>
+<span class="sd">    and adding the nebular fixed point here would cost 4x for no benefit.</span>
+<span class="sd">    This matches the existing behaviour of SpectralFitter.grid_search_v0.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">S_off</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;spop&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">one</span><span class="p">(</span><span class="n">v0</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+            <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">av_init</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma_star_init</span><span class="p">,</span> <span class="n">v0</span><span class="p">]),</span>
+            <span class="n">jnp</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">sigma_gas_init</span><span class="p">,</span> <span class="n">v0</span><span class="p">]),</span> <span class="n">n_groups</span><span class="p">),</span>
+        <span class="p">])</span>
+        <span class="n">M_broad</span> <span class="o">=</span> <span class="n">broaden</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">sigma_star_init</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_pad</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_pix</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">n_left</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">forward_from_broad</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">M_broad</span><span class="p">,</span> <span class="n">S_off</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">jax</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">one</span><span class="p">)(</span><span class="n">v0_grid</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

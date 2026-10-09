@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.line_products &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/line_products';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.line_products</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.line_products</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">BRAIN: per-line emission products for a datacube, in the megacube layout.</span>
+
+<span class="sd">The published MaNGA megacubes (Riffel et al. 2023, MNRAS 524, 5640) carry an</span>
+<span class="sd">emission-line fit. BRAIN fits the lines together with the stars, and used to</span>
+<span class="sd">keep only each kinematic group&#39;s velocity and dispersion: the line fluxes</span>
+<span class="sd">were computed and thrown away. This writes them, with the extensions, names</span>
+<span class="sd">and definitions of those megacubes, so a BRAIN megacube reads the same way.</span>
+
+<span class="sd">    SOLUTION  (3N + 1, ny, nx)  A, v, sigma per line; the last plane is the</span>
+<span class="sd">                                spaxel&#39;s chi2 / Nl_eff</span>
+<span class="sd">    DISP      (3N, ny, nx)      uncertainty of SOLUTION. NaN: not computed,</span>
+<span class="sd">                                as in the published megacubes</span>
+<span class="sd">    INIGUESS  (3N, ny, nx)      the starting sigma; A and v are NaN, because</span>
+<span class="sd">                                BRAIN starts from the velocity grid search</span>
+<span class="sd">                                and an amplitude is never guessed (it is</span>
+<span class="sd">                                solved linearly)</span>
+<span class="sd">    FLUX_M    (N, ny, nx)       line flux from the model</span>
+<span class="sd">    FLUX_D    (N, ny, nx)       line flux measured directly on the data</span>
+<span class="sd">    EQW_M     (N, ny, nx)       equivalent width from the model</span>
+<span class="sd">    EQW_D     (N, ny, nx)       equivalent width measured on the data</span>
+<span class="sd">    MASK2D    (ny, nx)          0 where a spaxel was fitted, 1 elsewhere</span>
+<span class="sd">    PARNAMES  table             (component, parameter): parameter A, v or s</span>
+<span class="sd">    SPECIDX   table             (row, column) of every fitted spaxel</span>
+<span class="sd">    FITCONFIG table             (parameters, values): rest wavelengths,</span>
+<span class="sd">                                kinematic groups, continuum windows</span>
+
+<span class="sd">THE DEFINITIONS, each checked against the published 8626-12704 megacube by</span>
+<span class="sd">rebuilding its numbers from its own SOLUTION and spectra:</span>
+
+<span class="sd">    FLUX_M = integral of the line model over lambda_c +- 5 sigma</span>
+<span class="sd">             (reproduced to 2e-5)</span>
+<span class="sd">    EQW_M  = integral of -(line model) / C over the same window</span>
+<span class="sd">             (reproduced to 3e-5)</span>
+<span class="sd">    EQW_D  = integral of 1 - data / C over the same window</span>
+<span class="sd">             (reproduced to 1e-15)</span>
+<span class="sd">    FLUX_D = integral of data - stellar - (every other line) over it</span>
+
+<span class="sd">where the window is (lambda_c - 5 s, lambda_c + 5 s) with s = sigma</span>
+<span class="sd">lambda_rest / c, and C is a straight</span>
+<span class="sd">line fitted by least squares to the stellar model in the line&#39;s two</span>
+<span class="sd">continuum windows (blue0, blue1, red0, red1). A line with no windows falls</span>
+<span class="sd">back to a degree-7 polynomial over the whole</span>
+<span class="sd">fitting range, three passes of 3-sigma clipping. EQW is negative for an</span>
+<span class="sd">emission line.</span>
+
+<span class="sd">UNITS AND FRAME</span>
+
+<span class="sd">Fluxes are in the cube&#39;s own flux unit times Angstrom, and OBSERVED: the</span>
+<span class="sd">line as it is in the data, attenuated by the fitted dust like everything</span>
+<span class="sd">else in the model. That is the published megacubes&#39; FLUX_M, and it is not BRAIN&#39;s fitted weight, which is the line before attenuation.</span>
+<span class="sd">The wavelength frame is the frame the fit ran in: the rest frame when BRAIN</span>
+<span class="sd">removed a redshift, with the flux density not rescaled by (1 + z).</span>
+
+<span class="sd">A is the peak of the Gaussian whose integral is the line&#39;s total observed</span>
+<span class="sd">flux, so FLUX_M = A sqrt(2 pi) s lambda_c / c up to the 5.7e-7 of a Gaussian</span>
+<span class="sd">that lies beyond 5 sigma; v and s are the line&#39;s kinematic group&#39;s, observed</span>
+<span class="sd">(no instrumental correction).</span>
+
+<span class="sd">THE LINE MODEL is BRAIN&#39;s own: the pixel-integrated Gaussian of</span>
+<span class="sd">emission_lines._build_emission_jit, rebuilt here per component in numpy, so</span>
+<span class="sd">the products are integrals of exactly the profile that was fitted.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">C_KMS</span> <span class="o">=</span> <span class="mf">299792.458</span>
+<span class="n">SIGMA_FACTOR</span> <span class="o">=</span> <span class="mf">5.0</span>
+
+<span class="n">CONTINUUM_WINDOWS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Hbeta_4861&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">4450.0</span><span class="p">,</span> <span class="mf">4600.0</span><span class="p">,</span> <span class="mf">5300.0</span><span class="p">,</span> <span class="mf">5380.0</span><span class="p">),</span>
+    <span class="s2">&quot;[O III]_4959&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">4900.0</span><span class="p">,</span> <span class="mf">4920.0</span><span class="p">,</span> <span class="mf">5050.0</span><span class="p">,</span> <span class="mf">5100.0</span><span class="p">),</span>
+    <span class="s2">&quot;[O III]_5007&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">4900.0</span><span class="p">,</span> <span class="mf">4920.0</span><span class="p">,</span> <span class="mf">5050.0</span><span class="p">,</span> <span class="mf">5100.0</span><span class="p">),</span>
+    <span class="s2">&quot;He I_5876&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">5760.0</span><span class="p">,</span> <span class="mf">5840.0</span><span class="p">,</span> <span class="mf">5920.0</span><span class="p">,</span> <span class="mf">6000.0</span><span class="p">),</span>
+    <span class="s2">&quot;[O I]_6300&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">6200.0</span><span class="p">,</span> <span class="mf">6250.0</span><span class="p">,</span> <span class="mf">6480.0</span><span class="p">,</span> <span class="mf">6530.0</span><span class="p">),</span>
+    <span class="s2">&quot;[N II]_6548&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">6480.0</span><span class="p">,</span> <span class="mf">6530.0</span><span class="p">,</span> <span class="mf">6600.0</span><span class="p">,</span> <span class="mf">6670.0</span><span class="p">),</span>
+    <span class="s2">&quot;Halpha_6563&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">6480.0</span><span class="p">,</span> <span class="mf">6530.0</span><span class="p">,</span> <span class="mf">6600.0</span><span class="p">,</span> <span class="mf">6670.0</span><span class="p">),</span>
+    <span class="s2">&quot;[N II]_6583&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">6480.0</span><span class="p">,</span> <span class="mf">6530.0</span><span class="p">,</span> <span class="mf">6600.0</span><span class="p">,</span> <span class="mf">6650.0</span><span class="p">),</span>
+    <span class="s2">&quot;[S II]_6716&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">6650.0</span><span class="p">,</span> <span class="mf">6700.0</span><span class="p">,</span> <span class="mf">6745.0</span><span class="p">,</span> <span class="mf">6790.0</span><span class="p">),</span>
+    <span class="s2">&quot;[S II]_6731&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">6650.0</span><span class="p">,</span> <span class="mf">6700.0</span><span class="p">,</span> <span class="mf">6745.0</span><span class="p">,</span> <span class="mf">6790.0</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Continuum windows, (blue0, blue1, red0, red1) in Angstrom, from the</span>
+<span class="sd">configuration the published 8626-12704 megacube was made with (its</span>
+<span class="sd">FITCONFIG). Lines not listed use the no-window fallback.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="components">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_products.html#brainsp.line_products.components">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">components</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">doublets</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Every line BRAIN fits, one entry per emitting line, in wavelength order.</span>
+
+<span class="sd">    A tied doublet is one fitted column and one weight, the stronger line&#39;s</span>
+<span class="sd">    flux; it is two lines here, each with its own flux, because every reader of a line map want [O III] 4959 and 5007 separately.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">]):</span>
+        <span class="n">rest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;rest_wavelengths&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;ratios&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;group_indices&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;group_labels&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">([</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">doublets</span><span class="p">[</span><span class="n">name</span><span class="p">]]</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">doublets</span>
+                 <span class="k">else</span> <span class="p">[</span><span class="n">name</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rest</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">rest</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">names</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                            <span class="n">entry</span><span class="o">=</span><span class="n">j</span><span class="p">,</span> <span class="n">rest</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">rest</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span> <span class="n">ratio</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">ratio</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span>
+                            <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">))</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;rest&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="unit_profile">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_products.html#brainsp.line_products.unit_profile">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">unit_profile</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">rest</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">v0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    One line&#39;s profile on the log-lambda grid, unit area in Angstrom.</span>
+
+<span class="sd">    The same construction as emission_lines._build_emission_jit: the</span>
+<span class="sd">    analytic transform of a Gaussian times that of a one-pixel top hat,</span>
+<span class="sd">    transformed back over N_pix and divided by the pixel width in Angstrom.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">lam</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">velscale</span> <span class="o">/</span> <span class="n">C_KMS</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">rest</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="n">dx</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">/</span> <span class="n">velscale</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">xs</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">x0</span><span class="p">)</span>
+                 <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sinc</span><span class="p">(</span><span class="n">omega</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">transform</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">obs</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_legendre_continuum</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">n_iterate</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="mf">3.0</span><span class="p">):</span>
+    <span class="n">keep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">lam</span> <span class="o">-</span> <span class="n">lam</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">lam</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">lam</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+    <span class="n">coef</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iterate</span><span class="p">):</span>
+        <span class="n">coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">legendre</span><span class="o">.</span><span class="n">legfit</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">keep</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">keep</span><span class="p">],</span> <span class="n">degree</span><span class="p">)</span>
+        <span class="n">resid</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">legendre</span><span class="o">.</span><span class="n">legval</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">coef</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">resid</span><span class="p">[</span><span class="n">keep</span><span class="p">])</span>
+        <span class="n">keep</span> <span class="o">=</span> <span class="n">keep</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">clip</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">legendre</span><span class="o">.</span><span class="n">legval</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">w</span> <span class="o">-</span> <span class="n">lam</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">lam</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">lam</span><span class="o">.</span><span class="n">min</span><span class="p">())),</span> <span class="n">coef</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="continuum">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_products.html#brainsp.line_products.continuum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">continuum</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">stellar</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    C(lambda): the continuum an equivalent width is measured against.</span>
+
+<span class="sd">    `fallback` is the no-window continuum, which depends only on the stellar</span>
+<span class="sd">    model, so a caller measuring many lines fits it once and passes it in.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">CONTINUUM_WINDOWS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">win</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="p">(((</span><span class="n">lam</span> <span class="o">&gt;</span> <span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lam</span> <span class="o">&lt;</span> <span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">|</span> <span class="p">((</span><span class="n">lam</span> <span class="o">&gt;</span> <span class="n">win</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lam</span> <span class="o">&lt;</span> <span class="n">win</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span>
+        <span class="n">m</span> <span class="o">&amp;=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">stellar</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">stellar</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fallback</span> <span class="k">if</span> <span class="n">fallback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">_legendre_continuum</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">stellar</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="measure">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_products.html#brainsp.line_products.measure">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">measure</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">stellar</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">gas_weights</span><span class="p">,</span> <span class="n">n_groups</span><span class="p">,</span>
+            <span class="n">dk</span><span class="p">,</span> <span class="n">comps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Every product for one spaxel, in the spaxel&#39;s normalised units.</span>
+
+<span class="sd">    Returns arrays over `comps`: A, v, s, flux_m, flux_d, eqw_m, eqw_d.</span>
+<span class="sd">    Fluxes are per normalised unit times Angstrom; the caller multiplies by</span>
+<span class="sd">    the spaxel&#39;s normalisation to reach the cube&#39;s units. EQWs are unitless</span>
+<span class="sd">    ratios integrated over Angstrom and need no scaling.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">av</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">atten</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">dk</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comps</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span>
+        <span class="n">sigma</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">])</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">gas_weights</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;entry&quot;</span><span class="p">]])</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;ratio&quot;</span><span class="p">]</span>
+        <span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">atten</span> <span class="o">*</span> <span class="n">unit_profile</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;rest&quot;</span><span class="p">],</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">v0</span><span class="p">))</span>
+    <span class="n">models</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="k">if</span> <span class="n">models</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">lam</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">comps</span><span class="p">)</span>
+    <span class="n">A</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">FM</span><span class="p">,</span> <span class="n">FD</span><span class="p">,</span> <span class="n">EM</span><span class="p">,</span> <span class="n">ED</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+    <span class="n">fallback</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CONTINUUM_WINDOWS</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comps</span><span class="p">):</span>
+        <span class="n">fallback</span> <span class="o">=</span> <span class="n">_legendre_continuum</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">stellar</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">comps</span><span class="p">):</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span>
+        <span class="n">sigma</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">])</span>
+        <span class="n">lam_c</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;rest&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span>
+        <span class="n">s_win</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;rest&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">C_KMS</span>
+        <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">lam</span> <span class="o">&gt;</span> <span class="n">lam_c</span> <span class="o">-</span> <span class="n">SIGMA_FACTOR</span> <span class="o">*</span> <span class="n">s_win</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lam</span> <span class="o">&lt;</span> <span class="n">lam_c</span> <span class="o">+</span> <span class="n">SIGMA_FACTOR</span> <span class="o">*</span> <span class="n">s_win</span><span class="p">)</span>
+        <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span><span class="p">,</span> <span class="n">sigma</span>
+        <span class="k">if</span> <span class="n">cond</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">lam</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">total_flux</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">gas_weights</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;entry&quot;</span><span class="p">]])</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;ratio&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">lam_c</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">atten</span><span class="p">))</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">total_flux</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">lam_c</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span> \
+            <span class="k">if</span> <span class="n">sigma</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">FM</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">cond</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">others</span> <span class="o">=</span> <span class="n">total</span> <span class="o">-</span> <span class="n">line</span>
+        <span class="n">FD</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">((</span><span class="n">data</span> <span class="o">-</span> <span class="n">stellar</span> <span class="o">-</span> <span class="n">others</span><span class="p">)[</span><span class="n">cond</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="n">continuum</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">stellar</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">fallback</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">C</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">):</span>
+            <span class="n">EM</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="o">-</span><span class="n">line</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span> <span class="o">/</span> <span class="n">C</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+            <span class="n">ED</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span> <span class="o">/</span> <span class="n">C</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">A</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">FM</span><span class="p">,</span> <span class="n">FD</span><span class="p">,</span> <span class="n">EM</span><span class="p">,</span> <span class="n">ED</span></div>
+
+
+
+<div class="viewcode-block" id="hdus">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_products.html#brainsp.line_products.hdus">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hdus</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">stellar</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">n_ssp</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span>
+         <span class="n">n_groups</span><span class="p">,</span> <span class="n">dk</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">doublets</span><span class="p">,</span> <span class="n">vi</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+         <span class="n">sigma_start</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The line products of a fitted cube as a list of HDUs.</span>
+
+<span class="sd">    data, stellar: (n_spaxel, n_pix) on the log grid, normalised.</span>
+<span class="sd">    params: (n_spaxel, 4 + 2 n_groups). weights: (n_spaxel, n_ssp + n_gas).</span>
+<span class="sd">    norm: (n_spaxel,) the factor that turns normalised flux into cube flux.</span>
+<span class="sd">    vi: flat spaxel index of each fitted spaxel. Returns [] with no lines.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+
+    <span class="n">comps</span> <span class="o">=</span> <span class="n">components</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">doublets</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">comps</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">ns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">comps</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">vi</span><span class="p">)</span>
+    <span class="n">planes</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">ns</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;fm&quot;</span><span class="p">,</span> <span class="s2">&quot;fd&quot;</span><span class="p">,</span> <span class="s2">&quot;em&quot;</span><span class="p">,</span> <span class="s2">&quot;ed&quot;</span><span class="p">)}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ns</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">measure</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stellar</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                      <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">n_ssp</span><span class="p">:],</span> <span class="n">n_groups</span><span class="p">,</span> <span class="n">dk</span><span class="p">,</span> <span class="n">comps</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">((</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;fm&quot;</span><span class="p">,</span> <span class="s2">&quot;fd&quot;</span><span class="p">,</span> <span class="s2">&quot;em&quot;</span><span class="p">,</span> <span class="s2">&quot;ed&quot;</span><span class="p">),</span> <span class="n">res</span><span class="p">):</span>
+            <span class="n">planes</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">if</span> <span class="n">progress</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">64</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">progress</span><span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="n">ns</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;fm&quot;</span><span class="p">,</span> <span class="s2">&quot;fd&quot;</span><span class="p">):</span>
+        <span class="n">planes</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">*=</span> <span class="n">norm</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span>
+
+    <span class="n">yc</span><span class="p">,</span> <span class="n">xc</span> <span class="o">=</span> <span class="n">vi</span> <span class="o">//</span> <span class="n">nx</span><span class="p">,</span> <span class="n">vi</span> <span class="o">%</span> <span class="n">nx</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cube</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">depth</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">out</span><span class="p">[:,</span> <span class="n">yc</span><span class="p">,</span> <span class="n">xc</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ns</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">sol</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">sol</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">sol</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">planes</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">],</span> <span class="n">planes</span><span class="p">[</span><span class="s2">&quot;v&quot;</span><span class="p">],</span> <span class="n">planes</span><span class="p">[</span><span class="s2">&quot;s&quot;</span><span class="p">])</span>
+    <span class="n">sol</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">chi2</span>
+    <span class="n">ini</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">ns</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">ini</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">sigma_start</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">header</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">comment</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;OBJECT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;FUNCTION&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="s2">&quot;BRAIN&#39;s pixel-integrated Gaussian&quot;</span><span class="p">)</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;NFUNC&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;COMMENT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">comment</span>
+        <span class="k">return</span> <span class="n">h</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">header</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;A, v, s per line; last plane chi2/Nl_eff&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SOLUTION&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">ns</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">),</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span>
+                      <span class="n">header</span><span class="p">(</span><span class="s2">&quot;dispersion&quot;</span><span class="p">,</span> <span class="s2">&quot;uncertainties not computed&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;DISP&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="n">ini</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span> <span class="n">header</span><span class="p">(</span><span class="s2">&quot;initial guess&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;A, v: not guessed; see SOLUTION docs&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;INIGUESS&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="n">planes</span><span class="p">[</span><span class="s2">&quot;fd&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">),</span> <span class="n">header</span><span class="p">(</span><span class="s2">&quot;flux_direct&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;observed, cube flux unit x Angstrom&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;FLUX_D&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="n">planes</span><span class="p">[</span><span class="s2">&quot;fm&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">),</span> <span class="n">header</span><span class="p">(</span><span class="s2">&quot;flux_model&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;observed, cube flux unit x Angstrom&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;FLUX_M&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="n">planes</span><span class="p">[</span><span class="s2">&quot;em&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">),</span> <span class="n">header</span><span class="p">(</span><span class="s2">&quot;eqw_model&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Angstrom; negative for emission&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;EQW_M&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="n">planes</span><span class="p">[</span><span class="s2">&quot;ed&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">),</span> <span class="n">header</span><span class="p">(</span><span class="s2">&quot;eqw_direct&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Angstrom; negative for emission&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;EQW_D&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="n">yc</span><span class="p">,</span> <span class="n">xc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">header</span><span class="p">(</span><span class="s2">&quot;spatial mask&quot;</span><span class="p">,</span> <span class="s2">&quot;0 = fitted&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MASK2D&quot;</span><span class="p">))</span>
+
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comps</span><span class="p">]</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">BinTableHDU</span><span class="o">.</span><span class="n">from_columns</span><span class="p">([</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;32A&quot;</span><span class="p">,</span>
+                    <span class="n">array</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;parameter&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;1A&quot;</span><span class="p">,</span>
+                    <span class="n">array</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">))],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PARNAMES&quot;</span><span class="p">))</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">BinTableHDU</span><span class="o">.</span><span class="n">from_columns</span><span class="p">([</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;J&quot;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">yc</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;column&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;J&quot;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">xc</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))],</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SPECIDX&quot;</span><span class="p">))</span>
+    <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fit.function&quot;</span><span class="p">,</span> <span class="s2">&quot;equivalent_width.sigma_factor&quot;</span><span class="p">],</span> <span class="p">[</span>
+        <span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SIGMA_FACTOR</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">wavelength_scale</span><span class="p">:</span>
+        <span class="n">keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;brain.wavelength_scale&quot;</span><span class="p">);</span> <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">wavelength_scale</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comps</span><span class="p">:</span>
+        <span class="n">keys</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.rest_wavelength&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.k_group&quot;</span><span class="p">]</span>
+        <span class="n">values</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;rest&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">])]</span>
+        <span class="n">win</span> <span class="o">=</span> <span class="n">CONTINUUM_WINDOWS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+        <span class="n">keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.continuum_windows&quot;</span><span class="p">)</span>
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">win</span><span class="p">)</span> <span class="k">if</span> <span class="n">win</span>
+                      <span class="k">else</span> <span class="s2">&quot;none: degree-7 continuum over the fitting range&quot;</span><span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">BinTableHDU</span><span class="o">.</span><span class="n">from_columns</span><span class="p">([</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;parameters&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;64A&quot;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">keys</span><span class="p">)),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;64A&quot;</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">values</span><span class="p">))],</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;FITCONFIG&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

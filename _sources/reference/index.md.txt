@@ -1,0 +1,12 @@
+# Reference
+
+```{toctree}
+:maxdepth: 1
+
+settings
+cli
+skill
+changelog
+citing
+license
+```

@@ -1,0 +1,246 @@
+# Command-line reference
+
+Every command is a sub-command of `brainsp` (also `python -m brainsp`). Any setting can be given to `fit`, `cube` and `check` as `--set name=value`, read as YAML. This page is the commands' own `--help`, generated from the code.
+
+## `brainsp`
+
+```text
+usage: brainsp [-h]
+               {gui,fit,cube,selftest,examples,init,check,settings,libraries,plot,desktop,clear-cache,version}
+               ...
+
+BRAIN: stellar population synthesis of spectra and datacubes.
+
+positional arguments:
+  {gui,fit,cube,selftest,examples,init,check,settings,libraries,plot,desktop,clear-cache,version}
+    gui                 open the desktop interface
+    fit                 fit one or more spectra
+    cube                fit datacubes
+    selftest            check the installation
+    examples            write the mock spectra and cube
+    init                write a run script (.py) or a settings file (.yaml)
+    check               validate settings without fitting
+    settings            describe the settings
+    libraries           list, describe or install template libraries
+    plot                draw a figure from a result
+    desktop             add BRAIN to the applications menu
+    clear-cache         forget compiled kernels and prepared templates
+    version             print the version
+
+options:
+  -h, --help            show this help message and exit
+
+Documentation: https://sureshparekh.github.io/braindoc/
+```
+
+## `brainsp gui`
+
+```text
+usage: brainsp gui [-h]
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## `brainsp fit`
+
+```text
+usage: brainsp fit [-h] [--settings SETTINGS] [--set NAME=VALUE]
+                   [--device {auto,cpu,gpu}] [-o OUTPUT]
+                   [--corrections CORRECTIONS] [-q]
+                   [spectra ...]
+
+positional arguments:
+  spectra               files or glob patterns
+
+options:
+  -h, --help            show this help message and exit
+  --settings SETTINGS   a settings file (YAML)
+  --set NAME=VALUE      change one setting (repeatable)
+  --device {auto,cpu,gpu}
+                        processor to fit on
+  -o OUTPUT, --output OUTPUT
+                        output folder (default brain_out)
+  --corrections CORRECTIONS
+                        CSV: filename, redshift, ebv, rv, law, rest_frame
+  -q, --quiet
+```
+
+## `brainsp cube`
+
+```text
+usage: brainsp cube [-h] [--settings SETTINGS] [--set NAME=VALUE]
+                    [--device {auto,cpu,gpu}] [--redshift REDSHIFT]
+                    [-o OUTPUT] [--flux-hdu FLUX_HDU] [--error-hdu ERROR_HDU]
+                    [--error-type {inv_variance,variance,error,inv_error}]
+                    [--mask-hdu MASK_HDU] [--wavelength-scale {air,vacuum}]
+                    [--ebv EBV] [--rv RV] [--sn [SN ...]] [--fit-sn FIT_SN]
+                    [--mask MASK] [--bin BIN] [--batch-size BATCH_SIZE]
+                    [--table TABLE] [--check] [--export FILE.py]
+                    [cubes ...]
+
+positional arguments:
+  cubes                 FITS cubes (or give them in --table)
+
+options:
+  -h, --help            show this help message and exit
+  --settings SETTINGS   a settings file (YAML)
+  --set NAME=VALUE      change one setting (repeatable)
+  --device {auto,cpu,gpu}
+                        processor to fit on
+  --redshift REDSHIFT   the galaxy's z (required unless --table gives one per
+                        cube; 0 = rest frame)
+  -o OUTPUT, --output OUTPUT
+  --flux-hdu FLUX_HDU
+  --error-hdu ERROR_HDU
+  --error-type {inv_variance,variance,error,inv_error}
+  --mask-hdu MASK_HDU
+  --wavelength-scale {air,vacuum}
+  --ebv EBV             Galactic E(B-V) to remove
+  --rv RV
+  --sn [SN ...]         S/N thresholds to make masks for, e.g. 3 5 10
+  --fit-sn FIT_SN       fit only spaxels with S/N above this
+  --mask MASK           wavelength mask file (.sm/.gm/list)
+  --bin BIN             bin spaxels n x n
+  --batch-size BATCH_SIZE
+  --table TABLE         CSV of per-cube settings
+  --check               validate only
+  --export FILE.py      write the run as one Python file instead
+```
+
+## `brainsp selftest`
+
+```text
+usage: brainsp selftest [-h] [--quick] [--device {auto,cpu,gpu}]
+                        [--keep FOLDER]
+
+options:
+  -h, --help            show this help message and exit
+  --quick
+  --device {auto,cpu,gpu}
+  --keep FOLDER         write the mocks and fits here and keep them
+```
+
+## `brainsp examples`
+
+```text
+usage: brainsp examples [-h] [--no-cube] [--overwrite] [folder]
+
+positional arguments:
+  folder       default ~/.brainsp/examples
+
+options:
+  -h, --help   show this help message and exit
+  --no-cube
+  --overwrite
+```
+
+## `brainsp init`
+
+```text
+usage: brainsp init [-h] [--kind {spectrum,cube}] [--overwrite]
+                    path [inputs ...]
+
+positional arguments:
+  path
+  inputs                spectra or cubes to put in it
+
+options:
+  -h, --help            show this help message and exit
+  --kind {spectrum,cube}
+  --overwrite
+```
+
+## `brainsp check`
+
+```text
+usage: brainsp check [-h] [--set NAME=VALUE] [--cube] [settings]
+
+positional arguments:
+  settings
+
+options:
+  -h, --help        show this help message and exit
+  --set NAME=VALUE
+  --cube            settings for a datacube (no spectrum needed)
+```
+
+## `brainsp settings`
+
+```text
+usage: brainsp settings [-h] [name]
+
+positional arguments:
+  name
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## `brainsp libraries`
+
+```text
+usage: brainsp libraries [-h] [--overwrite] [{list,info,install}] [target]
+
+positional arguments:
+  {list,info,install}
+  target
+
+options:
+  -h, --help           show this help message and exit
+  --overwrite
+```
+
+## `brainsp plot`
+
+```text
+usage: brainsp plot [-h] [-o OUTPUT] [--map [MAP ...]] [--cmap CMAP]
+                    [--diagnostic {BPT [N II],BPT [S II],WHAN}] [--spaxel Y,X]
+                    [--export FOLDER] [--formats FORMATS] [--sfh]
+                    [--xlim LO,HI]
+                    result
+
+positional arguments:
+  result                a *_summary.txt or a megacube
+
+options:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+  --map [MAP ...]       map name(s) of a megacube
+  --cmap CMAP
+  --diagnostic {BPT [N II],BPT [S II],WHAN}
+  --spaxel Y,X
+  --export FOLDER       write maps to files (all, or --map ones)
+  --formats FORMATS
+  --sfh                 star-formation history of a spectrum fit
+  --xlim LO,HI
+```
+
+## `brainsp desktop`
+
+```text
+usage: brainsp desktop [-h] [--remove]
+
+options:
+  -h, --help  show this help message and exit
+  --remove
+```
+
+## `brainsp clear-cache`
+
+```text
+usage: brainsp clear-cache [-h]
+
+options:
+  -h, --help  show this help message and exit
+```
+
+## `brainsp version`
+
+```text
+usage: brainsp version [-h]
+
+options:
+  -h, --help  show this help message and exit
+```
+

@@ -1,0 +1,26 @@
+Plot saved to fits/observed/mock_observed_frame_fit.pdf
+Plot saved to fits/observed/mock_old_population_fit.pdf
+observed frame: v0 149.74  sigma 202.23  A_V 0.198
+rest-frame twin: v0 149.02  sigma 201.38  A_V 0.207
+
+corrections.csv:
+filename,redshift,ebv,rv,law
+mock_old_population.spec,0.0,0.0,3.1,CCM
+mock_young_mixture.spec,0.0,0.0,3.1,CCM
+mock_star_forming_lines.spec,0.0,0.0,3.1,CCM
+mock_seyfert_agn.spec,0.0,0.0,3.1,CCM
+mock_observed_frame.spec,0.03,0.05,3.1,CCM
+
+  mock_old_population.spec       {'spectrum_redshift': 0.0, 'galactic_ebv': 0.0, 'galactic_rv': 3.1, 'galactic_law': 'CCM', 'spectrum_in_rest_frame': True}
+  mock_young_mixture.spec        {'spectrum_redshift': 0.0, 'galactic_ebv': 0.0, 'galactic_rv': 3.1, 'galactic_law': 'CCM', 'spectrum_in_rest_frame': True}
+  mock_star_forming_lines.spec   {'spectrum_redshift': 0.0, 'galactic_ebv': 0.0, 'galactic_rv': 3.1, 'galactic_law': 'CCM', 'spectrum_in_rest_frame': True}
+  mock_seyfert_agn.spec          {'spectrum_redshift': 0.0, 'galactic_ebv': 0.0, 'galactic_rv': 3.1, 'galactic_law': 'CCM', 'spectrum_in_rest_frame': True}
+  mock_observed_frame.spec       {'spectrum_redshift': 0.03, 'galactic_ebv': 0.05, 'galactic_rv': 3.1, 'galactic_law': 'CCM', 'spectrum_in_rest_frame': False}
+Plot saved to fits/batch/mock_old_population_fit.pdf
+Plot saved to fits/batch/mock_young_mixture_fit.pdf
+Plot saved to fits/batch/mock_observed_frame_fit.pdf
+
+3 spectra in 2.9 s
+  <FitResult mock_old_population.spec: v0=149.02 km/s, sigma=201.38 km/s, AV=0.2073, chi2=0.665296>
+  <FitResult mock_young_mixture.spec: v0=-59.59 km/s, sigma=83.51 km/s, AV=0.5896, chi2=0.67788>
+  <FitResult mock_observed_frame.spec: v0=149.74 km/s, sigma=202.23 km/s, AV=0.1982, chi2=0.656595>

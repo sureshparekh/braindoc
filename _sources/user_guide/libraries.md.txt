@@ -1,0 +1,95 @@
+# Template libraries
+
+A **template library** (a *base*) is a set of simple stellar population
+spectra: the light of stars of one age and metallicity born together. The
+fit is a non-negative mixture of them, so the library sets what the answer
+can be: its ages, its metallicities, its wavelength range, its resolution and
+its stellar physics.
+
+## BasesGM
+
+The library BRAIN ships: 84 SSPs, the "GM" base used for the MaNGA
+megacubes of Riffel et al. (2023).
+
+| | |
+|---|---|
+| ages | 21: 1, 5.62, 10, 14.1, 20, 31.6, 56.2 Myr; 0.1, 0.2, 0.316, 0.398, 0.501, 0.631, 0.708, 0.794, 0.891, 1, 2, 5.01, 8.91, 12.6 Gyr |
+| metallicities | 4: $Z$ = 0.0037, 0.0076, 0.019 (solar), 0.0315 |
+| wavelengths | 3540–6996 Å, so the default fitting range 3700–6900 Å fits inside it |
+| resolution | 56 at 2.51 Å FWHM, 28 young ones at 0.3 Å FWHM plus 45 km/s |
+| ionising UV | no: `nepop` and `photopop` need a library that reaches 911.76 Å |
+
+## M13
+
+Also shipped: 47 SSPs of Maraston (2013), Salpeter IMF, the base used for
+the JWST NIRSpec near-infrared fits, with its own AGN set in `M13/AGN`
+(power laws $F_\nu \propto \nu^{-\alpha}$, $\alpha$ = 0.25, 0.5, 0.75, and
+blackbodies for hot dust at 800–1400 K), which `include_power_law` adds
+instead of the package's seven continua.
+
+| | |
+|---|---|
+| ages | 12: 10, 30, 50, 100, 200, 500, 700 Myr; 1, 2, 5, 9, 13 Gyr (no 10 Myr at $Z$ = 0.001) |
+| metallicities | 4: $Z$ = 0.001, 0.01, 0.02, 0.04 |
+| wavelengths | 91 Å – 160 µm; sampled every 50–100 Å in the near infrared |
+
+```bash
+brainsp libraries                # what is available, and where
+brainsp libraries info BasesGM   # ages, Z, wavelength range, ...
+```
+
+```python
+brainsp.libraries.available()          # ['BasesGM', 'M13']
+brainsp.libraries.info("BasesGM")
+```
+
+Choose ages and metallicities with the `ages` and `metallicities` settings
+(lists of values from the library; `all` for every one) or the *Age* and
+*Metallicity* sliders of the Model step.
+
+## Adding a library
+
+A library is a folder of template files plus a `CATALOGUE.txt`:
+
+```text
+# AGE_YR      Z         FILENAME                  SHORT_NAME    MSTARS   KIND
+1.000000e+06  0.00370   Mun1.30Zm0.71T00.0001.K   ageGe_00_z004  1.0000  ssp
+5.620000e+06  0.00370   Mun1.30Zm0.71T00.0056.K   age04_z004     0.9431  ssp
+```
+
+| Column | Meaning |
+|---|---|
+| `AGE_YR` | age, years |
+| `Z` | metallicity as a mass fraction |
+| `FILENAME` | the template file, relative to the catalogue |
+| `SHORT_NAME` | a label for the outputs |
+| `MSTARS` | fraction of the initial mass still in stars and remnants at that age |
+| `KIND` | `ssp`, or `powerlaw` for a featureless component |
+
+Each template file is two columns, rest wavelength in Ångström and flux per
+Ångström (in L$_\odot$/Å per M$_\odot$ by default; `ssp_flux_unit: cgs` for
+erg/s/Å). A template may state its resolution in its header; otherwise give
+`library_resolution` ([](resolution.md)). Templates need not share a
+wavelength grid: each is resampled onto the fitting grid at load time.
+
+Install it once, then refer to it by its folder name anywhere (the
+`base_folder` setting, the Library menu):
+
+```python
+brainsp.libraries.install("/data/MILES_BaSTI")          # -> ~/.brainsp/libraries/MILES_BaSTI
+brainsp.fit_spectrum("g.spec", base_folder="MILES_BaSTI")
+```
+
+```bash
+brainsp libraries install /data/MILES_BaSTI
+```
+
+or leave it where it is and point `BRAINSP_LIBRARY_PATH` at the folder that
+holds it (several folders separated by `:`, `;` on Windows). Libraries are
+looked up in this order: a path given directly, `BRAINSP_LIBRARY_PATH`,
+`~/.brainsp/libraries`, the package. A large library therefore never has to
+live inside the package.
+
+The library names used throughout the documentation and the interface are
+just these folder names, so further libraries (BC03, MILES, E-MILES, XSL,
+...) slot in the same way when they are added.

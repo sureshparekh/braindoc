@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.brain_qwidgets &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.brain_qwidgets';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.brain_theme" href="brainsp.brain_theme.html" />
+    <link rel="prev" title="brainsp.brain_shell" href="brainsp.brain_shell.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.brain_qwidgets</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.brain_qwidgets">
+<span id="brainsp-brain-qwidgets"></span><h1>brainsp.brain_qwidgets<a class="headerlink" href="#module-brainsp.brain_qwidgets" title="Link to this heading">#</a></h1>
+<p>BRAIN GUI — custom Qt widgets.</p>
+<p>Qt has no dual-handle range slider and no segmented control, so both are
+drawn here. Everything takes its colours from the active palette, so the
+light/dark switch reaches every pixel.</p>
+<p class="rubric">Module Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.LABEL_COL" title="brainsp.brain_qwidgets.LABEL_COL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LABEL_COL</span></code></a></p></td>
+<td><p>The width of every panel's label column, in pixels.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.divider" title="brainsp.brain_qwidgets.divider"><code class="xref py py-obj docutils literal notranslate"><span class="pre">divider</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.failure_dialog" title="brainsp.brain_qwidgets.failure_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">failure_dialog</span></code></a>(parent, message[, folder, title])</p></td>
+<td><p>A failed run, said in one readable sentence, with the whole message one click away under &quot;Show Details&quot; and kept in a log file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.failure_headline" title="brainsp.brain_qwidgets.failure_headline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">failure_headline</span></code></a>(message)</p></td>
+<td><p>The sentence a failed run's message should open with.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.label" title="brainsp.brain_qwidgets.label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label</span></code></a>(text[, kind])</p></td>
+<td><p>A label, wrapping only where wrapping is what it is for.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.make_tag" title="brainsp.brain_qwidgets.make_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_tag</span></code></a>()</p></td>
+<td><p>A small label beside a heading saying whether the panel must be answered.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.row" title="brainsp.brain_qwidgets.row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">row</span></code></a>(*widgets[, stretch])</p></td>
+<td><p>Widgets side by side, with <cite>None</cite> standing for a spring.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.set_tag" title="brainsp.brain_qwidgets.set_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_tag</span></code></a>(tag, kind[, text])</p></td>
+<td><p>Mark a panel Required, Optional or Not needed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.vdivider" title="brainsp.brain_qwidgets.vdivider"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vdivider</span></code></a>([height])</p></td>
+<td><p>A short vertical rule, for separating items inside a row.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.Disclosure" title="brainsp.brain_qwidgets.Disclosure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Disclosure</span></code></a>(title[, count, parent])</p></td>
+<td><p>A heading that folds a group of controls away, shut by default.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.FieldForm" title="brainsp.brain_qwidgets.FieldForm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FieldForm</span></code></a></p></td>
+<td><p>A form whose field column starts in the same place in every panel, and whose prose starts there too.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.Plate" title="brainsp.brain_qwidgets.Plate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Plate</span></code></a>(title[, checkable, parent])</p></td>
+<td><p>A panel with a heading, and no bevel anywhere on it.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.RangeSlider" title="brainsp.brain_qwidgets.RangeSlider"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RangeSlider</span></code></a>([lo, hi, values, init, fmt, ...])</p></td>
+<td><p>Two handles selecting a low and a high value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.Section" title="brainsp.brain_qwidgets.Section"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Section</span></code></a>(title[, hint, parent])</p></td>
+<td><p>A titled group under a hairline.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.Segmented" title="brainsp.brain_qwidgets.Segmented"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Segmented</span></code></a>(options[, init, parent])</p></td>
+<td><p>One row of mutually exclusive buttons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.SeriesKey" title="brainsp.brain_qwidgets.SeriesKey"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesKey</span></code></a>([parent])</p></td>
+<td><p>Which lines are on the plot, and in what colour.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_qwidgets.Strip" title="brainsp.brain_qwidgets.Strip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Strip</span></code></a>([parent])</p></td>
+<td><p>A row that drops its least important parts before anything overlaps.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">RangeSlider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;function</span> <span class="pre">RangeSlider.&lt;lambda&gt;&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>Two handles selecting a low and a high value.</p>
+<p>Continuous when given <cite>lo</cite>/<cite>hi</cite>; discrete when given <cite>values</cite>, in which
+case the handles snap to list entries — which is what template ages and
+metallicities need, since only catalogue values exist.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.changed">
+<span class="sig-name descname"><span class="pre">changed</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.changed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.set_palette">
+<span class="sig-name descname"><span class="pre">set_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.set_palette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.set_palette" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.setValue">
+<span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.setValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.setValue" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.setBounds">
+<span class="sig-name descname"><span class="pre">setBounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.setBounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.setBounds" title="Link to this definition">#</a></dt>
+<dd><p>Re-range the slider, clamping the current selection into it.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.TRACK_Y">
+<span class="sig-name descname"><span class="pre">TRACK_Y</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">44</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.TRACK_Y" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.GRAB">
+<span class="sig-name descname"><span class="pre">GRAB</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.GRAB" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtGui.QMouseEvent</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.mousePressEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.mousePressEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.mouseMoveEvent">
+<span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtGui.QMouseEvent</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.mouseMoveEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.mouseMoveEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.mouseReleaseEvent">
+<span class="sig-name descname"><span class="pre">mouseReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtGui.QMouseEvent</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.mouseReleaseEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.mouseReleaseEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.leaveEvent">
+<span class="sig-name descname"><span class="pre">leaveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QEvent</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.leaveEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.leaveEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.keyPressEvent">
+<span class="sig-name descname"><span class="pre">keyPressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.keyPressEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.keyPressEvent" title="Link to this definition">#</a></dt>
+<dd><p>Arrow keys move the handle the keyboard is on.</p>
+<p>A custom-painted control that never takes focus cannot be reached
+without a mouse at all, which is not a styling shortcoming but a
+control that half the ways of using it cannot operate.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.paintEvent">
+<span class="sig-name descname"><span class="pre">paintEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#RangeSlider.paintEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.paintEvent" title="Link to this definition">#</a></dt>
+<dd><p>A track, the span between the handles, and two handles.</p>
+<p>The accent used to paint the whole track, both handles and every tick,
+which is most of a panel’s width given to the one colour that is
+supposed to mean something. It now marks the span that is selected and
+the handle being touched, and the rest of the control is drawn in the
+neutral ramp.</p>
+<p>The values sit under their own handle rather than pinned to the ends
+of the widget, so reading one does not mean working out which end it
+belongs to, and they are clamped so neither runs off an edge.</p>
+<p>Catalogue ticks are drawn above the track rather than below it. Below,
+they are the lowest thing the control paints and they collided with
+the label of whatever the layout put next; above, they sit between the
+numbers and the track they belong to and nothing can reach them.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.RangeSlider.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;RangeSlider&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#33</span> <span class="pre">type=Signal,</span> <span class="pre">signature=changed(double,double),</span> <span class="pre">parameters=double,</span> <span class="pre">double</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.RangeSlider.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">Segmented</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>One row of mutually exclusive buttons.</p>
+<p>An option can be marked unavailable, which disables its button, strikes
+its label through and puts the reason on it as a tooltip. A choice the
+run would silently ignore is worse than no choice at all: the fit
+finishes, the numbers look ordinary, and nothing says the setting did
+not apply. The strikethrough carries the same message as the greying,
+so the state does not depend on seeing colour.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.changed">
+<span class="sig-name descname"><span class="pre">changed</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.changed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.setProperty">
+<span class="sig-name descname"><span class="pre">setProperty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented.setProperty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.setProperty" title="Link to this definition">#</a></dt>
+<dd><p>Carry <cite>error</cite> down to the buttons that are actually painted.</p>
+<p>A Segmented is a layout holding push buttons and paints nothing
+itself, so a stylesheet rule keyed on a property of the container
+reaches no pixels. An unanswered control that has been told it is in
+error and shows nothing is worse than one that was never asked: the
+caller believes the user has been warned. The flag is pushed onto the
+children, which are the things with a border.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.setValue">
+<span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented.setValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.setValue" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.set_available">
+<span class="sig-name descname"><span class="pre">set_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">available</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented.set_available"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.set_available" title="Link to this definition">#</a></dt>
+<dd><p>Enable or disable one option, carrying the reason on the button.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.available">
+<span class="sig-name descname"><span class="pre">available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented.available"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.available" title="Link to this definition">#</a></dt>
+<dd><p>The options a user can still choose, in panel order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented.value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.clear" title="Link to this definition">#</a></dt>
+<dd><p>Put the control back to unanswered, the state <cite>init=None</cite> also means.</p>
+<p>setValue cannot express it: a name that is not an option is ignored,
+so handing it None leaves whatever was chosen before still chosen.
+That matters when a saved configuration is loaded over a page a user
+has already touched – without this, a file that declares no answer
+inherits the last one and the page shows a setting the file does not
+contain. Exclusivity is lifted for the unchecking because a Qt button
+group in exclusive mode refuses to let its last checked button go.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.restyle">
+<span class="sig-name descname"><span class="pre">restyle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Segmented.restyle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.restyle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Segmented.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Segmented&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#33</span> <span class="pre">type=Signal,</span> <span class="pre">signature=changed(QString),</span> <span class="pre">parameters=QString</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Segmented.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Disclosure">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">Disclosure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Disclosure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Disclosure" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>A heading that folds a group of controls away, shut by default.</p>
+<p>Every setting BRAIN accepts has to be reachable, but a panel that shows
+all of them at once is a wall of spin boxes in which the handful that
+change a result are no easier to find than the solver tolerances. The
+ones that decide the physics stay in the open; the rest live behind one
+of these, which states how many settings it holds so their existence is
+visible even when their controls are not.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Disclosure.toggled">
+<span class="sig-name descname"><span class="pre">toggled</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Disclosure.toggled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Disclosure.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Disclosure.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Disclosure.add" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Disclosure.restyle">
+<span class="sig-name descname"><span class="pre">restyle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Disclosure.restyle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Disclosure.restyle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Disclosure.set_palette">
+<span class="sig-name descname"><span class="pre">set_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Disclosure.set_palette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Disclosure.set_palette" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Disclosure.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Disclosure&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#33</span> <span class="pre">type=Signal,</span> <span class="pre">signature=toggled(bool),</span> <span class="pre">parameters=bool</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Disclosure.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.make_tag">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">make_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#make_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.make_tag" title="Link to this definition">#</a></dt>
+<dd><p>A small label beside a heading saying whether the panel must be
+answered. Hidden until set_tag gives it a kind.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.set_tag">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">set_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#set_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.set_tag" title="Link to this definition">#</a></dt>
+<dd><p>Mark a panel Required, Optional or Not needed.</p>
+<p>Required: the run is refused, or silently wrong, without an answer here.
+Optional: the defaults are a sound fit; change them only with a reason.
+Not needed: the current choices never read this panel.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Plate">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">Plate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Plate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Plate" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>A panel with a heading, and no bevel anywhere on it.</p>
+<p>A QGroupBox draws a sunken frame with its title notched into the top
+edge. That frame is the most recognisable mark of an interface nobody
+has looked at, and the title inside it repeats a heading the sidebar has
+already said, so the same four words arrived three times on one screen.
+What is left here is a surface one value above the page, a heading in
+the interface grotesque, and the form beneath it. Depth comes from value,
+as it does everywhere else in this application.</p>
+<p>An optional stage carries a checkbox in place of its heading rather than
+beside it, because the heading IS the thing being switched on, and the
+body is disabled rather than hidden when it is off: a stage that
+disappears when it is not running cannot be read to find out what it
+would have done.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Plate.toggled">
+<span class="sig-name descname"><span class="pre">toggled</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Plate.toggled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Plate.isChecked">
+<span class="sig-name descname"><span class="pre">isChecked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Plate.isChecked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Plate.isChecked" title="Link to this definition">#</a></dt>
+<dd><p>True when the stage is on, and true always when it cannot be off.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Plate.setChecked">
+<span class="sig-name descname"><span class="pre">setChecked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Plate.setChecked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Plate.setChecked" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Plate.set_tag">
+<span class="sig-name descname"><span class="pre">set_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Plate.set_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Plate.set_tag" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Plate.set_error">
+<span class="sig-name descname"><span class="pre">set_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Plate.set_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Plate.set_error" title="Link to this definition">#</a></dt>
+<dd><p>Mark the panel as holding something the run would refuse.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Plate.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Plate&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#33</span> <span class="pre">type=Signal,</span> <span class="pre">signature=toggled(bool),</span> <span class="pre">parameters=bool</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Plate.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.vdivider">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">vdivider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">18</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#vdivider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.vdivider" title="Link to this definition">#</a></dt>
+<dd><p>A short vertical rule, for separating items inside a row.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.divider">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">divider</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#divider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.divider" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Section">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">Section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Section" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>A titled group under a hairline.</p>
+<p>The title is set in true small capitals where the face carries them,
+which is a heading rather than the tracked-out uppercase micro-label that
+every generated interface stacks above every section. Where the face is
+missing, the fallback capitalises instead.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Section.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Section.set_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Section.set_title" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Section.set_tag">
+<span class="sig-name descname"><span class="pre">set_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Section.set_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Section.set_tag" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Section.hide_title">
+<span class="sig-name descname"><span class="pre">hide_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Section.hide_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Section.hide_title" title="Link to this definition">#</a></dt>
+<dd><p>For a section that is the only thing in a step of the same name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Section.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Section.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Section.add" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Section.addLayout">
+<span class="sig-name descname"><span class="pre">addLayout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Section.addLayout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Section.addLayout" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Section.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Section&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Section.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.label">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FieldLabel'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.label" title="Link to this definition">#</a></dt>
+<dd><p>A label, wrapping only where wrapping is what it is for.</p>
+<p>Every label used to word-wrap. A word-wrapped QLabel reports its height
+as a function of its width, and a QScrollArea that is resizable asks its
+content for a height before the content knows how wide it will be. The
+answer comes back short, the layout takes the difference out of whichever
+items can give it, and a one word field label is squeezed to no height at
+all and paints on top of the control above it. The prose labels still
+wrap, because a paragraph has to; <cite>Age</cite> and <cite>Metallicity</cite> never did.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.LABEL_COL">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">LABEL_COL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">136</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.LABEL_COL" title="Link to this definition">#</a></dt>
+<dd><p>The width of every panel’s label column, in pixels.</p>
+<p>A QFormLayout sizes its label column to its own longest label, so each
+panel found a different one and the fields started at a different x in
+every panel down the page. Fixing the column makes one vertical edge that
+every control on the page is aligned to, which is the thing a column of
+settings is read down.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.FieldForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">FieldForm</span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#FieldForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.FieldForm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QFormLayout</span></code></p>
+<p>A form whose field column starts in the same place in every panel, and
+whose prose starts there too.</p>
+<p>Two alignment faults came from the plain QFormLayout. The field column
+moved from panel to panel, because each form measured only its own
+labels. And a caption added as a single widget spanned both columns, so
+the paragraph explaining a control began at the panel’s left edge while
+the control it explains began a hundred-odd pixels to the right, with
+the text running the full width of the plate and touching both edges.</p>
+<p>Here a label is given the fixed column, and a wrapping caption is
+indented to where the fields begin. Labels sit to the left of that edge;
+everything else – field, button, table, paragraph – begins on it.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.FieldForm.addRow">
+<span class="sig-name descname"><span class="pre">addRow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QLayout</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#FieldForm.addRow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.FieldForm.addRow" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">addRow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widget</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QWidget</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">addRow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QWidget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QLayout</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">addRow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QWidget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QWidget</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">addRow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labelText</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QLayout</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">addRow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labelText</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtWidgets.QWidget</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.FieldForm.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;FieldForm&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QFormLayout&quot;:</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.FieldForm.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.row">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">widgets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stretch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.row" title="Link to this definition">#</a></dt>
+<dd><p>Widgets side by side, with <cite>None</cite> standing for a spring.</p>
+<p>A horizontal layout gives space it has no instruction for to whichever
+children will take it, and a QLabel will. Two call sites asked for a
+trailing spring by naming a <cite>stretch</cite> index one past the last widget,
+which matches nothing, so the slack went to the labels instead and
+opened arbitrary gaps in the middle of a row of steppers. Passing None
+puts the spring where it is meant to go and is visible in the call.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.SeriesKey">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">SeriesKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#SeriesKey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.SeriesKey" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>Which lines are on the plot, and in what colour.</p>
+<p>A key belongs in the chrome, not floating inside the data area on a
+filled panel of its own. Each entry is a short rule in the series colour
+with its name beside it, in the order the series are drawn.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.SeriesKey.set_palette">
+<span class="sig-name descname"><span class="pre">set_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#SeriesKey.set_palette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.SeriesKey.set_palette" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.SeriesKey.set_items">
+<span class="sig-name descname"><span class="pre">set_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#SeriesKey.set_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.SeriesKey.set_items" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.SeriesKey.paintEvent">
+<span class="sig-name descname"><span class="pre">paintEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtGui.QPaintEvent</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#SeriesKey.paintEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.SeriesKey.paintEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.SeriesKey.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;SeriesKey&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.SeriesKey.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Strip">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">Strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Strip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Strip" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>A row that drops its least important parts before anything overlaps.</p>
+<p>Qt will happily let two labels in one layout paint over each other rather
+than admit the row does not fit, which is how a strip that reads cleanly
+at 1500 pixels turns into overlapping text at 1000. Each optional child
+is registered with the width below which it goes, widest-first, and the
+row hides them in that order on every resize.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Strip.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Strip&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QWidget&quot;:</span> <span class="pre">)</span></span><a class="headerlink" href="#brainsp.brain_qwidgets.Strip.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Strip.optional">
+<span class="sig-name descname"><span class="pre">optional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">below</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Strip.optional"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Strip.optional" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.Strip.resizeEvent">
+<span class="sig-name descname"><span class="pre">resizeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtGui.QResizeEvent</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#Strip.resizeEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.Strip.resizeEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.failure_headline">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">failure_headline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#failure_headline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.failure_headline" title="Link to this definition">#</a></dt>
+<dd><p>The sentence a failed run’s message should open with.</p>
+<p>A run that raised comes back as the exception and a Python traceback
+through brain_child.py, the helper process every fit runs in. The
+traceback is for a bug report; the person at the window needs the
+exception’s own words, which are its last line.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_qwidgets.failure_dialog">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_qwidgets.</span></span><span class="sig-name descname"><span class="pre">failure_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'BRAIN'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_qwidgets.html#failure_dialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_qwidgets.failure_dialog" title="Link to this definition">#</a></dt>
+<dd><p>A failed run, said in one readable sentence, with the whole message one
+click away under “Show Details” and kept in a log file.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.brain_shell.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.brain_shell</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.brain_theme.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.brain_theme</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider"><code class="docutils literal notranslate"><span class="pre">RangeSlider</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.changed"><code class="docutils literal notranslate"><span class="pre">RangeSlider.changed</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.set_palette"><code class="docutils literal notranslate"><span class="pre">RangeSlider.set_palette()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.value"><code class="docutils literal notranslate"><span class="pre">RangeSlider.value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.setValue"><code class="docutils literal notranslate"><span class="pre">RangeSlider.setValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.setBounds"><code class="docutils literal notranslate"><span class="pre">RangeSlider.setBounds()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.TRACK_Y"><code class="docutils literal notranslate"><span class="pre">RangeSlider.TRACK_Y</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.GRAB"><code class="docutils literal notranslate"><span class="pre">RangeSlider.GRAB</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">RangeSlider.mousePressEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">RangeSlider.mouseMoveEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">RangeSlider.mouseReleaseEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.leaveEvent"><code class="docutils literal notranslate"><span class="pre">RangeSlider.leaveEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">RangeSlider.keyPressEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.paintEvent"><code class="docutils literal notranslate"><span class="pre">RangeSlider.paintEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.RangeSlider.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">RangeSlider.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented"><code class="docutils literal notranslate"><span class="pre">Segmented</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.changed"><code class="docutils literal notranslate"><span class="pre">Segmented.changed</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.setProperty"><code class="docutils literal notranslate"><span class="pre">Segmented.setProperty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.setValue"><code class="docutils literal notranslate"><span class="pre">Segmented.setValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.set_available"><code class="docutils literal notranslate"><span class="pre">Segmented.set_available()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.available"><code class="docutils literal notranslate"><span class="pre">Segmented.available()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.value"><code class="docutils literal notranslate"><span class="pre">Segmented.value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.clear"><code class="docutils literal notranslate"><span class="pre">Segmented.clear()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.restyle"><code class="docutils literal notranslate"><span class="pre">Segmented.restyle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Segmented.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Segmented.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Disclosure"><code class="docutils literal notranslate"><span class="pre">Disclosure</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Disclosure.toggled"><code class="docutils literal notranslate"><span class="pre">Disclosure.toggled</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Disclosure.add"><code class="docutils literal notranslate"><span class="pre">Disclosure.add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Disclosure.restyle"><code class="docutils literal notranslate"><span class="pre">Disclosure.restyle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Disclosure.set_palette"><code class="docutils literal notranslate"><span class="pre">Disclosure.set_palette()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Disclosure.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Disclosure.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.make_tag"><code class="docutils literal notranslate"><span class="pre">make_tag()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.set_tag"><code class="docutils literal notranslate"><span class="pre">set_tag()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Plate"><code class="docutils literal notranslate"><span class="pre">Plate</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Plate.toggled"><code class="docutils literal notranslate"><span class="pre">Plate.toggled</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Plate.isChecked"><code class="docutils literal notranslate"><span class="pre">Plate.isChecked()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Plate.setChecked"><code class="docutils literal notranslate"><span class="pre">Plate.setChecked()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Plate.set_tag"><code class="docutils literal notranslate"><span class="pre">Plate.set_tag()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Plate.set_error"><code class="docutils literal notranslate"><span class="pre">Plate.set_error()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Plate.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Plate.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.vdivider"><code class="docutils literal notranslate"><span class="pre">vdivider()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.divider"><code class="docutils literal notranslate"><span class="pre">divider()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Section"><code class="docutils literal notranslate"><span class="pre">Section</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Section.set_title"><code class="docutils literal notranslate"><span class="pre">Section.set_title()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Section.set_tag"><code class="docutils literal notranslate"><span class="pre">Section.set_tag()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Section.hide_title"><code class="docutils literal notranslate"><span class="pre">Section.hide_title()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Section.add"><code class="docutils literal notranslate"><span class="pre">Section.add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Section.addLayout"><code class="docutils literal notranslate"><span class="pre">Section.addLayout()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Section.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Section.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.label"><code class="docutils literal notranslate"><span class="pre">label()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.LABEL_COL"><code class="docutils literal notranslate"><span class="pre">LABEL_COL</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.FieldForm"><code class="docutils literal notranslate"><span class="pre">FieldForm</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.FieldForm.addRow"><code class="docutils literal notranslate"><span class="pre">FieldForm.addRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.FieldForm.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">FieldForm.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.row"><code class="docutils literal notranslate"><span class="pre">row()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.SeriesKey"><code class="docutils literal notranslate"><span class="pre">SeriesKey</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.SeriesKey.set_palette"><code class="docutils literal notranslate"><span class="pre">SeriesKey.set_palette()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.SeriesKey.set_items"><code class="docutils literal notranslate"><span class="pre">SeriesKey.set_items()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.SeriesKey.paintEvent"><code class="docutils literal notranslate"><span class="pre">SeriesKey.paintEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.SeriesKey.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">SeriesKey.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Strip"><code class="docutils literal notranslate"><span class="pre">Strip</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Strip.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Strip.staticMetaObject</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Strip.optional"><code class="docutils literal notranslate"><span class="pre">Strip.optional()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.Strip.resizeEvent"><code class="docutils literal notranslate"><span class="pre">Strip.resizeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.failure_headline"><code class="docutils literal notranslate"><span class="pre">failure_headline()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_qwidgets.failure_dialog"><code class="docutils literal notranslate"><span class="pre">failure_dialog()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

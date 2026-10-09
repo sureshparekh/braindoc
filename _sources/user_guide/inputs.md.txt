@@ -1,0 +1,94 @@
+# Input data
+
+## Spectra
+
+A plain text file, one pixel per line, in up to four columns:
+
+```text
+# wavelength   flux        error       flag
+3541.0000      0.695938    1.229688    0
+3541.6980      0.712344    1.221907    0
+3542.3963      0.698112    1.230114    1
+```
+
+| Column | Meaning |
+|---|---|
+| 1 | wavelength in Ångström |
+| 2 | flux density, any consistent unit |
+| 3 | its 1-sigma uncertainty, same unit (optional) |
+| 4 | quality flag: **0 = good**, anything else = bad (optional) |
+
+Lines starting with `#` are ignored. The wavelength axis can be linear,
+logarithmic or irregular; BRAIN resamples it onto its own logarithmic grid.
+
+```{warning}
+**`0` means good.** A pipeline that writes
+`1` for good pixels must have its flag column inverted first, or every pixel
+is rejected and the log reports fitting 0 pixels.
+```
+
+Without an error column every pixel gets the same weight; set
+`has_errorbars: false` so the $\chi^2$ is not read as calibrated. A zero or
+negative error is replaced by ten times the median error, so the pixel stays
+in but counts about a hundredth as much; flag it to leave it out. Without a
+flag column every pixel is good.
+
+The spectrum may be in the rest frame (the default, `spectrum_in_rest_frame:
+true`) or in the observed frame, in which case BRAIN removes the redshift
+itself ([](corrections.md)).
+
+From Python, arrays work as well; they are written to the output folder
+first, so the result names a file:
+
+```python
+brainsp.fit_spectrum((wavelength, flux, error), name="my_galaxy")
+```
+
+### Pixels after resampling
+
+BRAIN fits on a logarithmic wavelength grid. Where a resampled pixel is
+built partly from input pixels that are flagged or have no error, it is
+dropped (it is not 100 per cent clean), and the log says how many were and the
+worst clean fraction seen. A good pixel next to a bad one can therefore be
+rejected; this is deliberate.
+
+## Datacubes
+
+A FITS file with the flux as a 3-D image (wavelength, y, x) in one
+extension, its uncertainty in another, and optionally a bad-pixel mask:
+
+| | MaNGA (LOGCUBE) | MUSE | CALIFA |
+|---|---|---|---|
+| flux | `FLUX` | `DATA` | `PRIMARY` |
+| uncertainty | `IVAR`, inverse variance | `STAT`, variance | `ERROR`, error |
+| mask | `MASK` (bit 10 = DONOTUSE) | `DQ` (see below) | `BADPIX` (see below) |
+| wavelength scale | vacuum | air | air |
+
+The names are settings (`flux_hdu`, `error_hdu`, `error_type`, `mask_hdu`
+in Python; *Input extensions* in the interface), so any layout works.
+
+```{warning}
+The mask extension is read as **MaNGA's bitmask**: a pixel is bad when bit
+10 (`DONOTUSE`, value 1024) is set, and every other bit is ignored. A MUSE
+`DQ` or CALIFA `BADPIX` plane uses other values for bad pixels, which would
+all be read as good. For those, write a mask plane with 1024 where a pixel is
+bad, or give no mask (`mask_hdu=None`) and let the uncertainty carry it:
+pixels with zero inverse variance are never fitted.
+```
+
+The wavelength axis is read from a `WAVE` extension when there is one (MaNGA has
+one), otherwise from the header (`CRVAL3`, `CDELT3` or `CD3_3`, `CRPIX3`;
+`CTYPE3` ending in `-LOG` for a logarithmic axis). The celestial WCS of the
+first two axes is carried into every exported map.
+
+The redshift is given separately (`redshift=`), or per cube in a table.
+
+## Template libraries
+
+See [](libraries.md). BRAIN ships BasesGM (84 SSPs, 3540–6996 Å), M13 (47 SSPs,
+into the infrared, with its own AGN set) and seven AGN continua; more can be
+added.
+
+## Masks
+
+See [](masks.md): `.sm` and `.gm` mask files and plain lists.

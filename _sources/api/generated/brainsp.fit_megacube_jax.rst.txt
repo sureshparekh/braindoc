@@ -1,0 +1,27 @@
+﻿brainsp.fit\_megacube\_jax
+==========================
+
+.. automodule:: brainsp.fit_megacube_jax
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      available_memory_gb
+      bases_info_for
+      cpu_worker_count
+      estimate_batch_size
+      fit_cube_hdus
+      get_device_info
+      line_table_for
+      lsf_decision_pixels
+      out_of_memory
+      pop_bin_planes
+      preprocess_datacube
+      quality_mask
+      run_megacube
+      select_device
+      spaxel_selection
+      to_rest_frame
+   

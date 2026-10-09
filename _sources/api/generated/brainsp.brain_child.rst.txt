@@ -1,0 +1,27 @@
+﻿brainsp.brain\_child
+====================
+
+.. automodule:: brainsp.brain_child
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      config_from_dict
+      confirm_backend
+      main
+      plain
+      run_cube
+      run_spectra
+      run_spectrum
+      set_platform
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Channel
+      LogBridge
+      LogStream
+   

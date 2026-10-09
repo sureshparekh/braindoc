@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.nebular &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/nebular';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.nebular</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.nebular</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">BRAIN-v1 Nebular Physics Module</span>
+<span class="sd">Photoionization-based nebular continuum and emission line predictions.</span>
+
+<span class="sd">Implements self-consistent nebular modeling:</span>
+<span class="sd">- Q(H) integrated from each SSP spectrum below the Lyman limit</span>
+<span class="sd">- Free-free (bremsstrahlung) emission</span>
+<span class="sd">- Free-bound (recombination continuum) emission</span>
+<span class="sd">- Two-photon continuum emission</span>
+<span class="sd">- Total nebular continuum template</span>
+<span class="sd">- Case B hydrogen emission line predictions</span>
+<span class="sd">- Semi-empirical metal emission line predictions</span>
+<span class="sd">- Self-consistency tau ratio</span>
+
+<span class="sd">References:</span>
+<span class="sd">- Osterbrock &amp; Ferland (2006)</span>
+<span class="sd">- Hummer &amp; Storey (1987)</span>
+<span class="sd">- Nussbaumer &amp; Schmutz (1984)</span>
+<span class="sd">- Ercolano &amp; Storey (2006)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.atomic_data</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">h_planck</span><span class="p">,</span> <span class="n">c_cgs</span><span class="p">,</span> <span class="n">c_angstrom</span><span class="p">,</span> <span class="n">k_boltz</span><span class="p">,</span> <span class="n">m_electron</span><span class="p">,</span> <span class="n">e_charge</span><span class="p">,</span>
+    <span class="n">Rydberg_erg</span><span class="p">,</span> <span class="n">a_bohr</span><span class="p">,</span> <span class="n">alpha_fs</span><span class="p">,</span>
+    <span class="n">LYMAN_LIMIT</span><span class="p">,</span> <span class="n">HeI_LIMIT</span><span class="p">,</span> <span class="n">HeII_LIMIT</span><span class="p">,</span>
+    <span class="n">LAMBDA_LYMAN_ALPHA</span><span class="p">,</span> <span class="n">LAMBDA_HALPHA</span><span class="p">,</span> <span class="n">LAMBDA_HBETA</span><span class="p">,</span>
+    <span class="n">NU_LYMAN_ALPHA</span><span class="p">,</span> <span class="n">NU_HALPHA</span><span class="p">,</span> <span class="n">NU_HBETA</span><span class="p">,</span>
+    <span class="n">alpha_B</span><span class="p">,</span> <span class="n">alpha_Hbeta_eff</span><span class="p">,</span> <span class="n">alpha_Halpha_eff</span><span class="p">,</span> <span class="n">alpha_2S_eff</span><span class="p">,</span>
+    <span class="n">alpha_B_HeI</span><span class="p">,</span>
+    <span class="n">SIGMA_BF_0</span><span class="p">,</span> <span class="n">chi_n</span><span class="p">,</span> <span class="n">nu_n</span><span class="p">,</span>
+    <span class="n">two_photon_shape_HI</span><span class="p">,</span> <span class="n">A_2q_HI</span><span class="p">,</span> <span class="n">Q_2S_DEEXCIT</span><span class="p">,</span>
+    <span class="n">two_photon_shape_HeI</span><span class="p">,</span> <span class="n">A_2q_HeI</span><span class="p">,</span>
+    <span class="n">qh_from_spectrum</span><span class="p">,</span> <span class="n">LYMAN_LIMIT</span><span class="p">,</span> <span class="n">L_SUN_ERG</span><span class="p">,</span>
+    <span class="n">hydrogen_case_b_ratios</span><span class="p">,</span> <span class="n">all_hydrogen_ratios</span><span class="p">,</span>
+    <span class="n">predicted_metal_ratios</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;NEWBRAIN&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="gaunt_ff">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.gaunt_ff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gaunt_ff</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">nu</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Velocity-averaged free-free Gaunt factor (Sutherland 1998 approximation).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Te : float</span>
+<span class="sd">        Electron temperature [K].</span>
+<span class="sd">    nu : array</span>
+<span class="sd">        Frequency [Hz].</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    gff : array</span>
+<span class="sd">        Free-free Gaunt factor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">nu</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_boltz</span> <span class="o">*</span> <span class="n">Te</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mf">1e-10</span><span class="p">,</span> <span class="mf">500.0</span><span class="p">)</span>
+
+    <span class="n">gff</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span>
+           <span class="o">+</span> <span class="mf">0.1728</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="n">u</span><span class="p">)</span>
+           <span class="o">-</span> <span class="mf">0.0496</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.0</span> <span class="o">*</span> <span class="n">u</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">gff</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="gamma_ff">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.gamma_ff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gamma_ff</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Free-free emission coefficient for ion of charge Z.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : array</span>
+<span class="sd">        Wavelength grid [Angstroms].</span>
+<span class="sd">    Te : float</span>
+<span class="sd">        Electron temperature [K].</span>
+<span class="sd">    Z : int</span>
+<span class="sd">        Ion charge (1 for H+, 2 for He++).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    gff_coeff : array</span>
+<span class="sd">        gamma_ff(nu, Te) [erg cm^3 s^-1 Hz^-1].</span>
+
+<span class="sd">    Volume emission coefficient gamma_nu, defined by</span>
+<span class="sd">        4*pi*j_nu = n_e n_p gamma_nu,</span>
+<span class="sd">    i.e. integrated over the full sphere, NOT the per-steradian j_nu.</span>
+<span class="sd">    The emission-line predictions (C_Hbeta, predict_*_lines) and the</span>
+<span class="sd">    template normalisation gamma_eff/alpha_B are on this convention, so a</span>
+<span class="sd">    per-steradian coefficient here would put the lines and the continuum</span>
+<span class="sd">    4*pi apart in scale.</span>
+
+<span class="sd">    The constant 6.8416e-38 is the exact theoretical coefficient</span>
+<span class="sd">    (2^5 pi e^6)/(3 m_e c^3) * sqrt(2 pi /(3 k m_e)), quoted rounded as 6.8e-38</span>
+<span class="sd">    in Rybicki &amp; Lightman (1979) eq. 5.14b. Their eq. 5.14a, 5.44e-39, is the</span>
+<span class="sd">    same quantity divided by 4*pi.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nu</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">wavelength</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+    <span class="n">gff</span> <span class="o">=</span> <span class="n">gaunt_ff</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">nu</span><span class="p">)</span>
+
+    <span class="n">prefactor</span> <span class="o">=</span> <span class="mf">6.8416e-38</span> <span class="o">*</span> <span class="n">Z</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Te</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">nu</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_boltz</span> <span class="o">*</span> <span class="n">Te</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">500.0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">prefactor</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">gff</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_gaunt_bf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nu_ratio</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Approximate bound-free Gaunt factor.</span>
+<span class="sd">    nu_ratio = nu / nu_n (must be &gt;= 1 at threshold).</span>
+<span class="sd">    Kramers (1923) + corrections from Karzas &amp; Latter (1961).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">nu_ratio</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">0.3456</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">nu_ratio</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nu_ratio</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="gamma_fb_HI">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.gamma_fb_HI">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gamma_fb_HI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">n_max</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Free-bound emission coefficient for H I (Case B: skip n=1).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : array</span>
+<span class="sd">        Wavelength grid [Angstroms].</span>
+<span class="sd">    Te : float</span>
+<span class="sd">        Electron temperature [K].</span>
+<span class="sd">    n_max : int</span>
+<span class="sd">        Maximum principal quantum number for summation.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    gamma_fb : array</span>
+<span class="sd">        Free-bound emission coefficient [erg cm^3 s^-1 Hz^-1].</span>
+
+<span class="sd">    Volume emission coefficient gamma_nu, defined by</span>
+<span class="sd">        4*pi*j_nu = n_e n_p gamma_nu,</span>
+<span class="sd">    i.e. integrated over the full sphere, NOT the per-steradian j_nu.</span>
+<span class="sd">    The emission-line predictions (C_Hbeta, predict_*_lines) and the</span>
+<span class="sd">    template normalisation gamma_eff/alpha_B are on this convention, so a</span>
+<span class="sd">    per-steradian coefficient here would put the lines and the continuum</span>
+<span class="sd">    4*pi apart in scale.</span>
+
+<span class="sd">    The prefactor is 8*pi*h*nu^3/c^2, from the Milne relation (Osterbrock &amp;</span>
+<span class="sd">    Ferland 2006 eq. 2.28) combined with a Maxwellian: 2 h nu^3/c^2 is the</span>
+<span class="sd">    Planck normalisation of the per-steradian form. Checked against the Case B</span>
+<span class="sd">    photon identity, integral gamma_fb/(h nu) dnu = alpha_B, which closes to</span>
+<span class="sd">    1.3% -- the residual is the n &gt; 51 loop break below, not the prefactor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nu</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">wavelength</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+    <span class="n">h_nu</span> <span class="o">=</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">nu</span>
+    <span class="n">kT</span> <span class="o">=</span> <span class="n">k_boltz</span> <span class="o">*</span> <span class="n">Te</span>
+
+    <span class="n">thermal_factor</span> <span class="o">=</span> <span class="p">(</span><span class="n">h_planck</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">m_electron</span> <span class="o">*</span> <span class="n">kT</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span>
+
+    <span class="n">prefactor_common</span> <span class="o">=</span> <span class="p">(</span><span class="mf">8.0</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">h_planck</span> <span class="o">/</span> <span class="n">c_cgs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">nu</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">thermal_factor</span>
+
+    <span class="n">gamma_fb</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">nu</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">chi</span> <span class="o">=</span> <span class="n">chi_n</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">nu_thresh</span> <span class="o">=</span> <span class="n">chi</span> <span class="o">/</span> <span class="n">h_planck</span>
+
+        <span class="n">above_thresh</span> <span class="o">=</span> <span class="n">nu</span> <span class="o">&gt;=</span> <span class="n">nu_thresh</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">above_thresh</span><span class="p">):</span>
+            <span class="k">continue</span>
+
+        <span class="n">nu_ratio</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">above_thresh</span><span class="p">,</span> <span class="n">nu</span> <span class="o">/</span> <span class="n">nu_thresh</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">g_bf</span> <span class="o">=</span> <span class="n">_gaunt_bf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">nu_ratio</span><span class="p">)</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">SIGMA_BF_0</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">nu_ratio</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">g_bf</span>
+
+        <span class="n">stat_weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">exponent</span> <span class="o">=</span> <span class="p">(</span><span class="n">chi</span> <span class="o">-</span> <span class="n">h_nu</span><span class="p">)</span> <span class="o">/</span> <span class="n">kT</span>
+        <span class="n">exponent</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="o">-</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="n">contribution</span> <span class="o">=</span> <span class="n">prefactor_common</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">stat_weight</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">exponent</span><span class="p">)</span>
+        <span class="n">gamma_fb</span> <span class="o">+=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">above_thresh</span><span class="p">,</span> <span class="n">contribution</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">chi</span> <span class="o">/</span> <span class="n">kT</span> <span class="o">&lt;</span> <span class="mf">0.01</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">gamma_fb</span></div>
+
+
+
+<div class="viewcode-block" id="gamma_fb_HeI">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.gamma_fb_HeI">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gamma_fb_HeI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">n_max</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Free-bound emission coefficient for He I (approximate).</span>
+
+<span class="sd">    He I is not hydrogenic; we use a scaled version of H I fb emission</span>
+<span class="sd">    with the He I ionization potential (24.6 eV) and effective charge.</span>
+<span class="sd">    This is an approximation; detailed tables (Ercolano &amp; Storey 2006)</span>
+<span class="sd">    would be more accurate.</span>
+
+<span class="sd">    Volume emission coefficient gamma_nu, defined by</span>
+<span class="sd">        4*pi*j_nu = n_e n_p gamma_nu,</span>
+<span class="sd">    i.e. integrated over the full sphere, NOT the per-steradian j_nu.</span>
+<span class="sd">    The emission-line predictions (C_Hbeta, predict_*_lines) and the</span>
+<span class="sd">    template normalisation gamma_eff/alpha_B are on this convention, so a</span>
+<span class="sd">    per-steradian coefficient here would put the lines and the continuum</span>
+<span class="sd">    4*pi apart in scale.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="n">nu</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">wavelength</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+    <span class="n">h_nu</span> <span class="o">=</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">nu</span>
+    <span class="n">kT</span> <span class="o">=</span> <span class="n">k_boltz</span> <span class="o">*</span> <span class="n">Te</span>
+    <span class="n">thermal_factor</span> <span class="o">=</span> <span class="p">(</span><span class="n">h_planck</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">m_electron</span> <span class="o">*</span> <span class="n">kT</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span>
+    <span class="n">prefactor_common</span> <span class="o">=</span> <span class="p">(</span><span class="mf">8.0</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">h_planck</span> <span class="o">/</span> <span class="n">c_cgs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">nu</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">thermal_factor</span>
+
+    <span class="n">Z_eff</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="n">gamma_fb</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">nu</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">n_max</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">chi</span> <span class="o">=</span> <span class="n">Rydberg_erg</span> <span class="o">*</span> <span class="n">Z_eff</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">nu_thresh</span> <span class="o">=</span> <span class="n">chi</span> <span class="o">/</span> <span class="n">h_planck</span>
+
+        <span class="n">above_thresh</span> <span class="o">=</span> <span class="n">nu</span> <span class="o">&gt;=</span> <span class="n">nu_thresh</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">above_thresh</span><span class="p">):</span>
+            <span class="k">continue</span>
+
+        <span class="n">nu_ratio</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">above_thresh</span><span class="p">,</span> <span class="n">nu</span> <span class="o">/</span> <span class="n">nu_thresh</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">SIGMA_BF_0</span> <span class="o">*</span> <span class="n">Z_eff</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">nu_ratio</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+        <span class="n">stat_weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">exponent</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">((</span><span class="n">chi</span> <span class="o">-</span> <span class="n">h_nu</span><span class="p">)</span> <span class="o">/</span> <span class="n">kT</span><span class="p">,</span> <span class="o">-</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">contribution</span> <span class="o">=</span> <span class="n">prefactor_common</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">stat_weight</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">exponent</span><span class="p">)</span>
+        <span class="n">gamma_fb</span> <span class="o">+=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">above_thresh</span><span class="p">,</span> <span class="n">contribution</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">chi</span> <span class="o">/</span> <span class="n">kT</span> <span class="o">&lt;</span> <span class="mf">0.01</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">gamma_fb</span></div>
+
+
+
+<div class="viewcode-block" id="gamma_2q_HI">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.gamma_2q_HI">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gamma_2q_HI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mf">100.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Two-photon continuum emission coefficient for H I.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : array</span>
+<span class="sd">        Wavelength grid [Angstroms].</span>
+<span class="sd">    Te : float</span>
+<span class="sd">        Electron temperature [K].</span>
+<span class="sd">    ne : float</span>
+<span class="sd">        Electron density [cm^-3].</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    gamma_2q : array</span>
+<span class="sd">        Two-photon emission coefficient [erg cm^3 s^-1 Hz^-1].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nu</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">wavelength</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">nu</span> <span class="o">/</span> <span class="n">NU_LYMAN_ALPHA</span>
+
+    <span class="n">valid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="n">A_x</span> <span class="o">=</span> <span class="n">two_photon_shape_HI</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">a_2S</span> <span class="o">=</span> <span class="n">alpha_2S_eff</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span>
+
+    <span class="n">f_suppress</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">ne</span> <span class="o">*</span> <span class="n">Q_2S_DEEXCIT</span> <span class="o">/</span> <span class="n">A_2q_HI</span><span class="p">)</span>
+
+    <span class="n">gamma_2q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span>
+        <span class="n">a_2S</span> <span class="o">*</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">nu</span> <span class="o">*</span> <span class="n">A_x</span> <span class="o">/</span> <span class="p">(</span><span class="n">A_2q_HI</span> <span class="o">*</span> <span class="n">NU_LYMAN_ALPHA</span><span class="p">)</span> <span class="o">*</span> <span class="n">f_suppress</span><span class="p">,</span>
+        <span class="mf">0.0</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">gamma_2q</span></div>
+
+
+
+<div class="viewcode-block" id="gamma_2q_HeI">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.gamma_2q_HeI">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gamma_2q_HeI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mf">100.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Two-photon continuum emission coefficient for He I.</span>
+<span class="sd">    From 1s2s ^1S_0 -&gt; 1s^2 ^1S_0 transition.</span>
+<span class="sd">    Two-photon energy = 20.6 eV (lambda_cutoff ~ 601.4 A).</span>
+<span class="sd">    Only significant in the UV; negligible at optical wavelengths.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nu</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">wavelength</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+    <span class="n">nu_2q_HeI</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="mf">601.4e-8</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">nu</span> <span class="o">/</span> <span class="n">nu_2q_HeI</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="n">A_x</span> <span class="o">=</span> <span class="n">two_photon_shape_HeI</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">a_2S_HeI</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">alpha_B_HeI</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span>
+
+    <span class="n">f_suppress</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">ne</span> <span class="o">*</span> <span class="mf">1e-5</span> <span class="o">/</span> <span class="n">A_2q_HeI</span><span class="p">)</span>
+
+    <span class="n">gamma_2q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span>
+        <span class="n">a_2S_HeI</span> <span class="o">*</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">nu</span> <span class="o">*</span> <span class="n">A_x</span> <span class="o">/</span> <span class="p">(</span><span class="n">A_2q_HeI</span> <span class="o">*</span> <span class="n">nu_2q_HeI</span><span class="p">)</span> <span class="o">*</span> <span class="n">f_suppress</span><span class="p">,</span>
+        <span class="mf">0.0</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">gamma_2q</span></div>
+
+
+
+<div class="viewcode-block" id="gamma_eff">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.gamma_eff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gamma_eff</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span> <span class="n">Y_He</span><span class="o">=</span><span class="mf">0.25</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Total effective nebular continuum emission coefficient.</span>
+
+<span class="sd">    gamma_eff = gamma_HI(ff+fb+2q) + (nHe/nH) * gamma_HeI(ff+fb+2q)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : array</span>
+<span class="sd">        Wavelength grid [Angstroms].</span>
+<span class="sd">    Te : float</span>
+<span class="sd">        Electron temperature [K].</span>
+<span class="sd">    ne : float</span>
+<span class="sd">        Electron density [cm^-3].</span>
+<span class="sd">    Y_He : float</span>
+<span class="sd">        Helium mass fraction (0.25 for ~solar).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    gamma : array</span>
+<span class="sd">        Total emission coefficient [erg cm^3 s^-1 Hz^-1].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">g_ff_HI</span> <span class="o">=</span> <span class="n">gamma_ff</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">g_fb_HI</span> <span class="o">=</span> <span class="n">gamma_fb_HI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">)</span>
+    <span class="n">g_2q_HI</span> <span class="o">=</span> <span class="n">gamma_2q_HI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">ne</span><span class="p">)</span>
+    <span class="n">gamma_HI</span> <span class="o">=</span> <span class="n">g_ff_HI</span> <span class="o">+</span> <span class="n">g_fb_HI</span> <span class="o">+</span> <span class="n">g_2q_HI</span>
+
+    <span class="n">nHe_nH</span> <span class="o">=</span> <span class="n">Y_He</span> <span class="o">/</span> <span class="p">(</span><span class="mf">4.0</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">Y_He</span><span class="p">))</span>
+
+    <span class="n">g_ff_HeI</span> <span class="o">=</span> <span class="n">gamma_ff</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">g_fb_HeI</span> <span class="o">=</span> <span class="n">gamma_fb_HeI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">)</span>
+    <span class="n">g_2q_HeI</span> <span class="o">=</span> <span class="n">gamma_2q_HeI</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">ne</span><span class="p">)</span>
+    <span class="n">gamma_HeI</span> <span class="o">=</span> <span class="n">g_ff_HeI</span> <span class="o">+</span> <span class="n">g_fb_HeI</span> <span class="o">+</span> <span class="n">g_2q_HeI</span>
+
+    <span class="n">gamma_total</span> <span class="o">=</span> <span class="n">gamma_HI</span> <span class="o">+</span> <span class="n">nHe_nH</span> <span class="o">*</span> <span class="n">gamma_HeI</span>
+
+    <span class="k">return</span> <span class="n">gamma_total</span></div>
+
+
+
+<div class="viewcode-block" id="NebularModel">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NebularModel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Encapsulates all nebular physics computations.</span>
+
+<span class="sd">    Initialize with Te, ne, Y_He and the fitting wavelength grid.</span>
+<span class="sd">    Pre-computes the normalized nebular continuum template such that:</span>
+<span class="sd">        f_neb(lambda) = template(lambda) * Q_eff</span>
+
+<span class="sd">    where Q_eff = sum_j w_j * unredden_j * qh_ratio_j.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="p">,</span> <span class="n">Te</span><span class="o">=</span><span class="mf">1e4</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>
+                 <span class="n">Y_He</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">Z_gas</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">f_esc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        wavelength : array</span>
+<span class="sd">            Fitting wavelength grid [Angstroms] (log-lambda grid).</span>
+<span class="sd">        wavelength_scale : {&#39;air&#39;, &#39;vacuum&#39;}</span>
+<span class="sd">            The scale the OBSERVED spectrum is on, and therefore the scale</span>
+<span class="sd">            the predicted line wavelengths are put on. REQUIRED. The</span>
+<span class="sd">            predicted lines are compared, by name and side by side, against</span>
+<span class="sd">            the lines the fit measured; putting the two on different scales</span>
+<span class="sd">            would offset them by 83 km/s with nothing in the output saying</span>
+<span class="sd">            so. Every mode that builds a NebularModel is a mode that fits</span>
+<span class="sd">            emission lines, so the setting is always available here.</span>
+<span class="sd">        Te : float</span>
+<span class="sd">            Electron temperature [K].</span>
+<span class="sd">        ne : float</span>
+<span class="sd">            Electron density [cm^-3].</span>
+<span class="sd">        Y_He : float</span>
+<span class="sd">            Helium mass fraction.</span>
+<span class="sd">        Z_gas : float</span>
+<span class="sd">            Gas-phase metallicity (for metal line predictions).</span>
+<span class="sd">        f_esc : float</span>
+<span class="sd">            Lyman continuum escape fraction [0, 1].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength_scale</span> <span class="o">=</span> <span class="n">wavelength_scale</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Te</span> <span class="o">=</span> <span class="n">Te</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ne</span> <span class="o">=</span> <span class="n">ne</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Y_He</span> <span class="o">=</span> <span class="n">Y_He</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Z_gas</span> <span class="o">=</span> <span class="n">Z_gas</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">f_esc</span> <span class="o">=</span> <span class="n">f_esc</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gamma_eff</span> <span class="o">=</span> <span class="n">gamma_eff</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">Te</span><span class="p">,</span> <span class="n">ne</span><span class="p">,</span> <span class="n">Y_He</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_alpha_B</span> <span class="o">=</span> <span class="n">alpha_B</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span>
+
+        <span class="n">lam_cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">*</span> <span class="mf">1e-8</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gamma_eff</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_alpha_B</span> <span class="o">*</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="n">lam_cm</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">1e-8</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_H_ratios</span> <span class="o">=</span> <span class="n">all_hydrogen_ratios</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metal_ratios</span> <span class="o">=</span> <span class="n">predicted_metal_ratios</span><span class="p">(</span><span class="n">Z_gas</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_alpha_Hbeta</span> <span class="o">=</span> <span class="n">alpha_Hbeta_eff</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_alpha_Halpha</span> <span class="o">=</span> <span class="n">alpha_Halpha_eff</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hnu_Hbeta</span> <span class="o">=</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">NU_HBETA</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hnu_Halpha</span> <span class="o">=</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">NU_HALPHA</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_f_capture</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">f_esc</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   NebularModel: Te=</span><span class="si">{</span><span class="n">Te</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> K, ne=</span><span class="si">{</span><span class="n">ne</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> cm^-3, &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;Y_He=</span><span class="si">{</span><span class="n">Y_He</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, Z_gas=</span><span class="si">{</span><span class="n">Z_gas</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, f_esc=</span><span class="si">{</span><span class="n">f_esc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">template</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Normalized nebular continuum template [erg/A per (photon/s)].&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span>
+
+<div class="viewcode-block" id="NebularModel.nebular_continuum">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel.nebular_continuum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nebular_continuum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the nebular continuum spectrum for a given effective Q(H).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Q_eff : float</span>
+<span class="sd">            Effective ionizing photon parameter</span>
+<span class="sd">            = sum_j w_j * unredden_j * qh_ratio_j</span>
+<span class="sd">            (in normalized flux units, distance-independent).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        f_neb : array</span>
+<span class="sd">            Nebular continuum in normalized flux units (same as observed spectrum).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_template</span> <span class="o">*</span> <span class="n">Q_eff</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f_capture</span></div>
+
+
+<div class="viewcode-block" id="NebularModel.predict_Hbeta_flux">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel.predict_Hbeta_flux">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_Hbeta_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict H-beta integrated flux from Q(H).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Q_eff : float</span>
+<span class="sd">            Effective ionizing photon parameter.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        f_Hbeta : float</span>
+<span class="sd">            Predicted H-beta integrated flux (same units as NNLS gas weights,</span>
+<span class="sd">            i.e., integrated line flux in normalized flux units).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_alpha_Hbeta</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_alpha_B</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hnu_Hbeta</span> <span class="o">*</span> <span class="n">Q_eff</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f_capture</span></div>
+
+
+<div class="viewcode-block" id="NebularModel.predict_Halpha_flux">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel.predict_Halpha_flux">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_Halpha_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Predict H-alpha integrated flux from Q(H).</span>
+
+<span class="sd">        Uses F_Hbeta * Balmer ratio rather than alpha_Halpha directly,</span>
+<span class="sd">        ensuring consistency with the Case B line ratio tables.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">f_Hbeta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_Hbeta_flux</span><span class="p">(</span><span class="n">Q_eff</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f_Hbeta</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H_ratios</span><span class="p">[</span><span class="s1">&#39;Halpha&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="NebularModel.predict_hydrogen_lines">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel.predict_hydrogen_lines">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_hydrogen_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">wavelength_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict all hydrogen recombination line fluxes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Q_eff : float</span>
+<span class="sd">            Effective ionizing photon parameter.</span>
+<span class="sd">        wavelength_range : tuple or None</span>
+<span class="sd">            (wl_min, wl_max) to filter lines. None = return all.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lines : dict {name: (wavelength, flux)}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">f_Hbeta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_Hbeta_flux</span><span class="p">(</span><span class="n">Q_eff</span><span class="p">)</span>
+
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_H_ratios</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">wavelength_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">wl</span> <span class="o">&lt;</span> <span class="n">wavelength_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">wl</span> <span class="o">&gt;</span> <span class="n">wavelength_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">continue</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">f_Hbeta</span> <span class="o">*</span> <span class="n">ratio</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">lines</span></div>
+
+
+<div class="viewcode-block" id="NebularModel.predict_metal_lines">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel.predict_metal_lines">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_metal_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">wavelength_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict metal emission line fluxes (semi-empirical calibrations).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Q_eff : float</span>
+<span class="sd">            Effective ionizing photon parameter.</span>
+<span class="sd">        wavelength_range : tuple or None</span>
+<span class="sd">            (wl_min, wl_max) to filter lines.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lines : dict {name: (wavelength, flux)}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">f_Hbeta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_Hbeta_flux</span><span class="p">(</span><span class="n">Q_eff</span><span class="p">)</span>
+
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metal_ratios</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">wavelength_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">wl</span> <span class="o">&lt;</span> <span class="n">wavelength_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">wl</span> <span class="o">&gt;</span> <span class="n">wavelength_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">continue</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">f_Hbeta</span> <span class="o">*</span> <span class="n">ratio</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">lines</span></div>
+
+
+<div class="viewcode-block" id="NebularModel.predict_all_lines">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel.predict_all_lines">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_all_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">wavelength_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Predict all emission line fluxes (hydrogen + metals).&quot;&quot;&quot;</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_hydrogen_lines</span><span class="p">(</span><span class="n">Q_eff</span><span class="p">,</span> <span class="n">wavelength_range</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predict_metal_lines</span><span class="p">(</span><span class="n">Q_eff</span><span class="p">,</span> <span class="n">wavelength_range</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">lines</span></div>
+
+
+<div class="viewcode-block" id="NebularModel.tau_ratio">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.NebularModel.tau_ratio">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">tau_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q_eff</span><span class="p">,</span> <span class="n">observed_Halpha</span><span class="p">,</span> <span class="n">Av_neb</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                  <span class="n">reddening_law</span><span class="o">=</span><span class="s1">&#39;CCM&#39;</span><span class="p">,</span> <span class="n">norm_wavelength</span><span class="o">=</span><span class="mf">5500.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the self-consistency tau ratio.</span>
+
+<span class="sd">        tau = L_predicted(Halpha) / L_observed(Halpha)</span>
+
+<span class="sd">        After correcting the prediction for nebular extinction.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Q_eff : float</span>
+<span class="sd">            Effective ionizing photon parameter.</span>
+<span class="sd">        observed_Halpha : float</span>
+<span class="sd">            Observed H-alpha integrated flux (from NNLS gas weight).</span>
+<span class="sd">        Av_neb : float</span>
+<span class="sd">            Nebular extinction [mag].</span>
+<span class="sd">        reddening_law : str</span>
+<span class="sd">            Reddening law name.</span>
+<span class="sd">        norm_wavelength : float</span>
+<span class="sd">            Normalization wavelength [A].</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        tau : float</span>
+<span class="sd">            Self-consistency ratio. tau=1 =&gt; self-consistent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">predicted_Ha</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_Halpha_flux</span><span class="p">(</span><span class="n">Q_eff</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Av_neb</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.reddening_laws</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_k_lambda</span>
+            <span class="n">k_Ha</span> <span class="o">=</span> <span class="n">get_k_lambda</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">LAMBDA_HALPHA</span><span class="p">]),</span> <span class="n">reddening_law</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">k_norm</span> <span class="o">=</span> <span class="n">get_k_lambda</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">norm_wavelength</span><span class="p">]),</span> <span class="n">reddening_law</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">dk</span> <span class="o">=</span> <span class="n">k_Ha</span> <span class="o">-</span> <span class="n">k_norm</span>
+            <span class="n">predicted_Ha</span> <span class="o">*=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">Av_neb</span> <span class="o">*</span> <span class="n">dk</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">observed_Halpha</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">inf</span>
+
+        <span class="k">return</span> <span class="n">predicted_Ha</span> <span class="o">/</span> <span class="n">observed_Halpha</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="compute_qh_ratios">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.compute_qh_ratios">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_qh_ratios</span><span class="p">(</span><span class="n">ages_gyr</span><span class="p">,</span> <span class="n">metallicities</span><span class="p">,</span> <span class="n">fbase_norms</span><span class="p">,</span>
+                      <span class="n">ssp_flux_unit</span><span class="o">=</span><span class="s1">&#39;Lsun&#39;</span><span class="p">,</span> <span class="n">ssp_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bases_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">return_absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">allow_partial</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Q(H) per unit NNLS weight for each SSP, integrated from the SSP spectra.</span>
+
+<span class="sd">    Each base spectrum is integrated shortwards of the hydrogen ionisation</span>
+<span class="sd">    edge to get the ionising photon rate it actually emits, then divided by</span>
+<span class="sd">    its own normalisation flux so the result multiplies the NNLS weight</span>
+<span class="sd">    directly.</span>
+
+<span class="sd">    This requires the raw library files, not the templates BRAIN fits with:</span>
+<span class="sd">    those have been resampled onto the observed wavelength grid, which starts</span>
+<span class="sd">    thousands of Angstrom above the Lyman limit and therefore contains no</span>
+<span class="sd">    ionising continuum at all.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ages_gyr, metallicities : array</span>
+<span class="sd">        Per-SSP age and metallicity. Carried for reporting only -- nothing is</span>
+<span class="sd">        looked up from them.</span>
+<span class="sd">    fbase_norms : array</span>
+<span class="sd">        SSP flux at the normalisation wavelength, per Msun.</span>
+<span class="sd">    ssp_flux_unit : {&#39;Lsun&#39;, &#39;cgs&#39;}</span>
+<span class="sd">    ssp_folder : str</span>
+<span class="sd">        Directory holding the library.</span>
+<span class="sd">    bases_info : list of dict</span>
+<span class="sd">        Base entries with a &#39;filename&#39; key, in the same order as the arrays.</span>
+<span class="sd">    return_absolute : bool</span>
+<span class="sd">        Also return the absolute rates per Msun, for reporting.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    qh_ratios : jnp array</span>
+<span class="sd">        Q(H) per unit weight. Zero for SSPs with no ionising output.</span>
+<span class="sd">    absolute : dict, optional</span>
+<span class="sd">        {&#39;QHc&#39;, &#39;QHe1&#39;, &#39;QHe2&#39;} arrays in photons/s per Msun.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the library does not reach below the Lyman limit. Degrading</span>
+<span class="sd">        quietly to a zero nebular continuum would leave a fit that looks</span>
+<span class="sd">        converged and is not physically meaningful.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ssp_folder</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">bases_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;compute_qh_ratios needs the raw SSP library (ssp_folder and &quot;</span>
+            <span class="s2">&quot;bases_info) to integrate the ionising continuum.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ssp_flux_unit</span> <span class="o">==</span> <span class="s1">&#39;Lsun&#39;</span><span class="p">:</span>
+        <span class="n">unit_conv</span> <span class="o">=</span> <span class="n">L_SUN_ERG</span>
+    <span class="k">elif</span> <span class="n">ssp_flux_unit</span> <span class="o">==</span> <span class="s1">&#39;cgs&#39;</span><span class="p">:</span>
+        <span class="n">unit_conv</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown ssp_flux_unit: </span><span class="si">{</span><span class="n">ssp_flux_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">n_ssp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ages_gyr</span><span class="p">)</span>
+    <span class="n">qh_ratios</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_ssp</span><span class="p">)</span>
+    <span class="n">absolute</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_ssp</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;QHc&#39;</span><span class="p">,</span> <span class="s1">&#39;QHe1&#39;</span><span class="p">,</span> <span class="s1">&#39;QHe2&#39;</span><span class="p">)}</span>
+    <span class="n">n_covered</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">covered_idx</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">bluest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ssp</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ssp_folder</span><span class="p">,</span> <span class="n">bases_info</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">wl</span><span class="p">,</span> <span class="n">fl</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">bluest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">bluest</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">wl</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+
+        <span class="n">q</span> <span class="o">=</span> <span class="n">qh_from_spectrum</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">fl</span><span class="p">,</span> <span class="n">ssp_flux_unit</span><span class="o">=</span><span class="n">ssp_flux_unit</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;QHc&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">q</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">n_covered</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">covered_idx</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">absolute</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+        <span class="n">fbase_cgs</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">fbase_norms</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">*</span> <span class="n">unit_conv</span>
+        <span class="k">if</span> <span class="n">fbase_cgs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">qh_ratios</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;QHc&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">fbase_cgs</span>
+
+    <span class="k">if</span> <span class="n">n_covered</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The SSP library in </span><span class="si">{</span><span class="n">ssp_folder</span><span class="si">!r}</span><span class="s2"> starts at </span><span class="si">{</span><span class="n">bluest</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> A and &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;never reaches the Lyman limit at </span><span class="si">{</span><span class="n">LYMAN_LIMIT</span><span class="si">}</span><span class="s2"> A, so its &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;ionising photon output cannot be computed.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;The nebular continuum would be identically zero and the fit &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;would look converged while modelling no gas at all.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Fix it one of two ways:</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  - set nebular_mode: spop, and fit the stellar continuum &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;only;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  - or point base_folder at a library whose spectra extend &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;below </span><span class="si">{</span><span class="n">LYMAN_LIMIT</span><span class="si">}</span><span class="s2"> A. What matters is the first wavelength in &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;the library files themselves, not the fitted range. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;brainsp libraries info &lt;library&gt; reports what the library you have &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;covers and which modes it supports.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n_covered</span> <span class="o">&lt;</span> <span class="n">n_ssp</span><span class="p">:</span>
+        <span class="n">short</span> <span class="o">=</span> <span class="p">[</span><span class="n">bases_info</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ssp</span><span class="p">)</span>
+                 <span class="k">if</span> <span class="n">j</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">covered_idx</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_partial</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Only </span><span class="si">{</span><span class="n">n_covered</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">n_ssp</span><span class="si">}</span><span class="s2"> templates in </span><span class="si">{</span><span class="n">ssp_folder</span><span class="si">!r}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;reach below the Lyman limit at </span><span class="si">{</span><span class="n">LYMAN_LIMIT</span><span class="si">}</span><span class="s2"> A.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Q(H) would be integrated over that subset alone, so the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;populations that happen to reach it would carry the whole &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;ionising budget and the rest would contribute none. The fit &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;completes either way and nothing in the output says which &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;templates were counted.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;First few that fall short: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">short</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Either use a library whose templates all reach below &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">LYMAN_LIMIT</span><span class="si">}</span><span class="s2"> A, or set allow_partial_ionising_coverage: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;true to accept a Q(H) integrated over &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_covered</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">n_ssp</span><span class="si">}</span><span class="s2"> of them.&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;   Only </span><span class="si">{</span><span class="n">n_covered</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">n_ssp</span><span class="si">}</span><span class="s2"> SSPs reach below the Lyman limit; &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;the rest contribute no ionising photons. Q(H) is integrated &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;over a biased subset of the library because &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;allow_partial_ionising_coverage is true.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">return_absolute</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">qh_ratios</span><span class="p">),</span> <span class="n">absolute</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">qh_ratios</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="compute_Q_eff">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.compute_Q_eff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_Q_eff</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">qh_ratios</span><span class="p">,</span> <span class="n">ssp_yav_flags</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">yav</span><span class="p">,</span>
+                  <span class="n">k_norm</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the effective ionizing photon parameter from current fit.</span>
+
+<span class="sd">    Q_eff = sum_j w_j * unredden_j * qh_ratio_j</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    weights : array</span>
+<span class="sd">        Stellar NNLS weights.</span>
+<span class="sd">    qh_ratios : array</span>
+<span class="sd">        Q(H) ratio per SSP (from compute_qh_ratios).</span>
+<span class="sd">    ssp_yav_flags : array</span>
+<span class="sd">        YAV flags (1 for young components).</span>
+<span class="sd">    av : float</span>
+<span class="sd">        Stellar extinction Av [mag].</span>
+<span class="sd">    yav : float</span>
+<span class="sd">        Young AV excess [mag].</span>
+<span class="sd">    k_norm : float</span>
+<span class="sd">        k(lambda_0) from the reddening law.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Q_eff : float</span>
+<span class="sd">        Effective ionizing photon parameter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_ssp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">qh_ratios</span><span class="p">)</span>
+    <span class="n">Q_eff</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_ssp</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">qh_ratios</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">av_tot</span> <span class="o">=</span> <span class="n">av</span> <span class="o">+</span> <span class="p">(</span><span class="n">yav</span> <span class="k">if</span> <span class="n">ssp_yav_flags</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">else</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">unredden</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av_tot</span> <span class="o">*</span> <span class="n">k_norm</span><span class="p">)</span>
+        <span class="n">Q_eff</span> <span class="o">+=</span> <span class="n">weights</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">unredden</span> <span class="o">*</span> <span class="n">qh_ratios</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">Q_eff</span></div>
+
+
+
+<div class="viewcode-block" id="Av_neb_from_balmer_decrement">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.Av_neb_from_balmer_decrement">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Av_neb_from_balmer_decrement</span><span class="p">(</span><span class="n">F_Halpha</span><span class="p">,</span> <span class="n">F_Hbeta</span><span class="p">,</span> <span class="n">reddening_law</span><span class="o">=</span><span class="s1">&#39;CCM&#39;</span><span class="p">,</span>
+                                  <span class="n">Te</span><span class="o">=</span><span class="mf">1e4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Derive nebular extinction Av from the observed Balmer decrement.</span>
+
+<span class="sd">    A_V^neb = 2.5 / (k_Hb - k_Ha) * log10[(F_Ha/F_Hb)_obs / (F_Ha/F_Hb)_CaseB]</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    F_Halpha : float</span>
+<span class="sd">        Observed H-alpha flux (integrated, from NNLS weight).</span>
+<span class="sd">    F_Hbeta : float</span>
+<span class="sd">        Observed H-beta flux.</span>
+<span class="sd">    reddening_law : str</span>
+<span class="sd">        Reddening law name.</span>
+<span class="sd">    Te : float</span>
+<span class="sd">        Electron temperature [K] (for intrinsic Balmer ratio).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Av_neb : float</span>
+<span class="sd">        Nebular extinction [mag]. Returns 0 if decrement is unphysical.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">F_Halpha</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">F_Hbeta</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+
+    <span class="n">intrinsic_ratio</span> <span class="o">=</span> <span class="n">hydrogen_case_b_ratios</span><span class="p">(</span><span class="n">Te</span><span class="p">)[</span><span class="s1">&#39;Halpha&#39;</span><span class="p">]</span>
+
+    <span class="n">observed_ratio</span> <span class="o">=</span> <span class="n">F_Halpha</span> <span class="o">/</span> <span class="n">F_Hbeta</span>
+
+    <span class="k">if</span> <span class="n">observed_ratio</span> <span class="o">&lt;=</span> <span class="n">intrinsic_ratio</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.reddening_laws</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_k_lambda</span>
+    <span class="n">k_Ha</span> <span class="o">=</span> <span class="n">get_k_lambda</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">LAMBDA_HALPHA</span><span class="p">]),</span> <span class="n">reddening_law</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">k_Hb</span> <span class="o">=</span> <span class="n">get_k_lambda</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">LAMBDA_HBETA</span><span class="p">]),</span> <span class="n">reddening_law</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">dk</span> <span class="o">=</span> <span class="n">k_Hb</span> <span class="o">-</span> <span class="n">k_Ha</span>
+
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">dk</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+
+    <span class="n">Av_neb</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="o">/</span> <span class="n">dk</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">observed_ratio</span> <span class="o">/</span> <span class="n">intrinsic_ratio</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">Av_neb</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="extract_line_flux">
+<a class="viewcode-back" href="../../api/generated/brainsp.nebular.html#brainsp.nebular.extract_line_flux">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_line_flux</span><span class="p">(</span><span class="n">gas_names</span><span class="p">,</span> <span class="n">gas_weights</span><span class="p">,</span> <span class="n">line_key</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract a specific emission line flux from the NNLS gas results.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    gas_names : list of str</span>
+<span class="sd">        Names of emission line templates.</span>
+<span class="sd">    gas_weights : array</span>
+<span class="sd">        NNLS weights for gas templates.</span>
+<span class="sd">    line_key : str</span>
+<span class="sd">        A catalogue entry name, or a species from LINE_SPECIES.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    flux : float</span>
+<span class="sd">        Integrated line flux, summed over every entry of that species, or</span>
+<span class="sd">        0.0 if the catalogue provides none.</span>
+
+<span class="sd">    This matched by substring and returned the first hit until the name</span>
+<span class="sd">    couplings were broken. That returned [S II] 6716 while silently</span>
+<span class="sd">    discarding 6731, which is half the density diagnostic; returned the</span>
+<span class="sd">    [O III] 4363 auroral line in place of the 4959+5007 doublet; and</span>
+<span class="sd">    returned He II when asked for He I, because &quot;He I&quot; is a substring of</span>
+<span class="sd">    &quot;He II&quot;. It did not misfire in practice only because the two keys in</span>
+<span class="sd">    use, Halpha and Hbeta, are unambiguous in the shipped catalogue.</span>
+
+<span class="sd">    A species is not a line. Asking for &quot;[O III]&quot; returns 4363 plus the</span>
+<span class="sd">    4959+5007 doublet, because all three are [O III], and 4363 comes from a</span>
+<span class="sd">    different upper level and is not usually wanted alongside the other two.</span>
+<span class="sd">    Ask for the entry by name when a particular line is meant; an exact name</span>
+<span class="sd">    always wins over the species sum.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.emission_lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">species_of</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gas_names</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="n">line_key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">gas_weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="n">total</span><span class="p">,</span> <span class="n">found</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gas_names</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">species_of</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="n">line_key</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">gas_weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">total</span> <span class="k">if</span> <span class="n">found</span> <span class="k">else</span> <span class="mf">0.0</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

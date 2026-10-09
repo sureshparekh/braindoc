@@ -1,0 +1,67 @@
+# Figures from code
+
+{mod}`brainsp.plots` draws every figure the interface draws, without a
+display, to any format matplotlib writes (the file name's suffix picks it:
+`.png`, `.pdf`, `.svg`, `.jpg`). Every function returns the matplotlib
+`Figure`, so it can be changed before saving; give `path=None` to only get
+the figure, and `ax=` (where offered) to draw into axes of your own.
+
+## A spectrum
+
+| Function | Draws |
+|---|---|
+| `spectrum(result, path, xlim=, components=, residuals=, title=, ax=)` | data and model, the stellar and emission parts, residuals; `xlim=(6450, 6650)` zooms |
+| `spectrum_fit(result, path)` | BRAIN's standard multi-panel figure (what `make_plot` writes) |
+| `sfh(result, path, kind="light"/"mass"/"both", cumulative=, ax=)` | the star-formation history, summed over metallicity |
+
+```python
+r = brainsp.fit_spectrum("galaxy.spec")
+brainsp.plots.spectrum(r, "fit.png")
+brainsp.plots.spectrum(r, "halpha.pdf", xlim=(6450, 6700), residuals=False)
+brainsp.plots.sfh(r, "sfh.png", cumulative=True)
+```
+
+`result` may be a {class}`~brainsp.FitResult` or the path of a
+`*_summary.txt`.
+
+## A datacube
+
+| Function | Draws |
+|---|---|
+| `map(cube, name, path, cmap=, scale=, vmin=, vmax=, contours=, title=, units=, ax=)` | one map; unfitted spaxels grey and hatched; `scale` = `"clip"` (1–99 %), `"full"`, `"log"` |
+| `maps(cube, names, path, ncols=, cmap=, scale=)` | several maps on one page |
+| `export_maps(cube, folder, names=, formats=, cmap=, scale=)` | each map to files: images, and FITS with sky coordinates and a `TRUST` mask |
+| `spaxel(cube, y, x, path, xlim=, lines=)` | one spaxel's spectrum, model and lines |
+| `sfh(cube, path, y=, x=, kind=)` | one spaxel's star-formation history |
+| `diagnostic(cube, kind, path, ax=)` | `"BPT [N II]"`, `"BPT [S II]"` or `"WHAN"`, every spaxel coloured by class |
+
+```python
+cube = brainsp.read_megacube("galaxy-BRAIN_MEGACUBE.fits")
+brainsp.plots.map(cube, "vrot_star", "v.pdf", cmap="RdBu_r", scale="full")
+brainsp.plots.maps(cube, ["vrot_star", "Sigma_star", "Av", "Mage_L"], "page.png", ncols=2)
+brainsp.plots.export_maps(cube, "maps", formats=("png", "pdf", "fits"))
+brainsp.plots.diagnostic(cube, "WHAN", "whan.png")
+```
+
+From the command line, `brainsp plot` ([](../reference/cli.md)):
+
+```bash
+brainsp plot galaxy-BRAIN_MEGACUBE.fits --map vrot_star Av -o page.png
+brainsp plot galaxy-BRAIN_MEGACUBE.fits --export maps --formats png,fits
+brainsp plot brain_out/galaxy_summary.txt --sfh -o sfh.png
+```
+
+## Your own figures
+
+Draw into your own axes and add to them:
+
+```python
+import matplotlib.pyplot as plt
+fig, (a, b) = plt.subplots(1, 2, figsize=(10, 4))
+brainsp.plots.map(cube, "vrot_star", ax=a, cmap="RdBu_r")
+brainsp.plots.diagnostic(cube, "BPT [N II]", ax=b)
+fig.savefig("mine.pdf")
+```
+
+Figures are styled for print: white ground, black text, perceptually
+uniform colour maps, units on every axis.

@@ -1,0 +1,52 @@
+# 7. A datacube
+
+The mock datacube `mock_cube.fits` is 16 x 16 spaxels laid out like a MaNGA
+LOGCUBE (`FLUX`, `IVAR`, `MASK` and `WAVE` extensions, a logarithmic
+wavelength axis at 69 km/s per pixel, sky coordinates) and built as a
+galaxy: a disc rotating at 220 km/s seen at 55° inclination, an old bulge
+with a high velocity dispersion, a ring of young stars, dust and star
+formation at 5 spaxels, a LINER-like nucleus, and a signal-to-noise falling
+from 58 at the centre to 3 at the edge. The truth is in
+`mock_cube.truth.fits`.
+
+```{literalinclude} ../../tutorials_src/t07_datacube.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t07_datacube.txt
+:language: text
+```
+
+## What the pipeline did
+
+{class}`brainsp.CubePipeline` describes the whole run: which cubes, at which
+redshift, through which preparation stages, with which fit settings, written
+where. Here it:
+
+1. divided each spaxel's wavelengths by $1 + z = 1.02$;
+2. computed the signal-to-noise of every spaxel over 4000–6000 Å (rest) and
+   wrote masks for S/N > 3, 10 and 20 (`SN_MASKS_3`, ...) and the continuous
+   map `SNMAP`;
+3. fitted every spaxel with S/N > 3, 172 of the 256, in `espop`;
+4. wrote `mock_cube-BRAIN_MEGACUBE.fits`.
+
+The recovered maps match the truth: median offsets of 0.8 km/s in velocity,
+0.1 km/s in dispersion and 0.01 mag in $A_V$, with an rms of 6 km/s, 8 km/s
+and 0.05 mag, the scatter expected at these signal-to-noise ratios.
+
+The stages a real cube may need, Galactic dereddening, spatial binning,
+resolution matching, spectral resampling and filtering, are options of the
+same object; [](../user_guide/datacubes.md) describes each.
+
+## The same run, as a file
+
+`pipeline.export_script("run_mock_cube.py")` wrote the run as one Python
+file. Its pipeline section:
+
+```{literalinclude} ../_static/tutorials/run_mock_cube.py
+:language: python
+:start-at: PIPELINE = dict(
+:end-before: "# The processor"
+```

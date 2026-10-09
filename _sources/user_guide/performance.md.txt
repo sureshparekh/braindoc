@@ -1,0 +1,82 @@
+# Speed, GPUs and CPUs
+
+## Where the time goes
+
+1. **Compiling.** JAX compiles the fit the first time it meets a problem of
+   a given size (wavelength pixels, templates, lines, mode): a few seconds,
+   once per process. The compiled code is cached on disk
+   (`~/.cache/brain/jax`; `BRAIN_CACHE_DIR` moves it, `brainsp clear-cache`
+   empties it), so a later process loads instead of compiling.
+2. **Reading templates**, once per library and grid, also cached.
+3. **The fit itself**: a velocity grid search, then Levenberg–Marquardt on
+   the non-linear parameters with an exact non-negative least-squares solve
+   inside every step ([](../theory/index.md)).
+
+Keep the fitting range, template selection and mode the same across a batch,
+and only the first fit pays for 1 and 2.
+
+## Measured
+
+On one machine (AMD Ryzen Threadripper 2990WX, 32 cores / 64 threads; NVIDIA GeForce RTX 3060, 12 GB), mock data:
+
+| | CPU | GPU |
+|---|---|---|
+| one spectrum, `spop`, first fit | 5.7 s | 5.9 s |
+| one spectrum, `spop`, each later fit | 1.4 s | 0.55 s |
+| one spectrum, `espop`, each later fit | 2.4 s | 0.97 s |
+| 300 spectra, `spop`, per spectrum | 0.19 s (37 workers) | ~0.5 s |
+| 16 x 16 cube, 172 spaxels, `espop`, total | 139 s (63 workers) | 163 s |
+| 36 spaxels, `spop`, one CPU process, any of 4–64 cores | ~1 spaxel/s | |
+
+## GPUs
+
+BRAIN computes in double precision (float64) throughout: the matrices of the
+linear solve are too ill-conditioned (condition numbers near $10^{10}$) for
+single precision to give the same answer. Consumer GeForce cards run float64
+at 1/32 to 1/64 of their float32 rate; data-centre cards (A100, H100) at 1/2.
+So a GeForce card helps most on cubes, where many spaxels share each kernel
+launch, and a data-centre card helps everywhere.
+
+On a GPU a cube's spaxels go through a **work queue** of `batch_size` lanes:
+a spaxel that has converged leaves its lane to the next one. The number of
+lanes is sized from the card's memory, and halved and retried if the first
+compile runs out. Set `batch_size` to fix it.
+
+On an RTX 3060 a MaNGA cube in `espop` (578 spaxels) takes about 158 s, and
+a JWST NIRSpec cube in `spop` (about 1270 spaxels) about 48 s. The fit is
+compiled once per run and kept on disk, so a second run of the same set-up
+starts in about 5 s.
+
+## CPUs
+
+One process does not use a many-core CPU well for this problem: XLA's own
+threads speed up each fit's linear algebra a little, and a batch makes every
+spaxel wait for the slowest. Measured on 36 spaxels: one process gave about 1
+spaxel/s whether it had 4, 16 or 64 cores, and a single core alone gave 0.55.
+
+So on a CPU, datacubes and long lists of spectra are split over **worker
+processes**, each pinned to one thread and each keeping its own compiled fit
+warm, and the work is dealt out among them. It scales with the cores.
+
+| `cpu_workers` | |
+|---|---|
+| `auto` (default) | every core the process may use, minus one; no more than the free memory allows (about 1.2 GB each); no more than the work |
+| a number | that many |
+| `1` | no workers: everything in the one process |
+
+"The cores the process may use" is what the operating system allows it: a
+SLURM allocation, `taskset`, a container's limit, not every core of the node.
+Workers are started as `python -m brainsp.cube_worker` (or
+`spectra_worker`), never by re-running your script, so a script without an
+`if __name__ == "__main__":` guard, a notebook and the interface all work.
+Results are identical to a single process, to rounding (the test suite
+compares them).
+
+## Choosing the device
+
+`device`: `auto` (default; a GPU when JAX can see one), `cpu` or `gpu`. JAX
+fixes its device the first time it is used in a process, so in Python choose
+it before the first fit (`device=` on the first call, or
+{func}`brainsp.set_device`). The interface starts every fit in a fresh
+process, so its device selector always takes effect. `JAX_PLATFORMS=cpu` in
+the environment is respected by `auto`.

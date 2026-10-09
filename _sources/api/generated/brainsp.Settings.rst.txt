@@ -1,0 +1,38 @@
+﻿brainsp.Settings
+================
+
+.. currentmodule:: brainsp
+
+.. autoclass:: Settings
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Settings.__init__
+      ~Settings.changed
+      ~Settings.clear
+      ~Settings.copy
+      ~Settings.describe
+      ~Settings.fromkeys
+      ~Settings.get
+      ~Settings.items
+      ~Settings.keys
+      ~Settings.names
+      ~Settings.pop
+      ~Settings.popitem
+      ~Settings.save
+      ~Settings.setdefault
+      ~Settings.update
+      ~Settings.validate
+      ~Settings.values
+   
+   
+
+   
+   
+   

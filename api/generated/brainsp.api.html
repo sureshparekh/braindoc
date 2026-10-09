@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.api &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.api';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.brainv1" href="brainsp.brainv1.html" />
+    <link rel="prev" title="brainsp.reddening_laws" href="brainsp.reddening_laws.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.api</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.api">
+<span id="brainsp-api"></span><h1>brainsp.api<a class="headerlink" href="#module-brainsp.api" title="Link to this heading">#</a></h1>
+<p>The brainsp scripting interface: everything the desktop interface does, from
+Python.</p>
+<p>The four things most people need:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+
+<span class="c1"># one spectrum</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="s2">&quot;galaxy.spec&quot;</span><span class="p">,</span> <span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span>
+                              <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="p">)</span>
+
+<span class="c1"># many spectra, each with its own redshift and Galactic reddening</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectra</span><span class="p">(</span><span class="s2">&quot;spectra/*.spec&quot;</span><span class="p">,</span>
+                              <span class="n">corrections</span><span class="o">=</span><span class="s2">&quot;corrections.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># a datacube</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_cube</span><span class="p">(</span><span class="s2">&quot;manga-8626-12704-LOGCUBE.fits&quot;</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.04724</span><span class="p">,</span>
+                        <span class="n">sn_mask</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">fit_sn_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">)</span>
+
+<span class="c1"># a datacube pipeline, every stage spelled out</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">CubePipeline</span><span class="p">(</span><span class="n">cubes</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span> <span class="n">redshift</span><span class="o">=...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Settings travel as a <a class="reference internal" href="#brainsp.api.Settings" title="brainsp.api.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> object: a dictionary of every BRAIN
+setting with its default, which can be read from or written to a YAML file
+and whose keys are also attributes. Every function also accepts settings as
+keyword arguments, which override the <a class="reference internal" href="#brainsp.api.Settings" title="brainsp.api.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> given.</p>
+<p>JAX picks its device the first time it is used in a process, so the device
+has to be chosen before the first fit: pass <code class="docutils literal notranslate"><span class="pre">device=</span></code> to the first call, or
+call <a class="reference internal" href="#brainsp.api.set_device" title="brainsp.api.set_device"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_device()</span></code></a> first. <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> (the default) uses a GPU when JAX
+can see one.</p>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.api.fit_cube" title="brainsp.api.fit_cube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_cube</span></code></a>(cube, redshift[, settings, device])</p></td>
+<td><p>Fit one datacube and open the megacube it produces.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.api.fit_spectra" title="brainsp.api.fit_spectra"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_spectra</span></code></a>(spectra[, settings, ...])</p></td>
+<td><p>Fit several spectra, each with its own pre-fit corrections if given.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.api.fit_spectrum" title="brainsp.api.fit_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_spectrum</span></code></a>(spectrum[, settings, ...])</p></td>
+<td><p>Fit one spectrum.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.api.read_corrections_table" title="brainsp.api.read_corrections_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_corrections_table</span></code></a>(path)</p></td>
+<td><p>Per-spectrum pre-fit corrections from a CSV file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.api.read_megacube" title="brainsp.api.read_megacube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_megacube</span></code></a>(path)</p></td>
+<td><p>Open a megacube BRAIN wrote.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.api.read_result" title="brainsp.api.read_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_result</span></code></a>(summary_file[, fitted_file])</p></td>
+<td><p>Read a fit already on disk.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.api.set_device" title="brainsp.api.set_device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_device</span></code></a>([device])</p></td>
+<td><p>Choose the processor BRAIN fits on, before the first fit.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.api.CubePipeline" title="brainsp.api.CubePipeline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CubePipeline</span></code></a>(cubes[, redshift, settings, ...])</p></td>
+<td><p>A datacube run: the preparation stages, the fit, and its outputs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.api.FitResult" title="brainsp.api.FitResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FitResult</span></code></a>(summary_file[, fitted_file, spectrum])</p></td>
+<td><p>The result of fitting one spectrum, read from the files BRAIN wrote.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.api.Settings" title="brainsp.api.Settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Settings</span></code></a>([source])</p></td>
+<td><p>Every BRAIN setting, with its default, as a dictionary.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.api.Settings">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">Settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">overrides</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<p>Every BRAIN setting, with its default, as a dictionary.</p>
+<p>Keys are also attributes, so <code class="docutils literal notranslate"><span class="pre">s.nebular_mode</span></code> and
+<code class="docutils literal notranslate"><span class="pre">s[&quot;nebular_mode&quot;]</span></code> are the same thing. An unknown key is refused, with
+the nearest valid name suggested, rather than silently ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>source</strong><span class="classifier">str, dict or Settings, optional</span></dt><dd><p>A settings file (<code class="docutils literal notranslate"><span class="pre">.yaml</span></code>), or a mapping of settings. Missing keys
+take their defaults.</p>
+</dd>
+<dt><strong>**overrides</strong></dt><dd><p>Settings to change, by name.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span><span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dust_range</span>
+<span class="go">[0.0, 5.0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e8</span><span class="p">,</span> <span class="mf">1e9</span><span class="p">,</span> <span class="mf">1e10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">changed</span><span class="p">()</span>                       <span class="c1"># what differs from the defaults</span>
+<span class="go">{&#39;nebular_mode&#39;: &#39;espop&#39;, &#39;wavelength_scale&#39;: &#39;vacuum&#39;, &#39;ages&#39;: [...]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;my_settings.yaml&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span><span class="s2">&quot;my_settings.yaml&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">s</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">&quot;dust_range&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.Settings.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">**F</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None.</span>&#160; <span class="pre">Update</span> <span class="pre">D</span> <span class="pre">from</span> <span class="pre">mapping/iterable</span> <span class="pre">E</span> <span class="pre">and</span> <span class="pre">F.</span></span></span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings.update" title="Link to this definition">#</a></dt>
+<dd><p>If E is present and has a .keys() method, then does:  for k in E.keys(): D[k] = E[k]
+If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+In either case, this is followed by: for k in F:  D[k] = F[k]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.Settings.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">changes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings.copy" title="Link to this definition">#</a></dt>
+<dd><p>A copy, with <cite>changes</cite> applied.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.Settings.changed">
+<span class="sig-name descname"><span class="pre">changed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings.changed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings.changed" title="Link to this definition">#</a></dt>
+<dd><p>The settings that differ from BRAIN’s defaults.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.Settings.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings.save" title="Link to this definition">#</a></dt>
+<dd><p>Write every setting to a YAML file that <a class="reference internal" href="#brainsp.api.Settings" title="brainsp.api.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> and
+<code class="docutils literal notranslate"><span class="pre">brainsp</span> <span class="pre">fit</span> <span class="pre">--settings</span></code> read back.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.Settings.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">for_cube</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings.validate" title="Link to this definition">#</a></dt>
+<dd><p>Check the settings the way a run checks them, without running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>for_cube</strong><span class="classifier">bool</span></dt><dd><p>True for a datacube fit, where <cite>spectrum</cite> is not needed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>SystemExit</dt><dd><p>Listing every problem found, each with what to do about it.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.Settings.names">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings.names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings.names" title="Link to this definition">#</a></dt>
+<dd><p>Every setting’s name, in the order the settings file lists them.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.Settings.describe">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#Settings.describe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.Settings.describe" title="Link to this definition">#</a></dt>
+<dd><p>What a setting does, from the documented settings file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>A setting. Without it, every setting is described.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.api.set_device">
+<span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">set_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#set_device"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.set_device" title="Link to this definition">#</a></dt>
+<dd><p>Choose the processor BRAIN fits on, before the first fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>device</strong><span class="classifier">{“auto”, “cpu”, “gpu”}</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> lets JAX choose (a GPU when it can see one), unless the
+<code class="docutils literal notranslate"><span class="pre">JAX_PLATFORMS</span></code> environment variable already names a platform.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>RuntimeError</dt><dd><p>If JAX has already started on a different device in this process.
+JAX chooses its device once per process; start a new Python session
+to change it.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.api.fit_spectrum">
+<span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">fit_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">overrides</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#fit_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.fit_spectrum" title="Link to this definition">#</a></dt>
+<dd><p>Fit one spectrum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>spectrum</strong><span class="classifier">str or tuple of arrays</span></dt><dd><p>A spectrum file (columns: wavelength in Angstrom, flux, and
+optionally error and flag), or <code class="docutils literal notranslate"><span class="pre">(wavelength,</span> <span class="pre">flux[,</span> <span class="pre">error[,</span>
+<span class="pre">flag]])</span></code> arrays, which are written to <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> first.</p>
+</dd>
+<dt><strong>settings</strong><span class="classifier">Settings, dict or str, optional</span></dt><dd><p>The settings to fit with (a <a class="reference internal" href="#brainsp.api.Settings" title="brainsp.api.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a>, a mapping, or a YAML
+file). Defaults to BRAIN’s defaults.</p>
+</dd>
+<dt><strong>output_dir</strong><span class="classifier">str, optional</span></dt><dd><p>Where the results go; <code class="docutils literal notranslate"><span class="pre">settings.output_folder</span></code> (<code class="docutils literal notranslate"><span class="pre">brain_out</span></code>) by
+default, relative to the working directory.</p>
+</dd>
+<dt><strong>device</strong><span class="classifier">{“auto”, “cpu”, “gpu”}, optional</span></dt><dd><p>See <a class="reference internal" href="#brainsp.api.set_device" title="brainsp.api.set_device"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_device()</span></code></a>. Only the first fit in a process can choose.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>Base name of the output files; the spectrum file’s name by default.</p>
+</dd>
+<dt><strong>quiet</strong><span class="classifier">bool</span></dt><dd><p>Show only warnings, not BRAIN’s progress log.</p>
+</dd>
+<dt><strong>**overrides</strong></dt><dd><p>Any setting by name, e.g. <code class="docutils literal notranslate"><span class="pre">nebular_mode=&quot;espop&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">spectrum_redshift=0.03</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum_in_rest_frame=False</span></code>,
+<code class="docutils literal notranslate"><span class="pre">galactic_ebv=0.05</span></code>, <code class="docutils literal notranslate"><span class="pre">mask=&quot;lines.sm&quot;</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>FitResult</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="s2">&quot;galaxy.spec&quot;</span><span class="p">,</span> <span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="s2">&quot;Halpha_6563&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.api.fit_spectra">
+<span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">fit_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">corrections</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_on_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">overrides</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#fit_spectra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.fit_spectra" title="Link to this definition">#</a></dt>
+<dd><p>Fit several spectra, each with its own pre-fit corrections if given.</p>
+<p>Templates and the compiled engine are loaded once and reused, so a batch
+costs far less than the same fits run one at a time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>spectra</strong><span class="classifier">str or list of str</span></dt><dd><p>Files, or a glob pattern such as <code class="docutils literal notranslate"><span class="pre">&quot;spectra/*.spec&quot;</span></code>. May be omitted
+(<code class="docutils literal notranslate"><span class="pre">None</span></code>) when <cite>corrections</cite> is a table: its spectra are fitted.</p>
+</dd>
+<dt><strong>settings</strong><span class="classifier">Settings, dict or str, optional</span></dt><dd><p>Settings shared by every spectrum.</p>
+</dd>
+<dt><strong>corrections</strong><span class="classifier">str or dict, optional</span></dt><dd><p>A CSV table (see <a class="reference internal" href="#brainsp.api.read_corrections_table" title="brainsp.api.read_corrections_table"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_corrections_table()</span></code></a>) or a mapping
+<code class="docutils literal notranslate"><span class="pre">{spectrum:</span> <span class="pre">{setting:</span> <span class="pre">value}}</span></code> of per-spectrum settings, typically
+<code class="docutils literal notranslate"><span class="pre">spectrum_redshift</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum_in_rest_frame</span></code>, <code class="docutils literal notranslate"><span class="pre">galactic_ebv</span></code>,
+<code class="docutils literal notranslate"><span class="pre">galactic_rv</span></code>, <code class="docutils literal notranslate"><span class="pre">galactic_law</span></code>.</p>
+</dd>
+<dt><strong>output_dir, device, quiet, **overrides</strong></dt><dd><p>As for <a class="reference internal" href="#brainsp.api.fit_spectrum" title="brainsp.api.fit_spectrum"><code class="xref py py-func docutils literal notranslate"><span class="pre">fit_spectrum()</span></code></a>.</p>
+</dd>
+<dt><strong>stop_on_error</strong><span class="classifier">bool</span></dt><dd><p>Raise on the first failure. Otherwise a failed spectrum gives a
+result whose <code class="docutils literal notranslate"><span class="pre">error_message</span></code> says why, and the batch carries on.</p>
+</dd>
+<dt><strong>workers</strong><span class="classifier">int or “auto”, optional</span></dt><dd><p>On a CPU, fit the spectra on this many worker processes at once,
+each with one thread and each keeping its own compiled fit warm.
+<code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> (the default on a CPU) uses every core but one, as many
+as the free memory allows; <code class="docutils literal notranslate"><span class="pre">1</span></code> fits them all in this process.
+On a GPU the spectra are fitted one after another in this process,
+which keeps the device busy on its own.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>list of FitResult</dt><dd><p>In the order the spectra were given.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.api.FitResult">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">FitResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summary_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fitted_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.FitResult" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The result of fitting one spectrum, read from the files BRAIN wrote.</p>
+<p>A fit writes two files: <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_summary.txt</span></code> (the fitted parameters,
+the population vector, the emission lines) and <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_fitted.txt</span></code> (the observed and model spectra, column by column).
+This object reads both.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>spectrum</strong><span class="classifier">str</span></dt><dd><p>The input spectrum.</p>
+</dd>
+<dt><strong>summary_file, fitted_file</strong><span class="classifier">str</span></dt><dd><p>The two output files.</p>
+</dd>
+<dt><strong>values</strong><span class="classifier">dict</span></dt><dd><p>Every <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">[label]</span></code> line of the summary, by label, as text.</p>
+</dd>
+<dt><strong>v0, sigma</strong><span class="classifier">float</span></dt><dd><p>Stellar velocity and velocity dispersion in km/s (<code class="docutils literal notranslate"><span class="pre">v0_min</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vd_min</span></code>; the dispersion is OBSERVED, including the instrument,
+unless <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> was given; see
+<a class="reference internal" href="#brainsp.api.FitResult.sigma_star" title="brainsp.api.FitResult.sigma_star"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sigma_star</span></code></a>).</p>
+</dd>
+<dt><strong>sigma_star</strong><span class="classifier">float or None</span></dt><dd><p>The intrinsic stellar dispersion, when the instrumental resolution
+was known.</p>
+</dd>
+<dt><strong>av, yav</strong><span class="classifier">float</span></dt><dd><p>V-band extinction of the whole population and the extra extinction
+of the youngest components, in magnitudes.</p>
+</dd>
+<dt><strong>chi2, chi2_data, adev</strong><span class="classifier">float</span></dt><dd><p>Reduced chi-squared (with and without the penalty rows), and the
+mean absolute deviation in per cent.</p>
+</dd>
+<dt><strong>populations</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Structured array, one row per template: <code class="docutils literal notranslate"><span class="pre">x</span></code> (light fraction, per
+cent, at the normalisation wavelength), <code class="docutils literal notranslate"><span class="pre">mini</span></code> and <code class="docutils literal notranslate"><span class="pre">mcor</span></code>
+(initial and present mass fractions, per cent), <code class="docutils literal notranslate"><span class="pre">age</span></code> (yr), <code class="docutils literal notranslate"><span class="pre">Z</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mstars</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">stellar</span></code> (False for an AGN component).</p>
+</dd>
+<dt><strong>lines</strong><span class="classifier">dict</span></dt><dd><p>Emission-line fluxes and errors, <code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">(flux,</span> <span class="pre">error)}</span></code>, in the
+units of the input spectrum times Angstrom; empty in <code class="docutils literal notranslate"><span class="pre">spop</span></code>.
+Names are BRAIN’s (<code class="docutils literal notranslate"><span class="pre">&quot;Halpha_6563&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;[S</span> <span class="pre">II]_6716&quot;</span></code> …). The
+tied doublets appear as <code class="docutils literal notranslate"><span class="pre">&quot;[O</span> <span class="pre">III]_Doublet&quot;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&quot;[N</span> <span class="pre">II]_Doublet&quot;</span></code> (the strong line’s flux) and also under each
+member’s own name, at the fixed ratio.</p>
+</dd>
+<dt><strong>wavelength, observed, model, stellar, emission, error, residual</strong><span class="classifier">ndarray</span></dt><dd><p>The columns of the fitted-spectrum file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="s2">&quot;galaxy.spec&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">av</span>
+<span class="go">(188.3, 47.55, 0.2171)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_mass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">young</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">1e8</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;galaxy_fit.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.error_message">
+<span class="sig-name descname"><span class="pre">error_message</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#brainsp.api.FitResult.error_message" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.v0">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">v0</span></span><a class="headerlink" href="#brainsp.api.FitResult.v0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.sigma">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma</span></span><a class="headerlink" href="#brainsp.api.FitResult.sigma" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.sigma_star">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma_star</span></span><a class="headerlink" href="#brainsp.api.FitResult.sigma_star" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.av">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">av</span></span><a class="headerlink" href="#brainsp.api.FitResult.av" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.yav">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">yav</span></span><a class="headerlink" href="#brainsp.api.FitResult.yav" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.chi2">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">chi2</span></span><a class="headerlink" href="#brainsp.api.FitResult.chi2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.chi2_data">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">chi2_data</span></span><a class="headerlink" href="#brainsp.api.FitResult.chi2_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.adev">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">adev</span></span><a class="headerlink" href="#brainsp.api.FitResult.adev" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.v_gas">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">v_gas</span></span><a class="headerlink" href="#brainsp.api.FitResult.v_gas" title="Link to this definition">#</a></dt>
+<dd><p>Velocity of the first kinematic group of emission lines, km/s.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.sigma_gas">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma_gas</span></span><a class="headerlink" href="#brainsp.api.FitResult.sigma_gas" title="Link to this definition">#</a></dt>
+<dd><p>Dispersion of the first kinematic group of lines (observed).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.mode">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#brainsp.api.FitResult.mode" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.flux_tot">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">flux_tot</span></span><a class="headerlink" href="#brainsp.api.FitResult.flux_tot" title="Link to this definition">#</a></dt>
+<dd><p>The model’s flux at the normalisation wavelength (input units).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.fobs_norm">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fobs_norm</span></span><a class="headerlink" href="#brainsp.api.FitResult.fobs_norm" title="Link to this definition">#</a></dt>
+<dd><p>The observed flux the spectrum was divided by (input units): what
+turns a normalised flux back into the input’s units. Summaries
+written before it was recorded fall back to Flux_tot, which differs
+from it by the sum of the light fractions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.mcor_tot">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mcor_tot</span></span><a class="headerlink" href="#brainsp.api.FitResult.mcor_tot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.mini_tot">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mini_tot</span></span><a class="headerlink" href="#brainsp.api.FitResult.mini_tot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.line_fluxes">
+<span class="sig-name descname"><span class="pre">line_fluxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'input'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult.line_fluxes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.FitResult.line_fluxes" title="Link to this definition">#</a></dt>
+<dd><p>Emission-line fluxes, in the units asked for.</p>
+<p>The summary file holds fluxes relative to the normalised spectrum
+(continuum = 1 at the normalisation wavelength) and corrected for the
+stellar extinction relative to that wavelength. This converts them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>units</strong><span class="classifier">{“input”, “normalised”}</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&quot;input&quot;</span></code> multiplies by <code class="docutils literal notranslate"><span class="pre">fobs_norm</span></code>, giving flux in the units
+of the input spectrum times Angstrom; <code class="docutils literal notranslate"><span class="pre">&quot;normalised&quot;</span></code> leaves
+them as written.</p>
+</dd>
+<dt><strong>observed</strong><span class="classifier">bool</span></dt><dd><p>Undo the stellar-extinction correction, giving the flux as it
+arrives (still after any Galactic dereddening of the input).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p><code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">(flux,</span> <span class="pre">error)}</span></code>, doublets and their members included.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.mean_log_age_light">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_log_age_light</span></span><a class="headerlink" href="#brainsp.api.FitResult.mean_log_age_light" title="Link to this definition">#</a></dt>
+<dd><p>&lt;log t&gt;_L: the light-weighted mean of log10(age / yr).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.mean_log_age_mass">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_log_age_mass</span></span><a class="headerlink" href="#brainsp.api.FitResult.mean_log_age_mass" title="Link to this definition">#</a></dt>
+<dd><p>&lt;log t&gt;_M: the (present) mass-weighted mean of log10(age / yr).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.mean_metallicity_light">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_metallicity_light</span></span><a class="headerlink" href="#brainsp.api.FitResult.mean_metallicity_light" title="Link to this definition">#</a></dt>
+<dd><p>&lt;Z&gt;_L: light-weighted mean metallicity.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.mean_metallicity_mass">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_metallicity_mass</span></span><a class="headerlink" href="#brainsp.api.FitResult.mean_metallicity_mass" title="Link to this definition">#</a></dt>
+<dd><p>&lt;Z&gt;_M: mass-weighted mean metallicity.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.agn_fraction">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">agn_fraction</span></span><a class="headerlink" href="#brainsp.api.FitResult.agn_fraction" title="Link to this definition">#</a></dt>
+<dd><p>Light fraction, in per cent, in components that are not stars.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.wavelength">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">wavelength</span></span><a class="headerlink" href="#brainsp.api.FitResult.wavelength" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.observed">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">observed</span></span><a class="headerlink" href="#brainsp.api.FitResult.observed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.model">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#brainsp.api.FitResult.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.stellar">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">stellar</span></span><a class="headerlink" href="#brainsp.api.FitResult.stellar" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.emission">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">emission</span></span><a class="headerlink" href="#brainsp.api.FitResult.emission" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.error">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#brainsp.api.FitResult.error" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.residual">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">residual</span></span><a class="headerlink" href="#brainsp.api.FitResult.residual" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.FitResult.plot" title="Link to this definition">#</a></dt>
+<dd><p>The standard BRAIN figure of this fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">str, optional</span></dt><dd><p>Where to write it (<code class="docutils literal notranslate"><span class="pre">.pdf</span></code> or <code class="docutils literal notranslate"><span class="pre">.png</span></code>). By default beside the
+summary file, as <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_fit.pdf</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The file written.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.FitResult.as_dict">
+<span class="sig-name descname"><span class="pre">as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult.as_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.FitResult.as_dict" title="Link to this definition">#</a></dt>
+<dd><p>The headline numbers, as a plain dictionary.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.api.read_result">
+<span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">read_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summary_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fitted_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#read_result"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.read_result" title="Link to this definition">#</a></dt>
+<dd><p>Read a fit already on disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>summary_file</strong><span class="classifier">str</span></dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">*_summary.txt</span></code> file BRAIN wrote.</p>
+</dd>
+<dt><strong>fitted_file</strong><span class="classifier">str, optional</span></dt><dd><p>Its <code class="docutils literal notranslate"><span class="pre">*_fitted.txt</span></code>; found beside the summary by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>FitResult</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.api.read_corrections_table">
+<span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">read_corrections_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#read_corrections_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.read_corrections_table" title="Link to this definition">#</a></dt>
+<dd><p>Per-spectrum pre-fit corrections from a CSV file.</p>
+<p>The same table the desktop interface loads: a header row, the spectrum’s
+file name in the first column, then any of <code class="docutils literal notranslate"><span class="pre">redshift</span></code> (or <code class="docutils literal notranslate"><span class="pre">z</span></code>),
+<code class="docutils literal notranslate"><span class="pre">ebv</span></code>, <code class="docutils literal notranslate"><span class="pre">rv</span></code>, <code class="docutils literal notranslate"><span class="pre">law</span></code> and <code class="docutils literal notranslate"><span class="pre">rest_frame</span></code>. A redshift in the table is
+one BRAIN removes (the spectrum is taken to be in the observed frame)
+unless <code class="docutils literal notranslate"><span class="pre">rest_frame</span></code> says otherwise. Empty cells keep the defaults.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">str</span></dt><dd><p>The CSV file. File names are relative to its folder.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p><code class="docutils literal notranslate"><span class="pre">{absolute</span> <span class="pre">spectrum</span> <span class="pre">path:</span> <span class="pre">{setting:</span> <span class="pre">value}}</span></code>, ready for
+<a class="reference internal" href="#brainsp.api.fit_spectra" title="brainsp.api.fit_spectra"><code class="xref py py-func docutils literal notranslate"><span class="pre">fit_spectra()</span></code></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>corrections.csv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span><span class="p">,</span><span class="n">redshift</span><span class="p">,</span><span class="n">ebv</span><span class="p">,</span><span class="n">rv</span>
+<span class="n">galaxy_a</span><span class="o">.</span><span class="n">spec</span><span class="p">,</span><span class="mf">0.031</span><span class="p">,</span><span class="mf">0.04</span><span class="p">,</span><span class="mf">3.1</span>
+<span class="n">galaxy_b</span><span class="o">.</span><span class="n">spec</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.api.CubePipeline">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">CubePipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cubes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'brain_ifu_out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux_hdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FLUX'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_hdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IVAR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'inv_variance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_hdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MASK'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">galactic_ebv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">galactic_rv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">galactic_law</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CCM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_binning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrade_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_binning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">butterworth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sn_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_sn_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flxobs_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sfr_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bb_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">galaxy_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_cube</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#CubePipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.CubePipeline" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A datacube run: the preparation stages, the fit, and its outputs.</p>
+<p>The stages run in this order, each only when asked for: Galactic dereddening, spatial binning, resolution degrading,
+spectral resampling, Butterworth filter, signal-to-noise mask, fit. The
+fit writes one megacube per cube, <code class="docutils literal notranslate"><span class="pre">&lt;cube&gt;-BRAIN_MEGACUBE.fits</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>cubes</strong><span class="classifier">str or list of str</span></dt><dd><p>Datacube FITS files (or a glob pattern).</p>
+</dd>
+<dt><strong>redshift</strong><span class="classifier">float or None</span></dt><dd><p>The galaxy’s redshift; BRAIN divides each cube’s wavelengths by
+1 + z. Required, unless every cube has one in <cite>per_cube</cite>; 0 for a
+cube already in the rest frame.</p>
+</dd>
+<dt><strong>settings</strong><span class="classifier">Settings, dict or str, optional</span></dt><dd><p>The physics of the fit (templates, mode, dust, kinematics …), as
+for a spectrum. <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> is ignored.</p>
+</dd>
+<dt><strong>output_dir</strong><span class="classifier">str</span></dt><dd><p>Where megacubes are written.</p>
+</dd>
+<dt><strong>flux_hdu, error_hdu, mask_hdu</strong><span class="classifier">str</span></dt><dd><p>Names of the cube’s flux, uncertainty and bad-pixel extensions
+(MaNGA: <code class="docutils literal notranslate"><span class="pre">FLUX</span></code>, <code class="docutils literal notranslate"><span class="pre">IVAR</span></code>, <code class="docutils literal notranslate"><span class="pre">MASK</span></code>). <cite>mask_hdu</cite> may be None.</p>
+</dd>
+<dt><strong>error_type</strong><span class="classifier">str</span></dt><dd><p>What <cite>error_hdu</cite> holds: <code class="docutils literal notranslate"><span class="pre">&quot;inv_variance&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;variance&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;error&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;inv_error&quot;</span></code>.</p>
+</dd>
+<dt><strong>wavelength_scale</strong><span class="classifier">{“air”, “vacuum”}, optional</span></dt><dd><p>The cube’s wavelength scale. Required for <code class="docutils literal notranslate"><span class="pre">espop</span></code>, <code class="docutils literal notranslate"><span class="pre">nepop</span></code> and
+<code class="docutils literal notranslate"><span class="pre">photopop</span></code> (MaNGA and SDSS are vacuum; MUSE and CALIFA air).</p>
+</dd>
+<dt><strong>galactic_ebv, galactic_rv, galactic_law</strong><span class="classifier">float, float, str</span></dt><dd><p>Milky Way reddening to remove before anything else; 0 turns the
+stage off.</p>
+</dd>
+<dt><strong>spatial_binning</strong><span class="classifier">int, optional</span></dt><dd><p>Bin spaxels n x n.</p>
+</dd>
+<dt><strong>degrade_resolution</strong><span class="classifier">dict, optional</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">{&quot;input</span> <span class="pre">type&quot;:</span> <span class="pre">&quot;R&quot;,</span> <span class="pre">&quot;input</span> <span class="pre">value&quot;:</span> <span class="pre">2200,</span> <span class="pre">&quot;output</span> <span class="pre">type&quot;:</span> <span class="pre">&quot;R&quot;,</span>
+<span class="pre">&quot;output</span> <span class="pre">value&quot;:</span> <span class="pre">1000}</span></code>; resolutions as <code class="docutils literal notranslate"><span class="pre">R</span></code>, <code class="docutils literal notranslate"><span class="pre">FWHM</span></code> or <code class="docutils literal notranslate"><span class="pre">sigma</span></code>
+(Angstrom).</p>
+</dd>
+<dt><strong>spectral_binning</strong><span class="classifier">float, optional</span></dt><dd><p>Resample the wavelength axis by this factor.</p>
+</dd>
+<dt><strong>butterworth</strong><span class="classifier">dict or bool, optional</span></dt><dd><p>Spatial low-pass filter; <code class="docutils literal notranslate"><span class="pre">True</span></code> for the defaults or
+<code class="docutils literal notranslate"><span class="pre">{&quot;order&quot;:</span> <span class="pre">3,</span> <span class="pre">&quot;range&quot;:</span> <span class="pre">0.3}</span></code>.</p>
+</dd>
+<dt><strong>sn_mask</strong><span class="classifier">list of float or dict, optional</span></dt><dd><p>Signal-to-noise thresholds to compute masks for (e.g. <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">5,</span>
+<span class="pre">10]</span></code>), or <code class="docutils literal notranslate"><span class="pre">{&quot;thresholds&quot;:</span> <span class="pre">[...],</span> <span class="pre">&quot;sn</span> <span class="pre">window&quot;:</span> <span class="pre">[4000,</span> <span class="pre">6000],</span>
+<span class="pre">&quot;method&quot;:</span> <span class="pre">&quot;ivar&quot;}</span></code>.</p>
+</dd>
+<dt><strong>fit_sn_threshold</strong><span class="classifier">float, optional</span></dt><dd><p>Fit only the spaxels with S/N above this threshold (one of the
+<cite>sn_mask</cite> thresholds).</p>
+</dd>
+<dt><strong>wavelength_mask</strong><span class="classifier">str or list, optional</span></dt><dd><p>A mask file (<code class="docutils literal notranslate"><span class="pre">.sm</span></code>, <code class="docutils literal notranslate"><span class="pre">.gm</span></code> or a list of <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">end</span>
+<span class="pre">[weight]</span></code>), or regions <code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">weight),</span> <span class="pre">...]</span></code>; applied to
+every spaxel.</p>
+</dd>
+<dt><strong>batch_size</strong><span class="classifier">int, optional</span></dt><dd><p>Spaxels fitted at once (automatic by default).</p>
+</dd>
+<dt><strong>population_bins</strong><span class="classifier">list, optional</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">[(name,</span> <span class="pre">youngest_yr,</span> <span class="pre">oldest_yr),</span> <span class="pre">...]</span></code> for the PoPBins maps
+(min exclusive, max inclusive). Bins may overlap, so a total such as
+<code class="docutils literal notranslate"><span class="pre">(&quot;xy_Tot&quot;,</span> <span class="pre">10,</span> <span class="pre">2e8)</span></code> is a bin of its own.</p>
+</dd>
+<dt><strong>sfr_bins</strong><span class="classifier">list, optional</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">[(name,</span> <span class="pre">min_yr,</span> <span class="pre">max_yr),</span> <span class="pre">...]</span></code>: star-formation-rate maps, the mass
+formed in the bin over its width, Msun/yr. Need <cite>galaxy_distance</cite>.</p>
+</dd>
+<dt><strong>fc_bins, bb_bins</strong><span class="classifier">list, optional</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">[(name,</span> <span class="pre">min,</span> <span class="pre">max),</span> <span class="pre">...]</span></code>: the light (per cent) of the featureless
+power laws with min &lt; exponent &lt;= max, or blackbodies with min &lt;
+temperature (K) &lt;= max, e.g. <code class="docutils literal notranslate"><span class="pre">[(&quot;FC_Tot&quot;,</span> <span class="pre">0.245,</span> <span class="pre">0.75)]</span></code>,
+<code class="docutils literal notranslate"><span class="pre">[(&quot;BB_warm&quot;,</span> <span class="pre">699,</span> <span class="pre">1000)]</span></code>.</p>
+</dd>
+<dt><strong>galaxy_distance</strong><span class="classifier">float, optional</span></dt><dd><p>Distance in Mpc; with it the megacube carries Mstar and Mpcross (Msun)
+and the SFR maps. Per cube: a <code class="docutils literal notranslate"><span class="pre">galaxy</span> <span class="pre">distance</span></code> column of
+<cite>per_cube</cite>.</p>
+</dd>
+<dt><strong>flux_scale</strong><span class="classifier">float, optional</span></dt><dd><p>The number the cube’s flux unit carries (1e-17 for MaNGA); read from
+BUNIT when not given.</p>
+</dd>
+<dt><strong>per_cube</strong><span class="classifier">str or list of dict, optional</span></dt><dd><p>Per-cube overrides: a CSV file (first column the cube, then any of
+<code class="docutils literal notranslate"><span class="pre">redshift</span></code>, <code class="docutils literal notranslate"><span class="pre">ebv</span></code>, <code class="docutils literal notranslate"><span class="pre">rv</span></code>, <code class="docutils literal notranslate"><span class="pre">law</span></code>, <code class="docutils literal notranslate"><span class="pre">mask</span> <span class="pre">file</span></code>, …) or a list
+of <code class="docutils literal notranslate"><span class="pre">{&quot;target&quot;:</span> <span class="pre">path,</span> <span class="pre">&quot;redshift&quot;:</span> <span class="pre">...}</span></code>.</p>
+</dd>
+<dt><strong>overwrite</strong><span class="classifier">bool</span></dt><dd><p>Re-run a cube whose megacube exists.</p>
+</dd>
+<dt><strong>fit</strong><span class="classifier">bool</span></dt><dd><p>Run the fit (False runs the preparation stages only).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">CubePipeline</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;manga-8626-12704-LOGCUBE.fits&quot;</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.04724</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">settings</span><span class="o">=</span><span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span><span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span> <span class="n">sn_mask</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">fit_sn_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">wavelength_mask</span><span class="o">=</span><span class="s2">&quot;emission_lines.sm&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">outputs</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s2">&quot;gpu&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">export_script</span><span class="p">(</span><span class="s2">&quot;run_8626.py&quot;</span><span class="p">)</span>    <span class="c1"># the same run, as one Python file</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.CubePipeline.from_config">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#CubePipeline.from_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.CubePipeline.from_config" title="Link to this definition">#</a></dt>
+<dd><p>A pipeline from the dictionary BRAIN’s datacube runner reads (what
+the desktop interface builds, or <code class="docutils literal notranslate"><span class="pre">brain_ifu.load_config</span></code> reads).</p>
+<p>The fit’s settings come from the file <cite>cfg</cite> names unless <cite>settings</cite>
+is given; a wavelength-mask file is read into regions, so the
+pipeline no longer depends on it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.CubePipeline.config">
+<span class="sig-name descname"><span class="pre">config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#CubePipeline.config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.CubePipeline.config" title="Link to this definition">#</a></dt>
+<dd><p>The pipeline as the dictionary BRAIN’s datacube runner reads.</p>
+<p>Writes the fit’s settings, and a wavelength mask given as regions,
+into the output folder, because the runner reads both from files;
+the megacube then records exactly what it was fitted with.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.CubePipeline.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#CubePipeline.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.CubePipeline.validate" title="Link to this definition">#</a></dt>
+<dd><p>Check the whole pipeline without reading a spaxel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>Listing every problem, each with the stage it belongs to.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.CubePipeline.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#CubePipeline.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.CubePipeline.run" title="Link to this definition">#</a></dt>
+<dd><p>Run the pipeline on every cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>device</strong><span class="classifier">{“auto”, “cpu”, “gpu”}, optional</span></dt><dd><p>See <a class="reference internal" href="#brainsp.api.set_device" title="brainsp.api.set_device"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_device()</span></code></a>.</p>
+</dd>
+<dt><strong>progress</strong><span class="classifier">callable, optional</span></dt><dd><p>Called as <code class="docutils literal notranslate"><span class="pre">progress(fraction,</span> <span class="pre">message)</span></code> as the run advances.</p>
+</dd>
+<dt><strong>log</strong><span class="classifier">callable, optional</span></dt><dd><p>Called with each line of the run’s log; <code class="docutils literal notranslate"><span class="pre">print</span></code> by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>list of str</dt><dd><p>The megacubes written.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.api.CubePipeline.export_script">
+<span class="sig-name descname"><span class="pre">export_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#CubePipeline.export_script"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.CubePipeline.export_script" title="Link to this definition">#</a></dt>
+<dd><p>Write this pipeline as one self-contained Python file.</p>
+<p>The file holds every setting and every stage, as Python, and runs
+the same pipeline with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;file&gt;</span></code>: on a server, with no
+display, or as the record of how a result was made.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.api.fit_cube">
+<span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">fit_cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#fit_cube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.fit_cube" title="Link to this definition">#</a></dt>
+<dd><p>Fit one datacube and open the megacube it produces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>cube</strong><span class="classifier">str</span></dt><dd><p>A datacube FITS file.</p>
+</dd>
+<dt><strong>redshift</strong><span class="classifier">float</span></dt><dd><p>The galaxy’s redshift (0 for a rest-frame cube).</p>
+</dd>
+<dt><strong>settings</strong><span class="classifier">Settings, dict or str, optional</span></dt><dd><p>The physics of the fit.</p>
+</dd>
+<dt><strong>device</strong><span class="classifier">{“auto”, “cpu”, “gpu”}, optional</span></dt><dd><p>See <a class="reference internal" href="#brainsp.api.set_device" title="brainsp.api.set_device"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_device()</span></code></a>.</p>
+</dd>
+<dt><strong>**options</strong></dt><dd><p>Any <a class="reference internal" href="#brainsp.api.CubePipeline" title="brainsp.api.CubePipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">CubePipeline</span></code></a> option (<code class="docutils literal notranslate"><span class="pre">output_dir</span></code>,
+<code class="docutils literal notranslate"><span class="pre">wavelength_scale</span></code>, <code class="docutils literal notranslate"><span class="pre">sn_mask</span></code>, <code class="docutils literal notranslate"><span class="pre">fit_sn_threshold</span></code>,
+<code class="docutils literal notranslate"><span class="pre">wavelength_mask</span></code>, <code class="docutils literal notranslate"><span class="pre">galactic_ebv</span></code> …).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>brainsp.megacube.Megacube</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.api.read_megacube">
+<span class="sig-prename descclassname"><span class="pre">brainsp.api.</span></span><span class="sig-name descname"><span class="pre">read_megacube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#read_megacube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.api.read_megacube" title="Link to this definition">#</a></dt>
+<dd><p>Open a megacube BRAIN wrote.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>brainsp.megacube.Megacube</dt><dd><p>Maps by name (<a class="reference internal" href="brainsp.megacube.html#brainsp.megacube.Megacube.plane" title="brainsp.megacube.Megacube.plane"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plane()</span></code></a>), spaxel
+spectra, population vectors and emission-line diagnostics.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.reddening_laws.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.reddening_laws</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.brainv1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.brainv1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings"><code class="docutils literal notranslate"><span class="pre">Settings</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings.update"><code class="docutils literal notranslate"><span class="pre">Settings.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings.copy"><code class="docutils literal notranslate"><span class="pre">Settings.copy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings.changed"><code class="docutils literal notranslate"><span class="pre">Settings.changed()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings.save"><code class="docutils literal notranslate"><span class="pre">Settings.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings.validate"><code class="docutils literal notranslate"><span class="pre">Settings.validate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings.names"><code class="docutils literal notranslate"><span class="pre">Settings.names()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.Settings.describe"><code class="docutils literal notranslate"><span class="pre">Settings.describe()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.set_device"><code class="docutils literal notranslate"><span class="pre">set_device()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.fit_spectrum"><code class="docutils literal notranslate"><span class="pre">fit_spectrum()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.fit_spectra"><code class="docutils literal notranslate"><span class="pre">fit_spectra()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult"><code class="docutils literal notranslate"><span class="pre">FitResult</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.error_message"><code class="docutils literal notranslate"><span class="pre">FitResult.error_message</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.v0"><code class="docutils literal notranslate"><span class="pre">FitResult.v0</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.sigma"><code class="docutils literal notranslate"><span class="pre">FitResult.sigma</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.sigma_star"><code class="docutils literal notranslate"><span class="pre">FitResult.sigma_star</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.av"><code class="docutils literal notranslate"><span class="pre">FitResult.av</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.yav"><code class="docutils literal notranslate"><span class="pre">FitResult.yav</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.chi2"><code class="docutils literal notranslate"><span class="pre">FitResult.chi2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.chi2_data"><code class="docutils literal notranslate"><span class="pre">FitResult.chi2_data</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.adev"><code class="docutils literal notranslate"><span class="pre">FitResult.adev</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.v_gas"><code class="docutils literal notranslate"><span class="pre">FitResult.v_gas</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.sigma_gas"><code class="docutils literal notranslate"><span class="pre">FitResult.sigma_gas</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.mode"><code class="docutils literal notranslate"><span class="pre">FitResult.mode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.flux_tot"><code class="docutils literal notranslate"><span class="pre">FitResult.flux_tot</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.fobs_norm"><code class="docutils literal notranslate"><span class="pre">FitResult.fobs_norm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.mcor_tot"><code class="docutils literal notranslate"><span class="pre">FitResult.mcor_tot</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.mini_tot"><code class="docutils literal notranslate"><span class="pre">FitResult.mini_tot</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.line_fluxes"><code class="docutils literal notranslate"><span class="pre">FitResult.line_fluxes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.mean_log_age_light"><code class="docutils literal notranslate"><span class="pre">FitResult.mean_log_age_light</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.mean_log_age_mass"><code class="docutils literal notranslate"><span class="pre">FitResult.mean_log_age_mass</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.mean_metallicity_light"><code class="docutils literal notranslate"><span class="pre">FitResult.mean_metallicity_light</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.mean_metallicity_mass"><code class="docutils literal notranslate"><span class="pre">FitResult.mean_metallicity_mass</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.agn_fraction"><code class="docutils literal notranslate"><span class="pre">FitResult.agn_fraction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.wavelength"><code class="docutils literal notranslate"><span class="pre">FitResult.wavelength</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.observed"><code class="docutils literal notranslate"><span class="pre">FitResult.observed</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.model"><code class="docutils literal notranslate"><span class="pre">FitResult.model</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.stellar"><code class="docutils literal notranslate"><span class="pre">FitResult.stellar</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.emission"><code class="docutils literal notranslate"><span class="pre">FitResult.emission</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.error"><code class="docutils literal notranslate"><span class="pre">FitResult.error</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.residual"><code class="docutils literal notranslate"><span class="pre">FitResult.residual</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.plot"><code class="docutils literal notranslate"><span class="pre">FitResult.plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.FitResult.as_dict"><code class="docutils literal notranslate"><span class="pre">FitResult.as_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.read_result"><code class="docutils literal notranslate"><span class="pre">read_result()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.read_corrections_table"><code class="docutils literal notranslate"><span class="pre">read_corrections_table()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.CubePipeline"><code class="docutils literal notranslate"><span class="pre">CubePipeline</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.CubePipeline.from_config"><code class="docutils literal notranslate"><span class="pre">CubePipeline.from_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.CubePipeline.config"><code class="docutils literal notranslate"><span class="pre">CubePipeline.config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.CubePipeline.validate"><code class="docutils literal notranslate"><span class="pre">CubePipeline.validate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.CubePipeline.run"><code class="docutils literal notranslate"><span class="pre">CubePipeline.run()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.CubePipeline.export_script"><code class="docutils literal notranslate"><span class="pre">CubePipeline.export_script()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.fit_cube"><code class="docutils literal notranslate"><span class="pre">fit_cube()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.api.read_megacube"><code class="docutils literal notranslate"><span class="pre">read_megacube()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+﻿brainsp.write\_mask
+===================
+
+.. currentmodule:: brainsp
+
+.. autofunction:: write_mask

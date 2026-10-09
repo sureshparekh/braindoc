@@ -1,0 +1,71 @@
+brainsp self-test (full), working in /tmp/brainsp-xxxx
+
+1. Environment
+  [PASS] brainsp                            2.0.0, Python 3.12.9, Linux
+  [PASS] numpy                              2.3.5
+  [PASS] scipy                              1.18.0
+  [PASS] astropy                            7.1.0
+  [PASS] matplotlib                         3.10.9
+  [PASS] yaml                               6.0.2
+  [PASS] PySide6                            6.11.1
+  [PASS] JAX                                0.10.0 on cpu [cpu:0]
+
+2. Template libraries
+  [PASS] libraries found                    M13, BasesGM
+  [PASS] BasesGM catalogue                  84 SSPs, 21 ages x 4 Z, 3540-6996 A
+  [PASS] M13 catalogue                      47 SSPs, 10 AGN components (FC0.25, FC0.50, FC0.75, ...)
+  [PASS] AGN continua                       7 templates
+
+3. Mock data
+  [PASS] mock spectra and 16 x 16 cube written 0.7 s
+
+4. Mock spectra
+  mock_old_population  (4.5 s, chi2/N 0.67)
+  [PASS]   stellar velocity [km/s]            149.020  truth   150.000  off  0.980  (<= 10)
+  [PASS]   stellar dispersion                 201.380  truth   200.000  off  0.7%  (<= 8%)
+  [PASS]   A_V [mag]                            0.207  truth     0.200  off  0.007  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.988  truth     9.983  off  0.005  (<= 0.15)
+  mock_young_mixture  (1.7 s, chi2/N 0.68)
+  [PASS]   stellar velocity [km/s]            -59.590  truth   -60.000  off  0.410  (<= 10)
+  [PASS]   stellar dispersion                  83.510  truth    80.000  off  4.4%  (<= 8%)
+  [PASS]   A_V [mag]                            0.590  truth     0.600  off  0.010  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.042  truth     9.035  off  0.007  (<= 0.15)
+  mock_star_forming_lines  (4.4 s, chi2/N 0.65)
+  [PASS]   stellar velocity [km/s]             39.450  truth    40.000  off  0.550  (<= 10)
+  [PASS]   stellar dispersion                  92.360  truth    90.000  off  2.6%  (<= 8%)
+  [PASS]   A_V [mag]                            0.465  truth     0.450  off  0.015  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    8.866  truth     8.875  off  0.009  (<= 0.15)
+  [PASS]   gas velocity [km/s]                 50.010  truth    50.000  off  0.010  (<= 15)
+  [PASS]   H-alpha flux (observed)              6.161  truth     6.000  off  2.7%  (<= 15%)
+  mock_seyfert_agn  (3.1 s, chi2/N 0.64)
+  [PASS]   stellar velocity [km/s]             -1.050  truth     0.000  off  1.050  (<= 10)
+  [PASS]   stellar dispersion                 181.270  truth   180.000  off  0.7%  (<= 8%)
+  [PASS]   A_V [mag]                            0.306  truth     0.300  off  0.006  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.850  truth     9.834  off  0.016  (<= 0.15)
+  [PASS]   AGN light fraction [%]              24.288  truth    25.000  off  0.712  (<= 8)
+  [PASS]   gas velocity [km/s]                -32.720  truth   -30.000  off  2.720  (<= 15)
+  [PASS]   H-alpha flux (observed)              4.105  truth     4.000  off  2.6%  (<= 15%)
+  mock_observed_frame  (2.6 s, chi2/N 0.66)
+  [PASS]   stellar velocity [km/s]            149.740  truth   150.000  off  0.260  (<= 10)
+  [PASS]   stellar dispersion                 202.230  truth   200.000  off  1.1%  (<= 8%)
+  [PASS]   A_V [mag]                            0.198  truth     0.200  off  0.002  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.991  truth     9.983  off  0.008  (<= 0.15)
+  [PASS]   same v as the rest-frame twin      149.740  truth   149.020  off  0.720  (<= 5)
+  [PASS]   same A_V as the rest-frame twin      0.198  truth     0.207  off  0.009  (<= 0.05)
+
+5. Mock datacube (16 x 16)
+  [PASS] megacube written                   84 s, mock_cube-BRAIN_MEGACUBE.fits
+  [PASS] spaxels fitted = S/N mask          172 fitted, 172 in SN_MASKS_3
+  [PASS] velocity map, median offset          0.772  (|.| <= 8), rms 6.418
+  [PASS] dispersion map, median offset        0.084  (|.| <= 12), rms 8.154
+  [PASS] A_V map, median offset              -0.009  (|.| <= 0.08), rms 0.050
+  [PASS] velocity field correlation         r = 0.9982  (> 0.97)
+
+6. Outputs
+  [PASS] map export (png, fits)             4 files
+  [PASS] spectrum and SFH figures           /tmp/brainsp-fho7zjsd/plots
+  [PASS] exported run script validates      1 spectra, all valid. Output: /tmp/brainsp-fho7zjsd/brain_out
+
+======================================================================
+  ALL 49 CHECKS PASSED in 104 s. BRAIN is working.
+======================================================================

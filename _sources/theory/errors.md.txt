@@ -1,0 +1,36 @@
+# Uncertainties
+
+## Light fractions
+
+With `error_samples` $N > 0$ BRAIN estimates the uncertainty of every weight
+by Monte Carlo: the spectrum is perturbed $N$ times by Gaussian noise of the
+quoted errors (or, without errors, by resampling the residuals), the linear
+problem is solved for each with the non-linear parameters held at the best
+fit, by the same solver as the fit, and the standard deviation of each weight
+over the resamples is reported (the `Err` column of the line table, and
+`w_err` internally). The resamples are solved all at once, vectorised.
+
+:::{warning}
+These are not calibrated confidence intervals. They measure how far the
+weights move under the errors *as given*: with $\chi^2/N_{\rm eff}$ well below
+1 the quoted errors are too large and so are these bars, and they do not
+include the uncertainty of the non-linear parameters, which are held fixed.
+:::
+
+## Non-linear parameters
+
+No formal uncertainties are reported for $A_V$, $v_\star$, $\sigma_\star$ or
+the gas kinematics. Practical estimates:
+
+- fit mock spectra like yours with {mod}`brainsp.mock` at your
+  signal-to-noise and look at the scatter (the self-test does this; see
+  [tutorial 7](../tutorials/datacube.md) for a cube);
+- for a datacube, the spaxel-to-spaxel scatter of a smooth map.
+
+## Degeneracies
+
+Age and metallicity, and age and dust, trade against each other: an older,
+metal-poorer population looks like a younger, metal-richer one, and a little
+more dust like a little older. Individual $x_j$ are therefore poorly
+determined, while averages over them ($\langle\log t\rangle$, light in broad
+age bins) are robust. Report those.

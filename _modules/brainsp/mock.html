@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.mock &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/mock';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.mock</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.mock</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Mock spectra and a mock datacube whose right answer is known.</span>
+
+<span class="sd">Every mock is built from the shipped BasesGM templates by a forward model</span>
+<span class="sd">that is written out here in full, independently of the fitter:</span>
+
+<span class="sd">1. a population: light fractions :math:`x_j` of chosen templates, each</span>
+<span class="sd">   template normalised to 1 at :math:`\\lambda_0` = 5500 A;</span>
+<span class="sd">2. dust: the mixture is reddened by</span>
+<span class="sd">   :math:`10^{-0.4 A_V [q(\\lambda) - q(\\lambda_0)]}`, with</span>
+<span class="sd">   :math:`q = A_\\lambda / A_V` from the chosen law, so the fractions stay</span>
+<span class="sd">   light fractions at :math:`\\lambda_0`;</span>
+<span class="sd">3. kinematics: a Gaussian line-of-sight velocity distribution, mean</span>
+<span class="sd">   :math:`v_\\star` and dispersion :math:`\\sigma_\\star`, applied on a</span>
+<span class="sd">   logarithmic wavelength grid;</span>
+<span class="sd">4. emission lines: Gaussians of flux :math:`F_i`, velocity</span>
+<span class="sd">   :math:`v_{gas}` and dispersion :math:`\\sigma_{gas}`, at vacuum</span>
+<span class="sd">   wavelengths from BRAIN&#39;s line catalogue;</span>
+<span class="sd">5. redshift: wavelengths multiplied by :math:`1 + z` (flux density not</span>
+<span class="sd">   rescaled, BRAIN&#39;s convention);</span>
+<span class="sd">6. Galactic reddening at the observed wavelengths, :math:`E(B-V)` with</span>
+<span class="sd">   :math:`R_V = 3.1` and the CCM law;</span>
+<span class="sd">7. noise: Gaussian, with signal-to-noise ``sn`` per pixel at</span>
+<span class="sd">   :math:`\\lambda_0`, scaled as the square root of the flux elsewhere.</span>
+
+<span class="sd">The true values are written beside each file (``&lt;name&gt;.truth.json``, and a</span>
+<span class="sd">``TRUTH`` FITS file for the cube), which is what :mod:`brainsp.selftest`</span>
+<span class="sd">compares BRAIN&#39;s answers with. Everything is seeded, so the same call writes</span>
+<span class="sd">the same files on every machine.</span>
+
+<span class="sd">Typical use::</span>
+
+<span class="sd">    import brainsp</span>
+<span class="sd">    folder = brainsp.mock.write_examples()          # ~/.brainsp/examples</span>
+<span class="sd">    r = brainsp.fit_spectrum(folder + &quot;/spectra/mock_old_population.spec&quot;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">C_KMS</span> <span class="o">=</span> <span class="mf">299792.458</span>
+<span class="n">NORM_WAVELENGTH</span> <span class="o">=</span> <span class="mf">5500.0</span>
+<span class="c1"># MaNGA&#39;s sampling: d(log10 lambda) = 1e-4, 69.0 km/s per pixel; the cube is</span>
+<span class="c1"># written on it. Models are built on a grid ten times finer, 6.9 km/s, so</span>
+<span class="c1"># that sampling them onto the output grid does not itself broaden them:</span>
+<span class="c1"># interpolating from a 69 km/s grid adds about 28 km/s in quadrature, which</span>
+<span class="c1"># a fit would then (correctly) report as dispersion.</span>
+<span class="n">LOG10_STEP</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="n">FINE_STEP</span> <span class="o">=</span> <span class="mf">1e-5</span>
+<span class="n">REST_RANGE</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3600.0</span><span class="p">,</span> <span class="mf">7150.0</span><span class="p">)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;make_spectrum&quot;</span><span class="p">,</span> <span class="s2">&quot;write_spectrum&quot;</span><span class="p">,</span> <span class="s2">&quot;make_cube&quot;</span><span class="p">,</span> <span class="s2">&quot;write_cube&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;write_examples&quot;</span><span class="p">,</span> <span class="s2">&quot;SPECTRA&quot;</span><span class="p">,</span> <span class="s2">&quot;LINE_RATIOS&quot;</span><span class="p">]</span>
+
+<span class="c1"># Emission-line fluxes relative to H-alpha, at vacuum wavelengths. The weak</span>
+<span class="c1"># members of [O III] and [N II] are set from the strong ones below, at the</span>
+<span class="c1"># ratios atomic physics fixes and BRAIN ties (Storey &amp; Zeippen 2000).</span>
+<span class="n">LINE_RATIOS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;star forming&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;[O II]_3726&quot;</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span> <span class="s2">&quot;[O II]_3729&quot;</span><span class="p">:</span> <span class="mf">0.27</span><span class="p">,</span> <span class="s2">&quot;Hdelta_4102&quot;</span><span class="p">:</span> <span class="mf">0.091</span><span class="p">,</span>
+        <span class="s2">&quot;Hgamma_4340&quot;</span><span class="p">:</span> <span class="mf">0.164</span><span class="p">,</span> <span class="s2">&quot;Hbeta_4861&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span> <span class="s2">&quot;[O III]_4959&quot;</span><span class="p">:</span> <span class="mf">0.040</span><span class="p">,</span>
+        <span class="s2">&quot;[O III]_5007&quot;</span><span class="p">:</span> <span class="mf">0.12</span><span class="p">,</span> <span class="s2">&quot;He I_5876&quot;</span><span class="p">:</span> <span class="mf">0.035</span><span class="p">,</span> <span class="s2">&quot;[O I]_6300&quot;</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+        <span class="s2">&quot;[N II]_6548&quot;</span><span class="p">:</span> <span class="mf">0.083</span><span class="p">,</span> <span class="s2">&quot;Halpha_6563&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;[N II]_6583&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+        <span class="s2">&quot;[S II]_6716&quot;</span><span class="p">:</span> <span class="mf">0.14</span><span class="p">,</span> <span class="s2">&quot;[S II]_6731&quot;</span><span class="p">:</span> <span class="mf">0.10</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;seyfert&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;[O II]_3726&quot;</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">,</span> <span class="s2">&quot;[O II]_3729&quot;</span><span class="p">:</span> <span class="mf">0.55</span><span class="p">,</span> <span class="s2">&quot;Hgamma_4340&quot;</span><span class="p">:</span> <span class="mf">0.16</span><span class="p">,</span>
+        <span class="s2">&quot;Hbeta_4861&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span> <span class="s2">&quot;[O III]_4959&quot;</span><span class="p">:</span> <span class="mf">1.17</span><span class="p">,</span> <span class="s2">&quot;[O III]_5007&quot;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span>
+        <span class="s2">&quot;[O I]_6300&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;[N II]_6548&quot;</span><span class="p">:</span> <span class="mf">0.33</span><span class="p">,</span> <span class="s2">&quot;Halpha_6563&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;[N II]_6583&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;[S II]_6716&quot;</span><span class="p">:</span> <span class="mf">0.40</span><span class="p">,</span> <span class="s2">&quot;[S II]_6731&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;liner&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;[O II]_3726&quot;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s2">&quot;[O II]_3729&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;Hbeta_4861&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span>
+        <span class="s2">&quot;[O III]_4959&quot;</span><span class="p">:</span> <span class="mf">0.17</span><span class="p">,</span> <span class="s2">&quot;[O III]_5007&quot;</span><span class="p">:</span> <span class="mf">0.50</span><span class="p">,</span> <span class="s2">&quot;[O I]_6300&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+        <span class="s2">&quot;[N II]_6548&quot;</span><span class="p">:</span> <span class="mf">0.40</span><span class="p">,</span> <span class="s2">&quot;Halpha_6563&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;[N II]_6583&quot;</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span>
+        <span class="s2">&quot;[S II]_6716&quot;</span><span class="p">:</span> <span class="mf">0.55</span><span class="p">,</span> <span class="s2">&quot;[S II]_6731&quot;</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">_ratios</span> <span class="ow">in</span> <span class="n">LINE_RATIOS</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">_ratios</span><span class="p">[</span><span class="s2">&quot;[O III]_4959&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.33510</span> <span class="o">*</span> <span class="n">_ratios</span><span class="p">[</span><span class="s2">&quot;[O III]_5007&quot;</span><span class="p">]</span>
+    <span class="n">_ratios</span><span class="p">[</span><span class="s2">&quot;[N II]_6548&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.32739</span> <span class="o">*</span> <span class="n">_ratios</span><span class="p">[</span><span class="s2">&quot;[N II]_6583&quot;</span><span class="p">]</span>
+
+<span class="c1"># The example spectra: what each is, and how it was made. S/N 100 at</span>
+<span class="c1"># 5500 A, so the absorption features read clearly in the documentation&#39;s figures.</span>
+<span class="n">SPECTRA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;mock_old_population&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">about</span><span class="o">=</span><span class="s2">&quot;An old, metal-rich population: an early-type galaxy.&quot;</span><span class="p">,</span>
+        <span class="n">population</span><span class="o">=</span><span class="p">[(</span><span class="mf">1.26e10</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">),</span> <span class="p">(</span><span class="mf">8.91e9</span><span class="p">,</span> <span class="mf">0.0315321</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>
+                    <span class="p">(</span><span class="mf">5.01e9</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">)],</span>
+        <span class="n">av</span><span class="o">=</span><span class="mf">0.20</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">200.0</span><span class="p">,</span> <span class="n">sn</span><span class="o">=</span><span class="mf">100.0</span><span class="p">),</span>
+    <span class="s2">&quot;mock_young_mixture&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">about</span><span class="o">=</span><span class="s2">&quot;Young, intermediate and old stars together, behind more &quot;</span>
+              <span class="s2">&quot;dust: a star-forming disc&#39;s stellar continuum.&quot;</span><span class="p">,</span>
+        <span class="n">population</span><span class="o">=</span><span class="p">[(</span><span class="mf">1.0e8</span><span class="p">,</span> <span class="mf">0.007564</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0e9</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">),</span>
+                    <span class="p">(</span><span class="mf">1.26e10</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">)],</span>
+        <span class="n">av</span><span class="o">=</span><span class="mf">0.60</span><span class="p">,</span> <span class="n">v</span><span class="o">=-</span><span class="mf">60.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">80.0</span><span class="p">,</span> <span class="n">sn</span><span class="o">=</span><span class="mf">100.0</span><span class="p">),</span>
+    <span class="s2">&quot;mock_star_forming_lines&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">about</span><span class="o">=</span><span class="s2">&quot;A star-forming galaxy with H II-region emission lines; fit &quot;</span>
+              <span class="s2">&quot;with nebular_mode=&#39;espop&#39;, wavelength_scale=&#39;vacuum&#39;.&quot;</span><span class="p">,</span>
+        <span class="n">population</span><span class="o">=</span><span class="p">[(</span><span class="mf">1.0e7</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0e8</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">),</span>
+                    <span class="p">(</span><span class="mf">5.01e9</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">)],</span>
+        <span class="n">av</span><span class="o">=</span><span class="mf">0.45</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mf">40.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">90.0</span><span class="p">,</span> <span class="n">sn</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>
+        <span class="n">lines</span><span class="o">=</span><span class="s2">&quot;star forming&quot;</span><span class="p">,</span> <span class="n">halpha</span><span class="o">=</span><span class="mf">6.0</span><span class="p">,</span> <span class="n">v_gas</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">sigma_gas</span><span class="o">=</span><span class="mf">60.0</span><span class="p">),</span>
+    <span class="s2">&quot;mock_seyfert_agn&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">about</span><span class="o">=</span><span class="s2">&quot;An old host with a featureless AGN power law (FC1.50) &quot;</span>
+              <span class="s2">&quot;carrying 25</span><span class="si">% o</span><span class="s2">f the light at 5500 A and Seyfert lines; fit &quot;</span>
+              <span class="s2">&quot;with include_power_law=True and nebular_mode=&#39;espop&#39;.&quot;</span><span class="p">,</span>
+        <span class="n">population</span><span class="o">=</span><span class="p">[(</span><span class="mf">1.26e10</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0e9</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)],</span>
+        <span class="n">agn</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">av</span><span class="o">=</span><span class="mf">0.30</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">180.0</span><span class="p">,</span> <span class="n">sn</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>
+        <span class="n">lines</span><span class="o">=</span><span class="s2">&quot;seyfert&quot;</span><span class="p">,</span> <span class="n">halpha</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">v_gas</span><span class="o">=-</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">sigma_gas</span><span class="o">=</span><span class="mf">250.0</span><span class="p">),</span>
+    <span class="s2">&quot;mock_observed_frame&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">about</span><span class="o">=</span><span class="s2">&quot;mock_old_population as observed: at z = 0.03 and behind &quot;</span>
+              <span class="s2">&quot;Milky Way dust E(B-V) = 0.05. Fit with spectrum_redshift=&quot;</span>
+              <span class="s2">&quot;0.03, spectrum_in_rest_frame=False, galactic_ebv=0.05 (or &quot;</span>
+              <span class="s2">&quot;the corrections.csv table).&quot;</span><span class="p">,</span>
+        <span class="n">population</span><span class="o">=</span><span class="p">[(</span><span class="mf">1.26e10</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">),</span> <span class="p">(</span><span class="mf">8.91e9</span><span class="p">,</span> <span class="mf">0.0315321</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>
+                    <span class="p">(</span><span class="mf">5.01e9</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">)],</span>
+        <span class="n">av</span><span class="o">=</span><span class="mf">0.20</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">200.0</span><span class="p">,</span> <span class="n">sn</span><span class="o">=</span><span class="mf">100.0</span><span class="p">,</span>
+        <span class="n">redshift</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">galactic_ebv</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span>
+<span class="p">}</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># templates</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+<span class="n">_template_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_template</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">metallicity</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="s2">&quot;BasesGM&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;One template on its native grid, normalised to 1 at 5500 A.&quot;&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">age</span><span class="p">),</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">metallicity</span><span class="p">),</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">_template_cache</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_template_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">libraries</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.brain_settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_catalogue</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">libraries</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">library</span><span class="p">)</span>
+    <span class="n">ssp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ssp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span><span class="p">)</span>
+                                       <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+                                   <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">metallicity</span><span class="p">)))</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">best</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]),</span> <span class="n">comments</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
+    <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">NORM_WAVELENGTH</span><span class="p">,</span> <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">flux</span> <span class="o">/</span> <span class="n">norm</span><span class="p">,</span> <span class="n">best</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span><span class="p">,</span> <span class="n">best</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">],</span>
+           <span class="n">best</span><span class="p">[</span><span class="s2">&quot;short_name&quot;</span><span class="p">])</span>
+    <span class="n">_template_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_power_law</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;F_nu ~ nu^-alpha, i.e. F_lambda ~ lambda^(alpha - 2), 1 at 5500 A.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">wave</span> <span class="o">/</span> <span class="n">NORM_WAVELENGTH</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="mf">2.0</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_q</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">law</span><span class="o">=</span><span class="s2">&quot;CCM&quot;</span><span class="p">,</span> <span class="n">rv</span><span class="o">=</span><span class="mf">3.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    q(lambda) = A_lambda / A_V of Cardelli, Clayton &amp; Mathis (1989).</span>
+
+<span class="sd">    Written in NumPy here rather than taken from BRAIN&#39;s reddening module,</span>
+<span class="sd">    which is JAX: building a mock must not start JAX, or the device of the</span>
+<span class="sd">    fit that follows would already be chosen. Same coefficients, same</span>
+<span class="sd">    branches; the self-test fits these mocks with BRAIN&#39;s own copy.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">law</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;CCM&quot;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;the mocks are reddened with the CCM law&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">ir</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">1.1</span><span class="p">)</span>
+    <span class="n">q</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.574</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span> <span class="o">**</span> <span class="mf">1.61</span> <span class="o">-</span> <span class="mf">0.527</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span> <span class="o">**</span> <span class="mf">1.61</span> <span class="o">/</span> <span class="n">rv</span>
+    <span class="n">opt</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">1.1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">3.3</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">opt</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.82</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">0.17699</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">0.50447</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">0.02427</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">3</span>
+         <span class="o">+</span> <span class="mf">0.72085</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="mf">0.01979</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">5</span> <span class="o">-</span> <span class="mf">0.77530</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">6</span>
+         <span class="o">+</span> <span class="mf">0.32999</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.41338</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">2.28305</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">1.07233</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">3</span>
+         <span class="o">-</span> <span class="mf">5.38434</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">-</span> <span class="mf">0.62251</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">5</span> <span class="o">+</span> <span class="mf">5.30260</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">6</span>
+         <span class="o">-</span> <span class="mf">2.09002</span> <span class="o">*</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="n">q</span><span class="p">[</span><span class="n">opt</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">/</span> <span class="n">rv</span>
+    <span class="n">uv</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">3.3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">8.0</span><span class="p">)</span>
+    <span class="n">xu</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">uv</span><span class="p">]</span>
+    <span class="n">fa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xu</span> <span class="o">&gt;=</span> <span class="mf">5.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04473</span> <span class="o">*</span> <span class="p">(</span><span class="n">xu</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+                  <span class="o">-</span> <span class="mf">0.009779</span> <span class="o">*</span> <span class="p">(</span><span class="n">xu</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">fb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xu</span> <span class="o">&gt;=</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mf">0.2130</span> <span class="o">*</span> <span class="p">(</span><span class="n">xu</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+                  <span class="o">+</span> <span class="mf">0.1207</span> <span class="o">*</span> <span class="p">(</span><span class="n">xu</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">1.752</span> <span class="o">-</span> <span class="mf">0.316</span> <span class="o">*</span> <span class="n">xu</span> <span class="o">-</span> <span class="mf">0.104</span> <span class="o">/</span> <span class="p">((</span><span class="n">xu</span> <span class="o">-</span> <span class="mf">4.67</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.341</span><span class="p">)</span> <span class="o">+</span> <span class="n">fa</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.090</span> <span class="o">+</span> <span class="mf">1.825</span> <span class="o">*</span> <span class="n">xu</span> <span class="o">+</span> <span class="mf">1.206</span> <span class="o">/</span> <span class="p">((</span><span class="n">xu</span> <span class="o">-</span> <span class="mf">4.62</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.263</span><span class="p">)</span> <span class="o">+</span> <span class="n">fb</span>
+    <span class="n">q</span><span class="p">[</span><span class="n">uv</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">/</span> <span class="n">rv</span>
+    <span class="k">return</span> <span class="n">q</span>
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># the forward model</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_log_grid</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">LOG10_STEP</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">lo</span><span class="p">))</span> <span class="o">/</span> <span class="n">step</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_broaden</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">sigma_kms</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">FINE_STEP</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gaussian convolution on a log10 grid of the given step.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">sigma_kms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">flux</span>
+    <span class="n">kms_per_pixel</span> <span class="o">=</span> <span class="n">C_KMS</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">step</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">sigma_kms</span> <span class="o">/</span> <span class="n">kms_per_pixel</span>
+    <span class="n">half</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">s</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">half</span><span class="p">,</span> <span class="n">half</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">s</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">kernel</span> <span class="o">/=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">padded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">half</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;edge&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">padded</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;valid&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_continuum</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">agn</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">law</span><span class="o">=</span><span class="s2">&quot;CCM&quot;</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="s2">&quot;BasesGM&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Rest-frame, unshifted model on the fine log grid, and the truth.&quot;&quot;&quot;</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">_log_grid</span><span class="p">(</span><span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">200.0</span><span class="p">,</span> <span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">200.0</span><span class="p">,</span> <span class="n">FINE_STEP</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">stellar</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">population</span><span class="p">)</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">agn</span><span class="p">)</span> <span class="o">/</span> <span class="n">stellar</span>
+    <span class="k">for</span> <span class="n">age</span><span class="p">,</span> <span class="n">metallicity</span><span class="p">,</span> <span class="n">fraction</span> <span class="ow">in</span> <span class="n">population</span><span class="p">:</span>
+        <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">true_age</span><span class="p">,</span> <span class="n">true_z</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">_template</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">metallicity</span><span class="p">,</span>
+                                                       <span class="n">library</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">fraction</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">)</span>
+        <span class="n">used</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;age_yr&quot;</span><span class="p">:</span> <span class="n">true_age</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">:</span> <span class="n">true_z</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                     <span class="s2">&quot;light_fraction&quot;</span><span class="p">:</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">fraction</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">agn</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">agn</span> <span class="o">*</span> <span class="n">_power_law</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+        <span class="n">used</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;age_yr&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;FC1.50&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;light_fraction&quot;</span><span class="p">:</span> <span class="n">agn</span><span class="p">})</span>
+    <span class="n">total</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av</span> <span class="o">*</span> <span class="p">(</span><span class="n">_q</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">law</span><span class="p">)</span> <span class="o">-</span> <span class="n">_q</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">NORM_WAVELENGTH</span><span class="p">]),</span> <span class="n">law</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">grid</span><span class="p">,</span> <span class="n">_broaden</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="n">used</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_lines</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">halpha</span><span class="p">,</span> <span class="n">v_gas</span><span class="p">,</span> <span class="n">sigma_gas</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.line_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">EMISSION_LINES_OPTICAL_VACUUM</span> <span class="k">as</span> <span class="n">LINES</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+    <span class="n">truth</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">LINE_RATIOS</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">rest</span> <span class="o">=</span> <span class="n">LINES</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">centre</span> <span class="o">=</span> <span class="n">rest</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v_gas</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">sigma_gas</span> <span class="o">/</span> <span class="n">C_KMS</span> <span class="o">*</span> <span class="n">centre</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">halpha</span> <span class="o">*</span> <span class="n">ratio</span>
+        <span class="n">flux</span> <span class="o">+=</span> <span class="n">f</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+            <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">grid</span> <span class="o">-</span> <span class="n">centre</span><span class="p">)</span> <span class="o">/</span> <span class="n">width</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">truth</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span>
+    <span class="k">return</span> <span class="n">flux</span><span class="p">,</span> <span class="n">truth</span>
+
+
+<div class="viewcode-block" id="make_spectrum">
+<a class="viewcode-back" href="../../api/generated/brainsp.mock.html#brainsp.mock.make_spectrum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_spectrum</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">av</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">sn</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">agn</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                  <span class="n">lines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">halpha</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">v_gas</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma_gas</span><span class="o">=</span><span class="mf">80.0</span><span class="p">,</span>
+                  <span class="n">redshift</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">galactic_ebv</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">law</span><span class="o">=</span><span class="s2">&quot;CCM&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                  <span class="n">library</span><span class="o">=</span><span class="s2">&quot;BasesGM&quot;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">flag_fraction</span><span class="o">=</span><span class="mf">0.002</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Build one mock spectrum.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    population : list of (age_yr, Z, light_fraction)</span>
+<span class="sd">        Templates (the nearest in the library is used) and their share of</span>
+<span class="sd">        the stellar light at 5500 A; the shares are rescaled to sum to</span>
+<span class="sd">        ``1 - agn``.</span>
+<span class="sd">    av : float</span>
+<span class="sd">        V-band extinction, magnitudes.</span>
+<span class="sd">    v, sigma : float</span>
+<span class="sd">        Stellar velocity and dispersion, km/s.</span>
+<span class="sd">    sn : float</span>
+<span class="sd">        Signal-to-noise per pixel at 5500 A (rest).</span>
+<span class="sd">    agn : float</span>
+<span class="sd">        Light fraction at 5500 A of an F_nu ~ nu^-1.5 power law.</span>
+<span class="sd">    lines : {&quot;star forming&quot;, &quot;seyfert&quot;, &quot;liner&quot;} or None</span>
+<span class="sd">        Emission-line ratios (see :data:`LINE_RATIOS`).</span>
+<span class="sd">    halpha : float</span>
+<span class="sd">        H-alpha flux, in units of the continuum at 5500 A times Angstrom</span>
+<span class="sd">        (so it is roughly the H-alpha equivalent width in Angstrom).</span>
+<span class="sd">    v_gas, sigma_gas : float</span>
+<span class="sd">        Gas velocity and dispersion, km/s.</span>
+<span class="sd">    redshift : float</span>
+<span class="sd">        Wavelengths are multiplied by 1 + z.</span>
+<span class="sd">    galactic_ebv : float</span>
+<span class="sd">        Milky Way reddening applied at observed wavelengths (CCM, R_V=3.1).</span>
+<span class="sd">    law : str</span>
+<span class="sd">        The galaxy&#39;s own extinction law.</span>
+<span class="sd">    seed : int</span>
+<span class="sd">        Random seed of the noise.</span>
+<span class="sd">    step : float</span>
+<span class="sd">        Output pixel size in Angstrom (observed frame).</span>
+<span class="sd">    flag_fraction : float</span>
+<span class="sd">        Fraction of pixels flagged bad (column 4 = 1), at random.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wave, flux, error, flag : numpy.ndarray</span>
+<span class="sd">    truth : dict</span>
+<span class="sd">        Everything the spectrum was built with.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">grid</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">used</span> <span class="o">=</span> <span class="n">_continuum</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">agn</span><span class="p">,</span> <span class="n">law</span><span class="p">,</span> <span class="n">library</span><span class="p">)</span>
+    <span class="n">truth_lines</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">line_flux</span><span class="p">,</span> <span class="n">truth_lines</span> <span class="o">=</span> <span class="n">_lines</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">halpha</span><span class="p">,</span> <span class="n">v_gas</span><span class="p">,</span> <span class="n">sigma_gas</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">model</span> <span class="o">+</span> <span class="n">line_flux</span>
+    <span class="n">lo</span> <span class="o">=</span> <span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span>
+    <span class="n">hi</span> <span class="o">=</span> <span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span>
+    <span class="n">wave</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">lo</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">hi</span><span class="p">),</span> <span class="n">step</span><span class="p">)</span>
+    <span class="n">rest</span> <span class="o">=</span> <span class="n">wave</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span>
+    <span class="c1"># The stellar part moves with v; the lines were placed at v_gas already,</span>
+    <span class="c1"># so they are sampled at the systemic rest wavelength.</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">rest</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">model</span> <span class="o">-</span> <span class="p">(</span><span class="n">line_flux</span> <span class="k">if</span> <span class="n">lines</span> <span class="k">else</span> <span class="mf">0.0</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">flux</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wave</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">),</span> <span class="n">grid</span><span class="p">,</span> <span class="n">line_flux</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">galactic_ebv</span><span class="p">:</span>
+        <span class="n">flux</span> <span class="o">*=</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="mf">3.1</span> <span class="o">*</span> <span class="n">galactic_ebv</span> <span class="o">*</span> <span class="n">_q</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="s2">&quot;CCM&quot;</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">))</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">NORM_WAVELENGTH</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">),</span> <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="p">(</span><span class="n">level</span> <span class="o">/</span> <span class="n">sn</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">flux</span> <span class="o">/</span> <span class="n">level</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">flux</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">flux</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="n">error</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">flux</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">flag_fraction</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">stellar</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">used</span> <span class="k">if</span> <span class="n">u</span><span class="p">[</span><span class="s2">&quot;age_yr&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="s2">&quot;light_fraction&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">stellar</span><span class="p">)</span> <span class="ow">or</span> <span class="mf">1.0</span>
+    <span class="n">logt</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="s2">&quot;light_fraction&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="s2">&quot;age_yr&quot;</span><span class="p">])</span>
+               <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">stellar</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span>
+    <span class="n">zmean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="s2">&quot;light_fraction&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">u</span><span class="p">[</span><span class="s2">&quot;Z&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">stellar</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span>
+    <span class="n">truth</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;components&quot;</span><span class="p">:</span> <span class="n">used</span><span class="p">,</span> <span class="s2">&quot;av&quot;</span><span class="p">:</span> <span class="n">av</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="n">v</span><span class="p">,</span> <span class="s2">&quot;sigma&quot;</span><span class="p">:</span> <span class="n">sigma</span><span class="p">,</span> <span class="s2">&quot;sn&quot;</span><span class="p">:</span> <span class="n">sn</span><span class="p">,</span>
+        <span class="s2">&quot;agn_fraction&quot;</span><span class="p">:</span> <span class="n">agn</span><span class="p">,</span> <span class="s2">&quot;mean_log_age_light&quot;</span><span class="p">:</span> <span class="n">logt</span><span class="p">,</span>
+        <span class="s2">&quot;mean_metallicity_light&quot;</span><span class="p">:</span> <span class="n">zmean</span><span class="p">,</span> <span class="s2">&quot;redshift&quot;</span><span class="p">:</span> <span class="n">redshift</span><span class="p">,</span>
+        <span class="s2">&quot;galactic_ebv&quot;</span><span class="p">:</span> <span class="n">galactic_ebv</span><span class="p">,</span> <span class="s2">&quot;law&quot;</span><span class="p">:</span> <span class="n">law</span><span class="p">,</span>
+        <span class="s2">&quot;lines&quot;</span><span class="p">:</span> <span class="n">truth_lines</span><span class="p">,</span> <span class="s2">&quot;line_ratios&quot;</span><span class="p">:</span> <span class="n">lines</span><span class="p">,</span> <span class="s2">&quot;v_gas&quot;</span><span class="p">:</span> <span class="n">v_gas</span><span class="p">,</span>
+        <span class="s2">&quot;sigma_gas&quot;</span><span class="p">:</span> <span class="n">sigma_gas</span><span class="p">,</span> <span class="s2">&quot;wavelength_scale&quot;</span><span class="p">:</span> <span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;normalisation_wavelength&quot;</span><span class="p">:</span> <span class="n">NORM_WAVELENGTH</span><span class="p">,</span> <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="n">seed</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">truth</span></div>
+
+
+
+<div class="viewcode-block" id="write_spectrum">
+<a class="viewcode-back" href="../../api/generated/brainsp.mock.html#brainsp.mock.write_spectrum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_spectrum</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">truth</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a spectrum in BRAIN&#39;s text format, and its truth beside it.&quot;&quot;&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;BRAIN mock spectrum. Columns: wavelength [A]  flux  error  &quot;</span>
+              <span class="s2">&quot;flag (1 = bad pixel)&quot;</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">flag</span><span class="p">]),</span>
+               <span class="n">fmt</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.6e</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.6e</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">truth</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.truth.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">truth</span><span class="p">,</span> <span class="n">handle</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+
+<span class="c1"># ---------------------------------------------------------------------------</span>
+<span class="c1"># a datacube</span>
+<span class="c1"># ---------------------------------------------------------------------------</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cube_truth</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.02</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The maps the mock cube is built from: a rotating disc around an old</span>
+<span class="sd">    bulge, with a star-forming ring and a LINER-like nucleus.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict of numpy.ndarray, each (n, n)</span>
+<span class="sd">        ``v`` (km/s, relative to systemic), ``sigma`` (km/s), ``av`` (mag),</span>
+<span class="sd">        ``old``, ``intermediate``, ``young`` (light fractions at 5500 A),</span>
+<span class="sd">        ``sn`` (S/N at 5500 A), ``halpha`` (H-alpha flux, units of the</span>
+<span class="sd">        continuum at 5500 A times A), ``line_kind`` (0 none, 1 star forming,</span>
+<span class="sd">        2 LINER), ``inside`` (spaxels with data), and the scalars</span>
+<span class="sd">        ``redshift`` and ``n``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[:</span><span class="n">n</span><span class="p">,</span> <span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">cx</span> <span class="o">=</span> <span class="n">cy</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">inc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mf">55.0</span><span class="p">)</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mf">30.0</span><span class="p">)</span>
+    <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">cx</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">cy</span>
+    <span class="n">xp</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pa</span><span class="p">)</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pa</span><span class="p">)</span>
+    <span class="n">yp</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">dx</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pa</span><span class="p">)</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pa</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">inc</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">yp</span><span class="p">,</span> <span class="n">xp</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="mf">220.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">r</span> <span class="o">/</span> <span class="mf">2.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">inc</span><span class="p">)</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="mf">60.0</span> <span class="o">+</span> <span class="mf">140.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span>
+    <span class="n">av</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">r</span> <span class="o">-</span> <span class="mf">4.5</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">+</span> <span class="mf">0.65</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+    <span class="n">young</span> <span class="o">=</span> <span class="mf">0.30</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">r</span> <span class="o">-</span> <span class="mf">5.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">intermediate</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">old</span> <span class="o">-</span> <span class="n">young</span>
+    <span class="n">sn</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">+</span> <span class="mf">55.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">/</span> <span class="mf">4.0</span><span class="p">)</span>
+    <span class="n">ring</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">r</span> <span class="o">-</span> <span class="mf">5.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">nucleus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">r</span> <span class="o">/</span> <span class="mf">1.2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">halpha</span> <span class="o">=</span> <span class="mf">12.0</span> <span class="o">*</span> <span class="n">ring</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">nucleus</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ring</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">nucleus</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">inside</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mf">0.6</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">av</span><span class="o">=</span><span class="n">av</span><span class="p">,</span> <span class="n">old</span><span class="o">=</span><span class="n">old</span><span class="p">,</span> <span class="n">intermediate</span><span class="o">=</span><span class="n">intermediate</span><span class="p">,</span>
+                <span class="n">young</span><span class="o">=</span><span class="n">young</span><span class="p">,</span> <span class="n">sn</span><span class="o">=</span><span class="n">sn</span><span class="p">,</span> <span class="n">halpha</span><span class="o">=</span><span class="n">halpha</span><span class="p">,</span> <span class="n">line_kind</span><span class="o">=</span><span class="n">kind</span><span class="p">,</span>
+                <span class="n">inside</span><span class="o">=</span><span class="n">inside</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="n">redshift</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+
+<span class="n">CUBE_POPULATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;old&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.26e10</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">),</span>
+    <span class="s2">&quot;intermediate&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.0e9</span><span class="p">,</span> <span class="mf">0.019</span><span class="p">),</span>
+    <span class="s2">&quot;young&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.0e8</span><span class="p">,</span> <span class="mf">0.007564</span><span class="p">),</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="make_cube">
+<a class="viewcode-back" href="../../api/generated/brainsp.mock.html#brainsp.mock.make_cube">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_cube</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="s2">&quot;BasesGM&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Build the mock datacube, as arrays.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wave : numpy.ndarray</span>
+<span class="sd">        Observed wavelengths, log-sampled as MaNGA (d log10 lambda = 1e-4).</span>
+<span class="sd">    flux, ivar : numpy.ndarray</span>
+<span class="sd">        (n_wave, n, n), flux density and inverse variance; 0 outside the</span>
+<span class="sd">        field.</span>
+<span class="sd">    mask : numpy.ndarray</span>
+<span class="sd">        (n_wave, n, n) int32; bit 10 (MaNGA&#39;s DONOTUSE) outside the field</span>
+<span class="sd">        and on randomly flagged pixels.</span>
+<span class="sd">    truth : dict</span>
+<span class="sd">        :func:`cube_truth`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">cube_truth</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">redshift</span><span class="p">)</span>
+    <span class="n">lo</span> <span class="o">=</span> <span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span>
+    <span class="n">hi</span> <span class="o">=</span> <span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span>
+    <span class="n">wave</span> <span class="o">=</span> <span class="n">_log_grid</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+    <span class="n">fine</span> <span class="o">=</span> <span class="n">_log_grid</span><span class="p">(</span><span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">200.0</span><span class="p">,</span> <span class="n">REST_RANGE</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">200.0</span><span class="p">,</span> <span class="n">FINE_STEP</span><span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.line_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">EMISSION_LINES_OPTICAL_VACUUM</span> <span class="k">as</span> <span class="n">LINES</span>
+    <span class="n">bases</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">metallicity</span><span class="p">)</span> <span class="ow">in</span> <span class="n">CUBE_POPULATIONS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">_template</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">metallicity</span><span class="p">,</span> <span class="n">library</span><span class="p">)</span>
+        <span class="n">bases</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">fine</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">_q</span><span class="p">(</span><span class="n">fine</span><span class="p">)</span> <span class="o">-</span> <span class="n">_q</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">NORM_WAVELENGTH</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">q_obs</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">wave</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">ivar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">flux</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">flux</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+    <span class="n">donotuse</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">t</span><span class="p">[</span><span class="s2">&quot;inside&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]:</span>
+                <span class="n">mask</span><span class="p">[:,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">donotuse</span>
+                <span class="k">continue</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">bases</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">bases</span><span class="p">)</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">model</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">t</span><span class="p">[</span><span class="s2">&quot;av&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">q</span><span class="p">)</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">_broaden</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="s2">&quot;sigma&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="s2">&quot;v&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+            <span class="n">spec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wave</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">v</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">),</span>
+                             <span class="n">fine</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;star forming&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;liner&quot;</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s2">&quot;line_kind&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="ow">and</span> <span class="n">t</span><span class="p">[</span><span class="s2">&quot;halpha&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.2</span><span class="p">:</span>
+                <span class="n">rest</span> <span class="o">=</span> <span class="n">wave</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">)</span>
+                <span class="n">sg</span> <span class="o">=</span> <span class="mf">50.0</span> <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;star forming&quot;</span> <span class="k">else</span> <span class="mf">150.0</span>
+                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">LINE_RATIOS</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">centre</span> <span class="o">=</span> <span class="n">LINES</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">v</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span>
+                    <span class="n">width</span> <span class="o">=</span> <span class="n">sg</span> <span class="o">/</span> <span class="n">C_KMS</span> <span class="o">*</span> <span class="n">centre</span>
+                    <span class="n">spec</span> <span class="o">+=</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s2">&quot;halpha&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">ratio</span>
+                             <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span>
+                             <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">rest</span> <span class="o">-</span> <span class="n">centre</span><span class="p">)</span> <span class="o">/</span> <span class="n">width</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="c1"># Brightness falls off with radius like an exponential disc.</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">bright</span> <span class="o">=</span> <span class="mf">1e-16</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.05</span><span class="p">)</span>
+            <span class="n">spec</span> <span class="o">=</span> <span class="n">spec</span> <span class="o">*</span> <span class="n">bright</span>
+            <span class="n">level</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">NORM_WAVELENGTH</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">redshift</span><span class="p">),</span> <span class="n">wave</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="p">(</span><span class="n">level</span> <span class="o">/</span> <span class="n">t</span><span class="p">[</span><span class="s2">&quot;sn&quot;</span><span class="p">][</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">spec</span> <span class="o">/</span> <span class="n">level</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+            <span class="n">flux</span><span class="p">[:,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">spec</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">wave</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="n">err</span>
+            <span class="n">ivar</span><span class="p">[:,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">err</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="n">bad</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">wave</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.002</span>
+            <span class="n">mask</span><span class="p">[</span><span class="n">bad</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">donotuse</span>
+            <span class="n">ivar</span><span class="p">[</span><span class="n">bad</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">del</span> <span class="n">q_obs</span>
+    <span class="k">return</span> <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">ivar</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">t</span></div>
+
+
+
+<div class="viewcode-block" id="write_cube">
+<a class="viewcode-back" href="../../api/generated/brainsp.mock.html#brainsp.mock.write_cube">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_cube</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write the mock datacube as a MaNGA-like FITS file, and its truth.</span>
+
+<span class="sd">    Extensions ``FLUX`` (1e-17 erg/s/cm^2/A/spaxel), ``IVAR``, ``MASK`` and</span>
+<span class="sd">    ``WAVE``, with a celestial coordinate system on the two spatial axes</span>
+<span class="sd">    (0.5 arcsec spaxels). The truth maps go to ``&lt;path minus .fits&gt;</span>
+<span class="sd">    .truth.fits``, one extension per map.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        `path`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+    <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">ivar</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">make_cube</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">redshift</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="mf">1e17</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">Header</span><span class="p">()</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;BUNIT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1E-17 erg/s/cm^2/Angstrom/spaxel&quot;</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CTYPE1&quot;</span><span class="p">],</span> <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CTYPE2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;RA---TAN&quot;</span><span class="p">,</span> <span class="s2">&quot;DEC--TAN&quot;</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CRPIX1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CRPIX2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CRVAL1&quot;</span><span class="p">],</span> <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CRVAL2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">150.0</span><span class="p">,</span> <span class="mf">2.2</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CDELT1&quot;</span><span class="p">],</span> <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CDELT2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">/</span> <span class="mf">3600.0</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="mf">3600.0</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CUNIT1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CUNIT2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;deg&quot;</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CTYPE3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;WAVE-LOG&quot;</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CRPIX3&quot;</span><span class="p">],</span> <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CRVAL3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CDELT3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">wave</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="n">LOG10_STEP</span><span class="p">)</span>
+    <span class="n">head</span><span class="p">[</span><span class="s2">&quot;CUNIT3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Angstrom&quot;</span>
+    <span class="n">primary</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">()</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;OBJECT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;BRAIN mock galaxy&quot;</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;Z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">redshift</span><span class="p">,</span> <span class="s2">&quot;redshift the cube was built at&quot;</span><span class="p">)</span>
+    <span class="n">primary</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;COMMENT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Mock datacube written by brainsp.mock: a &quot;</span>
+                                 <span class="s2">&quot;rotating disc, old bulge, star-forming &quot;</span>
+                                 <span class="s2">&quot;ring and LINER-like nucleus.&quot;</span><span class="p">)</span>
+    <span class="n">hdus</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">([</span>
+        <span class="n">primary</span><span class="p">,</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">((</span><span class="n">flux</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">head</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;FLUX&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">((</span><span class="n">ivar</span> <span class="o">/</span> <span class="n">scale</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">head</span><span class="p">,</span>
+                      <span class="n">name</span><span class="o">=</span><span class="s2">&quot;IVAR&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MASK&quot;</span><span class="p">),</span>
+        <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">wave</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;WAVE&quot;</span><span class="p">),</span>
+    <span class="p">])</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">hdus</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">truth</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">([</span><span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">()])</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;sigma&quot;</span><span class="p">,</span> <span class="s2">&quot;av&quot;</span><span class="p">,</span> <span class="s2">&quot;old&quot;</span><span class="p">,</span> <span class="s2">&quot;intermediate&quot;</span><span class="p">,</span> <span class="s2">&quot;young&quot;</span><span class="p">,</span> <span class="s2">&quot;sn&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;halpha&quot;</span><span class="p">,</span> <span class="s2">&quot;line_kind&quot;</span><span class="p">,</span> <span class="s2">&quot;inside&quot;</span><span class="p">):</span>
+        <span class="n">truth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span>
+                                   <span class="n">name</span><span class="o">=</span><span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+    <span class="n">truth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;Z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">redshift</span>
+    <span class="n">truth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;COMMENT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;The maps brainsp.mock built the cube &quot;</span>
+                                  <span class="s2">&quot;from. V is relative to systemic.&quot;</span><span class="p">)</span>
+    <span class="n">truth</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.fits&quot;</span><span class="p">,</span> <span class="s2">&quot;.truth.fits&quot;</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+
+<div class="viewcode-block" id="write_examples">
+<a class="viewcode-back" href="../../api/generated/brainsp.mock.html#brainsp.mock.write_examples">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_examples</span><span class="p">(</span><span class="n">folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cube</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write every example the documentation and the self-test use.</span>
+
+<span class="sd">    Writes ``spectra/`` (five mock spectra, each with ``.truth.json``, and</span>
+<span class="sd">    ``corrections.csv``), ``masks/emission_lines.sm`` (the standard</span>
+<span class="sd">    SDSS emission-line windows) and ``cube/mock_cube.fits`` (16 x 16 spaxels,</span>
+<span class="sd">    with ``mock_cube.truth.fits``).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    folder : str, optional</span>
+<span class="sd">        Where; ``~/.brainsp/examples`` by default.</span>
+<span class="sd">    cube : bool</span>
+<span class="sd">        Also write the datacube (about 9 MB).</span>
+<span class="sd">    overwrite : bool</span>
+<span class="sd">        Rewrite files that exist.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        The folder.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp._paths</span><span class="w"> </span><span class="kn">import</span> <span class="n">EXAMPLES_DIR</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.io_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">STANDARD_OPTICAL_MASK</span><span class="p">,</span> <span class="n">write_mask_regions</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">folder</span> <span class="ow">or</span> <span class="n">EXAMPLES_DIR</span><span class="p">)</span>
+    <span class="n">spectra</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;spectra&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">spectra</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">SPECTRA</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">spectra</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.spec&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                   <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s2">&quot;about&quot;</span><span class="p">}</span>
+        <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">truth</span> <span class="o">=</span> <span class="n">make_spectrum</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+        <span class="n">truth</span><span class="p">[</span><span class="s2">&quot;about&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;about&quot;</span><span class="p">]</span>
+        <span class="n">write_spectrum</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">wave</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">truth</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">spectra</span><span class="p">,</span> <span class="s2">&quot;corrections.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+        <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;filename,redshift,ebv,rv,law</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">spec</span> <span class="ow">in</span> <span class="n">SPECTRA</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.spec,</span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;redshift&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="si">}</span><span class="s2">,&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;galactic_ebv&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="si">}</span><span class="s2">,3.1,CCM</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">masks</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;masks&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">masks</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">write_mask_regions</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">masks</span><span class="p">,</span> <span class="s2">&quot;emission_lines.sm&quot;</span><span class="p">),</span>
+                       <span class="p">[(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="ow">in</span> <span class="n">STANDARD_OPTICAL_MASK</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">cube</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span> <span class="s2">&quot;mock_cube.fits&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">overwrite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">write_cube</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">folder</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

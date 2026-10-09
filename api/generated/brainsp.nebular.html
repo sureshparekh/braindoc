@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.nebular &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.nebular';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.gas_diagnostics" href="brainsp.gas_diagnostics.html" />
+    <link rel="prev" title="brainsp.atomic_data" href="brainsp.atomic_data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.nebular</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.nebular">
+<span id="brainsp-nebular"></span><h1>brainsp.nebular<a class="headerlink" href="#module-brainsp.nebular" title="Link to this heading">#</a></h1>
+<p>BRAIN-v1 Nebular Physics Module
+Photoionization-based nebular continuum and emission line predictions.</p>
+<p>Implements self-consistent nebular modeling:
+- Q(H) integrated from each SSP spectrum below the Lyman limit
+- Free-free (bremsstrahlung) emission
+- Free-bound (recombination continuum) emission
+- Two-photon continuum emission
+- Total nebular continuum template
+- Case B hydrogen emission line predictions
+- Semi-empirical metal emission line predictions
+- Self-consistency tau ratio</p>
+<p>References:
+- Osterbrock &amp; Ferland (2006)
+- Hummer &amp; Storey (1987)
+- Nussbaumer &amp; Schmutz (1984)
+- Ercolano &amp; Storey (2006)</p>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.nebular.Av_neb_from_balmer_decrement" title="brainsp.nebular.Av_neb_from_balmer_decrement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Av_neb_from_balmer_decrement</span></code></a>(F_Halpha, F_Hbeta)</p></td>
+<td><p>Derive nebular extinction Av from the observed Balmer decrement.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.nebular.compute_Q_eff" title="brainsp.nebular.compute_Q_eff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_Q_eff</span></code></a>(weights, qh_ratios, ...)</p></td>
+<td><p>Compute the effective ionizing photon parameter from current fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.nebular.compute_qh_ratios" title="brainsp.nebular.compute_qh_ratios"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_qh_ratios</span></code></a>(ages_gyr, metallicities, ...)</p></td>
+<td><p>Q(H) per unit NNLS weight for each SSP, integrated from the SSP spectra.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.nebular.extract_line_flux" title="brainsp.nebular.extract_line_flux"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_line_flux</span></code></a>(gas_names, gas_weights, ...)</p></td>
+<td><p>Extract a specific emission line flux from the NNLS gas results.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.nebular.gamma_2q_HI" title="brainsp.nebular.gamma_2q_HI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma_2q_HI</span></code></a>(wavelength, Te[, ne])</p></td>
+<td><p>Two-photon continuum emission coefficient for H I.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.nebular.gamma_2q_HeI" title="brainsp.nebular.gamma_2q_HeI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma_2q_HeI</span></code></a>(wavelength, Te[, ne])</p></td>
+<td><p>Two-photon continuum emission coefficient for He I.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.nebular.gamma_eff" title="brainsp.nebular.gamma_eff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma_eff</span></code></a>(wavelength, Te[, ne, Y_He])</p></td>
+<td><p>Total effective nebular continuum emission coefficient.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.nebular.gamma_fb_HI" title="brainsp.nebular.gamma_fb_HI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma_fb_HI</span></code></a>(wavelength, Te[, n_max])</p></td>
+<td><p>Free-bound emission coefficient for H I (Case B: skip n=1).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.nebular.gamma_fb_HeI" title="brainsp.nebular.gamma_fb_HeI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma_fb_HeI</span></code></a>(wavelength, Te[, n_max])</p></td>
+<td><p>Free-bound emission coefficient for He I (approximate).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.nebular.gamma_ff" title="brainsp.nebular.gamma_ff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma_ff</span></code></a>(wavelength, Te[, Z])</p></td>
+<td><p>Free-free emission coefficient for ion of charge Z.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.nebular.gaunt_ff" title="brainsp.nebular.gaunt_ff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaunt_ff</span></code></a>(Te, nu)</p></td>
+<td><p>Velocity-averaged free-free Gaunt factor (Sutherland 1998 approximation).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.nebular.NebularModel" title="brainsp.nebular.NebularModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NebularModel</span></code></a>(wavelength, wavelength_scale[, ...])</p></td>
+<td><p>Encapsulates all nebular physics computations.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.gaunt_ff">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">gaunt_ff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#gaunt_ff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.gaunt_ff" title="Link to this definition">#</a></dt>
+<dd><p>Velocity-averaged free-free Gaunt factor (Sutherland 1998 approximation).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Te</strong><span class="classifier">float</span></dt><dd><p>Electron temperature [K].</p>
+</dd>
+<dt><strong>nu</strong><span class="classifier">array</span></dt><dd><p>Frequency [Hz].</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>gff</strong><span class="classifier">array</span></dt><dd><p>Free-free Gaunt factor.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.gamma_ff">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">gamma_ff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#gamma_ff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.gamma_ff" title="Link to this definition">#</a></dt>
+<dd><p>Free-free emission coefficient for ion of charge Z.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">array</span></dt><dd><p>Wavelength grid [Angstroms].</p>
+</dd>
+<dt><strong>Te</strong><span class="classifier">float</span></dt><dd><p>Electron temperature [K].</p>
+</dd>
+<dt><strong>Z</strong><span class="classifier">int</span></dt><dd><p>Ion charge (1 for H+, 2 for He++).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>gff_coeff</strong><span class="classifier">array</span></dt><dd><p>gamma_ff(nu, Te) [erg cm^3 s^-1 Hz^-1].</p>
+</dd>
+<dt>Volume emission coefficient gamma_nu, defined by</dt><dd><p>4*pi*j_nu = n_e n_p gamma_nu,</p>
+</dd>
+<dt>i.e. integrated over the full sphere, NOT the per-steradian j_nu.</dt><dd></dd>
+<dt>The emission-line predictions (C_Hbeta, predict_*_lines) and the</dt><dd></dd>
+<dt>template normalisation gamma_eff/alpha_B are on this convention, so a</dt><dd></dd>
+<dt>per-steradian coefficient here would put the lines and the continuum</dt><dd></dd>
+<dt>4*pi apart in scale.</dt><dd></dd>
+<dt>The constant 6.8416e-38 is the exact theoretical coefficient</dt><dd></dd>
+<dt>(2^5 pi e^6)/(3 m_e c^3) * sqrt(2 pi /(3 k m_e)), quoted rounded as 6.8e-38</dt><dd></dd>
+<dt>in Rybicki &amp; Lightman (1979) eq. 5.14b. Their eq. 5.14a, 5.44e-39, is the</dt><dd></dd>
+<dt>same quantity divided by 4*pi.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.gamma_fb_HI">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">gamma_fb_HI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#gamma_fb_HI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.gamma_fb_HI" title="Link to this definition">#</a></dt>
+<dd><p>Free-bound emission coefficient for H I (Case B: skip n=1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">array</span></dt><dd><p>Wavelength grid [Angstroms].</p>
+</dd>
+<dt><strong>Te</strong><span class="classifier">float</span></dt><dd><p>Electron temperature [K].</p>
+</dd>
+<dt><strong>n_max</strong><span class="classifier">int</span></dt><dd><p>Maximum principal quantum number for summation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>gamma_fb</strong><span class="classifier">array</span></dt><dd><p>Free-bound emission coefficient [erg cm^3 s^-1 Hz^-1].</p>
+</dd>
+<dt>Volume emission coefficient gamma_nu, defined by</dt><dd><p>4*pi*j_nu = n_e n_p gamma_nu,</p>
+</dd>
+<dt>i.e. integrated over the full sphere, NOT the per-steradian j_nu.</dt><dd></dd>
+<dt>The emission-line predictions (C_Hbeta, predict_*_lines) and the</dt><dd></dd>
+<dt>template normalisation gamma_eff/alpha_B are on this convention, so a</dt><dd></dd>
+<dt>per-steradian coefficient here would put the lines and the continuum</dt><dd></dd>
+<dt>4*pi apart in scale.</dt><dd></dd>
+<dt>The prefactor is 8*pi*h*nu^3/c^2, from the Milne relation (Osterbrock &amp;</dt><dd></dd>
+<dt>Ferland 2006 eq. 2.28) combined with a Maxwellian: 2 h nu^3/c^2 is the</dt><dd></dd>
+<dt>Planck normalisation of the per-steradian form. Checked against the Case B</dt><dd></dd>
+<dt>photon identity, integral gamma_fb/(h nu) dnu = alpha_B, which closes to</dt><dd></dd>
+<dt>1.3% – the residual is the n &gt; 51 loop break below, not the prefactor.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.gamma_fb_HeI">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">gamma_fb_HeI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#gamma_fb_HeI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.gamma_fb_HeI" title="Link to this definition">#</a></dt>
+<dd><p>Free-bound emission coefficient for He I (approximate).</p>
+<p>He I is not hydrogenic; we use a scaled version of H I fb emission
+with the He I ionization potential (24.6 eV) and effective charge.
+This is an approximation; detailed tables (Ercolano &amp; Storey 2006)
+would be more accurate.</p>
+<p>Volume emission coefficient gamma_nu, defined by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">j_nu</span> <span class="o">=</span> <span class="n">n_e</span> <span class="n">n_p</span> <span class="n">gamma_nu</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>i.e. integrated over the full sphere, NOT the per-steradian j_nu.
+The emission-line predictions (C_Hbeta, predict_*_lines) and the
+template normalisation gamma_eff/alpha_B are on this convention, so a
+per-steradian coefficient here would put the lines and the continuum
+4*pi apart in scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.gamma_2q_HI">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">gamma_2q_HI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#gamma_2q_HI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.gamma_2q_HI" title="Link to this definition">#</a></dt>
+<dd><p>Two-photon continuum emission coefficient for H I.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">array</span></dt><dd><p>Wavelength grid [Angstroms].</p>
+</dd>
+<dt><strong>Te</strong><span class="classifier">float</span></dt><dd><p>Electron temperature [K].</p>
+</dd>
+<dt><strong>ne</strong><span class="classifier">float</span></dt><dd><p>Electron density [cm^-3].</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>gamma_2q</strong><span class="classifier">array</span></dt><dd><p>Two-photon emission coefficient [erg cm^3 s^-1 Hz^-1].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.gamma_2q_HeI">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">gamma_2q_HeI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#gamma_2q_HeI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.gamma_2q_HeI" title="Link to this definition">#</a></dt>
+<dd><p>Two-photon continuum emission coefficient for He I.
+From 1s2s ^1S_0 -&gt; 1s^2 ^1S_0 transition.
+Two-photon energy = 20.6 eV (lambda_cutoff ~ 601.4 A).
+Only significant in the UV; negligible at optical wavelengths.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.gamma_eff">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">gamma_eff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y_He</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#gamma_eff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.gamma_eff" title="Link to this definition">#</a></dt>
+<dd><p>Total effective nebular continuum emission coefficient.</p>
+<p>gamma_eff = gamma_HI(ff+fb+2q) + (nHe/nH) * gamma_HeI(ff+fb+2q)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">array</span></dt><dd><p>Wavelength grid [Angstroms].</p>
+</dd>
+<dt><strong>Te</strong><span class="classifier">float</span></dt><dd><p>Electron temperature [K].</p>
+</dd>
+<dt><strong>ne</strong><span class="classifier">float</span></dt><dd><p>Electron density [cm^-3].</p>
+</dd>
+<dt><strong>Y_He</strong><span class="classifier">float</span></dt><dd><p>Helium mass fraction (0.25 for ~solar).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>gamma</strong><span class="classifier">array</span></dt><dd><p>Total emission coefficient [erg cm^3 s^-1 Hz^-1].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">NebularModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y_He</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z_gas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_esc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Encapsulates all nebular physics computations.</p>
+<p>Initialize with Te, ne, Y_He and the fitting wavelength grid.
+Pre-computes the normalized nebular continuum template such that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f_neb</span><span class="p">(</span><span class="k">lambda</span><span class="p">)</span> <span class="o">=</span> <span class="n">template</span><span class="p">(</span><span class="k">lambda</span><span class="p">)</span> <span class="o">*</span> <span class="n">Q_eff</span>
+</pre></div>
+</div>
+<p>where Q_eff = sum_j w_j * unredden_j * qh_ratio_j.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.template">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">template</span></span><a class="headerlink" href="#brainsp.nebular.NebularModel.template" title="Link to this definition">#</a></dt>
+<dd><p>Normalized nebular continuum template [erg/A per (photon/s)].</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.nebular_continuum">
+<span class="sig-name descname"><span class="pre">nebular_continuum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Q_eff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel.nebular_continuum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel.nebular_continuum" title="Link to this definition">#</a></dt>
+<dd><p>Compute the nebular continuum spectrum for a given effective Q(H).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Q_eff</strong><span class="classifier">float</span></dt><dd><p>Effective ionizing photon parameter
+= sum_j w_j * unredden_j * qh_ratio_j
+(in normalized flux units, distance-independent).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f_neb</strong><span class="classifier">array</span></dt><dd><p>Nebular continuum in normalized flux units (same as observed spectrum).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.predict_Hbeta_flux">
+<span class="sig-name descname"><span class="pre">predict_Hbeta_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Q_eff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel.predict_Hbeta_flux"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel.predict_Hbeta_flux" title="Link to this definition">#</a></dt>
+<dd><p>Predict H-beta integrated flux from Q(H).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Q_eff</strong><span class="classifier">float</span></dt><dd><p>Effective ionizing photon parameter.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f_Hbeta</strong><span class="classifier">float</span></dt><dd><p>Predicted H-beta integrated flux (same units as NNLS gas weights,
+i.e., integrated line flux in normalized flux units).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.predict_Halpha_flux">
+<span class="sig-name descname"><span class="pre">predict_Halpha_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Q_eff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel.predict_Halpha_flux"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel.predict_Halpha_flux" title="Link to this definition">#</a></dt>
+<dd><p>Predict H-alpha integrated flux from Q(H).</p>
+<p>Uses F_Hbeta * Balmer ratio rather than alpha_Halpha directly,
+ensuring consistency with the Case B line ratio tables.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.predict_hydrogen_lines">
+<span class="sig-name descname"><span class="pre">predict_hydrogen_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Q_eff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel.predict_hydrogen_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel.predict_hydrogen_lines" title="Link to this definition">#</a></dt>
+<dd><p>Predict all hydrogen recombination line fluxes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Q_eff</strong><span class="classifier">float</span></dt><dd><p>Effective ionizing photon parameter.</p>
+</dd>
+<dt><strong>wavelength_range</strong><span class="classifier">tuple or None</span></dt><dd><p>(wl_min, wl_max) to filter lines. None = return all.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>lines</strong><span class="classifier">dict {name: (wavelength, flux)}</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.predict_metal_lines">
+<span class="sig-name descname"><span class="pre">predict_metal_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Q_eff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel.predict_metal_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel.predict_metal_lines" title="Link to this definition">#</a></dt>
+<dd><p>Predict metal emission line fluxes (semi-empirical calibrations).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Q_eff</strong><span class="classifier">float</span></dt><dd><p>Effective ionizing photon parameter.</p>
+</dd>
+<dt><strong>wavelength_range</strong><span class="classifier">tuple or None</span></dt><dd><p>(wl_min, wl_max) to filter lines.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>lines</strong><span class="classifier">dict {name: (wavelength, flux)}</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.predict_all_lines">
+<span class="sig-name descname"><span class="pre">predict_all_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Q_eff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel.predict_all_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel.predict_all_lines" title="Link to this definition">#</a></dt>
+<dd><p>Predict all emission line fluxes (hydrogen + metals).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.nebular.NebularModel.tau_ratio">
+<span class="sig-name descname"><span class="pre">tau_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Q_eff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observed_Halpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Av_neb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reddening_law</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CCM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_wavelength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5500.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#NebularModel.tau_ratio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.NebularModel.tau_ratio" title="Link to this definition">#</a></dt>
+<dd><p>Compute the self-consistency tau ratio.</p>
+<p>tau = L_predicted(Halpha) / L_observed(Halpha)</p>
+<p>After correcting the prediction for nebular extinction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Q_eff</strong><span class="classifier">float</span></dt><dd><p>Effective ionizing photon parameter.</p>
+</dd>
+<dt><strong>observed_Halpha</strong><span class="classifier">float</span></dt><dd><p>Observed H-alpha integrated flux (from NNLS gas weight).</p>
+</dd>
+<dt><strong>Av_neb</strong><span class="classifier">float</span></dt><dd><p>Nebular extinction [mag].</p>
+</dd>
+<dt><strong>reddening_law</strong><span class="classifier">str</span></dt><dd><p>Reddening law name.</p>
+</dd>
+<dt><strong>norm_wavelength</strong><span class="classifier">float</span></dt><dd><p>Normalization wavelength [A].</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>tau</strong><span class="classifier">float</span></dt><dd><p>Self-consistency ratio. tau=1 =&gt; self-consistent.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.compute_qh_ratios">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">compute_qh_ratios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ages_gyr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metallicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fbase_norms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_flux_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Lsun'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_absolute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#compute_qh_ratios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.compute_qh_ratios" title="Link to this definition">#</a></dt>
+<dd><p>Q(H) per unit NNLS weight for each SSP, integrated from the SSP spectra.</p>
+<p>Each base spectrum is integrated shortwards of the hydrogen ionisation
+edge to get the ionising photon rate it actually emits, then divided by
+its own normalisation flux so the result multiplies the NNLS weight
+directly.</p>
+<p>This requires the raw library files, not the templates BRAIN fits with:
+those have been resampled onto the observed wavelength grid, which starts
+thousands of Angstrom above the Lyman limit and therefore contains no
+ionising continuum at all.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ages_gyr, metallicities</strong><span class="classifier">array</span></dt><dd><p>Per-SSP age and metallicity. Carried for reporting only – nothing is
+looked up from them.</p>
+</dd>
+<dt><strong>fbase_norms</strong><span class="classifier">array</span></dt><dd><p>SSP flux at the normalisation wavelength, per Msun.</p>
+</dd>
+<dt><strong>ssp_flux_unit</strong><span class="classifier">{‘Lsun’, ‘cgs’}</span></dt><dd></dd>
+<dt><strong>ssp_folder</strong><span class="classifier">str</span></dt><dd><p>Directory holding the library.</p>
+</dd>
+<dt><strong>bases_info</strong><span class="classifier">list of dict</span></dt><dd><p>Base entries with a ‘filename’ key, in the same order as the arrays.</p>
+</dd>
+<dt><strong>return_absolute</strong><span class="classifier">bool</span></dt><dd><p>Also return the absolute rates per Msun, for reporting.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>qh_ratios</strong><span class="classifier">jnp array</span></dt><dd><p>Q(H) per unit weight. Zero for SSPs with no ionising output.</p>
+</dd>
+<dt><strong>absolute</strong><span class="classifier">dict, optional</span></dt><dd><p>{‘QHc’, ‘QHe1’, ‘QHe2’} arrays in photons/s per Msun.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the library does not reach below the Lyman limit. Degrading
+quietly to a zero nebular continuum would leave a fit that looks
+converged and is not physically meaningful.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.compute_Q_eff">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">compute_Q_eff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qh_ratios</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_yav_flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">av</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yav</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_norm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#compute_Q_eff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.compute_Q_eff" title="Link to this definition">#</a></dt>
+<dd><p>Compute the effective ionizing photon parameter from current fit.</p>
+<p>Q_eff = sum_j w_j * unredden_j * qh_ratio_j</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>weights</strong><span class="classifier">array</span></dt><dd><p>Stellar NNLS weights.</p>
+</dd>
+<dt><strong>qh_ratios</strong><span class="classifier">array</span></dt><dd><p>Q(H) ratio per SSP (from compute_qh_ratios).</p>
+</dd>
+<dt><strong>ssp_yav_flags</strong><span class="classifier">array</span></dt><dd><p>YAV flags (1 for young components).</p>
+</dd>
+<dt><strong>av</strong><span class="classifier">float</span></dt><dd><p>Stellar extinction Av [mag].</p>
+</dd>
+<dt><strong>yav</strong><span class="classifier">float</span></dt><dd><p>Young AV excess [mag].</p>
+</dd>
+<dt><strong>k_norm</strong><span class="classifier">float</span></dt><dd><p>k(lambda_0) from the reddening law.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>Q_eff</strong><span class="classifier">float</span></dt><dd><p>Effective ionizing photon parameter.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.Av_neb_from_balmer_decrement">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">Av_neb_from_balmer_decrement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F_Halpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F_Hbeta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reddening_law</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CCM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Te</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#Av_neb_from_balmer_decrement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.Av_neb_from_balmer_decrement" title="Link to this definition">#</a></dt>
+<dd><p>Derive nebular extinction Av from the observed Balmer decrement.</p>
+<p>A_V^neb = 2.5 / (k_Hb - k_Ha) * log10[(F_Ha/F_Hb)_obs / (F_Ha/F_Hb)_CaseB]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>F_Halpha</strong><span class="classifier">float</span></dt><dd><p>Observed H-alpha flux (integrated, from NNLS weight).</p>
+</dd>
+<dt><strong>F_Hbeta</strong><span class="classifier">float</span></dt><dd><p>Observed H-beta flux.</p>
+</dd>
+<dt><strong>reddening_law</strong><span class="classifier">str</span></dt><dd><p>Reddening law name.</p>
+</dd>
+<dt><strong>Te</strong><span class="classifier">float</span></dt><dd><p>Electron temperature [K] (for intrinsic Balmer ratio).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>Av_neb</strong><span class="classifier">float</span></dt><dd><p>Nebular extinction [mag]. Returns 0 if decrement is unphysical.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.nebular.extract_line_flux">
+<span class="sig-prename descclassname"><span class="pre">brainsp.nebular.</span></span><span class="sig-name descname"><span class="pre">extract_line_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gas_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/nebular.html#extract_line_flux"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.nebular.extract_line_flux" title="Link to this definition">#</a></dt>
+<dd><p>Extract a specific emission line flux from the NNLS gas results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>gas_names</strong><span class="classifier">list of str</span></dt><dd><p>Names of emission line templates.</p>
+</dd>
+<dt><strong>gas_weights</strong><span class="classifier">array</span></dt><dd><p>NNLS weights for gas templates.</p>
+</dd>
+<dt><strong>line_key</strong><span class="classifier">str</span></dt><dd><p>A catalogue entry name, or a species from LINE_SPECIES.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>flux</strong><span class="classifier">float</span></dt><dd><p>Integrated line flux, summed over every entry of that species, or
+0.0 if the catalogue provides none.</p>
+</dd>
+<dt>This matched by substring and returned the first hit until the name</dt><dd></dd>
+<dt>couplings were broken. That returned [S II] 6716 while silently</dt><dd></dd>
+<dt>discarding 6731, which is half the density diagnostic; returned the</dt><dd></dd>
+<dt>[O III] 4363 auroral line in place of the 4959+5007 doublet; and</dt><dd></dd>
+<dt>returned He II when asked for He I, because “He I” is a substring of</dt><dd></dd>
+<dt>“He II”. It did not misfire in practice only because the two keys in</dt><dd></dd>
+<dt>use, Halpha and Hbeta, are unambiguous in the shipped catalogue.</dt><dd></dd>
+<dt>A species is not a line. Asking for “[O III]” returns 4363 plus the</dt><dd></dd>
+<dt>4959+5007 doublet, because all three are [O III], and 4363 comes from a</dt><dd></dd>
+<dt>different upper level and is not usually wanted alongside the other two.</dt><dd></dd>
+<dt>Ask for the entry by name when a particular line is meant; an exact name</dt><dd></dd>
+<dt>always wins over the species sum.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.atomic_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.atomic_data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.gas_diagnostics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.gas_diagnostics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.gaunt_ff"><code class="docutils literal notranslate"><span class="pre">gaunt_ff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.gamma_ff"><code class="docutils literal notranslate"><span class="pre">gamma_ff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.gamma_fb_HI"><code class="docutils literal notranslate"><span class="pre">gamma_fb_HI()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.gamma_fb_HeI"><code class="docutils literal notranslate"><span class="pre">gamma_fb_HeI()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.gamma_2q_HI"><code class="docutils literal notranslate"><span class="pre">gamma_2q_HI()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.gamma_2q_HeI"><code class="docutils literal notranslate"><span class="pre">gamma_2q_HeI()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.gamma_eff"><code class="docutils literal notranslate"><span class="pre">gamma_eff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel"><code class="docutils literal notranslate"><span class="pre">NebularModel</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.template"><code class="docutils literal notranslate"><span class="pre">NebularModel.template</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.nebular_continuum"><code class="docutils literal notranslate"><span class="pre">NebularModel.nebular_continuum()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.predict_Hbeta_flux"><code class="docutils literal notranslate"><span class="pre">NebularModel.predict_Hbeta_flux()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.predict_Halpha_flux"><code class="docutils literal notranslate"><span class="pre">NebularModel.predict_Halpha_flux()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.predict_hydrogen_lines"><code class="docutils literal notranslate"><span class="pre">NebularModel.predict_hydrogen_lines()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.predict_metal_lines"><code class="docutils literal notranslate"><span class="pre">NebularModel.predict_metal_lines()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.predict_all_lines"><code class="docutils literal notranslate"><span class="pre">NebularModel.predict_all_lines()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.NebularModel.tau_ratio"><code class="docutils literal notranslate"><span class="pre">NebularModel.tau_ratio()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.compute_qh_ratios"><code class="docutils literal notranslate"><span class="pre">compute_qh_ratios()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.compute_Q_eff"><code class="docutils literal notranslate"><span class="pre">compute_Q_eff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.Av_neb_from_balmer_decrement"><code class="docutils literal notranslate"><span class="pre">Av_neb_from_balmer_decrement()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.nebular.extract_line_flux"><code class="docutils literal notranslate"><span class="pre">extract_line_flux()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

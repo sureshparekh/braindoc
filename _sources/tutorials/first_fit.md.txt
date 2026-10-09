@@ -1,0 +1,80 @@
+# 1. A first fit
+
+The mock spectrum `mock_old_population.spec` was built from three old,
+metal-rich BasesGM templates (12.6 Gyr and 5 Gyr at $Z = 0.019$, 8.9 Gyr at
+$Z = 0.0315$), behind $A_V = 0.2$ mag of dust, with the stars moving at
+$v_\star = 150$ km/s and $\sigma_\star = 200$ km/s, at signal-to-noise 100.
+BRAIN is told none of that.
+
+```{literalinclude} ../../tutorials_src/t01_first_fit.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t01_first_fit.txt
+:language: text
+```
+
+## Reading the result
+
+{func}`brainsp.fit_spectrum` returns a {class}`~brainsp.FitResult`. Its
+headline numbers came back within 1.0 km/s, 1.4 km/s and 0.007 mag of the
+truth.
+
+- `v0` and `sigma` are the stellar velocity and velocity dispersion. The
+  dispersion is *observed*: it includes the instrument and the library's own
+  resolution difference unless `instrumental_resolution` is set (see
+  [](../user_guide/resolution.md)). The mock was built from the same
+  templates BRAIN fits it with, so here there is no difference to remove.
+- `av` is the V-band extinction, with the CCM law (`reddening_law`).
+- `mean_log_age_light` is $\langle \log t \rangle_L = \sum_j x_j \log t_j /
+  \sum_j x_j$ over the stellar populations, the light-weighted mean of the
+  logarithm of the age (not the logarithm of the mean age); see
+  [](../theory/derived.md).
+- `chi2` is $\chi^2 / N_{\rm eff}$. It comes out near 0.65 rather than 1
+  because the mock's error column is sampled on a 1 Å grid and BRAIN
+  resamples onto its logarithmic grid, which averages neighbouring noise.
+
+## The population vector
+
+`r.populations` is a NumPy structured array, one row per template: `x`
+(light fraction, per cent, at 5500 Å), `mini` and `mcor` (initial and
+present mass fractions, per cent), `age`, `Z`, `mstars`, `name`, and
+`stellar` (False for an AGN component). Only five of the 84 templates carry
+light: the non-negative least-squares solution is sparse, which is expected
+and correct, not a failure to converge.
+
+The fit splits the light between the true populations and their neighbours
+in age and metallicity: the 12.6 Gyr and 8.9 Gyr templates, at both
+metallicities. That is the age-metallicity degeneracy at work. Quantities
+that average over the population vector, like
+$\langle \log t \rangle_L$ (10.00 against a true 9.98), are far more robust
+than any single $x_j$. Report averages, or sums over age bins, not
+individual components.
+
+## Figures
+
+{func}`brainsp.plots.spectrum` draws the data and the model, with the
+residuals underneath:
+
+```{image} ../_static/tutorials/t01_spectrum.png
+:alt: The fit of mock_old_population.
+```
+
+`xlim=` zooms; this is the Mg *b* and Fe region:
+
+```{image} ../_static/tutorials/t01_zoom.png
+:alt: Zoom on 5100-5400 A.
+```
+
+{func}`brainsp.plots.sfh` draws the star-formation history, the light and
+mass fractions in each age summed over metallicity:
+
+```{image} ../_static/tutorials/t01_sfh.png
+:alt: Star-formation history.
+```
+
+The fit also wrote `fits/mock_old_population_summary.txt` (the numbers), `_fitted.txt` (the spectra, column by column),
+`_settings.txt` (every setting used) and `_fit.pdf` (the standard figure).
+[](../user_guide/outputs.md) describes every line of them.

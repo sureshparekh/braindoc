@@ -1,0 +1,86 @@
+# The model
+
+## The fitted spectrum
+
+The observed flux $F_\lambda$, with uncertainty $\sigma_\lambda$, is
+resampled (flux-conservingly) onto a grid uniform in $\ln\lambda$, with a
+velocity step $\Delta v = c\,\Delta\ln\lambda$ set by the data's sampling, and
+divided by its value at the normalisation wavelength $\lambda_0$
+(`normalisation_wavelength`, 5500 Å; the median over $\pm 10$ pixels):
+
+$$ f_\lambda = F_\lambda / F_{\lambda_0}, \qquad F_{\lambda_0} = \texttt{Flux\_tot}. $$
+
+The model of $f_\lambda$ is
+
+$$
+\begin{aligned}
+M_\lambda = {} & \sum_{j=1}^{N_\star} w_j\, \big[b_j \ast G(v_\star, \sigma_\star)\big]_\lambda\, r_\lambda(A_V + Y_j) \\
+ & + \sum_{k=1}^{N_{\rm gas}} w_{N_\star+k}\, g_{k,\lambda}(v_{g(k)}, \sigma_{g(k)})\, r_\lambda(A_V)
+   \;+\; w_{\rm neb}\, n_\lambda ,
+\end{aligned}
+$$
+
+where
+
+- $b_j$ is template $j$ (an SSP, or an AGN continuum), normalised to 1 at
+  $\lambda_0$, resampled onto the fitting grid (and, with
+  `instrumental_resolution`, first broadened to the data's line-spread
+  function; [](../user_guide/resolution.md));
+- $G(v, \sigma)$ is a Gaussian line-of-sight velocity distribution and
+  $\ast$ convolution in $\ln\lambda$ ([](kinematics.md));
+- $r_\lambda(A) = 10^{-0.4 A [q(\lambda) - q(\lambda_0)]}$ is the dust
+  attenuation, normalised at $\lambda_0$, $q = A_\lambda/A_V$ the extinction law
+  ([](dust.md)); $Y_j$ is extra extinction for templates flagged young
+  (`YAV`), 0 otherwise;
+- $g_k$ is an area-normalised emission-line profile (or a tied doublet's),
+  with the velocity and dispersion of its kinematic group $g(k)$
+  ([](emission.md));
+- $n_\lambda$ is the nebular continuum, in `nepop` ([](nebular.md));
+- $w \ge 0$ are the linear weights.
+
+Because every $b_j$ is 1 at $\lambda_0$ and $r_\lambda(\cdot)$ is 1 there, $w_j$
+is template $j$'s contribution to the (attenuated) model at $\lambda_0$, so the
+light fractions are $x_j = 100\, w_j / \sum_{i \le N_\star} w_i$ per cent.
+
+## The objective
+
+$$ \chi^2(\theta, w) = \sum_\lambda m_\lambda \left[\frac{f_\lambda - M_\lambda(\theta, w)}{\sigma_\lambda / F_{\lambda_0}}\right]^2 + \lVert D\, w_\star \rVert^2 \;(+\; \text{penalty rows in } \texttt{photopop}) $$
+
+with $m_\lambda$ the mask weight (0 excluded, 1 normal, >1 up-weighted;
+[](../user_guide/masks.md)), $D$ a regularisation operator on the stellar
+weights ([](linear.md)), and $\theta = (A_V, Y_V, \sigma_\star, v_\star,
+\sigma_{g_1}, v_{g_1}, \ldots)$ the non-linear parameters. BRAIN minimises it
+over $w \ge 0$ exactly for each $\theta$ ([](linear.md)) and over $\theta$
+iteratively ([](nonlinear.md)):
+
+$$ \hat\theta = \arg\min_{\theta \in [\theta_{\rm lo}, \theta_{\rm hi}]} \; \min_{w \ge 0} \chi^2(\theta, w). $$
+
+## Outlier rejection
+
+With `reject_outliers` (default on), after the fit every pixel whose residual
+exceeds `outlier_threshold` (3) times its error is given zero weight and the
+fit is run again: one clip-and-refit pass, as STARLIGHT's `NSIGMA` clipping.
+With `outlier_scale: typical` the threshold multiplies the larger of the
+error and the spectrum's typical residual instead, so a model that cannot
+match a very high-S/N spectrum anywhere does not lose most of its pixels.
+$N_{\rm eff}$, $\chi^2$ and the mean deviation are then over the pixels
+left.
+
+## Reported goodness of fit
+
+| | |
+|---|---|
+| $\chi^2/N_{\rm eff}$ (`chi2/Nl_eff`) | $\chi^2$ over the $N_{\rm eff}$ pixels of non-zero weight, nothing subtracted for parameters |
+| `chi2_data/Nl_eff` | the same without the regularisation and penalty rows |
+| reduced $\chi^2$ (cubes, `CHI2RED`) | $\chi^2/(N_{\rm eff} - n_{\rm par})$, $n_{\rm par} = 4 + 2 n_{\rm groups}$ |
+| `adev` | $100 \times \langle |f - M|/f \rangle$ over the fitted pixels with $f > 0$, per cent |
+
+## Where in the code
+
+| | |
+|---|---|
+| resampling, broadening | `brainsp/spectral_engine.py` |
+| the forward model, Levenberg–Marquardt | `brainsp/fast_engine.py` |
+| the linear solve | `brainsp/solver.py` |
+| a single spectrum, end to end | `brainsp/brainv1.py` (`run`) |
+| a datacube | `brainsp/fit_megacube_jax.py`, `brainsp/fast_cube.py` |

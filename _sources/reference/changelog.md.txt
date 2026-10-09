@@ -1,0 +1,70 @@
+# Changes
+
+## 2.0.0
+
+BRAIN becomes the installable Python package **brainsp**.
+
+- **Package**: `pip install git+https://github.com/sureshparekh/brainv1`
+  installs it with every dependency, the interface included; commands
+  `brainsp` and `brainsp-gui`; the data (BasesGM, the AGN continua) inside the
+  package; template libraries found by name, so more can be added
+  ([](../user_guide/libraries.md)).
+- **Python interface**: {class}`~brainsp.Settings`,
+  {func}`~brainsp.fit_spectrum`, {func}`~brainsp.fit_spectra`,
+  {class}`~brainsp.FitResult`, {class}`~brainsp.CubePipeline`,
+  {func}`~brainsp.fit_cube`, {func}`~brainsp.read_megacube`; everything the
+  interface does can be done from code.
+- **Figures from code**: {mod}`brainsp.plots`.
+- **One file per run**: {func}`~brainsp.write_script`, and the interface's
+  *Export run script* for spectra and cubes, write a single Python file.
+  Paths inside the script's folder are relative to it, so a folder of data
+  with its script can be copied to a server and run there as it is.
+- **M13 shipped**: Maraston (2013), 47 SSPs into the infrared, with its own
+  power-law and hot-dust set in `M13/AGN`.
+- **Datacubes with missing errors**: `missing_error: interpolate` keeps a
+  pixel whose flux is real but whose error is NaN, with the error
+  interpolated from its neighbours, instead of leaving it out.
+- **Megacube maps as in the published megacubes**: `Mage_L` and `MZ_L`
+  divide by the light of every component, AGN included; `SFR_<bin>` is
+  `Mstar` times the initial-mass fraction over the bin width; L☉ and the
+  megaparsec take the published values.
+- **espop on GPUs, about 9x faster**: shorter broadening transforms, a
+  contracted VarPro Jacobian, a work queue instead of fixed batches, and the
+  accepted step's model reused by the Jacobian (MaNGA 8626-12704: 1395 s to
+  158 s; JWST 3C 293 in spop: about 3 min to 49 s).
+- **A_V may be negative by default**: `dust_range` is [-1, 5], to absorb
+  extinction that is not otherwise corrected; [0, 5] forbids it.
+- **Outliers clipped as STARLIGHT clips them**: `outlier_scale: error` (the
+  default) drops a pixel beyond `outlier_threshold` times its own error, as
+  STARLIGHT's NSIGMA; `typical` keeps the earlier scale, the larger of the
+  error and the spectrum's typical residual.
+- **Mock data and a self-test**: {mod}`brainsp.mock`, `brainsp selftest`.
+- **CPUs used in full**: datacubes and batches of spectra on a CPU are fitted
+  by worker processes, one per core (a 172-spaxel cube that did not finish in
+  15 minutes now takes 139 s on 63 workers; 300 spectra 0.19 s each).
+- **Batches stay warm**: one compile per batch in Python, on the command line
+  and in the interface's table fit.
+- **Masks**: `.sm`/`.gm` files are read to their declared region
+  count (an example block at the end of the standard SDSS mask was being
+  applied); datacubes take a wavelength mask, drawn on any spaxel or loaded.
+  A mask is now applied as given in every mode: a single spectrum fitted
+  with emission lines no longer puts masked pixels near the lines back
+  (which undid gaps and bad regions anywhere within thousands of km/s of a
+  line). A line the mask covers is left out and named in the log, instead
+  of being given an arbitrary flux.
+- **Emission-line fluxes** in a spectrum's summary are labelled with their
+  units and extinction convention, and converted by
+  `FitResult.line_fluxes()`.
+- **The interface**: steps across the top, a slate-and-cobalt light and dark
+  theme, Required/Optional marked on every panel, a required cube redshift,
+  zoomable maps, the run map tinting fitted spaxels over the galaxy, readable
+  file dialogs on dark desktops.
+- One default fitting range everywhere (3700–6900 Å).
+- **Megacubes** can carry Mstar, Mpcross and star-formation-rate maps (with a
+  galaxy distance), featureless components grouped by exponent or
+  temperature (FC/BB bins), and overlapping population bins (totals). A
+  library may ship its own AGN set (M13: power laws and hot-dust
+  blackbodies), used by *Include AGN* instead of BRAIN's seven. In the interface the
+  range follows the data: selecting a cube sets it to the cube's range within
+  the templates; it can be typed, and the normalisation wavelength λ₀ has a
+  field of its own, so near-infrared cubes can be fitted from the interface.

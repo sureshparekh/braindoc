@@ -1,0 +1,53 @@
+# The non-linear fit
+
+The non-linear parameters are
+
+$$ \theta = (A_V,\; Y_V,\; \sigma_\star,\; v_\star,\; \sigma_{g_1}, v_{g_1},\; \sigma_{g_2}, v_{g_2}, \ldots), $$
+
+two per kinematic group of emission lines in the line modes. Each is bounded:
+`dust_range`, `young_extra_dust_range`, `dispersion_range`,
+`velocity_range`, `gas_dispersion_range`, `gas_velocity_range`.
+
+## Variable projection
+
+$\chi^2$ is minimised over $\theta$ with the weights *projected out*: every
+evaluation at a trial $\theta$ solves the linear problem exactly
+([](linear.md)), so the optimiser sees
+
+$$ \rho(\theta) = W^{1/2}\big(f - A(\theta)\, \hat w(\theta)\big), \qquad \hat w(\theta) = \arg\min_{w\ge0} \chi^2(\theta, w), $$
+
+a residual of a handful of parameters instead of a hundred.
+
+## Projected Levenberg–Marquardt
+
+From the velocity-search starting point ([](kinematics.md)), each iteration
+solves
+
+$$ (J^{\rm T}J + \mu\, \mathrm{diag}(s)^2)\, \delta = -J^{\rm T}\rho $$
+
+with $J = \partial\rho/\partial\theta$, $s$ the running maximum of the
+columns' norms (Moré's scaling), and clips $\theta + \delta$ into the bounds.
+A step is accepted if it lowers $\chi^2$; the damping $\mu$ falls by 3 after a
+good step (gain ratio > 0.75) and rises by 3 after a poor or rejected one.
+It stops when the relative change in $\chi^2$ is below `fit_tolerance` and
+the step is below `fit_tolerance` of the bounds' width (after at least 4
+iterations), when $\chi^2$ has stagnated over five accepted steps, after ten
+consecutive rejections, or at `max_iterations` (200). A spaxel that stops at
+`max_iterations` is reported as not converged.
+
+## The Jacobian
+
+For a single spectrum $J$ is estimated by finite differences (forward, or
+central with `central_differences`), re-broadening the templates only for the
+two parameters that change the broadening ($\sigma_\star$, $v_\star$).
+
+A datacube's fast fitter (`cube_fitter: fast`, the default) computes $J$
+exactly, by the Golub–Pereyra variable-projection formula. With $P$ the
+passive (non-zero) set of the weights and $G = A_P^{\rm T}A_P$,
+
+$$ \frac{\partial\rho}{\partial\theta_i} = -(I - \Pi_P)\,\frac{\partial A}{\partial\theta_i}\hat w \;-\; A_P G^{-1}\Big[\Big(\frac{\partial A}{\partial\theta_i}\Big)^{\rm T}\rho\Big]_P , $$
+
+with $\Pi_P = A_P G^{-1}A_P^{\rm T}$ and $\partial A/\partial\theta_i$ from the
+analytic derivatives of the broadening kernel and the attenuation. Measured on
+64 MaNGA spaxels it gives the same fit as finite differences (largest change
+in any fitted value $5\times10^{-4}$ km/s) 2.4–3.9 times faster.

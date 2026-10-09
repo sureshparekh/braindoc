@@ -1,0 +1,12 @@
+﻿brainsp.brain\_subprocess
+=========================
+
+.. automodule:: brainsp.brain_subprocess
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ChildRun
+   

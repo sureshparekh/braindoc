@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.io_utils &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/io_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.io_utils</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.io_utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">NewBrain I/O Utilities</span>
+<span class="sd">Loading spectra, SSP libraries, masks, and writing output.</span>
+
+<span class="sd">Everything here is file handling and numpy except the resampling of a</span>
+<span class="sd">template onto the fitted grid, which is `spectral_engine` and therefore JAX.</span>
+<span class="sd">That import is made inside the two functions that resample, so that asking</span>
+<span class="sd">this module what a library covers, or what a spectrum contains, does not</span>
+<span class="sd">start a JAX backend. The desktop interface asks both of those questions</span>
+<span class="sd">before a device has been chosen, and a backend started in the process that</span>
+<span class="sd">asks is a backend the fit can no longer choose.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;NEWBRAIN&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="load_spectrum">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.load_spectrum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_spectrum</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">has_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load observed spectrum from text file.</span>
+
+<span class="sd">    Supports 2-column (wavelength, flux) or 3-column (wavelength, flux, error).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_path : str</span>
+<span class="sd">        Path to spectrum file.</span>
+<span class="sd">    has_errors : bool</span>
+<span class="sd">        Whether to look for a 3rd column with errors.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wavelength : 1D array</span>
+<span class="sd">    flux : 1D array</span>
+<span class="sd">    err : 1D array or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">wl</span><span class="p">,</span> <span class="n">flux</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">err</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">has_errors</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="n">bad</span> <span class="o">=</span> <span class="n">err</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">bad</span><span class="p">):</span>
+            <span class="n">median_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">err</span><span class="p">[</span><span class="o">~</span><span class="n">bad</span><span class="p">])</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="o">~</span><span class="n">bad</span><span class="p">)</span> <span class="k">else</span> <span class="mf">1.0</span>
+            <span class="n">err</span><span class="p">[</span><span class="n">bad</span><span class="p">]</span> <span class="o">=</span> <span class="n">median_err</span> <span class="o">*</span> <span class="mf">10.0</span>
+
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">n_flagged</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">flag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n_flagged</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Spectrum flags: </span><span class="si">{</span><span class="n">n_flagged</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="si">}</span><span class="s2"> pixels &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;flagged (flag&gt;0)&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wl</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">flag</span></div>
+
+
+<div class="viewcode-block" id="load_bases_dir">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.load_bases_dir">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_bases_dir</span><span class="p">(</span><span class="n">bases_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse a BasesDir-format SSP library file.</span>
+
+<span class="sd">    Format:</span>
+<span class="sd">        Line 1: N_base</span>
+<span class="sd">        Lines 2+: filename  age_yr  metallicity  short_name</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    bases_file : str</span>
+<span class="sd">        Path to BasesDir file.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    entries : list of dict</span>
+<span class="sd">        Each dict has: &#39;filename&#39;, &#39;age_gyr&#39;, &#39;metallicity&#39;, &#39;short_name&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bases_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">n_base</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="s1">&#39;age_gyr&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">,</span>
+                    <span class="s1">&#39;metallicity&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+                    <span class="s1">&#39;short_name&#39;</span><span class="p">:</span> <span class="n">parts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                    <span class="s1">&#39;mstars&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="k">else</span> <span class="mf">1.0</span><span class="p">,</span>
+                    <span class="s1">&#39;yav_flag&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="mi">0</span>
+                <span class="p">})</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  BasesDir: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span><span class="si">}</span><span class="s2"> SSPs from </span><span class="si">{</span><span class="n">bases_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">entries</span></div>
+
+
+<div class="viewcode-block" id="scan_ssp_folder">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.scan_ssp_folder">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">scan_ssp_folder</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;_baseFe&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Scan folder for SSP files matching a suffix (fallback if no BasesDir).</span>
+
+<span class="sd">    Returns list of dicts with filename and placeholder metadata.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">suffix</span><span class="p">)])</span>
+    <span class="n">entries</span> <span class="o">=</span> <span class="p">[{</span>
+        <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">,</span>
+        <span class="s1">&#39;age_gyr&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s1">&#39;metallicity&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s1">&#39;short_name&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">[:</span><span class="mi">16</span><span class="p">],</span>
+        <span class="s1">&#39;mstars&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s1">&#39;yav_flag&#39;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">]</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Folder scan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span><span class="si">}</span><span class="s2"> SSPs from </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">entries</span></div>
+
+
+<span class="n">LYMAN_LIMIT_A</span> <span class="o">=</span> <span class="mf">911.76</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_first_last_wavelength</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;First and last wavelength in a two-column template file, or None.&quot;&quot;&quot;</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">last</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">raw</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">first</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">first</span> <span class="o">=</span> <span class="n">w</span>
+            <span class="n">last</span> <span class="o">=</span> <span class="n">w</span>
+    <span class="k">if</span> <span class="n">first</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span>
+
+
+<div class="viewcode-block" id="library_coverage">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.library_coverage">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">library_coverage</span><span class="p">(</span><span class="n">ssp_folder</span><span class="p">,</span> <span class="n">bases_info</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    What a template library covers, measured from its own files.</span>
+
+<span class="sd">    Whether a library can support the nebular modes is arithmetic rather</span>
+<span class="sd">    than preference. Q(H) is integrated from the raw spectra shortward of</span>
+<span class="sd">    the Lyman limit, so a library whose files begin redward of it emits, by</span>
+<span class="sd">    construction, no ionising photons at all, and its nebular continuum</span>
+<span class="sd">    would be identically zero while the fit ran to completion and looked</span>
+<span class="sd">    converged. A hardcoded list of which libraries qualify goes stale the</span>
+<span class="sd">    first time one is regenerated or a variant is shipped, so the question</span>
+<span class="sd">    is asked of the files.</span>
+
+<span class="sd">    Only the first and last wavelength of each file are read, which is</span>
+<span class="sd">    cheap enough to run before a fit rather than partway through one.</span>
+
+<span class="sd">    Only the nebular modes are affected. spop and espop fit the emission</span>
+<span class="sd">    lines from the catalogue with free amplitudes and predict nothing, so</span>
+<span class="sd">    they need no ionising photon budget and are available for every</span>
+<span class="sd">    library.</span>
+
+<span class="sd">    Returns a dict with the bluest and reddest wavelength across the</span>
+<span class="sd">    library, how many of its files reach below the Lyman limit, and the</span>
+<span class="sd">    modes that are therefore available for it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">blue</span> <span class="o">=</span> <span class="n">red</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">n_ionising</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">unreadable</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">bases_info</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ssp_folder</span><span class="p">,</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="n">_first_last_wavelength</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">span</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">unreadable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+            <span class="k">continue</span>
+        <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">span</span>
+        <span class="n">blue</span> <span class="o">=</span> <span class="n">lo</span> <span class="k">if</span> <span class="n">blue</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">min</span><span class="p">(</span><span class="n">blue</span><span class="p">,</span> <span class="n">lo</span><span class="p">)</span>
+        <span class="n">red</span> <span class="o">=</span> <span class="n">hi</span> <span class="k">if</span> <span class="n">red</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">LYMAN_LIMIT_A</span><span class="p">:</span>
+            <span class="n">n_ionising</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">n_read</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">bases_info</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">unreadable</span><span class="p">)</span>
+    <span class="n">modes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;spop&quot;</span><span class="p">,</span> <span class="s2">&quot;espop&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">n_ionising</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">modes</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;nepop&quot;</span><span class="p">,</span> <span class="s2">&quot;photopop&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;folder&#39;</span><span class="p">:</span> <span class="n">ssp_folder</span><span class="p">,</span>
+        <span class="s1">&#39;blue&#39;</span><span class="p">:</span> <span class="n">blue</span><span class="p">,</span>
+        <span class="s1">&#39;red&#39;</span><span class="p">:</span> <span class="n">red</span><span class="p">,</span>
+        <span class="s1">&#39;n_files&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">bases_info</span><span class="p">),</span>
+        <span class="s1">&#39;n_read&#39;</span><span class="p">:</span> <span class="n">n_read</span><span class="p">,</span>
+        <span class="s1">&#39;n_ionising&#39;</span><span class="p">:</span> <span class="n">n_ionising</span><span class="p">,</span>
+        <span class="s1">&#39;unreadable&#39;</span><span class="p">:</span> <span class="n">unreadable</span><span class="p">,</span>
+        <span class="s1">&#39;modes&#39;</span><span class="p">:</span> <span class="n">modes</span><span class="p">,</span>
+        <span class="s1">&#39;partial&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">n_ionising</span> <span class="o">&lt;</span> <span class="n">n_read</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="describe_coverage">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.describe_coverage">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">describe_coverage</span><span class="p">(</span><span class="n">cov</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;One or two lines stating what a library covers and what it supports.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cov</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;  library      : </span><span class="si">{</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;folder&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> — no readable template files&quot;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;  library      : </span><span class="si">{</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;folder&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> covers &quot;</span>
+             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> A, &quot;</span>
+             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;n_ionising&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;n_read&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> files reach below &quot;</span>
+             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">LYMAN_LIMIT_A</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">,</span>
+             <span class="sa">f</span><span class="s2">&quot;  modes here   : </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;modes&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s1">&#39;nepop&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cov</span><span class="p">[</span><span class="s1">&#39;modes&#39;</span><span class="p">]:</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;                 the nebular modes need coverage below &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">LYMAN_LIMIT_A</span><span class="si">}</span><span class="s2"> A, which this library does not have&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cov</span><span class="p">[</span><span class="s1">&#39;partial&#39;</span><span class="p">]:</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;                 only some files reach it, so Q(H) &quot;</span>
+                     <span class="s2">&quot;would be integrated over a biased subset of the library&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cov</span><span class="p">[</span><span class="s1">&#39;unreadable&#39;</span><span class="p">]:</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;                 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;unreadable&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2"> file(s) could &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;not be read, first: </span><span class="si">{</span><span class="n">cov</span><span class="p">[</span><span class="s1">&#39;unreadable&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="load_native_template">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.load_native_template">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_native_template</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read one template file at the sampling the library wrote it on.</span>
+
+<span class="sd">    Nothing is resampled, normalised or trimmed. This is the form a</span>
+<span class="sd">    line-spread-function correction has to see: the kernel that separates two</span>
+<span class="sd">    line-spread functions is a width in Angstrom on the grid the library was</span>
+<span class="sd">    tabulated on, and a template that has already been mapped onto the fitted</span>
+<span class="sd">    log-lambda grid no longer has that grid to be convolved on.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wavelength : 1D array</span>
+<span class="sd">        The template&#39;s own wavelength axis, in Angstrom.</span>
+<span class="sd">    flux : 1D array</span>
+<span class="sd">        The template&#39;s own flux density, in the library&#39;s own units.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="resample_template">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.resample_template">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resample_template</span><span class="p">(</span><span class="n">ssp_wl</span><span class="p">,</span> <span class="n">ssp_fl</span><span class="p">,</span> <span class="n">target_wl</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Map one template onto the fitted grid, conserving flux.</span>
+
+<span class="sd">    Target pixels outside the template&#39;s own span stay at exactly zero, which</span>
+<span class="sd">    is the signal the coverage test downstream reads to decide which pixels no</span>
+<span class="sd">    template reaches. Because the span is a property of the file and not of</span>
+<span class="sd">    anything done to its flux, a template convolved before this step covers</span>
+<span class="sd">    exactly the pixels it covered before.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.spectral_engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">flux_conserving_resample</span>
+
+    <span class="n">in_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">target_wl</span> <span class="o">&gt;=</span> <span class="n">ssp_wl</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">target_wl</span> <span class="o">&lt;=</span> <span class="n">ssp_wl</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target_wl</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">in_range</span><span class="p">):</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">in_range</span><span class="p">]</span> <span class="o">=</span> <span class="n">flux_conserving_resample</span><span class="p">(</span>
+            <span class="n">ssp_wl</span><span class="p">,</span> <span class="n">ssp_fl</span><span class="p">,</span> <span class="n">target_wl</span><span class="p">[</span><span class="n">in_range</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="load_ssp_templates">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.load_ssp_templates">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_ssp_templates</span><span class="p">(</span><span class="n">ssp_folder</span><span class="p">,</span> <span class="n">bases_info</span><span class="p">,</span> <span class="n">target_wl</span><span class="p">,</span> <span class="n">norm_wavelength</span><span class="p">,</span>
+                       <span class="n">exact_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load all SSP templates and interpolate them onto the target wavelength grid.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ssp_folder : str</span>
+<span class="sd">        Path to SSP files.</span>
+<span class="sd">    bases_info : list of dict</span>
+<span class="sd">        SSP library entries (from load_bases_dir or scan_ssp_folder).</span>
+<span class="sd">    target_wl : 1D array</span>
+<span class="sd">        Target wavelength grid to interpolate onto.</span>
+<span class="sd">    norm_wavelength : float</span>
+<span class="sd">        Normalization wavelength.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    matrix : 2D array (N_pix, N_ssp)</span>
+<span class="sd">        Normalized SSP template matrix.</span>
+<span class="sd">    names : list of str</span>
+<span class="sd">        SSP filenames.</span>
+<span class="sd">    ages : 1D array</span>
+<span class="sd">        SSP ages in Gyr.</span>
+<span class="sd">    metals : 1D array</span>
+<span class="sd">        SSP metallicities.</span>
+<span class="sd">    short_names : list of str</span>
+<span class="sd">        Short names for output.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.spectral_engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">normalize_at_wavelength</span>
+
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">,</span> <span class="n">metals</span><span class="p">,</span> <span class="n">short_names</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="n">mstars</span><span class="p">,</span> <span class="n">yav_flags</span><span class="p">,</span> <span class="n">fbase_norms</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">bases_info</span><span class="p">:</span>
+        <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ssp_folder</span><span class="p">,</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  SSP not found: </span><span class="si">{</span><span class="n">fpath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">ssp_wl</span><span class="p">,</span> <span class="n">ssp_fl</span> <span class="o">=</span> <span class="n">load_native_template</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+        <span class="n">ssp_interp</span> <span class="o">=</span> <span class="n">resample_template</span><span class="p">(</span><span class="n">ssp_wl</span><span class="p">,</span> <span class="n">ssp_fl</span><span class="p">,</span> <span class="n">target_wl</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">exact_norm</span><span class="p">:</span>
+            <span class="n">_i0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">target_wl</span><span class="p">)</span> <span class="o">-</span> <span class="n">norm_wavelength</span><span class="p">)))</span>
+            <span class="n">factor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">ssp_interp</span><span class="p">[</span><span class="n">_i0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span> <span class="ow">or</span> <span class="n">factor</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">factor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">ssp_interp</span><span class="p">[</span><span class="n">ssp_interp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]))</span> \
+                         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">ssp_interp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="mf">1.0</span>
+            <span class="n">ssp_interp</span> <span class="o">=</span> <span class="n">ssp_interp</span> <span class="o">/</span> <span class="n">factor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ssp_interp</span><span class="p">,</span> <span class="n">factor</span> <span class="o">=</span> <span class="n">normalize_at_wavelength</span><span class="p">(</span>
+                <span class="n">ssp_interp</span><span class="p">,</span> <span class="n">target_wl</span><span class="p">,</span> <span class="n">norm_wavelength</span>
+            <span class="p">)</span>
+
+        <span class="n">matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ssp_interp</span><span class="p">)</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+        <span class="n">ages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;age_gyr&#39;</span><span class="p">])</span>
+        <span class="n">metals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;metallicity&#39;</span><span class="p">])</span>
+        <span class="n">short_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;short_name&#39;</span><span class="p">])</span>
+        
+        <span class="n">mstars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mstars&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+        <span class="n">yav_flags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;yav_flag&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">fbase_norms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+
+    <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="k">return</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">metals</span><span class="p">),</span> <span class="n">short_names</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mstars</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">yav_flags</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fbase_norms</span><span class="p">)</span></div>
+
+
+<span class="c1"># The standard SDSS optical emission-line windows, all excluded.</span>
+<span class="n">STANDARD_OPTICAL_MASK</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mf">3710.0</span><span class="p">,</span> <span class="mf">3744.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">3858.0</span><span class="p">,</span> <span class="mf">3880.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">3960.0</span><span class="p">,</span> <span class="mf">3980.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">4092.0</span><span class="p">,</span> <span class="mf">4112.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">4330.0</span><span class="p">,</span> <span class="mf">4350.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">4848.0</span><span class="p">,</span> <span class="mf">4874.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">4940.0</span><span class="p">,</span> <span class="mf">5028.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">5866.0</span><span class="p">,</span> <span class="mf">5916.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">6280.0</span><span class="p">,</span> <span class="mf">6320.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">6528.0</span><span class="p">,</span> <span class="mf">6608.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">6696.0</span><span class="p">,</span> <span class="mf">6752.0</span><span class="p">),</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="read_mask_regions">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.read_mask_regions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_mask_regions</span><span class="p">(</span><span class="n">mask_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The regions of a wavelength mask file, as [(start, end, weight, label)].</span>
+
+<span class="sd">    Two layouts are read:</span>
+
+<span class="sd">    * The .sm / .gm layout (BRAIN&#39;s own when it saves one): a first</span>
+<span class="sd">      line holding the number of regions N, then N lines of</span>
+
+<span class="sd">          start  end  weight  [label ...]</span>
+
+<span class="sd">      Exactly N lines are regions. Whatever follows is free text, and</span>
+<span class="sd">      published mask files use it: the standard SDSS emission-line mask ends with an *example* that gives Ca II K and the</span>
+<span class="sd">      G band twice the weight. Reading every numeric line, as this function</span>
+<span class="sd">      once did, applied that example and up-weighted both windows in every</span>
+<span class="sd">      fit that used the file.</span>
+
+<span class="sd">    * A plain list, with no count: every line that starts with two numbers</span>
+<span class="sd">      is a region. Lines starting with &#39;#&#39; are comments in both layouts.</span>
+
+<span class="sd">    The weight is optional and defaults to 0 (the region is excluded). A</span>
+<span class="sd">    third field that is not a number is the start of the label, and the</span>
+<span class="sd">    region is excluded as usual.</span>
+
+<span class="sd">    Returns (regions, n_skipped): n_skipped counts lines that should have</span>
+<span class="sd">    been regions and did not start with two numbers.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">mask_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">handle</span><span class="p">]</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="n">l</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">l</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)]</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">head</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">limit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[:</span><span class="n">limit</span><span class="p">]</span>
+
+    <span class="n">regions</span><span class="p">,</span> <span class="n">n_bad</span> <span class="o">=</span> <span class="p">[],</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">n_bad</span> <span class="o">+=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="k">continue</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">w0</span><span class="p">,</span> <span class="n">w1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">n_bad</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">weight</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="n">rest</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">rest</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">rest</span> <span class="o">=</span> <span class="n">rest</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">min</span><span class="p">(</span><span class="n">w0</span><span class="p">,</span> <span class="n">w1</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">w0</span><span class="p">,</span> <span class="n">w1</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                        <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rest</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">regions</span><span class="p">,</span> <span class="n">n_bad</span></div>
+
+
+
+<div class="viewcode-block" id="write_mask_regions">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.write_mask_regions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_mask_regions</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">regions</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write regions as a .sm mask file: the count, then one per line.</span>
+
+<span class="sd">    `regions` holds (start, end, weight) or (start, end, weight, label). The</span>
+<span class="sd">    file reads back the same.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+        <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">regions</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+            <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">region</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="n">region</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">region</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">region</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lo</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">hi</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+                         <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">label</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="load_mask">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.load_mask">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_mask</span><span class="p">(</span><span class="n">mask_file</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load a wavelength mask as a per-pixel weight on `wavelength`.</span>
+
+<span class="sd">    The file is read by read_mask_regions, which says which layouts are</span>
+<span class="sd">    understood. A pixel no region covers has weight 1; a region sets the</span>
+<span class="sd">    pixels inside it to its weight (0 excludes them, above 1 makes them count</span>
+<span class="sd">    for more). Later regions override earlier ones.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mask_file : str or None</span>
+<span class="sd">        Path to mask file.</span>
+<span class="sd">    wavelength : 1D array</span>
+<span class="sd">        Wavelength grid.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    weight : 1D float array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wavelength</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mask_file</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">mask_file</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">weight</span>
+
+    <span class="n">regions</span><span class="p">,</span> <span class="n">n_bad</span> <span class="o">=</span> <span class="n">read_mask_regions</span><span class="p">(</span><span class="n">mask_file</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+        <span class="n">weight</span><span class="p">[(</span><span class="n">wavelength</span> <span class="o">&gt;=</span> <span class="n">lo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wavelength</span> <span class="o">&lt;=</span> <span class="n">hi</span><span class="p">)]</span> <span class="o">=</span> <span class="n">w</span>
+    <span class="n">n_reg</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">regions</span><span class="p">)</span>
+
+    <span class="n">n_masked</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weight</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">n_up</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weight</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Mask: </span><span class="si">{</span><span class="n">n_reg</span><span class="si">}</span><span class="s2"> regions, </span><span class="si">{</span><span class="n">n_masked</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span><span class="si">}</span><span class="s2"> pixels &quot;</span>
+           <span class="sa">f</span><span class="s2">&quot;masked (</span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n_masked</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_up</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;, </span><span class="si">{</span><span class="n">n_up</span><span class="si">}</span><span class="s2"> up-weighted&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_bad</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">n_bad</span><span class="si">}</span><span class="s2"> lines of </span><span class="si">{</span><span class="n">mask_file</span><span class="si">}</span><span class="s2"> do not start with two &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;wavelengths and were skipped.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_reg</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">mask_file</span><span class="si">}</span><span class="s2"> produced no regions, so nothing is masked. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Each region needs a line &#39;start end&#39; in Angstrom, with an &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;optional weight and label; a .sm file starts with the &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;number of regions.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">weight</span></div>
+
+
+<div class="viewcode-block" id="stellar_component_flags">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.stellar_component_flags">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">stellar_component_flags</span><span class="p">(</span><span class="n">bases_info</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Which of the loaded templates are stellar populations, said by the library.</span>
+
+<span class="sd">    The template catalogue&#39;s KIND column is the declared answer: &#39;ssp&#39; for a</span>
+<span class="sd">    stellar population and something else -- &#39;powerlaw&#39; -- for a component</span>
+<span class="sd">    that is not one. brain_settings.read_catalogue carries that word onto</span>
+<span class="sd">    every entry, and this reads it back. Nothing here looks at a filename, a</span>
+<span class="sd">    short name, an age or the shape of a spectrum, because all four are</span>
+<span class="sd">    conventions a new library is free to break, and breaking them would move</span>
+<span class="sd">    a mass silently.</span>
+
+<span class="sd">    The lookup is by filename rather than by position: load_ssp_templates</span>
+<span class="sd">    skips an entry whose file is missing, so the loaded arrays can be shorter</span>
+<span class="sd">    than bases_info and a positional flag would then be attached to the wrong</span>
+<span class="sd">    component. A name that no entry describes is a programming error and is</span>
+<span class="sd">    raised rather than assumed stellar.</span>
+
+<span class="sd">    Libraries loaded through load_bases_dir or scan_ssp_folder carry no KIND</span>
+<span class="sd">    at all; those formats cannot express a non-stellar component, so every</span>
+<span class="sd">    entry is a stellar population and the flags come back all True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">kinds</span> <span class="o">=</span> <span class="p">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]:</span> <span class="nb">str</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kind&#39;</span><span class="p">,</span> <span class="s1">&#39;ssp&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+             <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">bases_info</span><span class="p">}</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2"> loaded template(s) are in no catalogue entry, so &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;whether they are stellar populations cannot be said: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">kinds</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ssp&#39;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="population_statistics">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.population_statistics">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">population_statistics</span><span class="p">(</span><span class="n">weights_star</span><span class="p">,</span> <span class="n">norm_factor</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">yav</span><span class="p">,</span> <span class="n">ssp_yav_flags</span><span class="p">,</span>
+                          <span class="n">ssp_mstars</span><span class="p">,</span> <span class="n">ssp_fbase_norms</span><span class="p">,</span> <span class="n">k_norm</span><span class="p">,</span> <span class="n">is_stellar</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The per-template light and mass quantities, for one spectrum or a batch.</span>
+
+<span class="sd">    x_j, Mini_j and Mcor_j are what every population product is built from --</span>
+<span class="sd">    the summary file&#39;s percentage columns, and every population map of a</span>
+<span class="sd">    megacube. They are computed here, once, so that a map value and that</span>
+<span class="sd">    spaxel&#39;s summary line cannot disagree: they are the same arithmetic on</span>
+<span class="sd">    the same weights rather than two implementations of the same formula.</span>
+
+<span class="sd">    A weight is the contribution of a template to the *reddened* spectrum at</span>
+<span class="sd">    the normalisation wavelength. Turning it into a mass means undoing the</span>
+<span class="sd">    extinction that template suffered -- A_V plus YAV for the templates</span>
+<span class="sd">    flagged as young -- and dividing by the library&#39;s flux per unit initial</span>
+<span class="sd">    mass at that wavelength, which is what ssp_fbase_norms holds. Leaving the</span>
+<span class="sd">    extinction out makes the dustiest populations look lighter than they are,</span>
+<span class="sd">    and the error grows with A_V, so it does not show up as an offset.</span>
+
+<span class="sd">    `is_stellar` says, per template, whether that division means anything.</span>
+<span class="sd">    A featureless power law is not a stellar population: it has no stars, no</span>
+<span class="sd">    surviving stellar fraction and no mass, and its fbase_norm is the flux of</span>
+<span class="sd">    an arbitrarily scaled file rather than a flux per solar mass. Its Mini_j</span>
+<span class="sd">    and Mcor_j are therefore exactly zero, it is out of Mini_tot and</span>
+<span class="sd">    Mcor_tot, and its mass percentage columns read 0. The magnitude of what</span>
+<span class="sd">    that removes is set by nothing physical: the same fit, with the same</span>
+<span class="sd">    weights, reports whatever mass the power-law file&#39;s normalisation</span>
+<span class="sd">    happens to imply, so the error it fixes is unbounded rather than small.</span>
+
+<span class="sd">    Its LIGHT is untouched and stays in x_j, in `light` and in flux_tot. The</span>
+<span class="sd">    power law genuinely does contribute light, and a component that is 30 per</span>
+<span class="sd">    cent of the light and 0 per cent of the mass is the correct reading of an</span>
+<span class="sd">    AGN continuum sitting on top of a stellar population. The two columns are</span>
+<span class="sd">    normalised over different sets on purpose: x_j over every component,</span>
+<span class="sd">    Mini_j and Mcor_j over the stellar ones, which is why a summary file can</span>
+<span class="sd">    show a non-zero x_j against a zero Mcor_j without either being a bug.</span>
+
+<span class="sd">    The ionising photon budget is deliberately not touched here. Q(H)_total</span>
+<span class="sd">    is built in brainv1 from the same expression, but what it multiplies is</span>
+<span class="sd">    photons per unit of a template&#39;s own normalisation, and a power law does</span>
+<span class="sd">    ionise. Zeroing a mass is not a statement about photons.</span>
+
+<span class="sd">    The leading axis is optional. Pass a (n_ssp,) weight vector and every</span>
+<span class="sd">    returned array is one-dimensional; pass (n_spec, n_ssp) and the totals</span>
+<span class="sd">    come back as (n_spec,). That is how the batched cube path and the single</span>
+<span class="sd">    spectrum share one implementation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">weights_star</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">flags</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ssp_yav_flags</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="n">mstars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ssp_mstars</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">fbase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ssp_fbase_norms</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">stellar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">is_stellar</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">stellar</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;is_stellar has shape </span><span class="si">{</span><span class="n">stellar</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">weights</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;templates; a misaligned flag would zero the mass of the wrong &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;component and nothing downstream could tell&quot;</span><span class="p">)</span>
+
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">norm_factor</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="n">av_total</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">av</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+                <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">yav</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">flags</span><span class="p">)</span>
+    <span class="n">unreddened</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av_total</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">k_norm</span><span class="p">))</span>
+
+    <span class="n">mini_j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">stellar</span><span class="p">,</span>
+                      <span class="n">weights</span> <span class="o">*</span> <span class="n">norm</span> <span class="o">*</span> <span class="n">unreddened</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">fbase</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">),</span>
+                      <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">mcor_j</span> <span class="o">=</span> <span class="n">mini_j</span> <span class="o">*</span> <span class="n">mstars</span>
+
+    <span class="n">light</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">mini_tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mini_j</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">mcor_tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mcor_j</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">percent</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
+        <span class="n">safe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">total</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">part</span> <span class="o">/</span> <span class="n">safe</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">,</span>
+                        <span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="n">x_j</span> <span class="o">=</span> <span class="n">percent</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">light</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;x_j&#39;</span><span class="p">:</span> <span class="n">x_j</span><span class="p">,</span>
+        <span class="s1">&#39;mini_j&#39;</span><span class="p">:</span> <span class="n">mini_j</span><span class="p">,</span>
+        <span class="s1">&#39;mcor_j&#39;</span><span class="p">:</span> <span class="n">mcor_j</span><span class="p">,</span>
+        <span class="s1">&#39;mini_pct&#39;</span><span class="p">:</span> <span class="n">percent</span><span class="p">(</span><span class="n">mini_j</span><span class="p">,</span> <span class="n">mini_tot</span><span class="p">),</span>
+        <span class="s1">&#39;mcor_pct&#39;</span><span class="p">:</span> <span class="n">percent</span><span class="p">(</span><span class="n">mcor_j</span><span class="p">,</span> <span class="n">mcor_tot</span><span class="p">),</span>
+        <span class="s1">&#39;flux_tot&#39;</span><span class="p">:</span> <span class="n">light</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">norm_factor</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+        <span class="s1">&#39;mini_tot&#39;</span><span class="p">:</span> <span class="n">mini_tot</span><span class="p">,</span>
+        <span class="s1">&#39;mcor_tot&#39;</span><span class="p">:</span> <span class="n">mcor_tot</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="deviation_percent">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.deviation_percent">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">deviation_percent</span><span class="p">(</span><span class="n">flux_observed</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">fitted</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    adev: the mean of abs(observed - model) / observed over the fitted pixels.</span>
+
+<span class="sd">    A deviation relative to the observed flux is undefined where that flux is</span>
+<span class="sd">    not positive, so those pixels are left out of the mean and counted</span>
+<span class="sd">    separately rather than being given an arbitrary value. They are still</span>
+<span class="sd">    fitted and still counted in the chi-square; this is a reporting decision</span>
+<span class="sd">    and not a change to what was minimised.</span>
+
+<span class="sd">    Works on one spectrum or on a batch: the last axis is wavelength.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">flux_observed</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">resid</span> <span class="o">=</span> <span class="n">flux</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">good</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fitted</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">usable</span> <span class="o">=</span> <span class="n">good</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">flux</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">n_used</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">usable</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">usable</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">usable</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                            <span class="mf">0.0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">adev</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">total</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">n_used</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">adev</span><span class="p">,</span> <span class="n">n_used</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">good</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="effective_pixel_count">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.effective_pixel_count">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">effective_pixel_count</span><span class="p">(</span><span class="n">inv_sigma</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Nl_eff: the pixels of non-zero weight, the ones that entered the chi2.</span>
+
+<span class="sd">    A pixel is in the chi2 exactly when its inverse sigma is above zero, so</span>
+<span class="sd">    this is the count the summary file divides by and the count the cube&#39;s</span>
+<span class="sd">    Nl_eff plane carries. Works on one spectrum or on a batch: the last axis</span>
+<span class="sd">    is wavelength.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inv_sigma</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="chi2_per_effective_pixel">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.chi2_per_effective_pixel">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">chi2_per_effective_pixel</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">n_eff</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    chi2 divided by Nl_eff, which is the convention BRAIN reports.</span>
+
+<span class="sd">    The single-spectrum summary, the cube&#39;s CHI2 extension and its PoPBins</span>
+<span class="sd">    ChiSqrt plane all quote this one number, computed here so that they</span>
+<span class="sd">    cannot drift apart: a reader comparing a spaxel of a cube against the</span>
+<span class="sd">    same spectrum fitted on its own is comparing the same quantity. Nothing</span>
+<span class="sd">    is subtracted for the free parameters -- that is the other convention,</span>
+<span class="sd">    and it is reported separately under its own name.</span>
+
+<span class="sd">    Nl_eff is floored at one so that a spectrum which somehow reached this</span>
+<span class="sd">    point with no fitted pixel returns its raw chi2 instead of an infinity.</span>
+<span class="sd">    Scalars and batches alike.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">n_eff</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ensure_folder</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make the folder an output is about to be written into.</span>
+
+<span class="sd">    The output paths carry a folder now rather than naming a bare file in</span>
+<span class="sd">    whatever directory the process started in, and a folder that has never</span>
+<span class="sd">    been used does not exist in a fresh checkout. Creating it here rather</span>
+<span class="sd">    than at every call site means a path that was accepted as a setting is a</span>
+<span class="sd">    path that can be written.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">folder</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="write_summary">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.write_summary">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_summary</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">w_errors</span><span class="p">,</span> <span class="n">n_star</span><span class="p">,</span>
+                  <span class="n">ssp_short</span><span class="p">,</span> <span class="n">ssp_ages</span><span class="p">,</span> <span class="n">ssp_metals</span><span class="p">,</span> <span class="n">ssp_names</span><span class="p">,</span> <span class="n">ssp_yav_flags</span><span class="p">,</span> <span class="n">ssp_mstars</span><span class="p">,</span> <span class="n">ssp_fbase_norms</span><span class="p">,</span> <span class="n">fit_stats</span><span class="p">,</span>
+                  <span class="n">gas_names</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">n_pix</span><span class="p">,</span> <span class="n">wl_range</span><span class="p">,</span> <span class="n">runtime</span><span class="p">,</span> <span class="n">n_fev</span><span class="p">,</span>
+                  <span class="n">nebular_stats</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lsf_report</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gas_report</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write the fit summary to a text file.</span>
+
+<span class="sd">    `vd_min` keeps its historical meaning and its exact value: the dispersion</span>
+<span class="sd">    the kinematic kernel applied to the template library. Everything the</span>
+<span class="sd">    instrument contributes to that number is reported separately, in the</span>
+<span class="sd">    instrumental resolution block, so that no reader has to assume vd_min is</span>
+<span class="sd">    astrophysical and no reader is left with a bare 0.00 to interpret.</span>
+
+<span class="sd">    The gas kinematics are written here too, per kinematic group, because</span>
+<span class="sd">    until now they reached the log and nothing else: a summary file recording</span>
+<span class="sd">    an espop fit stated the emission-line fluxes and said nothing about the</span>
+<span class="sd">    velocity or the width they were fitted with. The two dispersions in this</span>
+<span class="sd">    file follow DIFFERENT conventions and every line that carries one says</span>
+<span class="sd">    which: sigma_star is INTRINSIC, the instrument taken out in quadrature,</span>
+<span class="sd">    while sigma_gas and vd_min are OBSERVED, with the instrument still in</span>
+<span class="sd">    them. See _write_gas_kinematics_block.</span>
+
+<span class="sd">    The emission-line block states the wavelength scale the lines were placed</span>
+<span class="sd">    on, for the same reason every dispersion in this file states its</span>
+<span class="sd">    convention: a flux table that does not say whether its rest wavelengths</span>
+<span class="sd">    were air or vacuum is a table whose gas velocity is ambiguous by 83 km/s,</span>
+<span class="sd">    and nothing else in the file would reveal it. The scale is a declaration</span>
+<span class="sd">    about the observed spectrum, made in the settings file and copied here;</span>
+<span class="sd">    it is not a measurement and not something BRAIN infers.</span>
+
+<span class="sd">    `Mini_tot`, `Mcor_tot` and `Q(H)_total` are apparent, not absolute. They</span>
+<span class="sd">    are the observed flux normalisation divided by the library&#39;s flux per</span>
+<span class="sd">    solar mass, which is a mass only once the flux has been turned into a</span>
+<span class="sd">    luminosity. No distance enters this code anywhere, so the missing factor</span>
+<span class="sd">    is flux_unit * 4*pi*d^2 / L_sun and the reader has to supply it. These</span>
+<span class="sd">    were previously labelled &quot;(Msun)&quot;, which was wrong by whatever that factor</span>
+<span class="sd">    happens to be — about 3.5 dex for a MaNGA spaxel at 100 Mpc, and</span>
+<span class="sd">    distance-dependent, so not even a fixed offset across a sample.</span>
+
+<span class="sd">    The factor carries no template index, so every fraction built from these</span>
+<span class="sd">    numbers was and remains correct: the per-template percentage columns are</span>
+<span class="sd">    bit-identical under a rescaling of the input flux. Only the absolute</span>
+<span class="sd">    normalisation was ever mislabelled, which is why this is a change of</span>
+<span class="sd">    wording and not of arithmetic.</span>
+
+<span class="sd">    x_j, Mini_j(%) and Mcor_j(%) are taken from fit_stats as they were</span>
+<span class="sd">    computed, not rebuilt here from the weights and the totals. They were</span>
+<span class="sd">    rebuilt here once, from the same formulae, and a second implementation of</span>
+<span class="sd">    a formula is a second place for it to change: the whole point of</span>
+<span class="sd">    population_statistics is that a megacube&#39;s population map and this file&#39;s</span>
+<span class="sd">    column are one arithmetic. A power law reaches this table with a non-zero</span>
+<span class="sd">    x_j and a Mini_j(%) and Mcor_j(%) of exactly zero, because it carries</span>
+<span class="sd">    light and has no stars; see population_statistics.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_ensure_folder</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+    <span class="n">av</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">yav</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">sig_s</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">v0_s</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+    <span class="n">w_errors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">w_errors</span><span class="p">)</span> <span class="k">if</span> <span class="n">w_errors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="n">chi2_red</span> <span class="o">=</span> <span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;chi2_red&#39;</span><span class="p">]</span>
+    <span class="n">chi2_data_red</span> <span class="o">=</span> <span class="n">fit_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;chi2_data_red&#39;</span><span class="p">,</span> <span class="n">chi2_red</span><span class="p">)</span>
+    <span class="n">adev</span> <span class="o">=</span> <span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;adev&#39;</span><span class="p">]</span>
+    <span class="n">flux_tot</span> <span class="o">=</span> <span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;flux_tot&#39;</span><span class="p">]</span>
+    <span class="n">mini_tot</span> <span class="o">=</span> <span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;mini_tot&#39;</span><span class="p">]</span>
+    <span class="n">mcor_tot</span> <span class="o">=</span> <span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;mcor_tot&#39;</span><span class="p">]</span>
+
+    <span class="n">fracs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;x_j&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">mini_pct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;mini_pct&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">mcor_pct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;mcor_pct&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;###################################################################</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;## OUTPUT of BRAIN</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;###################################################################</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;## Some input info</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">obs_spectrum_file</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [arq_obs]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">_base_src</span> <span class="o">=</span> <span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">bases_dir_file</span>
+                     <span class="ow">or</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">ssp_folder</span><span class="si">}</span><span class="s2"> (selected)&quot;</span>
+                         <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;bases_entries&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                         <span class="k">else</span> <span class="s1">&#39;folder scan&#39;</span><span class="p">))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_base_src</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [arq_base]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">mask_file</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;None&#39;</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [arq_masks]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_star</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [N_base]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ssp_yav_flags</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [N_YAV_components = # of components with extra extinction!]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">reddening_law</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [red_law_option]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">norm_wavelength</span><span class="si">:</span><span class="s2">&lt;40g</span><span class="si">}</span><span class="s2"> [normalisation_wavelength (A)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Every run states its mode here. It used to be written only inside</span>
+        <span class="c1"># the photoionization block, which exists only in nepop and photopop,</span>
+        <span class="c1"># so an spop or espop summary never said which it was and anything</span>
+        <span class="c1"># reading the file back -- the plot title among them -- had to guess.</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">photoionization_mode</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [photoionization_mode]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ebv</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;galactic_ebv&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">law</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;galactic_law&#39;</span><span class="p">,</span> <span class="s1">&#39;CCM&#39;</span><span class="p">)</span>
+        <span class="n">rv</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;galactic_rv&#39;</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">)</span> <span class="ow">or</span> <span class="mf">3.1</span><span class="p">)</span>
+        <span class="n">how</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, </span><span class="si">{</span><span class="n">law</span><span class="si">}</span><span class="s2">, R_V = </span><span class="si">{</span><span class="n">rv</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">ebv</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ebv</span><span class="si">:</span><span class="s2">&lt;40g</span><span class="si">}</span><span class="s2"> [E(B-V) Galactic, removed before fitting</span><span class="si">{</span><span class="n">how</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;spectrum_redshift&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">who</span> <span class="o">=</span> <span class="s2">&quot;the user&quot;</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;spectrum_in_rest_frame&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;BRAIN&quot;</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">who</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [removed spectrum_redshift = </span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">]</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;## Synthesis Results - Best model ##</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">chi2_red</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;[chi2/Nl_eff (data + regularisation + self-consistency rows, &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;over the Nl_eff pixels the fit ended on)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">chi2_data_red</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;[chi2_data/Nl_eff (data rows only, same Nl_eff pixels)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">adev</span><span class="si">:</span><span class="s2">&gt;12.5f</span><span class="si">}</span><span class="s2">                             [adev (%)]</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;bases_entries&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">entries</span><span class="p">:</span>
+            <span class="n">stellar</span> <span class="o">=</span> <span class="n">stellar_component_flags</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">ssp_names</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">stellar</span><span class="p">):</span>
+                <span class="c1"># The AGN templates are nearly collinear in the optical; only</span>
+                <span class="c1"># their summed light is a measurement, so it is stated once.</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">fracs</span><span class="p">[</span><span class="o">~</span><span class="n">stellar</span><span class="p">]))</span><span class="si">:</span><span class="s2">&gt;12.5f</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;                             [x_AGN (%), light of all &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">~</span><span class="n">stellar</span><span class="p">))</span><span class="si">}</span><span class="s2"> featureless (AGN) components &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;summed; the split between them is not a measurement]</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">flux_tot</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [Flux_tot (units of input spectrum!): the model&#39;s flux at the normalisation wavelength, sum of x_j times fobs_norm]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fit_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fobs_norm&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">fit_stats</span><span class="p">[</span><span class="s1">&#39;fobs_norm&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [fobs_norm (units of input spectrum): the observed flux the spectrum was divided by; multiply normalised fluxes by it]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">mini_tot</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [Mini_tot (apparent; x flux_unit * 4*pi*d_cm^2 / 3.828E33 for Msun)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">mcor_tot</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [Mcor_tot (apparent; x flux_unit * 4*pi*d_cm^2 / 3.828E33 for Msun)]</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">v0_s</span><span class="si">:</span><span class="s2">&gt;7.2f</span><span class="si">}</span><span class="s2">                                  [v0_min  (km/s)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">sig_s</span><span class="si">:</span><span class="s2">&gt;7.2f</span><span class="si">}</span><span class="s2">                                  &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;[vd_min  (km/s), OBSERVED]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">_write_lsf_block</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">lsf_report</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">av</span><span class="si">:</span><span class="s2">&gt;6.4f</span><span class="si">}</span><span class="s2">                                  [AV_min  (mag)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">yav</span><span class="si">:</span><span class="s2">&gt;6.4f</span><span class="si">}</span><span class="s2">                                  [YAV_min (mag)]</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># The last column says what each component is (ssp, powerlaw,</span>
+        <span class="c1"># blackbody ...), so a reader need not guess it from the name.</span>
+        <span class="n">kinds</span> <span class="o">=</span> <span class="p">{</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kind&#39;</span><span class="p">,</span> <span class="s1">&#39;ssp&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                 <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;bases_entries&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])}</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# j     x_j(%)      Mini_j(%)     Mcor_j(%)     age_j(yr)     Z_j      (L/M)_j    YAV?  Mstars   component_j        a/Fe...       SSP_chi2r SSP_adev(%)   SSP_AV   SSP_x(%)  kind</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_star</span><span class="p">):</span>
+            <span class="n">age_yr</span> <span class="o">=</span> <span class="n">ssp_ages</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="n">kinds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ssp_names</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;ssp&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">   </span><span class="si">{</span><span class="n">fracs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;7.4f</span><span class="si">}</span><span class="s2">     </span><span class="si">{</span><span class="n">mini_pct</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;10.4E</span><span class="si">}</span><span class="s2">    </span><span class="si">{</span><span class="n">mcor_pct</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;10.4E</span><span class="si">}</span><span class="s2">    </span><span class="si">{</span><span class="n">age_yr</span><span class="si">:</span><span class="s2">&gt;12.6E</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">ssp_metals</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;7.5f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">ssp_fbase_norms</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;9.3E</span><span class="si">}</span><span class="s2">    </span><span class="si">{</span><span class="n">ssp_yav_flags</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">   </span><span class="si">{</span><span class="n">ssp_mstars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;6.4f</span><span class="si">}</span><span class="s2">   </span><span class="si">{</span><span class="n">ssp_short</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2">  0.0000     0.0E+00      0.00     0.00      0.00  </span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">_write_gas_kinematics_block</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">gas_report</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">gas_names</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Emission Lines ##</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">wavelength_scale</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;[wavelength_scale of the OBSERVED spectrum; the rest &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;wavelengths these lines were placed at are on it]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># What the numbers are. Both facts were true and written nowhere.</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# Fluxes are in units of the NORMALISED spectrum times &quot;</span>
+                    <span class="s2">&quot;Angstrom: multiply by fobs_norm (above) for the units of &quot;</span>
+                    <span class="s2">&quot;the input spectrum.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# They are corrected for the stellar extinction AV_min, &quot;</span>
+                    <span class="s2">&quot;relative to the normalisation wavelength: multiply by &quot;</span>
+                    <span class="s2">&quot;10**(-0.4*AV_min*(q(lambda)-q(lambda_0))) for the flux &quot;</span>
+                    <span class="s2">&quot;as observed (brainsp: FitResult.line_fluxes()).</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# A tied doublet&#39;s flux is its strong line&#39;s; the weak &quot;</span>
+                    <span class="s2">&quot;line is fixed at the atomic ratio.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Line/Doublet&#39;</span><span class="si">:</span><span class="s2">&lt;35</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;Flux&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;Err&#39;</span><span class="si">:</span><span class="s2">&gt;10</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gas_names</span><span class="p">):</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;35</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">weights</span><span class="p">[</span><span class="n">n_star</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;12.4e</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">w_errors</span><span class="p">[</span><span class="n">n_star</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;10.4e</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">nebular_stats</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Photoionization Diagnostics ##</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Q_eff&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [Q_eff (effective ionizing param)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Q_H_total&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [Q(H)_total (apparent, mass-weighted; same scaling as Mcor_tot for photons/s)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tau_ratio&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12.5f</span><span class="si">}</span><span class="s2">                             [tau (predicted/observed Halpha); in photopop mode the penalty rows set this and it is a diagnostic, not a test]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Av_neb&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12.5f</span><span class="si">}</span><span class="s2">                             [AV_neb (mag); in photopop mode the value that minimises chi2, see AV_neb status]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Te&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">electron_temperature</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12.1f</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;                             [T_e (K)&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Te_measured&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;, default&#39;</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ne&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">electron_density</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12.1f</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;                             [n_e (cm^-3)&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ne_measured&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;, default&#39;</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bpt_flag&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">999</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12d</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;                             [BPT_flag &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;(-999 not defined, 0 SF, 1 composite, 2 LINER, 3 Seyfert)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bpt_class&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;undetermined&#39;</span><span class="p">))</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [BPT_class]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;f_neb_norm&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12.5f</span><span class="si">}</span><span class="s2">                             [f_neb (nebular frac at lambda_0)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sc_converged&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">False</span><span class="p">)</span><span class="si">!s:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [self_consistency_converged]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sc_status&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;not applicable&#39;</span><span class="p">))</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [AV_neb status: converged, LOWER_BOUND, UPPER_BOUND, BUDGET_EXHAUSTED]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sc_iterations&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [n_AV_neb refits]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">_dav</span> <span class="o">=</span> <span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sc_d_av_neb&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">))</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">_dav</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [AV_neb bracket width (mag)]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sc_dchi2_range&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">))</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [dchi2 across the whole AV_neb range]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sc_one_sigma&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">))</span><span class="si">:</span><span class="s2">&gt;12.5E</span><span class="si">}</span><span class="s2">                             [AV_neb at dchi2 = 1 (mag); NaN = never reached]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">pred_lines</span> <span class="o">=</span> <span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;predicted_lines&#39;</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="k">if</span> <span class="n">pred_lines</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Predicted Emission Lines (from Q(H)) ##</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Line&#39;</span><span class="si">:</span><span class="s2">&lt;25</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;lambda&#39;</span><span class="si">:</span><span class="s2">&gt;8</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;Predicted&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s1">&#39;Observed&#39;</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">obs_lines</span> <span class="o">=</span> <span class="n">nebular_stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;observed_lines&#39;</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">flux_pred</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pred_lines</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]):</span>
+                    <span class="n">flux_obs</span> <span class="o">=</span> <span class="n">obs_lines</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;25</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">wl</span><span class="si">:</span><span class="s2">&gt;8.1f</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">flux_pred</span><span class="si">:</span><span class="s2">&gt;12.4e</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">flux_obs</span><span class="si">:</span><span class="s2">&gt;12.4e</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Summary written to </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_write_lsf_block</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">lsf_report</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The three dispersions, and where the line-spread functions came from.</span>
+
+<span class="sd">    Written inline with the kinematics rather than in a section of its own,</span>
+<span class="sd">    because sigma_obs is the number directly above it and the difference</span>
+<span class="sd">    between the two is the whole point. A value that is not measurable is</span>
+<span class="sd">    written as an upper limit with a &#39;&lt;&#39;, never as a number that could be</span>
+<span class="sd">    mistaken for a measurement.</span>
+
+<span class="sd">    Every dispersion here states its convention in its own label, OBSERVED or</span>
+<span class="sd">    INTRINSIC, rather than leaving it to be inferred from the name. The file</span>
+<span class="sd">    carries both: sigma_obs and vd_min include the instrument, sigma_star has</span>
+<span class="sd">    it taken out in quadrature, and the gas block below has its own OBSERVED</span>
+<span class="sd">    dispersion which will become an intrinsic one when the line-spread</span>
+<span class="sd">    function reaches the emission line. A reader comparing a stellar and a gas</span>
+<span class="sd">    dispersion from one summary is comparing two different quantities unless</span>
+<span class="sd">    the file says so on every line that carries one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">lsf_report</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_line</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">&gt;7</span><span class="si">}</span><span class="s2">                                  [</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">_line</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;sigma_obs&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;sigma_obs (km/s), OBSERVED, broadening applied to the library&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;delta_sigma_inst&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_why</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;needs instrumental_resolution&quot;</span>
+                <span class="k">if</span> <span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;data_text&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;not set&quot;</span>
+                <span class="k">else</span> <span class="s2">&quot;library resolution unknown&quot;</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;delta_sigma_inst (km/s), </span><span class="si">{</span><span class="n">_why</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;sigma_star (km/s), INTRINSIC, </span><span class="si">{</span><span class="n">_why</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_line</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;delta_sigma_inst&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">+.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;delta_sigma_inst (km/s), signed, data minus library LSF, &quot;</span>
+              <span class="s2">&quot;flux-weighted&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;upper_limit&#39;</span><span class="p">]:</span>
+            <span class="n">_line</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;sigma_star&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;sigma_star (km/s), INTRINSIC, UPPER LIMIT&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_line</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;sigma_star&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;sigma_star (km/s), INTRINSIC, instrument removed in &quot;</span>
+                  <span class="s2">&quot;quadrature&quot;</span><span class="p">)</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;data_text&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;[instrumental_resolution, observed frame]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;library_text&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [library_resolution]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;library_source&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;[library_resolution source]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;redshift&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;7.5f</span><span class="si">}</span><span class="s2">                                  &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;[spectrum_redshift removed before fitting]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">_state</span> <span class="o">=</span> <span class="n">lsf_report</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;state_text&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">_state</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> [LSF correction applied to the library]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">lsf_report</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;n_applied&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;[templates pre-convolved]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">lsf_report</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;n_refused&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;40</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;[templates left at library resolution]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">_wrap</span><span class="p">(</span><span class="n">lsf_report</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">],</span> <span class="mi">70</span><span class="p">):</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# </span><span class="si">{</span><span class="n">chunk</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_write_gas_kinematics_block</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">gas_report</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The fitted gas velocity and dispersion, per kinematic group.</span>
+
+<span class="sd">    These reached the log and nowhere else: a summary file recording a fit</span>
+<span class="sd">    with emission lines in it listed their fluxes and said nothing about the</span>
+<span class="sd">    kinematics they were fitted with, so the one number a reader would quote</span>
+<span class="sd">    was the one number the file did not have.</span>
+
+<span class="sd">    It follows _write_lsf_block&#39;s conventions line for line, because the two</span>
+<span class="sd">    blocks sit in one file and a reader should not have to learn two ways of</span>
+<span class="sd">    being told that something is not measurable. A dispersion on the lower</span>
+<span class="sd">    bound of gas_dispersion_range is written &#39;&lt;value&#39; and labelled UPPER</span>
+<span class="sd">    LIMIT, one on the upper bound &#39;&gt;value&#39; and LOWER LIMIT, and a group with</span>
+<span class="sd">    no detected line prints the word &#39;unconstrained&#39; in place of a number, the</span>
+<span class="sd">    way the stellar block prints &#39;unknown&#39;. What the optimiser actually</span>
+<span class="sd">    returned for such a group is in the &#39;#&#39; reason beneath, where it cannot be</span>
+<span class="sd">    read as a result.</span>
+
+<span class="sd">    sigma_gas is labelled OBSERVED on every line. The instrumental line-spread</span>
+<span class="sd">    function is not yet taken out of the emission-line profile, so the number</span>
+<span class="sd">    includes it; the label states the convention rather than assuming it,</span>
+<span class="sd">    because it becomes an intrinsic dispersion the day the correction lands</span>
+<span class="sd">    and the file must not then be quietly wrong. sigma_inst is written beside</span>
+<span class="sd">    it, per group, so that both halves of the arithmetic are in the file and</span>
+<span class="sd">    neither is done for the reader -- as recommended by Westfall et al.</span>
+<span class="sd">    (2019), and for the reason they give: a sigma_obs below sigma_inst is not a measurement of</span>
+<span class="sd">    zero and must not be clipped to one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">gas_report</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.gas_diagnostics</span><span class="w"> </span><span class="kn">import</span> <span class="n">gas_dispersion_text</span><span class="p">,</span> <span class="n">gas_velocity_text</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Gas Kinematics ##</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_line</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">&gt;13</span><span class="si">}</span><span class="s2">                            [</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">gas_report</span><span class="p">:</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;quotable&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;, </span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">_line</span><span class="p">(</span><span class="n">gas_dispersion_text</span><span class="p">(</span><span class="n">entry</span><span class="p">),</span>
+              <span class="sa">f</span><span class="s2">&quot;sigma_gas group </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> (km/s), OBSERVED</span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">_line</span><span class="p">(</span><span class="n">gas_velocity_text</span><span class="p">(</span><span class="n">entry</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;v0_gas group </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> (km/s)&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;sigma_inst&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_line</span><span class="p">(</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
+                  <span class="sa">f</span><span class="s2">&quot;sigma_inst group </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> (km/s), needs &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;instrumental_resolution&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_line</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;sigma_inst&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                  <span class="sa">f</span><span class="s2">&quot;sigma_inst group </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> (km/s), at the group&#39;s lines, &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;flux-weighted&quot;</span><span class="p">)</span>
+
+        <span class="n">_line</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;n_detected&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;n_lines&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">&quot;lines carrying flux in group </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;reason&quot;</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">_wrap</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;reason&quot;</span><span class="p">],</span> <span class="mi">70</span><span class="p">):</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# </span><span class="si">{</span><span class="n">chunk</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_wrap</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fold a sentence onto fixed-width lines without importing textwrap.&quot;&quot;&quot;</span>
+    <span class="n">words</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">line</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">width</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">word</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<div class="viewcode-block" id="write_fitted_spectrum">
+<a class="viewcode-back" href="../../api/generated/brainsp.io_utils.html#brainsp.io_utils.write_fitted_spectrum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_fitted_spectrum</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">flux_obs</span><span class="p">,</span> <span class="n">total_fit</span><span class="p">,</span>
+                          <span class="n">stellar_fit</span><span class="p">,</span> <span class="n">emission_fit</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">residual</span><span class="p">,</span>
+                          <span class="n">nebular_fit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write the fitted spectrum to a text file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_ensure_folder</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">flux_obs</span><span class="p">,</span> <span class="n">total_fit</span><span class="p">,</span> <span class="n">stellar_fit</span><span class="p">,</span> <span class="n">emission_fit</span><span class="p">]</span>
+    <span class="n">header_parts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">,</span> <span class="s2">&quot;Flux_Obs&quot;</span><span class="p">,</span> <span class="s2">&quot;Total_Fit&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Stellar_Fit&quot;</span><span class="p">,</span> <span class="s2">&quot;Emission_Fit&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">nebular_fit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nebular_fit</span><span class="p">)</span>
+        <span class="n">header_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Nebular_Fit&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+        <span class="n">header_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Err&quot;</span><span class="p">)</span>
+
+    <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
+    <span class="n">header_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Resid&quot;</span><span class="p">)</span>
+
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">]</span>
+
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">cols</span><span class="p">),</span>
+               <span class="n">header</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">header_parts</span><span class="p">),</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.6e</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Spectrum written to </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

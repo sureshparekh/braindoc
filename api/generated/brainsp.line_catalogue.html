@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.line_catalogue &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.line_catalogue';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.atomic_data" href="brainsp.atomic_data.html" />
+    <link rel="prev" title="brainsp.emission_lines" href="brainsp.emission_lines.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.line_catalogue</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.line_catalogue">
+<span id="brainsp-line-catalogue"></span><h1>brainsp.line_catalogue<a class="headerlink" href="#module-brainsp.line_catalogue" title="Link to this heading">#</a></h1>
+<p>BRAIN: which emission lines exist, where they are, and on which wavelength
+scale.</p>
+<p>Pure data and one dispersion formula. This module imports numpy and nothing
+else, so the settings validator and the desktop interface can ask what lines
+and species exist without starting a JAX backend in the process that draws
+the menus. <cite>emission_lines</cite> imports from here and adds the design matrix;
+this is the same split <cite>reddening_catalogue</cite> makes against <cite>reddening_laws</cite>,
+and for the same reason.</p>
+<p>THIS MODULE IS ABOUT THE OBSERVED SPECTRUM’S WAVELENGTH SCALE AND NOTHING
+ELSE. The template library’s scale is a separate open question: an SSP file
+states its own wavelengths, BRAIN resamples the library onto the observed
+grid, and nothing here inspects or converts that grid. Conflating the two
+would mean a single setting silently moving both the lines and the stellar
+continuum, which are measured against each other. Do not extend this module
+to the library without settling that question first.</p>
+<p>VACUUM IS THE SOURCE OF TRUTH, AIR IS DERIVED</p>
+<p>Every wavelength below is stored once, in vacuum, at the precision its
+source gives. The air set is computed from it at import time. Both sets end
+up module-level, importable and printable, so both are available to be
+inspected; only one is maintained.</p>
+<p>Hardcoding both would drift: a label and a number written separately can
+come to disagree while the code around them is corrected. Deriving one set
+from the other removes the opportunity, because there is only one number.</p>
+<p>THE CONVERSION</p>
+<p>Ciddor (1996), Applied Optics 35, 1566, equation 1, for standard air: dry
+air at 15 C, 101325 Pa, 0 per cent humidity, 450 ppm CO2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span><span class="o">^</span><span class="mi">2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1e4</span> <span class="o">/</span> <span class="n">lambda_vac</span><span class="p">[</span><span class="n">A</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">n</span>       <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">5.792105e-2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">238.0185</span> <span class="o">-</span> <span class="n">sigma</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+            <span class="o">+</span> <span class="mf">1.67917e-3</span> <span class="o">/</span> <span class="p">(</span><span class="mf">57.362</span> <span class="o">-</span> <span class="n">sigma</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lambda_air</span> <span class="o">=</span> <span class="n">lambda_vac</span> <span class="o">/</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>The inverse needs no iteration: lambda_vac = lambda_air * n(lambda_air).
+Evaluating n at the air wavelength instead of the vacuum one is a second
+order error, and the measured round trip over the catalogue’s own span,
+3727 to 22477 A, closes to 0.0022 km/s. Over 2000 to 25000 A it closes to
+0.014 km/s, the worst of it at the blue end where the dispersion is
+steepest. Both are four orders below the 83 km/s the conversion itself is
+worth, so the analytic inverse is used rather than a fixed point iteration.</p>
+<p>THE 2000 A GATE</p>
+<p>Below 2000 A the conversion returns the vacuum wavelength unchanged, and
+that is a physical statement, not a numerical guard.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Air</span> <span class="ow">is</span> <span class="n">opaque</span> <span class="n">below</span> <span class="n">about</span> <span class="mi">2000</span> <span class="n">A</span><span class="p">:</span> <span class="n">molecular</span> <span class="n">oxygen</span> <span class="n">absorbs</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span>
+  <span class="n">propagating</span> <span class="n">beam</span><span class="p">,</span> <span class="ow">and</span> <span class="s2">&quot;the wavelength this line would have in air&quot;</span> <span class="ow">is</span>
+  <span class="ow">not</span> <span class="n">a</span> <span class="n">measurable</span> <span class="n">quantity</span><span class="o">.</span> <span class="n">The</span> <span class="n">universal</span> <span class="n">convention</span><span class="p">,</span> <span class="n">NIST</span> <span class="n">ASD</span> <span class="n">included</span><span class="p">,</span>
+  <span class="ow">is</span> <span class="n">that</span> <span class="n">wavelengths</span> <span class="n">below</span> <span class="mi">2000</span> <span class="n">A</span> <span class="n">are</span> <span class="n">quoted</span> <span class="ow">in</span> <span class="n">vacuum</span> <span class="ow">and</span> <span class="n">never</span>
+  <span class="n">converted</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Ciddor</span><span class="s1">&#39;s expression has poles. Its denominators vanish at sigma^2 =</span>
+  <span class="mf">238.0185</span> <span class="ow">and</span> <span class="mf">57.362</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="mf">648.2</span> <span class="n">A</span> <span class="ow">and</span> <span class="mf">1320.3</span> <span class="n">A</span><span class="o">.</span> <span class="n">Ungated</span> <span class="n">it</span> <span class="n">fails</span> <span class="ow">in</span>
+  <span class="n">two</span> <span class="n">ways</span> <span class="n">below</span> <span class="mi">2000</span> <span class="n">A</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">quiet</span> <span class="n">failure</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">dangerous</span> <span class="n">one</span><span class="o">.</span> <span class="n">Just</span>
+  <span class="n">above</span> <span class="n">the</span> <span class="mf">1320.3</span> <span class="n">A</span> <span class="n">pole</span> <span class="n">it</span> <span class="n">returns</span> <span class="n">n</span> <span class="o">=</span> <span class="mf">0.945</span><span class="p">,</span> <span class="n">an</span> <span class="n">index</span> <span class="n">below</span> <span class="n">unity</span> <span class="n">that</span>
+  <span class="n">no</span> <span class="n">transparent</span> <span class="n">medium</span> <span class="n">has</span><span class="p">,</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">shift</span> <span class="n">of</span> <span class="o">+</span><span class="mi">77</span> <span class="n">A</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">wrong</span> <span class="n">direction</span><span class="o">.</span>
+  <span class="n">At</span> <span class="n">Lyman</span> <span class="n">alpha</span><span class="p">,</span> <span class="mf">1215.67</span> <span class="n">A</span><span class="p">,</span> <span class="n">it</span> <span class="n">returns</span> <span class="n">n</span> <span class="o">=</span> <span class="mf">1.000177</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">shift</span> <span class="n">of</span>
+  <span class="o">-</span><span class="mf">0.2</span> <span class="n">A</span><span class="p">:</span> <span class="n">a</span> <span class="n">perfectly</span> <span class="n">ordinary</span> <span class="n">looking</span> <span class="n">answer</span> <span class="n">to</span> <span class="n">a</span> <span class="n">question</span> <span class="n">that</span> <span class="n">has</span> <span class="n">none</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>VALIDITY AT THE RED END, WHICH IS AN EXTRAPOLATION</p>
+<p>Ciddor’s dispersion rests on the measurements of Peck &amp; Reeder (1972),
+which span 230 to 1690 nm. BRAIN’s catalogue reaches 22477 A, so every
+entry beyond 16900 A is extrapolated. This was checked against Mathar
+(2007), J. Opt. A 9, 470, whose multivariate fit covers 1.3 to 2.5 micron
+and is therefore a measurement where Ciddor is an extrapolation. Evaluating
+Mathar’s 1.3-2.5 micron coefficients at 288.15 K, 101325 Pa and 0 per cent
+humidity against Ciddor’s standard air:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">the</span> <span class="n">two</span> <span class="n">differ</span> <span class="n">by</span> <span class="n">a</span> <span class="n">flat</span> <span class="mf">11.7</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span> <span class="n">zero</span> <span class="n">point</span> <span class="n">across</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">band</span><span class="p">;</span>
+<span class="o">-</span> <span class="n">that</span> <span class="n">offset</span> <span class="n">varies</span> <span class="n">by</span> <span class="mf">0.17</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span> <span class="n">between</span> <span class="mf">1.7</span> <span class="ow">and</span> <span class="mf">2.25</span> <span class="n">micron</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span>
+  <span class="n">the</span> <span class="n">span</span> <span class="n">BRAIN</span><span class="s1">&#39;s NIR entries occupy;</span>
+<span class="o">-</span> <span class="n">it</span> <span class="n">varies</span> <span class="n">by</span> <span class="mf">0.18</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span> <span class="n">across</span> <span class="n">the</span> <span class="n">full</span> <span class="mf">1.3</span><span class="o">-</span><span class="mf">2.5</span> <span class="n">micron</span> <span class="n">band</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>A zero point that flat is not a failure of the extrapolation, it is a
+difference in the two authors’ reference states. The measured figures above
+are what was reproduced here. A frequently repeated explanation attributes
+the offset to the 370 ppm CO2 Mathar adopts against Ciddor’s 450 ppm; by
+the standard CO2 scaling of the refractivity, 0.534e-6 per ppm, that
+accounts for only -3.5 m/s and in the opposite sense, so it is not the
+explanation. What matters for BRAIN is the shape, not the zero point: a
+flat offset of 11.7 m/s is 4e-5 of the conversion’s own size, so the red
+end of the catalogue is safe to convert.</p>
+<p>ABOVE 2 MICRON THE CONVENTION FLIPS BACK TO VACUUM</p>
+<p>NIST ASD changes its default output from air to vacuum at exactly 5000
+cm^-1, which is 20000 A. So the six catalogue entries beyond 2 micron –
+H2 20332, He I 20580, H2 21218, Brgamma 21654, H2 22230 and H2 22470 –
+are conventionally quoted in vacuum even by observers who
+quote everything bluewards of them in air. A user who asks BRAIN for “air”
+because their optical data are air, and who then reads a NIR line list off
+a paper, is very likely comparing a converted air wavelength against a
+published vacuum one. BRAIN converts what it is told to convert; the
+convention is stated here so that a 82 km/s disagreement in the K band has
+a written explanation.</p>
+<p>THE CHOICE OF FORMULA IS FREE AT THIS TOLERANCE</p>
+<p>Measured here, as velocity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">formula</span> <span class="n">pair</span>                   <span class="mi">3700</span> <span class="n">A</span>      <span class="mi">6563</span> <span class="n">A</span>      <span class="mi">22000</span> <span class="n">A</span>
+<span class="n">Ciddor</span> <span class="n">vs</span> <span class="n">Morton</span> <span class="p">(</span><span class="mi">2000</span><span class="p">)</span>        <span class="mf">0.05</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span>    <span class="mf">0.30</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span>     <span class="mf">1.7</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span>
+<span class="n">Ciddor</span> <span class="n">vs</span> <span class="n">Edlen</span> <span class="p">(</span><span class="mi">1966</span><span class="p">)</span>         <span class="mf">4.2</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span>     <span class="mf">3.8</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span>      <span class="mf">2.4</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span>
+</pre></div>
+</div>
+<p>Against 82-85 km/s for the conversion itself, every published formula is
+the same formula. What matters is whether you convert at all. The one
+genuinely wrong option is the truncated series that circulates as “the SDSS
+formula”,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">2.735182e-4</span> <span class="o">+</span> <span class="mf">131.4182</span><span class="o">/</span><span class="n">lam</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">2.76249e8</span><span class="o">/</span><span class="n">lam</span><span class="o">^</span><span class="mi">4</span>
+</pre></div>
+</div>
+<p>which departs from Ciddor by 0.14 km/s at H alpha and 0.26 km/s at 22000 A.
+That is still small, but it is a systematic with no source behind it, and
+it is 30 to 60 times the spread among the real formulae.</p>
+<p>THE NAMING RULE</p>
+<p>The integer in a catalogue name is a CONVENTIONAL LABEL. It is not the
+wavelength, it is not rounded from the wavelength, and nothing may derive a
+wavelength from it. <cite>He I_10830</cite> holds 10833.138. <cite>H2_21218</cite> holds
+21218.337, whose air value is 21212.547. <cite>Pabeta_12820</cite> holds 12821.576,
+whose air value is 12818.070, so the label rounds to neither scale.</p>
+<p>Every label here is the traditional one and every label stays as it is, so
+no consumer that matches a name breaks. This is what lets the [O II]
+doublet keep the literature labels 3726 and 3729 rather than being renamed
+to their vacuum roundings 3727 and 3730: renaming would have put one
+component under <cite>[O II]_3727</cite>, which is the historic name of the
+UNRESOLVED BLEND, and every reader of that name would have taken a single
+component for the sum of two.</p>
+<p>PROVENANCE, LINE BY LINE</p>
+<p>Riffel et al. (2019) remains the authority for WHICH lines belong in the
+catalogue. It is not the source of the numbers. Every atomic wavelength
+below is from the NIST Atomic Spectra Database, and every molecular
+hydrogen wavelength is from Roueff, Abgrall, Czachorowski, Pachucki,
+Puchalski &amp; Komasa (2019), A&amp;A 630, A58, Table 2, because NIST ASD carries
+no molecular hydrogen.</p>
+<p>NIST entries are Ritz wavelengths – computed from the fitted energy levels
+– except where marked. Ritz values are usually the more precise of the two
+because they are constrained by the whole level system rather than by one
+measurement.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">O</span> <span class="n">II</span><span class="p">]</span> <span class="mi">3726</span><span class="p">,</span> <span class="mi">3729</span>   <span class="n">Ritz</span><span class="o">.</span> <span class="n">O</span> <span class="n">II</span> <span class="mi">4</span><span class="n">S</span><span class="o">*</span><span class="n">_3</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="n">D</span><span class="o">*</span><span class="n">_3</span><span class="o">/</span><span class="mi">2</span> <span class="ow">and</span> <span class="o">-</span> <span class="mi">2</span><span class="n">D</span><span class="o">*</span><span class="n">_5</span><span class="o">/</span><span class="mf">2.</span>
+<span class="n">H10</span><span class="p">,</span> <span class="n">H9</span><span class="p">,</span> <span class="n">H8</span>         <span class="n">Ritz</span><span class="o">.</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span> <span class="o">-&gt;</span> <span class="mf">2.</span>
+<span class="n">H</span> <span class="n">epsilon</span>           <span class="n">Ritz</span><span class="o">.</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">-&gt;</span> <span class="mf">2.</span>
+<span class="n">H</span> <span class="n">delta</span><span class="p">,</span> <span class="n">H</span> <span class="n">gamma</span>    <span class="n">Ritz</span><span class="o">.</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span> <span class="o">-&gt;</span> <span class="mf">2.</span>
+<span class="n">H</span> <span class="n">beta</span><span class="p">,</span> <span class="n">H</span> <span class="n">alpha</span>     <span class="n">Ritz</span><span class="o">.</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mf">2.</span>
+<span class="p">[</span><span class="n">Ne</span> <span class="n">III</span><span class="p">]</span> <span class="mi">3869</span>       <span class="n">Ritz</span><span class="o">.</span>
+<span class="p">[</span><span class="n">O</span> <span class="n">III</span><span class="p">]</span> <span class="mi">4363</span>        <span class="n">Ritz</span><span class="o">.</span>
+<span class="n">He</span> <span class="n">II</span> <span class="mi">4686</span>          <span class="n">g</span><span class="o">.</span><span class="n">A</span><span class="o">-</span><span class="n">weighted</span> <span class="n">centroid</span> <span class="n">of</span> <span class="n">the</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">-&gt;</span> <span class="mi">3</span> <span class="n">multiplet</span><span class="o">.</span>
+<span class="p">[</span><span class="n">O</span> <span class="n">III</span><span class="p">]</span> <span class="mi">4959</span><span class="p">,</span> <span class="mi">5007</span>  <span class="n">Ritz</span><span class="o">.</span>
+<span class="n">He</span> <span class="n">I</span> <span class="mi">5876</span>           <span class="n">emissivity</span><span class="o">-</span><span class="n">weighted</span> <span class="n">centroid</span> <span class="n">of</span> <span class="n">the</span>
+                    <span class="mi">1</span><span class="n">s2p</span> <span class="mi">3</span><span class="n">P</span><span class="o">*</span> <span class="o">-</span> <span class="mi">1</span><span class="n">s3d</span> <span class="mi">3</span><span class="n">D</span> <span class="n">multiplet</span><span class="o">.</span>
+<span class="p">[</span><span class="n">O</span> <span class="n">I</span><span class="p">]</span> <span class="mi">6300</span>          <span class="n">Ritz</span><span class="o">.</span>
+<span class="p">[</span><span class="n">N</span> <span class="n">II</span><span class="p">]</span> <span class="mi">6548</span><span class="p">,</span> <span class="mi">6583</span>   <span class="n">Ritz</span><span class="o">.</span>
+<span class="p">[</span><span class="n">S</span> <span class="n">II</span><span class="p">]</span> <span class="mi">6716</span><span class="p">,</span> <span class="mi">6731</span>   <span class="n">NIST</span> <span class="n">OBSERVED</span><span class="p">,</span> <span class="ow">not</span> <span class="n">Ritz</span><span class="o">.</span> <span class="n">See</span> <span class="n">below</span><span class="o">.</span>
+<span class="p">[</span><span class="n">S</span> <span class="n">III</span><span class="p">]</span> <span class="mi">9069</span><span class="p">,</span> <span class="mi">9531</span>  <span class="n">Ritz</span><span class="p">,</span> <span class="n">to</span> <span class="n">one</span> <span class="n">decimal</span> <span class="n">only</span><span class="o">.</span> <span class="n">See</span> <span class="n">below</span><span class="o">.</span>
+<span class="p">[</span><span class="n">C</span> <span class="n">I</span><span class="p">]</span> <span class="mi">9824</span><span class="p">,</span> <span class="mi">9850</span>    <span class="n">Ritz</span><span class="o">.</span>
+<span class="n">Pa</span> <span class="n">delta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span>    <span class="n">Ritz</span><span class="o">.</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span> <span class="o">-&gt;</span> <span class="mf">3.</span>
+  <span class="n">beta</span><span class="p">,</span> <span class="n">alpha</span>
+<span class="n">He</span> <span class="n">I</span> <span class="mi">10830</span>          <span class="n">g</span><span class="o">-</span><span class="n">weighted</span> <span class="n">centroid</span> <span class="n">of</span> <span class="n">the</span>
+                    <span class="mi">1</span><span class="n">s2s</span> <span class="mi">3</span><span class="n">S_1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">s2p</span> <span class="mi">3</span><span class="n">P</span><span class="o">*</span> <span class="n">triplet</span><span class="o">.</span>
+<span class="p">[</span><span class="n">P</span> <span class="n">II</span><span class="p">]</span> <span class="mi">11470</span><span class="p">,</span> <span class="mi">11886</span> <span class="n">Ritz</span><span class="p">,</span> <span class="n">derived</span> <span class="kn">from</span><span class="w"> </span><span class="nn">NIST</span> <span class="n">ASD</span> <span class="n">LEVELS</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">lines</span><span class="o">.</span>
+                    <span class="n">See</span> <span class="n">below</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Fe</span> <span class="n">II</span><span class="p">]</span> <span class="mi">12567</span><span class="p">,</span>      <span class="n">Ritz</span><span class="o">.</span>
+  <span class="mi">13209</span><span class="p">,</span> <span class="mi">16436</span>
+<span class="n">Br</span> <span class="mi">10</span><span class="p">,</span> <span class="n">Br</span> <span class="n">delta</span><span class="p">,</span>    <span class="n">Ritz</span><span class="o">.</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span> <span class="o">-&gt;</span> <span class="mf">4.</span>
+  <span class="n">Br</span> <span class="n">gamma</span>
+<span class="n">H2</span> <span class="mi">19570</span> <span class="o">..</span> <span class="mi">22470</span>   <span class="n">Roueff</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="p">(</span><span class="mi">2019</span><span class="p">)</span> <span class="n">Table</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span><span class="o">-</span><span class="mi">0</span> <span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="o">-</span><span class="mi">0</span> <span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+                    <span class="mi">1</span><span class="o">-</span><span class="mi">0</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="o">-</span><span class="mi">0</span> <span class="n">S</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">-</span><span class="mi">1</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>FOUR DELIBERATE CHOICES, EACH MEASURED</p>
+<ol class="arabic simple">
+<li><p>[S II] 6716 and 6731 use NIST OBSERVED rather than Ritz. The two agree</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inside</span> <span class="n">their</span> <span class="n">stated</span> <span class="n">uncertainties</span><span class="p">,</span> <span class="n">so</span> <span class="n">this</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">claim</span> <span class="n">that</span> <span class="n">one</span> <span class="ow">is</span>
+<span class="n">more</span> <span class="n">accurate</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">claim</span> <span class="n">about</span> <span class="n">continuity</span><span class="p">:</span> <span class="n">the</span> <span class="n">observed</span> <span class="n">values</span>
+<span class="n">reduce</span> <span class="n">through</span> <span class="n">Ciddor</span> <span class="n">to</span> <span class="mf">6716.440</span> <span class="ow">and</span> <span class="mf">6730.815</span> <span class="ow">in</span> <span class="n">air</span><span class="p">,</span> <span class="n">which</span> <span class="n">are</span> <span class="n">the</span>
+<span class="n">canonical</span> <span class="n">numbers</span> <span class="n">every</span> <span class="n">published</span> <span class="p">[</span><span class="n">S</span> <span class="n">II</span><span class="p">]</span> <span class="n">density</span> <span class="n">calibration</span> <span class="ow">is</span> <span class="n">keyed</span>
+<span class="n">to</span><span class="p">,</span> <span class="k">while</span> <span class="n">the</span> <span class="n">Ritz</span> <span class="n">values</span> <span class="n">give</span> <span class="mf">6716.43</span> <span class="ow">and</span> <span class="mf">6730.80</span><span class="o">.</span> <span class="n">BRAIN</span><span class="s1">&#39;s own density</span>
+<span class="n">diagnostic</span> <span class="n">reads</span> <span class="n">this</span> <span class="n">doublet</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">calibration</span> <span class="n">it</span> <span class="n">reads</span> <span class="ow">is</span> <span class="n">quoted</span>
+<span class="n">against</span> <span class="n">the</span> <span class="n">canonical</span> <span class="n">pair</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>He I 5876 uses the emissivity-weighted centroid of the 1s2p 3P* - 1s3d</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="n">D</span> <span class="n">multiplet</span><span class="p">,</span> <span class="mf">5877.289</span><span class="p">,</span> <span class="n">which</span> <span class="n">sits</span> <span class="mf">0.046</span> <span class="n">A</span> <span class="o">--</span> <span class="mf">2.35</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span> <span class="o">--</span> <span class="n">redward</span> <span class="n">of</span>
+<span class="n">the</span> <span class="n">strongest</span> <span class="n">single</span> <span class="n">component</span><span class="p">,</span> <span class="mf">5877.243</span><span class="o">.</span> <span class="n">BRAIN</span> <span class="n">fits</span> <span class="n">this</span> <span class="n">line</span> <span class="k">as</span> <span class="n">one</span>
+<span class="n">Gaussian</span> <span class="n">against</span> <span class="n">a</span> <span class="n">blend</span> <span class="n">it</span> <span class="n">cannot</span> <span class="n">resolve</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">centre</span> <span class="n">of</span> <span class="n">a</span> <span class="n">single</span>
+<span class="n">Gaussian</span> <span class="n">fitted</span> <span class="n">to</span> <span class="n">that</span> <span class="n">blend</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">emissivity</span> <span class="n">centroid</span><span class="p">,</span> <span class="ow">not</span> <span class="n">the</span>
+<span class="n">strongest</span> <span class="n">component</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>[S III] 9069 and 9531 are given to one decimal because that is all</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">there</span> <span class="ow">is</span><span class="o">.</span> <span class="n">The</span> <span class="n">S</span> <span class="n">III</span> <span class="mi">1</span><span class="n">D2</span> <span class="n">upper</span> <span class="n">level</span> <span class="ow">is</span> <span class="n">tabulated</span> <span class="ow">in</span> <span class="n">NIST</span> <span class="n">ASD</span> <span class="n">to</span> <span class="mf">0.1</span>
+<span class="n">cm</span><span class="o">^-</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="mf">0.08</span> <span class="n">A</span> <span class="n">at</span> <span class="mi">9069</span> <span class="n">A</span><span class="p">,</span> <span class="n">so</span> <span class="n">a</span> <span class="n">third</span> <span class="n">decimal</span> <span class="n">here</span> <span class="n">would</span> <span class="n">be</span>
+<span class="n">invented</span><span class="o">.</span> <span class="n">The</span> <span class="n">air</span> <span class="n">values</span> <span class="n">that</span> <span class="n">follow</span><span class="p">,</span> <span class="mf">9068.61</span> <span class="ow">and</span> <span class="mf">9530.59</span><span class="p">,</span> <span class="n">carry</span> <span class="n">the</span>
+<span class="n">same</span> <span class="mf">0.08</span> <span class="n">A</span> <span class="n">uncertainty</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>[P II] 11470 and 11886 are Ritz values computed here from the NIST ASD</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LEVELS</span> <span class="n">tables</span><span class="p">,</span> <span class="n">because</span> <span class="n">ASD</span> <span class="n">has</span> <span class="n">no</span> <span class="n">P</span> <span class="n">II</span> <span class="n">line</span> <span class="n">entries</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">range</span> <span class="n">at</span>
+<span class="nb">all</span><span class="o">.</span> <span class="n">They</span> <span class="n">are</span> <span class="n">therefore</span> <span class="n">one</span> <span class="n">derivation</span> <span class="n">removed</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">other</span> <span class="n">atomic</span>
+<span class="n">entries</span><span class="p">,</span> <span class="ow">and</span> <span class="n">are</span> <span class="n">given</span> <span class="n">to</span> <span class="n">one</span> <span class="n">decimal</span> <span class="k">for</span> <span class="n">the</span> <span class="n">same</span> <span class="n">reason</span> <span class="k">as</span> <span class="p">[</span><span class="n">S</span> <span class="n">III</span><span class="p">]</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>THE FIVE ENTRIES THAT WERE UNDER REVIEW, AND WHAT THE REVIEW FOUND</p>
+<p>Five NIR entries were held at the whole-Angstrom value they had always
+had, because each was reported MISIDENTIFIED – the wrong species or the
+wrong transition, not merely a rounded wavelength – and a precise
+wavelength for the wrong transition is worse than a rounded one, because
+it looks authoritative. The review is done. Every value below was
+re-derived here from the NIST ASD LEVELS tables as 1e8/d(sigma) and agreed
+with the published Ritz wavelength to the last printed digit.</p>
+<p>Three of the five claims were upheld, two were not:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">He</span> <span class="n">II_10122</span>     <span class="n">IDENTIFICATION</span> <span class="n">UPHELD</span><span class="p">,</span> <span class="n">WAVELENGTH</span> <span class="n">WRONG</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">He</span> <span class="n">II</span><span class="p">,</span>
+                <span class="ow">not</span> <span class="n">the</span> <span class="n">Pa</span> <span class="n">gamma</span> <span class="ow">or</span> <span class="n">He</span> <span class="n">I</span> <span class="n">blend</span> <span class="n">that</span> <span class="n">was</span> <span class="n">alleged</span><span class="p">:</span> <span class="n">Pa</span> <span class="n">gamma</span>
+                <span class="ow">is</span> <span class="mi">820</span> <span class="n">A</span> <span class="n">away</span><span class="p">,</span> <span class="ow">and</span> <span class="n">NIST</span> <span class="n">lists</span> <span class="n">no</span> <span class="n">He</span> <span class="n">I</span> <span class="n">transition</span> <span class="n">between</span>
+                <span class="mf">10074.786</span> <span class="ow">and</span> <span class="mf">10141.203</span><span class="p">,</span> <span class="n">so</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">nothing</span> <span class="n">to</span> <span class="n">blend</span>
+                <span class="k">with</span><span class="o">.</span> <span class="n">The</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">-&gt;</span> <span class="mi">4</span> <span class="n">multiplet</span><span class="p">,</span> <span class="mi">19</span> <span class="n">components</span>
+                <span class="n">spanning</span> <span class="mf">10125.628</span> <span class="n">to</span> <span class="mf">10126.762</span><span class="p">,</span> <span class="n">whose</span> <span class="n">g</span><span class="o">.</span><span class="n">A</span><span class="o">-</span><span class="n">weighted</span>
+                <span class="n">centroid</span> <span class="ow">is</span> <span class="mf">10126.385</span> <span class="o">--</span> <span class="n">the</span> <span class="n">same</span> <span class="n">construction</span> <span class="k">as</span> <span class="n">He</span> <span class="n">II</span>
+                <span class="mf">4686.</span> <span class="n">The</span> <span class="n">old</span> <span class="mf">10122.0</span> <span class="n">was</span> <span class="mf">129.8</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span> <span class="n">blueward</span> <span class="n">of</span> <span class="n">that</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">Fe</span> <span class="n">II</span><span class="p">]</span><span class="n">_12950</span>   <span class="n">SPECIES</span> <span class="n">UPHELD</span><span class="p">,</span> <span class="n">MULTIPLET</span> <span class="n">CLAIM</span> <span class="n">REJECTED</span><span class="o">.</span> <span class="n">It</span> <span class="n">was</span> <span class="n">alleged</span>
+                <span class="n">to</span> <span class="n">be</span> <span class="n">the</span> <span class="n">wrong</span> <span class="n">member</span> <span class="n">of</span> <span class="n">the</span> <span class="n">multiplet</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="ow">not</span><span class="p">:</span> <span class="n">the</span>
+                <span class="n">only</span> <span class="n">other</span> <span class="n">forbidden</span> <span class="p">[</span><span class="n">Fe</span> <span class="n">II</span><span class="p">]</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">window</span> <span class="ow">is</span>
+                <span class="n">a6D1</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a4D3</span><span class="o">/</span><span class="mi">2</span> <span class="n">at</span> <span class="mf">12981.246</span><span class="p">,</span> <span class="mi">720</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span> <span class="n">away</span><span class="o">.</span> <span class="n">The</span> <span class="n">entry</span> <span class="ow">is</span>
+                <span class="n">a6D5</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a4D5</span><span class="o">/</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">always</span> <span class="n">was</span><span class="p">;</span> <span class="n">only</span> <span class="n">the</span> <span class="n">number</span> <span class="n">was</span>
+                <span class="n">wrong</span><span class="p">,</span> <span class="n">by</span> <span class="o">+</span><span class="mf">87.9</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="o">.</span> <span class="mf">12946.2030</span><span class="p">,</span> <span class="n">Ritz</span><span class="p">,</span> <span class="o">+-</span><span class="mf">0.0010</span> <span class="n">A</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">Fe</span> <span class="n">II</span><span class="p">]</span><span class="n">_15342</span>   <span class="n">SPECIES</span> <span class="n">UPHELD</span><span class="p">,</span> <span class="s2">&quot;NOT [Fe II]&quot;</span> <span class="n">REJECTED</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">the</span>
+                <span class="n">forbidden</span> <span class="n">a4F9</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a4D5</span><span class="o">/</span><span class="mi">2</span> <span class="n">line</span> <span class="n">at</span> <span class="mf">15338.9393</span><span class="p">,</span> <span class="n">Ritz</span><span class="p">,</span>
+                <span class="o">+-</span><span class="mf">0.0016</span> <span class="n">A</span><span class="p">;</span> <span class="n">the</span> <span class="n">old</span> <span class="n">value</span> <span class="n">was</span> <span class="o">+</span><span class="mf">59.8</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span> <span class="n">redward</span><span class="o">.</span> <span class="n">There</span>
+                <span class="n">are</span> <span class="n">permitted</span> <span class="n">Fe</span> <span class="n">II</span> <span class="n">components</span> <span class="n">at</span> <span class="mf">15340.54</span> <span class="ow">and</span> <span class="mf">15343.04</span><span class="p">,</span>
+                <span class="n">but</span> <span class="n">they</span> <span class="n">are</span> <span class="n">high</span><span class="o">-</span><span class="n">excitation</span> <span class="mi">3</span><span class="n">d6</span><span class="p">(</span><span class="mi">5</span><span class="n">D</span><span class="p">)</span><span class="mi">6</span><span class="n">p</span><span class="o">-</span><span class="mi">6</span><span class="n">d</span> <span class="n">transitions</span><span class="p">,</span>
+                <span class="ow">not</span> <span class="n">nebular</span><span class="p">,</span> <span class="ow">and</span> <span class="n">no</span> <span class="n">NIR</span> <span class="n">line</span> <span class="nb">list</span> <span class="n">identifies</span> <span class="n">the</span> <span class="mf">1.534</span>
+                <span class="n">micron</span> <span class="n">feature</span> <span class="k">as</span> <span class="n">anything</span> <span class="n">but</span> <span class="n">the</span> <span class="n">forbidden</span> <span class="n">line</span><span class="o">.</span> <span class="n">That</span>
+                <span class="n">exclusion</span> <span class="n">rests</span> <span class="n">on</span> <span class="n">the</span> <span class="n">physics</span><span class="p">;</span> <span class="n">no</span> <span class="n">paper</span> <span class="n">was</span> <span class="n">found</span> <span class="n">that</span>
+                <span class="n">states</span> <span class="n">it</span> <span class="n">outright</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">Fe</span> <span class="n">II</span><span class="p">]</span><span class="o">+</span><span class="n">Br11</span>    <span class="n">BLEND</span> <span class="n">CLAIM</span> <span class="n">UPHELD</span><span class="o">.</span> <span class="p">[</span><span class="n">Fe</span> <span class="n">II</span><span class="p">]</span> <span class="n">a4F7</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a4D5</span><span class="o">/</span><span class="mi">2</span> <span class="ow">is</span> <span class="n">at</span>
+                <span class="mf">16773.4056</span> <span class="ow">and</span> <span class="n">Br</span> <span class="mi">11</span><span class="o">-</span><span class="mi">4</span> <span class="n">at</span> <span class="mf">16811.129</span><span class="p">:</span> <span class="mf">37.7</span> <span class="n">A</span> <span class="n">apart</span><span class="p">,</span> <span class="n">which</span>
+                <span class="ow">is</span> <span class="mi">674</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="o">.</span> <span class="n">Resolving</span> <span class="n">that</span> <span class="n">needs</span> <span class="n">only</span> <span class="n">R</span> <span class="o">&gt;</span> <span class="mi">450</span><span class="p">,</span> <span class="ow">and</span> <span class="n">every</span>
+                <span class="n">NIR</span> <span class="n">spectrograph</span> <span class="n">that</span> <span class="n">reaches</span> <span class="mf">1.68</span> <span class="n">micron</span> <span class="n">does</span> <span class="n">far</span>
+                <span class="n">better</span><span class="p">;</span> <span class="n">Riffel</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="mi">2006</span><span class="p">,</span> <span class="n">the</span> <span class="n">source</span> <span class="n">of</span> <span class="n">this</span> <span class="n">entry</span><span class="s1">&#39;s</span>
+                <span class="n">label</span><span class="p">,</span> <span class="n">tabulates</span> <span class="n">the</span> <span class="n">two</span> <span class="k">as</span> <span class="n">separate</span> <span class="n">rows</span> <span class="k">with</span>
+                <span class="n">independent</span> <span class="n">fluxes</span><span class="o">.</span> <span class="n">Worse</span><span class="p">,</span> <span class="n">Br</span> <span class="mi">11</span> <span class="n">was</span> <span class="n">named</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">label</span>
+                <span class="ow">and</span> <span class="n">then</span> <span class="n">never</span> <span class="n">modelled</span> <span class="o">--</span> <span class="n">the</span> <span class="n">composite</span> <span class="n">carried</span> <span class="n">one</span>
+                <span class="n">column</span> <span class="n">at</span> <span class="mi">16773</span><span class="p">,</span> <span class="n">so</span> <span class="mi">16811</span> <span class="n">was</span> <span class="n">left</span> <span class="n">to</span> <span class="n">the</span> <span class="n">continuum</span><span class="o">.</span> <span class="n">The</span>
+                <span class="n">entry</span> <span class="ow">is</span> <span class="n">now</span> <span class="p">[</span><span class="n">Fe</span> <span class="n">II</span><span class="p">]</span><span class="n">_16773</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Br11_16811</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">line</span> <span class="ow">in</span>
+                <span class="n">its</span> <span class="n">own</span> <span class="n">right</span> <span class="k">with</span> <span class="n">a</span> <span class="n">column</span> <span class="n">of</span> <span class="n">its</span> <span class="n">own</span><span class="o">.</span>
+
+<span class="n">H2_20580</span>        <span class="n">MISIDENTIFICATION</span> <span class="n">UPHELD</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">He</span> <span class="n">I</span> <span class="mi">1</span><span class="n">s2s</span> <span class="mi">1</span><span class="n">S0</span> <span class="o">-</span> <span class="mi">1</span><span class="n">s2p</span>
+                <span class="mi">1</span><span class="n">P</span><span class="o">*</span><span class="mi">1</span> <span class="n">at</span> <span class="mf">20586.90463</span><span class="p">,</span> <span class="n">Ritz</span><span class="p">,</span> <span class="o">+-</span><span class="mf">0.00003</span> <span class="n">A</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Riffel</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span>
+                <span class="mi">2006</span> <span class="n">labels</span> <span class="n">this</span> <span class="n">row</span> <span class="n">He</span> <span class="n">I</span><span class="p">,</span> <span class="ow">not</span> <span class="n">H2</span><span class="o">.</span> <span class="n">The</span> <span class="n">nearest</span> <span class="n">H2</span>
+                <span class="n">transition</span> <span class="n">observable</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">galaxy</span> <span class="n">spectrum</span> <span class="o">--</span> <span class="n">v_upper</span> <span class="o">&lt;=</span>
+                <span class="mi">3</span> <span class="o">--</span> <span class="ow">is</span> <span class="mi">3</span><span class="o">-</span><span class="mi">2</span> <span class="n">S</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="mf">20655.84</span><span class="p">,</span> <span class="mi">1104</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span> <span class="n">away</span><span class="p">;</span> <span class="n">the</span> <span class="n">nearest</span>
+                <span class="n">member</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">1</span><span class="o">-</span><span class="mi">0</span> <span class="n">S</span> <span class="n">branch</span> <span class="n">that</span> <span class="n">supplies</span> <span class="n">the</span> <span class="n">catalogue</span><span class="s1">&#39;s</span>
+                <span class="n">other</span> <span class="n">H2</span> <span class="n">entries</span> <span class="ow">is</span> <span class="mi">1</span><span class="o">-</span><span class="mi">0</span> <span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">at</span> <span class="mf">20337.578</span><span class="p">,</span> <span class="mi">242</span> <span class="n">A</span> <span class="n">away</span><span class="o">.</span>
+                <span class="n">The</span> <span class="n">entry</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">He</span> <span class="n">I_20580</span><span class="p">,</span> <span class="mf">100.6</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span> <span class="n">redward</span> <span class="n">of</span> <span class="n">the</span>
+                <span class="n">value</span> <span class="n">it</span> <span class="n">replaces</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Both species corrections keep the line in kinematic group 0, so nothing
+moves between groups, and Br11 joins group 0 with the rest of the series.</p>
+<p>WHY THIS MATTERED, AND WHAT IT DID NOT MATTER FOR</p>
+<p>It was separately alleged that the NIR table mixes air and vacuum. It does
+not. Twenty-two of the 27 entries were on one scale, vacuum, and 20 of
+those reproduce NIST or Roueff to 0.00 km/s. The five above were wrong by
+the SAME velocity in air mode as in vacuum mode, because the stored value
+and the truth convert through Ciddor alike and the fractional error
+survives. So declaring a wavelength_scale did put NIR data on one scale;
+what it could not do was put these five at the right place on it.</p>
+<p>What is genuinely mixed is the integer LABELS, which are transcribed from
+the lambda_lab column of Riffel et al. 2006 and inherit its own mixture:
+mostly air (9069, 9531, 10830, 21213) but vacuum for 11886, 12570, 13209,
+16773. Comparing a label against an air value therefore shows the 82 km/s
+air-vacuum difference for every CORRECT entry, which is almost certainly
+where the mixed-scale report came from. Under THE NAMING RULE above this is
+inert: nothing in the tree derives a wavelength from a name, and a sweep
+for digit-matching against line names found no such code. The labels stay.</p>
+<p>The cost of the five bad numbers was not in the conversion but in the
+kinematic groups. [Fe II], H2 and He I all sit in group 0 and share one
+velocity, and the six [Fe II] entries carried errors of 0.0, +87.9, 0.0,
++59.8, 0.0 and -7.2 km/s – a 95 km/s spread inside a single shared-
+velocity group, with the old H2_20580 a further -100.6 km/s from the four
+H2 lines it was tied to. For scale, the optical defect corrected in the
+commit before this one was a 28.8 km/s spread between H alpha and [N II]
+6583, and it was enough to produce near-maximal antisymmetric residuals,
+45 spurious 3-sigma outliers and twice the whole-spectrum chi2.</p>
+<p>That damage is argued, not measured: no NIR spectrum ships with this
+repository, so none of these entries has been exercised on data. The
+optical half of the catalogue is what the measurements in the previous
+commit cover.</p>
+<p class="rubric">Module Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.line_catalogue.AIR_CONVERSION_FLOOR_ON_AIR_SCALE" title="brainsp.line_catalogue.AIR_CONVERSION_FLOOR_ON_AIR_SCALE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AIR_CONVERSION_FLOOR_ON_AIR_SCALE</span></code></a></p></td>
+<td><p>The 2000 A floor, measured in air instead of in vacuum: 1999.3526 A.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.line_catalogue.HYDROGEN_LINES_VACUUM" title="brainsp.line_catalogue.HYDROGEN_LINES_VACUUM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HYDROGEN_LINES_VACUUM</span></code></a></p></td>
+<td><p>The hydrogen recombination lines, in vacuum Angstrom, keyed by series name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.line_catalogue.HYDROGEN_SERIES_EXTRA_VACUUM" title="brainsp.line_catalogue.HYDROGEN_SERIES_EXTRA_VACUUM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HYDROGEN_SERIES_EXTRA_VACUUM</span></code></a></p></td>
+<td><p>Balmer lines predicted by the Case B tables but not fitted by BRAIN.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.line_catalogue.ENTRIES_UNDER_REVIEW" title="brainsp.line_catalogue.ENTRIES_UNDER_REVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ENTRIES_UNDER_REVIEW</span></code></a></p></td>
+<td><p>Catalogue entries whose IDENTIFICATION, not whose precision, is in doubt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.line_catalogue.LINE_SPECIES" title="brainsp.line_catalogue.LINE_SPECIES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LINE_SPECIES</span></code></a></p></td>
+<td><p>The species every catalogue entry and every tied doublet belongs to.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.line_catalogue.DEFAULT_GROUP_SPECIES" title="brainsp.line_catalogue.DEFAULT_GROUP_SPECIES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_GROUP_SPECIES</span></code></a></p></td>
+<td><p>The two kinematic groups BRAIN fits by default: low ionisation and high.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.line_catalogue.air_to_vacuum" title="brainsp.line_catalogue.air_to_vacuum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">air_to_vacuum</span></code></a>(wavelength_air)</p></td>
+<td><p>Standard-air wavelength to vacuum wavelength, in Angstrom.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.line_catalogue.emission_lines_on_scale" title="brainsp.line_catalogue.emission_lines_on_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">emission_lines_on_scale</span></code></a>(scale)</p></td>
+<td><p>The whole catalogue, {name: rest wavelength}, on a declared scale.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.line_catalogue.hydrogen_lines_on_scale" title="brainsp.line_catalogue.hydrogen_lines_on_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hydrogen_lines_on_scale</span></code></a>(scale)</p></td>
+<td><p>The hydrogen recombination series, {series name: rest wavelength}, on a declared scale, including the H11 and H12 that BRAIN predicts but does not fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.line_catalogue.refractive_index_of_air" title="brainsp.line_catalogue.refractive_index_of_air"><code class="xref py py-obj docutils literal notranslate"><span class="pre">refractive_index_of_air</span></code></a>(wavelength)</p></td>
+<td><p>The refractive index of standard air at a VACUUM wavelength in Angstrom.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.line_catalogue.require_scale" title="brainsp.line_catalogue.require_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">require_scale</span></code></a>(scale)</p></td>
+<td><p>Check a wavelength scale and return it, or raise saying what is allowed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.line_catalogue.species_of" title="brainsp.line_catalogue.species_of"><code class="xref py py-obj docutils literal notranslate"><span class="pre">species_of</span></code></a>(name)</p></td>
+<td><p>The species a catalogue entry belongs to, declared rather than parsed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.line_catalogue.vacuum_to_air" title="brainsp.line_catalogue.vacuum_to_air"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vacuum_to_air</span></code></a>(wavelength_vacuum)</p></td>
+<td><p>Vacuum wavelength to standard-air wavelength, in Angstrom.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.AIR_CONVERSION_FLOOR_ON_AIR_SCALE">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">AIR_CONVERSION_FLOOR_ON_AIR_SCALE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1999.3526230448367</span></span><a class="headerlink" href="#brainsp.line_catalogue.AIR_CONVERSION_FLOOR_ON_AIR_SCALE" title="Link to this definition">#</a></dt>
+<dd><p>The 2000 A floor, measured in air instead of in vacuum: 1999.3526 A.</p>
+<p>One boundary, two numbers, because the boundary is a wavelength and the two
+scales disagree by 97 km/s this far into the blue. air_to_vacuum gates here
+and vacuum_to_air gates at AIR_CONVERSION_FLOOR, so the pair is an identity
+everywhere rather than everywhere except the 0.65 A between the two
+expressions of the floor, where a vacuum wavelength would have converted
+down across the boundary and then refused to come back.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.refractive_index_of_air">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">refractive_index_of_air</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/line_catalogue.html#refractive_index_of_air"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.line_catalogue.refractive_index_of_air" title="Link to this definition">#</a></dt>
+<dd><p>The refractive index of standard air at a VACUUM wavelength in Angstrom.</p>
+<p>Ciddor (1996) equation 1: dry air at 15 C, 101325 Pa, 0 per cent
+humidity, 450 ppm CO2.</p>
+<p>Returns exactly 1.0 below AIR_CONVERSION_FLOOR, so that a caller who
+multiplies or divides by this index gets the wavelength back unchanged.
+Below 2000 A air does not transmit, the air wavelength is not a physical
+quantity, and the formula itself has poles at 1320.3 A and 648.2 A where
+its denominators vanish. Ungated it fails in two ways there, and the
+quiet one is the dangerous one: at 1320 A it returns 0.945, an index
+below unity that no transparent medium has, while at Lyman alpha it
+returns 1.000177 and a shift of 0.2 A, which looks like an answer and is
+not one.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.vacuum_to_air">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">vacuum_to_air</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength_vacuum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/line_catalogue.html#vacuum_to_air"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.line_catalogue.vacuum_to_air" title="Link to this definition">#</a></dt>
+<dd><p>Vacuum wavelength to standard-air wavelength, in Angstrom.</p>
+<p>The shift is 82 to 85 km/s across BRAIN’s catalogue: 85.2 km/s at
+[O II] 3726, 82.8 at H alpha, 81.8 at the reddest H2 entry. It is very
+nearly constant in velocity, which is exactly what makes getting the
+scale wrong so hard to see in a fit.</p>
+<p>Below AIR_CONVERSION_FLOOR the input is returned unchanged. See
+refractive_index_of_air.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.air_to_vacuum">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">air_to_vacuum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength_air</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/line_catalogue.html#air_to_vacuum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.line_catalogue.air_to_vacuum" title="Link to this definition">#</a></dt>
+<dd><p>Standard-air wavelength to vacuum wavelength, in Angstrom.</p>
+<p>lambda_vac = lambda_air * n(lambda_air), with no iteration. Evaluating
+the index at the air wavelength rather than at the vacuum one it is
+defined against is a second order error: the measured round trip
+vacuum -&gt; air -&gt; vacuum closes to 0.0022 km/s over the catalogue’s own
+3727-22477 A span and to 0.014 km/s over 2000-25000 A. A fixed point
+iteration would buy nothing measurable and would put a loop in a path
+that does not need one.</p>
+<p>Below AIR_CONVERSION_FLOOR_ON_AIR_SCALE the input is returned unchanged.
+That is the 2000 A floor expressed on the air scale, 1999.3526 A, rather
+than 2000 A again: the floor is one boundary, and gating both directions
+at the same number would leave the 0.65 A between the two expressions of
+it converting one way and not the other.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.require_scale">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">require_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/line_catalogue.html#require_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.line_catalogue.require_scale" title="Link to this definition">#</a></dt>
+<dd><p>Check a wavelength scale and return it, or raise saying what is allowed.</p>
+<p>Refuses None as loudly as it refuses a misspelling. A scale that
+defaults to one of its two values is a scale that gets guessed, and the
+whole point of the setting is that BRAIN does not guess it; see
+brain_settings for the consequence of guessing wrong.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.HYDROGEN_LINES_VACUUM">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">HYDROGEN_LINES_VACUUM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Br10':</span> <span class="pre">17366.868,</span> <span class="pre">'Br11':</span> <span class="pre">16811.129,</span> <span class="pre">'Brdelta':</span> <span class="pre">19450.89,</span> <span class="pre">'Brgamma':</span> <span class="pre">21661.21,</span> <span class="pre">'H10':</span> <span class="pre">3798.9827,</span> <span class="pre">'H8':</span> <span class="pre">3890.1577,</span> <span class="pre">'H9':</span> <span class="pre">3836.4789,</span> <span class="pre">'Halpha':</span> <span class="pre">6564.632,</span> <span class="pre">'Hbeta':</span> <span class="pre">4862.691,</span> <span class="pre">'Hdelta':</span> <span class="pre">4102.8991,</span> <span class="pre">'Hepsilon':</span> <span class="pre">3971.202,</span> <span class="pre">'Hgamma':</span> <span class="pre">4341.691,</span> <span class="pre">'Paalpha':</span> <span class="pre">18756.096,</span> <span class="pre">'Pabeta':</span> <span class="pre">12821.576,</span> <span class="pre">'Padelta':</span> <span class="pre">10052.123,</span> <span class="pre">'Pagamma':</span> <span class="pre">10941.082}</span></span><a class="headerlink" href="#brainsp.line_catalogue.HYDROGEN_LINES_VACUUM" title="Link to this definition">#</a></dt>
+<dd><p>The hydrogen recombination lines, in vacuum Angstrom, keyed by series name.</p>
+<p>NIST ASD Ritz values throughout: n -&gt; 2 for the Balmer series, n -&gt; 3 for
+Paschen, n -&gt; 4 for Brackett.</p>
+<p>This table exists separately from the emission-line catalogue because the
+Case B predictions in atomic_data cover hydrogen lines the catalogue does
+not fit – H11, H12 – and the catalogue carries lines that are not
+hydrogen. Where the two overlap, the catalogue entry is written as a
+reference to this dict rather than as a second literal, so there is one
+number per transition and it cannot be edited in one place and not the
+other.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.HYDROGEN_SERIES_EXTRA_VACUUM">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">HYDROGEN_SERIES_EXTRA_VACUUM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'H11':</span> <span class="pre">3771.7011,</span> <span class="pre">'H12':</span> <span class="pre">3751.2174}</span></span><a class="headerlink" href="#brainsp.line_catalogue.HYDROGEN_SERIES_EXTRA_VACUUM" title="Link to this definition">#</a></dt>
+<dd><p>Balmer lines predicted by the Case B tables but not fitted by BRAIN.</p>
+<p>NIST ASD Ritz, n = 11 and 12 -&gt; 2. They are separate from
+HYDROGEN_LINES_VACUUM only so that a reader of that dict sees exactly the
+transitions the catalogue can fit; atomic_data takes the union.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.ENTRIES_UNDER_REVIEW">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">ENTRIES_UNDER_REVIEW</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#brainsp.line_catalogue.ENTRIES_UNDER_REVIEW" title="Link to this definition">#</a></dt>
+<dd><p>Catalogue entries whose IDENTIFICATION, not whose precision, is in doubt.</p>
+<p>Empty, and kept rather than deleted so that a consumer which asks keeps
+getting an answer. It held five NIR entries until the review recorded in
+the module docstring resolved all five: three kept their species and
+gained a correct wavelength, [Fe II]+Br11_16773 split into two lines, and
+H2_20580 became He I_20580. Nothing is outstanding.</p>
+<p>An entry belongs here when the species or the transition is disputed, not
+when the wavelength is merely imprecise – imprecision is recorded in the
+provenance notes instead. The distinction matters because a line under
+review must not be given a full-precision value: a precise wavelength for
+the wrong transition looks authoritative and is harder to catch than a
+rounded one.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.emission_lines_on_scale">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">emission_lines_on_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/line_catalogue.html#emission_lines_on_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.line_catalogue.emission_lines_on_scale" title="Link to this definition">#</a></dt>
+<dd><p>The whole catalogue, {name: rest wavelength}, on a declared scale.</p>
+<p>Returns a copy, because a caller that filters or edits the result must
+not be able to reach back into the module-level table. The scale is
+required and unknown values raise; see require_scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.hydrogen_lines_on_scale">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">hydrogen_lines_on_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/line_catalogue.html#hydrogen_lines_on_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.line_catalogue.hydrogen_lines_on_scale" title="Link to this definition">#</a></dt>
+<dd><p>The hydrogen recombination series, {series name: rest wavelength}, on a
+declared scale, including the H11 and H12 that BRAIN predicts but does
+not fit.</p>
+<p>Keyed by species – ‘Halpha’, not ‘Halpha_6563’ – because this is what
+the Case B tables in atomic_data are indexed by.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.LINE_SPECIES">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">LINE_SPECIES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Br10_17360':</span> <span class="pre">'Br10',</span> <span class="pre">'Br11_16811':</span> <span class="pre">'Br11',</span> <span class="pre">'Brdelta_19446':</span> <span class="pre">'Brdelta',</span> <span class="pre">'Brgamma_21654':</span> <span class="pre">'Brgamma',</span> <span class="pre">'H10_3798':</span> <span class="pre">'H10',</span> <span class="pre">'H2_19570':</span> <span class="pre">'H2',</span> <span class="pre">'H2_20332':</span> <span class="pre">'H2',</span> <span class="pre">'H2_21218':</span> <span class="pre">'H2',</span> <span class="pre">'H2_22230':</span> <span class="pre">'H2',</span> <span class="pre">'H2_22470':</span> <span class="pre">'H2',</span> <span class="pre">'H8_3889':</span> <span class="pre">'H8',</span> <span class="pre">'H9_3835':</span> <span class="pre">'H9',</span> <span class="pre">'Halpha_6563':</span> <span class="pre">'Halpha',</span> <span class="pre">'Hbeta_4861':</span> <span class="pre">'Hbeta',</span> <span class="pre">'Hdelta_4102':</span> <span class="pre">'Hdelta',</span> <span class="pre">'He</span> <span class="pre">II_10122':</span> <span class="pre">'He</span> <span class="pre">II',</span> <span class="pre">'He</span> <span class="pre">II_4686':</span> <span class="pre">'He</span> <span class="pre">II',</span> <span class="pre">'He</span> <span class="pre">I_10830':</span> <span class="pre">'He</span> <span class="pre">I',</span> <span class="pre">'He</span> <span class="pre">I_20580':</span> <span class="pre">'He</span> <span class="pre">I',</span> <span class="pre">'He</span> <span class="pre">I_5876':</span> <span class="pre">'He</span> <span class="pre">I',</span> <span class="pre">'Hepsilon_3970':</span> <span class="pre">'Hepsilon',</span> <span class="pre">'Hgamma_4340':</span> <span class="pre">'Hgamma',</span> <span class="pre">'Paalpha_18750':</span> <span class="pre">'Paalpha',</span> <span class="pre">'Pabeta_12820':</span> <span class="pre">'Pabeta',</span> <span class="pre">'Padelta_10049':</span> <span class="pre">'Padelta',</span> <span class="pre">'Pagamma_10938':</span> <span class="pre">'Pagamma',</span> <span class="pre">'[C</span> <span class="pre">I]_9824':</span> <span class="pre">'[C</span> <span class="pre">I]',</span> <span class="pre">'[C</span> <span class="pre">I]_9850':</span> <span class="pre">'[C</span> <span class="pre">I]',</span> <span class="pre">'[Fe</span> <span class="pre">II]_12567':</span> <span class="pre">'[Fe</span> <span class="pre">II]',</span> <span class="pre">'[Fe</span> <span class="pre">II]_12950':</span> <span class="pre">'[Fe</span> <span class="pre">II]',</span> <span class="pre">'[Fe</span> <span class="pre">II]_13209':</span> <span class="pre">'[Fe</span> <span class="pre">II]',</span> <span class="pre">'[Fe</span> <span class="pre">II]_15342':</span> <span class="pre">'[Fe</span> <span class="pre">II]',</span> <span class="pre">'[Fe</span> <span class="pre">II]_16436':</span> <span class="pre">'[Fe</span> <span class="pre">II]',</span> <span class="pre">'[Fe</span> <span class="pre">II]_16773':</span> <span class="pre">'[Fe</span> <span class="pre">II]',</span> <span class="pre">'[N</span> <span class="pre">II]_6548':</span> <span class="pre">'[N</span> <span class="pre">II]',</span> <span class="pre">'[N</span> <span class="pre">II]_6583':</span> <span class="pre">'[N</span> <span class="pre">II]',</span> <span class="pre">'[N</span> <span class="pre">II]_Doublet':</span> <span class="pre">'[N</span> <span class="pre">II]',</span> <span class="pre">'[Ne</span> <span class="pre">III]_3869':</span> <span class="pre">'[Ne</span> <span class="pre">III]',</span> <span class="pre">'[O</span> <span class="pre">III]_4363':</span> <span class="pre">'[O</span> <span class="pre">III]',</span> <span class="pre">'[O</span> <span class="pre">III]_4959':</span> <span class="pre">'[O</span> <span class="pre">III]',</span> <span class="pre">'[O</span> <span class="pre">III]_5007':</span> <span class="pre">'[O</span> <span class="pre">III]',</span> <span class="pre">'[O</span> <span class="pre">III]_Doublet':</span> <span class="pre">'[O</span> <span class="pre">III]',</span> <span class="pre">'[O</span> <span class="pre">II]_3726':</span> <span class="pre">'[O</span> <span class="pre">II]',</span> <span class="pre">'[O</span> <span class="pre">II]_3729':</span> <span class="pre">'[O</span> <span class="pre">II]',</span> <span class="pre">'[O</span> <span class="pre">I]_6300':</span> <span class="pre">'[O</span> <span class="pre">I]',</span> <span class="pre">'[P</span> <span class="pre">II]_11470':</span> <span class="pre">'[P</span> <span class="pre">II]',</span> <span class="pre">'[P</span> <span class="pre">II]_11886':</span> <span class="pre">'[P</span> <span class="pre">II]',</span> <span class="pre">'[S</span> <span class="pre">III]_9069':</span> <span class="pre">'[S</span> <span class="pre">III]',</span> <span class="pre">'[S</span> <span class="pre">III]_9531':</span> <span class="pre">'[S</span> <span class="pre">III]',</span> <span class="pre">'[S</span> <span class="pre">III]_Doublet':</span> <span class="pre">'[S</span> <span class="pre">III]',</span> <span class="pre">'[S</span> <span class="pre">II]_6716':</span> <span class="pre">'[S</span> <span class="pre">II]',</span> <span class="pre">'[S</span> <span class="pre">II]_6731':</span> <span class="pre">'[S</span> <span class="pre">II]'}</span></span><a class="headerlink" href="#brainsp.line_catalogue.LINE_SPECIES" title="Link to this definition">#</a></dt>
+<dd><p>The species every catalogue entry and every tied doublet belongs to.</p>
+<p>Declared, never parsed from the name. Kinematic group membership, line flux
+extraction and the Case B comparison all look their answer up here, so a
+new catalogue entry without an entry here is invisible to all three rather
+than being quietly assigned by string matching. Kinematic groups were once
+assigned with name.startswith(prefix), and ‘He I’ is a prefix of ‘He II’,
+which put the highest-ionisation line in the optical catalogue in the
+low-ionisation group.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.DEFAULT_GROUP_SPECIES">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_GROUP_SPECIES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{0:</span> <span class="pre">['Halpha',</span> <span class="pre">'Hbeta',</span> <span class="pre">'Hgamma',</span> <span class="pre">'Hdelta',</span> <span class="pre">'Hepsilon',</span> <span class="pre">'H8',</span> <span class="pre">'H9',</span> <span class="pre">'H10',</span> <span class="pre">'Paalpha',</span> <span class="pre">'Pabeta',</span> <span class="pre">'Pagamma',</span> <span class="pre">'Padelta',</span> <span class="pre">'Brgamma',</span> <span class="pre">'Brdelta',</span> <span class="pre">'Br10',</span> <span class="pre">'Br11',</span> <span class="pre">'[N</span> <span class="pre">II]',</span> <span class="pre">'[S</span> <span class="pre">II]',</span> <span class="pre">'[O</span> <span class="pre">I]',</span> <span class="pre">'[O</span> <span class="pre">II]',</span> <span class="pre">'[S</span> <span class="pre">III]',</span> <span class="pre">'He</span> <span class="pre">I',</span> <span class="pre">'[C</span> <span class="pre">I]',</span> <span class="pre">'[P</span> <span class="pre">II]',</span> <span class="pre">'[Fe</span> <span class="pre">II]',</span> <span class="pre">'H2'],</span> <span class="pre">1:</span> <span class="pre">['[O</span> <span class="pre">III]',</span> <span class="pre">'[Ne</span> <span class="pre">III]',</span> <span class="pre">'He</span> <span class="pre">II']}</span></span><a class="headerlink" href="#brainsp.line_catalogue.DEFAULT_GROUP_SPECIES" title="Link to this definition">#</a></dt>
+<dd><p>The two kinematic groups BRAIN fits by default: low ionisation and high.</p>
+<p>Group 1 holds the species whose ionisation potentials put them in a
+different part of the gas. Every other species shares one velocity and one
+dispersion.</p>
+<p>The high-order Balmer lines H8, H9 and H10 sit in group 0 with the rest of
+the series. Hepsilon was already listed here before any of the four had a
+catalogue entry behind it, so the list named a species BRAIN could not fit;
+adding the lines is what makes all four live.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.line_catalogue.species_of">
+<span class="sig-prename descclassname"><span class="pre">brainsp.line_catalogue.</span></span><span class="sig-name descname"><span class="pre">species_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/line_catalogue.html#species_of"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.line_catalogue.species_of" title="Link to this definition">#</a></dt>
+<dd><p>The species a catalogue entry belongs to, declared rather than parsed.</p>
+<p>Returns None for an entry that is not in LINE_SPECIES, so a caller can
+tell “no species recorded” from a species that happens to be falsy. A
+user-supplied line that omits one is a validation failure, not something
+to guess at from its name.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.emission_lines.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.emission_lines</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.atomic_data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.atomic_data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.AIR_CONVERSION_FLOOR_ON_AIR_SCALE"><code class="docutils literal notranslate"><span class="pre">AIR_CONVERSION_FLOOR_ON_AIR_SCALE</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.refractive_index_of_air"><code class="docutils literal notranslate"><span class="pre">refractive_index_of_air()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.vacuum_to_air"><code class="docutils literal notranslate"><span class="pre">vacuum_to_air()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.air_to_vacuum"><code class="docutils literal notranslate"><span class="pre">air_to_vacuum()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.require_scale"><code class="docutils literal notranslate"><span class="pre">require_scale()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.HYDROGEN_LINES_VACUUM"><code class="docutils literal notranslate"><span class="pre">HYDROGEN_LINES_VACUUM</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.HYDROGEN_SERIES_EXTRA_VACUUM"><code class="docutils literal notranslate"><span class="pre">HYDROGEN_SERIES_EXTRA_VACUUM</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.ENTRIES_UNDER_REVIEW"><code class="docutils literal notranslate"><span class="pre">ENTRIES_UNDER_REVIEW</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.emission_lines_on_scale"><code class="docutils literal notranslate"><span class="pre">emission_lines_on_scale()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.hydrogen_lines_on_scale"><code class="docutils literal notranslate"><span class="pre">hydrogen_lines_on_scale()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.LINE_SPECIES"><code class="docutils literal notranslate"><span class="pre">LINE_SPECIES</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.DEFAULT_GROUP_SPECIES"><code class="docutils literal notranslate"><span class="pre">DEFAULT_GROUP_SPECIES</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.line_catalogue.species_of"><code class="docutils literal notranslate"><span class="pre">species_of()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+﻿brainsp.emission\_lines
+=======================
+
+.. automodule:: brainsp.emission_lines
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      TIED_DOUBLETS
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      assign_kinematic_groups
+      build_emission_matrix
+      build_emission_matrix_grouped
+      doublet_nebular_sum_factor
+      drop_masked_lines
+      get_line_catalog
+      group_positions
+      precompile_line_table
+      reachable_window
+   

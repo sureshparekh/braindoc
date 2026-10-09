@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Nebular modes &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/modes';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pre-fit corrections" href="corrections.html" />
+    <link rel="prev" title="Settings" href="settings.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fitting spectra</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Nebular modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corrections.html">Pre-fit corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masks.html">Masks and weights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resolution.html">Instrumental resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agn.html">AGN continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Template libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batches.html">Many spectra</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datacubes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="datacubes.html">Datacubes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results_python.html">Working with results in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Figures from code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Running BRAIN</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">One file per run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Speed, GPUs and CPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mock_data.html">Mock data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Nebular modes</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="nebular-modes">
+<h1>Nebular modes<a class="headerlink" href="#nebular-modes" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">nebular_mode</span></code> decides how much of the ionised gas BRAIN models: in Python
+<code class="docutils literal notranslate"><span class="pre">nebular_mode=&quot;espop&quot;</span></code>, on the command line <code class="docutils literal notranslate"><span class="pre">--set</span> <span class="pre">nebular_mode=espop</span></code>, in the
+interface <em>Model &gt; Nebular treatment</em>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Fits</p></th>
+<th class="head"><p>Needs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spop</span></code></p></td>
+<td><p>stars, dust, stellar kinematics</p></td>
+<td><p>nothing more (the default)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">espop</span></code></p></td>
+<td><p>+ every emission line, with its own kinematics</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wavelength_scale</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nepop</span></code></p></td>
+<td><p>+ the nebular continuum, a free component</p></td>
+<td><p>a library reaching below 911.76 Å</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">photopop</span></code></p></td>
+<td><p>+ the gas tied to the stars’ ionising photons</p></td>
+<td><p>as <code class="docutils literal notranslate"><span class="pre">nepop</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The interface strikes through the modes the chosen library cannot run and
+says why.</p>
+<p>Young stars emit ultraviolet photons that ionise the gas around them, and that
+gas glows back — in emission lines, and in a smooth <strong>nebular continuum</strong> made
+of free-free, free-bound and two-photon emission. That continuum is not flat.
+It has a Balmer jump at 3646 Å and it rises towards the red, so if it is present
+and you do not model it, the fit compensates with the only knobs it has: dust
+and the star-formation history.</p>
+<p>BRAIN offers four levels of treatment.</p>
+<hr class="docutils" />
+<section id="spop-stellar-only">
+<h2><code class="docutils literal notranslate"><span class="pre">spop</span></code> — stellar only<a class="headerlink" href="#spop-stellar-only" title="Link to this heading">#</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nebular_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;spop&quot;</span>
+</pre></div>
+</div>
+<p>The emission lines are <strong>not fitted at all</strong>. They stay masked, and the model
+is purely stellar.</p>
+<p>It is the fastest option and the correct
+one for passive galaxies, or for any spectrum where the lines are weak enough
+that ignoring them costs nothing.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cost</p></td>
+<td><p>See <a class="reference internal" href="performance.html"><span class="std std-doc">performance</span></a> — a few CPU-seconds per spectrum; the fastest mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fits</p></td>
+<td><p>Stars, dust, stellar kinematics</p></td>
+</tr>
+<tr class="row-even"><td><p>Requires</p></td>
+<td><p>Nothing beyond a spectrum</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mask the emission lines when using this mode — the <em>Standard optical</em> mask
+in the interface does it in one click. Unmasked lines drag the continuum.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="espop-emission-lines-with-the-populations">
+<h2><code class="docutils literal notranslate"><span class="pre">espop</span></code> — emission lines with the populations<a class="headerlink" href="#espop-emission-lines-with-the-populations" title="Link to this heading">#</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nebular_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;espop&quot;</span>
+<span class="nt">fit_emission_lines</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>Every line in the catalogue is fitted from its rest position with a free,
+non-negative amplitude. Nothing is predicted from a photoionization model, so
+no ionising photon budget is needed and <strong><code class="docutils literal notranslate"><span class="pre">espop</span></code> is available for every
+template library</strong>, whatever its blue coverage. The gas gets its own velocity
+and dispersion per kinematic group, independent of the stars.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cost</p></td>
+<td><p>See <a class="reference internal" href="performance.html"><span class="std std-doc">performance</span></a> — somewhat more than <code class="docutils literal notranslate"><span class="pre">spop</span></code>, for the added line amplitudes and gas kinematics</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adds over <code class="docutils literal notranslate"><span class="pre">spop</span></code></p></td>
+<td><p>Emission lines, with free amplitudes and their own kinematics</p></td>
+</tr>
+<tr class="row-even"><td><p>Needs</p></td>
+<td><p>Nothing beyond <code class="docutils literal notranslate"><span class="pre">spop</span></code>. Any library</p></td>
+</tr>
+<tr class="row-odd"><td><p>Does not model</p></td>
+<td><p>The nebular continuum</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">There is no nebular continuum in <code class="docutils literal notranslate"><span class="pre">espop</span></code></p>
+<p>Ionised gas emits a smooth free-free, free-bound and two-photon continuum
+as well as lines. In <code class="docutils literal notranslate"><span class="pre">espop</span></code> that light has nowhere to go in the model, so
+it is absorbed into the stellar populations and the extinction. <span class="math notranslate nohighlight">\(A_V\)</span> and
+the young populations carry whatever of it is present. If the lines are
+strong and your library reaches the Lyman limit, use <code class="docutils literal notranslate"><span class="pre">nepop</span></code> instead; run
+<code class="docutils literal notranslate"><span class="pre">brainsp</span> <span class="pre">check</span> <span class="pre">settings.yaml</span></code> to see which modes your library supports.</p>
+</div>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">fit_emission_lines:</span> <span class="pre">false</span></code> under <code class="docutils literal notranslate"><span class="pre">espop</span></code> is rejected at validation,
+because <code class="docutils literal notranslate"><span class="pre">espop</span></code> with the lines off is <code class="docutils literal notranslate"><span class="pre">spop</span></code> by a longer name.</p>
+</section>
+<hr class="docutils" />
+<section id="nepop-nebular-continuum-as-a-fitted-component">
+<h2><code class="docutils literal notranslate"><span class="pre">nepop</span></code> — nebular continuum as a fitted component<a class="headerlink" href="#nepop-nebular-continuum-as-a-fitted-component" title="Link to this heading">#</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nebular_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nepop&quot;</span>
+</pre></div>
+</div>
+<p>Emission lines are fitted with free amplitudes, and the nebular continuum is
+added as an extra column in the linear system with a free weight of its own.
+Its <strong>shape</strong> is computed from the gas physics — temperature, density, helium
+abundance — but its <strong>strength</strong> is whatever the data prefer.</p>
+<p>Use this when the emission lines are strong. It is the right default for
+star-forming galaxies.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cost</p></td>
+<td><p>See <a class="reference internal" href="performance.html"><span class="std std-doc">performance</span></a> — on BC03, close to <code class="docutils literal notranslate"><span class="pre">espop</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Adds</p></td>
+<td><p>Emission lines, nebular continuum with a free weight</p></td>
+</tr>
+<tr class="row-even"><td><p>Measures</p></td>
+<td><p><span class="math notranslate nohighlight">\(n_e\)</span>, <span class="math notranslate nohighlight">\(T_e\)</span>, Balmer decrement, BPT class</p></td>
+</tr>
+<tr class="row-odd"><td><p>Requires</p></td>
+<td><p>A template library reaching below 911.76 Å</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="danger admonition">
+<p class="admonition-title">The template library must contain the ionising continuum</p>
+<p>The strength of the nebular continuum is set by the ionising photon rate
+<span class="math notranslate nohighlight">\(Q(H)\)</span>, and BRAIN obtains that by <strong>integrating each SSP spectrum
+shortwards of the Lyman limit at 911.76 Å</strong>:</p>
+<div class="math notranslate nohighlight">
+\[ Q = \int_0^{911.76\,\text{Å}} \frac{L_\lambda \lambda}{hc}\, d\lambda \]</div>
+<p>A library that starts in the optical has no ionising continuum to
+integrate. BRAIN refuses to run rather than returning a fit with an
+identically zero nebular component that looks converged.</p>
+<p>The bundled <code class="docutils literal notranslate"><span class="pre">BasesGM/</span></code> starts at 3540 Å and <strong>cannot be used</strong> in
+<code class="docutils literal notranslate"><span class="pre">nepop</span></code> or <code class="docutils literal notranslate"><span class="pre">photopop</span></code> mode. GALAXEV/BC03 spectra start at 91 Å and can.</p>
+<p>What decides this is the first wavelength in the <strong>library files
+themselves</strong>, not <code class="docutils literal notranslate"><span class="pre">wavelength_min</span></code> and not the fitted range. Check it
+directly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brainsp<span class="w"> </span>libraries<span class="w"> </span>info<span class="w"> </span>your_library<span class="w">     </span><span class="c1"># reaches_lyman: True or False</span>
+</pre></div>
+</div>
+<p>If it is False, point <code class="docutils literal notranslate"><span class="pre">base_folder</span></code> at a library that reaches further blue,
+or use <code class="docutils literal notranslate"><span class="pre">spop</span></code> or <code class="docutils literal notranslate"><span class="pre">espop</span></code>. BRAIN’s error message says the same thing, with the
+actual starting wavelength of the library you gave it.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">The Balmer jump matters</p>
+<p>The nebular continuum’s most distinctive feature is the jump at 3646 Å. If
+your fitting range starts redward of that, the continuum is a smooth,
+slowly rising function — nearly degenerate with dust reddening. BRAIN warns
+you when this is the case:</p>
+<blockquote>
+<div><p>Nebular continuum is weakly constrained: Balmer jump (3646 Å) lies
+outside the fitted range 3700–6898 Å. It may trade against A_V.</p>
+</div></blockquote>
+<p>The fit will still run. Treat the resulting <span class="math notranslate nohighlight">\(A_V\)</span> and nebular strength as
+a joint constraint rather than two independent measurements.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="photopop-self-consistent">
+<h2><code class="docutils literal notranslate"><span class="pre">photopop</span></code> — self-consistent<a class="headerlink" href="#photopop-self-consistent" title="Link to this heading">#</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nebular_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;photopop&quot;</span>
+</pre></div>
+</div>
+<div class="danger admonition">
+<p class="admonition-title">Not ready for science use</p>
+<p>The machinery runs end to end, but the nebular extinction <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span>
+it reports is not currently a measurement. On all three example spectra
+tested it sits exactly on the lower bound of <code class="docutils literal notranslate"><span class="pre">nebular_dust_range</span></code>, and
+<span class="math notranslate nohighlight">\(\chi^2\)</span> varies by only 4.5–6.2 across the <em>entire</em> 6-magnitude allowed
+range — the data barely constrain it. Use <code class="docutils literal notranslate"><span class="pre">nepop</span></code> for anything you
+intend to publish.</p>
+</div>
+<p>Everything <code class="docutils literal notranslate"><span class="pre">nepop</span></code> does, plus tying the hydrogen line strengths and the
+nebular continuum to the <strong>ionising photon budget</strong> <span class="math notranslate nohighlight">\(Q(H)\)</span> of the stellar
+populations the fit has found. It also requires <code class="docutils literal notranslate"><span class="pre">fit_emission_lines:</span> <span class="pre">true</span></code> —
+validation refuses the combination of <code class="docutils literal notranslate"><span class="pre">photopop</span></code> mode with emission lines turned
+off, because <span class="math notranslate nohighlight">\(Q(H)\)</span> is derived from the fitted hydrogen amplitudes and there
+is nothing to derive it from otherwise.</p>
+<p>This is the physically complete picture. A stellar population that produces
+enough ultraviolet light to power the observed Hβ must be present in the fit,
+and one that is not cannot be — in principle. What BRAIN can currently show is
+only that <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span> is unconstrained on the spectra tested, not that the
+idea is wrong.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cost</p></td>
+<td><p>See <a class="reference internal" href="performance.html"><span class="std std-doc">performance</span></a> — by far the most expensive mode, dominated by the <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span> refit search below (measured at roughly 7× <code class="docutils literal notranslate"><span class="pre">spop</span></code> on the same library)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adds</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q(H)\)</span> self-consistency between stars and gas</p></td>
+</tr>
+<tr class="row-even"><td><p>Runs</p></td>
+<td><p>A golden-section search on <span class="math notranslate nohighlight">\(\chi^2\)</span> over <code class="docutils literal notranslate"><span class="pre">nebular_dust_range</span></code>, refitting from a warm start at each trial, for up to <code class="docutils literal notranslate"><span class="pre">sc_max_iterations</span></code> refits</p></td>
+</tr>
+<tr class="row-odd"><td><p>Requires</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fit_emission_lines:</span> <span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="finding-a-v-rm-neb">
+<h3>Finding <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span><a class="headerlink" href="#finding-a-v-rm-neb" title="Link to this heading">#</a></h3>
+<p>An earlier version refitted, read the Balmer decrement back out of the fitted
+hydrogen line amplitudes, and fed it in again, hoping for a fixed point. It
+never found one, and not for a numerical reason: once the Case B penalty rows
+that tie the hydrogen amplitudes to <span class="math notranslate nohighlight">\(Q(H)\)</span> are satisfied, that whole map
+reduces to the identity, so reading the decrement out returns exactly what
+was put in. The residual it was iterating on carries no information about
+<span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span> at all.</p>
+<p><span class="math notranslate nohighlight">\(\chi^2\)</span> does carry that information, so BRAIN now finds <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span> by
+minimising <span class="math notranslate nohighlight">\(\chi^2\)</span> directly — a golden-section search over
+<code class="docutils literal notranslate"><span class="pre">nebular_dust_range</span></code>, every trial a full refit from the same warm start. A
+minimum that lands on either bound of <code class="docutils literal notranslate"><span class="pre">nebular_dust_range</span></code> is reported as a
+bound, never as a converged fit. The summary carries which of <code class="docutils literal notranslate"><span class="pre">converged</span></code>,
+<code class="docutils literal notranslate"><span class="pre">LOWER_BOUND</span></code>, <code class="docutils literal notranslate"><span class="pre">UPPER_BOUND</span></code> or <code class="docutils literal notranslate"><span class="pre">BUDGET_EXHAUSTED</span></code> applies, how much <span class="math notranslate nohighlight">\(\chi^2\)</span>
+varies across the whole searched range (<code class="docutils literal notranslate"><span class="pre">dchi2</span> <span class="pre">across</span> <span class="pre">the</span> <span class="pre">whole</span> <span class="pre">AV_neb</span> <span class="pre">range</span></code>), and the <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span> at which <span class="math notranslate nohighlight">\(\chi^2\)</span> has risen by 1 above its
+minimum (<code class="docutils literal notranslate"><span class="pre">AV_neb</span> <span class="pre">at</span> <span class="pre">dchi2</span> <span class="pre">=</span> <span class="pre">1</span></code>) — the closest thing to an error bar the search
+can offer, and on the shipped examples it lies more than 1 mag away from the
+best-fit value (1.1–3.2 mag, against a lower bound of 0.0 mag).</p>
+<p><span class="math notranslate nohighlight">\(\tau\)</span>, the ratio the old convergence test used, is kept in the log but is a
+diagnostic now, not a test: with the penalty rows satisfied it reduces to
+<span class="math notranslate nohighlight">\(10^{0.4 A_V (k_{\rm norm} - k_{\rm H\alpha})}\)</span>, a function of <span class="math notranslate nohighlight">\(A_V\)</span> alone, and
+says nothing about <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span>.</p>
+</section>
+<section id="the-bpt-classification-is-a-report-not-a-gate">
+<h3>The BPT classification is a report, not a gate<a class="headerlink" href="#the-bpt-classification-is-a-report-not-a-gate" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">photopop</span></code> only makes physical sense if stars are what ionise the gas. It is
+tempting to read that as “BRAIN should classify the spectrum on a BPT diagram
+and refuse, or downgrade, when the classification is not star-forming or
+composite” — and an earlier version did exactly that. It does not do that now,
+and the reason is worth knowing before you read the log.</p>
+<p>In every <code class="docutils literal notranslate"><span class="pre">nepop</span></code> or <code class="docutils literal notranslate"><span class="pre">photopop</span></code> fit, BRAIN classifies the spectrum on the
+[N II]/Hα vs. [O III]/Hβ diagram (Kauffmann et al. 2003, Kewley et al. 2001,
+Schawinski et al. 2007) and logs and records the result:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>BPT class: undetermined (flag -999) — one or more BPT lines undetected
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">BPT_class</span></code> — one of <code class="docutils literal notranslate"><span class="pre">SF</span></code>, <code class="docutils literal notranslate"><span class="pre">composite</span></code>, <code class="docutils literal notranslate"><span class="pre">LINER</span></code>, <code class="docutils literal notranslate"><span class="pre">Seyfert</span></code>, or <code class="docutils literal notranslate"><span class="pre">undetermined</span></code>
+when Hβ, [O III] λ5007, Hα or [N II] λ6584 cannot be measured — is written to
+the output alongside <code class="docutils literal notranslate"><span class="pre">bpt_flag</span></code> and <code class="docutils literal notranslate"><span class="pre">bpt_info</span></code>. <code class="docutils literal notranslate"><span class="pre">undetermined</span></code> is a normal
+outcome, not a failure: it means the forbidden lines needed for the diagram
+were not detected, and it is reported exactly as any other class would be.
+None of it changes the mode. The classification also depends on the
+continuum model, through Hβ, which sits in deep stellar absorption — the same
+spectrum and library can change class when only the nebular treatment
+changes, which makes it a poor switch to hang a mode decision on even before
+the mechanism below.</p>
+<p>What actually gates the nebular work is <strong>Hβ detectability</strong>, checked once,
+in <code class="docutils literal notranslate"><span class="pre">brainv1.py</span></code>, right after the bootstrap fit: if the fitted Hα and Hβ
+amplitudes don’t both come back positive there is no Balmer decrement to
+derive <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span> from, and the code says so and moves on rather than
+attempting it. This is a different, narrower rule than a BPT-class gate, and
+the two used to coexist: one version of the code carried a class-based
+downgrade in the BPT-classification step <em>and</em> a separate Balmer-detection
+guard in <code class="docutils literal notranslate"><span class="pre">brainv1.py</span></code>, and the two silently overrode each other, so <code class="docutils literal notranslate"><span class="pre">photopop</span></code>
+ran end to end on some spectra and not others for reasons that had nothing to
+do with either rule. The class-based downgrade was removed; the Balmer gate
+is now the only one, and it is applied exactly once.</p>
+</section>
+<section id="the-bootstrap-and-promote-schedule">
+<h3>The bootstrap-and-promote schedule<a class="headerlink" href="#the-bootstrap-and-promote-schedule" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">photopop</span></code> still changes mode mid-fit, but on a fixed schedule that has
+nothing to do with BPT class. The Case B penalty rows that tie the hydrogen
+line amplitudes to <span class="math notranslate nohighlight">\(Q(H)\)</span> need line fluxes and a <span class="math notranslate nohighlight">\(Q(H)\)</span> to tie together, and
+neither exists before a first fit, so every <code class="docutils literal notranslate"><span class="pre">photopop</span></code> run bootstraps through
+one <code class="docutils literal notranslate"><span class="pre">nepop</span></code> fit first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Full</span> <span class="n">mode</span> <span class="n">bootstraps</span> <span class="n">through</span> <span class="n">one</span> <span class="n">continuum</span><span class="o">-</span><span class="n">mode</span> <span class="n">fit</span><span class="p">:</span> <span class="n">the</span> <span class="n">Case</span> <span class="n">B</span> <span class="n">penalty</span> <span class="n">rows</span>
+<span class="n">need</span> <span class="n">line</span> <span class="n">fluxes</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">Q</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="n">to</span> <span class="n">tie</span> <span class="n">together</span><span class="p">,</span> <span class="ow">and</span> <span class="n">neither</span> <span class="n">exists</span> <span class="n">before</span> <span class="n">the</span>
+<span class="n">first</span> <span class="n">fit</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>That bootstrap fit is where the Balmer-decrement gate above is evaluated and
+where the BPT class is measured and logged. Once it completes, BRAIN
+promotes to the actual <code class="docutils literal notranslate"><span class="pre">photopop</span></code> model and refits from the bootstrap
+solution:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Promoting</span> <span class="n">to</span> <span class="n">full</span> <span class="n">mode</span><span class="p">:</span> <span class="n">hydrogen</span> <span class="n">line</span> <span class="n">amplitudes</span> <span class="n">tied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Case</span> <span class="n">B</span>
+<span class="n">prediction</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Q</span><span class="p">(</span><span class="n">H</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>If you asked for <code class="docutils literal notranslate"><span class="pre">photopop</span></code>, that promotion always happens — an
+<code class="docutils literal notranslate"><span class="pre">undetermined</span></code> or AGN-like BPT class in the log between those two messages is
+a diagnostic passing through, not a decision being made.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="which-to-use">
+<h2>Which to use<a class="headerlink" href="#which-to-use" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>The spectrum</p></th>
+<th class="head"><p>Use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no emission lines, or weak ones</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spop</span></code> (mask the lines)</p></td>
+</tr>
+<tr class="row-odd"><td><p>emission lines, library stops redward of 911.76 Å (BasesGM)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">espop</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>strong lines, library reaches the ionising UV, range covers 3646 Å</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nepop</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>strong lines, range starts redward of 3646 Å</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nepop</span></code>, expecting <span class="math notranslate nohighlight">\(A_V\)</span> degeneracy</p></td>
+</tr>
+<tr class="row-even"><td><p>star-formation-ionised gas, for the self-consistent experiment</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">photopop</span></code> (see the warning)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="gas-conditions">
+<h2>Gas conditions<a class="headerlink" href="#gas-conditions" title="Link to this heading">#</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">nepop</span></code> and <code class="docutils literal notranslate"><span class="pre">photopop</span></code> mode BRAIN measures the gas conditions from the
+spectrum itself rather than assuming them:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantity</p></th>
+<th class="head"><p>Diagnostic</p></th>
+<th class="head"><p>Reference</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Electron density <span class="math notranslate nohighlight">\(n_e\)</span></p></td>
+<td><p>[S II] λ6716/λ6731</p></td>
+<td><p>Proxauf et al. (2014)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Electron temperature <span class="math notranslate nohighlight">\(T_e\)</span></p></td>
+<td><p>[O III] (λ4959+λ5007)/λ4363</p></td>
+<td><p>Osterbrock &amp; Ferland, Eq. 5.4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Where a diagnostic is unavailable — the lines too weak, or outside the range —
+the values from <code class="docutils literal notranslate"><span class="pre">gas_temperature</span></code> and <code class="docutils literal notranslate"><span class="pre">gas_density</span></code> in the settings file are
+used instead.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="settings.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Settings</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="corrections.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pre-fit corrections</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spop-stellar-only"><code class="docutils literal notranslate"><span class="pre">spop</span></code> — stellar only</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#espop-emission-lines-with-the-populations"><code class="docutils literal notranslate"><span class="pre">espop</span></code> — emission lines with the populations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nepop-nebular-continuum-as-a-fitted-component"><code class="docutils literal notranslate"><span class="pre">nepop</span></code> — nebular continuum as a fitted component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photopop-self-consistent"><code class="docutils literal notranslate"><span class="pre">photopop</span></code> — self-consistent</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-v-rm-neb">Finding <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bpt-classification-is-a-report-not-a-gate">The BPT classification is a report, not a gate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bootstrap-and-promote-schedule">The bootstrap-and-promote schedule</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-to-use">Which to use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-conditions">Gas conditions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

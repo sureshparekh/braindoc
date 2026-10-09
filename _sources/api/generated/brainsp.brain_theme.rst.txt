@@ -1,0 +1,28 @@
+﻿brainsp.brain\_theme
+====================
+
+.. automodule:: brainsp.brain_theme
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      apply_matplotlib
+      display
+      font_report
+      heading
+      icon
+      icon_names
+      load_fonts
+      logo
+      mono
+      palette
+      sans
+      serif
+      smallcaps
+      style_icon
+      stylesheet
+      wordmark
+      wordmark_family
+   

@@ -1,0 +1,12 @@
+﻿brainsp.cli
+===========
+
+.. automodule:: brainsp.cli
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      main
+   

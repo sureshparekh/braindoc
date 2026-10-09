@@ -1,0 +1,12 @@
+﻿brainsp.cube\_worker
+====================
+
+.. automodule:: brainsp.cube_worker
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      main
+   

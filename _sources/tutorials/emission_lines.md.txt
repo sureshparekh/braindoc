@@ -1,0 +1,62 @@
+# 2. Emission lines
+
+`mock_star_forming_lines.spec` is a young-to-intermediate population with an
+H II-region emission-line spectrum on top, the gas moving at 50 km/s with a
+dispersion of 60 km/s. Fitting it needs a *nebular mode* that models the
+lines, `espop`, and the wavelength scale the spectrum is on, because the
+lines are placed at rest wavelengths that differ between air and vacuum by
+about 83 km/s (see [](../user_guide/modes.md)).
+
+```{literalinclude} ../../tutorials_src/t02_emission_lines.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t02_emission_lines.txt
+:language: text
+```
+
+## What the line fluxes are
+
+Two conventions are in play, and the summary file states both:
+
+1. They are **relative to the normalised spectrum**: the continuum is 1 at
+   the normalisation wavelength (5500 Å), so a flux of 6 is six times the
+   continuum flux density at 5500 Å times one Ångström. Multiply by
+   `fobs_norm` (`r.fobs_norm`) for the units of the input spectrum:
+   `r.line_fluxes(units="input")`.
+2. They are **corrected for the stellar extinction**, relative to the
+   normalisation wavelength: each is multiplied by
+   $10^{0.4 A_V [q(\lambda) - q(\lambda_0)]}$. That is why the
+   "written" column is above the truth in the blue ([O II], H$\delta$) and
+   below it in the red (H$\alpha$). `r.line_fluxes(observed=True)` undoes
+   it and gives the flux as it arrives.
+
+As observed, the strong lines come back within a few per cent of the
+truth: H$\alpha$ 1.03, H$\beta$ 1.03, [N II] 1.07. The weak ones scatter
+more: He I 5876 at 0.87 and [S II] 6731 at 0.95, because they are a few per
+cent of the continuum. The tied doublets
+[O III] 4959,5007 and [N II] 6548,6583 are fitted as one profile each at the
+ratio atomic physics fixes, and reported under the doublet's name and under
+each member's.
+
+The gas dispersion comes back at 63 km/s against a true 60: the mock is
+sampled on a 1 Å grid, which adds about 13 km/s in quadrature at H$\alpha$.
+
+## Figures
+
+```{image} ../_static/tutorials/t02_spectrum.png
+:alt: The whole fit, with the stellar and emission components.
+```
+
+H$\alpha$, [N II] and [S II], and H$\beta$ with [O III]: the model (blue) is
+the stars (orange) plus the lines.
+
+```{image} ../_static/tutorials/t02_halpha.png
+:alt: H-alpha region.
+```
+
+```{image} ../_static/tutorials/t02_hbeta.png
+:alt: H-beta region.
+```

@@ -1,0 +1,91 @@
+# The self-test
+
+After installing, run
+
+```bash
+brainsp selftest --quick     # under a minute
+brainsp selftest             # everything: 2-3 minutes
+brainsp selftest --quick --device gpu    # on the GPU
+```
+
+or, from Python,
+
+```python
+import brainsp
+report = brainsp.selftest(quick=True)
+report.passed                # True when every check passed
+```
+
+The self-test builds mock data whose right answers are known (see
+[](../user_guide/mock_data.md)), fits it with BRAIN, and compares every
+recovered quantity with the truth it was built from. It checks, in order:
+
+1. **The environment**: Python, JAX and the device it runs on, and every
+   other dependency. On a GPU, a double-precision product is computed on it
+   and checked, since JAX can list a card it cannot compute on.
+2. **The template libraries**: BasesGM, M13 with its own AGN set, and the
+   seven AGN continua are installed and their catalogues are readable.
+3. **The mock data**: five spectra and a 16 x 16 datacube are written.
+4. **The spectra**: each is fitted and its stellar velocity, velocity
+   dispersion, extinction and light-weighted mean age compared with the
+   truth; for the AGN mock, the AGN light fraction; for the emission-line
+   mocks, the gas velocity and the H-alpha flux. The observed-frame mock
+   must give the same answer as its rest-frame twin once BRAIN has removed
+   the redshift and the Milky Way's dust.
+5. **The datacube**: fitted through the whole pipeline (signal-to-noise
+   masks, the fit, the megacube); the number of spaxels fitted must match the
+   S/N mask, and the velocity, dispersion and extinction maps must match the
+   maps the cube was built from.
+6. **The outputs**: a map and the population figures are drawn, maps are
+   exported as PNG and FITS, and a run is written as one Python file that
+   then validates.
+
+Each comparison carries a tolerance, printed beside it, of a few times the
+scatter measured on these mocks:
+
+| Quantity | Tolerance |
+|---|---|
+| stellar velocity | 10 km/s |
+| velocity dispersion | 8 per cent |
+| $A_V$ | 0.10 mag |
+| $\langle \log t \rangle_L$ | 0.15 dex |
+| AGN light fraction | 8 percentage points |
+| gas velocity | 15 km/s |
+| H-alpha flux | 15 per cent |
+| cube maps, median offset | 8 km/s, 12 km/s, 0.08 mag |
+| velocity field | correlation > 0.97 with the truth |
+
+A run that passes ends with
+
+```text
+======================================================================
+  ALL 49 CHECKS PASSED in 104 s. BRAIN is working.
+======================================================================
+```
+
+and the command exits with status 0. A run that fails lists every failed
+check with what it got and what it expected, keeps the mock data and the fits
+in the folder it names, and exits non-zero, so the self-test can gate an
+installation script:
+
+```bash
+pip install git+https://github.com/sureshparekh/brainv1 && brainsp selftest --quick
+```
+
+A full run on a 64-thread CPU printed (the datacube is fitted by 63 worker
+processes; see [](../user_guide/performance.md)):
+
+```{literalinclude} ../_static/tutorials/selftest.txt
+:language: text
+```
+
+## Options
+
+| Option | Effect |
+|---|---|
+| `--quick` | two spectra (the old population and the star-forming one) and only the cube's spaxels with S/N > 20, fitted in `spop` |
+| `--device cpu\|gpu\|auto` | where to fit |
+| `--keep FOLDER` | write the mock data and every fit there, and keep them |
+
+From Python, {func}`brainsp.selftest.run` takes the same options and returns
+a {class}`brainsp.selftest.Report`.

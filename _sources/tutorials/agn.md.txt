@@ -1,0 +1,47 @@
+# 3. An AGN continuum
+
+An active nucleus adds a featureless continuum, roughly a power law
+$F_\nu \propto \nu^{-\alpha}$, which no stellar population can reproduce. A
+fit without it fakes the blue part of that continuum with young stars and the
+red part with dust. `mock_seyfert_agn.spec` is an old host with a power law
+($\alpha = 1.5$) carrying 25 per cent of the light at 5500 Å, and Seyfert
+emission lines.
+
+`include_power_law=True` adds seven featureless templates to whichever
+library is used: power laws with $\alpha$ = 0.5, 1.0, 1.5 and 2.0
+and Cloudy's AGN incident continuum for big-bump
+temperatures of $1$, $1.5$ and $2 \times 10^5$ K. See
+[](../user_guide/agn.md).
+
+```{literalinclude} ../../tutorials_src/t03_agn.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t03_agn.txt
+:language: text
+```
+
+Without the AGN templates the fit invents 7.4 per cent of the light in
+populations younger than 100 Myr and makes the mean age 0.4 dex too young
+and $A_V$ 0.22 mag too high. With them, the AGN takes 24.3 per cent (truth
+25), the young population disappears, and age and extinction come back to
+the truth.
+
+Only the *sum* of the AGN components is a measurement: in the optical the
+Cloudy continua are power laws of slope 0.59 to 0.74 to within 1.4 per
+cent, so how the light is split between neighbouring AGN templates is set by
+noise. `r.agn_fraction` is that sum.
+
+```{image} ../_static/tutorials/t03_sfh_no_agn.png
+:alt: SFH without AGN templates: a spurious 1 Myr population.
+```
+
+```{image} ../_static/tutorials/t03_sfh_agn.png
+:alt: SFH with AGN templates.
+```
+
+```{image} ../_static/tutorials/t03_spectrum.png
+:alt: The fit with AGN templates.
+```

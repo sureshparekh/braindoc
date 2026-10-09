@@ -1,0 +1,18 @@
+﻿brainsp.fit\_datacube
+=====================
+
+.. automodule:: brainsp.fit_datacube
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      bases_info_for
+      cube_fitted_pixels
+      process_spaxel
+      run_datacube
+      spaxel_inputs
+      spaxel_pool
+      to_rest_frame
+   

@@ -1,0 +1,26 @@
+﻿brainsp.api
+===========
+
+.. automodule:: brainsp.api
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      fit_cube
+      fit_spectra
+      fit_spectrum
+      read_corrections_table
+      read_megacube
+      read_result
+      set_device
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CubePipeline
+      FitResult
+      Settings
+   

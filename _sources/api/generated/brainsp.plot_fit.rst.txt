@@ -1,0 +1,15 @@
+﻿brainsp.plot\_fit
+=================
+
+.. automodule:: brainsp.plot_fit
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      detect_mode
+      load_spectrum_data
+      parse_summary
+      plot_fit
+   

@@ -1,0 +1,70 @@
+# Settings
+
+Every choice BRAIN makes is a **setting** with a default: 69 of them, from the
+fitting range to the solver's tolerance. The defaults suit an ordinary
+optical galaxy spectrum; most fits change two or three. [](../reference/settings.md)
+lists every one, with its default and what it does.
+
+## Four ways to give them, one set of names
+
+**Python, by keyword**:
+
+```python
+brainsp.fit_spectrum("g.spec", nebular_mode="espop", dust_range=[0, 3])
+```
+
+**Python, as an object** ({class}`brainsp.Settings`), which checks every
+name, can be reused, saved and loaded:
+
+```python
+s = brainsp.Settings(nebular_mode="espop")
+s.dust_range = [0, 3]
+s.save("my_settings.yaml")
+brainsp.fit_spectrum("g.spec", s)
+brainsp.fit_spectrum("g.spec", brainsp.Settings("my_settings.yaml"))
+brainsp.fit_spectrum("g.spec", s, wavelength_max=6500)   # keyword wins
+```
+
+**A YAML file**, every setting documented in place:
+
+```bash
+brainsp init settings.yaml        # a copy of the documented template
+brainsp check settings.yaml       # validate, fit nothing
+brainsp fit --settings settings.yaml galaxy.spec
+brainsp fit galaxy.spec --set nebular_mode=espop --set "dust_range=[0,3]"
+```
+
+**The interface**: the controls of the Corrections, Masks and Model steps.
+*Export run script* writes them all into a Python file.
+
+## Precedence
+
+Defaults, then a settings file or `Settings` object, then keyword arguments
+(or `--set`), then, for one spectrum in a batch, its own row of a corrections
+table. Later wins.
+
+## Validation
+
+Every run is validated before anything is read. Every problem is reported at
+once, each with what to do about it, and nothing runs until the settings are
+consistent: a misspelt name (with the nearest valid one suggested), a value
+outside its range, a file that is not there, a mode the library cannot
+support, a missing wavelength scale in a line-fitting mode. A setting BRAIN
+used to have and no longer does is refused with the reason it went, so an
+old settings file never runs silently differently.
+
+```python
+s.validate()              # a spectrum fit
+s.validate(for_cube=True) # a datacube fit: no spectrum needed
+```
+
+## What each setting does
+
+```python
+print(brainsp.Settings.describe("velocity_range"))
+print(brainsp.Settings.describe())        # all of them
+```
+
+```bash
+brainsp settings velocity_range
+```

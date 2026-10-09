@@ -1,0 +1,11 @@
+# License
+
+BRAIN is released under the MIT License.
+
+```{literalinclude} ../../../LICENSE
+:language: text
+```
+
+The bundled fonts (IBM Plex Sans and Mono, Jost) are under the SIL Open Font
+License 1.1 and the icons (Lucide) under the ISC License; their licence texts
+are in `brainsp/data/fonts` and `brainsp/data/icons`.

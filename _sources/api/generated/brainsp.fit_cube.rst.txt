@@ -1,0 +1,6 @@
+﻿brainsp.fit\_cube
+=================
+
+.. currentmodule:: brainsp
+
+.. autofunction:: fit_cube

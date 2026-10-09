@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.gas_diagnostics &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/gas_diagnostics';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.gas_diagnostics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.gas_diagnostics</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">BRAIN — nebular diagnostics measured from the fitted emission lines.</span>
+
+<span class="sd">Two things BRAIN measures per spectrum that were previously taken from config:</span>
+
+<span class="sd">  1. Electron density from the [S II] 6716/6731 doublet ratio, and electron</span>
+<span class="sd">     temperature from the [O III] (4959+5007)/4363 ratio. BRAIN measures both</span>
+<span class="sd">     on the fly and only falls back to standard conditions (100 cm^-3, 10^4 K)</span>
+<span class="sd">     when the lines are too weak to be trusted.</span>
+
+<span class="sd">  2. Spectral classification on the BPT diagram. This is REPORTED, not acted</span>
+<span class="sd">     on. It is a diagnostic, and a continuum-model-dependent one: Hbeta sits</span>
+<span class="sd">     in deep stellar absorption, so its measured flux depends on the continuum</span>
+<span class="sd">     model, and both BPT ratios use it. The same spectrum and the same library</span>
+<span class="sd">     can change class when only the nebular treatment changes.</span>
+
+<span class="sd">Both are guarded: a diagnostic that cannot be measured reliably returns the</span>
+<span class="sd">fallback and says so, rather than returning a confident wrong number.</span>
+
+<span class="sd">What gates the nebular work is Hbeta DETECTABILITY, not BPT class. If Hbeta</span>
+<span class="sd">cannot be measured then the Balmer decrement cannot be formed, so the nebular</span>
+<span class="sd">extinction and everything derived from it must not be attempted. That gate</span>
+<span class="sd">lives in brainv1 where the line fluxes are, and it is applied once. An earlier</span>
+<span class="sd">version had a class-based downgrade here AND a Balmer-detection guard in</span>
+<span class="sd">brainv1 that silently overrode it, so photopop mode ran on some spectra and not</span>
+<span class="sd">others for reasons that had nothing to do with either rule.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;NEWBRAIN&quot;</span><span class="p">)</span>
+
+<span class="n">TE_DEFAULT</span> <span class="o">=</span> <span class="mf">1.0e4</span>
+<span class="n">NE_DEFAULT</span> <span class="o">=</span> <span class="mf">1.0e2</span>
+
+<span class="n">SII_RATIO_MIN</span> <span class="o">=</span> <span class="mf">0.45</span>
+<span class="n">SII_RATIO_MAX</span> <span class="o">=</span> <span class="mf">1.42</span>
+
+<span class="n">MIN_LINE_FLUX</span> <span class="o">=</span> <span class="mf">1e-6</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="o">*</span><span class="n">names</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The flux of the first of `names` that the fitted lines provide.</span>
+
+<span class="sd">    `names` are ALTERNATIVE spellings of one quantity, not things to add up.</span>
+<span class="sd">    Resolution stops at the first one that matches anything, because the</span>
+<span class="sd">    fitted-line dict carries both a full catalogue name and a species alias</span>
+<span class="sd">    for hydrogen, and treating the alternatives as cumulative counted Halpha</span>
+<span class="sd">    and Hbeta twice each. That happened to cancel in the BPT ratios, which is</span>
+<span class="sd">    why it survived.</span>
+
+<span class="sd">    An exact key wins outright. Failing that, every entry of that species is</span>
+<span class="sd">    summed, so asking for a species that the catalogue splits into components</span>
+<span class="sd">    returns the whole of it rather than whichever component came first.</span>
+
+<span class="sd">    The alternatives after a doublet name are the doublet&#39;s ratio-1.0</span>
+<span class="sd">    component, which is the entry precompile_line_table leaves behind when</span>
+<span class="sd">    the other component falls off the wavelength grid. A doublet column is</span>
+<span class="sd">    built with ratios relative to that component, so its weight already IS</span>
+<span class="sd">    that component&#39;s flux, and the survivor is renormalised to 1.0 for the</span>
+<span class="sd">    same reason: the two spellings are then on one scale and no branching</span>
+<span class="sd">    ratio has to be remembered at the point of use.</span>
+
+<span class="sd">    The weaker component is deliberately not offered as an alternative. If</span>
+<span class="sd">    [O III] 5007 is off the grid and only 4959 survives, its flux is about a</span>
+<span class="sd">    third of the quantity a BPT diagram wants, and reporting &#39;undetermined&#39;</span>
+<span class="sd">    is the honest answer rather than a class derived from a number three</span>
+<span class="sd">    times too small.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.emission_lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">species_of</span>
+    <span class="k">for</span> <span class="n">want</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">want</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">want</span><span class="p">]),</span> <span class="kc">True</span>
+        <span class="n">same_species</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="n">species_of</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="n">want</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">same_species</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">same_species</span><span class="p">),</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">False</span>
+
+
+<div class="viewcode-block" id="electron_density">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.electron_density">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">electron_density</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">Te</span><span class="o">=</span><span class="n">TE_DEFAULT</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Density from the [S II] doublet, via the Proxauf, Ottl &amp; Kimeswenger</span>
+<span class="sd">    (2014) calibration.</span>
+
+<span class="sd">    Returns (n_e, ok). `ok` is False when the lines are too weak or the ratio</span>
+<span class="sd">    sits outside the density-sensitive window, in which case n_e is the</span>
+<span class="sd">    default rather than an extrapolation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f16</span><span class="p">,</span> <span class="n">ok16</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;[S II]_6716&#39;</span><span class="p">,</span> <span class="s1">&#39;[SII]_6716&#39;</span><span class="p">)</span>
+    <span class="n">f31</span><span class="p">,</span> <span class="n">ok31</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;[S II]_6731&#39;</span><span class="p">,</span> <span class="s1">&#39;[SII]_6731&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ok16</span> <span class="ow">and</span> <span class="n">ok31</span><span class="p">)</span> <span class="ow">or</span> <span class="n">f16</span> <span class="o">&lt;</span> <span class="n">MIN_LINE_FLUX</span> <span class="ow">or</span> <span class="n">f31</span> <span class="o">&lt;</span> <span class="n">MIN_LINE_FLUX</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">NE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+
+    <span class="n">R</span> <span class="o">=</span> <span class="n">f16</span> <span class="o">/</span> <span class="n">f31</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">SII_RATIO_MIN</span> <span class="o">&lt;</span> <span class="n">R</span> <span class="o">&lt;</span> <span class="n">SII_RATIO_MAX</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">NE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+
+    <span class="n">log_ne</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0543</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0553</span> <span class="o">*</span> <span class="n">R</span> <span class="o">+</span> <span class="mf">2.8506</span><span class="p">)</span>
+              <span class="o">+</span> <span class="mf">6.98</span> <span class="o">-</span> <span class="mf">10.6905</span> <span class="o">*</span> <span class="n">R</span> <span class="o">+</span> <span class="mf">9.9186</span> <span class="o">*</span> <span class="n">R</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">3.5442</span> <span class="o">*</span> <span class="n">R</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">10.0</span> <span class="o">**</span> <span class="n">log_ne</span><span class="p">)</span>
+    <span class="n">ne</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Te</span> <span class="o">/</span> <span class="mf">1.0e4</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">ne</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">&lt;=</span> <span class="n">ne</span> <span class="o">&lt;=</span> <span class="mf">1.0e6</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">NE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">ne</span><span class="p">,</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="electron_temperature">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.electron_temperature">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">electron_temperature</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="n">NE_DEFAULT</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Temperature from the [O III] auroral-to-nebular ratio (Osterbrock &amp;</span>
+<span class="sd">    Ferland 2006, Eq. 5.4), solved iteratively because the collisional</span>
+<span class="sd">    de-excitation correction itself depends on T_e.</span>
+
+<span class="sd">    THE NUMERATOR IS THE NEBULAR SUM, F(4959) + F(5007), and a fitted</span>
+<span class="sd">    doublet weight is not that. The [O III] column is built with its</span>
+<span class="sd">    components&#39; ratios relative to 5007, so its weight is F(5007) alone,</span>
+<span class="sd">    which is what the BPT diagram wants and what the line table reports.</span>
+<span class="sd">    doublet_nebular_sum_factor supplies the missing F(4959), at the</span>
+<span class="sd">    branching ratio the design matrix itself used, so the diagnostic and</span>
+<span class="sd">    the model cannot drift apart.</span>
+
+<span class="sd">    The error this repairs was one-sided. Using F(5007) where</span>
+<span class="sd">    F(4959) + F(5007) belongs makes R low by a factor 1.33510, and</span>
+<span class="sd">    T_e = 3.29e4 / ln(R corr / 7.90) RISES as R falls, so every measured</span>
+<span class="sd">    temperature came out too hot, and by more the hotter the gas: a gas at</span>
+<span class="sd">    10^4 K was reported at 10963 K and one at 2 x 10^4 K at 24263 K, high</span>
+<span class="sd">    by 9.6 and 21.3 per cent of the right answer. It does</span>
+<span class="sd">    not stop at a reported number. measure_conditions feeds T_e back into</span>
+<span class="sd">    the density, and brainv1 rebuilds the NebularModel and refits whenever</span>
+<span class="sd">    the measured conditions move by more than the tolerance there, so in</span>
+<span class="sd">    nepop and photopop this sets the nebular continuum itself.</span>
+
+<span class="sd">    The R &gt; 8 gate reads as a floor on a nebular-sum ratio now, which is</span>
+<span class="sd">    how Eq. 5.4 is written; R is 1.33510 times larger than before, so</span>
+<span class="sd">    ratios between 5.99 and 8.00 in the old units pass it that did not.</span>
+<span class="sd">    Nothing is reported from that, because R that small implies T_e above</span>
+<span class="sd">    10^5 K and the 5000-30000 K window below rejects it. The window is</span>
+<span class="sd">    where the correction changes an answer: a spectrum whose old T_e fell</span>
+<span class="sd">    between 30000 and 40735 K was discarded as unphysically hot and is now</span>
+<span class="sd">    measured, and one whose old T_e fell between 5000 and 5230 K was</span>
+<span class="sd">    measured and is now discarded as too cold.</span>
+
+<span class="sd">    [O III] 4363 is intrinsically faint, so this fails far more often than it</span>
+<span class="sd">    succeeds. Returns (T_e, ok).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.emission_lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">doublet_nebular_sum_factor</span>
+
+    <span class="n">f43</span><span class="p">,</span> <span class="n">ok43</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;[O III]_4363&#39;</span><span class="p">,</span> <span class="s1">&#39;[OIII]_4363&#39;</span><span class="p">)</span>
+    <span class="n">f_5007</span><span class="p">,</span> <span class="n">ok5007</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;[O III]_Doublet&#39;</span><span class="p">,</span> <span class="s1">&#39;[OIII]_Doublet&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;[O III]_5007&#39;</span><span class="p">,</span> <span class="s1">&#39;[OIII]_5007&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ok43</span> <span class="ow">and</span> <span class="n">ok5007</span><span class="p">)</span> <span class="ow">or</span> <span class="n">f43</span> <span class="o">&lt;</span> <span class="n">MIN_LINE_FLUX</span> <span class="ow">or</span> <span class="n">f_5007</span> <span class="o">&lt;</span> <span class="n">MIN_LINE_FLUX</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">TE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+
+    <span class="n">f_neb</span> <span class="o">=</span> <span class="n">f_5007</span> <span class="o">*</span> <span class="n">doublet_nebular_sum_factor</span><span class="p">(</span><span class="s1">&#39;[O III]_Doublet&#39;</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">f_neb</span> <span class="o">/</span> <span class="n">f43</span>
+    <span class="k">if</span> <span class="n">R</span> <span class="o">&lt;=</span> <span class="mf">8.0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">TE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+
+    <span class="n">Te</span> <span class="o">=</span> <span class="n">TE_DEFAULT</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+        <span class="n">corr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="mf">4.5e-4</span> <span class="o">*</span> <span class="n">ne</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+        <span class="n">arg</span> <span class="o">=</span> <span class="n">R</span> <span class="o">*</span> <span class="n">corr</span> <span class="o">/</span> <span class="mf">7.90</span>
+        <span class="k">if</span> <span class="n">arg</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">TE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+        <span class="n">Te_new</span> <span class="o">=</span> <span class="mf">3.29e4</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">Te_new</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">TE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Te_new</span> <span class="o">-</span> <span class="n">Te</span><span class="p">)</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">:</span>
+            <span class="n">Te</span> <span class="o">=</span> <span class="n">Te_new</span>
+            <span class="k">break</span>
+        <span class="n">Te</span> <span class="o">=</span> <span class="n">Te_new</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">5.0e3</span> <span class="o">&lt;=</span> <span class="n">Te</span> <span class="o">&lt;=</span> <span class="mf">3.0e4</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">TE_DEFAULT</span><span class="p">,</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">Te</span><span class="p">),</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="measure_conditions">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.measure_conditions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">measure_conditions</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Measure n_e and T_e together, iterating once because each depends on the</span>
+<span class="sd">    other. Returns a dict with the values and whether each was measured.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ne</span><span class="p">,</span> <span class="n">ne_ok</span> <span class="o">=</span> <span class="n">electron_density</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">Te</span><span class="p">,</span> <span class="n">Te_ok</span> <span class="o">=</span> <span class="n">electron_temperature</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">ne</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Te_ok</span><span class="p">:</span>
+        <span class="n">ne</span><span class="p">,</span> <span class="n">ne_ok</span> <span class="o">=</span> <span class="n">electron_density</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">Te</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;   Gas conditions: n_e = </span><span class="si">{</span><span class="n">ne</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> cm^-3 &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="s1">&#39;measured from [S II]&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne_ok</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;default, [S II] unusable&#39;</span><span class="si">}</span><span class="s2">), &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;T_e = </span><span class="si">{</span><span class="n">Te</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> K &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="s1">&#39;measured from [O III]&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">Te_ok</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;default, [O III] 4363 unusable&#39;</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;ne&#39;</span><span class="p">:</span> <span class="n">ne</span><span class="p">,</span> <span class="s1">&#39;Te&#39;</span><span class="p">:</span> <span class="n">Te</span><span class="p">,</span> <span class="s1">&#39;ne_measured&#39;</span><span class="p">:</span> <span class="n">ne_ok</span><span class="p">,</span> <span class="s1">&#39;Te_measured&#39;</span><span class="p">:</span> <span class="n">Te_ok</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="classify_bpt">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.classify_bpt">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">classify_bpt</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">min_snr_flux</span><span class="o">=</span><span class="n">MIN_LINE_FLUX</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classify on the [O III]/Hb vs [N II]/Ha diagram.</span>
+
+<span class="sd">    Demarcations:</span>
+<span class="sd">      Kauffmann et al. (2003)  pure star-forming</span>
+<span class="sd">      Kewley et al. (2001)     maximum starburst</span>
+<span class="sd">      Schawinski et al. (2007) Seyfert / LINER split above Kewley</span>
+
+<span class="sd">    Returns (label, info) with label one of</span>
+<span class="sd">    &#39;SF&#39;, &#39;composite&#39;, &#39;Seyfert&#39;, &#39;LINER&#39;, &#39;undetermined&#39;.</span>
+
+<span class="sd">    The label is a report, never a gate. It depends on the continuum model</span>
+<span class="sd">    through Hbeta, which both ratios use and which sits in deep stellar</span>
+<span class="sd">    absorption, so changing only the nebular treatment can change the class of</span>
+<span class="sd">    an unchanged spectrum.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ha</span><span class="p">,</span> <span class="n">oka</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;Halpha_6563&#39;</span><span class="p">,</span> <span class="s1">&#39;Halpha&#39;</span><span class="p">)</span>
+    <span class="n">hb</span><span class="p">,</span> <span class="n">okb</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;Hbeta_4861&#39;</span><span class="p">,</span> <span class="s1">&#39;Hbeta&#39;</span><span class="p">)</span>
+    <span class="n">n2</span><span class="p">,</span> <span class="n">okn</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;[N II]_Doublet&#39;</span><span class="p">,</span> <span class="s1">&#39;[NII]_Doublet&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;[N II]_6583&#39;</span><span class="p">,</span> <span class="s1">&#39;[NII]_6583&#39;</span><span class="p">)</span>
+    <span class="n">o3</span><span class="p">,</span> <span class="n">oko</span> <span class="o">=</span> <span class="n">_flux</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;[O III]_Doublet&#39;</span><span class="p">,</span> <span class="s1">&#39;[OIII]_Doublet&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;[O III]_5007&#39;</span><span class="p">,</span> <span class="s1">&#39;[OIII]_5007&#39;</span><span class="p">)</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Halpha&#39;</span><span class="p">:</span> <span class="n">ha</span><span class="p">,</span> <span class="s1">&#39;Hbeta&#39;</span><span class="p">:</span> <span class="n">hb</span><span class="p">,</span> <span class="s1">&#39;NII&#39;</span><span class="p">:</span> <span class="n">n2</span><span class="p">,</span> <span class="s1">&#39;OIII&#39;</span><span class="p">:</span> <span class="n">o3</span><span class="p">}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">((</span><span class="n">oka</span><span class="p">,</span> <span class="n">okb</span><span class="p">,</span> <span class="n">okn</span><span class="p">,</span> <span class="n">oko</span><span class="p">))</span> <span class="ow">or</span> <span class="nb">min</span><span class="p">(</span><span class="n">ha</span><span class="p">,</span> <span class="n">hb</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">o3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_snr_flux</span><span class="p">:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;one or more BPT lines undetected&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;undetermined&#39;</span><span class="p">,</span> <span class="n">info</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">n2</span> <span class="o">/</span> <span class="n">ha</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">o3</span> <span class="o">/</span> <span class="n">hb</span><span class="p">)</span>
+    <span class="n">info</span><span class="p">[</span><span class="s1">&#39;log_NII_Ha&#39;</span><span class="p">],</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;log_OIII_Hb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="n">kauff</span> <span class="o">=</span> <span class="mf">0.61</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.05</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.30</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+    <span class="n">kewley</span> <span class="o">=</span> <span class="mf">0.61</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.47</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.19</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.47</span> <span class="k">else</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+    <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">kauff</span><span class="p">:</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;SF&#39;</span>
+    <span class="k">elif</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">kewley</span><span class="p">:</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;composite&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Seyfert&#39;</span> <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mf">1.05</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.45</span> <span class="k">else</span> <span class="s1">&#39;LINER&#39;</span>
+    <span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;log[NII]/Ha=</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, log[OIII]/Hb=</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">label</span><span class="p">,</span> <span class="n">info</span></div>
+
+
+
+<span class="n">BPT_FLAG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;undetermined&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span>
+    <span class="s1">&#39;SF&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;composite&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;LINER&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;Seyfert&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;Integer code for the BPT label, written to the summary file.</span>
+
+<span class="sd">One code for each of the five classes (Not defined, Pure SF, SFComposite,</span>
+<span class="sd">LINER, Seyfert); -999 is &quot;not defined&quot;.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="n">BALMER_JUMP</span> <span class="o">=</span> <span class="mf">3646.0</span>
+
+
+<div class="viewcode-block" id="nebular_constrained">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.nebular_constrained">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">nebular_constrained</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">inv_sigma</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">min_snr</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+                        <span class="n">min_pixels</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check whether the fit can actually distinguish a nebular continuum.</span>
+
+<span class="sd">    The nebular continuum is smooth and rises to the blue, which makes it</span>
+<span class="sd">    nearly degenerate with dust. What breaks the degeneracy is the Balmer</span>
+<span class="sd">    discontinuity at 3646 A: recombination to n=2 emits only at shorter</span>
+<span class="sd">    wavelengths, so the nebular continuum is elevated blueward of the jump and</span>
+<span class="sd">    drops sharply across it — a feature no reddening law or stellar template</span>
+<span class="sd">    can mimic.</span>
+
+<span class="sd">    If that region is outside the fitted range, or too noisy to measure, then</span>
+<span class="sd">    a freely fitted nebular component is unconstrained and will silently trade</span>
+<span class="sd">    against A_V. Measured on the reference spectrum: S/N ~ 0.5 below the jump</span>
+<span class="sd">    against ~5.5 in the red, and the fit duly ran A_V to its lower bound.</span>
+
+<span class="sd">    Returns (ok, info).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">iv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inv_sigma</span><span class="p">)</span>
+    <span class="n">fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">flux</span><span class="p">)</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jump_in_range&#39;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">wl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">BALMER_JUMP</span> <span class="o">&lt;=</span> <span class="n">wl</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;jump_in_range&#39;</span><span class="p">]:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Balmer jump (</span><span class="si">{</span><span class="n">BALMER_JUMP</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A) lies outside the &quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;fitted range </span><span class="si">{</span><span class="n">wl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">wl</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Nebular continuum is weakly constrained: &quot;</span>
+                           <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">. It may trade against A_V.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">info</span>
+
+    <span class="n">win</span> <span class="o">=</span> <span class="p">(</span><span class="n">wl</span> <span class="o">&gt;</span> <span class="n">BALMER_JUMP</span> <span class="o">-</span> <span class="mf">120.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wl</span> <span class="o">&lt;</span> <span class="n">BALMER_JUMP</span> <span class="o">+</span> <span class="mf">120.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">iv</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">win</span><span class="p">))</span>
+    <span class="n">info</span><span class="p">[</span><span class="s1">&#39;pixels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">min_pixels</span><span class="p">:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;only </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> usable pixels around the Balmer jump&quot;</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Nebular continuum is weakly constrained: &quot;</span>
+                           <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">info</span>
+
+    <span class="n">snr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fx</span><span class="p">[</span><span class="n">win</span><span class="p">])</span> <span class="o">*</span> <span class="n">iv</span><span class="p">[</span><span class="n">win</span><span class="p">]))</span>
+    <span class="n">info</span><span class="p">[</span><span class="s1">&#39;snr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">snr</span>
+    <span class="k">if</span> <span class="n">snr</span> <span class="o">&lt;</span> <span class="n">min_snr</span><span class="p">:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;S/N ~ </span><span class="si">{</span><span class="n">snr</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> around the Balmer jump &quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;(need &gt;= </span><span class="si">{</span><span class="n">min_snr</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Nebular continuum is weakly constrained: &quot;</span>
+                           <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;reason&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">. Its weight may absorb dust &quot;</span>
+                           <span class="sa">f</span><span class="s2">&quot;rather than real nebular light.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">info</span>
+
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Balmer jump measurable (S/N ~ </span><span class="si">{</span><span class="n">snr</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">) — &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;nebular continuum is constrained&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span></div>
+
+
+
+<div class="viewcode-block" id="gas_kinematics_report">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.gas_kinematics_report">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gas_kinematics_report</span><span class="p">(</span><span class="n">group_labels</span><span class="p">,</span> <span class="n">group_kinematics</span><span class="p">,</span> <span class="n">line_names</span><span class="p">,</span>
+                          <span class="n">line_group_positions</span><span class="p">,</span> <span class="n">line_fluxes</span><span class="p">,</span> <span class="n">line_wavelengths</span><span class="p">,</span>
+                          <span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">,</span> <span class="n">lsf_info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Turn each kinematic group&#39;s fitted sigma and v0 into something quotable,</span>
+<span class="sd">    or say why it is not.</span>
+
+<span class="sd">    The stellar side has refused to quote a bound since the line-spread</span>
+<span class="sd">    function work: instrumental_lsf.dispersion_report writes &#39;&lt;47.55&#39; with a</span>
+<span class="sd">    leading &#39;&lt;&#39; and the word UPPER LIMIT rather than a number a reader could</span>
+<span class="sd">    mistake for a measurement, and writes &#39;unknown&#39; when the instrument is not</span>
+<span class="sd">    known. The gas side had nothing, and a sigma_gas sitting exactly on its</span>
+<span class="sd">    lower bound printed as a plain number. This is that same refusal, for the</span>
+<span class="sd">    gas, and it deliberately reads the same way; on_bound is imported rather</span>
+<span class="sd">    than copied so the two cannot come to disagree about what a rail is.</span>
+
+<span class="sd">    A group&#39;s dispersion is not quotable for either of two reasons.</span>
+
+<span class="sd">    ON A BOUND</span>
+<span class="sd">        sigma_gas came back on an end of gas_dispersion_range. On the lower</span>
+<span class="sd">        end the fit wanted a narrower line than it was allowed, so the value</span>
+<span class="sd">        is an UPPER LIMIT and is written &#39;&lt;&#39;; on the upper end it wanted a</span>
+<span class="sd">        broader one, so it is a LOWER LIMIT and is written &#39;&gt;&#39;. Neither is a</span>
+<span class="sd">        width. This is not hypothetical: until the pixel-width floor was</span>
+<span class="sd">        removed, both groups of the reference spectrum sat on 58.39 km/s and</span>
+<span class="sd">        printed as measurements.</span>
+
+<span class="sd">    NO LINE DETECTED</span>
+<span class="sd">        The kinematics of a group are carried entirely by the lines in it. The</span>
+<span class="sd">        non-negative solve puts a line at EXACTLY zero when no non-negative</span>
+<span class="sd">        amplitude improves the fit, which is a statement and not a rounding,</span>
+<span class="sd">        and a group whose lines all come back at zero has a flat likelihood in</span>
+<span class="sd">        both sigma and v0: the optimiser returns whatever it started from or</span>
+<span class="sd">        wandered to, converged, with nothing to say so. On the reference</span>
+<span class="sd">        spectrum two of the high-ionisation group&#39;s four lines ([Ne III] 3869</span>
+<span class="sd">        and the [O III] doublet) fit at exactly zero, so that group&#39;s</span>
+<span class="sd">        kinematics rest on two lines at most; a spectrum where all four go to</span>
+<span class="sd">        zero would report two numbers that mean nothing at all. The count of</span>
+<span class="sd">        lines carrying flux is therefore reported alongside every group, and a</span>
+<span class="sd">        group with none is refused outright, v0 as well as sigma.</span>
+
+<span class="sd">    WHAT THE NUMBER IS A DISPERSION OF</span>
+
+<span class="sd">    sigma_gas is OBSERVED. The instrumental line-spread function is still in</span>
+<span class="sd">    it; nothing is deconvolved from the emission line, which is why the label</span>
+<span class="sd">    written beside it states the convention rather than leaving it to be</span>
+<span class="sd">    assumed. sigma_star in the same summary is INTRINSIC, the instrument taken</span>
+<span class="sd">    out in quadrature, so the two numbers are not comparable as printed and</span>
+<span class="sd">    the file has to say which is which.</span>
+
+<span class="sd">    sigma_inst is reported next to sigma_gas, per group, whenever</span>
+<span class="sd">    &#39;instrumental_resolution&#39; is set, and &#39;unknown&#39; when it is not. That</span>
+<span class="sd">    follows Westfall et al. (2019), who report the observed and the</span>
+<span class="sd">    instrumental dispersion as separate maps and deliberately do not do the</span>
+<span class="sd">    subtraction (Section 7.3: &quot;we do not provide the corrected</span>
+<span class="sd">    velocity dispersion ... We leave it to the user&quot;). Nothing here is</span>
+<span class="sd">    clipped, floored or called zero when sigma_gas comes out below sigma_inst,</span>
+<span class="sd">    which over the MaNGA line-spread function of 68.0-83.5 km/s is where every</span>
+<span class="sd">    sigma_gas BRAIN currently reports lands: Westfall Section 7.6.3 is</span>
+<span class="sd">    explicit that such a measurement is neither equivalent to nor a valid</span>
+<span class="sd">    measurement of sigma = 0, and recommends carrying the negative sigma^2</span>
+<span class="sd">    rather than clipping it. Both numbers are given so that the reader can do</span>
+<span class="sd">    that arithmetic, and neither is done for them.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    group_labels : list</span>
+<span class="sd">        The groups&#39; labels, in the POSITION order the fitted parameter vector</span>
+<span class="sd">        lays them out. What the user called a group and where it sits in that</span>
+<span class="sd">        vector are different things; see emission_lines.group_positions.</span>
+<span class="sd">    group_kinematics : dict</span>
+<span class="sd">        {label: (sigma_gas, v0_gas)} in km/s, as the fit returned them.</span>
+<span class="sd">    line_names : list of str</span>
+<span class="sd">        One name per fitted gas column.</span>
+<span class="sd">    line_group_positions : sequence of int</span>
+<span class="sd">        The POSITION of each column&#39;s group, one per column.</span>
+<span class="sd">    line_fluxes : sequence of float</span>
+<span class="sd">        The fitted weight of each column, which is its flux.</span>
+<span class="sd">    line_wavelengths : sequence of float</span>
+<span class="sd">        One wavelength per column, in Angstrom, for looking up the instrument.</span>
+<span class="sd">    lower_bound, upper_bound : float</span>
+<span class="sd">        gas_dispersion_range, in km/s.</span>
+<span class="sd">    lsf_info : dict or None</span>
+<span class="sd">        What instrumental_lsf.prepare_templates recorded about the data&#39;s</span>
+<span class="sd">        line-spread function. None, or a run with no &#39;instrumental_resolution&#39;,</span>
+<span class="sd">        gives sigma_inst = None and the word &#39;unknown&#39; in the output.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of dict, one per group, in the same position order as group_labels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.instrumental_lsf</span><span class="w"> </span><span class="kn">import</span> <span class="n">on_bound</span><span class="p">,</span> <span class="n">instrumental_dispersion_at</span>
+
+    <span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">line_names</span><span class="p">)</span>
+    <span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">line_group_positions</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">fluxes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">line_fluxes</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">wavelengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">line_wavelengths</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="n">sigma_inst_per_line</span> <span class="o">=</span> <span class="n">instrumental_dispersion_at</span><span class="p">(</span><span class="n">lsf_info</span><span class="p">,</span> <span class="n">wavelengths</span><span class="p">)</span>
+
+    <span class="n">low</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lower_bound</span><span class="p">)</span>
+    <span class="n">high</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">upper_bound</span><span class="p">)</span>
+
+    <span class="n">report</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">position</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">group_labels</span><span class="p">):</span>
+        <span class="n">sigma</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="n">group_kinematics</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;nan&quot;</span><span class="p">),)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">sigma</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sigma</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">v0</span><span class="p">)</span>
+
+        <span class="n">member</span> <span class="o">=</span> <span class="n">positions</span> <span class="o">==</span> <span class="n">position</span>
+        <span class="n">detected</span> <span class="o">=</span> <span class="n">member</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">fluxes</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">n_lines</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+        <span class="n">n_detected</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">detected</span><span class="p">))</span>
+
+        <span class="n">railed_low</span><span class="p">,</span> <span class="n">railed_high</span> <span class="o">=</span> <span class="n">on_bound</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+
+        <span class="n">sigma_inst</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">sigma_inst_per_line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">n_lines</span><span class="p">:</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">detected</span><span class="p">,</span> <span class="n">fluxes</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">weight</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">weight</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+            <span class="n">sigma_inst</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weight</span> <span class="o">*</span> <span class="n">sigma_inst_per_line</span><span class="p">)</span>
+                               <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+
+        <span class="n">entry</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
+            <span class="s2">&quot;sigma_obs&quot;</span><span class="p">:</span> <span class="n">sigma</span><span class="p">,</span>
+            <span class="s2">&quot;v0&quot;</span><span class="p">:</span> <span class="n">v0</span><span class="p">,</span>
+            <span class="s2">&quot;n_lines&quot;</span><span class="p">:</span> <span class="n">n_lines</span><span class="p">,</span>
+            <span class="s2">&quot;n_detected&quot;</span><span class="p">:</span> <span class="n">n_detected</span><span class="p">,</span>
+            <span class="s2">&quot;detected_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">detected</span><span class="p">)</span> <span class="k">if</span> <span class="n">d</span><span class="p">],</span>
+            <span class="s2">&quot;flux_total&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">fluxes</span><span class="p">[</span><span class="n">member</span><span class="p">]))</span> <span class="k">if</span> <span class="n">n_lines</span> <span class="k">else</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="s2">&quot;railed_low&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">railed_low</span><span class="p">),</span>
+            <span class="s2">&quot;railed_high&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">railed_high</span><span class="p">),</span>
+            <span class="s2">&quot;sigma_inst&quot;</span><span class="p">:</span> <span class="n">sigma_inst</span><span class="p">,</span>
+            <span class="s2">&quot;quotable&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;measured&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">n_detected</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;UNCONSTRAINED&quot;</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;reason&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> has no detected line: all </span><span class="si">{</span><span class="n">n_lines</span><span class="si">}</span><span class="s2"> of its &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;lines came back at exactly zero flux from the non-negative &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;solve, so nothing in the spectrum constrains either its &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;dispersion or its velocity. The optimiser returned &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;sigma_gas </span><span class="si">{</span><span class="n">sigma</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s and v0_gas </span><span class="si">{</span><span class="n">v0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s and &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;reported success; both are artefacts of where the search &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;started, not measurements, and neither is written as a &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;number.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">railed_low</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;UPPER LIMIT&quot;</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;reason&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> came back on the lower bound of &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;gas_dispersion_range (</span><span class="si">{</span><span class="n">low</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s), so it is a bound and &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;not a measurement: the fit wanted a narrower line than it &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;was allowed. sigma_gas &lt; </span><span class="si">{</span><span class="n">low</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s is all this &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;spectrum says. Lower the first number of &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;gas_dispersion_range and re-run.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">railed_high</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;LOWER LIMIT&quot;</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;reason&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> came back on the upper bound of &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;gas_dispersion_range (</span><span class="si">{</span><span class="n">high</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s), so it is a bound &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;and not a measurement: the fit wanted a broader line than &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;it was allowed. sigma_gas &gt; </span><span class="si">{</span><span class="n">high</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s is all this &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;spectrum says. Raise the second number of &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;gas_dispersion_range and re-run, and check first that the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;group is not absorbing something that is not a line.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;quotable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;quotable&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">n_detected</span> <span class="o">&lt;</span> <span class="n">n_lines</span><span class="p">:</span>
+            <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;reason&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> is fitted with </span><span class="si">{</span><span class="n">n_lines</span><span class="si">}</span><span class="s2"> lines and &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_detected</span><span class="si">}</span><span class="s2"> of them carry flux; the rest came back at &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;exactly zero and contribute nothing to its kinematics.&quot;</span><span class="p">)</span>
+
+        <span class="n">report</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">report</span></div>
+
+
+
+<div class="viewcode-block" id="gas_dispersion_text">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.gas_dispersion_text">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gas_dispersion_text</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The token a summary or a log line prints in place of a gas dispersion.</span>
+
+<span class="sd">    A quotable dispersion is the number. A dispersion on the lower bound is</span>
+<span class="sd">    written &#39;&lt;value&#39;, on the upper bound &#39;&gt;value&#39;, and a group with no</span>
+<span class="sd">    detected line prints the word &#39;unconstrained&#39; and no number at all --</span>
+<span class="sd">    exactly as instrumental_lsf writes &#39;&lt;47.55&#39; and &#39;unknown&#39; for the stellar</span>
+<span class="sd">    side, so that the two blocks of one summary file read alike. The value the</span>
+<span class="sd">    optimiser returned for an unconstrained group is not lost; it is in the</span>
+<span class="sd">    reason text, where it cannot be mistaken for a result.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;UNCONSTRAINED&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;unconstrained&quot;</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;railed_low&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;sigma_obs&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;railed_high&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&gt;</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;sigma_obs&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;sigma_obs&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="gas_velocity_text">
+<a class="viewcode-back" href="../../api/generated/brainsp.gas_diagnostics.html#brainsp.gas_diagnostics.gas_velocity_text">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gas_velocity_text</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The same, for the group&#39;s velocity.</span>
+
+<span class="sd">    A velocity is not bounded in the way a dispersion is -- a fit that reaches</span>
+<span class="sd">    the end of gas_velocity_range has a different problem, and v0_star already</span>
+<span class="sd">    reports its own -- so the only refusal here is the group with no detected</span>
+<span class="sd">    line, whose velocity is as unconstrained as its width.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;UNCONSTRAINED&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;unconstrained&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;v0&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

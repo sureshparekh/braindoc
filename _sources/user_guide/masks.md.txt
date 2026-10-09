@@ -1,0 +1,116 @@
+# Masks and weights
+
+A **wavelength mask** leaves regions out of the fit, or makes them count
+for more. For a datacube, a **signal-to-noise mask** chooses which spaxels
+are fitted ([](datacubes.md)).
+
+## Weights
+
+Each region carries a weight $w$, which multiplies each pixel's contribution
+to $\chi^2$:
+
+$$ \chi^2 = \sum_\lambda w_\lambda \left[\frac{F_{\rm obs}(\lambda) - F_{\rm model}(\lambda)}{\sigma(\lambda)}\right]^2 $$
+
+| $w$ | Effect |
+|---|---|
+| 0 | the pixels are left out |
+| 1 | normal (the same as not listing the region) |
+| 2 | they count double, as if observed twice |
+
+Internally it is applied as $\sqrt{w}/\sigma$. Later regions override earlier
+ones where they overlap. Up-weighting makes the fit respect a feature at the
+expense of everything else: the right tool when that feature carries the
+information you want (Ca II H and K, the G band), the wrong one for a
+residual you do not like.
+
+## The file format
+
+A mask file (`.sm`, `.gm`) holds the number of regions
+$N$ on the first line, then $N$ lines of `start end weight [label ...]`
+(Ångström, rest frame):
+
+```text
+3
+3710.0   3744.0   0.0   [O II] 3726+3729
+5570.0   5590.0   0.0   sky [O I] 5577
+3910.0   3990.0   2.0   Ca II H and K
+```
+
+Exactly $N$ lines are regions; anything after them is notes, and is not
+applied (some published mask files end with an *example* block below their
+regions). A plain list without the count works too: every line
+that starts with two numbers is a region. The weight is optional (default 0),
+and a third field that is not a number is the start of the label.
+
+```python
+regions, n_skipped = brainsp.read_mask("lines.sm")   # [(start, end, weight, label), ...]
+brainsp.write_mask("my_mask.sm", [(5570, 5590, 0.0, "sky"),
+                                  (3910, 3990, 2.0, "Ca II H+K")])
+brainsp.STANDARD_OPTICAL_MASK      # the standard SDSS emission-line windows
+```
+
+## Using one
+
+| | |
+|---|---|
+| Python | `fit_spectrum(..., mask="lines.sm")`; `CubePipeline(..., wavelength_mask="lines.sm")` or a list of regions |
+| command line | `--set mask=lines.sm`; `brainsp cube ... --mask lines.sm` |
+| interface | Masks step: drag on the spectrum, *Load mask file…*, *Standard optical*, *Save mask…* |
+
+For a datacube one mask applies to every spaxel; a `mask file` column in the
+targets table gives a cube its own.
+
+## The standard optical mask
+
+The standard SDSS optical emission-line windows, all excluded:
+
+| Range (Å) | Lines |
+|---|---|
+| 3710–3744 | [O II] 3726, 3729 |
+| 3858–3880 | [Ne III] 3869 |
+| 3960–3980 | H$\epsilon$ (over Ca II H) |
+| 4092–4112 | H$\delta$ |
+| 4330–4350 | H$\gamma$ |
+| 4848–4874 | H$\beta$ |
+| 4940–5028 | [O III] 4959, 5007 |
+| 5866–5916 | He I 5876, Na D (interstellar) |
+| 6280–6320 | [O I] 6300 |
+| 6528–6608 | H$\alpha$, [N II] 6548, 6583 |
+| 6696–6752 | [S II] 6716, 6731 |
+
+In `spop` mask them: the lines are not modelled and drag the continuum
+([tutorial 5](../tutorials/masks.md)). In the line-fitting modes the lines
+are fitted and need no mask.
+
+## Masks in the line-fitting modes
+
+A mask is applied exactly as given in every mode, for a spectrum and for a
+datacube alike. That is what a mask is for: a detector gap, a break between
+two arms of a spectrograph, a bad column or a sky residual stays out of the
+fit wherever it falls, also next to an emission line.
+
+:::{warning}
+In `espop`, `nepop` and `photopop` it is up to you **not to mask the
+emission lines you want fitted**. Use an emission-line mask (such as
+*Standard optical*) only in `spop`.
+
+A line left with too little data cannot be measured: its height would be set
+by a wing, or by nothing, and the fit would return an arbitrary flux (a
+masked H$\alpha$ on a mock spectrum came back at 35 times its true value).
+So BRAIN leaves out any line for which fewer than half of the pixels within
+$\pm 2\sigma$ of its rest wavelength (at the starting gas dispersion,
+`gas_dispersion_start`, 100 km/s by default) carry weight. The log names
+each one:
+
+```text
+[WARNING]    3 emission line(s) lie under the mask or in a gap of the data
+and are NOT fitted or reported: Halpha_6563, [N II]_6548, [N II]_6583.
+Unmask them to fit them.
+```
+
+Such a line is missing from the summary file, from `FitResult.lines` and, for
+a cube, from the line maps; diagnostics that need it (BPT, WHAN) cannot be
+drawn. One member of a tied doublet left alone is fitted by itself under its
+own name. A few bad pixels on a line do not drop it; a masked window or a gap
+over its core does.
+:::

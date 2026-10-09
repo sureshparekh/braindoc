@@ -1,0 +1,12 @@
+﻿brainsp.run\_brain
+==================
+
+.. automodule:: brainsp.run_brain
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      main
+   

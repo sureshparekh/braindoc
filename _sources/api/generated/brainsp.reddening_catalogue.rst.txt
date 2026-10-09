@@ -1,0 +1,12 @@
+﻿brainsp.reddening\_catalogue
+============================
+
+.. automodule:: brainsp.reddening_catalogue
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      describe
+   

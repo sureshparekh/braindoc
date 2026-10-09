@@ -1,0 +1,63 @@
+# 10. Runs on a server
+
+Nothing BRAIN does needs a display. Three ways to run without one:
+
+**The command line.** Every action of the interface is a `brainsp`
+sub-command ([](../reference/cli.md)):
+
+```bash
+brainsp fit spectra/*.spec --corrections corrections.csv -o results
+brainsp cube cubes/*.fits --table targets.csv --wavelength-scale vacuum \
+    --sn 3 10 --fit-sn 3 --set nebular_mode=espop -o megacubes
+brainsp plot megacubes/galaxy-BRAIN_MEGACUBE.fits --export maps
+```
+
+**One-file runs.** Keep the data in one folder, open the interface there
+(or use Python, or `brainsp init run.py`), set the run up and export the
+script into that folder. Paths inside it are written relative to the
+script, so copy the whole folder to the server and run the script there,
+from any directory:
+
+```bash
+rsync -a project/ server:work/project/
+ssh server
+python work/project/run.py --check       # every input there? every setting valid?
+python work/project/run.py --device gpu  # results are written inside the folder
+```
+
+Files outside the folder are listed at the top of the script; copy them
+along ([](../user_guide/scripts.md)).
+
+**Python**, in a batch job or a notebook, with {mod}`brainsp`.
+
+## The processor
+
+`--device` (or `device=`, or the `device` setting) picks `cpu`, `gpu` or
+`auto`. JAX chooses its device once per Python process, at the first fit, so
+it must be chosen before then.
+
+On a **GPU** BRAIN fits many spaxels of a cube at once, in batches sized to
+the card's memory, and fits a list of spectra one after another in one warm
+process. On a **CPU** it starts worker processes, one per core, each pinned
+to one thread, and divides the spaxels (or the spectra) among them, which
+scales with the cores; one process cannot use a many-core CPU for this
+problem. `cpu_workers: auto` uses every core but one, as many as the free
+memory allows; set a number to share the machine. See
+[](../user_guide/performance.md).
+
+## A SLURM job
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=brain
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=48G
+#SBATCH --time=04:00:00
+source ~/miniconda3/bin/activate brain
+brainsp cube cubes/*.fits --table targets.csv --wavelength-scale vacuum \
+    --sn 3 --fit-sn 3 --device cpu -o megacubes
+```
+
+`cpu_workers: auto` counts the cores the job was *given* (SLURM's
+`--cpus-per-task`, `taskset`, a container's limit), not every core of the
+node, and leaves one of them free.

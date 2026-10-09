@@ -1,0 +1,20 @@
+﻿brainsp.fast\_cube
+==================
+
+.. automodule:: brainsp.fast_cube
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      fit_batch_fast
+      fit_queue_fast
+      outlier_nsigma
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Templates
+   

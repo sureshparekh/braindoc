@@ -1,0 +1,25 @@
+# The desktop interface
+
+```bash
+brainsp gui
+```
+
+```{toctree}
+:maxdepth: 1
+
+overview
+spectrum
+datacube
+results
+themes
+```
+
+The interface is a front end to exactly the code the Python package runs:
+every fit it starts runs in a separate process through the same functions
+{func}`brainsp.fit_spectrum` and {class}`brainsp.CubePipeline` call, with the
+same settings, and every run it sets up can be exported as one Python file
+that does the same from a terminal. Nothing in it is a different fit.
+
+The screenshots are of the light theme. The interface also has a dark one,
+switched with the moon and sun button at the top right; [](themes.md) shows
+every page in it.

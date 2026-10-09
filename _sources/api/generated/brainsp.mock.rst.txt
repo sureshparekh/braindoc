@@ -1,0 +1,17 @@
+﻿brainsp.mock
+============
+
+.. automodule:: brainsp.mock
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cube_truth
+      make_cube
+      make_spectrum
+      write_cube
+      write_examples
+      write_spectrum
+   

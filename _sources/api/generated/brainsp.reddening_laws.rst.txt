@@ -1,0 +1,22 @@
+﻿brainsp.reddening\_laws
+=======================
+
+.. automodule:: brainsp.reddening_laws
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cal_00_law
+      ccc_law
+      ccm_89_law
+      gd03_law
+      gd24_law
+      get_k_lambda
+      hz1_allen_mw
+      hz2_seaton_mw
+      hz3_fitzpatrick_lmc
+      hz4_prevot_smc
+      hz5_calzetti_sb
+   

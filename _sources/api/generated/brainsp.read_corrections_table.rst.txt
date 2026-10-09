@@ -1,0 +1,6 @@
+﻿brainsp.read\_corrections\_table
+================================
+
+.. currentmodule:: brainsp
+
+.. autofunction:: read_corrections_table

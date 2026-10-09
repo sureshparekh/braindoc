@@ -1,0 +1,40 @@
+# Tutorials
+
+Worked examples, from a first fit to a fitted datacube on a server. Every
+one runs on the mock data `brainsp.mock.write_examples()` writes, whose true
+values are known, so each result can be checked against the truth. The code
+on each page is the complete script, and the output and figures under it are
+what that script printed and drew when the documentation was built.
+
+To run them yourself, copy a script into an empty folder and run it with
+`python`; tutorial 1 writes the mock data into `./examples` and the others
+read it from there.
+
+| | Tutorial | What it shows |
+|---|---|---|
+| 1 | [](first_fit.md) | fitting one spectrum, reading the result, the population vector, figures |
+| 2 | [](emission_lines.md) | `espop`, gas kinematics, line fluxes and what they mean, a BPT position |
+| 3 | [](agn.md) | a featureless AGN continuum, and what fitting without it does |
+| 4 | [](batches.md) | spectra in the observed frame, Galactic reddening, a table of corrections, batches |
+| 5 | [](masks.md) | mask files, weights, writing your own |
+| 6 | [](settings_scripts.md) | the `Settings` object, validation, YAML, one-file runs |
+| 7 | [](datacube.md) | a 16 x 16 datacube through the whole pipeline, compared with the truth |
+| 8 | [](megacube.md) | maps, spaxel spectra, star-formation histories, BPT and WHAN, exports |
+| 9 | [](gui_walkthrough.md) | the same work in the desktop interface, step by step |
+| 10 | [](server.md) | the command line, one-file runs, CPU workers and GPUs on a cluster |
+
+```{toctree}
+:hidden:
+:maxdepth: 1
+
+first_fit
+emission_lines
+agn
+batches
+masks
+settings_scripts
+datacube
+megacube
+gui_walkthrough
+server
+```

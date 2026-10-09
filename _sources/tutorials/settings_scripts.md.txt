@@ -1,0 +1,33 @@
+# 6. Settings, and a run as one file
+
+Every choice BRAIN makes is a setting with a default. {class}`brainsp.Settings`
+holds them all, checks every name, and documents each one.
+
+```{literalinclude} ../../tutorials_src/t06_settings_scripts.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t06_settings_scripts.txt
+:language: text
+```
+
+## One file per run
+
+{func}`brainsp.write_script` writes a run as a single Python file: every
+setting, each under its own documentation; every spectrum with its own
+corrections; the wavelength mask inline. Paths inside the script's folder are
+written relative to it, so the folder can be copied anywhere and run there.
+`python run_my_spectra.py` runs it, `--check` validates it and `--device
+gpu` chooses the processor. The interface's *Export run script* writes the
+same kind of file. Its beginning:
+
+```{literalinclude} ../_static/tutorials/run_my_spectra.py
+:language: python
+:lines: 1-60
+```
+
+Every setting is listed, not only the ones you changed; a changed value is
+marked with its default (`# default: ...`), so the file is also the record
+of exactly how a result was made.

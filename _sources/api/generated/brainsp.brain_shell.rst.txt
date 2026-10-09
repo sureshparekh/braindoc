@@ -1,0 +1,16 @@
+﻿brainsp.brain\_shell
+====================
+
+.. automodule:: brainsp.brain_shell
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      StepBar
+      StepItem
+      StepPage
+      StepRail
+      Workspace
+   

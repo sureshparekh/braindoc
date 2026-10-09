@@ -1,0 +1,63 @@
+# Pre-fit corrections
+
+Two things happen to a galaxy's light on its way to the telescope that BRAIN
+undoes *before* it fits, in the reverse of the order they happened:
+
+1. **The Milky Way's dust** reddened the light as it arrived, so it is removed
+   at the **observed** wavelengths, first.
+2. **The redshift** stretched the wavelengths; they are divided by $1 + z$.
+
+The galaxy's own dust is not a correction: it is a fitted parameter, $A_V$,
+and removing any of it beforehand would be undone or double-counted by the
+fit.
+
+## Galactic reddening
+
+The flux and its error are both multiplied by
+
+$$ f(\lambda_{\rm obs}) = 10^{\,0.4\, R_V\, E(B-V)\, q(\lambda_{\rm obs})}, $$
+
+where $q = A_\lambda / A_V$ is the chosen law (CCM by default, $R_V = 3.1$),
+so the signal-to-noise of every pixel is unchanged. $E(B-V)$ for a
+position on the sky comes from the dust maps (Schlegel, Finkbeiner & Davis
+1998, recalibrated by Schlafly & Finkbeiner 2011; the IRSA Galactic Dust
+Reddening service gives both).
+
+| | Python / settings | Interface |
+|---|---|---|
+| $E(B-V)$ | `galactic_ebv` (0 = off) | Corrections > Galactic E(B−V) |
+| $R_V$ | `galactic_rv` (3.1) | R_V |
+| the law | `galactic_law` (CCM) | Law |
+
+A spectrum already in the rest frame still has its Galactic reddening
+removed at the observed wavelength $\lambda_{\rm rest}(1+z)$, which is why
+`spectrum_redshift` matters to this correction either way.
+
+## The redshift
+
+| `spectrum_in_rest_frame` | `spectrum_redshift` means |
+|---|---|
+| `True` (default) | the redshift that was already removed; recorded, not applied |
+| `False` | the redshift BRAIN removes: wavelengths ÷ $(1+z)$ |
+
+The flux density is not rescaled by $1+z$: BRAIN fits a normalised spectrum,
+and a cube is not rescaled either, so a spectrum and a cube of the same
+galaxy are treated alike. The redshift that was removed also sets the
+observed frame the instrumental resolution is applied in
+([](resolution.md)).
+
+For a **datacube**, `redshift=` (Python), `--redshift` (command line) or
+*Corrections > Redshift* (interface) is the cube's redshift, always removed;
+the cube is taken to be in the observed frame. Galactic dereddening is the
+pipeline's first stage (`galactic_ebv=`).
+
+## Per-spectrum and per-cube values
+
+A table carries each one's own values; see [](batches.md) for spectra
+(`filename, redshift, ebv, rv, law, rest_frame`) and [](datacubes.md) for
+cubes (`target, redshift, ebv, rv, law, ...`).
+
+## In the output
+
+The summary file records both: `E(B-V) Galactic, removed before fitting`
+with the law and $R_V$, and who removed the redshift (`the user` or `BRAIN`).

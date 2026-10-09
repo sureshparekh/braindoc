@@ -1,0 +1,10 @@
+70 settings
+dispersion_range = [10.0, 500.0]   [5. MOTION OF THE STARS]
+Velocity dispersion in km/s — how much the stars' individual motions blur
+the spectral lines. Typical galaxies sit between 50 and 300.
+Settings(ages=[10000000.0, 100000000.0, 1000000000.0, 5010000000.0, 12600000000.0], dust_range=[0.0, 3.0], wavelength_scale='vacuum', nebular_mode='espop')
+KeyError: "'dust_rnge' is not a BRAIN setting; did you mean 'dust_range'? brainsp.Settings.names() lists them all."
+valid
+True
+2 spectra, all valid. Output: brain_out
+run_my_spectra.py: 585 lines

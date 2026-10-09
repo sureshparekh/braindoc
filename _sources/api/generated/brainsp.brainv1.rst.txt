@@ -1,0 +1,13 @@
+﻿brainsp.brainv1
+===============
+
+.. automodule:: brainsp.brainv1
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      clip_outliers_and_refit
+      run
+   

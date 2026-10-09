@@ -1,0 +1,169 @@
+# Datacubes
+
+A datacube run is an ordered chain of preparation stages followed by the
+fit, over one or more cubes. Each cube is opened once, every stage adds the
+extensions it produces, and the result is written as a **megacube**: the cube
+you gave BRAIN with the fit added to it
+(`<output_dir>/<name>-BRAIN_MEGACUBE.fits`).
+
+The arrangement and the extension names are those of the MaNGA megacubes
+of Riffel et al. (2023), so tools written for those megacubes read BRAIN's
+unchanged. Please cite that paper when you use BRAIN's megacubes
+([](../reference/citing.md)).
+
+## From Python
+
+```python
+import brainsp
+
+pipeline = brainsp.CubePipeline(
+    "manga-8626-12704-LOGCUBE.fits",
+    redshift=0.04724,                          # required: the galaxy's z
+    settings=brainsp.Settings(nebular_mode="espop"),
+    wavelength_scale="vacuum",                 # required in line modes
+    galactic_ebv=0.03,                         # Milky Way dust, removed first
+    sn_mask=[3, 5, 10], fit_sn_threshold=3,    # fit spaxels with S/N > 3
+    wavelength_mask="emission_lines.sm",   # applied to every spaxel
+    output_dir="megacubes")
+pipeline.validate()          # every problem, before reading a spaxel
+written = pipeline.run(device="gpu")
+cube = brainsp.read_megacube(written[0])
+```
+
+{func}`brainsp.fit_cube` is the short form for one cube; it returns the
+opened megacube. `pipeline.export_script("run.py")` writes the whole run as
+one Python file.
+
+From the command line:
+
+```bash
+brainsp cube manga-8626-12704-LOGCUBE.fits --redshift 0.04724 \
+    --wavelength-scale vacuum --ebv 0.03 --sn 3 5 10 --fit-sn 3 \
+    --mask emission_lines.sm --set nebular_mode=espop -o megacubes
+```
+
+In the interface: the Datacube workspace ([](../gui/datacube.md)).
+
+## The options
+
+Every {class}`brainsp.CubePipeline` option, with its interface control:
+
+| Option | Default | Interface | |
+|---|---|---|---|
+| `cubes` | | Cubes > targets table | files, or a glob pattern |
+| `redshift` | required | Corrections > Redshift | wavelengths ÷ (1 + z); 0 for a rest-frame cube |
+| `settings` | defaults | Model step | the physics: templates, mode, dust, kinematics |
+| `output_dir` | `brain_ifu_out` | Output folder | |
+| `flux_hdu`, `error_hdu`, `mask_hdu` | `FLUX`, `IVAR`, `MASK` | Input extensions | see [](inputs.md) |
+| `error_type` | `inv_variance` | Uncertainty is a | `inv_variance`, `variance`, `error`, `inv_error` |
+| `wavelength_scale` | | Wavelength scale | `air` / `vacuum`, required in line modes |
+| `galactic_ebv`, `galactic_rv`, `galactic_law` | 0, 3.1, CCM | Dereddening | 0 = off |
+| `spatial_binning` | off | Spatial resampling | n x n spaxels |
+| `degrade_resolution` | off | Resolution | `{"input type", "input value", "output type", "output value"}` |
+| `spectral_binning` | off | Spectral binning | resampling step |
+| `butterworth` | off | Butterworth filter | `True` or `{"order", "range"}` |
+| `sn_mask` | off | Signal-to-noise mask | thresholds, or `{"thresholds", "sn window", "method"}` |
+| `fit_sn_threshold` | every spaxel | Fit these spaxels | one of the thresholds |
+| `wavelength_mask` | none | Wavelength mask | a file or regions; every spaxel |
+| `batch_size` | automatic | Batch size | see [](performance.md) |
+| `population_bins` | the six MaNGA bins | Outputs > Population bins | `[(name, youngest, oldest), ...]` yr |
+| `flxobs_step` | 1 Å | Spectra step | the linear grid of FLXOBS/FLXSYN |
+| `per_cube` | | the table's other columns | below |
+| `overwrite` | True | Re-run a cube whose megacube exists | |
+| `save_config` | True | Record the pipeline inside each megacube | |
+| `fit` | True | Datacube fit | False runs the preparation only |
+
+## The stages, in order
+
+Every stage but the fit is off until asked for: each one changes the data,
+and a stage that ran because it was a default is one nobody decided to run.
+
+| Stage | Writes | What it does |
+|---|---|---|
+| Galactic dereddening | `FLUX_DRD` | removes $E(B-V)$ of Milky Way dust at the observed wavelengths ([](corrections.md)); records `DRD_LAW`, `DRD_EBV`, `DRD_RV` |
+| Spatial resampling | `<X>_RSP` | bins n x n spaxels (flux summed, uncertainties propagated) |
+| Resolution | `<X>_DEGR` | convolves the data to a coarser resolution; correlates the noise, warns, and is refused together with `instrumental_resolution` |
+| Spectral binning | `<X>_BIN` | resamples the wavelength axis |
+| Butterworth filter | `FLUX_BW` | a 2-D low-pass filter over the field at each wavelength ; spreads each spaxel over about six neighbours, records the flux kept in `BW_KEPT` |
+| S/N mask | `SNMAP`, `SN_MASKS_<t>` | the S/N of each spaxel over a rest-frame window, and one 0/1 plane per threshold |
+| The fit | the fit extensions | below |
+
+Each stage is handed the extension the previous one wrote, so the names
+never have to be threaded by hand.
+
+### Signal-to-noise masks
+
+`sn_mask` computes the S/N of every spaxel over a rest-frame window
+(4000–6000 Å by default) with one of five estimators (`method`):
+
+| Method | S/N |
+|---|---|
+| `ivar` (default) | mean of $F\sqrt{\rm IVAR}$ over the window: what the fit itself sees |
+| `ivar_median` | median of the same |
+| `variance` | mean of $F/\sqrt{\rm VAR}$ |
+| `error` | mean of $F/\sigma$ |
+| `mean_std` | mean / standard deviation of the flux over the window |
+
+and writes `SN_MASKS_<t>`, 1 where the spaxel is above $t$, for each
+threshold. `fit_sn_threshold=t` then fits only those spaxels; the others are
+left unfitted (blank in every map). The interface previews each threshold on
+the map before anything runs.
+
+### The wavelength mask
+
+One mask, applied to every spaxel's fit, in the rest frame: a file
+(`.sm`/`.gm` or a list) or regions `[(start, end, weight), ...]`
+([](masks.md)). The interface builds it by dragging across any spaxel's
+spectrum. It is written beside the outputs as `brain_wavelength_mask.sm` and
+recorded in the megacube.
+
+## Several cubes, each with its own values
+
+`per_cube` takes a CSV file or a list of dictionaries. The first column (or
+`target`) names the cube; every other column overrides one setting for that
+cube alone:
+
+```text
+target,redshift,ebv,mask file
+manga-8241-12705-LOGCUBE.fits,0.0281,0.0296,
+manga-8566-1901-LOGCUBE.fits,0.0882,0.0231,masks/8566.sm
+```
+
+```python
+brainsp.CubePipeline(per_cube="targets.csv", settings=s, ...)
+```
+
+```bash
+brainsp cube cubes/*.fits --table targets.csv ...
+```
+
+The columns accepted are those the enabled stages read: `redshift`, `ebv`,
+`rv`, `law`, `mask file`, `thresholds`, `sn window`, `batch size`,
+`resample size`, `wavelength scale`. A column no enabled stage reads is
+refused before the run starts, with the accepted ones listed, rather than
+ignored.
+
+## What the fit does to each spaxel
+
+Exactly what a single spectrum's fit does: the same model, solver and
+settings, run on many spaxels at once ([](../theory/index.md)). A spaxel of
+a cube and the same spectrum fitted on its own give the same answer (the test
+suite checks it). The differences are in what is written: maps instead of a
+summary file, and observed emission-line fluxes in the cube's own units
+(the megacube convention) instead of the normalised, extinction-corrected ones a
+spectrum's summary holds ([](outputs.md)).
+
+On a **GPU**, spaxels are fitted in batches sized to the card's memory; on a
+**CPU**, by worker processes, one per core ([](performance.md)). The result is
+the same either way to rounding.
+
+## What `validate()` refuses
+
+Everything that can be refused before a spaxel is read: no cube, a cube that
+is not there, no stage enabled, a fit asked to use an S/N threshold the S/N
+stage does not compute, an uncertainty declared to be a flux, an invalid
+settings, a missing wavelength scale in a line mode, the resolution stage
+together with `instrumental_resolution`, overlapping population bins, a
+per-cube column nothing reads, and a missing redshift. Every problem is
+listed at once, each with the stage it belongs to; the interface marks each
+in its own panel.

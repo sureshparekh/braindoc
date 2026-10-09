@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.brain_settings &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=a44d817d" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/brain_settings';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.brain_settings</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.brain_settings</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">BRAIN — reads brain_setup.yaml and turns it into a validated fit configuration.</span>
+
+<span class="sd">You do not need to open this file. Edit brain_setup.yaml instead.</span>
+
+<span class="sd">    python brain_settings.py            show the templates available</span>
+<span class="sd">    python brain_settings.py --check    validate brain_setup.yaml</span>
+
+<span class="sd">WHY YAML RATHER THAN PYTHON</span>
+<span class="sd">---------------------------</span>
+<span class="sd">The settings used to be a Python file that BRAIN imported. That works, but it</span>
+<span class="sd">means a stray typo anywhere in it stops the program with a Python traceback</span>
+<span class="sd">instead of a useful message, and a settings file that can execute arbitrary</span>
+<span class="sd">code is a poor thing to email around. This file is *parsed*, never executed,</span>
+<span class="sd">so the worst a malformed settings file can do is produce a clear error with a</span>
+<span class="sd">line number.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="n">CATALOGUE_NAME</span> <span class="o">=</span> <span class="s2">&quot;CATALOGUE.txt&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp._paths</span><span class="w"> </span><span class="kn">import</span> <span class="n">LIBRARY_DIR</span> <span class="k">as</span> <span class="n">_LIBRARY_DIR</span>
+
+<span class="n">AGN_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_LIBRARY_DIR</span><span class="p">,</span> <span class="s2">&quot;AGN&quot;</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The AGN continuum templates, shared by every stellar library.</span>
+
+<span class="sd">An AGN&#39;s featureless continuum has nothing to do with which stellar library</span>
+<span class="sd">describes the host, so it is not a member of any library: `include_power_law`</span>
+<span class="sd">adds this one set to whichever library is chosen. Seven templates: power laws</span>
+<span class="sd">F_nu ~ nu^-alpha with alpha = 0.5, 1.0, 1.5, 2.0, and</span>
+<span class="sd">Cloudy&#39;s &quot;AGN&quot; incident continuum for big-bump temperatures 1e5, 1.5e5 and</span>
+<span class="sd">2e5 K. Only their summed light is a measurement: in the optical the three</span>
+<span class="sd">Cloudy continua are power laws of alpha 0.74, 0.64 and 0.59 to within 1.4 per</span>
+<span class="sd">cent, so the split between neighbouring templates is set by noise.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">DEFAULT_SETTINGS_FILE</span> <span class="o">=</span> <span class="s2">&quot;brain_setup.yaml&quot;</span>
+
+<span class="n">MATCH_TOLERANCE</span> <span class="o">=</span> <span class="mf">2e-2</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_yaml</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">BRAIN needs PyYAML to read brain_setup.yaml.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;Install it with:   pip install pyyaml</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">yaml</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_loader</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A YAML loader that reads scientific notation the way people write it.</span>
+
+<span class="sd">    YAML 1.1 only treats a number as a float if it has both a decimal point</span>
+<span class="sd">    and a signed exponent, so `1.0e+6` is a float but `1e6`, `5.01e9` and</span>
+<span class="sd">    `1e-5` all silently come through as *strings*. Nobody writing an age in</span>
+<span class="sd">    years expects that, and a string where a number belongs would either crash</span>
+<span class="sd">    somewhere far away or, worse, be quietly coerced. So we widen the float</span>
+<span class="sd">    pattern to cover the ordinary forms.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yaml</span> <span class="o">=</span> <span class="n">_yaml</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Loader</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="n">Loader</span><span class="o">.</span><span class="n">add_implicit_resolver</span><span class="p">(</span>
+        <span class="s2">&quot;tag:yaml.org,2002:float&quot;</span><span class="p">,</span>
+        <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;^(?:</span>
+<span class="s2">             [-+]?[0-9][0-9_]*\.[0-9_]*(?:[eE][-+]?[0-9]+)?</span>
+<span class="s2">            |[-+]?\.[0-9_]+(?:[eE][-+]?[0-9]+)?</span>
+<span class="s2">            |[-+]?[0-9][0-9_]*(?:[eE][-+]?[0-9]+)</span>
+<span class="s2">            |[-+]?\.(?:inf|Inf|INF)</span>
+<span class="s2">            |\.(?:nan|NaN|NAN))$&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">),</span>
+        <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;-+0123456789.&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">Loader</span>
+
+
+<span class="n">DEFAULTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;spectrum&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;mask&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;wavelength_min&quot;</span><span class="p">:</span> <span class="mf">3700.0</span><span class="p">,</span>
+    <span class="s2">&quot;wavelength_max&quot;</span><span class="p">:</span> <span class="mf">6900.0</span><span class="p">,</span>
+    <span class="s2">&quot;instrumental_resolution&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;library_resolution&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;spectrum_redshift&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;spectrum_in_rest_frame&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;galactic_ebv&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;galactic_rv&quot;</span><span class="p">:</span> <span class="mf">3.1</span><span class="p">,</span>
+    <span class="s2">&quot;galactic_law&quot;</span><span class="p">:</span> <span class="s2">&quot;CCM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cube_redshift&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;base_folder&quot;</span><span class="p">:</span> <span class="s2">&quot;BasesGM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ages&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;metallicities&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;include_power_law&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;reddening_law&quot;</span><span class="p">:</span> <span class="s2">&quot;CCM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dust_range&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span>
+    <span class="s2">&quot;young_extra_dust_range&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span>
+    <span class="s2">&quot;velocity_range&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">2000.0</span><span class="p">,</span> <span class="mf">5000.0</span><span class="p">],</span>
+    <span class="s2">&quot;dispersion_range&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">500.0</span><span class="p">],</span>
+    <span class="s2">&quot;fit_emission_lines&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;wavelength_scale&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;gas_velocity_range&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">2000.0</span><span class="p">,</span> <span class="mf">5000.0</span><span class="p">],</span>
+    <span class="s2">&quot;gas_dispersion_range&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">500.0</span><span class="p">],</span>
+    <span class="s2">&quot;nebular_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;spop&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gas_temperature&quot;</span><span class="p">:</span> <span class="mf">10000.0</span><span class="p">,</span>
+    <span class="s2">&quot;gas_density&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="s2">&quot;gas_metallicity&quot;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="s2">&quot;smoothness&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;error_samples&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;reject_outliers&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;output_folder&quot;</span><span class="p">:</span> <span class="s2">&quot;brain_out&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;make_plot&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;linear_solver&quot;</span><span class="p">:</span> <span class="s2">&quot;active_set&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cube_fitter&quot;</span><span class="p">:</span> <span class="s2">&quot;fast&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;missing_error&quot;</span><span class="p">:</span> <span class="s2">&quot;exclude&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;coarse_to_fine_grid&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;central_differences&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;enforce_simplex&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;use_cached_engine&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;use_cached_templates&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;device&quot;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cpu_workers&quot;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;has_errorbars&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;normalisation_wavelength&quot;</span><span class="p">:</span> <span class="mf">5500.0</span><span class="p">,</span>
+    <span class="s2">&quot;smoothness_order&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;av_start&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+    <span class="s2">&quot;dispersion_start&quot;</span><span class="p">:</span> <span class="mf">150.0</span><span class="p">,</span>
+    <span class="s2">&quot;v0_start&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;gas_dispersion_start&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="s2">&quot;gas_v0_start&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;velocity_grid_step&quot;</span><span class="p">:</span> <span class="mf">150.0</span><span class="p">,</span>
+    <span class="s2">&quot;fit_tolerance&quot;</span><span class="p">:</span> <span class="mf">1.0e-7</span><span class="p">,</span>
+    <span class="s2">&quot;max_iterations&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">&quot;max_function_evals&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s2">&quot;outlier_threshold&quot;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+    <span class="s2">&quot;outlier_scale&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;line_groups&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;helium_abundance&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+    <span class="s2">&quot;lyman_escape_fraction&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;allow_partial_ionising_coverage&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;nebular_dust_range&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">],</span>
+    <span class="s2">&quot;nebular_dust_start&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s2">&quot;nebular_iterations&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">&quot;ssp_flux_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;Lsun&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sc_tolerance&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span>
+    <span class="s2">&quot;sc_av_neb_tolerance&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="s2">&quot;sc_max_iterations&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">&quot;sc_damping&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="s2">&quot;sc_penalty_weight&quot;</span><span class="p">:</span> <span class="mf">1000.0</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="n">RETIRED</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;floor_gas_dispersion_at_pixel_width&quot;</span><span class="p">:</span>
+        <span class="s2">&quot;BRAIN no longer raises the lower end of &#39;gas_dispersion_range&#39; to &quot;</span>
+        <span class="s2">&quot;the width of one pixel, so there is nothing left for this setting to &quot;</span>
+        <span class="s2">&quot;switch off. The floor existed because the emission-line profile was &quot;</span>
+        <span class="s2">&quot;sampled at pixel centres and lost most of a line narrower than a &quot;</span>
+        <span class="s2">&quot;pixel; the profile is now integrated over the pixel and is exact at &quot;</span>
+        <span class="s2">&quot;every width, so the floor only stopped the fit reaching the &quot;</span>
+        <span class="s2">&quot;dispersion that fits best, and every sigma_gas measured under it was &quot;</span>
+        <span class="s2">&quot;a bound rather than a measurement. Delete the line. The lower bound &quot;</span>
+        <span class="s2">&quot;on the gas dispersion is now exactly the first number of &quot;</span>
+        <span class="s2">&quot;&#39;gas_dispersion_range&#39; and nothing else.&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="load">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.load">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">DEFAULT_SETTINGS_FILE</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read the settings file, fill in defaults, reject unknown keys.</span>
+
+<span class="sd">    A setting that BRAIN used to have and no longer does is answered from</span>
+<span class="sd">    RETIRED, with the reason it went, rather than through the unknown-key</span>
+<span class="sd">    path. A settings file written for an older BRAIN is a record of a fit</span>
+<span class="sd">    somebody ran; the person reading the error is entitled to know what</span>
+<span class="sd">    changed underneath them, and &#39;did you mean ...?&#39; against the nearest</span>
+<span class="sd">    surviving name would be worse than silence. Neither is it ignored: a</span>
+<span class="sd">    setting that is parsed and does nothing is the defect this project keeps</span>
+<span class="sd">    finding, and the fit it silently changes is one nobody asked for.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">yaml</span> <span class="o">=</span> <span class="n">_yaml</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="o">==</span> <span class="n">DEFAULT_SETTINGS_FILE</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="c1"># No settings file where we were started: the package&#39;s own copy,</span>
+        <span class="c1"># which holds every default and documents every setting.</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp._paths</span><span class="w"> </span><span class="kn">import</span> <span class="n">SETTINGS_TEMPLATE</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">SETTINGS_TEMPLATE</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Settings file not found: </span><span class="si">{</span><span class="n">path</span><span class="si">!r}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;BRAIN expects a </span><span class="si">{</span><span class="n">DEFAULT_SETTINGS_FILE</span><span class="si">}</span><span class="s2"> in the folder you run &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;it from.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="n">raw</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">_loader</span><span class="p">())</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="k">except</span> <span class="n">yaml</span><span class="o">.</span><span class="n">YAMLError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="n">mark</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="s2">&quot;problem_mark&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; (line </span><span class="si">{</span><span class="n">mark</span><span class="o">.</span><span class="n">line</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">, column </span><span class="si">{</span><span class="n">mark</span><span class="o">.</span><span class="n">column</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">if</span> <span class="n">mark</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> is not valid YAML</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;problem&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Common causes: a missing colon after a name, inconsistent &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;indentation, or a stray tab character (YAML needs spaces).</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> must be a list of &#39;name: value&#39; lines.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">retired</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">RETIRED</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">retired</span><span class="p">:</span>
+        <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">retired</span><span class="p">:</span>
+            <span class="n">body</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">chunk</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">_wrap</span><span class="p">(</span><span class="n">RETIRED</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="mi">68</span><span class="p">))</span>
+            <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  * </span><span class="si">{</span><span class="n">k</span><span class="si">!r}</span><span class="s2"> was removed.</span><span class="se">\n</span><span class="si">{</span><span class="n">body</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> sets </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">retired</span><span class="p">)</span><span class="si">}</span><span class="s2"> setting(s) BRAIN no longer has:</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Remove the line(s) and re-run.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">unknown</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">DEFAULTS</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">unknown</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">unknown</span><span class="p">:</span>
+            <span class="n">near</span> <span class="o">=</span> <span class="n">_closest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">DEFAULTS</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  * </span><span class="si">{</span><span class="n">k</span><span class="si">!r}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  — did you mean </span><span class="si">{</span><span class="n">near</span><span class="si">!r}</span><span class="s2">?&quot;</span> <span class="k">if</span> <span class="n">near</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> contains setting(s) BRAIN does not recognise:</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Run  brainsp settings  to see every valid &quot;</span>
+              <span class="s2">&quot;setting name.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">DEFAULTS</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span></div>
+
+
+
+<div class="viewcode-block" id="setting_docs">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.setting_docs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">setting_docs</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Each setting&#39;s documentation, read from the documented settings file.</span>
+
+<span class="sd">    The template&#39;s layout: a setting&#39;s description is the comment block</span>
+<span class="sd">    directly above it; a comment block that follows a setting after a blank</span>
+<span class="sd">    line continues that setting (notes, examples); a block at the start of a</span>
+<span class="sd">    section, before its first setting, introduces the section and is put in</span>
+<span class="sd">    front of the first setting&#39;s own text. A comment on the setting&#39;s own</span>
+<span class="sd">    line is added at the end. The numbered banner it sits under is its</span>
+<span class="sd">    section.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        ``{name: {&quot;section&quot;: str, &quot;text&quot;: str}}`` for every setting the file</span>
+<span class="sd">        documents, in the file&#39;s order.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp._paths</span><span class="w"> </span><span class="kn">import</span> <span class="n">SETTINGS_TEMPLATE</span>
+    <span class="n">docs</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">intro</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="p">{},</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[],</span> <span class="kc">None</span>
+    <span class="n">key_line</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^([a-z_0-9]+):(.*)$&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span> <span class="ow">or</span> <span class="n">SETTINGS_TEMPLATE</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">flush</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">block</span><span class="p">,</span> <span class="n">intro</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">block</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;--- &quot;</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">last</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">intro</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">docs</span><span class="p">[</span><span class="n">last</span><span class="p">][</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">docs</span><span class="p">[</span><span class="n">last</span><span class="p">][</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">banner</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^#\s+(\d+[a-z]?\.\s+.*)$&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">banner</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;# =====&quot;</span><span class="p">):</span>
+            <span class="n">section</span> <span class="o">=</span> <span class="n">banner</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">block</span><span class="p">,</span> <span class="n">intro</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;# =====&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#  ===&quot;</span><span class="p">):</span>
+            <span class="n">block</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="n">flush</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">key_line</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">inline</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> \
+                    <span class="k">if</span> <span class="s2">&quot;#&quot;</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+                <span class="n">own</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">own</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;--- &quot;</span><span class="p">):</span>
+                    <span class="n">own</span> <span class="o">=</span> <span class="n">own</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">own</span> \
+                        <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">intro</span> <span class="o">+</span> <span class="p">[</span><span class="n">own</span><span class="p">]</span> <span class="k">if</span> <span class="n">t</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">inline</span><span class="p">:</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">inline</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">docs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;section&quot;</span><span class="p">:</span> <span class="n">section</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text</span><span class="p">}</span>
+                <span class="n">block</span><span class="p">,</span> <span class="n">intro</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="n">name</span>
+                <span class="k">while</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="ow">and</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span>
+                        <span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">))</span> <span class="ow">and</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">flush</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">docs</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_wrap</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fold a sentence onto fixed-width lines.</span>
+
+<span class="sd">    io_utils carries the same six lines, and they are deliberately not shared:</span>
+<span class="sd">    this module reads a settings file and imports nothing beyond the standard</span>
+<span class="sd">    library and PyYAML, so that a malformed setting is reported before numpy,</span>
+<span class="sd">    JAX or a template library is ever touched.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">words</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">line</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">width</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">word</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_closest</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Cheap typo suggestion — no dependency on difflib subtleties.&quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">difflib</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">difflib</span><span class="o">.</span><span class="n">get_close_matches</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">options</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">m</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="read_catalogue">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.read_catalogue">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse &lt;folder&gt;/CATALOGUE.txt.</span>
+
+<span class="sd">    Comment lines start with #. Columns:</span>
+<span class="sd">        AGE_YR  Z  FILENAME  SHORT_NAME  MSTARS  KIND</span>
+<span class="sd">    KIND is &#39;ssp&#39; or &#39;powerlaw&#39;. It is carried onto every entry, because a</span>
+<span class="sd">    component that is not an SSP has no line-spread function of its own and</span>
+<span class="sd">    the instrumental-resolution module has to be able to tell it apart from a</span>
+<span class="sd">    template that simply forgot to state one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">CATALOGUE_NAME</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">No template catalogue at </span><span class="si">{</span><span class="n">path</span><span class="si">!r}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;base_folder&#39; must point at a folder containing &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CATALOGUE_NAME</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">ssp</span><span class="p">,</span> <span class="n">extra</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">raw</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> line </span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s2">: expected at least 4 columns &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;(AGE_YR Z FILENAME SHORT_NAME), found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="s2">&quot;ssp&quot;</span>
+            <span class="n">entry</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                <span class="s2">&quot;age_gyr&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">,</span>
+                <span class="s2">&quot;metallicity&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                <span class="s2">&quot;short_name&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                <span class="s2">&quot;mstars&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="k">else</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="s2">&quot;yav_flag&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="n">kind</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="p">(</span><span class="n">extra</span> <span class="k">if</span> <span class="n">kind</span> <span class="o">!=</span> <span class="s2">&quot;ssp&quot;</span> <span class="k">else</span> <span class="n">ssp</span><span class="p">)</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ssp</span><span class="p">,</span> <span class="n">extra</span></div>
+
+
+
+<div class="viewcode-block" id="stellar_libraries">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.stellar_libraries">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">stellar_libraries</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The template libraries under `root`: folders whose catalogue lists at</span>
+<span class="sd">    least one stellar population.</span>
+
+<span class="sd">    A folder with a catalogue is not necessarily a library. AGN/ has one and</span>
+<span class="sd">    holds only featureless continua, and offered as a library it fits a</span>
+<span class="sd">    spectrum with no stars in it at all.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">libraries</span>
+        <span class="k">return</span> <span class="n">libraries</span><span class="o">.</span><span class="n">available</span><span class="p">()</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">root</span><span class="p">)):</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">CATALOGUE_NAME</span><span class="p">)):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">AGN_FOLDER</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ssp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">SystemExit</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">ssp</span><span class="p">:</span>
+            <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">found</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_match</span><span class="p">(</span><span class="n">requested</span><span class="p">,</span> <span class="n">offered</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">.4g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">unit</span> <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">hits</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">offered</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">requested</span> <span class="o">-</span> <span class="n">o</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">MATCH_TOLERANCE</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">o</span><span class="p">),</span> <span class="mf">1e-30</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">hits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hits</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">fmt</span><span class="p">(</span><span class="n">requested</span><span class="p">)</span><span class="si">}{</span><span class="n">unit</span><span class="si">}</span><span class="s2"> is ambiguous — it matches &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">hits</span><span class="p">)</span><span class="si">}</span><span class="s2"> catalogue values: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">hits</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  Write it more precisely to say which you mean.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">near</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">offered</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">o</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">o</span> <span class="o">-</span> <span class="n">requested</span><span class="p">))[:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">fmt</span><span class="p">(</span><span class="n">requested</span><span class="p">)</span><span class="si">}{</span><span class="n">unit</span><span class="si">}</span><span class="s2"> is not in this template library.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;  Nearest available: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">near</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;  Full list: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">offered</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;  (see </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span><span class="w"> </span><span class="n">CATALOGUE_NAME</span><span class="p">)</span><span class="si">}</span><span class="s2">, or run &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;python brain_settings.py)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_all</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">v</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_numlist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; cannot be empty. Give a list of values, &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;or the word  all.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span> <span class="k">else</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; contains </span><span class="si">{</span><span class="n">x</span><span class="si">!r}</span><span class="s2">, which is not a number.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;  Write ages as plain numbers, e.g.  [1e6, 1e7, 1e8]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<div class="viewcode-block" id="build_base_list">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.build_base_list">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_base_list</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Turn ages / metallicities / include_power_law into a template list.</span>
+
+<span class="sd">    `base_folder` may name a library (&quot;BasesGM&quot;) or give a folder; names are</span>
+<span class="sd">    looked up by brainsp.libraries.path.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">libraries</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">libraries</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;base_folder&quot;</span><span class="p">])</span>
+    <span class="n">ssp</span><span class="p">,</span> <span class="n">extra</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">all_ages</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">})</span>
+    <span class="n">all_zs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">})</span>
+
+    <span class="n">want_ages</span> <span class="o">=</span> <span class="n">all_ages</span> <span class="k">if</span> <span class="n">_is_all</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;ages&quot;</span><span class="p">])</span> <span class="k">else</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="p">{</span><span class="n">_match</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">all_ages</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="s2">&quot; yr&quot;</span><span class="p">)</span>
+         <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">_numlist</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;ages&quot;</span><span class="p">],</span> <span class="s2">&quot;ages&quot;</span><span class="p">)})</span>
+    <span class="n">want_zs</span> <span class="o">=</span> <span class="n">all_zs</span> <span class="k">if</span> <span class="n">_is_all</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;metallicities&quot;</span><span class="p">])</span> <span class="k">else</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="p">{</span><span class="n">_match</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">all_zs</span><span class="p">,</span> <span class="s2">&quot;Metallicity Z =&quot;</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
+         <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">_numlist</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;metallicities&quot;</span><span class="p">],</span> <span class="s2">&quot;metallicities&quot;</span><span class="p">)})</span>
+
+    <span class="n">chosen</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span>
+              <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="ow">in</span> <span class="n">want_ages</span> <span class="ow">and</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">want_zs</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">chosen</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Your &#39;ages&#39; and &#39;metallicities&#39; select no templates at all &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">want_ages</span><span class="p">)</span><span class="si">}</span><span class="s2"> ages x </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">want_zs</span><span class="p">)</span><span class="si">}</span><span class="s2"> metallicities requested, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;none of those combinations exist).</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">expected</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">want_ages</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">want_zs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">expected</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  note: </span><span class="si">{</span><span class="n">expected</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2"> requested &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;(age, Z) combinations do not exist in this library; &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;fitting with the </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span><span class="si">}</span><span class="s2"> that do.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;include_power_law&quot;</span><span class="p">]:</span>
+        <span class="c1"># The AGN set: the library&#39;s own (&lt;library&gt;/AGN), when it ships one,</span>
+        <span class="c1"># else the package&#39;s seven. Featureless components listed in the</span>
+        <span class="c1"># library&#39;s main catalogue are left out either way: BasesGM&#39;s</span>
+        <span class="c1"># PowerOpt_150 is the same curve as FC1.50 to 5e-11, and fitting both</span>
+        <span class="c1"># would split one component&#39;s light between two identical columns.</span>
+        <span class="n">agn_dir</span> <span class="o">=</span> <span class="n">libraries</span><span class="o">.</span><span class="n">agn_folder</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">agn</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">agn_dir</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">agn</span><span class="p">:</span>
+            <span class="n">e</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">agn_dir</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">])</span>
+        <span class="n">chosen</span> <span class="o">=</span> <span class="n">chosen</span> <span class="o">+</span> <span class="n">agn</span>
+
+    <span class="n">chosen</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]))</span>
+
+    <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">chosen</span>
+               <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]))]</span>
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2"> template file(s) named in the catalogue are &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;missing from </span><span class="si">{</span><span class="n">folder</span><span class="si">!r}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">  </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39; ...&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">folder</span><span class="p">,</span> <span class="n">chosen</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_line_group_problems</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Everything wrong with a &#39;line_groups&#39; setting, in words a user can act on.</span>
+
+<span class="sd">    Checking only that it is a dict let three different mistakes through to</span>
+<span class="sd">    the fit, where each one is silent:</span>
+
+<span class="sd">      - A species name that does not exist. Group membership is looked up by</span>
+<span class="sd">        exact species, so &#39;ONIII]&#39; or the &#39;[NII]&#39; spelling that the settings</span>
+<span class="sd">        file&#39;s own example used to show simply never matches, and every line</span>
+<span class="sd">        of that species quietly stays in the default group.</span>
+<span class="sd">      - A species listed in two groups. assign_kinematic_groups raises on</span>
+<span class="sd">        this, but only once a fit is already running.</span>
+<span class="sd">      - Group labels that cannot be put in order, which is how the parameter</span>
+<span class="sd">        vector is laid out, so the failure is a TypeError from inside the</span>
+<span class="sd">        optimizer rather than a sentence about the settings file.</span>
+
+<span class="sd">    A label may be any value, and need not be contiguous or start at zero;</span>
+<span class="sd">    the labels only have to be orderable among themselves, because</span>
+<span class="sd">    emission_lines.group_positions sorts them to fix each group&#39;s slot in</span>
+<span class="sd">    the parameter vector.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">groups</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&#39;line_groups&#39; must be blank, or a mapping of group label to a &quot;</span>
+             <span class="s2">&quot;list of species, like {0: [&#39;Halpha&#39;, &#39;Hbeta&#39;], 1: [&#39;[O III]&#39;]}.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">shape</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">groups</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;&#39;line_groups&#39; is empty. </span><span class="si">{</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.line_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">LINE_SPECIES</span>
+
+    <span class="n">known</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">LINE_SPECIES</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+    <span class="n">problems</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;line_groups&#39; labels </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> cannot be put in order, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;and BRAIN orders them to decide which pair of fitted gas &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;parameters belongs to which group. Use labels of one type.&quot;</span><span class="p">)</span>
+
+    <span class="n">seen</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">species_list</span> <span class="ow">in</span> <span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species_list</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
+                <span class="n">species_list</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;line_groups&#39; group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> is </span><span class="si">{</span><span class="n">species_list</span><span class="si">!r}</span><span class="s2">; it must &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;be a list of species names.&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">species_list</span><span class="p">:</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;line_groups&#39; group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> is empty; a group with no &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;species costs two fitted parameters and constrains nothing.&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">species_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;&#39;line_groups&#39; group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> lists </span><span class="si">{</span><span class="n">sp</span><span class="si">!r}</span><span class="s2">, which is &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;not a species name.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">sp</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">known</span><span class="p">:</span>
+                <span class="n">hint</span> <span class="o">=</span> <span class="n">_closest</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span> <span class="n">known</span><span class="p">)</span>
+                <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;&#39;line_groups&#39; group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2"> lists the species </span><span class="si">{</span><span class="n">sp</span><span class="si">!r}</span><span class="s2">, &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;which is not one of BRAIN&#39;s emission-line species&quot;</span>
+                    <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;. Did you mean </span><span class="si">{</span><span class="n">hint</span><span class="si">!r}</span><span class="s2">?&quot;</span> <span class="k">if</span> <span class="n">hint</span> <span class="k">else</span>
+                       <span class="sa">f</span><span class="s2">&quot;: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">known</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">seen</span> <span class="ow">and</span> <span class="n">seen</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span> <span class="o">!=</span> <span class="n">label</span><span class="p">:</span>
+                <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;&#39;line_groups&#39; puts the species </span><span class="si">{</span><span class="n">sp</span><span class="si">!r}</span><span class="s2"> in group &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seen</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span><span class="si">!r}</span><span class="s2"> and again in group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2">. A species &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;has one velocity and one dispersion, so it belongs to &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;exactly one group.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">seen</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+
+    <span class="k">return</span> <span class="n">problems</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_wavelength_scale_problems</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Refuse an unset &#39;wavelength_scale&#39; when, and only when, it changes a number.</span>
+
+<span class="sd">    The setting describes the OBSERVED spectrum. It is required when emission</span>
+<span class="sd">    lines are actually being fitted, which is &#39;fit_emission_lines&#39; true AND a</span>
+<span class="sd">    &#39;nebular_mode&#39; that fits lines, and it is not required otherwise. In</span>
+<span class="sd">    &#39;spop&#39; the emission-line catalogue is never built, no rest wavelength is</span>
+<span class="sd">    ever read, and demanding a declaration that cannot reach a number would</span>
+<span class="sd">    be noise in the one mode most people run first.</span>
+
+<span class="sd">    It is refused rather than defaulted because this is the shape of error</span>
+<span class="sd">    this project keeps finding: a wrong answer here runs to completion and</span>
+<span class="sd">    produces a plausible fit. The two scales differ by about 83 km/s, the</span>
+<span class="sd">    difference is very nearly constant in velocity across the optical, so it</span>
+<span class="sd">    is absorbed almost entirely into the fitted gas velocity; chi2 moves by</span>
+<span class="sd">    under 0.05 per cent, with a sign that depends on the spectrum. Nothing in</span>
+<span class="sd">    the output looks wrong. The only symptom is a gas-to-stars velocity</span>
+<span class="sd">    offset of 83 km/s that was never there.</span>
+
+<span class="sd">    The message says how to answer, because &quot;air or vacuum?&quot; is a question</span>
+<span class="sd">    about the survey, not about the galaxy, and the answer is a fact the user</span>
+<span class="sd">    can look up rather than a judgement they have to make.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">LINE_MODES</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;fit_emission_lines&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_mode&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">LINE_MODES</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;wavelength_scale&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s2">&quot;&#39;wavelength_scale&#39; is not set, and this fit needs it: &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;&#39;nebular_mode&#39; is </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;nebular_mode&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2"> and &#39;fit_emission_lines&#39; &quot;</span>
+        <span class="s2">&quot;is true, so BRAIN is about to place emission lines in your &quot;</span>
+        <span class="s2">&quot;spectrum and has to know which wavelength scale your spectrum is &quot;</span>
+        <span class="s2">&quot;on. Set it to &#39;air&#39; or &#39;vacuum&#39;.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;     BRAIN will not guess, because a wrong guess is invisible. &quot;</span>
+        <span class="s2">&quot;Air and vacuum wavelengths differ by about 83 km/s across the &quot;</span>
+        <span class="s2">&quot;optical (85.2 km/s at [O II] 3726, 82.7 at [S II] 6731), and the &quot;</span>
+        <span class="s2">&quot;offset is very nearly constant in velocity, so it lands almost &quot;</span>
+        <span class="s2">&quot;entirely on the fitted gas velocity. chi2 changes by less than &quot;</span>
+        <span class="s2">&quot;0.05 per cent, with a sign that depends on the spectrum. The fit &quot;</span>
+        <span class="s2">&quot;converges, the line fluxes look ordinary, and the only symptom is &quot;</span>
+        <span class="s2">&quot;a gas-to-stars velocity offset of 83 km/s that is not real.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;     It is a property of your data, not of your galaxy. SDSS, &quot;</span>
+        <span class="s2">&quot;MaNGA, DESI and LAMOST deliver VACUUM wavelengths. MUSE (its cube &quot;</span>
+        <span class="s2">&quot;header says CTYPE3 = &#39;AWAV&#39;) and CALIFA deliver AIR. If your file &quot;</span>
+        <span class="s2">&quot;came from somewhere else, its wavelength axis is described in the &quot;</span>
+        <span class="s2">&quot;survey&#39;s data model.&quot;</span>
+    <span class="p">]</span>
+
+
+<div class="viewcode-block" id="validate">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.validate">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">DEFAULT_SETTINGS_FILE</span><span class="p">,</span> <span class="n">for_cube</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_rng</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; must be two numbers, e.g. [0.0, 5.0]; &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;got </span><span class="si">{</span><span class="n">v</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; must be two numbers; got </span><span class="si">{</span><span class="n">v</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">lo</span> <span class="o">&gt;</span> <span class="n">hi</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; is [</span><span class="si">{</span><span class="n">lo</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">hi</span><span class="si">}</span><span class="s2">] — the first value must be &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;the smaller one.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span>
+
+    <span class="c1"># A cube run takes its data from the cube, so &#39;spectrum&#39; is not asked</span>
+    <span class="c1"># for there: a settings file written for a datacube has none to give.</span>
+    <span class="k">if</span> <span class="n">for_cube</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">]:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&#39;spectrum&#39; must name a file to fit.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">&quot;*?&quot;</span><span class="p">)</span> \
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">])):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;spectrum&#39; file not found: </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;spectrum&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;mask&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;mask&quot;</span><span class="p">])):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;mask&#39; file not found: </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;mask&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2"> &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;(leave it blank for no mask)&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">libraries</span>
+        <span class="n">libraries</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;base_folder&quot;</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">SystemExit</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">libraries</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;base_folder&#39; not found: </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;base_folder&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">. Available &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;libraries: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">libraries</span><span class="o">.</span><span class="n">available</span><span class="p">())</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.reddening_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">LAW_NAMES</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.line_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">WAVELENGTH_SCALES</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">FIT_MODES</span><span class="p">,</span> <span class="n">LINE_MODES</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">allowed</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;reddening_law&quot;</span><span class="p">,</span> <span class="n">LAW_NAMES</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;nebular_mode&quot;</span><span class="p">,</span> <span class="n">FIT_MODES</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;ssp_flux_unit&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Lsun&quot;</span><span class="p">,</span> <span class="s2">&quot;cgs&quot;</span><span class="p">)),</span>
+                          <span class="p">(</span><span class="s2">&quot;linear_solver&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;active_set&quot;</span><span class="p">,</span> <span class="s2">&quot;fista&quot;</span><span class="p">)),</span>
+                          <span class="p">(</span><span class="s2">&quot;cube_fitter&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;fast&quot;</span><span class="p">,</span> <span class="s2">&quot;reference&quot;</span><span class="p">)),</span>
+                          <span class="p">(</span><span class="s2">&quot;missing_error&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;exclude&quot;</span><span class="p">,</span> <span class="s2">&quot;interpolate&quot;</span><span class="p">)),</span>
+                          <span class="p">(</span><span class="s2">&quot;outlier_scale&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;typical&quot;</span><span class="p">)),</span>
+                          <span class="p">(</span><span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="s2">&quot;cpu&quot;</span><span class="p">,</span> <span class="s2">&quot;gpu&quot;</span><span class="p">)),</span>
+                          <span class="p">(</span><span class="s2">&quot;wavelength_scale&quot;</span><span class="p">,</span> <span class="n">WAVELENGTH_SCALES</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;wavelength_scale&quot;</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; is </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="si">!r}</span><span class="s2">; must be one of &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">allowed</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">_wavelength_scale_problems</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+
+    <span class="n">workers</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cpu_workers&quot;</span><span class="p">,</span> <span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">workers</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;auto&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">workers</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">workers</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;cpu_workers&#39; is </span><span class="si">{</span><span class="n">workers</span><span class="si">!r}</span><span class="s2">; it is &#39;auto&#39; or a whole &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;number of worker processes, at least 1.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;smoothness_order&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;smoothness_order&#39; is </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;smoothness_order&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">; &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;must be 1 or 2.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;fit_emission_lines&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_mode&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;espop&quot;</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;&#39;nebular_mode&#39; is &#39;espop&#39; but &#39;fit_emission_lines&#39; is false. &quot;</span>
+            <span class="s2">&quot;espop is spop plus the emission lines; with the lines off it &quot;</span>
+            <span class="s2">&quot;is spop by a longer name. Set fit_emission_lines: true, or &quot;</span>
+            <span class="s2">&quot;nebular_mode: spop.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;fit_emission_lines&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_mode&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;photopop&quot;</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;&#39;fit_emission_lines&#39; is false but &#39;nebular_mode&#39; is &quot;</span>
+            <span class="s2">&quot;&#39;photopop&#39;. photopop derives the ionizing photon budget Q(H) &quot;</span>
+            <span class="s2">&quot;from the fitted hydrogen line amplitudes, so it cannot run &quot;</span>
+            <span class="s2">&quot;without them. Use nebular_mode &#39;nepop&#39; to fit the nebular &quot;</span>
+            <span class="s2">&quot;continuum with no lines, or &#39;spop&#39; for a purely stellar fit.&quot;</span><span class="p">)</span>
+
+    <span class="n">ranges</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;dust_range&quot;</span><span class="p">,</span> <span class="s2">&quot;young_extra_dust_range&quot;</span><span class="p">,</span> <span class="s2">&quot;velocity_range&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;dispersion_range&quot;</span><span class="p">,</span> <span class="s2">&quot;gas_velocity_range&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;gas_dispersion_range&quot;</span><span class="p">,</span> <span class="s2">&quot;nebular_dust_range&quot;</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">_rng</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">r</span><span class="p">:</span>
+            <span class="n">ranges</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">rng</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;av_start&quot;</span><span class="p">,</span> <span class="s2">&quot;dust_range&quot;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="s2">&quot;dispersion_start&quot;</span><span class="p">,</span> <span class="s2">&quot;dispersion_range&quot;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="s2">&quot;gas_dispersion_start&quot;</span><span class="p">,</span> <span class="s2">&quot;gas_dispersion_range&quot;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="s2">&quot;nebular_dust_start&quot;</span><span class="p">,</span> <span class="s2">&quot;nebular_dust_range&quot;</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">rng</span> <span class="ow">in</span> <span class="n">ranges</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ranges</span><span class="p">[</span><span class="n">rng</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">ranges</span><span class="p">[</span><span class="n">rng</span><span class="p">][</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">&#39; = </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="si">}</span><span class="s2"> lies outside &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">rng</span><span class="si">}</span><span class="s2">&#39; </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">ranges</span><span class="p">[</span><span class="n">rng</span><span class="p">])</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="n">wmin</span><span class="p">,</span> <span class="n">wmax</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;wavelength_min&quot;</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;wavelength_max&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">wmin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">wmax</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">wmin</span> <span class="o">&gt;=</span> <span class="n">wmax</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&#39;wavelength_min&#39; must be below &#39;wavelength_max&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="p">(</span><span class="n">wmin</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;normalisation_wavelength&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">wmax</span><span class="p">):</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;normalisation_wavelength&#39; &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;normalisation_wavelength&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) must lie inside the &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;fitting range (</span><span class="si">{</span><span class="n">wmin</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">wmax</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">lo</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;smoothness&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;error_samples&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                     <span class="p">(</span><span class="s2">&quot;nebular_iterations&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;max_iterations&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                     <span class="p">(</span><span class="s2">&quot;gas_temperature&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;gas_density&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">lo</span><span class="p">:</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; cannot be below </span><span class="si">{</span><span class="n">lo</span><span class="si">}</span><span class="s2">; got </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; must be a number; got </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.instrumental_lsf</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_resolution</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;instrumental_resolution&quot;</span><span class="p">,</span> <span class="s2">&quot;library_resolution&quot;</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">parse_resolution</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">SystemExit</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">))</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum_redshift&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">z</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;spectrum_redshift&#39; is </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">; a redshift cannot be at or &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;below -1.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;spectrum_redshift&#39; must be a number; got &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;spectrum_redshift&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">zc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;cube_redshift&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">zc</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;cube_redshift&#39; is </span><span class="si">{</span><span class="n">zc</span><span class="si">}</span><span class="s2">; a redshift cannot be at or &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;below -1.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">zc</span> <span class="o">!=</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum_redshift&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;cube_redshift&#39; is </span><span class="si">{</span><span class="n">zc</span><span class="si">}</span><span class="s2"> and &#39;spectrum_redshift&#39; is &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;spectrum_redshift&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, and they do opposite jobs. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;cube_redshift&#39; asks BRAIN to shift a cube into the rest &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;frame; &#39;spectrum_redshift&#39; tells BRAIN a shift has already &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;been applied. Setting both describes a cube that is &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;de-redshifted twice. Set whichever one is true and leave &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;the other at 0.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;cube_redshift&#39; must be a number; got &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;cube_redshift&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ebv</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;galactic_ebv&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ebv</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;galactic_ebv&#39; is </span><span class="si">{</span><span class="n">ebv</span><span class="si">}</span><span class="s2">; a colour excess removed before &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;fitting cannot be negative.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;galactic_ebv&#39; must be a number; got </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;galactic_ebv&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;galactic_rv&quot;</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;galactic_rv&#39; must be positive; got </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;galactic_rv&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;galactic_rv&#39; must be a number; got </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;galactic_rv&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;galactic_law&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">LAW_NAMES</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;galactic_law&#39; </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;galactic_law&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2"> is not a law BRAIN &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;knows; choose one of: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">LAW_NAMES</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum_in_rest_frame&quot;</span><span class="p">],</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;spectrum_in_rest_frame&#39; must be true or false; got &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;spectrum_in_rest_frame&#39;</span><span class="p">]</span><span class="si">!r}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">_line_group_problems</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;line_groups&quot;</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Please fix these settings in </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                         <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  * </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span></div>
+
+
+
+<div class="viewcode-block" id="to_config">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.to_config">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">to_config</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">spectrum_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Translate validated settings into the object BRAIN runs on.</span>
+
+<span class="sd">    The two output paths are named here rather than left at the bare file</span>
+<span class="sd">    names `NewBrainConfig` declares. Those names have no folder in them, so a</span>
+<span class="sd">    caller that builds a config and fits without overriding them writes its</span>
+<span class="sd">    result into whatever directory the process happened to start in, which</span>
+<span class="sd">    for anyone running from a checkout is the source tree. Every caller that</span>
+<span class="sd">    cared already overrode them; the ones that did not were the ones leaving</span>
+<span class="sd">    files in the repository.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewBrainConfig</span><span class="p">,</span> <span class="n">LINE_MODES</span>
+
+    <span class="n">folder</span><span class="p">,</span> <span class="n">entries</span> <span class="o">=</span> <span class="n">build_base_list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">spectrum</span> <span class="o">=</span> <span class="n">spectrum_file</span> <span class="ow">or</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;spectrum&quot;</span><span class="p">)</span>
+    <span class="n">stem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">spectrum</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">spectrum</span> \
+        <span class="k">else</span> <span class="s2">&quot;brain_fit&quot;</span>
+    <span class="n">out_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output_folder&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">DEFAULTS</span><span class="p">[</span><span class="s2">&quot;output_folder&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">NewBrainConfig</span><span class="p">(</span>
+        <span class="n">obs_spectrum_file</span><span class="o">=</span><span class="n">spectrum_file</span> <span class="ow">or</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum&quot;</span><span class="p">],</span>
+        <span class="n">output_summary</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">stem</span><span class="si">}</span><span class="s2">_summary.txt&quot;</span><span class="p">),</span>
+        <span class="n">output_spectrum</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">stem</span><span class="si">}</span><span class="s2">_fitted.txt&quot;</span><span class="p">),</span>
+        <span class="n">mask_file</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;mask&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">wavelength_min</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;wavelength_min&quot;</span><span class="p">],</span>
+        <span class="n">wavelength_max</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;wavelength_max&quot;</span><span class="p">],</span>
+        <span class="n">instrumental_resolution</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;instrumental_resolution&quot;</span><span class="p">],</span>
+        <span class="n">library_resolution</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;library_resolution&quot;</span><span class="p">],</span>
+        <span class="n">spectrum_redshift</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum_redshift&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">spectrum_in_rest_frame</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;spectrum_in_rest_frame&quot;</span><span class="p">]),</span>
+        <span class="n">galactic_ebv</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;galactic_ebv&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">galactic_rv</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;galactic_rv&quot;</span><span class="p">]),</span>
+        <span class="n">galactic_law</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;galactic_law&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span>
+        <span class="n">cube_redshift</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;cube_redshift&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">),</span>
+        <span class="n">has_errorbars</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;has_errorbars&quot;</span><span class="p">],</span>
+        <span class="n">norm_wavelength</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;normalisation_wavelength&quot;</span><span class="p">],</span>
+        <span class="n">ssp_folder</span><span class="o">=</span><span class="n">folder</span><span class="p">,</span>
+        <span class="n">bases_dir_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">bases_entries</span><span class="o">=</span><span class="n">entries</span><span class="p">,</span>
+        <span class="n">ssp_flux_unit</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;ssp_flux_unit&quot;</span><span class="p">],</span>
+        <span class="n">reddening_law</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;reddening_law&quot;</span><span class="p">],</span>
+        <span class="n">av_bounds</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;dust_range&quot;</span><span class="p">]),</span>
+        <span class="n">yav_bounds</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;young_extra_dust_range&quot;</span><span class="p">]),</span>
+        <span class="n">av_init</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;av_start&quot;</span><span class="p">],</span>
+        <span class="n">sigma_star_bounds</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;dispersion_range&quot;</span><span class="p">]),</span>
+        <span class="n">v0_star_bounds</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;velocity_range&quot;</span><span class="p">]),</span>
+        <span class="n">sigma_star_init</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;dispersion_start&quot;</span><span class="p">],</span>
+        <span class="n">v0_star_init</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;v0_start&quot;</span><span class="p">],</span>
+        <span class="n">fit_emission_lines</span><span class="o">=</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;fit_emission_lines&quot;</span><span class="p">]</span>
+                            <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_mode&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">LINE_MODES</span><span class="p">),</span>
+        <span class="n">wavelength_scale</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;wavelength_scale&quot;</span><span class="p">],</span>
+        <span class="n">sigma_gas_bounds</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gas_dispersion_range&quot;</span><span class="p">]),</span>
+        <span class="n">v0_gas_bounds</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gas_velocity_range&quot;</span><span class="p">]),</span>
+        <span class="n">sigma_gas_init</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gas_dispersion_start&quot;</span><span class="p">],</span>
+        <span class="n">v0_gas_init</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gas_v0_start&quot;</span><span class="p">],</span>
+        <span class="n">kinematic_groups</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;line_groups&quot;</span><span class="p">],</span>
+        <span class="n">reg_strength</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;smoothness&quot;</span><span class="p">],</span>
+        <span class="n">reg_order</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;smoothness_order&quot;</span><span class="p">],</span>
+        <span class="n">n_mc_resamples</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;error_samples&quot;</span><span class="p">],</span>
+        <span class="n">n_clip_iterations</span><span class="o">=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;reject_outliers&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">sigma_clip_threshold</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;outlier_threshold&quot;</span><span class="p">],</span>
+        <span class="n">sigma_clip_scale</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;outlier_scale&quot;</span><span class="p">],</span>
+        <span class="n">v0_grid_step</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;velocity_grid_step&quot;</span><span class="p">],</span>
+        <span class="n">lm_ftol</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;fit_tolerance&quot;</span><span class="p">],</span>
+        <span class="n">lm_xtol</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;fit_tolerance&quot;</span><span class="p">],</span>
+        <span class="n">lm_max_iter</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;max_iterations&quot;</span><span class="p">]),</span>
+        <span class="n">lm_max_nfev</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;max_function_evals&quot;</span><span class="p">],</span>
+        <span class="n">use_fast_engine</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">linear_solver</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;linear_solver&quot;</span><span class="p">],</span>
+        <span class="n">cube_fitter</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;cube_fitter&quot;</span><span class="p">],</span>
+        <span class="n">missing_error</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;missing_error&quot;</span><span class="p">],</span>
+        <span class="n">cpu_workers</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;cpu_workers&quot;</span><span class="p">],</span>
+        <span class="n">coarse_to_fine_grid</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;coarse_to_fine_grid&quot;</span><span class="p">],</span>
+        <span class="n">central_differences</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;central_differences&quot;</span><span class="p">],</span>
+        <span class="n">enforce_simplex</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;enforce_simplex&quot;</span><span class="p">],</span>
+        <span class="n">photoionization_mode</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_mode&quot;</span><span class="p">],</span>
+        <span class="n">electron_temperature</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gas_temperature&quot;</span><span class="p">],</span>
+        <span class="n">electron_density</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gas_density&quot;</span><span class="p">],</span>
+        <span class="n">gas_metallicity</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gas_metallicity&quot;</span><span class="p">],</span>
+        <span class="n">helium_abundance</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;helium_abundance&quot;</span><span class="p">],</span>
+        <span class="n">lyman_escape_fraction</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;lyman_escape_fraction&quot;</span><span class="p">],</span>
+        <span class="n">allow_partial_ionising_coverage</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;allow_partial_ionising_coverage&quot;</span><span class="p">],</span>
+        <span class="n">av_nebular_bounds</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_dust_range&quot;</span><span class="p">]),</span>
+        <span class="n">av_nebular_init</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_dust_start&quot;</span><span class="p">],</span>
+        <span class="n">n_nebular_iterations</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;nebular_iterations&quot;</span><span class="p">],</span>
+        <span class="n">tau_tolerance</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;sc_tolerance&quot;</span><span class="p">],</span>
+        <span class="n">av_neb_tolerance</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;sc_av_neb_tolerance&quot;</span><span class="p">],</span>
+        <span class="n">max_sc_iterations</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;sc_max_iterations&quot;</span><span class="p">],</span>
+        <span class="n">sc_damping</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;sc_damping&quot;</span><span class="p">],</span>
+        <span class="n">sc_penalty_weight</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;sc_penalty_weight&quot;</span><span class="p">],</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="describe_templates">
+<a class="viewcode-back" href="../../api/generated/brainsp.brain_settings.html#brainsp.brain_settings.describe_templates">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">describe_templates</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">libraries</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">libraries</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">ssp</span><span class="p">,</span> <span class="n">extra</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">ages</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">})</span>
+    <span class="n">zs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">})</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="p">{(</span><span class="nb">round</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">}</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Template library: </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+           <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ssp</span><span class="p">)</span><span class="si">}</span><span class="s2"> stellar templates&quot;</span>
+           <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot; + </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span><span class="si">}</span><span class="s2"> extra component(s)&quot;</span> <span class="k">if</span> <span class="n">extra</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;  AGES available (years) — copy into &#39;ages&#39;:&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span> <span class="mi">5</span><span class="p">):</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">&gt;9.4g</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">5</span><span class="p">]))</span>
+    <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;  METALLICITIES available — copy into &#39;metallicities&#39;:&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zs</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    (0.0190 = solar)&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;  Coverage  (X = template exists):&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;      age_yr  &quot;</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="s2">&gt;9.4f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zs</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">&gt;9.4g</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="s2">&quot;        X&quot;</span> <span class="k">if</span> <span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">z</span><span class="p">)</span> <span class="ow">in</span> <span class="n">grid</span> <span class="k">else</span> <span class="s2">&quot;        .&quot;</span>
+            <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zs</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">extra</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;  Extra components (include_power_law: true):&quot;</span><span class="p">]</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;short_name&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;14</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">extra</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+    <span class="k">if</span> <span class="s2">&quot;--list&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Every setting BRAIN understands, with its default:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">DEFAULTS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&lt;38</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">v</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">validate</span><span class="p">(</span><span class="n">load</span><span class="p">())</span>
+    <span class="k">if</span> <span class="s2">&quot;--check&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">io_utils</span>
+        <span class="n">folder</span><span class="p">,</span> <span class="n">entries</span> <span class="o">=</span> <span class="n">build_base_list</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+        <span class="n">cov</span> <span class="o">=</span> <span class="n">io_utils</span><span class="o">.</span><span class="n">library_coverage</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">entries</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DEFAULT_SETTINGS_FILE</span><span class="si">}</span><span class="s2"> is valid.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  templates : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  spectrum  : </span><span class="si">{</span><span class="n">settings</span><span class="p">[</span><span class="s1">&#39;spectrum&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  range     : </span><span class="si">{</span><span class="n">settings</span><span class="p">[</span><span class="s1">&#39;wavelength_min&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;-</span><span class="si">{</span><span class="n">settings</span><span class="p">[</span><span class="s1">&#39;wavelength_max&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  nebular   : </span><span class="si">{</span><span class="n">settings</span><span class="p">[</span><span class="s1">&#39;nebular_mode&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">io_utils</span><span class="o">.</span><span class="n">describe_coverage</span><span class="p">(</span><span class="n">cov</span><span class="p">))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span> <span class="k">if</span> <span class="n">settings</span><span class="p">[</span><span class="s2">&quot;nebular_mode&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">cov</span><span class="p">[</span><span class="s2">&quot;modes&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">describe_templates</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s2">&quot;base_folder&quot;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
+    <span class="n">_f</span><span class="p">,</span> <span class="n">_c</span> <span class="o">=</span> <span class="n">build_base_list</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Your current selection in </span><span class="si">{</span><span class="n">DEFAULT_SETTINGS_FILE</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    ages          = </span><span class="si">{</span><span class="n">settings</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    metallicities = </span><span class="si">{</span><span class="n">settings</span><span class="p">[</span><span class="s1">&#39;metallicities&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    -&gt; </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">_c</span><span class="p">)</span><span class="si">}</span><span class="s2"> templates will be fitted&quot;</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

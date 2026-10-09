@@ -1,0 +1,15 @@
+﻿brainsp.scripts
+===============
+
+.. automodule:: brainsp.scripts
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cube_script
+      settings_block
+      spectrum_script
+      write_script
+   

@@ -1,0 +1,43 @@
+# The Claude skill
+
+The repository includes a **skill** for Claude (Claude Code, the Claude apps
+and the API): `skill/brainsp/SKILL.md`. It teaches Claude how to use BRAIN:
+every recipe on these pages in compact form, the command line, and, above
+all, the conventions that change numbers if missed (the wavelength scale, the
+cube redshift, the units and extinction convention of line fluxes, observed
+versus intrinsic dispersions, apparent masses, how masks and S/N cuts are
+read). With it installed, asking Claude to "fit these MaNGA spectra with
+BRAIN and make a BPT map" gets BRAIN used correctly.
+
+## Installing it
+
+**Claude Code**, for yourself (every project):
+
+```bash
+mkdir -p ~/.claude/skills
+cp -r skill/brainsp ~/.claude/skills/
+```
+
+**Claude Code**, for one project (shared with everyone who clones it):
+
+```bash
+mkdir -p .claude/skills
+cp -r skill/brainsp .claude/skills/
+```
+
+Claude Code finds skills in those folders at start-up; `/skills` lists them.
+
+**Claude.ai and the Claude apps**: zip the folder (`cd skill && zip -r
+brainsp.zip brainsp`) and upload it under *Settings → Capabilities → Skills*.
+
+**The API**: upload it as a custom skill with the Skills API and enable it
+for the conversation.
+
+The skill only describes BRAIN; it runs nothing by itself. BRAIN must be
+installed where Claude runs the code.
+
+## Its contents
+
+```{literalinclude} ../../../skill/brainsp/SKILL.md
+:language: markdown
+```

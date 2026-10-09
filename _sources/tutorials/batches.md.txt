@@ -1,0 +1,42 @@
+# 4. Observed-frame spectra, corrections and batches
+
+Two things happen to light on its way to the telescope that BRAIN undoes
+*before* fitting: the redshift, and the Milky Way's dust. The galaxy's own
+dust is not undone: it is fitted. `mock_observed_frame.spec` is
+`mock_old_population.spec` as observed: shifted to $z = 0.03$ and reddened
+by $E(B-V) = 0.05$ of Galactic dust.
+
+```{literalinclude} ../../tutorials_src/t04_batches.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t04_batches.txt
+:language: text
+```
+
+The observed-frame spectrum, once BRAIN has removed the Galactic dust at the
+observed wavelengths and divided the wavelengths by $1 + z$, gives the same
+fit as its rest-frame twin to within the noise. The order matters, and
+BRAIN follows the light backwards: Galactic dust acts on the light as it
+arrives, at observed wavelengths, so it is removed first, then the redshift.
+See [](../user_guide/corrections.md).
+
+## The corrections table
+
+A CSV file with the spectrum's name first and any of `redshift` (or `z`),
+`ebv`, `rv`, `law` and `rest_frame`, the same table the interface loads. A
+redshift in the table is one BRAIN removes, unless `rest_frame` says the
+spectrum is already at rest. {func}`brainsp.read_corrections_table` reads
+it; {func}`brainsp.fit_spectra` takes it as `corrections=`.
+
+## Batches
+
+{func}`brainsp.fit_spectra` fits a list (or a glob pattern) of spectra, each
+with its own corrections, and returns one result per spectrum in order; a
+spectrum that fails gives a result whose `error_message` says why, and the
+rest carry on. It keeps the fit warm: on a GPU every spectrum after the
+first reuses the compiled fit (about 0.5 s each for `spop`); on a CPU with
+many spectra it fits them on worker processes, one per core
+([](../user_guide/batches.md)). Here three spectra took 2.4 s together.

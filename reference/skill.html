@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Claude skill &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/skill';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changes" href="changelog.html" />
+    <link rel="prev" title="Command-line reference" href="cli.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-line reference</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">The Claude skill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing BRAIN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The Claude skill</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-claude-skill">
+<h1>The Claude skill<a class="headerlink" href="#the-claude-skill" title="Link to this heading">#</a></h1>
+<p>The repository includes a <strong>skill</strong> for Claude (Claude Code, the Claude apps
+and the API): <code class="docutils literal notranslate"><span class="pre">skill/brainsp/SKILL.md</span></code>. It teaches Claude how to use BRAIN:
+every recipe on these pages in compact form, the command line, and, above
+all, the conventions that change numbers if missed (the wavelength scale, the
+cube redshift, the units and extinction convention of line fluxes, observed
+versus intrinsic dispersions, apparent masses, how masks and S/N cuts are
+read). With it installed, asking Claude to “fit these MaNGA spectra with
+BRAIN and make a BPT map” gets BRAIN used correctly.</p>
+<section id="installing-it">
+<h2>Installing it<a class="headerlink" href="#installing-it" title="Link to this heading">#</a></h2>
+<p><strong>Claude Code</strong>, for yourself (every project):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.claude/skills
+cp<span class="w"> </span>-r<span class="w"> </span>skill/brainsp<span class="w"> </span>~/.claude/skills/
+</pre></div>
+</div>
+<p><strong>Claude Code</strong>, for one project (shared with everyone who clones it):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>.claude/skills
+cp<span class="w"> </span>-r<span class="w"> </span>skill/brainsp<span class="w"> </span>.claude/skills/
+</pre></div>
+</div>
+<p>Claude Code finds skills in those folders at start-up; <code class="docutils literal notranslate"><span class="pre">/skills</span></code> lists them.</p>
+<p><strong>Claude.ai and the Claude apps</strong>: zip the folder (<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">skill</span> <span class="pre">&amp;&amp;</span> <span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">brainsp.zip</span> <span class="pre">brainsp</span></code>) and upload it under <em>Settings → Capabilities → Skills</em>.</p>
+<p><strong>The API</strong>: upload it as a custom skill with the Skills API and enable it
+for the conversation.</p>
+<p>The skill only describes BRAIN; it runs nothing by itself. BRAIN must be
+installed where Claude runs the code.</p>
+</section>
+<section id="its-contents">
+<h2>Its contents<a class="headerlink" href="#its-contents" title="Link to this heading">#</a></h2>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>---
+name: brainsp
+<span class="gu">description: Use BRAIN (the `brainsp` Python package) to fit galaxy spectra and IFU datacubes with stellar populations, dust, kinematics, emission lines and AGN continua, and to read, plot and export the results. Use whenever the user wants to run BRAIN, fit a spectrum or datacube with stellar population synthesis, read a BRAIN summary file or megacube, make maps or BPT/WHAN diagrams from one, write a BRAIN run script, or check a BRAIN installation.</span>
+<span class="gu">---</span>
+
+<span class="gh"># BRAIN (`brainsp`)</span>
+
+BRAIN fits a galaxy spectrum, or every spaxel of a datacube, with a
+non-negative mix of simple-stellar-population templates, broadened and
+shifted by a Gaussian LOSVD and attenuated by dust, optionally with emission
+lines, a nebular continuum and AGN power laws. JAX; CPU or GPU; float64.
+Package <span class="sb">`brainsp`</span> (import name), commands <span class="sb">`brainsp`</span> and <span class="sb">`brainsp-gui`</span>.
+Documentation: <span class="sb">`documentation/`</span> in the repository (Sphinx), built HTML in
+<span class="sb">`documentation/build/html`</span>.
+
+<span class="gu">## Before anything</span>
+
+<span class="k">-</span><span class="w"> </span>Installed? <span class="sb">`python -c &quot;import brainsp; print(brainsp.__version__)&quot;`</span>.
+  Not installed: <span class="sb">`pip install git+https://github.com/sureshparekh/brainv1`</span>
+  (or <span class="sb">`pip install -e .`</span> in a clone). Check: <span class="sb">`brainsp selftest --quick`</span>.
+<span class="k">-</span><span class="w"> </span>Mock data with known answers, for trying anything:
+  <span class="sb">`folder = brainsp.mock.write_examples()`</span> (→ <span class="sb">`~/.brainsp/examples`</span>:
+  <span class="sb">`spectra/*.spec`</span> with <span class="sb">`.truth.json`</span>, <span class="sb">`spectra/corrections.csv`</span>,
+  <span class="sb">`masks/emission_lines.sm`</span>, <span class="sb">`cube/mock_cube.fits`</span> 16x16 at z = 0.02, vacuum).
+<span class="k">-</span><span class="w"> </span><span class="gs">**Choose the device before the first fit in a Python process**</span>:
+  <span class="sb">`brainsp.set_device(&quot;cpu&quot;|&quot;gpu&quot;|&quot;auto&quot;)`</span> or <span class="sb">`device=`</span> on the first call.
+  JAX fixes it at first use; changing later raises. <span class="sb">`import brainsp`</span> and
+  <span class="sb">`brainsp.mock`</span> never start JAX.
+
+<span class="gu">## Recipes</span>
+
+One spectrum (text file: wavelength Å, flux, [error], [flag 0=good]):
+
+<span class="sb">```python</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="s2">&quot;g.spec&quot;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>      <span class="c1"># spop</span>
+<span class="n">r</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">chi2</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">adev</span>
+<span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_mass</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">mean_metallicity_light</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">populations</span>          <span class="c1"># structured: x, mini, mcor, age, Z, mstars, name, stellar</span>
+<span class="sb">```</span>
+
+Emission lines (requires the spectrum&#39;s wavelength scale):
+
+<span class="sb">```python</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="s2">&quot;g.spec&quot;</span><span class="p">,</span> <span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">v_gas</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">sigma_gas</span>
+<span class="n">r</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="s2">&quot;Halpha_6563&quot;</span><span class="p">]</span>                          <span class="c1"># (flux, err) as written: see conventions</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">line_fluxes</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># physical, as observed</span>
+<span class="sb">```</span>
+
+AGN continuum: <span class="sb">`include_power_law=True`</span> (7 templates); <span class="sb">`r.agn_fraction`</span> (%).
+
+Observed-frame spectrum + Milky Way dust:
+<span class="sb">`spectrum_redshift=z, spectrum_in_rest_frame=False, galactic_ebv=E, galactic_rv=3.1`</span>.
+
+Many spectra (one compile, warm; CPU → worker processes automatically):
+
+<span class="sb">```python</span>
+<span class="n">rs</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectra</span><span class="p">(</span><span class="s2">&quot;spec/*.spec&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">corrections</span><span class="o">=</span><span class="s2">&quot;corrections.csv&quot;</span><span class="p">,</span>
+                         <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>       <span class="c1"># CSV: filename,redshift|z,ebv,rv,law,rest_frame</span>
+<span class="n">bad</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rs</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">error_message</span><span class="p">]</span>
+<span class="sb">```</span>
+
+Settings object (checked names; YAML round trip; describe):
+
+<span class="sb">```python</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span><span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">dust_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="n">s</span><span class="o">.</span><span class="n">validate</span><span class="p">();</span> <span class="n">s</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;s.yaml&quot;</span><span class="p">);</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span><span class="s2">&quot;s.yaml&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">&quot;velocity_range&quot;</span><span class="p">));</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="o">.</span><span class="n">names</span><span class="p">()</span>
+<span class="sb">```</span>
+
+Datacube:
+
+<span class="sb">```python</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">CubePipeline</span><span class="p">(</span><span class="s2">&quot;cube.fits&quot;</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>          <span class="c1"># redshift REQUIRED (0 = at rest)</span>
+        <span class="n">settings</span><span class="o">=</span><span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span><span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">),</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>
+        <span class="n">flux_hdu</span><span class="o">=</span><span class="s2">&quot;FLUX&quot;</span><span class="p">,</span> <span class="n">error_hdu</span><span class="o">=</span><span class="s2">&quot;IVAR&quot;</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="s2">&quot;inv_variance&quot;</span><span class="p">,</span> <span class="n">mask_hdu</span><span class="o">=</span><span class="s2">&quot;MASK&quot;</span><span class="p">,</span>
+        <span class="n">galactic_ebv</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sn_mask</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">fit_sn_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">wavelength_mask</span><span class="o">=</span><span class="s2">&quot;lines.sm&quot;</span><span class="p">,</span>           <span class="c1"># or [(lo, hi, weight), ...]; every spaxel</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;mega&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">validate</span><span class="p">();</span> <span class="n">out</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>                   <span class="c1"># -&gt; [&#39;mega/cube-BRAIN_MEGACUBE.fits&#39;]</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_cube</span><span class="p">(</span><span class="s2">&quot;cube.fits&quot;</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>   <span class="c1"># short form</span>
+<span class="sb">```</span>
+
+Per-cube values: <span class="sb">`per_cube=&quot;targets.csv&quot;`</span> (<span class="sb">`target,redshift,ebv,rv,law,mask file,...`</span>).
+Stages (all off by default): <span class="sb">`spatial_binning=n`</span>, <span class="sb">`degrade_resolution={...}`</span>,
+<span class="sb">`spectral_binning=step`</span>, <span class="sb">`butterworth=True|{order,range}`</span>, <span class="sb">`galactic_ebv`</span>.
+
+Reading a megacube:
+
+<span class="sb">```python</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">read_megacube</span><span class="p">(</span><span class="s2">&quot;mega/cube-BRAIN_MEGACUBE.fits&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">names</span><span class="p">();</span> <span class="n">c</span><span class="o">.</span><span class="n">groups</span>        <span class="c1"># Populations, Kinematics, Fit quality, Emission lines, Diagnostics</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">)</span>   <span class="c1"># NaN where unfitted. Also Sigma_star, Av, Mage_L, Mage_M, MZ_L,</span>
+                           <span class="c1"># xyy..xo _light/_mass, &quot;Halpha_6563  flux&quot; (TWO spaces),</span>
+                           <span class="c1"># &quot;... EW&quot;, &quot;... velocity&quot;, &quot;... sigma&quot;, &quot;BPT [N II]&quot;, &quot;WHAN&quot;</span>
+<span class="n">obs</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span> <span class="n">light</span><span class="p">,</span> <span class="n">mass</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">populations</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span> <span class="n">c</span><span class="o">.</span><span class="n">ages</span>
+<span class="sb">```</span>
+
+Figures (any format by suffix; return Figure; <span class="sb">`ax=`</span> to embed):
+
+<span class="sb">```python</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span>
+<span class="n">P</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;fit.png&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">6450</span><span class="p">,</span> <span class="mi">6700</span><span class="p">));</span> <span class="n">P</span><span class="o">.</span><span class="n">sfh</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;sfh.png&quot;</span><span class="p">);</span> <span class="n">P</span><span class="o">.</span><span class="n">spectrum_fit</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">P</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;v.pdf&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdBu_r&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;full&quot;</span><span class="p">)</span>      <span class="c1"># scale clip|full|log</span>
+<span class="n">P</span><span class="o">.</span><span class="n">maps</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;Av&quot;</span><span class="p">,</span> <span class="s2">&quot;Mage_L&quot;</span><span class="p">],</span> <span class="s2">&quot;page.png&quot;</span><span class="p">)</span>
+<span class="n">P</span><span class="o">.</span><span class="n">export_maps</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;maps&quot;</span><span class="p">,</span> <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;fits&quot;</span><span class="p">))</span>         <span class="c1"># FITS: WCS + TRUST mask</span>
+<span class="n">P</span><span class="o">.</span><span class="n">spaxel</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;s.png&quot;</span><span class="p">);</span> <span class="n">P</span><span class="o">.</span><span class="n">sfh</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;sfh.png&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+<span class="n">P</span><span class="o">.</span><span class="n">diagnostic</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;BPT [N II]&quot;</span><span class="p">,</span> <span class="s2">&quot;bpt.png&quot;</span><span class="p">)</span>                         <span class="c1"># or &quot;BPT [S II]&quot;, &quot;WHAN&quot;</span>
+<span class="sb">```</span>
+
+A run as one Python file (for servers; <span class="sb">`python run.py [--check] [--device gpu]`</span>):
+<span class="sb">`brainsp.write_script(&quot;run.py&quot;, settings=s, spectra=[...])`</span>,
+<span class="sb">`p.export_script(&quot;run_cube.py&quot;)`</span>, <span class="sb">`brainsp init run.py spec/*.spec`</span>.
+Paths inside the script&#39;s folder are written relative to it and resolved
+from the script&#39;s location: save the script beside the data, copy the folder
+to the server, run it there from anywhere. Paths outside are listed in a
+<span class="sb">`# NOTE`</span> at the top of the script.
+
+Masks: <span class="sb">`regions, n_skip = brainsp.read_mask(&quot;m.sm&quot;)`</span>,
+<span class="sb">`brainsp.write_mask(&quot;m.sm&quot;, [(lo, hi, w, &quot;label&quot;)])`</span>,
+<span class="sb">`brainsp.STANDARD_OPTICAL_MASK`</span>.
+
+<span class="gu">## Command line</span>
+
+<span class="sb">```</span>
+<span class="sb">brainsp fit spec/*.spec [--settings s.yaml] [--set name=value ...] [--corrections c.csv] [-o out] [--device gpu]</span>
+<span class="sb">brainsp cube c.fits --redshift 0.02 --wavelength-scale vacuum --sn 3 10 --fit-sn 3 [--mask m.sm] [--table t.csv] [--export run.py|--check]</span>
+<span class="sb">brainsp plot out/g_summary.txt -o fit.png        |  brainsp plot mega.fits --map vrot_star -o v.png</span>
+<span class="sb">brainsp plot mega.fits --diagnostic &quot;BPT [N II]&quot; -o bpt.png  |  brainsp plot mega.fits --export maps</span>
+<span class="sb">brainsp init settings.yaml | run.py   brainsp check s.yaml   brainsp settings [NAME]</span>
+<span class="sb">brainsp libraries [info NAME | install FOLDER]   brainsp examples   brainsp selftest [--quick]</span>
+<span class="sb">brainsp gui   brainsp desktop   brainsp clear-cache</span>
+<span class="sb">```</span>
+
+<span class="gu">## Conventions that change numbers (get these right)</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Wavelength scale**</span> (<span class="sb">`wavelength_scale`</span>: <span class="sb">`air`</span>/<span class="sb">`vacuum`</span>) is required in
+  <span class="sb">`espop`</span>/<span class="sb">`nepop`</span>/<span class="sb">`photopop`</span>. SDSS, MaNGA, DESI, LAMOST: vacuum; MUSE, CALIFA:
+  air. Wrong ⇒ every gas velocity off by ~83 km/s, nothing else shows it.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Cube redshift is required**</span>; blank used to fit at z = 0 (stars at the wrong
+  velocity). For a rest-frame cube give 0.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Spectrum line fluxes**</span> (<span class="sb">`r.lines`</span>, summary file): in units of the
+  NORMALISED spectrum (continuum = 1 at λ0 = 5500 Å) × Å, and CORRECTED for the
+  stellar A<span class="ge">_V relative to λ0. `r.line_</span>fluxes(units=&quot;input&quot;, observed=True)`
+  gives physical observed fluxes. <span class="gs">**Cube**</span> <span class="sb">`FLUX_M`</span> maps are already observed,
+  in the cube&#39;s units × Å (megacube convention, Riffel et al. 2023). Don&#39;t mix them uncorrected.
+<span class="k">-</span><span class="w"> </span>Tied doublets: <span class="sb">`[O III]_Doublet`</span>, <span class="sb">`[N II]_Doublet`</span> = the strong line&#39;s
+  flux (5007, 6583); members also listed by name at 0.33510 / 0.32739.
+<span class="k">-</span><span class="w"> </span><span class="sb">`sigma`</span>/<span class="sb">`vd_min`</span>/<span class="sb">`Sigma_star`</span> are OBSERVED dispersions (include the
+  instrument–library LSF difference) unless <span class="sb">`instrumental_resolution`</span> is set;
+  then <span class="sb">`sigma_star`</span>/<span class="sb">`Sigma_star_c`</span> are intrinsic. Gas dispersions are always
+  observed.
+<span class="k">-</span><span class="w"> </span>Masses (<span class="sb">`Mini_tot`</span>, <span class="sb">`Mcor_tot`</span>) are APPARENT (no distance): × flux_unit ×
+  4πd² / 3.828e33 for M☉. Mass fractions exact. AGN components have light, no
+  mass.
+<span class="k">-</span><span class="w"> </span><span class="sb">`Mage_L`</span> = light-weighted mean of log10(age/yr), not log of mean age.
+<span class="k">-</span><span class="w"> </span>Individual population weights are degenerate (age–Z–dust); report averages
+  or broad age-bin sums.
+<span class="k">-</span><span class="w"> </span>Light fractions <span class="sb">`x_j`</span> are at λ0 (5500 Å) and include AGN; <span class="sb">`mcor`</span> over stars.
+<span class="k">-</span><span class="w"> </span>Masks: <span class="sb">`.sm`</span>/<span class="sb">`.gm`</span> files (count line, then N <span class="sb">`start end weight [label]`</span>);
+  only N lines read. Weight 0 = out, 2 = double. Applied as given in EVERY
+  mode, spectra and cubes (gaps, chip breaks, bad columns). In espop/nepop/
+  photopop do NOT mask lines you want fitted: a line with &lt; half its ±2σ
+  pixels unmasked is dropped (warning; absent from summary/`r.lines`/maps;
+  BPT/WHAN then impossible) rather than given an arbitrary flux.
+<span class="k">-</span><span class="w"> </span>Cube <span class="sb">`mask_hdu`</span> is read as MaNGA bitmask: only bit 10 (1024) = bad.
+  For MUSE DQ / CALIFA BADPIX, rebuild as 1024 or use <span class="sb">`mask_hdu=None`</span>.
+<span class="k">-</span><span class="w"> </span>S/N masks keep spaxels with S/N <span class="gs">**&gt;**</span> threshold (strict).
+<span class="k">-</span><span class="w"> </span><span class="sb">`chi2`</span> = χ²/N_eff (~0.6–0.7 on resampled noise is
+  normal); cube <span class="sb">`CHI2RED`</span> = χ²/(N_eff − n_par).
+<span class="k">-</span><span class="w"> </span>Default fitting range 3700–6900 Å; BasesGM covers 3540–6996 Å and cannot do
+  <span class="sb">`nepop`</span>/<span class="sb">`photopop`</span> (no ionising UV). <span class="sb">`brainsp libraries info X`</span> →
+  <span class="sb">`reaches_lyman`</span>.
+<span class="k">-</span><span class="w"> </span><span class="sb">`velocity_range`</span> must contain the galaxy&#39;s velocity in the spectrum&#39;s
+  frame (observed-frame spectrum without z removed: ≈ cz).
+
+<span class="gu">## Performance facts</span>
+
+<span class="k">-</span><span class="w"> </span>First fit compiles (seconds); later fits of the same shape reuse it. Keep
+  range, templates and mode fixed across a batch. Cache: <span class="sb">`~/.cache/brain/jax`</span>.
+<span class="k">-</span><span class="w"> </span>Warm single spectrum: GPU ~0.5 s (spop), ~1 s (espop); CPU ~1.4 / 2.4 s.
+<span class="k">-</span><span class="w"> </span>CPU: cubes and long lists of spectra run on worker processes, one thread
+  each (<span class="sb">`cpu_workers: auto`</span> = cores allowed − 1, ≤ free RAM/1.2 GB). One
+  process cannot use many cores for this. GPU: batches of spaxels.
+
+<span class="gu">## Libraries</span>
+
+<span class="sb">`brainsp.libraries.available()`</span>, <span class="sb">`.info(name)`</span>, <span class="sb">`.install(folder)`</span>; a
+library = folder with <span class="sb">`CATALOGUE.txt`</span> (`AGE_YR Z FILENAME SHORT_NAME MSTARS
+KIND`), templates two columns (Å, flux). Search: path,
+<span class="sb">`$BRAINSP_LIBRARY_PATH`</span>, <span class="sb">`~/.brainsp/libraries`</span>, package. Select with
+<span class="sb">`base_folder=&quot;NAME&quot;`</span>, <span class="sb">`ages=[...]`</span>, <span class="sb">`metallicities=[...]`</span>.
+
+<span class="gu">## When something fails</span>
+
+<span class="k">-</span><span class="w"> </span><span class="sb">`brainsp check s.yaml`</span> / <span class="sb">`Settings.validate()`</span> / <span class="sb">`CubePipeline.validate()`</span>
+  list every problem at once with the fix.
+<span class="k">-</span><span class="w"> </span>&quot;Fitting 0 pixels&quot;: flag column inverted (0 must mean good).
+<span class="k">-</span><span class="w"> </span>Flat model past ~7000 Å: outside BasesGM; narrow <span class="sb">`wavelength_max`</span>.
+<span class="k">-</span><span class="w"> </span>Velocity wrong: widen <span class="sb">`velocity_range`</span> or remove the redshift.
+<span class="k">-</span><span class="w"> </span>Interface failures append the full message to <span class="sb">`brain_error.log`</span> in the output folder.
+<span class="k">-</span><span class="w"> </span>Verify against mocks: <span class="sb">`brainsp.mock.make_spectrum(...)`</span> with the user&#39;s S/N.
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cli.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Command-line reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="changelog.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Changes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-it">Installing it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#its-contents">Its contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

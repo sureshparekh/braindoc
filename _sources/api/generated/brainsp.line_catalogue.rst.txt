@@ -1,0 +1,29 @@
+﻿brainsp.line\_catalogue
+=======================
+
+.. automodule:: brainsp.line_catalogue
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      AIR_CONVERSION_FLOOR_ON_AIR_SCALE
+      HYDROGEN_LINES_VACUUM
+      HYDROGEN_SERIES_EXTRA_VACUUM
+      ENTRIES_UNDER_REVIEW
+      LINE_SPECIES
+      DEFAULT_GROUP_SPECIES
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      air_to_vacuum
+      emission_lines_on_scale
+      hydrogen_lines_on_scale
+      refractive_index_of_air
+      require_scale
+      species_of
+      vacuum_to_air
+   

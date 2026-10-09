@@ -1,0 +1,70 @@
+# Derived quantities
+
+From the weights $w_j$ of the $N_\star$ stellar templates (ages $t_j$,
+metallicities $Z_j$).
+
+## Light fractions
+
+$$ x_j = 100\,\frac{w_j}{\sum_{i} w_i} \quad[\%], $$
+
+summed over every component, AGN included: the share of the attenuated model
+at $\lambda_0$.
+
+## Masses
+
+A weight is a flux at $\lambda_0$; a template's library flux per unit initial
+mass there is $\phi_j$ (`fbase_norm`, $(L/M)_j$ in the summary). Undoing the
+attenuation that template suffered,
+
+$$ M^{\rm ini}_j = \frac{w_j\, F_{\lambda_0}\, 10^{\,0.4\,(A_V + Y_j)\, q(\lambda_0)}}{\phi_j}, \qquad M^{\rm cor}_j = M^{\rm ini}_j\, m^\star_j , $$
+
+$m^\star_j$ being the fraction of the initial mass still in stars and remnants
+at $t_j$ (`MSTARS`). The factor $10^{0.4 (A_V+Y_j) q(\lambda_0)}$ undoes the
+extinction the template suffered at $\lambda_0$ itself: the attenuation in the
+model is normalised there, so the weight is the template's *attenuated* flux
+at $\lambda_0$. Leaving it out would make the dustiest populations look the
+lightest. The mass fractions are $\mu_j = 100\, M_j / \sum_i M_i$ over the
+**stellar** templates only: an AGN component has light and no mass. The
+totals `Mini_tot`, `Mcor_tot` are **apparent**: multiply by the flux unit
+times $4\pi d^2 / L_\odot$ for solar masses (BRAIN uses no distance).
+
+## Mean ages and metallicities
+
+$$ \langle \log t \rangle_L = \frac{\sum_j x_j \log_{10} t_j}{\sum_j x_j}, \qquad \langle \log t \rangle_M = \frac{\sum_j \mu_j \log_{10} t_j}{\sum_j \mu_j}, $$
+
+$$ \langle Z \rangle_L = \frac{\sum_j x_j Z_j}{\sum_j x_j}, \qquad \langle Z \rangle_M = \frac{\sum_j \mu_j Z_j}{\sum_j \mu_j}, $$
+
+over the stellar templates (present mass in the mass-weighted ones). These
+are the means of $\log t$, not the logarithm of the mean age, and of $Z$ as a
+mass fraction, not of [Z/H]. From a fit: `FitResult.mean_log_age_light` and
+so on. In a megacube (`Mage_L`, `Mage_M`, `MZ_L`, `MZ_M`) the light-weighted
+pair keeps the definition of the published megacubes (Riffel et al. 2023):
+the numerator over the stellar templates, the denominator over every
+component, so featureless (AGN) light lowers them.
+
+## Population bins
+
+A megacube's `PoPBins` carries the light and mass in broad age bins, each
+`[name, youngest, oldest]` in years, a template belonging to a bin when
+$\text{youngest} < t_j \le \text{oldest}$. The default is the six MaNGA bins:
+
+| Bin | Ages (yr) |
+|---|---|
+| `xyy` | $9\times10^5 < t \le 10^7$ |
+| `xyo` | $1.4\times10^7 < t \le 5.6\times10^7$ |
+| `xiy` | $10^8 < t \le 5\times10^8$ |
+| `xii` | $6.3\times10^8 < t \le 8\times10^8$ |
+| `xio` | $8.9\times10^8 < t \le 2\times10^9$ |
+| `xo` | $5\times10^9 < t \le 1.3\times10^{10}$ |
+
+as `<bin>_light` and `<bin>_mass` planes (per cent).
+
+## Equivalent widths and line fluxes of a datacube
+
+Over $\lambda_c \pm 5\sigma$ of each line:
+
+$$ F_M = \int \ell(\lambda)\, d\lambda, \qquad EW_M = \int -\frac{\ell(\lambda)}{C(\lambda)}\, d\lambda, \qquad EW_D = \int \Big(1 - \frac{f(\lambda)}{C(\lambda)}\Big) d\lambda, $$
+
+$\ell$ the line's model profile (observed, attenuated), $f$ the data and $C$ a
+straight line fitted to the stellar model in the line's continuum windows.
+Equivalent widths are negative for emission.

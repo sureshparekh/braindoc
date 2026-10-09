@@ -1,0 +1,83 @@
+# One file per run
+
+A BRAIN run can be written out as **one Python file** that holds everything
+about it: every setting, each under its own documentation; every spectrum
+with its own corrections, or every cube with every preparation stage; the
+wavelength mask, inline. Run it on any machine with brainsp installed:
+
+```bash
+python run.py                 # run it
+python run.py --check         # validate everything, fit nothing
+python run.py --device gpu    # choose the processor
+python run.py more/*.spec     # (spectra) fit these files instead
+```
+
+## Paths, and moving a run to a server
+
+Every path inside the folder the script is saved in (spectra, cubes, the
+targets table's files, resolution files, the output folder) is written
+**relative to that folder**, and the script finds it from its own location,
+whatever directory it is run from. So the usual way to move work to a
+computing cluster is:
+
+1. Keep the data in one folder; open the interface there (`cd project;
+   brainsp gui`), set the run up, and export the script into that folder
+   (the export dialog opens there).
+2. Copy the whole folder to the server, which has brainsp installed.
+3. Run it: `python project/run.py --check`, then `python project/run.py`.
+   The results are written inside the copied folder.
+
+A path outside the script's folder cannot travel with it: it is kept as it
+was, listed in a `NOTE` at the top of the script, and named by the
+interface when you export. Copy those files along and edit the paths, or
+move them into the folder and export again. Template libraries are named,
+not given as paths (`base_folder: BasesGM`), and are found by name on the
+server ([](libraries.md)).
+
+## Making one
+
+| From | |
+|---|---|
+| the interface | *Export run script…*, Fit step (spectra) or Run step (cubes) |
+| Python | {func}`brainsp.write_script`, {meth}`brainsp.CubePipeline.export_script` |
+| the command line | `brainsp init run.py spectra/*.spec`, `brainsp init run.py --kind cube`, `brainsp cube ... --export run.py` |
+
+```python
+brainsp.write_script("run.py", settings=s,
+                     spectra=["a.spec", ("b.spec", dict(spectrum_redshift=0.03,
+                                                       spectrum_in_rest_frame=False))])
+brainsp.write_script("run_cube.py", kind="cube", cubes=["c.fits"],
+                     redshift=0.02, sn_mask=[3], fit_sn_threshold=3)
+pipeline.export_script("run_cube.py")
+```
+
+## What is in it
+
+```python
+SETTINGS = brainsp.Settings(
+    # ======================================================================
+    # 2. WAVELENGTH RANGE
+    # ======================================================================
+
+    # Fit only between these wavelengths, in Angstroms. ...
+    wavelength_min=3700.0,
+    wavelength_max=6900.0,
+    ...
+    nebular_mode='espop',   # default: 'spop'
+    ...
+)
+
+SPECTRA = {
+    '/data/a.spec': {},
+    '/data/b.spec': {'spectrum_redshift': 0.03, 'spectrum_in_rest_frame': False},
+}
+OUTPUT_DIR = 'brain_out'
+DEVICE = 'auto'
+MASK = [(3710.0, 3744.0, 0), ...]
+```
+
+then a short `main()` that calls {func}`brainsp.fit_spectra` (or runs the
+{class}`~brainsp.CubePipeline`). Every setting is listed, not only the
+changed ones; a changed one carries its default as a comment. Edit any line
+and run it again. The [tutorial](../tutorials/settings_scripts.md) shows a
+real one.

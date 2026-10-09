@@ -1,0 +1,13 @@
+﻿brainsp.corrections
+===================
+
+.. automodule:: brainsp.corrections
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      apply_pre_fit_corrections
+      galactic_factor
+   

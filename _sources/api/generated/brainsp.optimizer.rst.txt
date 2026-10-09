@@ -1,0 +1,12 @@
+﻿brainsp.optimizer
+=================
+
+.. automodule:: brainsp.optimizer
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SpectralFitter
+   

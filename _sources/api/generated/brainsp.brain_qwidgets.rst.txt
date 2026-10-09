@@ -1,0 +1,38 @@
+﻿brainsp.brain\_qwidgets
+=======================
+
+.. automodule:: brainsp.brain_qwidgets
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      LABEL_COL
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      divider
+      failure_dialog
+      failure_headline
+      label
+      make_tag
+      row
+      set_tag
+      vdivider
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Disclosure
+      FieldForm
+      Plate
+      RangeSlider
+      Section
+      Segmented
+      SeriesKey
+      Strip
+   

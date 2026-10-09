@@ -1,0 +1,52 @@
+# About
+
+BRAIN is a stellar population synthesis code for galaxy spectra and IFU
+datacubes, written in JAX and developed at the Universidade Federal do Rio
+Grande do Sul (UFRGS), Porto Alegre, Brazil.
+
+## Team
+
+::::{grid} 1 1 3 3
+:gutter: 3
+
+:::{grid-item-card} Suresh Parekh
+:link: https://sureshparekh.github.io/
+
+PhD student in astrophysics\
+Universidade Federal do Rio Grande do Sul (UFRGS)\
+Porto Alegre, Brazil
+
+[sureshparekh.github.io](https://sureshparekh.github.io/)
+:::
+
+:::{grid-item-card} Rogério Riffel
+:link: https://www.if.ufrgs.br/~riffel/
+
+Full Professor\
+Departamento de Astronomia, Instituto de Física\
+Universidade Federal do Rio Grande do Sul (UFRGS)\
+Porto Alegre, Brazil
+
+[www.if.ufrgs.br/~riffel](https://www.if.ufrgs.br/~riffel/)
+:::
+
+:::{grid-item-card} Rafael S. de Souza
+:link: https://rafaelsdesouza.com.br/
+
+Visiting Scholar, Centre for Astrophysics Research\
+University of Hertfordshire, United Kingdom
+
+Adjunct Associate Professor\
+University of North Carolina at Chapel Hill, United States
+
+Visiting Scholar\
+Universidade Federal do Rio Grande do Sul (UFRGS), Brazil
+
+[rafaelsdesouza.com.br](https://rafaelsdesouza.com.br/)
+:::
+::::
+
+## Citing BRAIN
+
+If you use BRAIN in your work, please cite it as described in
+[](reference/citing.md).

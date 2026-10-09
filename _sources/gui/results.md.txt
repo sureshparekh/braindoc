@@ -1,0 +1,39 @@
+# The Results workspace
+
+```{image} ../_static/gui/light_results.png
+:alt: The Results workspace on the fitted mock cube.
+:class: screenshot
+```
+
+**Open megacube…** opens a `*-BRAIN_MEGACUBE.fits` (*View results* in the
+Datacube workspace opens the one just written). Under it: the file, its size,
+how many spaxels were fitted and how many emission lines.
+
+**The map list** groups every map of the file: *Populations* (light and mass
+in each age bin, $A_V$, mean ages and metallicities, the normalisation flux),
+*Kinematics* (stellar and gas velocity and dispersion), *Emission lines*
+(flux, equivalent width, velocity and dispersion of every line),
+*Diagnostics* (the [N II] and [S II] BPT and WHAN classes) and *Fit quality*
+($\chi^2$, mean deviation, S/N, iterations, convergence). **Find a map**
+filters it; **Show in Map A / Map B** chooses which of the two panes a click
+fills.
+
+**Map A** and **Map B**: two maps side by side, each with its colour map,
+scaling (1–99 %, 5–95 % or the full range), **contours** and **Export…** (PNG
+or PDF). Unfitted spaxels are blank. Scroll to zoom, drag to pan,
+double-click for the whole field; click a spaxel to choose it.
+
+**The spaxel**: the chosen spaxel's observed spectrum, the stellar model and
+stars plus lines; under it the star-formation history in light and in mass,
+or the spaxel's place on the BPT [N II], BPT [S II] or WHAN diagram (the
+menu above it), with **Export…**. The line at the bottom gives its numbers:
+$\langle \log t\rangle_L$, $\langle Z\rangle_L$, $A_V$, $\sigma_\star$,
+$v_\star$, $\chi^2/N$, the mean deviation.
+
+```{image} ../_static/gui/light_results_bpt.png
+:alt: The BPT [N II] diagram of the cube, the chosen spaxel marked.
+:class: screenshot
+```
+
+Everything here can be done from code with {func}`brainsp.read_megacube` and
+{mod}`brainsp.plots` ([](../tutorials/megacube.md)).

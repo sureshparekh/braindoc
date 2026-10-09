@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.brain_ifu &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.brain_ifu';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.ifu_modules" href="brainsp.ifu_modules.html" />
+    <link rel="prev" title="brainsp.spectra_worker" href="brainsp.spectra_worker.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.brain_ifu</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.brain_ifu">
+<span id="brainsp-brain-ifu"></span><h1>brainsp.brain_ifu<a class="headerlink" href="#module-brainsp.brain_ifu" title="Link to this heading">#</a></h1>
+<p>BRAIN — the IFU runner.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">brain_ifu</span> <span class="n">run</span>  <span class="n">my_pipeline</span><span class="o">.</span><span class="n">json</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">brain_ifu</span> <span class="n">check</span> <span class="n">my_pipeline</span><span class="o">.</span><span class="n">json</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">brain_ifu</span> <span class="n">defaults</span> <span class="o">&gt;</span> <span class="n">my_pipeline</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>A pipeline is an ordered chain of pre-pass modules followed by the fit, run
+over a list of targets. Each target is opened once, every stage appends the
+HDUs it produced to that open list, and the list that accumulates is the
+megacube, in the format of the MaNGA megacubes of Riffel et al. (2023, MNRAS
+524, 5640), so a megacube BRAIN writes opens in tooling written for those.</p>
+<p>Targets run one after another rather than in parallel. A single cube’s batch
+already saturates the machine through XLA’s own thread pool, so a second cube
+alongside it contends for the same cores and doubles peak memory for no
+throughput.</p>
+<p>The chaining of extension names between stages lives here rather than in the
+desktop interface, so the command line gets it too: a resampler run on the
+flux and on the inverse variance produces FLUX_RSP and IVAR_RSP, dereddening
+produces FLUX_DRD, and the fit is handed whatever the last stage called its
+output. Getting one of those names wrong by hand fails late, inside the fit.</p>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.accepted_columns" title="brainsp.brain_ifu.accepted_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accepted_columns</span></code></a>(cfg)</p></td>
+<td><p>Every per-target override key the enabled stages of this chain declare.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.age_bin_errors" title="brainsp.brain_ifu.age_bin_errors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">age_bin_errors</span></code></a>(rows)</p></td>
+<td><p>What is wrong with a set of age bins, before a cube is opened.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.age_bins" title="brainsp.brain_ifu.age_bins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">age_bins</span></code></a>(rows)</p></td>
+<td><p>Population age bins as (name, min, max) in years, from whatever they arrived as.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.build_module_chain" title="brainsp.brain_ifu.build_module_chain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_module_chain</span></code></a>(cfg)</p></td>
+<td><p>The enabled stages, in order, with the extension names already threaded.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.build_runner" title="brainsp.brain_ifu.build_runner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_runner</span></code></a>(cfg[, progress, log, spaxels])</p></td>
+<td><p>A BrainIFU loaded from a configuration dictionary, ready to execute.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.config_record_hdu" title="brainsp.brain_ifu.config_record_hdu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_record_hdu</span></code></a>(chain, records)</p></td>
+<td><p>The pipeline that produced this file, as a table inside it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.default_config" title="brainsp.brain_ifu.default_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_config</span></code></a>()</p></td>
+<td><p>A pipeline with nothing enabled but the fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.describe" title="brainsp.brain_ifu.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>(cfg)</p></td>
+<td><p>The chain a configuration would run, one stage per line.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.extra_bin_errors" title="brainsp.brain_ifu.extra_bin_errors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extra_bin_errors</span></code></a>(rows, label[, positive])</p></td>
+<td><p>What is wrong with a list of [name, min, max] bins (SFR, FC, BB).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.load_config" title="brainsp.brain_ifu.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a>(path)</p></td>
+<td><p>Read a pipeline file, in whichever of the two formats it is written in.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.main" title="brainsp.brain_ifu.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>(argv)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.merge_config" title="brainsp.brain_ifu.merge_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_config</span></code></a>(loaded)</p></td>
+<td><p>A loaded pipeline filled out with the defaults it did not mention.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.missing_extensions" title="brainsp.brain_ifu.missing_extensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">missing_extensions</span></code></a>(cfg, path)</p></td>
+<td><p>The extensions the run reads that the cube at <cite>path</cite> does not have.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.output_path" title="brainsp.brain_ifu.output_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_path</span></code></a>(save_path_root, target)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.override_column_errors" title="brainsp.brain_ifu.override_column_errors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">override_column_errors</span></code></a>(cfg)</p></td>
+<td><p>Refuse a per-target column no stage in the chain would read.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.read_targets_csv" title="brainsp.brain_ifu.read_targets_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_targets_csv</span></code></a>(path)</p></td>
+<td><p>A targets CSV.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.run" title="brainsp.brain_ifu.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>(cfg[, progress, log, spaxels])</p></td>
+<td><p>Validate a configuration and run it.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.save_config" title="brainsp.brain_ifu.save_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_config</span></code></a>(cfg, path)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.sn_method_problem" title="brainsp.brain_ifu.sn_method_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sn_method_problem</span></code></a>(cfg)</p></td>
+<td><p>Why the S/N method cannot read the uncertainty the cube has, or None.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.target_overrides" title="brainsp.brain_ifu.target_overrides"><code class="xref py py-obj docutils literal notranslate"><span class="pre">target_overrides</span></code></a>(columns, row)</p></td>
+<td><p>The per-target configuration one CSV row carries, and its filename.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.validate" title="brainsp.brain_ifu.validate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate</span></code></a>(cfg[, check_paths])</p></td>
+<td><p>Every reason this pipeline would be refused, as plain messages.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.validate_detailed" title="brainsp.brain_ifu.validate_detailed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_detailed</span></code></a>(cfg[, check_paths])</p></td>
+<td><p>Everything that can be refused before a single spaxel is read, each message paired with the section of the pipeline it is about.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.write_targets_csv" title="brainsp.brain_ifu.write_targets_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_targets_csv</span></code></a>(path, columns, rows)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.brain_ifu.BrainFit" title="brainsp.brain_ifu.BrainFit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BrainFit</span></code></a>(**kwargs)</p></td>
+<td><p>The batched fit, as a stage of the chain.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.brain_ifu.BrainIFU" title="brainsp.brain_ifu.BrainIFU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BrainIFU</span></code></a>([progress, log, spaxels])</p></td>
+<td><p>A chain of stages run over a list of targets.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.default_config">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">default_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#default_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.default_config" title="Link to this definition">#</a></dt>
+<dd><p>A pipeline with nothing enabled but the fit.</p>
+<p>Every stage is off by default because every stage changes the data, and a
+stage that ran because it was the default is a stage nobody decided to
+run. The fit is on because a pipeline that fits nothing has no reason to
+exist.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.extra_bin_errors">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">extra_bin_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#extra_bin_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.extra_bin_errors" title="Link to this definition">#</a></dt>
+<dd><p>What is wrong with a list of [name, min, max] bins (SFR, FC, BB).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.age_bins">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">age_bins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#age_bins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.age_bins" title="Link to this definition">#</a></dt>
+<dd><p>Population age bins as (name, min, max) in years, from whatever they
+arrived as.</p>
+<p>A pipeline file, a CSV cell and the desktop interface all describe a bin
+as three fields in a row, and the numbers reach here as strings often
+enough that converting them at one point is the only way the wrong type
+does not surface as a header card that reads ‘1e7’ inside a map nobody
+looks at twice.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.age_bin_errors">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">age_bin_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#age_bin_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.age_bin_errors" title="Link to this definition">#</a></dt>
+<dd><p>What is wrong with a set of age bins, before a cube is opened.</p>
+<p>Bins may overlap: a total such as xy_Tot (all of xyy and xiy) is a bin
+of its own, and each bin is its own map, so nothing is counted twice
+within a map (the bins’ maps are not meant to be added). Bins may also
+leave gaps – the published sets do – and the fit reports how much
+light falls into no bin.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainFit">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">BrainFit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainFit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainFit" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="brainsp.ifu_modules.html#brainsp.ifu_modules.IFUModule" title="brainsp.ifu_modules.IFUModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFUModule</span></code></a></p>
+<p>The batched fit, as a stage of the chain. Writes the fit extensions.</p>
+<p>Every physics setting comes from the settings file named in <cite>settings</cite>,
+exactly as for a single spectrum: the template library, the fitting range,
+the extinction law, the nebular mode, the solver and the bounds all have
+one place they are declared. What belongs here is only what is about the
+cube – which extension holds the flux, which the uncertainty and of
+which kind, which plane selects the spaxels to fit, and how large a batch
+to compile for.</p>
+<p>Three keys override the settings file per target, because they are the
+three that legitimately differ between cubes in one run: <cite>redshift</cite> sets
+<cite>cube_redshift</cite>, <cite>mask file</cite> sets <cite>mask</cite>, and <cite>wavelength scale</cite> sets
+<cite>wavelength_scale</cite>. Left at None, the settings file’s own values stand.</p>
+<p><cite>wavelength scale</cite> is here rather than in the settings file’s exclusive
+keeping for the same reason <cite>redshift</cite> is: it is a fact about the
+instrument that produced this cube, not about the physics being fitted,
+and a run that sweeps cubes from two surveys has two answers to it. It
+takes ‘air’ or ‘vacuum’ and nothing else; the validator refuses every
+other spelling by name, so the control that sets it emits the exact
+token rather than anything it has had to case-fold.</p>
+<p>There is no timeout: a vmapped batch has a fixed iteration count and
+cannot hang on one spaxel.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainFit.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'BRAIN</span> <span class="pre">fit'</span></span><a class="headerlink" href="#brainsp.brain_ifu.BrainFit.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainFit.configuration">
+<span class="sig-name descname"><span class="pre">configuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainFit.configuration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainFit.configuration" title="Link to this definition">#</a></dt>
+<dd><p>The validated settings this stage would fit with.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainFit.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainFit.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainFit.execute" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.build_module_chain">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">build_module_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#build_module_chain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.build_module_chain" title="Link to this definition">#</a></dt>
+<dd><p>The enabled stages, in order, with the extension names already threaded.</p>
+<p>Returned as (class name, configuration) pairs rather than as constructed
+objects so that the same function serves the live runner and the script
+exporter, and the exported script therefore cannot describe a pipeline
+different from the one the runner would have executed.</p>
+<p>The threading is the part that is easy to get wrong by hand. A resampler
+or a degrader runs twice, once on the flux and once on the statistical
+plane with the data type set so the two combine correctly, and each pass
+renames its output; dereddening always writes the fixed name FLUX_DRD;
+the S/N mask writes SN_MASKS_&lt;threshold&gt;, which the fit then consumes as
+its selection plane. Each stage is handed the name the stage before it
+produced.</p>
+<p>A stage that changes the shape of the cube drops the data-quality mask
+rather than carrying one that no longer lines up with the data: a flag is
+not an additive quantity, so there is no honest way to block-sum it or to
+interpolate it onto a new wavelength grid.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.accepted_columns">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">accepted_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#accepted_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.accepted_columns" title="Link to this definition">#</a></dt>
+<dd><p>Every per-target override key the enabled stages of this chain declare.</p>
+<p>Which keys those are depends on which stages are switched on, so the set
+is derived from the chain rather than listed somewhere: an interface
+offering a column the chain has no reader for is offering a column that
+does nothing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.override_column_errors">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">override_column_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#override_column_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.override_column_errors" title="Link to this definition">#</a></dt>
+<dd><p>Refuse a per-target column no stage in the chain would read.</p>
+<p>A module ignores a key it never declared, which is what lets one row
+carry columns for several stages – and is also how a column named
+‘reddening’ instead of ‘ebv’ runs a whole campaign at the wrong
+extinction without a word. The keys are known before the run, so the
+mismatch is caught here instead of being discovered in the output.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.validate">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.validate" title="Link to this definition">#</a></dt>
+<dd><p>Every reason this pipeline would be refused, as plain messages.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.sn_method_problem">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">sn_method_problem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#sn_method_problem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.sn_method_problem" title="Link to this definition">#</a></dt>
+<dd><p>Why the S/N method cannot read the uncertainty the cube has, or None.</p>
+<p>The S/N stage is handed the uncertainty extension under the name its
+method reads (ivar, var, error), whatever that extension holds. An ivar
+formula given a 1-sigma error computes mean(flux * sqrt(error)), which
+for a JWST cube in erg/s/cm^2/A is of order 1e-28: every spaxel falls
+below every threshold and the fit is handed nothing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.missing_extensions">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">missing_extensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#missing_extensions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.missing_extensions" title="Link to this definition">#</a></dt>
+<dd><p>The extensions the run reads that the cube at <cite>path</cite> does not have.</p>
+<p>Checked before anything runs: a name the file lacks used to surface as a
+KeyError from inside whichever stage first needed it, after the run had
+started, with nothing pointing at the field that named it.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.validate_detailed">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">validate_detailed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#validate_detailed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.validate_detailed" title="Link to this definition">#</a></dt>
+<dd><p>Everything that can be refused before a single spaxel is read, each
+message paired with the section of the pipeline it is about.</p>
+<p>The pairing is what lets an interface put a message next to the control
+that is wrong instead of only in a dialog, and it belongs here rather than
+in the interface because the code that decides a setting is wrong is the
+only code that knows which setting it was.</p>
+<p>check_paths=False skips the existence tests, so a pipeline can be
+configured against a directory that only exists on the machine it will
+eventually run on. Everything else is checked either way, because a
+threshold that does not match, or a stage chain that produces nothing,
+is wrong on every machine.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.read_targets_csv">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">read_targets_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#read_targets_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.read_targets_csv" title="Link to this definition">#</a></dt>
+<dd><p>A targets CSV.</p>
+<p>The <cite>target</cite> column names the file; every other column is a per-target
+override of a configuration key, matched to module keys by exact name, so
+one file carries a whole campaign. A module ignores a key it never
+declared, which is what lets a single row carry columns meant for several
+different stages.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.write_targets_csv">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">write_targets_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#write_targets_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.write_targets_csv" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.target_overrides">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">target_overrides</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#target_overrides"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.target_overrides" title="Link to this definition">#</a></dt>
+<dd><p>The per-target configuration one CSV row carries, and its filename.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.output_path">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">output_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path_root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#output_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.output_path" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.config_record_hdu">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">config_record_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">records</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#config_record_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.config_record_hdu" title="Link to this definition">#</a></dt>
+<dd><p>The pipeline that produced this file, as a table inside it.</p>
+<p>A table rather than header cards: a configuration value routinely runs
+past the 68 characters a card’s value can hold, and the megacubes this
+format is being matched to already carry a two-column table of exactly
+this shape.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainIFU">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">BrainIFU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spaxels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainIFU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainIFU" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A chain of stages run over a list of targets.</p>
+<p>add_module, add_target and execute. Targets run sequentially, the
+progress callback reports real fractions of the work done, and
+every stage is constructed once per target so a per-target override
+reaches it.</p>
+<p><cite>spaxels</cite> is the finer of the two progress callbacks: the fit reports the
+spaxels each batch finished as it finishes them, so an interface can show
+the field filling in. It runs on the fitting thread, so a listener that
+does real work in it slows the fit down.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainIFU.add_module">
+<span class="sig-name descname"><span class="pre">add_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainIFU.add_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainIFU.add_module" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainIFU.add_target">
+<span class="sig-name descname"><span class="pre">add_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainIFU.add_target"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainIFU.add_target" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainIFU.read_csv">
+<span class="sig-name descname"><span class="pre">read_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainIFU.read_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainIFU.read_csv" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.BrainIFU.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'brain_ifu_out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#BrainIFU.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.BrainIFU.execute" title="Link to this definition">#</a></dt>
+<dd><p>Run every stage over every target and write one megacube each.</p>
+<p>With overwrite False a target whose megacube already exists is
+skipped before its first stage runs, so nothing is recomputed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.build_runner">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">build_runner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spaxels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#build_runner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.build_runner" title="Link to this definition">#</a></dt>
+<dd><p>A BrainIFU loaded from a configuration dictionary, ready to execute.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.run">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spaxels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.run" title="Link to this definition">#</a></dt>
+<dd><p>Validate a configuration and run it.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.load_config">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#load_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.load_config" title="Link to this definition">#</a></dt>
+<dd><p>Read a pipeline file, in whichever of the two formats it is written in.</p>
+<p>The extension decides: .json is read as JSON, .yaml and .yml as YAML.
+Both are supported because the settings file BRAIN already ships is YAML
+and the interface this one is modelled on round-trips JSON, and choosing
+between them is not this code’s decision to make.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.save_config">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">save_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#save_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.save_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.merge_config">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">merge_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loaded</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#merge_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.merge_config" title="Link to this definition">#</a></dt>
+<dd><p>A loaded pipeline filled out with the defaults it did not mention.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.describe">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#describe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.describe" title="Link to this definition">#</a></dt>
+<dd><p>The chain a configuration would run, one stage per line.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.brain_ifu.main">
+<span class="sig-prename descclassname"><span class="pre">brainsp.brain_ifu.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/brain_ifu.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.brain_ifu.main" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.spectra_worker.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.spectra_worker</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.ifu_modules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.ifu_modules</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.default_config"><code class="docutils literal notranslate"><span class="pre">default_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.extra_bin_errors"><code class="docutils literal notranslate"><span class="pre">extra_bin_errors()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.age_bins"><code class="docutils literal notranslate"><span class="pre">age_bins()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.age_bin_errors"><code class="docutils literal notranslate"><span class="pre">age_bin_errors()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainFit"><code class="docutils literal notranslate"><span class="pre">BrainFit</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainFit.name"><code class="docutils literal notranslate"><span class="pre">BrainFit.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainFit.configuration"><code class="docutils literal notranslate"><span class="pre">BrainFit.configuration()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainFit.execute"><code class="docutils literal notranslate"><span class="pre">BrainFit.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.build_module_chain"><code class="docutils literal notranslate"><span class="pre">build_module_chain()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.accepted_columns"><code class="docutils literal notranslate"><span class="pre">accepted_columns()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.override_column_errors"><code class="docutils literal notranslate"><span class="pre">override_column_errors()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.validate"><code class="docutils literal notranslate"><span class="pre">validate()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.sn_method_problem"><code class="docutils literal notranslate"><span class="pre">sn_method_problem()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.missing_extensions"><code class="docutils literal notranslate"><span class="pre">missing_extensions()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.validate_detailed"><code class="docutils literal notranslate"><span class="pre">validate_detailed()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.read_targets_csv"><code class="docutils literal notranslate"><span class="pre">read_targets_csv()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.write_targets_csv"><code class="docutils literal notranslate"><span class="pre">write_targets_csv()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.target_overrides"><code class="docutils literal notranslate"><span class="pre">target_overrides()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.output_path"><code class="docutils literal notranslate"><span class="pre">output_path()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.config_record_hdu"><code class="docutils literal notranslate"><span class="pre">config_record_hdu()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainIFU"><code class="docutils literal notranslate"><span class="pre">BrainIFU</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainIFU.add_module"><code class="docutils literal notranslate"><span class="pre">BrainIFU.add_module()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainIFU.add_target"><code class="docutils literal notranslate"><span class="pre">BrainIFU.add_target()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainIFU.read_csv"><code class="docutils literal notranslate"><span class="pre">BrainIFU.read_csv()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.BrainIFU.execute"><code class="docutils literal notranslate"><span class="pre">BrainIFU.execute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.build_runner"><code class="docutils literal notranslate"><span class="pre">build_runner()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.save_config"><code class="docutils literal notranslate"><span class="pre">save_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.merge_config"><code class="docutils literal notranslate"><span class="pre">merge_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.describe"><code class="docutils literal notranslate"><span class="pre">describe()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.brain_ifu.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

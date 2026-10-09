@@ -1,0 +1,13 @@
+﻿brainsp.results\_view
+=====================
+
+.. automodule:: brainsp.results_view
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      MapPane
+      ResultsPage
+   

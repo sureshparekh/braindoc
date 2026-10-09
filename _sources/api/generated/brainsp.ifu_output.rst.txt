@@ -1,0 +1,34 @@
+﻿brainsp.ifu\_output
+===================
+
+.. automodule:: brainsp.ifu_output
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      age_bin_membership
+      binned
+      distance_factor
+      featureless_parameter
+      flux_unit_scale
+      linear_wavelength_grid
+      map_figure
+      mean_log_age
+      mean_metallicity
+      named
+      plane_hdus
+      pop_bins_hdu
+      power_law_card
+      resample_batch
+      signal_to_noise
+      spatial_wcs
+      text_value
+      trust_mask
+      trusted_values
+      unbinned_percent
+      wcs_cards
+      write_map_image
+      write_plane_fits
+   

@@ -1,0 +1,19 @@
+﻿brainsp.plots
+=============
+
+.. automodule:: brainsp.plots
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      diagnostic
+      export_maps
+      map
+      maps
+      sfh
+      spaxel
+      spectrum
+      spectrum_fit
+   

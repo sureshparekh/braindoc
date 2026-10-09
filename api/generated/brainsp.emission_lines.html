@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.emission_lines &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.emission_lines';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.line_catalogue" href="brainsp.line_catalogue.html" />
+    <link rel="prev" title="brainsp.errors" href="brainsp.errors.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.emission_lines</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.emission_lines">
+<span id="brainsp-emission-lines"></span><h1>brainsp.emission_lines<a class="headerlink" href="#module-brainsp.emission_lines" title="Link to this heading">#</a></h1>
+<p>Tied doublets, kinematic groups, and the Gaussian design matrix, with
+per-group velocity and dispersion for the joint fit.</p>
+<p>The wavelengths, the species table and the default kinematic groups are NOT
+here. They live in line_catalogue, which imports numpy and nothing else, so
+the settings validator and the desktop interface can ask what lines exist
+without starting a JAX backend in the process that draws the menus. This
+module imports JAX and is therefore the wrong place for pure data.</p>
+<p>The names imported at the top are re-exported rather than redefined, so
+<cite>from emission_lines import LINE_SPECIES</cite> keeps meaning exactly what it
+meant. They are one table with two import paths, not two tables. New code
+should read them from line_catalogue, which costs no JAX backend.</p>
+<p>Nothing here derives meaning from the shape of a catalogue name. Every
+entry’s species is declared in LINE_SPECIES, every doublet names its
+components rather than repeating their wavelengths, and group membership is
+looked up by species rather than matched as a string prefix. That is not
+tidiness. Each of the three couplings this replaces failed silently:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Kinematic</span> <span class="n">groups</span> <span class="n">were</span> <span class="n">assigned</span> <span class="n">by</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">),</span> <span class="ow">and</span> <span class="s2">&quot;He I&quot;</span> <span class="ow">is</span>
+  <span class="n">a</span> <span class="n">prefix</span> <span class="n">of</span> <span class="s2">&quot;He II&quot;</span><span class="p">,</span> <span class="n">so</span> <span class="n">He</span> <span class="n">II_4686</span> <span class="o">--</span> <span class="n">a</span> <span class="n">high</span><span class="o">-</span><span class="n">ionisation</span> <span class="n">line</span> <span class="o">--</span> <span class="n">was</span>
+  <span class="n">placed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">low</span><span class="o">-</span><span class="n">ionisation</span> <span class="n">group</span><span class="o">.</span> <span class="n">Measured</span><span class="p">,</span> <span class="ow">not</span> <span class="n">hypothetical</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Free</span> <span class="n">lines</span> <span class="n">were</span> <span class="n">removed</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">catalogue</span> <span class="n">when</span> <span class="n">a</span> <span class="n">tied</span> <span class="n">doublet</span> <span class="n">already</span>
+  <span class="n">covered</span> <span class="n">them</span> <span class="n">by</span> <span class="n">testing</span> <span class="n">the</span> <span class="n">wavelength</span> <span class="k">for</span> <span class="n">membership</span> <span class="n">of</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span>
+  <span class="n">floats</span><span class="o">.</span> <span class="n">Exact</span> <span class="nb">float</span> <span class="n">equality</span> <span class="n">held</span> <span class="n">only</span> <span class="k">while</span> <span class="n">both</span> <span class="n">numbers</span> <span class="n">were</span>
+  <span class="n">whole</span><span class="o">-</span><span class="n">Angstrom</span> <span class="n">literals</span> <span class="n">written</span> <span class="n">twice</span><span class="o">.</span> <span class="n">Store</span> <span class="n">the</span> <span class="n">doublet</span><span class="s1">&#39;s wavelength to</span>
+  <span class="n">more</span> <span class="n">decimals</span> <span class="n">than</span> <span class="n">the</span> <span class="n">line</span><span class="s1">&#39;s and the deduplication stops working, the</span>
+  <span class="n">same</span> <span class="n">wavelength</span> <span class="n">gets</span> <span class="n">two</span> <span class="n">columns</span><span class="p">,</span> <span class="n">the</span> <span class="n">gas</span> <span class="n">block</span> <span class="n">goes</span> <span class="n">rank</span><span class="o">-</span><span class="n">deficient</span><span class="p">,</span> <span class="ow">and</span>
+  <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">negative</span> <span class="n">solver</span> <span class="n">splits</span> <span class="n">the</span> <span class="n">flux</span> <span class="n">between</span> <span class="n">them</span> <span class="n">at</span> <span class="n">an</span> <span class="n">arbitrary</span>
+  <span class="n">vertex</span> <span class="n">without</span> <span class="n">complaining</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Line</span> <span class="n">fluxes</span> <span class="n">were</span> <span class="n">extracted</span> <span class="n">by</span> <span class="n">substring</span><span class="p">,</span> <span class="n">returning</span> <span class="n">the</span> <span class="n">first</span> <span class="n">name</span> <span class="n">that</span>
+  <span class="n">contained</span> <span class="n">the</span> <span class="n">key</span><span class="o">.</span> <span class="s2">&quot;[S II]&quot;</span> <span class="n">returns</span> <span class="mi">6716</span> <span class="ow">and</span> <span class="n">silently</span> <span class="n">discards</span> <span class="mi">6731</span><span class="p">,</span>
+  <span class="n">which</span> <span class="ow">is</span> <span class="n">half</span> <span class="n">the</span> <span class="n">density</span> <span class="n">diagnostic</span><span class="p">;</span> <span class="s2">&quot;[O III]&quot;</span> <span class="n">returns</span> <span class="n">the</span> <span class="mi">4363</span>
+  <span class="n">auroral</span> <span class="n">line</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">the</span> <span class="n">doublet</span><span class="p">;</span> <span class="s2">&quot;He I&quot;</span> <span class="n">returns</span> <span class="n">He</span> <span class="n">II</span><span class="o">.</span> <span class="n">It</span> <span class="n">happens</span>
+  <span class="ow">not</span> <span class="n">to</span> <span class="n">misfire</span> <span class="n">today</span> <span class="n">only</span> <span class="n">because</span> <span class="n">the</span> <span class="n">two</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">use</span><span class="p">,</span> <span class="n">Halpha</span> <span class="ow">and</span>
+  <span class="n">Hbeta</span><span class="p">,</span> <span class="n">are</span> <span class="n">unambiguous</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">shipped</span> <span class="n">catalogue</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Every entry point that produces wavelengths takes the observed spectrum’s
+wavelength scale as a required argument. There is no default, because a
+default is a guess: a wrong guess moves every line by about 83 km/s, which
+the fitted gas velocity absorbs almost entirely, so the fit converges and
+nothing in the output looks wrong. See line_catalogue for the conversion
+and brain_settings for the refusal.</p>
+<p class="rubric">Module Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.emission_lines.TIED_DOUBLETS" title="brainsp.emission_lines.TIED_DOUBLETS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TIED_DOUBLETS</span></code></a></p></td>
+<td><p>Pairs whose relative flux is fixed by atomic physics rather than by the fit.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.emission_lines.assign_kinematic_groups" title="brainsp.emission_lines.assign_kinematic_groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_kinematic_groups</span></code></a>(lines, doublets[, ...])</p></td>
+<td><p>Assign each emission line/doublet to a kinematic group.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.emission_lines.build_emission_matrix" title="brainsp.emission_lines.build_emission_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_emission_matrix</span></code></a>(wavelength, velscale, ...)</p></td>
+<td><p>Legacy wrapper: single kinematic group (backward compatible).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.emission_lines.build_emission_matrix_grouped" title="brainsp.emission_lines.build_emission_matrix_grouped"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_emission_matrix_grouped</span></code></a>(wavelength, ...)</p></td>
+<td><p>Generate emission line template matrix with per-kinematic-group parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.emission_lines.doublet_nebular_sum_factor" title="brainsp.emission_lines.doublet_nebular_sum_factor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">doublet_nebular_sum_factor</span></code></a>(name)</p></td>
+<td><p>The factor taking a fitted doublet weight to the sum over its components.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.emission_lines.drop_masked_lines" title="brainsp.emission_lines.drop_masked_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_masked_lines</span></code></a>(lines, doublets, ...)</p></td>
+<td><p>Leave out the lines whose centres the mask (or a gap in the data) covers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.emission_lines.get_line_catalog" title="brainsp.emission_lines.get_line_catalog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_line_catalog</span></code></a>(wavelength_range, ...)</p></td>
+<td><p>Select the appropriate emission line catalog based on wavelength coverage.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.emission_lines.group_positions" title="brainsp.emission_lines.group_positions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_positions</span></code></a>(line_groups)</p></td>
+<td><p>The position each kinematic group label occupies in the parameter vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.emission_lines.precompile_line_table" title="brainsp.emission_lines.precompile_line_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">precompile_line_table</span></code></a>(wavelength, lines, ...)</p></td>
+<td><p>Pre-compute a fixed-shape emission line table for JIT-compatible use.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.emission_lines.reachable_window" title="brainsp.emission_lines.reachable_window"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reachable_window</span></code></a>(rest_wavelength, ...)</p></td>
+<td><p>The span of observed wavelength a rest wavelength can be moved to.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.emission_lines.TIED_DOUBLETS">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">TIED_DOUBLETS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'[N</span> <span class="pre">II]_Doublet':</span> <span class="pre">[('[N</span> <span class="pre">II]_6548',</span> <span class="pre">0.32739),</span> <span class="pre">('[N</span> <span class="pre">II]_6583',</span> <span class="pre">1.0)],</span> <span class="pre">'[O</span> <span class="pre">III]_Doublet':</span> <span class="pre">[('[O</span> <span class="pre">III]_4959',</span> <span class="pre">0.3351),</span> <span class="pre">('[O</span> <span class="pre">III]_5007',</span> <span class="pre">1.0)],</span> <span class="pre">'[S</span> <span class="pre">III]_Doublet':</span> <span class="pre">[('[S</span> <span class="pre">III]_9069',</span> <span class="pre">0.40506),</span> <span class="pre">('[S</span> <span class="pre">III]_9531',</span> <span class="pre">1.0)]}</span></span><a class="headerlink" href="#brainsp.emission_lines.TIED_DOUBLETS" title="Link to this definition">#</a></dt>
+<dd><p>Pairs whose relative flux is fixed by atomic physics rather than by the fit.</p>
+<p>Every pair here is the 1D2 - 3P1 and 1D2 - 3P2 transition out of ONE upper
+level, so the intensity ratio is A(1D2-3P1) E(1D2-3P1) divided by
+A(1D2-3P2) E(1D2-3P2) and nothing else. It is EXACTLY independent of
+electron temperature, electron density, ionisation parameter and
+abundance: both photons leave the same level, so whatever sets how often
+that level is populated cancels identically. There is no modelling choice
+to make and no ratio to fit, only the right number, and a number rounded
+to two figures is simply a wrong one.</p>
+<p>The weak component’s ratio is quoted relative to the strong component,
+which carries 1.0, because a doublet column is the ratio-weighted sum of
+area-normalised profiles: the fitted weight is then the flux of the
+ratio-1.0 line, which is the quantity the BPT calibrations and the line
+table report. doublet_nebular_sum_factor is the one conversion to the sum
+over both components, for the one diagnostic that wants a sum.</p>
+<p>[O III] 4959/5007 and [N II] 6548/6583 are the relativistically corrected
+values of Storey &amp; Zeippen (2000), MNRAS 312, 813, Tables 3 and 4, whose
+A-value ratios become 0.33510 and 0.32739 once scaled by the ratio of
+transition energies. THE CITATION IS EXPLICIT BECAUSE OLDER ATOMIC DATA
+DIFFER: the Froese Fischer et al. (2004) data for N II give 0.3399, 3.8 per
+cent away from the value here, and a comparison against results built on
+them will show that difference in [N II]; it is not a BRAIN defect.</p>
+<p>[S III] 9069/9531 is NOT from Storey &amp; Zeippen, whose calculation covers
+the carbon and oxygen sequences to Z = 12 only; S III is the 3p2 analogue
+and is outside it. 0.40506 is Froese Fischer, Tachiev &amp; Irimia (2006),
+ADNDT 92, 607, as compiled by Podobedova, Kelleher &amp; Wiese (2009). The
+0.41 it replaces corresponds to no published calculation: the same data
+sets give 0.40322 (Mendoza &amp; Zeippen 1982) and 0.39435 (Tayal, Zatsarinny
+&amp; Sossah 2019), so 0.41 was not a different choice of source either.</p>
+<p>Three further homologous pairs appear in the same tables and are
+deliberately NOT tied. [O I] 6363/6300 = 0.33034 and [Ne III] 3968/3869 =
+0.30868 have only their strong component in the catalogue, so there is no
+pair to tie. [C I] 9824/9850 = 0.32024 has both components, carried as two
+independent lines; tying them would change what the NIR fit is free to do,
+which is a separate decision from correcting a ratio already in use.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.doublet_nebular_sum_factor">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">doublet_nebular_sum_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#doublet_nebular_sum_factor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.doublet_nebular_sum_factor" title="Link to this definition">#</a></dt>
+<dd><p>The factor taking a fitted doublet weight to the sum over its components.</p>
+<p>A doublet column is built with its components’ ratios relative to the
+strong one, and each component profile is area-normalised, so the
+fitted weight is the flux of the ratio-1.0 component alone. Most
+consumers want exactly that – the BPT diagram is calibrated on
+[O III] 5007 and [N II] 6583, not on doublet sums – but the [O III]
+temperature diagnostic wants the nebular sum F(4959) + F(5007), and
+multiplying by this factor is what supplies it.</p>
+<p>Derived from the catalogue entry rather than written out again at the
+point of use, because the factor IS one plus the branching ratio. A
+second copy of that number is a second thing to keep in step with the
+design matrix, and the whole point of a branching ratio fixed by
+atomic physics is that there is one of it.</p>
+<p>Dividing by the largest ratio rather than assuming it is 1.0 keeps the
+factor right for a doublet whose ratios were written on some other
+scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.drop_masked_lines">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">drop_masked_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_kms</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#drop_masked_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.drop_masked_lines" title="Link to this definition">#</a></dt>
+<dd><p>Leave out the lines whose centres the mask (or a gap in the data) covers.</p>
+<p>A line is dropped when fewer than half of the pixels within its rest
+wavelength +- 2 sigma (at <cite>sigma_kms</cite>, and never less than two pixels
+either side) carry weight. Its amplitude is then set by a wing or by
+nothing, and the fit returns an arbitrary flux: a masked H-alpha came
+back at 35 times its true value, and an [N II] 6583 with only its red
+wing outside a mask at 77 times. A few bad pixels on a line do not drop
+it; a masked window or a gap in the spectrum over its core does. A
+doublet loses only the members that are covered; one survivor is fitted
+alone, at ratio 1, under its own name, as for a doublet that loses a
+member to the edge of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lines</strong><span class="classifier">dict</span></dt><dd><p>{name: rest_wavelength}.</p>
+</dd>
+<dt><strong>doublets</strong><span class="classifier">dict</span></dt><dd><p>{name: [(component, rest_wavelength, ratio), …]}.</p>
+</dd>
+<dt><strong>wavelength</strong><span class="classifier">array</span></dt><dd><p>The fitting grid.</p>
+</dd>
+<dt><strong>weight</strong><span class="classifier">array</span></dt><dd><p>Per-pixel weight on that grid; zero where nothing is fitted.</p>
+</dd>
+<dt><strong>sigma_kms</strong><span class="classifier">float</span></dt><dd><p>Line width to judge coverage by: the starting gas dispersion.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>lines, doublets</strong><span class="classifier">dict</span></dt><dd><p>What is left to fit.</p>
+</dd>
+<dt><strong>dropped</strong><span class="classifier">list of str</span></dt><dd><p>The names left out.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.get_line_catalog">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">get_line_catalog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#get_line_catalog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.get_line_catalog" title="Link to this definition">#</a></dt>
+<dd><p>Select the appropriate emission line catalog based on wavelength coverage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength_range</strong><span class="classifier">tuple (wl_min, wl_max)</span></dt><dd><p>Wavelength range of the observed spectrum.</p>
+</dd>
+<dt><strong>wavelength_scale</strong><span class="classifier">{‘air’, ‘vacuum’}</span></dt><dd><p>The wavelength scale of the OBSERVED spectrum, which is the scale
+the returned rest wavelengths are put on. REQUIRED, with no
+default, at the signature rather than at the call: a default here
+would let a fourth call site be added that silently picks a scale,
+and picking the wrong one shifts every line by about 83 km/s
+without moving chi2 enough to notice. Unknown values raise; see
+line_catalogue.require_scale.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>lines</strong><span class="classifier">dict</span></dt><dd><p>{name: rest_wavelength} for single lines.</p>
+</dd>
+<dt><strong>doublets</strong><span class="classifier">dict</span></dt><dd><p>{name: [(component_name, rest_wavelength, ratio), …]} for tied
+doublets. The component’s catalogue name travels with it because a
+doublet can lose a component to the edge of the grid, and the
+survivor then has to be renamed to say what it actually is. Working
+that out from the wavelength alone would mean matching floats
+against the catalogue, which is the deduplication bug this module’s
+docstring describes.</p>
+</dd>
+<dt>The margin here is generous on purpose: it decides which lines are</dt><dd></dd>
+<dt>CANDIDATES, and the question of whether a candidate can land on the</dt><dd></dd>
+<dt>fitted grid at any velocity the fit is allowed to try is settled later,</dt><dd></dd>
+<dt>by precompile_line_table, which knows the bounds.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.assign_kinematic_groups">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">assign_kinematic_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#assign_kinematic_groups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.assign_kinematic_groups" title="Link to this definition">#</a></dt>
+<dd><p>Assign each emission line/doublet to a kinematic group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lines</strong><span class="classifier">dict</span></dt><dd><p>{name: rest_wavelength} from get_line_catalog.</p>
+</dd>
+<dt><strong>doublets</strong><span class="classifier">dict</span></dt><dd><p>{name: [(component_name, wl, ratio), …]} from get_line_catalog.</p>
+</dd>
+<dt><strong>user_groups</strong><span class="classifier">dict or None</span></dt><dd><p>User-defined groups: {group_id: [species, …]}, matched
+exactly against LINE_SPECIES. If None, uses
+DEFAULT_GROUP_SPECIES.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>line_groups</strong><span class="classifier">dict</span></dt><dd><p>{line_name: group_id} for every line and doublet.</p>
+</dd>
+<dt><strong>n_groups</strong><span class="classifier">int</span></dt><dd><p>Number of distinct kinematic groups.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.build_emission_matrix_grouped">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">build_emission_matrix_grouped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velscale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_kinematics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#build_emission_matrix_grouped"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.build_emission_matrix_grouped" title="Link to this definition">#</a></dt>
+<dd><p>Generate emission line template matrix with per-kinematic-group parameters.</p>
+<p>The profiles come from _build_emission_jit, one kinematic slot per
+column, rather than from a Gaussian written out again here. There used to
+be a second implementation in this function, and a second implementation
+of a line profile is a second thing to keep in step: the compiled path
+had already lost the 8-sigma truncation this one applied, so the two
+paths differed in the far wings before the pixel integration went in and
+would have differed in the core after it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">1D array</span></dt><dd><p>The log-lambda grid, in Angstrom.</p>
+</dd>
+<dt><strong>velscale</strong><span class="classifier">float</span></dt><dd><p>The grid’s step, c * dln(lambda), in km/s per pixel.</p>
+</dd>
+<dt><strong>group_kinematics</strong><span class="classifier">dict</span></dt><dd><p>{group_id: (sigma_gas, v0_gas)} in km/s.</p>
+</dd>
+<dt><strong>lines</strong><span class="classifier">dict or None</span></dt><dd><p>Single emission lines {name: rest_wavelength}.</p>
+</dd>
+<dt><strong>doublets</strong><span class="classifier">dict or None</span></dt><dd><p>Tied doublets {name: [(component_name, wl, ratio), …]}.</p>
+</dd>
+<dt><strong>line_groups</strong><span class="classifier">dict or None</span></dt><dd><p>{line_name: group_id}. If None, all lines in group 0.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>M_gas</strong><span class="classifier">2D array (N_pix, N_lines)</span></dt><dd><p>Emission line template matrix, in flux density per Angstrom: each
+column integrates to 1 over wavelength, so a fitted weight is the
+line’s total flux. See _build_emission_jit.</p>
+</dd>
+<dt><strong>gas_names</strong><span class="classifier">list of str</span></dt><dd><p>Names of the emission line columns.</p>
+</dd>
+<dt><strong>gas_group_labels</strong><span class="classifier">list</span></dt><dd><p>The kinematic group LABEL of each column, as written in line_groups.
+This path looks its kinematics up in the group_kinematics dict by
+label, so it never needs the positional index the compiled path
+gathers with; see precompile_line_table.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.build_emission_matrix">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">build_emission_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velscale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_gas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0_gas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#build_emission_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.build_emission_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Legacy wrapper: single kinematic group (backward compatible).
+All lines share the same sigma_gas and v0_gas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">1D array</span></dt><dd><p>The log-lambda grid, in Angstrom. Uniform in ln(lambda): the pixel
+integration the profile carries is defined on that grid and nowhere
+else.</p>
+</dd>
+<dt><strong>velscale</strong><span class="classifier">float</span></dt><dd><p>The grid’s step, c * dln(lambda), in km/s per pixel.</p>
+</dd>
+<dt><strong>sigma_gas</strong><span class="classifier">float</span></dt><dd><p>Gas velocity dispersion (km/s).</p>
+</dd>
+<dt><strong>v0_gas</strong><span class="classifier">float</span></dt><dd><p>Gas radial velocity (km/s).</p>
+</dd>
+<dt><strong>lines</strong><span class="classifier">dict or None</span></dt><dd><p>Single emission lines {name: rest_wavelength}.
+If None, auto-selected from wavelength range.</p>
+</dd>
+<dt><strong>doublets</strong><span class="classifier">dict or None</span></dt><dd><p>Tied doublets {name: [(component_name, wl, ratio), …]}.
+If None, auto-selected from wavelength range.</p>
+</dd>
+<dt><strong>wavelength_scale</strong><span class="classifier">{‘air’, ‘vacuum’} or None</span></dt><dd><p>Needed only when lines and doublets are both None and the catalogue
+has to be built here. Passing a catalogue already settles the scale,
+because its wavelengths are on one.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>M_gas</strong><span class="classifier">2D array (N_pix, N_lines)</span></dt><dd><p>Emission line template matrix.</p>
+</dd>
+<dt><strong>gas_names</strong><span class="classifier">list of str</span></dt><dd><p>Names of the emission line columns.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.group_positions">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">group_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line_groups</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#group_positions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.group_positions" title="Link to this definition">#</a></dt>
+<dd><p>The position each kinematic group label occupies in the parameter vector.</p>
+<p>A group label is whatever the user wrote in line_groups: any hashable,
+in any order, with any gaps. The fitted parameter vector, in contrast, is
+a flat sequence, and both the scalar optimizer and the cube path lay the
+per-group sigma and v0 out by walking sorted(set(line_groups.values()))
+and appending two slots per group. So the label is a name and the
+position is an index, and the two coincide only for labels that happen
+to be 0, 1, 2, … in order.</p>
+<p>DEFAULT_GROUP_SPECIES uses 0 and 1, so they did coincide, and
+precompile_line_table shipped the raw label where an index was needed.
+A settings file saying <cite>line_groups: {1: […], 2: […]}</cite> then made
+label 2 index a length-2 array; an out-of-bounds gather in JAX is
+clamped rather than raised, so every line in group 2 silently took group
+1’s dispersion and velocity and the fit ran to completion.</p>
+<p>Defined here, once, so that the table and the parameter vector are
+derived from the same expression rather than from two that agree by
+inspection.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.reachable_window">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">reachable_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rest_wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0_gas_bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_gas_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#reachable_window"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.reachable_window" title="Link to this definition">#</a></dt>
+<dd><p>The span of observed wavelength a rest wavelength can be moved to.</p>
+<p>A line is shifted by the fitted gas velocity and spread by the fitted
+gas dispersion, and the fit may choose either anywhere inside its
+bounds. So the widest reach is the bluest allowed velocity minus a few
+dispersions, to the reddest allowed velocity plus a few. Three
+dispersions is the same reach brainv1 uses when it restores masked
+pixels around a line, and at three sigma a Gaussian still carries 1.1
+per cent of its peak, which is a contribution a fit can act on.</p>
+<p>Returns (lowest, highest) in Angstrom.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.emission_lines.precompile_line_table">
+<span class="sig-prename descclassname"><span class="pre">brainsp.emission_lines.</span></span><span class="sig-name descname"><span class="pre">precompile_line_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0_gas_bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_gas_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/emission_lines.html#precompile_line_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.emission_lines.precompile_line_table" title="Link to this definition">#</a></dt>
+<dd><p>Pre-compute a fixed-shape emission line table for JIT-compatible use.</p>
+<p>Packs single lines (1 component) and doublets (2+ components) into
+padded JAX arrays so _build_emission_jit can run without Python control flow.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">1D array</span></dt><dd><p>Wavelength grid.</p>
+</dd>
+<dt><strong>lines</strong><span class="classifier">dict</span></dt><dd><p>{name: rest_wavelength} single lines.</p>
+</dd>
+<dt><strong>doublets</strong><span class="classifier">dict</span></dt><dd><p>{name: [(component_name, wl, ratio), …]} tied doublets.</p>
+</dd>
+<dt><strong>line_groups</strong><span class="classifier">dict</span></dt><dd><p>{name: group_label} kinematic group assignments.</p>
+</dd>
+<dt><strong>v0_gas_bounds</strong><span class="classifier">(float, float)</span></dt><dd><p>The gas velocities in km/s the fit is allowed to try.</p>
+</dd>
+<dt><strong>sigma_gas_max</strong><span class="classifier">float</span></dt><dd><p>The largest gas dispersion in km/s the fit is allowed to try.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>table</strong><span class="classifier">dict</span></dt><dd><p>A dictionary with these keys:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;names&#39;</span>           <span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">str</span> <span class="p">(</span><span class="n">Python</span><span class="p">,</span> <span class="ow">not</span> <span class="n">traced</span><span class="p">)</span>
+<span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">n_lines</span><span class="p">,</span> <span class="n">max_comp</span><span class="p">)</span> <span class="n">JAX</span> <span class="n">array</span><span class="p">,</span> <span class="mi">0</span><span class="o">-</span><span class="n">padded</span>
+<span class="s1">&#39;ratios&#39;</span>          <span class="p">:</span> <span class="p">(</span><span class="n">n_lines</span><span class="p">,</span> <span class="n">max_comp</span><span class="p">)</span> <span class="n">JAX</span> <span class="n">array</span><span class="p">,</span> <span class="mi">0</span><span class="o">-</span><span class="n">padded</span>
+<span class="s1">&#39;n_components&#39;</span>    <span class="p">:</span> <span class="p">(</span><span class="n">n_lines</span><span class="p">,)</span> <span class="nb">int</span> <span class="n">array</span>
+<span class="s1">&#39;group_indices&#39;</span>   <span class="p">:</span> <span class="p">(</span><span class="n">n_lines</span><span class="p">,)</span> <span class="nb">int</span> <span class="n">array</span><span class="p">,</span> <span class="n">POSITIONS</span> <span class="n">into</span> <span class="n">the</span> <span class="n">fitted</span>
+                    <span class="n">per</span><span class="o">-</span><span class="n">group</span> <span class="n">sigma</span> <span class="ow">and</span> <span class="n">v0</span> <span class="n">arrays</span><span class="p">,</span> <span class="ow">not</span> <span class="n">labels</span>
+<span class="s1">&#39;group_labels&#39;</span>    <span class="p">:</span> <span class="nb">list</span> <span class="p">(</span><span class="n">Python</span><span class="p">,</span> <span class="n">the</span> <span class="n">labels</span> <span class="n">themselves</span><span class="p">,</span> <span class="k">for</span> <span class="n">output</span>
+                    <span class="n">bookkeeping</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>The two group entries are deliberately different quantities and</dt><dd></dd>
+<dt>deliberately differently named. ‘group_indices’ is what the compiled</dt><dd></dd>
+<dt>kernel gathers with, and it must be a position; ‘group_labels’ is what</dt><dd></dd>
+<dt>the user called the group, and it is what a summary should print. See</dt><dd></dd>
+<dt>group_positions for the failure that followed from conflating them.</dt><dd></dd>
+<dt>A line whose name is absent from line_groups raises. It used to default</dt><dd></dd>
+<dt>to group 0, which is a guess: the caller that built lines and doublets</dt><dd></dd>
+<dt>and the caller that built line_groups had gone out of step, and putting</dt><dd></dd>
+<dt>the orphan in whichever group happens to sort first hides that.</dt><dd></dd>
+<dt>WHICH LINES ARE ON THE GRID</dt><dd></dd>
+<dt>get_line_catalog selects candidates with a fixed 500 A margin, which is</dt><dd></dd>
+<dt>about coverage and knows nothing about the fit. A candidate that cannot</dt><dd></dd>
+<dt>reach the grid at any velocity and dispersion inside the bounds used to</dt><dd></dd>
+<dt>be kept anyway, and it entered the design matrix as a column of exactly</dt><dd></dd>
+<dt>zero: the non-negative solve went rank-deficient, the weight came back</dt><dd></dd>
+<dt>0, and the summary reported the line as a non-detection. It was never</dt><dd></dd>
+<dt>fitted. Saying nothing about a line that was not measured, in the same</dt><dd></dd>
+<dt>table as lines that were, is the failure this whole module exists to</dt><dd></dd>
+<dt>stop, so such a line is dropped from the table and named in the log.</dt><dd></dd>
+<dt>The bounds are arguments rather than a margin invented here, because</dt><dd></dd>
+<dt>the reach that matters is the one the fit is actually permitted, and</dt><dd></dd>
+<dt>only the caller knows it. See reachable_window.</dt><dd></dd>
+<dt>PARTIAL DOUBLETS</dt><dd></dd>
+<dt>A tied doublet with one component on the grid and one off is kept, as</dt><dd></dd>
+<dt>the surviving component alone: its ratio is renormalised to 1.0 and the</dt><dd></dd>
+<dt>entry takes that component’s own catalogue name. The alternative –</dt><dd></dd>
+<dt>keeping the doublet’s name and the survivor’s branching ratio – puts a</dt><dd></dd>
+<dt>column holding one line under a name that every consumer reads as the</dt><dd></dd>
+<dt>sum of two, so the fitted flux of “[O III]_Doublet” would silently be</dt><dd></dd>
+<dt>0.33 of one line rather than 1.33 of both. Renaming makes the entry say</dt><dd></dd>
+<dt>what it is, and gas_diagnostics already resolves a doublet request to</dt><dd></dd>
+<dt>the components of that species when the doublet name is absent.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.errors.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.errors</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.line_catalogue.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.line_catalogue</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.TIED_DOUBLETS"><code class="docutils literal notranslate"><span class="pre">TIED_DOUBLETS</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.doublet_nebular_sum_factor"><code class="docutils literal notranslate"><span class="pre">doublet_nebular_sum_factor()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.drop_masked_lines"><code class="docutils literal notranslate"><span class="pre">drop_masked_lines()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.get_line_catalog"><code class="docutils literal notranslate"><span class="pre">get_line_catalog()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.assign_kinematic_groups"><code class="docutils literal notranslate"><span class="pre">assign_kinematic_groups()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.build_emission_matrix_grouped"><code class="docutils literal notranslate"><span class="pre">build_emission_matrix_grouped()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.build_emission_matrix"><code class="docutils literal notranslate"><span class="pre">build_emission_matrix()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.group_positions"><code class="docutils literal notranslate"><span class="pre">group_positions()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.reachable_window"><code class="docutils literal notranslate"><span class="pre">reachable_window()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.emission_lines.precompile_line_table"><code class="docutils literal notranslate"><span class="pre">precompile_line_table()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

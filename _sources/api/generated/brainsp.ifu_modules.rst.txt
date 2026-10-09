@@ -1,0 +1,28 @@
+﻿brainsp.ifu\_modules
+====================
+
+.. automodule:: brainsp.ifu_modules
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      from_sigma_like
+      inverse_variance
+      require_extension
+      to_sigma_like
+      wavelength_axis
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ButterworthFilter
+      DegradeResolution
+      Dereddening
+      IFUModule
+      SNMask
+      SpatialResampler
+      SpectralResampler
+   

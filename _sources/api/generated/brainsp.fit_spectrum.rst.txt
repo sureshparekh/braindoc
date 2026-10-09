@@ -1,0 +1,6 @@
+﻿brainsp.fit\_spectrum
+=====================
+
+.. currentmodule:: brainsp
+
+.. autofunction:: fit_spectrum

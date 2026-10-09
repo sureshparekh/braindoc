@@ -1,0 +1,85 @@
+# Many spectra
+
+{func}`brainsp.fit_spectra` fits a list of spectra (or a glob pattern), each
+with its own pre-fit corrections, and returns one {class}`~brainsp.FitResult`
+per spectrum, in order:
+
+```python
+results = brainsp.fit_spectra("spectra/*.spec", settings,
+                              corrections="corrections.csv",
+                              output_dir="results")
+failed = [r for r in results if r.error_message]
+```
+
+```bash
+brainsp fit spectra/*.spec --corrections corrections.csv -o results
+```
+
+In the interface: *Load table…* (Spectrum step), then *Fit every spectrum in
+the table* (Fit step).
+
+## The corrections table
+
+A CSV file: the spectrum's file name first (relative to the table's folder),
+then any of these columns, in any order; an empty cell keeps the default.
+
+| Column | Setting | |
+|---|---|---|
+| `redshift` or `z` | `spectrum_redshift` | the redshift BRAIN removes |
+| `ebv` | `galactic_ebv` | Milky Way $E(B-V)$ |
+| `rv` | `galactic_rv` | its $R_V$ |
+| `law` | `galactic_law` | its law |
+| `rest_frame` | `spectrum_in_rest_frame` | `true` if the spectrum is already at rest |
+
+```text
+filename,redshift,ebv,rv,law
+galaxy_a.spec,0.031,0.040,3.1,CCM
+galaxy_b.spec,0.000,0.000,,
+```
+
+A redshift in the table is one BRAIN removes, unless `rest_frame` says
+otherwise. {func}`brainsp.read_corrections_table` reads it into the
+`{spectrum: {setting: value}}` mapping `corrections=` also accepts.
+
+## Keeping the fit warm
+
+JAX compiles the fit the first time it sees a problem of a given size (the
+number of wavelength pixels, templates and lines), which takes a few
+seconds. Every later fit of the same size in the same process reuses the
+compiled code, and the templates are read once. On this machine:
+
+| One spectrum | First fit (compiles) | Each later fit |
+|---|---|---|
+| CPU, `spop` | 5.7 s | 1.4 s |
+| CPU, `espop` | 4.1 s | 2.4 s |
+| GPU (RTX 3060), `spop` | 5.9 s | 0.55 s |
+| GPU, `espop` | 3.2 s | 0.97 s |
+
+So fit a batch in one call, and keep the fitting range, template selection
+and mode the same across it: changing any of them changes the problem size and
+compiles again. The compiled code is also cached on disk
+(`~/.cache/brain/jax`, or `$BRAIN_CACHE_DIR/jax`; `brainsp clear-cache` empties it), so a new
+process skips most of the compile.
+
+## Many spectra on a CPU
+
+One process cannot use a many-core CPU for this problem: XLA's own threads
+speed up one fit's linear algebra only a little. So on a CPU,
+`fit_spectra` starts **worker processes**, each pinned to one thread and each
+keeping its own compiled fit warm, and deals the spectra out among them.
+Each worker gets at least 8 spectra, so its compile is spread over enough
+work to pay off.
+
+| 300 copies of a mock spectrum, `spop`, 64-thread CPU | Per spectrum |
+|---|---|
+| one process | 1.42 s |
+| 37 workers (`workers="auto"`) | **0.19 s** |
+
+`workers=` (or the `cpu_workers` setting) sets the number: `"auto"` is every
+core the process may use but one, as many as the free memory allows (about
+1.2 GB each); `1` fits them all in one process. On a GPU the spectra are
+fitted one after another in one warm process, which keeps the device busy.
+The interface's table fit does the same on each.
+
+A spectrum that fails gives a result whose `error_message` says why, and the
+batch carries on; `stop_on_error=True` raises instead.

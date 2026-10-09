@@ -1,0 +1,12 @@
+﻿brainsp.errors
+==============
+
+.. automodule:: brainsp.errors
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      mc_weight_errors
+   

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.atomic_data &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/atomic_data';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.atomic_data</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.atomic_data</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">BRAIN-v1 Atomic Data Module</span>
+<span class="sd">Reference tables for nebular physics: recombination coefficients,</span>
+<span class="sd">Balmer line ratios, Q(H) lookup tables, metal line calibrations.</span>
+
+<span class="sd">All data from Osterbrock &amp; Ferland (2006), Hummer &amp; Storey (1987),</span>
+<span class="sd">Storey &amp; Hummer (1995), Schaerer (2003), Leitherer et al. (1999).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">RegularGridInterpolator</span><span class="p">,</span> <span class="n">interp1d</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.line_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">emission_lines_on_scale</span><span class="p">,</span>
+    <span class="n">hydrogen_lines_on_scale</span><span class="p">,</span>
+    <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">,</span>
+    <span class="n">HYDROGEN_SERIES_EXTRA_VACUUM</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">h_planck</span> <span class="o">=</span> <span class="mf">6.62607015e-27</span>
+<span class="n">c_cgs</span> <span class="o">=</span> <span class="mf">2.99792458e10</span>
+<span class="n">c_angstrom</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">*</span> <span class="mf">1e8</span>
+<span class="n">k_boltz</span> <span class="o">=</span> <span class="mf">1.380649e-16</span>
+<span class="n">m_electron</span> <span class="o">=</span> <span class="mf">9.1093837e-28</span>
+<span class="n">e_charge</span> <span class="o">=</span> <span class="mf">4.80320451e-10</span>
+<span class="n">Rydberg_eV</span> <span class="o">=</span> <span class="mf">13.605693</span>
+<span class="n">Rydberg_erg</span> <span class="o">=</span> <span class="n">Rydberg_eV</span> <span class="o">*</span> <span class="mf">1.602176634e-12</span>
+<span class="n">a_bohr</span> <span class="o">=</span> <span class="mf">5.29177211e-9</span>
+<span class="n">alpha_fs</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">137.036</span>
+
+<span class="n">LYMAN_LIMIT</span> <span class="o">=</span> <span class="mf">911.76</span>
+<span class="n">HeI_LIMIT</span> <span class="o">=</span> <span class="mf">504.26</span>
+<span class="n">HeII_LIMIT</span> <span class="o">=</span> <span class="mf">227.84</span>
+
+<span class="n">IONISATION_EDGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;QHc&#39;</span><span class="p">:</span>  <span class="n">LYMAN_LIMIT</span><span class="p">,</span>
+    <span class="s1">&#39;QHe1&#39;</span><span class="p">:</span> <span class="n">HeI_LIMIT</span><span class="p">,</span>
+    <span class="s1">&#39;QHe2&#39;</span><span class="p">:</span> <span class="n">HeII_LIMIT</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">HC_ERG_ANGSTROM</span> <span class="o">=</span> <span class="n">h_planck</span> <span class="o">*</span> <span class="n">c_cgs</span> <span class="o">*</span> <span class="mf">1e8</span>
+<span class="n">L_SUN_ERG</span> <span class="o">=</span> <span class="mf">3.828e33</span>
+
+<span class="n">_HYDROGEN_VACUUM</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">,</span> <span class="o">**</span><span class="n">HYDROGEN_SERIES_EXTRA_VACUUM</span><span class="p">}</span>
+
+<span class="n">LAMBDA_LYMAN_ALPHA</span> <span class="o">=</span> <span class="mf">1215.67</span>
+<span class="n">LAMBDA_HALPHA</span> <span class="o">=</span> <span class="n">_HYDROGEN_VACUUM</span><span class="p">[</span><span class="s1">&#39;Halpha&#39;</span><span class="p">]</span>
+<span class="n">LAMBDA_HBETA</span> <span class="o">=</span> <span class="n">_HYDROGEN_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hbeta&#39;</span><span class="p">]</span>
+<span class="n">LAMBDA_HGAMMA</span> <span class="o">=</span> <span class="n">_HYDROGEN_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hgamma&#39;</span><span class="p">]</span>
+<span class="n">LAMBDA_HDELTA</span> <span class="o">=</span> <span class="n">_HYDROGEN_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hdelta&#39;</span><span class="p">]</span>
+<span class="n">LAMBDA_HEPSILON</span> <span class="o">=</span> <span class="n">_HYDROGEN_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hepsilon&#39;</span><span class="p">]</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The Balmer wavelengths this module needs as scalars, in VACUUM Angstrom.</span>
+
+<span class="sd">Read from line_catalogue rather than written out again here. There were</span>
+<span class="sd">three tables of hydrogen wavelengths in this tree: air values to two</span>
+<span class="sd">decimals here, whole-Angstrom labels in the emission-line catalogue, and</span>
+<span class="sd">whole-Angstrom values again in METAL_LINE_CALIBRATIONS. The predicted Case</span>
+<span class="sd">B lines were therefore placed on a different scale from the lines they are</span>
+<span class="sd">printed beside and compared against. A second copy of a wavelength is a</span>
+<span class="sd">second thing to keep in step; BRAIN has already been bitten by four copies</span>
+<span class="sd">of the [N II] branching ratio.</span>
+
+<span class="sd">These five are used for exactly two things: evaluating the extinction curve</span>
+<span class="sd">at H alpha and H beta, and computing NU_HALPHA and NU_HBETA for the Case B</span>
+<span class="sd">line energies. Neither is sensitive to the scale. k(lambda) for CCM changes</span>
+<span class="sd">by 2.8e-4 between the air and vacuum H alpha, which multiplies A_V in a</span>
+<span class="sd">magnitude exponent, and the photon energy changes by 2.8e-4 relative. The</span>
+<span class="sd">tables that DO care which scale they are on -- the ones whose wavelengths</span>
+<span class="sd">are compared against fitted lines, or printed beside them -- take the scale</span>
+<span class="sd">as an argument and do not read these constants.</span>
+
+<span class="sd">LAMBDA_LYMAN_ALPHA stays a literal because it is below the 2000 A floor</span>
+<span class="sd">where an air wavelength does not exist, so vacuum is the only scale it has.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">NU_LYMAN_ALPHA</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">LAMBDA_LYMAN_ALPHA</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+<span class="n">NU_HALPHA</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">LAMBDA_HALPHA</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+<span class="n">NU_HBETA</span> <span class="o">=</span> <span class="n">c_cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">LAMBDA_HBETA</span> <span class="o">*</span> <span class="mf">1e-8</span><span class="p">)</span>
+
+<span class="n">BALMER_JUMP</span> <span class="o">=</span> <span class="mf">3646.0</span>
+<span class="n">PASCHEN_JUMP</span> <span class="o">=</span> <span class="mf">8207.0</span>
+
+
+<span class="n">_Te_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2500.</span><span class="p">,</span> <span class="mf">5000.</span><span class="p">,</span> <span class="mf">7500.</span><span class="p">,</span> <span class="mf">10000.</span><span class="p">,</span> <span class="mf">12500.</span><span class="p">,</span> <span class="mf">15000.</span><span class="p">,</span> <span class="mf">17500.</span><span class="p">,</span> <span class="mf">20000.</span><span class="p">])</span>
+
+<span class="n">_alpha_B_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">7.21e-13</span><span class="p">,</span> <span class="mf">4.54e-13</span><span class="p">,</span> <span class="mf">3.28e-13</span><span class="p">,</span> <span class="mf">2.59e-13</span><span class="p">,</span>
+    <span class="mf">2.14e-13</span><span class="p">,</span> <span class="mf">1.83e-13</span><span class="p">,</span> <span class="mf">1.60e-13</span><span class="p">,</span> <span class="mf">1.43e-13</span>
+<span class="p">])</span>
+
+<span class="n">_alpha_Hbeta_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">8.59e-14</span><span class="p">,</span> <span class="mf">5.37e-14</span><span class="p">,</span> <span class="mf">3.84e-14</span><span class="p">,</span> <span class="mf">3.03e-14</span><span class="p">,</span>
+    <span class="mf">2.49e-14</span><span class="p">,</span> <span class="mf">2.12e-14</span><span class="p">,</span> <span class="mf">1.84e-14</span><span class="p">,</span> <span class="mf">1.61e-14</span>
+<span class="p">])</span>
+
+<span class="n">_alpha_2S_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">2.14e-13</span><span class="p">,</span> <span class="mf">1.42e-13</span><span class="p">,</span> <span class="mf">1.05e-13</span><span class="p">,</span> <span class="mf">8.37e-14</span><span class="p">,</span>
+    <span class="mf">6.98e-14</span><span class="p">,</span> <span class="mf">5.98e-14</span><span class="p">,</span> <span class="mf">5.24e-14</span><span class="p">,</span> <span class="mf">4.63e-14</span>
+<span class="p">])</span>
+
+<span class="n">_alpha_Halpha_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">3.22e-13</span><span class="p">,</span> <span class="mf">2.08e-13</span><span class="p">,</span> <span class="mf">1.52e-13</span><span class="p">,</span> <span class="mf">1.17e-13</span><span class="p">,</span>
+    <span class="mf">9.72e-14</span><span class="p">,</span> <span class="mf">8.26e-14</span><span class="p">,</span> <span class="mf">7.20e-14</span><span class="p">,</span> <span class="mf">6.33e-14</span>
+<span class="p">])</span>
+
+<span class="n">_log_Te_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">_Te_grid</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_interp_recomb</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interpolate recombination coefficient at given Te.&quot;&quot;&quot;</span>
+    <span class="n">log_Te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">_Te_grid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_Te_grid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">log_Te</span><span class="p">,</span> <span class="n">_log_Te_grid</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+
+<div class="viewcode-block" id="alpha_B">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.alpha_B">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha_B</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Case B total recombination coefficient for H [cm^3 s^-1].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_interp_recomb</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">_alpha_B_table</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="alpha_Hbeta_eff">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.alpha_Hbeta_eff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha_Hbeta_eff</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Effective recombination coefficient for H-beta [cm^3 s^-1].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_interp_recomb</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">_alpha_Hbeta_table</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="alpha_Halpha_eff">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.alpha_Halpha_eff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha_Halpha_eff</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Effective recombination coefficient for H-alpha [cm^3 s^-1].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_interp_recomb</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">_alpha_Halpha_table</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="alpha_2S_eff">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.alpha_2S_eff">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha_2S_eff</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Effective recombination coefficient for 2S level [cm^3 s^-1].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_interp_recomb</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">_alpha_2S_table</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="alpha_B_powerlaw">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.alpha_B_powerlaw">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha_B_powerlaw</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Power-law approximation for alpha_B (Osterbrock &amp; Ferland 2006).&quot;&quot;&quot;</span>
+    <span class="n">t4</span> <span class="o">=</span> <span class="n">Te</span> <span class="o">/</span> <span class="mf">1e4</span>
+    <span class="n">exponent</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.833</span> <span class="o">-</span> <span class="mf">0.034</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">t4</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">2.59e-13</span> <span class="o">*</span> <span class="n">t4</span><span class="o">**</span><span class="n">exponent</span></div>
+
+
+
+<span class="n">_balmer_ratio_Te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5000.</span><span class="p">,</span> <span class="mf">10000.</span><span class="p">,</span> <span class="mf">15000.</span><span class="p">,</span> <span class="mf">20000.</span><span class="p">])</span>
+
+<span class="n">_balmer_ratios</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Halpha&#39;</span><span class="p">:</span>   <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.042</span><span class="p">,</span> <span class="mf">2.863</span><span class="p">,</span> <span class="mf">2.780</span><span class="p">,</span> <span class="mf">2.735</span><span class="p">]),</span>
+    <span class="s1">&#39;Hbeta&#39;</span><span class="p">:</span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.000</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">]),</span>
+    <span class="s1">&#39;Hgamma&#39;</span><span class="p">:</span>   <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.458</span><span class="p">,</span> <span class="mf">0.468</span><span class="p">,</span> <span class="mf">0.473</span><span class="p">,</span> <span class="mf">0.475</span><span class="p">]),</span>
+    <span class="s1">&#39;Hdelta&#39;</span><span class="p">:</span>   <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.253</span><span class="p">,</span> <span class="mf">0.259</span><span class="p">,</span> <span class="mf">0.262</span><span class="p">,</span> <span class="mf">0.264</span><span class="p">]),</span>
+    <span class="s1">&#39;Hepsilon&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.154</span><span class="p">,</span> <span class="mf">0.159</span><span class="p">,</span> <span class="mf">0.161</span><span class="p">,</span> <span class="mf">0.162</span><span class="p">]),</span>
+    <span class="s1">&#39;H8&#39;</span><span class="p">:</span>       <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.101</span><span class="p">,</span> <span class="mf">0.105</span><span class="p">,</span> <span class="mf">0.107</span><span class="p">,</span> <span class="mf">0.108</span><span class="p">]),</span>
+    <span class="s1">&#39;H9&#39;</span><span class="p">:</span>       <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.070</span><span class="p">,</span> <span class="mf">0.0731</span><span class="p">,</span> <span class="mf">0.0744</span><span class="p">,</span> <span class="mf">0.0752</span><span class="p">]),</span>
+    <span class="s1">&#39;H10&#39;</span><span class="p">:</span>      <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.051</span><span class="p">,</span> <span class="mf">0.0530</span><span class="p">,</span> <span class="mf">0.0539</span><span class="p">,</span> <span class="mf">0.0545</span><span class="p">]),</span>
+    <span class="s1">&#39;H11&#39;</span><span class="p">:</span>      <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.038</span><span class="p">,</span> <span class="mf">0.0398</span><span class="p">,</span> <span class="mf">0.0405</span><span class="p">,</span> <span class="mf">0.0409</span><span class="p">]),</span>
+    <span class="s1">&#39;H12&#39;</span><span class="p">:</span>      <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.029</span><span class="p">,</span> <span class="mf">0.0305</span><span class="p">,</span> <span class="mf">0.0311</span><span class="p">,</span> <span class="mf">0.0314</span><span class="p">]),</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Case B Balmer intensities relative to H beta, on the _balmer_ratio_Te grid.</span>
+
+<span class="sd">The wavelengths that used to sit beside these ratios are gone: they were a</span>
+<span class="sd">second, air-scale copy of the hydrogen series, and a predicted line placed</span>
+<span class="sd">on a different scale from the fitted one it is compared against is exactly</span>
+<span class="sd">the kind of silent disagreement this project keeps finding. The wavelength</span>
+<span class="sd">now comes from line_catalogue, on the scale the caller declares.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">_paschen_ratios</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Paalpha&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.523</span><span class="p">,</span> <span class="mf">0.461</span><span class="p">,</span> <span class="mf">0.433</span><span class="p">,</span> <span class="mf">0.415</span><span class="p">]),</span>
+    <span class="s1">&#39;Pabeta&#39;</span><span class="p">:</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.191</span><span class="p">,</span> <span class="mf">0.162</span><span class="p">,</span> <span class="mf">0.150</span><span class="p">,</span> <span class="mf">0.143</span><span class="p">]),</span>
+    <span class="s1">&#39;Pagamma&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.098</span><span class="p">,</span> <span class="mf">0.0835</span><span class="p">,</span> <span class="mf">0.0772</span><span class="p">,</span> <span class="mf">0.0733</span><span class="p">]),</span>
+    <span class="s1">&#39;Padelta&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.060</span><span class="p">,</span> <span class="mf">0.0510</span><span class="p">,</span> <span class="mf">0.0470</span><span class="p">,</span> <span class="mf">0.0447</span><span class="p">]),</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Case B Paschen intensities relative to H beta, on the _balmer_ratio_Te grid.</span>
+
+<span class="sd">&#39;Paalpha&#39; was spelled &#39;Palpha&#39; here and &#39;Paalpha&#39; in the emission-line</span>
+<span class="sd">catalogue&#39;s species table. Every consumer looks a predicted line up by</span>
+<span class="sd">species, so the two spellings never met: Pa alpha was the one hydrogen line</span>
+<span class="sd">in the catalogue that could never receive its Case B penalty row in</span>
+<span class="sd">photopop, and nothing said so. The spelling here now matches the catalogue.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="hydrogen_case_b_ratios">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.hydrogen_case_b_ratios">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_case_b_ratios</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Case B hydrogen intensities relative to H beta, with no wavelengths.</span>
+
+<span class="sd">    {species: ratio}, Balmer and Paschen together, interpolated in log Te</span>
+<span class="sd">    and clipped to the ends of the tabulated grid.</span>
+
+<span class="sd">    Separate from balmer_ratios and all_hydrogen_ratios because a caller</span>
+<span class="sd">    that wants only the intrinsic Balmer decrement -- which is what the</span>
+<span class="sd">    nebular extinction is derived from -- has no wavelength to place and</span>
+<span class="sd">    therefore no wavelength scale to declare. Making it ask for one would be</span>
+<span class="sd">    demanding an answer that cannot change its result.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log_Te</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">_balmer_ratio_Te</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_balmer_ratio_Te</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">log_Te_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">_balmer_ratio_Te</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_balmer_ratios</span><span class="p">,</span> <span class="n">_paschen_ratios</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ratios</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">log_Te</span><span class="p">,</span> <span class="n">log_Te_grid</span><span class="p">,</span> <span class="n">ratios</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+
+<div class="viewcode-block" id="balmer_ratios">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.balmer_ratios">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">balmer_ratios</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Case B Balmer line ratios relative to H beta at a given Te.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Te : float</span>
+<span class="sd">        Electron temperature [K].</span>
+<span class="sd">    wavelength_scale : {&#39;air&#39;, &#39;vacuum&#39;}</span>
+<span class="sd">        The scale the returned wavelengths are on. REQUIRED. These</span>
+<span class="sd">        wavelengths are printed beside the fitted line fluxes they are meant</span>
+<span class="sd">        to be compared with, so a predicted line on the other scale from the</span>
+<span class="sd">        fitted one sits 83 km/s away from it with nothing in the output to</span>
+<span class="sd">        say why.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ratios : dict {species: (wavelength, ratio)}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wavelengths</span> <span class="o">=</span> <span class="n">hydrogen_lines_on_scale</span><span class="p">(</span><span class="n">wavelength_scale</span><span class="p">)</span>
+    <span class="n">ratios</span> <span class="o">=</span> <span class="n">hydrogen_case_b_ratios</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="n">wavelengths</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">ratios</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_balmer_ratios</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="all_hydrogen_ratios">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.all_hydrogen_ratios">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_hydrogen_ratios</span><span class="p">(</span><span class="n">Te</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Balmer + Paschen ratios relative to H beta, on a declared scale.&quot;&quot;&quot;</span>
+    <span class="n">wavelengths</span> <span class="o">=</span> <span class="n">hydrogen_lines_on_scale</span><span class="p">(</span><span class="n">wavelength_scale</span><span class="p">)</span>
+    <span class="n">ratios</span> <span class="o">=</span> <span class="n">hydrogen_case_b_ratios</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="n">wavelengths</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">ratio</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">ratios</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+
+
+<div class="viewcode-block" id="alpha_B_HeI">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.alpha_B_HeI">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha_B_HeI</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Case B total recombination coefficient for He I [cm^3 s^-1].&quot;&quot;&quot;</span>
+    <span class="n">t4</span> <span class="o">=</span> <span class="n">Te</span> <span class="o">/</span> <span class="mf">1e4</span>
+    <span class="k">return</span> <span class="mf">2.72e-13</span> <span class="o">*</span> <span class="n">t4</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.789</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="alpha_B_HeII">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.alpha_B_HeII">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha_B_HeII</span><span class="p">(</span><span class="n">Te</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Case B total recombination coefficient for He II [cm^3 s^-1].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">alpha_B</span><span class="p">(</span><span class="n">Te</span><span class="p">)</span></div>
+
+
+<span class="n">_HeI_lines</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;HeI_3889&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">3888.65</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">),</span>
+    <span class="s1">&#39;HeI_4026&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">4026.21</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">),</span>
+    <span class="s1">&#39;HeI_4471&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">4471.50</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">),</span>
+    <span class="s1">&#39;HeI_5876&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">5875.67</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">),</span>
+    <span class="s1">&#39;HeI_6678&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">6678.15</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">),</span>
+    <span class="s1">&#39;HeI_7065&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">7065.25</span><span class="p">,</span> <span class="mf">0.28</span><span class="p">),</span>
+    <span class="s1">&#39;HeI_10830&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">10830.3</span><span class="p">,</span> <span class="mf">7.14</span><span class="p">),</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="qh_from_spectrum">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.qh_from_spectrum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">qh_from_spectrum</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">ssp_flux_unit</span><span class="o">=</span><span class="s1">&#39;Lsun&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ionising photon rates of an SSP, integrated from its own spectrum.</span>
+
+<span class="sd">        Q = integral_0^lambda_edge  L_lambda * lambda / (h c)  d lambda</span>
+
+<span class="sd">    evaluated at the three ionisation edges, which is what sets how many</span>
+<span class="sd">    photons are available to ionise H, He and He+ respectively.</span>
+
+<span class="sd">    This replaces the age/metallicity lookup BRAIN used previously. A lookup</span>
+<span class="sd">    cannot know what is actually in the library it is being applied to: it</span>
+<span class="sd">    silently returns a number for an SSP whose real ionising output is</span>
+<span class="sd">    different, and there is no way for the fit to notice.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : 1D array</span>
+<span class="sd">        SSP wavelength grid in Angstrom. Must extend below 911.76 A, or there</span>
+<span class="sd">        is no ionising continuum to integrate and the result is meaningless.</span>
+<span class="sd">    flux : 1D array</span>
+<span class="sd">        L_lambda per unit initial mass, on the same grid.</span>
+<span class="sd">    ssp_flux_unit : {&#39;Lsun&#39;, &#39;cgs&#39;}</span>
+<span class="sd">        Units of `flux`: L_sun/A/Msun or erg/s/A/Msun.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        {&#39;QHc&#39;, &#39;QHe1&#39;, &#39;QHe2&#39;} in photons/s per Msun formed. Entries whose</span>
+<span class="sd">        edge lies outside the library&#39;s coverage are absent, not zero — a</span>
+<span class="sd">        caller must not be able to mistake &quot;not measured&quot; for &quot;no photons&quot;.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The edge bin is closed by interpolating the flux onto the edge exactly</span>
+<span class="sd">    rather than truncating at the last grid point, which otherwise biases the</span>
+<span class="sd">    result by the width of one bin. The integrand is interpolated</span>
+<span class="sd">    logarithmically, because the Lyman continuum falls by orders of magnitude</span>
+<span class="sd">    across a few Angstrom and a linear rule over the native grid overestimates</span>
+<span class="sd">    it — by 2% at the He II edge on the BC03 grid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ssp_flux_unit</span> <span class="o">==</span> <span class="s1">&#39;Lsun&#39;</span><span class="p">:</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">flux</span> <span class="o">*</span> <span class="n">L_SUN_ERG</span>
+    <span class="k">elif</span> <span class="n">ssp_flux_unit</span> <span class="o">==</span> <span class="s1">&#39;cgs&#39;</span><span class="p">:</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">flux</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown ssp_flux_unit: </span><span class="si">{</span><span class="n">ssp_flux_unit</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="n">order</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">order</span><span class="p">]</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">IONISATION_EDGES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">edge</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">inside</span> <span class="o">=</span> <span class="n">w</span> <span class="o">&lt;</span> <span class="n">edge</span>
+        <span class="k">if</span> <span class="n">inside</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">wi</span><span class="p">,</span> <span class="n">Li</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="n">inside</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">inside</span><span class="p">]</span>
+        <span class="n">integrand</span> <span class="o">=</span> <span class="n">Li</span> <span class="o">*</span> <span class="n">wi</span>
+
+        <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+            <span class="n">L_edge</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">wi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wi</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span>
+            <span class="n">integrand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="n">L_edge</span> <span class="o">*</span> <span class="n">edge</span><span class="p">)</span>
+
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">integrand</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">pos</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">lw</span><span class="p">,</span> <span class="n">li</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">wi</span><span class="p">[</span><span class="n">pos</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">integrand</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+            <span class="n">fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lw</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">edge</span><span class="p">),</span> <span class="mi">4096</span><span class="p">)</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">fine</span><span class="p">,</span> <span class="n">lw</span><span class="p">,</span> <span class="n">li</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">fine</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="n">wi</span><span class="p">)</span>
+
+        <span class="n">out</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">total</span> <span class="o">/</span> <span class="n">HC_ERG_ANGSTROM</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="QH_per_Msun">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.QH_per_Msun">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">QH_per_Msun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removed. Q(H) is integrated from the SSP spectrum -- see</span>
+<span class="sd">    `qh_from_spectrum`. The age/metallicity table this used was not traceable</span>
+<span class="sd">    to any published library and disagreed with BC03 by up to a factor of 3.&quot;&quot;&quot;</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="n">QH_per_Msun</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Zgas_to_logOH">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.Zgas_to_logOH">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">Zgas_to_logOH</span><span class="p">(</span><span class="n">Z_gas</span><span class="p">,</span> <span class="n">Z_solar</span><span class="o">=</span><span class="mf">0.0142</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert gas metallicity to 12+log(O/H).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">8.69</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Z_gas</span> <span class="o">/</span> <span class="n">Z_solar</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_oiii_5007_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[O III] 5007 / H-beta vs 12+log(O/H).</span>
+<span class="sd">    Peaks at low metallicity, decreases at high Z due to cooling.&quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">logOH</span> <span class="o">-</span> <span class="mf">8.0</span>
+    <span class="k">return</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="mf">0.7</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_branching</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The weak-over-strong branching ratio of a tied doublet, from the catalogue.</span>
+
+<span class="sd">    Read from emission_lines.TIED_DOUBLETS rather than written out again,</span>
+<span class="sd">    because it is the same atomic constant the design matrix is built with</span>
+<span class="sd">    and a second copy is a second thing to keep in step. There were four</span>
+<span class="sd">    values of the [N II] ratio in this tree before this: 0.32739 in the</span>
+<span class="sd">    catalogue, 1/2.95 here, 1/3.06 in SPECTRAL_COMPLEXES, and 0.33 in the</span>
+<span class="sd">    catalogue before that. Imported inside the function because these</span>
+<span class="sd">    calibrations are read at import time by a module-level table and</span>
+<span class="sd">    emission_lines is the heavier import of the two.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.emission_lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">TIED_DOUBLETS</span>
+
+    <span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">ratio</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">TIED_DOUBLETS</span><span class="p">[</span><span class="n">name</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_oiii_4959_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[O III] 4959 / H-beta, tied to 5007 by its branching ratio.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_oiii_5007_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">)</span> <span class="o">*</span> <span class="n">_branching</span><span class="p">(</span><span class="s1">&#39;[O III]_Doublet&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_nii_6583_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[N II] 6583 / H-beta vs 12+log(O/H).</span>
+<span class="sd">    Increases with metallicity (nitrogen is secondary at high Z).&quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">logOH</span> <span class="o">-</span> <span class="mf">8.69</span>
+    <span class="k">return</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span> <span class="o">+</span> <span class="mf">1.1</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_nii_6548_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[N II] 6548 / H-beta, tied to 6583 by its branching ratio.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_nii_6583_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">)</span> <span class="o">*</span> <span class="n">_branching</span><span class="p">(</span><span class="s1">&#39;[N II]_Doublet&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_sii_6716_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[S II] 6716 / H-beta. Moderate metallicity dependence.&quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">logOH</span> <span class="o">-</span> <span class="mf">8.69</span>
+    <span class="k">return</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">+</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_sii_6731_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[S II] 6731 / H-beta. Similar to 6716, density-dependent ratio.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_sii_6716_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.75</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_oii_3727_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[O II] 3726+3729 / H-beta. Strong at moderate Z.&quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">logOH</span> <span class="o">-</span> <span class="mf">8.69</span>
+    <span class="k">return</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_oi_6300_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[O I] 6300 / H-beta. Weak, increases with Z.&quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">logOH</span> <span class="o">-</span> <span class="mf">8.69</span>
+    <span class="k">return</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_neiii_3869_ratio</span><span class="p">(</span><span class="n">logOH</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;[Ne III] 3869 / H-beta. Decreases with Z.&quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">logOH</span> <span class="o">-</span> <span class="mf">8.69</span>
+    <span class="k">return</span> <span class="mf">10.0</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">-</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="n">METAL_LINE_CALIBRATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;[O III]_5007&#39;</span><span class="p">:</span> <span class="n">_oiii_5007_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[O III]_4959&#39;</span><span class="p">:</span> <span class="n">_oiii_4959_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[O III]_4363&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">oh</span><span class="p">:</span> <span class="p">(</span><span class="n">_oiii_5007_ratio</span><span class="p">(</span><span class="n">oh</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.01</span>
+                                <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">oh</span> <span class="o">-</span> <span class="mf">8.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)),</span>
+    <span class="s1">&#39;[N II]_6583&#39;</span><span class="p">:</span>  <span class="n">_nii_6583_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[N II]_6548&#39;</span><span class="p">:</span>  <span class="n">_nii_6548_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[S II]_6716&#39;</span><span class="p">:</span>  <span class="n">_sii_6716_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[S II]_6731&#39;</span><span class="p">:</span>  <span class="n">_sii_6731_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[O II]_3727&#39;</span><span class="p">:</span>  <span class="n">_oii_3727_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[O I]_6300&#39;</span><span class="p">:</span>   <span class="n">_oi_6300_ratio</span><span class="p">,</span>
+    <span class="s1">&#39;[Ne III]_3869&#39;</span><span class="p">:</span> <span class="n">_neiii_3869_ratio</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Semi-empirical metal line strengths relative to H beta, keyed by catalogue</span>
+<span class="sd">name.</span>
+
+<span class="sd">The whole-Angstrom wavelength that used to travel with each calibration is</span>
+<span class="sd">gone. It was a third copy of the emission-line wavelengths, rounded harder</span>
+<span class="sd">than either of the other two, and it placed the predicted lines on no scale</span>
+<span class="sd">at all. metal_calibration_wavelengths supplies the wavelength from</span>
+<span class="sd">line_catalogue on a declared scale instead.</span>
+
+<span class="sd">&#39;[O II]_3727&#39; is not a catalogue entry. It is the historic name of the</span>
+<span class="sd">UNRESOLVED 3726 + 3729 blend, and _oii_3727_ratio predicts the SUM of the</span>
+<span class="sd">two, so the entry is kept under that name and the comparison against the</span>
+<span class="sd">fit sums the two fitted components. Splitting the prediction by some fixed</span>
+<span class="sd">3729/3726 ratio would be wrong: that ratio is the density diagnostic, which</span>
+<span class="sd">is the reason the doublet is fitted as two untied lines in the first place.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">OII_BLEND_COMPONENTS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;[O II]_3726&#39;</span><span class="p">,</span> <span class="s1">&#39;[O II]_3729&#39;</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The two catalogue entries whose fitted fluxes sum to the &#39;[O II]_3727&#39;</span>
+<span class="sd">prediction.</span>
+
+<span class="sd">Named here, where the prediction is defined, so that the consumer doing the</span>
+<span class="sd">summing does not have to know which components the blend is made of. The</span>
+<span class="sd">[O II] doublet used to be a single catalogue entry at 3727 and the</span>
+<span class="sd">prediction matched it by name; once the catalogue split it, the predicted</span>
+<span class="sd">name matched nothing fitted and [O II] fell silently out of the</span>
+<span class="sd">predicted-versus-observed table.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="metal_calibration_wavelengths">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.metal_calibration_wavelengths">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">metal_calibration_wavelengths</span><span class="p">(</span><span class="n">wavelength_scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    {catalogue name: wavelength} for every metal line calibration, on a</span>
+<span class="sd">    declared scale.</span>
+
+<span class="sd">    Every key but &#39;[O II]_3727&#39; is a catalogue entry and takes that entry&#39;s</span>
+<span class="sd">    wavelength. &#39;[O II]_3727&#39; names the unresolved blend and is placed at</span>
+<span class="sd">    the mean of its two components, which is a label for a prediction that</span>
+<span class="sd">    is itself a sum, not a claim about where either component sits.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">catalogue</span> <span class="o">=</span> <span class="n">emission_lines_on_scale</span><span class="p">(</span><span class="n">wavelength_scale</span><span class="p">)</span>
+    <span class="n">wavelengths</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">METAL_LINE_CALIBRATIONS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">catalogue</span><span class="p">:</span>
+            <span class="n">wavelengths</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">catalogue</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;[O II]_3727&#39;</span><span class="p">:</span>
+            <span class="n">wavelengths</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">catalogue</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">OII_BLEND_COMPONENTS</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;metal line calibration </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> names no catalogue entry &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;and has no wavelength. Add it to line_catalogue, or give &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;it a rule here saying what it is a blend of.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wavelengths</span></div>
+
+
+
+<div class="viewcode-block" id="predicted_metal_ratios">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.predicted_metal_ratios">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">predicted_metal_ratios</span><span class="p">(</span><span class="n">Z_gas</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="p">,</span> <span class="n">Z_solar</span><span class="o">=</span><span class="mf">0.0142</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return semi-empirical metal line ratios relative to H-beta.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Z_gas : float</span>
+<span class="sd">        Gas-phase metallicity (mass fraction).</span>
+<span class="sd">    wavelength_scale : {&#39;air&#39;, &#39;vacuum&#39;}</span>
+<span class="sd">        The scale the returned wavelengths are on. REQUIRED; see</span>
+<span class="sd">        balmer_ratios for why there is no default.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ratios : dict {name: (wavelength, ratio_to_Hbeta)}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logOH</span> <span class="o">=</span> <span class="n">Zgas_to_logOH</span><span class="p">(</span><span class="n">Z_gas</span><span class="p">,</span> <span class="n">Z_solar</span><span class="p">)</span>
+    <span class="n">wavelengths</span> <span class="o">=</span> <span class="n">metal_calibration_wavelengths</span><span class="p">(</span><span class="n">wavelength_scale</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="n">wavelengths</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">func</span><span class="p">(</span><span class="n">logOH</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">METAL_LINE_CALIBRATIONS</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+
+
+<span class="n">SIGMA_BF_0</span> <span class="o">=</span> <span class="p">(</span><span class="mf">64.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">alpha_fs</span> <span class="o">*</span> <span class="n">a_bohr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.0</span><span class="p">))</span>
+
+<div class="viewcode-block" id="chi_n">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.chi_n">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">chi_n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Binding energy of level n [erg].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Rydberg_erg</span> <span class="o">*</span> <span class="n">Z</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="nu_n">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.nu_n">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">nu_n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ionization threshold frequency for level n [Hz].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">chi_n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span> <span class="o">/</span> <span class="n">h_planck</span></div>
+
+
+
+<span class="n">A_2q_HI</span> <span class="o">=</span> <span class="mf">8.2249</span>
+
+<span class="n">_2q_beta</span> <span class="o">=</span> <span class="mf">1.53</span>
+<span class="n">_2q_gamma</span> <span class="o">=</span> <span class="mf">0.80</span>
+<span class="n">_2q_delta</span> <span class="o">=</span> <span class="mf">0.88</span>
+<span class="n">_2q_C</span> <span class="o">=</span> <span class="mf">202.0</span>
+
+<div class="viewcode-block" id="two_photon_shape_HI">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.two_photon_shape_HI">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">two_photon_shape_HI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Two-photon spectral shape function A(x) for H I.</span>
+<span class="sd">    x = nu / nu_Lya (0 to 1).</span>
+
+<span class="sd">    Returns A(x) in [s^-1], unnormalized.</span>
+<span class="sd">    The total rate is integral_0^1 A(x) dx = A_2q = 8.2249 s^-1.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+
+    <span class="n">term1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="p">(</span><span class="mf">4.0</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="n">_2q_gamma</span><span class="p">)</span>
+    <span class="n">term2</span> <span class="o">=</span> <span class="n">_2q_delta</span> <span class="o">*</span> <span class="n">y</span><span class="o">**</span><span class="n">_2q_beta</span> <span class="o">*</span> <span class="p">(</span><span class="mf">4.0</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="n">_2q_gamma</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">_2q_C</span> <span class="o">*</span> <span class="p">(</span><span class="n">term1</span> <span class="o">+</span> <span class="n">term2</span><span class="p">)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">),</span> <span class="n">A</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">A</span></div>
+
+
+<span class="n">A_2q_HeI</span> <span class="o">=</span> <span class="mf">53.1</span>
+
+<div class="viewcode-block" id="two_photon_shape_HeI">
+<a class="viewcode-back" href="../../api/generated/brainsp.atomic_data.html#brainsp.atomic_data.two_photon_shape_HeI">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">two_photon_shape_HeI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Two-photon spectral shape for He I (1s2s ^1S_0 -&gt; 1s^2 ^1S_0).</span>
+<span class="sd">    x = nu / nu_2q_HeI (0 to 1), where nu_2q_HeI corresponds to 601.4 A.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">C_HeI</span> <span class="o">=</span> <span class="mf">145.29</span>
+    <span class="n">beta_HeI</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.259</span>
+    <span class="n">gamma_HeI</span> <span class="o">=</span> <span class="o">-</span><span class="mf">8.77</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">C_HeI</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">beta_HeI</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">gamma_HeI</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">),</span> <span class="n">A</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+<span class="n">Q_2S_DEEXCIT</span> <span class="o">=</span> <span class="mf">2.2e-5</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

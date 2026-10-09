@@ -1,0 +1,15 @@
+﻿brainsp.benchmark
+=================
+
+.. automodule:: brainsp.benchmark
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cpu_load
+      main
+      report_load
+      run_mode
+   

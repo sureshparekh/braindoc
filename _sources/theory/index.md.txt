@@ -1,0 +1,31 @@
+# Theory
+
+What BRAIN computes, equation by equation, with where in the code each piece
+lives.
+
+```{toctree}
+:maxdepth: 1
+
+model
+kinematics
+dust
+linear
+nonlinear
+emission
+nebular
+errors
+derived
+diagnostics
+```
+
+In one paragraph: the observed spectrum, resampled onto a logarithmic
+wavelength grid and normalised at $\lambda_0$, is modelled as a non-negative
+combination of template spectra (stellar populations, optionally AGN
+continua, emission lines and a nebular continuum), each broadened and shifted
+by a line-of-sight velocity distribution and attenuated by dust. For any trial
+value of the few **non-linear** parameters (extinction, velocities,
+dispersions) the best **linear** weights are found exactly by non-negative
+least squares; the non-linear parameters are found by a velocity grid search
+followed by a bounded Levenberg–Marquardt minimisation of $\chi^2$ over
+them. There are no additive or multiplicative polynomials: the shape of the
+continuum is the populations' and the dust's.

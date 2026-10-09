@@ -1,0 +1,57 @@
+/* BRAIN documentation: the interface's cobalt as the accent. */
+html[data-theme="light"] {
+  --pst-color-primary: #1D5BBF;
+  --pst-color-secondary: #D9822B;
+  --pst-color-link: #1D5BBF;
+}
+html[data-theme="dark"] {
+  --pst-color-primary: #5B9BFF;
+  --pst-color-secondary: #F0A04B;
+  --pst-color-link: #7DB0FF;
+}
+img.hero-shot, .screenshot img, img.screenshot {
+  border: 1px solid var(--pst-color-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(17, 24, 33, 0.08);
+}
+.bd-content .sd-card { border-radius: 10px; }
+table.docutils td, table.docutils th { vertical-align: top; }
+.math { overflow-x: auto; }
+
+/* Eight section links, the search icon, the theme switcher and the GitHub
+   link on one line of the header down to laptop widths: closer links, and a
+   slightly smaller font below 1400 px. Under 960 px the theme folds the
+   links into its menu button. */
+.bd-header .navbar-header-items__center .nav-link {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+@media (min-width: 960px) {
+  /* the logo column takes the logo's width, not a fixed quarter */
+  .bd-header .navbar-header-items__start,
+  .bd-header .navbar-brand {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
+  .bd-header .navbar-header-items__start {
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 960px) and (max-width: 1399.98px) {
+  .bd-header .navbar-header-items__center .nav-link {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    font-size: 0.9rem;
+  }
+  .bd-header .navbar-header-items__start {
+    margin-right: 0.75rem;
+  }
+}
+@media (min-width: 960px) and (max-width: 1099.98px) {
+  .bd-header .navbar-header-items__center .nav-link {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    font-size: 0.82rem;
+  }
+}

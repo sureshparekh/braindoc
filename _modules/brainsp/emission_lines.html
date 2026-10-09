@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.emission_lines &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/emission_lines';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.emission_lines</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.emission_lines</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Tied doublets, kinematic groups, and the Gaussian design matrix, with</span>
+<span class="sd">per-group velocity and dispersion for the joint fit.</span>
+
+<span class="sd">The wavelengths, the species table and the default kinematic groups are NOT</span>
+<span class="sd">here. They live in line_catalogue, which imports numpy and nothing else, so</span>
+<span class="sd">the settings validator and the desktop interface can ask what lines exist</span>
+<span class="sd">without starting a JAX backend in the process that draws the menus. This</span>
+<span class="sd">module imports JAX and is therefore the wrong place for pure data.</span>
+
+<span class="sd">The names imported at the top are re-exported rather than redefined, so</span>
+<span class="sd">`from emission_lines import LINE_SPECIES` keeps meaning exactly what it</span>
+<span class="sd">meant. They are one table with two import paths, not two tables. New code</span>
+<span class="sd">should read them from line_catalogue, which costs no JAX backend.</span>
+
+<span class="sd">Nothing here derives meaning from the shape of a catalogue name. Every</span>
+<span class="sd">entry&#39;s species is declared in LINE_SPECIES, every doublet names its</span>
+<span class="sd">components rather than repeating their wavelengths, and group membership is</span>
+<span class="sd">looked up by species rather than matched as a string prefix. That is not</span>
+<span class="sd">tidiness. Each of the three couplings this replaces failed silently:</span>
+
+<span class="sd">  - Kinematic groups were assigned by name.startswith(prefix), and &quot;He I&quot; is</span>
+<span class="sd">    a prefix of &quot;He II&quot;, so He II_4686 -- a high-ionisation line -- was</span>
+<span class="sd">    placed in the low-ionisation group. Measured, not hypothetical.</span>
+<span class="sd">  - Free lines were removed from the catalogue when a tied doublet already</span>
+<span class="sd">    covered them by testing the wavelength for membership of a set of</span>
+<span class="sd">    floats. Exact float equality held only while both numbers were</span>
+<span class="sd">    whole-Angstrom literals written twice. Store the doublet&#39;s wavelength to</span>
+<span class="sd">    more decimals than the line&#39;s and the deduplication stops working, the</span>
+<span class="sd">    same wavelength gets two columns, the gas block goes rank-deficient, and</span>
+<span class="sd">    a non-negative solver splits the flux between them at an arbitrary</span>
+<span class="sd">    vertex without complaining.</span>
+<span class="sd">  - Line fluxes were extracted by substring, returning the first name that</span>
+<span class="sd">    contained the key. &quot;[S II]&quot; returns 6716 and silently discards 6731,</span>
+<span class="sd">    which is half the density diagnostic; &quot;[O III]&quot; returns the 4363</span>
+<span class="sd">    auroral line rather than the doublet; &quot;He I&quot; returns He II. It happens</span>
+<span class="sd">    not to misfire today only because the two keys in use, Halpha and</span>
+<span class="sd">    Hbeta, are unambiguous in the shipped catalogue.</span>
+
+<span class="sd">Every entry point that produces wavelengths takes the observed spectrum&#39;s</span>
+<span class="sd">wavelength scale as a required argument. There is no default, because a</span>
+<span class="sd">default is a guess: a wrong guess moves every line by about 83 km/s, which</span>
+<span class="sd">the fitted gas velocity absorbs almost entirely, so the fit converges and</span>
+<span class="sd">nothing in the output looks wrong. See line_catalogue for the conversion</span>
+<span class="sd">and brain_settings for the refusal.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.line_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_GROUP_SPECIES</span><span class="p">,</span>
+    <span class="n">LINE_SPECIES</span><span class="p">,</span>
+    <span class="n">WAVELENGTH_SCALES</span><span class="p">,</span>
+    <span class="n">emission_lines_on_scale</span><span class="p">,</span>
+    <span class="n">require_scale</span><span class="p">,</span>
+    <span class="n">species_of</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;NEWBRAIN&quot;</span><span class="p">)</span>
+
+<span class="n">C_KMS</span> <span class="o">=</span> <span class="mf">299792.458</span>
+
+<span class="n">TIED_DOUBLETS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;[O III]_Doublet&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;[O III]_4959&#39;</span><span class="p">,</span> <span class="mf">0.33510</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;[O III]_5007&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)],</span>
+    <span class="s1">&#39;[N II]_Doublet&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;[N II]_6548&#39;</span><span class="p">,</span> <span class="mf">0.32739</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;[N II]_6583&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)],</span>
+    <span class="s1">&#39;[S III]_Doublet&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;[S III]_9069&#39;</span><span class="p">,</span> <span class="mf">0.40506</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;[S III]_9531&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)],</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Pairs whose relative flux is fixed by atomic physics rather than by the fit.</span>
+
+<span class="sd">Every pair here is the 1D2 - 3P1 and 1D2 - 3P2 transition out of ONE upper</span>
+<span class="sd">level, so the intensity ratio is A(1D2-3P1) E(1D2-3P1) divided by</span>
+<span class="sd">A(1D2-3P2) E(1D2-3P2) and nothing else. It is EXACTLY independent of</span>
+<span class="sd">electron temperature, electron density, ionisation parameter and</span>
+<span class="sd">abundance: both photons leave the same level, so whatever sets how often</span>
+<span class="sd">that level is populated cancels identically. There is no modelling choice</span>
+<span class="sd">to make and no ratio to fit, only the right number, and a number rounded</span>
+<span class="sd">to two figures is simply a wrong one.</span>
+
+<span class="sd">The weak component&#39;s ratio is quoted relative to the strong component,</span>
+<span class="sd">which carries 1.0, because a doublet column is the ratio-weighted sum of</span>
+<span class="sd">area-normalised profiles: the fitted weight is then the flux of the</span>
+<span class="sd">ratio-1.0 line, which is the quantity the BPT calibrations and the line</span>
+<span class="sd">table report. doublet_nebular_sum_factor is the one conversion to the sum</span>
+<span class="sd">over both components, for the one diagnostic that wants a sum.</span>
+
+<span class="sd">[O III] 4959/5007 and [N II] 6548/6583 are the relativistically corrected</span>
+<span class="sd">values of Storey &amp; Zeippen (2000), MNRAS 312, 813, Tables 3 and 4, whose</span>
+<span class="sd">A-value ratios become 0.33510 and 0.32739 once scaled by the ratio of</span>
+<span class="sd">transition energies. THE CITATION IS EXPLICIT BECAUSE OLDER ATOMIC DATA</span>
+<span class="sd">DIFFER: the Froese Fischer et al. (2004) data for N II give 0.3399, 3.8 per</span>
+<span class="sd">cent away from the value here, and a comparison against results built on</span>
+<span class="sd">them will show that difference in [N II]; it is not a BRAIN defect.</span>
+
+<span class="sd">[S III] 9069/9531 is NOT from Storey &amp; Zeippen, whose calculation covers</span>
+<span class="sd">the carbon and oxygen sequences to Z = 12 only; S III is the 3p2 analogue</span>
+<span class="sd">and is outside it. 0.40506 is Froese Fischer, Tachiev &amp; Irimia (2006),</span>
+<span class="sd">ADNDT 92, 607, as compiled by Podobedova, Kelleher &amp; Wiese (2009). The</span>
+<span class="sd">0.41 it replaces corresponds to no published calculation: the same data</span>
+<span class="sd">sets give 0.40322 (Mendoza &amp; Zeippen 1982) and 0.39435 (Tayal, Zatsarinny</span>
+<span class="sd">&amp; Sossah 2019), so 0.41 was not a different choice of source either.</span>
+
+<span class="sd">Three further homologous pairs appear in the same tables and are</span>
+<span class="sd">deliberately NOT tied. [O I] 6363/6300 = 0.33034 and [Ne III] 3968/3869 =</span>
+<span class="sd">0.30868 have only their strong component in the catalogue, so there is no</span>
+<span class="sd">pair to tie. [C I] 9824/9850 = 0.32024 has both components, carried as two</span>
+<span class="sd">independent lines; tying them would change what the NIR fit is free to do,</span>
+<span class="sd">which is a separate decision from correcting a ratio already in use.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="doublet_nebular_sum_factor">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.doublet_nebular_sum_factor">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">doublet_nebular_sum_factor</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The factor taking a fitted doublet weight to the sum over its components.</span>
+
+<span class="sd">    A doublet column is built with its components&#39; ratios relative to the</span>
+<span class="sd">    strong one, and each component profile is area-normalised, so the</span>
+<span class="sd">    fitted weight is the flux of the ratio-1.0 component alone. Most</span>
+<span class="sd">    consumers want exactly that -- the BPT diagram is calibrated on</span>
+<span class="sd">    [O III] 5007 and [N II] 6583, not on doublet sums -- but the [O III]</span>
+<span class="sd">    temperature diagnostic wants the nebular sum F(4959) + F(5007), and</span>
+<span class="sd">    multiplying by this factor is what supplies it.</span>
+
+<span class="sd">    Derived from the catalogue entry rather than written out again at the</span>
+<span class="sd">    point of use, because the factor IS one plus the branching ratio. A</span>
+<span class="sd">    second copy of that number is a second thing to keep in step with the</span>
+<span class="sd">    design matrix, and the whole point of a branching ratio fixed by</span>
+<span class="sd">    atomic physics is that there is one of it.</span>
+
+<span class="sd">    Dividing by the largest ratio rather than assuming it is 1.0 keeps the</span>
+<span class="sd">    factor right for a doublet whose ratios were written on some other</span>
+<span class="sd">    scale.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">ratio</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">TIED_DOUBLETS</span><span class="p">[</span><span class="n">name</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="drop_masked_lines">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.drop_masked_lines">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">drop_masked_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">doublets</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">sigma_kms</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Leave out the lines whose centres the mask (or a gap in the data) covers.</span>
+
+<span class="sd">    A line is dropped when fewer than half of the pixels within its rest</span>
+<span class="sd">    wavelength +- 2 sigma (at `sigma_kms`, and never less than two pixels</span>
+<span class="sd">    either side) carry weight. Its amplitude is then set by a wing or by</span>
+<span class="sd">    nothing, and the fit returns an arbitrary flux: a masked H-alpha came</span>
+<span class="sd">    back at 35 times its true value, and an [N II] 6583 with only its red</span>
+<span class="sd">    wing outside a mask at 77 times. A few bad pixels on a line do not drop</span>
+<span class="sd">    it; a masked window or a gap in the spectrum over its core does. A</span>
+<span class="sd">    doublet loses only the members that are covered; one survivor is fitted</span>
+<span class="sd">    alone, at ratio 1, under its own name, as for a doublet that loses a</span>
+<span class="sd">    member to the edge of the grid.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lines : dict</span>
+<span class="sd">        {name: rest_wavelength}.</span>
+<span class="sd">    doublets : dict</span>
+<span class="sd">        {name: [(component, rest_wavelength, ratio), ...]}.</span>
+<span class="sd">    wavelength : array</span>
+<span class="sd">        The fitting grid.</span>
+<span class="sd">    weight : array</span>
+<span class="sd">        Per-pixel weight on that grid; zero where nothing is fitted.</span>
+<span class="sd">    sigma_kms : float</span>
+<span class="sd">        Line width to judge coverage by: the starting gas dispersion.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    lines, doublets : dict</span>
+<span class="sd">        What is left to fit.</span>
+<span class="sd">    dropped : list of str</span>
+<span class="sd">        The names left out.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">good</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">lam</span><span class="p">))</span> <span class="k">if</span> <span class="n">lam</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mf">1.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">covered</span><span class="p">(</span><span class="n">rest</span><span class="p">):</span>
+        <span class="n">half</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">sigma_kms</span><span class="p">)</span> <span class="o">/</span> <span class="mf">299792.458</span> <span class="o">*</span> <span class="n">rest</span><span class="p">,</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">step</span><span class="p">)</span>
+        <span class="n">inside</span> <span class="o">=</span> <span class="p">(</span><span class="n">lam</span> <span class="o">&gt;=</span> <span class="n">rest</span> <span class="o">-</span> <span class="n">half</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lam</span> <span class="o">&lt;=</span> <span class="n">rest</span> <span class="o">+</span> <span class="n">half</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">inside</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">good</span> <span class="o">&amp;</span> <span class="n">inside</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">n</span>
+
+    <span class="n">dropped</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">kept_lines</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rest</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">covered</span><span class="p">(</span><span class="n">rest</span><span class="p">):</span>
+            <span class="n">dropped</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">kept_lines</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">rest</span>
+    <span class="n">kept_doublets</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">members</span> <span class="ow">in</span> <span class="n">doublets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">alive</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">members</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">covered</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="n">dropped</span> <span class="o">+=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">members</span> <span class="k">if</span> <span class="n">m</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alive</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">alive</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">members</span><span class="p">):</span>
+            <span class="n">kept_doublets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">members</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">alive</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">kept_lines</span><span class="p">[</span><span class="n">alive</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">alive</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">alive</span><span class="p">:</span>
+            <span class="n">kept_doublets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">alive</span>
+    <span class="k">return</span> <span class="n">kept_lines</span><span class="p">,</span> <span class="n">kept_doublets</span><span class="p">,</span> <span class="n">dropped</span></div>
+
+
+
+<div class="viewcode-block" id="get_line_catalog">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.get_line_catalog">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_line_catalog</span><span class="p">(</span><span class="n">wavelength_range</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Select the appropriate emission line catalog based on wavelength coverage.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength_range : tuple (wl_min, wl_max)</span>
+<span class="sd">        Wavelength range of the observed spectrum.</span>
+<span class="sd">    wavelength_scale : {&#39;air&#39;, &#39;vacuum&#39;}</span>
+<span class="sd">        The wavelength scale of the OBSERVED spectrum, which is the scale</span>
+<span class="sd">        the returned rest wavelengths are put on. REQUIRED, with no</span>
+<span class="sd">        default, at the signature rather than at the call: a default here</span>
+<span class="sd">        would let a fourth call site be added that silently picks a scale,</span>
+<span class="sd">        and picking the wrong one shifts every line by about 83 km/s</span>
+<span class="sd">        without moving chi2 enough to notice. Unknown values raise; see</span>
+<span class="sd">        line_catalogue.require_scale.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    lines : dict</span>
+<span class="sd">        {name: rest_wavelength} for single lines.</span>
+<span class="sd">    doublets : dict</span>
+<span class="sd">        {name: [(component_name, rest_wavelength, ratio), ...]} for tied</span>
+<span class="sd">        doublets. The component&#39;s catalogue name travels with it because a</span>
+<span class="sd">        doublet can lose a component to the edge of the grid, and the</span>
+<span class="sd">        survivor then has to be renamed to say what it actually is. Working</span>
+<span class="sd">        that out from the wavelength alone would mean matching floats</span>
+<span class="sd">        against the catalogue, which is the deduplication bug this module&#39;s</span>
+<span class="sd">        docstring describes.</span>
+
+<span class="sd">    The margin here is generous on purpose: it decides which lines are</span>
+<span class="sd">    CANDIDATES, and the question of whether a candidate can land on the</span>
+<span class="sd">    fitted grid at any velocity the fit is allowed to try is settled later,</span>
+<span class="sd">    by precompile_line_table, which knows the bounds.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wl_min</span><span class="p">,</span> <span class="n">wl_max</span> <span class="o">=</span> <span class="n">wavelength_range</span>
+    <span class="n">catalogue</span> <span class="o">=</span> <span class="n">emission_lines_on_scale</span><span class="p">(</span><span class="n">wavelength_scale</span><span class="p">)</span>
+
+    <span class="n">margin</span> <span class="o">=</span> <span class="mf">500.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">in_range</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">wl_min</span> <span class="o">-</span> <span class="n">margin</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">w</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">wl_max</span> <span class="o">+</span> <span class="n">margin</span><span class="p">)</span>
+
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">w</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">catalogue</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">in_range</span><span class="p">(</span><span class="n">w</span><span class="p">)}</span>
+
+    <span class="n">doublets</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">tied_component_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">components</span> <span class="ow">in</span> <span class="n">TIED_DOUBLETS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">resolved</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">member</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">components</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">member</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">catalogue</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;tied doublet </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> names a component </span><span class="si">{</span><span class="n">member</span><span class="si">!r}</span><span class="s2"> that &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;is not in the catalogue. Every doublet member must be a &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;catalogue entry, so its wavelength is stored once.&quot;</span><span class="p">)</span>
+            <span class="n">resolved</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">member</span><span class="p">,</span> <span class="n">catalogue</span><span class="p">[</span><span class="n">member</span><span class="p">],</span> <span class="n">ratio</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">in_range</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">resolved</span><span class="p">):</span>
+            <span class="n">doublets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">resolved</span>
+            <span class="n">tied_component_names</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">components</span><span class="p">)</span>
+
+    <span class="n">lines_clean</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">w</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                   <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tied_component_names</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">lines_clean</span><span class="p">,</span> <span class="n">doublets</span></div>
+
+
+
+<div class="viewcode-block" id="assign_kinematic_groups">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.assign_kinematic_groups">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">assign_kinematic_groups</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">doublets</span><span class="p">,</span> <span class="n">user_groups</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assign each emission line/doublet to a kinematic group.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lines : dict</span>
+<span class="sd">        {name: rest_wavelength} from get_line_catalog.</span>
+<span class="sd">    doublets : dict</span>
+<span class="sd">        {name: [(component_name, wl, ratio), ...]} from get_line_catalog.</span>
+<span class="sd">    user_groups : dict or None</span>
+<span class="sd">        User-defined groups: {group_id: [species, ...]}, matched</span>
+<span class="sd">        exactly against LINE_SPECIES. If None, uses</span>
+<span class="sd">        DEFAULT_GROUP_SPECIES.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    line_groups : dict</span>
+<span class="sd">        {line_name: group_id} for every line and doublet.</span>
+<span class="sd">    n_groups : int</span>
+<span class="sd">        Number of distinct kinematic groups.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wanted</span> <span class="o">=</span> <span class="n">user_groups</span> <span class="k">if</span> <span class="n">user_groups</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">DEFAULT_GROUP_SPECIES</span>
+
+    <span class="n">by_species</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">gid</span><span class="p">,</span> <span class="n">species_list</span> <span class="ow">in</span> <span class="n">wanted</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">species_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">by_species</span> <span class="ow">and</span> <span class="n">by_species</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span> <span class="o">!=</span> <span class="n">gid</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;species </span><span class="si">{</span><span class="n">sp</span><span class="si">!r}</span><span class="s2"> is listed in kinematic group &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">by_species</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span><span class="si">}</span><span class="s2"> and again in group </span><span class="si">{</span><span class="n">gid</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="n">by_species</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span> <span class="o">=</span> <span class="n">gid</span>
+
+    <span class="n">all_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">doublets</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">line_groups</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">all_names</span><span class="p">:</span>
+        <span class="n">sp</span> <span class="o">=</span> <span class="n">species_of</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">line_groups</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_species</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">sp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="n">n_groups</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">line_groups</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span> <span class="k">if</span> <span class="n">line_groups</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">line_groups</span><span class="p">,</span> <span class="n">n_groups</span></div>
+
+
+
+<div class="viewcode-block" id="build_emission_matrix_grouped">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.build_emission_matrix_grouped">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_emission_matrix_grouped</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">group_kinematics</span><span class="p">,</span>
+                                  <span class="n">lines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doublets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">line_groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                  <span class="n">wavelength_scale</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate emission line template matrix with per-kinematic-group parameters.</span>
+
+<span class="sd">    The profiles come from _build_emission_jit, one kinematic slot per</span>
+<span class="sd">    column, rather than from a Gaussian written out again here. There used to</span>
+<span class="sd">    be a second implementation in this function, and a second implementation</span>
+<span class="sd">    of a line profile is a second thing to keep in step: the compiled path</span>
+<span class="sd">    had already lost the 8-sigma truncation this one applied, so the two</span>
+<span class="sd">    paths differed in the far wings before the pixel integration went in and</span>
+<span class="sd">    would have differed in the core after it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : 1D array</span>
+<span class="sd">        The log-lambda grid, in Angstrom.</span>
+<span class="sd">    velscale : float</span>
+<span class="sd">        The grid&#39;s step, c * dln(lambda), in km/s per pixel.</span>
+<span class="sd">    group_kinematics : dict</span>
+<span class="sd">        {group_id: (sigma_gas, v0_gas)} in km/s.</span>
+<span class="sd">    lines : dict or None</span>
+<span class="sd">        Single emission lines {name: rest_wavelength}.</span>
+<span class="sd">    doublets : dict or None</span>
+<span class="sd">        Tied doublets {name: [(component_name, wl, ratio), ...]}.</span>
+<span class="sd">    line_groups : dict or None</span>
+<span class="sd">        {line_name: group_id}. If None, all lines in group 0.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    M_gas : 2D array (N_pix, N_lines)</span>
+<span class="sd">        Emission line template matrix, in flux density per Angstrom: each</span>
+<span class="sd">        column integrates to 1 over wavelength, so a fitted weight is the</span>
+<span class="sd">        line&#39;s total flux. See _build_emission_jit.</span>
+<span class="sd">    gas_names : list of str</span>
+<span class="sd">        Names of the emission line columns.</span>
+<span class="sd">    gas_group_labels : list</span>
+<span class="sd">        The kinematic group LABEL of each column, as written in line_groups.</span>
+<span class="sd">        This path looks its kinematics up in the group_kinematics dict by</span>
+<span class="sd">        label, so it never needs the positional index the compiled path</span>
+<span class="sd">        gathers with; see precompile_line_table.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">wl_min</span><span class="p">,</span> <span class="n">wl_max</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">wl</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">wl</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">lines</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">doublets</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">wavelength_scale</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;build_emission_matrix_grouped was given neither a line &quot;</span>
+                <span class="s2">&quot;catalogue nor a wavelength scale to build one on. Pass &quot;</span>
+                <span class="s2">&quot;lines and doublets from get_line_catalog, or pass &quot;</span>
+                <span class="s2">&quot;wavelength_scale=&#39;air&#39; or &#39;vacuum&#39; so the catalogue can be &quot;</span>
+                <span class="s2">&quot;put on the scale of the observed spectrum.&quot;</span><span class="p">)</span>
+        <span class="n">lines</span><span class="p">,</span> <span class="n">doublets</span> <span class="o">=</span> <span class="n">get_line_catalog</span><span class="p">((</span><span class="n">wl_min</span><span class="p">,</span> <span class="n">wl_max</span><span class="p">),</span> <span class="n">wavelength_scale</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">line_groups</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">line_groups</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">assign_kinematic_groups</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">doublets</span><span class="p">)</span>
+
+    <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">group_labels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">kinematics</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rest_w</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">line_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">sig_gas</span><span class="p">,</span> <span class="n">v0_gas</span> <span class="o">=</span> <span class="n">group_kinematics</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+        <span class="n">obs_w</span> <span class="o">=</span> <span class="n">rest_w</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v0_gas</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">wl_min</span> <span class="o">&lt;=</span> <span class="n">obs_w</span> <span class="o">&lt;=</span> <span class="n">wl_max</span><span class="p">:</span>
+            <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">([(</span><span class="n">rest_w</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)])</span>
+            <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">group_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+            <span class="n">kinematics</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">sig_gas</span><span class="p">,</span> <span class="n">v0_gas</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">components</span> <span class="ow">in</span> <span class="n">doublets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">line_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">sig_gas</span><span class="p">,</span> <span class="n">v0_gas</span> <span class="o">=</span> <span class="n">group_kinematics</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+        <span class="n">kept</span> <span class="o">=</span> <span class="p">[(</span><span class="n">rest_w</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">rest_w</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">components</span>
+                <span class="k">if</span> <span class="n">wl_min</span> <span class="o">&lt;=</span> <span class="n">rest_w</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v0_gas</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">wl_max</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">kept</span><span class="p">:</span>
+            <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kept</span><span class="p">)</span>
+            <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">group_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+            <span class="n">kinematics</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">sig_gas</span><span class="p">,</span> <span class="n">v0_gas</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">entries</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">wl</span><span class="p">),</span> <span class="mi">0</span><span class="p">)),</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="n">max_comp</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">)</span>
+    <span class="n">rest_wavelengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">),</span> <span class="n">max_comp</span><span class="p">))</span>
+    <span class="n">ratios</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">),</span> <span class="n">max_comp</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">components</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">entries</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">rest_w</span><span class="p">,</span> <span class="n">ratio</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">components</span><span class="p">):</span>
+            <span class="n">rest_wavelengths</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rest_w</span>
+            <span class="n">ratios</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio</span>
+
+    <span class="n">M_gas</span> <span class="o">=</span> <span class="n">_build_emission_jit</span><span class="p">(</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wl</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">velscale</span><span class="p">),</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinematics</span><span class="p">]),</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kinematics</span><span class="p">]),</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rest_wavelengths</span><span class="p">),</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ratios</span><span class="p">),</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span> <span class="n">max_comp</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_gas</span><span class="p">),</span> <span class="n">names</span><span class="p">,</span> <span class="n">group_labels</span></div>
+
+
+
+<div class="viewcode-block" id="build_emission_matrix">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.build_emission_matrix">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_emission_matrix</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">sigma_gas</span><span class="p">,</span> <span class="n">v0_gas</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                          <span class="n">doublets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Legacy wrapper: single kinematic group (backward compatible).</span>
+<span class="sd">    All lines share the same sigma_gas and v0_gas.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : 1D array</span>
+<span class="sd">        The log-lambda grid, in Angstrom. Uniform in ln(lambda): the pixel</span>
+<span class="sd">        integration the profile carries is defined on that grid and nowhere</span>
+<span class="sd">        else.</span>
+<span class="sd">    velscale : float</span>
+<span class="sd">        The grid&#39;s step, c * dln(lambda), in km/s per pixel.</span>
+<span class="sd">    sigma_gas : float</span>
+<span class="sd">        Gas velocity dispersion (km/s).</span>
+<span class="sd">    v0_gas : float</span>
+<span class="sd">        Gas radial velocity (km/s).</span>
+<span class="sd">    lines : dict or None</span>
+<span class="sd">        Single emission lines {name: rest_wavelength}.</span>
+<span class="sd">        If None, auto-selected from wavelength range.</span>
+<span class="sd">    doublets : dict or None</span>
+<span class="sd">        Tied doublets {name: [(component_name, wl, ratio), ...]}.</span>
+<span class="sd">        If None, auto-selected from wavelength range.</span>
+<span class="sd">    wavelength_scale : {&#39;air&#39;, &#39;vacuum&#39;} or None</span>
+<span class="sd">        Needed only when lines and doublets are both None and the catalogue</span>
+<span class="sd">        has to be built here. Passing a catalogue already settles the scale,</span>
+<span class="sd">        because its wavelengths are on one.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    M_gas : 2D array (N_pix, N_lines)</span>
+<span class="sd">        Emission line template matrix.</span>
+<span class="sd">    gas_names : list of str</span>
+<span class="sd">        Names of the emission line columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">group_kin</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="n">sigma_gas</span><span class="p">,</span> <span class="n">v0_gas</span><span class="p">)}</span>
+    <span class="n">M_gas</span><span class="p">,</span> <span class="n">gas_names</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">build_emission_matrix_grouped</span><span class="p">(</span>
+        <span class="n">wavelength</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">group_kin</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">doublets</span><span class="p">,</span>
+        <span class="n">line_groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="n">wavelength_scale</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">M_gas</span><span class="p">,</span> <span class="n">gas_names</span></div>
+
+
+
+<div class="viewcode-block" id="group_positions">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.group_positions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">group_positions</span><span class="p">(</span><span class="n">line_groups</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The position each kinematic group label occupies in the parameter vector.</span>
+
+<span class="sd">    A group label is whatever the user wrote in line_groups: any hashable,</span>
+<span class="sd">    in any order, with any gaps. The fitted parameter vector, in contrast, is</span>
+<span class="sd">    a flat sequence, and both the scalar optimizer and the cube path lay the</span>
+<span class="sd">    per-group sigma and v0 out by walking sorted(set(line_groups.values()))</span>
+<span class="sd">    and appending two slots per group. So the label is a name and the</span>
+<span class="sd">    position is an index, and the two coincide only for labels that happen</span>
+<span class="sd">    to be 0, 1, 2, ... in order.</span>
+
+<span class="sd">    DEFAULT_GROUP_SPECIES uses 0 and 1, so they did coincide, and</span>
+<span class="sd">    precompile_line_table shipped the raw label where an index was needed.</span>
+<span class="sd">    A settings file saying `line_groups: {1: [...], 2: [...]}` then made</span>
+<span class="sd">    label 2 index a length-2 array; an out-of-bounds gather in JAX is</span>
+<span class="sd">    clamped rather than raised, so every line in group 2 silently took group</span>
+<span class="sd">    1&#39;s dispersion and velocity and the fit ran to completion.</span>
+
+<span class="sd">    Defined here, once, so that the table and the parameter vector are</span>
+<span class="sd">    derived from the same expression rather than from two that agree by</span>
+<span class="sd">    inspection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">label</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span>
+            <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">line_groups</span><span class="o">.</span><span class="n">values</span><span class="p">())))}</span></div>
+
+
+
+<span class="n">LINE_REACH_SIGMAS</span> <span class="o">=</span> <span class="mf">3.0</span>
+
+
+<div class="viewcode-block" id="reachable_window">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.reachable_window">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reachable_window</span><span class="p">(</span><span class="n">rest_wavelength</span><span class="p">,</span> <span class="n">v0_gas_bounds</span><span class="p">,</span> <span class="n">sigma_gas_max</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The span of observed wavelength a rest wavelength can be moved to.</span>
+
+<span class="sd">    A line is shifted by the fitted gas velocity and spread by the fitted</span>
+<span class="sd">    gas dispersion, and the fit may choose either anywhere inside its</span>
+<span class="sd">    bounds. So the widest reach is the bluest allowed velocity minus a few</span>
+<span class="sd">    dispersions, to the reddest allowed velocity plus a few. Three</span>
+<span class="sd">    dispersions is the same reach brainv1 uses when it restores masked</span>
+<span class="sd">    pixels around a line, and at three sigma a Gaussian still carries 1.1</span>
+<span class="sd">    per cent of its peak, which is a contribution a fit can act on.</span>
+
+<span class="sd">    Returns (lowest, highest) in Angstrom.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">v_lo</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">v0_gas_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="n">LINE_REACH_SIGMAS</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">sigma_gas_max</span><span class="p">)</span>
+    <span class="n">v_hi</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">v0_gas_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">LINE_REACH_SIGMAS</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">sigma_gas_max</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">rest_wavelength</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v_lo</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">),</span>
+            <span class="n">rest_wavelength</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v_hi</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="precompile_line_table">
+<a class="viewcode-back" href="../../api/generated/brainsp.emission_lines.html#brainsp.emission_lines.precompile_line_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">precompile_line_table</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">doublets</span><span class="p">,</span> <span class="n">line_groups</span><span class="p">,</span>
+                          <span class="n">v0_gas_bounds</span><span class="p">,</span> <span class="n">sigma_gas_max</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pre-compute a fixed-shape emission line table for JIT-compatible use.</span>
+
+<span class="sd">    Packs single lines (1 component) and doublets (2+ components) into</span>
+<span class="sd">    padded JAX arrays so _build_emission_jit can run without Python control flow.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : 1D array</span>
+<span class="sd">        Wavelength grid.</span>
+<span class="sd">    lines : dict</span>
+<span class="sd">        {name: rest_wavelength} single lines.</span>
+<span class="sd">    doublets : dict</span>
+<span class="sd">        {name: [(component_name, wl, ratio), ...]} tied doublets.</span>
+<span class="sd">    line_groups : dict</span>
+<span class="sd">        {name: group_label} kinematic group assignments.</span>
+<span class="sd">    v0_gas_bounds : (float, float)</span>
+<span class="sd">        The gas velocities in km/s the fit is allowed to try.</span>
+<span class="sd">    sigma_gas_max : float</span>
+<span class="sd">        The largest gas dispersion in km/s the fit is allowed to try.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    table : dict</span>
+<span class="sd">        A dictionary with these keys::</span>
+
+<span class="sd">            &#39;names&#39;           : list of str (Python, not traced)</span>
+<span class="sd">            &#39;rest_wavelengths&#39;: (n_lines, max_comp) JAX array, 0-padded</span>
+<span class="sd">            &#39;ratios&#39;          : (n_lines, max_comp) JAX array, 0-padded</span>
+<span class="sd">            &#39;n_components&#39;    : (n_lines,) int array</span>
+<span class="sd">            &#39;group_indices&#39;   : (n_lines,) int array, POSITIONS into the fitted</span>
+<span class="sd">                                per-group sigma and v0 arrays, not labels</span>
+<span class="sd">            &#39;group_labels&#39;    : list (Python, the labels themselves, for output</span>
+<span class="sd">                                bookkeeping)</span>
+
+<span class="sd">    The two group entries are deliberately different quantities and</span>
+<span class="sd">    deliberately differently named. &#39;group_indices&#39; is what the compiled</span>
+<span class="sd">    kernel gathers with, and it must be a position; &#39;group_labels&#39; is what</span>
+<span class="sd">    the user called the group, and it is what a summary should print. See</span>
+<span class="sd">    group_positions for the failure that followed from conflating them.</span>
+
+<span class="sd">    A line whose name is absent from line_groups raises. It used to default</span>
+<span class="sd">    to group 0, which is a guess: the caller that built lines and doublets</span>
+<span class="sd">    and the caller that built line_groups had gone out of step, and putting</span>
+<span class="sd">    the orphan in whichever group happens to sort first hides that.</span>
+
+<span class="sd">    WHICH LINES ARE ON THE GRID</span>
+
+<span class="sd">    get_line_catalog selects candidates with a fixed 500 A margin, which is</span>
+<span class="sd">    about coverage and knows nothing about the fit. A candidate that cannot</span>
+<span class="sd">    reach the grid at any velocity and dispersion inside the bounds used to</span>
+<span class="sd">    be kept anyway, and it entered the design matrix as a column of exactly</span>
+<span class="sd">    zero: the non-negative solve went rank-deficient, the weight came back</span>
+<span class="sd">    0, and the summary reported the line as a non-detection. It was never</span>
+<span class="sd">    fitted. Saying nothing about a line that was not measured, in the same</span>
+<span class="sd">    table as lines that were, is the failure this whole module exists to</span>
+<span class="sd">    stop, so such a line is dropped from the table and named in the log.</span>
+
+<span class="sd">    The bounds are arguments rather than a margin invented here, because</span>
+<span class="sd">    the reach that matters is the one the fit is actually permitted, and</span>
+<span class="sd">    only the caller knows it. See reachable_window.</span>
+
+<span class="sd">    PARTIAL DOUBLETS</span>
+
+<span class="sd">    A tied doublet with one component on the grid and one off is kept, as</span>
+<span class="sd">    the surviving component alone: its ratio is renormalised to 1.0 and the</span>
+<span class="sd">    entry takes that component&#39;s own catalogue name. The alternative --</span>
+<span class="sd">    keeping the doublet&#39;s name and the survivor&#39;s branching ratio -- puts a</span>
+<span class="sd">    column holding one line under a name that every consumer reads as the</span>
+<span class="sd">    sum of two, so the fitted flux of &quot;[O III]_Doublet&quot; would silently be</span>
+<span class="sd">    0.33 of one line rather than 1.33 of both. Renaming makes the entry say</span>
+<span class="sd">    what it is, and gas_diagnostics already resolves a doublet request to</span>
+<span class="sd">    the components of that species when the doublet name is absent.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">positions</span> <span class="o">=</span> <span class="n">group_positions</span><span class="p">(</span><span class="n">line_groups</span><span class="p">)</span>
+    <span class="n">wl_min</span><span class="p">,</span> <span class="n">wl_max</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">wavelength</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">wavelength</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reaches_grid</span><span class="p">(</span><span class="n">rest_w</span><span class="p">):</span>
+        <span class="n">lowest</span><span class="p">,</span> <span class="n">highest</span> <span class="o">=</span> <span class="n">reachable_window</span><span class="p">(</span>
+            <span class="n">rest_w</span><span class="p">,</span> <span class="n">v0_gas_bounds</span><span class="p">,</span> <span class="n">sigma_gas_max</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">highest</span> <span class="o">&gt;=</span> <span class="n">wl_min</span> <span class="ow">and</span> <span class="n">lowest</span> <span class="o">&lt;=</span> <span class="n">wl_max</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">resolve_group</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line_groups</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;emission line </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> has no kinematic group. Every line &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;and doublet handed to precompile_line_table must appear in &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;line_groups; assign_kinematic_groups fills one in for every &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;name it is given, so this means the catalogue and the group &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;assignment were built from different line lists.&quot;</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">line_groups</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;emission line </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> is in kinematic group </span><span class="si">{</span><span class="n">label</span><span class="si">!r}</span><span class="s2">, &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;which is not one of </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">label</span><span class="p">,</span> <span class="n">positions</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+
+    <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">off_grid</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rest_w</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">label</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">resolve_group</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">reaches_grid</span><span class="p">(</span><span class="n">rest_w</span><span class="p">):</span>
+            <span class="n">off_grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">rest_w</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A)&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">rest_w</span><span class="p">],</span>
+            <span class="s1">&#39;ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">],</span>
+            <span class="s1">&#39;group_label&#39;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
+            <span class="s1">&#39;group_index&#39;</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span>
+        <span class="p">})</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">components</span> <span class="ow">in</span> <span class="n">doublets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">label</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">resolve_group</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">kept</span> <span class="o">=</span> <span class="p">[(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">components</span> <span class="k">if</span> <span class="n">reaches_grid</span><span class="p">(</span><span class="n">w</span><span class="p">)]</span>
+        <span class="n">lost</span> <span class="o">=</span> <span class="p">[(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">components</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">reaches_grid</span><span class="p">(</span><span class="n">w</span><span class="p">)]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">kept</span><span class="p">:</span>
+            <span class="n">off_grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">components</span><span class="p">)</span><span class="si">}</span><span class="s2"> A)&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">entry_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">kept</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">lost</span><span class="p">:</span>
+            <span class="n">ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ratios</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">kept</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">entry_name</span> <span class="o">=</span> <span class="n">kept</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> loses </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">lost</span><span class="p">)</span><span class="si">}</span><span class="s2"> to the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;edge of the </span><span class="si">{</span><span class="n">wl_min</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">wl_max</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A grid; the remaining &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">kept</span><span class="p">)</span><span class="si">}</span><span class="s2"> is fitted alone, at &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;ratio 1.0, and reported as </span><span class="si">{</span><span class="n">entry_name</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">entry_name</span><span class="p">,</span>
+            <span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">kept</span><span class="p">],</span>
+            <span class="s1">&#39;ratios&#39;</span><span class="p">:</span> <span class="n">ratios</span><span class="p">,</span>
+            <span class="s1">&#39;group_label&#39;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
+            <span class="s1">&#39;group_index&#39;</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span>
+        <span class="p">})</span>
+
+    <span class="k">if</span> <span class="n">off_grid</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">off_grid</span><span class="p">)</span><span class="si">}</span><span class="s2"> emission line(s) cannot reach the &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">wl_min</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">wl_max</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A grid at any velocity or dispersion &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;the fit is allowed, and are NOT fitted or reported: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">off_grid</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">entries</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;names&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+            <span class="s1">&#39;ratios&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+            <span class="s1">&#39;n_components&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
+            <span class="s1">&#39;group_indices&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
+            <span class="s1">&#39;group_labels&#39;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="p">}</span>
+
+    <span class="n">max_comp</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">)</span>
+
+    <span class="n">names</span><span class="p">,</span> <span class="n">rest_wl</span><span class="p">,</span> <span class="n">ratio_list</span><span class="p">,</span> <span class="n">n_comp</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="n">indices</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+        <span class="n">nc</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">])</span>
+        <span class="n">rw</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_comp</span> <span class="o">-</span> <span class="n">nc</span><span class="p">)</span>
+        <span class="n">ra</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;ratios&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_comp</span> <span class="o">-</span> <span class="n">nc</span><span class="p">)</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+        <span class="n">rest_wl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rw</span><span class="p">)</span>
+        <span class="n">ratio_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
+        <span class="n">n_comp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nc</span><span class="p">)</span>
+        <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;group_index&#39;</span><span class="p">])</span>
+        <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;group_label&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;names&#39;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span>
+        <span class="s1">&#39;rest_wavelengths&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rest_wl</span><span class="p">),</span>
+        <span class="s1">&#39;ratios&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ratio_list</span><span class="p">),</span>
+        <span class="s1">&#39;n_components&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_comp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
+        <span class="s1">&#39;group_indices&#39;</span><span class="p">:</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
+        <span class="s1">&#39;group_labels&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span>
+    <span class="p">}</span></div>
+
+
+
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;max_comp&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_build_emission_jit</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">velscale</span><span class="p">,</span> <span class="n">sigma_gas_arr</span><span class="p">,</span> <span class="n">v0_gas_arr</span><span class="p">,</span>
+                        <span class="n">rest_wavelengths</span><span class="p">,</span> <span class="n">ratios</span><span class="p">,</span> <span class="n">n_components</span><span class="p">,</span>
+                        <span class="n">group_indices</span><span class="p">,</span> <span class="n">max_comp</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Build the emission line design matrix, pixel-integrated, JIT-compiled.</span>
+
+<span class="sd">    THE CONSTRUCTION</span>
+
+<span class="sd">    Each component is built in the Fourier domain, as the analytic transform</span>
+<span class="sd">    of a Gaussian multiplied by the analytic transform of the one-pixel top</span>
+<span class="sd">    hat the detector integrates over, and transformed back:</span>
+
+<span class="sd">        F_k     = exp(-0.5 (w_k x_sigma)^2 - i w_k x_0) sinc(w_k / 2 pi)</span>
+<span class="sd">        profile = irfft(F_k, n = N_pix)</span>
+
+<span class="sd">    with w_k = 2 pi k / N_pix the angular frequency in radians per pixel,</span>
+<span class="sd">    x_0 = (ln lambda_obs - ln lambda[0]) / dx the line centre in fractional</span>
+<span class="sd">    pixels, x_sigma = sigma_total / velscale the width in pixels, and</span>
+<span class="sd">    dx = velscale / c the log-lambda step. This is Westfall et al. 2019</span>
+<span class="sd">    (AJ 158, 231) Section 9.1.2, the template equation. sinc(w / 2 pi) is</span>
+<span class="sd">    sin(w/2) / (w/2), which is exactly the transform of a unit-area one-pixel</span>
+<span class="sd">    top hat, so the pixel integration is analytic and not a quadrature.</span>
+
+<span class="sd">    The sign of the phase is -i because jnp.fft.rfft carries exp(-i w n) in</span>
+<span class="sd">    its forward kernel. The continuous transform is often written with +i;</span>
+<span class="sd">    copying that sign here mirrors every line about the first pixel.</span>
+
+<span class="sd">    The point of this form is that it is exact at any width, including</span>
+<span class="sd">    exactly zero: exp(0) = 1, nothing is divided by sigma, and there is no</span>
+<span class="sd">    guard clamping sigma away from zero. The predecessor sampled a bare</span>
+<span class="sd">    analytic Gaussian at pixel centres and divided by sqrt(2 pi) sigma_lambda,</span>
+<span class="sd">    which loses flux as soon as the line is narrower than a pixel -- at</span>
+<span class="sd">    sigma_gas = 10 km/s on a 58.39 km/s grid it retained 35.7 per cent of the</span>
+<span class="sd">    line&#39;s flux, and the missing 64 per cent is what forced the fitted gas</span>
+<span class="sd">    dispersion to be floored at one pixel.</span>
+
+<span class="sd">    Below about half a pixel the profile shows Fourier ringing, with negative</span>
+<span class="sd">    side lobes reaching about -12 per cent of the peak at sigma = 0 for an</span>
+<span class="sd">    unfavourable sub-pixel phase; Westfall&#39;s usage notes call this out. The</span>
+<span class="sd">    ringing is 2.2e-4 of the peak at one pixel of width and 1.9e-5 at 70 km/s,</span>
+<span class="sd">    so it is irrelevant at any width an instrument with a resolved</span>
+<span class="sd">    line-spread function can produce, and matters only in the regime that</span>
+<span class="sd">    removing the floor opens up. Negative entries in a design-matrix column</span>
+<span class="sd">    are not a problem for the non-negative solve, which constrains the</span>
+<span class="sd">    weights and not the columns.</span>
+
+<span class="sd">    THE NORMALISATION, AND THEREFORE WHAT THE FITTED WEIGHT MEANS</span>
+
+<span class="sd">    irfft of the expression above returns a profile that sums to exactly 1.0</span>
+<span class="sd">    over pixels. That is not the normalisation BRAIN&#39;s fitted weights are</span>
+<span class="sd">    written against. Every consumer of a gas weight -- the summary&#39;s flux</span>
+<span class="sd">    table, the Balmer decrement, the BPT ratios, the Case B penalty rows --</span>
+<span class="sd">    reads it as the line&#39;s total flux in the units of the input spectrum</span>
+<span class="sd">    times Angstrom. So the profile is divided by lambda_obs * dx, the width</span>
+<span class="sd">    of one pixel in Angstrom at the line, which converts a per-pixel</span>
+<span class="sd">    normalisation into a flux density per Angstrom:</span>
+
+<span class="sd">        sum_i column_i * dlambda_i = 1</span>
+
+<span class="sd">    exactly as the predecessor&#39;s 1 / (sqrt(2 pi) sigma_lambda) intended. The</span>
+<span class="sd">    factor is c / (lambda_obs velscale), about 88 per Angstrom at 5007 A on</span>
+<span class="sd">    this grid, and it is wavelength-dependent, so it does not cancel between</span>
+<span class="sd">    lines: omitting it would leave chi2 almost unmoved, because the</span>
+<span class="sd">    non-negative solve absorbs a per-column constant, and silently rescale</span>
+<span class="sd">    every reported line flux by a different factor per line.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lam : (N_pix,)</span>
+<span class="sd">        The log-lambda grid the fit runs on, in Angstrom. Uniform in</span>
+<span class="sd">        ln(lambda) by construction; the pixel index x_0 is only meaningful</span>
+<span class="sd">        on such a grid.</span>
+<span class="sd">    velscale : float</span>
+<span class="sd">        The grid&#39;s step, c * dln(lambda), in km/s per pixel.</span>
+<span class="sd">    sigma_gas_arr : (n_groups,) dispersion per kinematic group, km/s</span>
+<span class="sd">    v0_gas_arr : (n_groups,) velocity per kinematic group, km/s</span>
+<span class="sd">    rest_wavelengths : (n_lines, max_comp) — 0-padded</span>
+<span class="sd">    ratios : (n_lines, max_comp) — 0-padded</span>
+<span class="sd">    n_components : (n_lines,) — unused at runtime (padding handles it)</span>
+<span class="sd">    group_indices : (n_lines,) — POSITION of each line&#39;s kinematic group in</span>
+<span class="sd">        sigma_gas_arr and v0_gas_arr. Not the group&#39;s label. An out-of-range</span>
+<span class="sd">        gather is clamped by JAX, not raised, so a label used here in place</span>
+<span class="sd">        of a position gives every affected line another group&#39;s kinematics</span>
+<span class="sd">        and no error at all; precompile_line_table is where the conversion</span>
+<span class="sd">        happens, and group_positions says why.</span>
+<span class="sd">    max_comp : int (static)</span>
+<span class="sd">        Carried for the caller&#39;s bookkeeping; the padded columns are killed</span>
+<span class="sd">        by their zero ratio rather than by a loop bound.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    M_gas : (N_pix, n_lines)</span>
+
+<span class="sd">    A padded component has rest wavelength 0, and ln(0) is not a number, so</span>
+<span class="sd">    the padding is given the grid&#39;s first wavelength before the logarithm is</span>
+<span class="sd">    taken and killed afterwards by its zero ratio. Multiplying a NaN by zero</span>
+<span class="sd">    does not kill it.</span>
+
+<span class="sd">    The transform length is N_pix itself rather than a padded power of two.</span>
+<span class="sd">    Padding reproduces the profile a power-of-two transform gives to 2e-16</span>
+<span class="sd">    but leaves the sum at 1.0000113 instead of 1; at N_pix the sum is exactly</span>
+<span class="sd">    1.0 and the profile differs from the padded one by at most 8.5e-5 at</span>
+<span class="sd">    sigma = 10 km/s and 1.6e-15 at 150 km/s. Flux conservation and a static</span>
+<span class="sd">    shape are worth more here than agreement with any particular padding.</span>
+
+<span class="sd">    With no lines n_lines is a shape and therefore static, so the empty case</span>
+<span class="sd">    is a branch taken at trace time. fast_engine never reaches here with no</span>
+<span class="sd">    lines because it guards on S.fit_lines; the cube path has no such wrapper</span>
+<span class="sd">    and asks for the empty matrix directly.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_pix</span> <span class="o">=</span> <span class="n">lam</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n_lines</span> <span class="o">=</span> <span class="n">rest_wavelengths</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n_lines</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_pix</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">velscale</span> <span class="o">/</span> <span class="n">C_KMS</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_pix</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_pix</span>
+    <span class="n">pixel_top_hat</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sinc</span><span class="p">(</span><span class="n">omega</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">jnp</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+
+    <span class="n">sigma_gas</span> <span class="o">=</span> <span class="n">sigma_gas_arr</span><span class="p">[</span><span class="n">group_indices</span><span class="p">][:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="n">v0_gas</span> <span class="o">=</span> <span class="n">v0_gas_arr</span><span class="p">[</span><span class="n">group_indices</span><span class="p">][:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+    <span class="n">present</span> <span class="o">=</span> <span class="n">rest_wavelengths</span> <span class="o">&gt;</span> <span class="mf">0.0</span>
+    <span class="n">obs_w</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">present</span><span class="p">,</span>
+                      <span class="n">rest_wavelengths</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">v0_gas</span> <span class="o">/</span> <span class="n">C_KMS</span><span class="p">),</span>
+                      <span class="n">lam</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">sigma_total</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">sigma_gas</span><span class="p">,</span> <span class="n">obs_w</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="n">x_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">obs_w</span><span class="p">)</span> <span class="o">-</span> <span class="n">jnp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="n">dx</span>
+    <span class="n">x_sigma</span> <span class="o">=</span> <span class="n">sigma_total</span> <span class="o">/</span> <span class="n">velscale</span>
+
+    <span class="n">transform</span> <span class="o">=</span> <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">x_sigma</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+                         <span class="o">-</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">x_0</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+                 <span class="o">*</span> <span class="n">pixel_top_hat</span><span class="p">)</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">transform</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n_pix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">density</span> <span class="o">=</span> <span class="n">profile</span> <span class="o">/</span> <span class="p">(</span><span class="n">obs_w</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="n">M_gas_T</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ratios</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">density</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">M_gas_T</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

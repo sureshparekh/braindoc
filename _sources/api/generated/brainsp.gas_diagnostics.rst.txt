@@ -1,0 +1,25 @@
+﻿brainsp.gas\_diagnostics
+========================
+
+.. automodule:: brainsp.gas_diagnostics
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      BPT_FLAG
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      classify_bpt
+      electron_density
+      electron_temperature
+      gas_dispersion_text
+      gas_kinematics_report
+      gas_velocity_text
+      measure_conditions
+      nebular_constrained
+   

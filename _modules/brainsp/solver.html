@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.solver &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/solver';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.solver</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.solver</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">NewBrain Solver Module — JAX Backend</span>
+<span class="sd">Bounded Variable Least Squares (BVLS) with Tikhonov regularization.</span>
+<span class="sd">Handles the linear sub-problem: given fixed nonlinear params, solve for weights.</span>
+
+<span class="sd">Uses a JIT-compiled FISTA (Fast Iterative Shrinkage-Thresholding) NNLS solver</span>
+<span class="sd">for GPU-accelerated non-negative least squares.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
+
+
+<div class="viewcode-block" id="build_regularization_matrix">
+<a class="viewcode-back" href="../../api/generated/brainsp.solver.html#brainsp.solver.build_regularization_matrix">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_regularization_matrix</span><span class="p">(</span><span class="n">n_stellar</span><span class="p">,</span> <span class="n">reg_strength</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Build a Tikhonov regularization matrix (difference operator).</span>
+
+<span class="sd">    Returns D of shape (n_stellar - order, n_stellar), or None.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">reg_strength</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n_stellar</span> <span class="o">&lt;=</span> <span class="n">order</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_stellar</span> <span class="o">-</span> <span class="n">order</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_stellar</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_stellar</span><span class="p">))</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">rows</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="o">-</span><span class="n">reg_strength</span><span class="p">)</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">rows</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">reg_strength</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_stellar</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_stellar</span><span class="p">))</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">rows</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">reg_strength</span><span class="p">)</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">rows</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">reg_strength</span><span class="p">)</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">rows</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">reg_strength</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported regularization order: </span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">D</span></div>
+
+
+
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;max_iter&#39;</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_fista_nnls</span><span class="p">(</span><span class="n">ATA</span><span class="p">,</span> <span class="n">ATb</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    FISTA-accelerated projected gradient descent for NNLS.</span>
+
+<span class="sd">    Solves: min_{x &gt;= 0} 0.5 * x^T ATA x - ATb^T x</span>
+<span class="sd">    (equivalent to min ||Ax - b||^2 when ATA = A^T A, ATb = A^T b)</span>
+
+<span class="sd">    JIT-compiled with early convergence termination via jax.lax.while_loop.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ATA : (n, n)  Gram matrix A^T A (precomputed by caller).</span>
+<span class="sd">    ATb : (n,)    A^T b (precomputed by caller).</span>
+<span class="sd">    max_iter : int  Static — controls compilation shape only.</span>
+<span class="sd">    tol : float     Relative convergence tolerance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    x : (n,) non-negative solution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">ATb</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="n">L</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">ATA</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="s1">&#39;fro&#39;</span><span class="p">)</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">)</span>
+
+    <span class="n">init</span> <span class="o">=</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cond</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">converged</span> <span class="o">=</span> <span class="n">state</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">~</span><span class="n">converged</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">body</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">state</span>
+
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">ATA</span> <span class="o">@</span> <span class="n">y</span> <span class="o">-</span> <span class="n">ATb</span>
+        <span class="n">x_new</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">grad</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="n">t_new</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span><span class="p">))</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="n">t_new</span>
+        <span class="n">y_new</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x_new</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_new</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x_new</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">xnorm</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x_new</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-30</span>
+        <span class="n">converged</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span> <span class="o">/</span> <span class="n">xnorm</span> <span class="o">&lt;</span> <span class="n">tol</span> <span class="o">*</span> <span class="n">tol</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">x_new</span><span class="p">,</span> <span class="n">y_new</span><span class="p">,</span> <span class="n">t_new</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">converged</span><span class="p">)</span>
+
+    <span class="n">x</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">lax</span><span class="o">.</span><span class="n">while_loop</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">init</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+
+<span class="nd">@jax</span><span class="o">.</span><span class="n">jit</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_solve_core</span><span class="p">(</span><span class="n">M_full</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">inv_sigma</span><span class="p">,</span> <span class="n">D_full</span><span class="p">,</span> <span class="n">extra_rows</span><span class="p">,</span> <span class="n">extra_rhs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    JIT-compiled core: assemble augmented system, solve NNLS, compute chi2.</span>
+
+<span class="sd">    All arguments are concrete JAX arrays (no None — use dummy + flag instead).</span>
+<span class="sd">    D_full and extra_rows may be (0, n) when unused; vstack is a no-op</span>
+<span class="sd">    for 0-row arrays, so no conditional branching is needed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">inv_sigma</span><span class="p">[:,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">M_full</span> <span class="o">*</span> <span class="n">W</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">flux</span> <span class="o">*</span> <span class="n">inv_sigma</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">D_full</span><span class="p">,</span> <span class="n">extra_rows</span><span class="p">])</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">b</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">D_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">extra_rhs</span><span class="p">])</span>
+
+    <span class="n">ATA</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A</span>
+    <span class="n">ATb</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">b</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">_fista_nnls</span><span class="p">(</span><span class="n">ATA</span><span class="p">,</span> <span class="n">ATb</span><span class="p">)</span>
+
+    <span class="n">fitted</span> <span class="o">=</span> <span class="n">M_full</span> <span class="o">@</span> <span class="n">weights</span>
+    <span class="n">residuals</span> <span class="o">=</span> <span class="p">(</span><span class="n">flux</span> <span class="o">-</span> <span class="n">fitted</span><span class="p">)</span> <span class="o">*</span> <span class="n">inv_sigma</span>
+    <span class="n">chi2</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">residuals</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">weights</span><span class="p">,</span> <span class="n">fitted</span><span class="p">,</span> <span class="n">chi2</span>
+
+
+<div class="viewcode-block" id="solve_nnls_regularized">
+<a class="viewcode-back" href="../../api/generated/brainsp.solver.html#brainsp.solver.solve_nnls_regularized">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">solve_nnls_regularized</span><span class="p">(</span><span class="n">M_stellar</span><span class="p">,</span> <span class="n">M_gas</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">inv_sigma</span><span class="p">,</span>
+                           <span class="n">reg_strength</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">reg_order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                           <span class="n">extra_rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_rhs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NNLS with Tikhonov regularization and optional SC penalty rows.</span>
+
+<span class="sd">    This is a thin wrapper that prepares the inputs for the JIT-compiled</span>
+<span class="sd">    _solve_core.  The JIT boundary is inside _solve_core so that this</span>
+<span class="sd">    function can handle Python-level None checks and shape logic.</span>
+
+<span class="sd">    Parameters / Returns — same as before.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">M_stellar</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_stellar</span><span class="p">)</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">flux</span><span class="p">)</span>
+    <span class="n">inv_sigma</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inv_sigma</span><span class="p">)</span>
+
+    <span class="n">n_star</span> <span class="o">=</span> <span class="n">M_stellar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">n_gas</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">M_gas</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">M_gas</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_gas</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">M_gas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n_gas</span> <span class="o">=</span> <span class="n">M_gas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n_gas</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">M_full</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">M_stellar</span><span class="p">,</span> <span class="n">M_gas</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">M_full</span> <span class="o">=</span> <span class="n">M_stellar</span>
+
+    <span class="n">n_total</span> <span class="o">=</span> <span class="n">M_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">D</span> <span class="o">=</span> <span class="n">build_regularization_matrix</span><span class="p">(</span><span class="n">n_star</span><span class="p">,</span> <span class="n">reg_strength</span><span class="p">,</span> <span class="n">reg_order</span><span class="p">)</span>
+    <span class="n">has_D</span> <span class="o">=</span> <span class="n">D</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">has_D</span><span class="p">:</span>
+        <span class="n">D_full</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n_total</span><span class="p">))</span>
+        <span class="n">D_full</span> <span class="o">=</span> <span class="n">D_full</span><span class="o">.</span><span class="n">at</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_star</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">D_full</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_total</span><span class="p">))</span>
+
+    <span class="n">has_extra</span> <span class="o">=</span> <span class="n">extra_rows</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extra_rhs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">has_extra</span><span class="p">:</span>
+        <span class="n">extra_rows</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">extra_rows</span><span class="p">)</span>
+        <span class="n">extra_rhs</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">extra_rhs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">extra_rows</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_total</span><span class="p">))</span>
+        <span class="n">extra_rhs</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">weights</span><span class="p">,</span> <span class="n">fitted</span><span class="p">,</span> <span class="n">chi2</span> <span class="o">=</span> <span class="n">_solve_core</span><span class="p">(</span>
+        <span class="n">M_full</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">inv_sigma</span><span class="p">,</span> <span class="n">D_full</span><span class="p">,</span> <span class="n">extra_rows</span><span class="p">,</span> <span class="n">extra_rhs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">weights</span><span class="p">,</span> <span class="n">fitted</span><span class="p">,</span> <span class="n">chi2</span></div>
+
+
+
+<div class="viewcode-block" id="solve_active_set">
+<a class="viewcode-back" href="../../api/generated/brainsp.solver.html#brainsp.solver.solve_active_set">[docs]</a>
+<span class="nd">@partial</span><span class="p">(</span><span class="n">jax</span><span class="o">.</span><span class="n">jit</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;max_outer&#39;</span><span class="p">,</span><span class="s1">&#39;max_inner&#39;</span><span class="p">,</span><span class="s1">&#39;simplex&#39;</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">solve_active_set</span><span class="p">(</span><span class="n">ATA</span><span class="p">,</span> <span class="n">ATb</span><span class="p">,</span> <span class="n">cvec</span><span class="p">,</span> <span class="n">P_init</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_outer</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">max_inner</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+                      <span class="n">tol</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">,</span> <span class="n">rank_tol</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">simplex</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Active-set least squares with x &gt;= 0 and optionally  c.x = 1.</span>
+
+<span class="sd">    KKT on the passive set P:</span>
+<span class="sd">        [ A_P^T A_P   c_P ] [ x_P ]   [ A_P^T b ]</span>
+<span class="sd">        [   c_P^T      0  ] [ mu  ] = [    1    ]</span>
+
+<span class="sd">    The multiplier matters for more than the solve: the rule for admitting a</span>
+<span class="sd">    new column is  w_j &gt; mu, not  w_j &gt; 0. Using the unconstrained test makes</span>
+<span class="sd">    the passive set collapse to a single column and the fit is ruined.</span>
+
+<span class="sd">    `P_init` warm-starts the passive set. A set carried over from a</span>
+<span class="sd">    neighbouring evaluation is only a guess: the KKT solve on it can return</span>
+<span class="sd">    negative components, and such a set is not a legal starting state. It is</span>
+<span class="sd">    therefore purged first — columns whose KKT component is non-positive are</span>
+<span class="sd">    dropped and the system re-solved, until every passive component is</span>
+<span class="sd">    strictly positive. That restores the invariant the outer admission loop</span>
+<span class="sd">    depends on: x is the exact least-squares solution on its own support and</span>
+<span class="sd">    positive there. Only then is warm starting exact — it changes the path and</span>
+<span class="sd">    not the answer, measured max|x_warm - x_cold| = 0 exactly over 80 random</span>
+<span class="sd">    feasible P_init, with and without the simplex row.</span>
+
+<span class="sd">    Without the purge the clipped vector is not a KKT point at all, no</span>
+<span class="sd">    improving column exists, and the outer loop returns it immediately:</span>
+<span class="sd">    passive max|gradient| 3.6e+04 against 1.5e-11 for the cold solve.</span>
+
+<span class="sd">    The warm start earns its keep — perturbed photopop-mode solves drop from 20</span>
+<span class="sd">    outer iterations to 8 — but it earns nothing unless the purge runs.</span>
+
+<span class="sd">    Note the contrast with warm-starting an *iterative* solver, which changes</span>
+<span class="sd">    the map being evaluated and silently breaks the Jacobian. Warm-starting is</span>
+<span class="sd">    safe here only because this solver reaches the same vertex wherever it</span>
+<span class="sd">    starts.</span>
+
+<span class="sd">    A column of the design matrix that is identically — or numerically —</span>
+<span class="sd">    zero over the fitted pixels carries no information, and until the</span>
+<span class="sd">    `usable` mask below it was handled only by accident. Three accidents,</span>
+<span class="sd">    in fact: the off-passive diagonal `scl*eye` kept H invertible, the</span>
+<span class="sd">    admission test happened to be a strict inequality against a weight of</span>
+<span class="sd">    exactly 0, and under the simplex the gas block&#39;s `cvec` entry is 0 so</span>
+<span class="sd">    the multiplier never multiplied it. Each of the three breaks on its own</span>
+<span class="sd">    input, and all three break silently:</span>
+
+<span class="sd">    - Cold start. `argmax(ATb)` lands on the dead column whenever every</span>
+<span class="sd">      live column has ATb_j &lt; 0, because the dead column&#39;s ATb_j is exactly</span>
+<span class="sd">      0 and therefore the largest. The first KKT system is then singular</span>
+<span class="sd">      and `jnp.linalg.solve` returns NaN without raising — NumPy raises</span>
+<span class="sd">      LinAlgError on the same matrix, JAX does not.</span>
+<span class="sd">    - Warm start. A `P_init` containing the dead column cannot be purged:</span>
+<span class="sd">      the purge drops columns with `sp &lt;= 0`, `NaN &lt;= 0` is False, so the</span>
+<span class="sd">      purge declares the set legal on its first pass and the NaN survives</span>
+<span class="sd">      into the answer with an empty passive set.</span>
+<span class="sd">    - Simplex. In the constrained block `cvec_j` is 1, the bordered row</span>
+<span class="sd">      rescues K from singularity, and the solve returns finite garbage: on</span>
+<span class="sd">      a 5-column test system with one dead column, scaling ATb by 0.1 puts</span>
+<span class="sd">      50% of the light on the dead column, by 0.01 puts 95% on it, and mu</span>
+<span class="sd">      is pinned to ~0, which degrades the admission rule to the</span>
+<span class="sd">      unconstrained `w_j &gt; 0` that ruins the fit as described above. Which</span>
+<span class="sd">      scalings break is not predictable from the matrix.</span>
+
+<span class="sd">    `usable` closes all three. A column is usable when its diagonal of ATA</span>
+<span class="sd">    — the squared norm of that column, since ATA = A^T A — is finite and</span>
+<span class="sd">    above `rank_tol` times the mean diagonal. Both sides of that test are</span>
+<span class="sd">    quadratic in A, so unlike the admission test below it is invariant</span>
+<span class="sd">    under rescaling the design matrix. An unusable column is excluded from</span>
+<span class="sd">    the cold start, from any `P_init`, and from admission, so it can never</span>
+<span class="sd">    enter the passive set, can never make the KKT system singular, and</span>
+<span class="sd">    comes back with weight exactly 0. On the reference fit the smallest</span>
+<span class="sd">    diagonal is 0.657 of the mean and `rank_tol` is 1e-12, so nothing is</span>
+<span class="sd">    anywhere near the test and the answer is bit-for-bit what it was. A</span>
+<span class="sd">    narrow emission-line column is the weakest thing the design matrix</span>
+<span class="sd">    legitimately holds, and in an espop fit of the same spectrum the</span>
+<span class="sd">    weakest of the 14 of them is 4.8e-06 of the mean — still six orders of</span>
+<span class="sd">    magnitude clear of the test.</span>
+
+<span class="sd">    Weight 0 is the right answer for a dead column in the unconstrained</span>
+<span class="sd">    problem — it contributes nothing, so it earns nothing — and no warning</span>
+<span class="sd">    is raised for it there. Under the simplex it is not: the weights are</span>
+<span class="sd">    then fractions of a whole, and a dead column inside the constrained</span>
+<span class="sd">    block means the whole itself is not what the caller thinks it is. A</span>
+<span class="sd">    zero-filled stellar template is the case on record, and every fraction</span>
+<span class="sd">    reported would be a fraction of a library that is partly not there.</span>
+<span class="sd">    So the solver refuses instead of solving around it: if `simplex` and</span>
+<span class="sd">    any unusable column carries a non-zero `cvec`, x comes back all-NaN.</span>
+<span class="sd">    It also refuses when any diagonal is non-finite (in either mode, which</span>
+<span class="sd">    is what already happened, now by decision rather than by propagation),</span>
+<span class="sd">    and when no column at all is usable. NaN reaches chi2 and the summary;</span>
+<span class="sd">    it is not a plausible fit and cannot be mistaken for one. Fixing it</span>
+<span class="sd">    means fixing the design matrix, which is where the bug is.</span>
+
+<span class="sd">    The tolerances are scale-dependent and are left that way deliberately,</span>
+<span class="sd">    since changing them would move the reference fit:</span>
+
+<span class="sd">    - Admission, `wf[j] &gt; tol*scl`. The left side w = ATb - ATA x is</span>
+<span class="sd">      linear in b; the right side tol*trace(ATA)/n is quadratic in A. The</span>
+<span class="sd">      test is therefore not invariant under rescaling b alone. Measured on</span>
+<span class="sd">      the reference system: scaling ATb by 1e-2 and 1e-4 changes the answer</span>
+<span class="sd">      by 8.8e-12 and 6.6e-13 relative, 1e-6 returns 3 non-zero populations</span>
+<span class="sd">      instead of 4 with weights wrong by 36%, and 1e-8 returns 2, wrong by</span>
+<span class="sd">      127%. The symptom of crossing that line is fewer and older</span>
+<span class="sd">      components — the exact signature of an unconverged iterative solver,</span>
+<span class="sd">      arriving from an exact one. BRAIN normalises the flux at</span>
+<span class="sd">      `norm_wavelength`, which leaves four to five orders of headroom, so</span>
+<span class="sd">      nothing in the pipeline is near it today. Anything that feeds this</span>
+<span class="sd">      solver an un-normalised system is.</span>
+<span class="sd">    - The drop test `xi &gt; tol*1e-3` is a bare absolute 1e-13 with no scale</span>
+<span class="sd">      reference at all.</span>
+
+<span class="sd">    Returns (x, P) so the caller can pass P back in.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">ATb</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="n">eye</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">scl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">ATA</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">)</span>
+
+    <span class="n">diagonal</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">ATA</span><span class="p">)</span>
+    <span class="n">usable</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">diagonal</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">diagonal</span> <span class="o">&gt;</span> <span class="n">rank_tol</span><span class="o">*</span><span class="n">scl</span><span class="p">)</span>
+    <span class="n">dead</span> <span class="o">=</span> <span class="o">~</span><span class="n">usable</span>
+    <span class="n">refuse</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">jnp</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">diagonal</span><span class="p">)))</span> <span class="o">|</span> <span class="p">(</span><span class="o">~</span><span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">usable</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">simplex</span><span class="p">:</span>
+        <span class="n">refuse</span> <span class="o">=</span> <span class="n">refuse</span> <span class="o">|</span> <span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">dead</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cvec</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">kkt</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">P</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">P</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">ATA</span><span class="p">,</span> <span class="n">scl</span><span class="o">*</span><span class="n">eye</span><span class="p">)</span>
+        <span class="n">rhs</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">ATb</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">simplex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">rhs</span><span class="p">),</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(())</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">cvec</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+            <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">H</span><span class="p">,</span> <span class="n">c</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">c</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)])[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-12</span><span class="o">*</span><span class="n">scl</span><span class="p">)</span>
+        <span class="n">sol</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">rhs</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">)]))</span>
+        <span class="k">return</span> <span class="n">sol</span><span class="p">[:</span><span class="n">n</span><span class="p">],</span> <span class="n">sol</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">outer</span><span class="p">(</span><span class="n">st</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">st</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">ATb</span> <span class="o">-</span> <span class="n">ATA</span> <span class="o">@</span> <span class="n">x</span>
+        <span class="n">thr</span> <span class="o">=</span> <span class="n">mu</span><span class="o">*</span><span class="n">cvec</span> <span class="k">if</span> <span class="n">simplex</span> <span class="k">else</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">wf</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">P</span> <span class="o">|</span> <span class="n">dead</span><span class="p">,</span> <span class="o">-</span><span class="n">jnp</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">w</span> <span class="o">-</span> <span class="n">thr</span><span class="p">)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span>
+        <span class="n">can</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">P</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wf</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="o">*</span><span class="n">scl</span><span class="p">)</span>
+        <span class="n">P_new</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">can</span><span class="p">,</span> <span class="n">P</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="n">P</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">inner</span><span class="p">(</span><span class="n">ist</span><span class="p">):</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">PP</span><span class="p">,</span> <span class="n">mm</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ist</span>
+            <span class="n">s_full</span><span class="p">,</span> <span class="n">m_new</span> <span class="o">=</span> <span class="n">kkt</span><span class="p">(</span><span class="n">PP</span><span class="p">)</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">PP</span><span class="p">,</span> <span class="n">s_full</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">neg</span> <span class="o">=</span> <span class="n">PP</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">s</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">);</span> <span class="n">ok</span> <span class="o">=</span> <span class="o">~</span><span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">neg</span><span class="p">)</span>
+            <span class="n">ratio</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">neg</span><span class="p">,</span> <span class="n">xx</span><span class="o">/</span><span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">xx</span> <span class="o">-</span> <span class="n">s</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">),</span> <span class="n">jnp</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ratio</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">xi</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">alpha</span><span class="o">*</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">xx</span><span class="p">)),</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">PPn</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ok</span><span class="p">,</span> <span class="n">PP</span><span class="p">,</span> <span class="n">PP</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">xi</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">))</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">PPn</span><span class="p">,</span> <span class="n">m_new</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="p">)</span>
+
+        <span class="n">_</span><span class="p">,</span> <span class="n">xn</span><span class="p">,</span> <span class="n">Po</span><span class="p">,</span> <span class="n">mo</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">lax</span><span class="o">.</span><span class="n">while_loop</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="p">(</span><span class="o">~</span><span class="n">t</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">max_inner</span><span class="p">),</span> <span class="n">inner</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">P_new</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="o">~</span><span class="n">can</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">done</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">xn</span><span class="p">),</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">done</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Po</span><span class="p">),</span>
+                <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">done</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">mo</span><span class="p">),</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">done</span><span class="p">)</span>
+
+    <span class="n">cold</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">[</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">usable</span><span class="p">,</span> <span class="n">ATb</span><span class="p">,</span> <span class="o">-</span><span class="n">jnp</span><span class="o">.</span><span class="n">inf</span><span class="p">))]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">P_init</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">P0</span> <span class="o">=</span> <span class="n">cold</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">P_init</span> <span class="o">=</span> <span class="n">P_init</span> <span class="o">&amp;</span> <span class="n">usable</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">purge</span><span class="p">(</span><span class="n">st</span><span class="p">):</span>
+            <span class="n">P</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">st</span>
+            <span class="n">sp</span><span class="p">,</span> <span class="n">_m</span> <span class="o">=</span> <span class="n">kkt</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+            <span class="n">sp</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">sp</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">ok</span> <span class="o">=</span> <span class="o">~</span><span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">P</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sp</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">))</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ok</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">P</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sp</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)),</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ok</span><span class="p">)</span>
+
+        <span class="n">P0</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">lax</span><span class="o">.</span><span class="n">while_loop</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">st</span><span class="p">:</span> <span class="p">(</span><span class="o">~</span><span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">purge</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">P_init</span><span class="p">),</span> <span class="n">P_init</span><span class="p">,</span> <span class="n">cold</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">P0</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">P0</span><span class="p">),</span> <span class="n">P0</span><span class="p">,</span> <span class="n">cold</span><span class="p">)</span>
+
+    <span class="n">s0</span><span class="p">,</span> <span class="n">m0</span> <span class="o">=</span> <span class="n">kkt</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">P0</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">lax</span><span class="o">.</span><span class="n">while_loop</span><span class="p">(</span><span class="k">lambda</span> <span class="n">st</span><span class="p">:</span> <span class="p">(</span><span class="o">~</span><span class="n">st</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">max_outer</span><span class="p">),</span>
+                             <span class="n">outer</span><span class="p">,</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">m0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">usable</span><span class="p">,</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">refuse</span><span class="p">,</span> <span class="n">jnp</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="compute_residual_vector">
+<a class="viewcode-back" href="../../api/generated/brainsp.solver.html#brainsp.solver.compute_residual_vector">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_residual_vector</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">M_stellar</span><span class="p">,</span> <span class="n">M_gas</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">inv_sigma</span><span class="p">,</span>
+                            <span class="n">reg_strength</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">reg_order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="n">extra_rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_rhs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute full residual vector (data + regularization + SC penalty).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">M_stellar</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_stellar</span><span class="p">)</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">flux</span><span class="p">)</span>
+    <span class="n">inv_sigma</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inv_sigma</span><span class="p">)</span>
+
+    <span class="n">n_star</span> <span class="o">=</span> <span class="n">M_stellar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">n_gas</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">M_gas</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">M_gas</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_gas</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">M_gas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n_gas</span> <span class="o">=</span> <span class="n">M_gas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n_gas</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">M_full</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">M_stellar</span><span class="p">,</span> <span class="n">M_gas</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">M_full</span> <span class="o">=</span> <span class="n">M_stellar</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">M_full</span> <span class="o">@</span> <span class="n">weights</span>
+    <span class="n">data_resid</span> <span class="o">=</span> <span class="p">(</span><span class="n">flux</span> <span class="o">-</span> <span class="n">model</span><span class="p">)</span> <span class="o">*</span> <span class="n">inv_sigma</span>
+
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">data_resid</span><span class="p">]</span>
+
+    <span class="n">D</span> <span class="o">=</span> <span class="n">build_regularization_matrix</span><span class="p">(</span><span class="n">n_star</span><span class="p">,</span> <span class="n">reg_strength</span><span class="p">,</span> <span class="n">reg_order</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">D</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">D</span> <span class="o">@</span> <span class="n">weights</span><span class="p">[:</span><span class="n">n_star</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">extra_rows</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extra_rhs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">extra_rows</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">extra_rows</span><span class="p">)</span>
+        <span class="n">extra_rhs</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">extra_rhs</span><span class="p">)</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extra_rows</span> <span class="o">@</span> <span class="n">weights</span> <span class="o">-</span> <span class="n">extra_rhs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

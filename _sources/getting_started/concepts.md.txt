@@ -1,0 +1,72 @@
+# Concepts
+
+The words the rest of the documentation uses, in one place.
+
+**Spectrum**
+: A one-dimensional galaxy spectrum: wavelength (Å), flux and, ideally, an
+  error and a bad-pixel flag per pixel. A plain text file. See
+  [](../user_guide/inputs.md).
+
+**Datacube**
+: An integral-field (IFU) observation: a spectrum at every spaxel of a
+  2-D field, in a FITS file (MaNGA, MUSE, CALIFA, ...).
+
+**Template library** (or *base*)
+: A set of **simple stellar population** (SSP) spectra: the light of a
+  population of stars of one age and one metallicity, all born at once. BRAIN
+  ships *BasesGM* (21 ages from 1 Myr to 12.6 Gyr, 4 metallicities) and
+  *M13* (Maraston 2013, 12 ages, 4 metallicities, into the infrared); more
+  can be added (see [](../user_guide/libraries.md)).
+
+**Fit**
+: Finding the non-negative mixture of templates, reddened by dust and
+  broadened and shifted by the stars' motions, that reproduces the spectrum
+  pixel by pixel ("full spectral fitting"); see [](../theory/index.md).
+
+**Light fraction** $x_j$
+: The share of the light at the **normalisation wavelength** (5500 Å by
+  default) that template $j$ contributes. Light fractions are not mass
+  fractions: a young population is far brighter per unit mass.
+
+**Mass fraction** $\mu_j$
+: The share of the stellar mass. *Initial* mass (all ever formed) and
+  *present* mass (still in stars and remnants) differ by the mass returned
+  to the gas.
+
+**Kinematics**
+: The line-of-sight velocity $v_\star$ and velocity dispersion
+  $\sigma_\star$ of the stars, and the same for each group of emission lines.
+
+**Extinction** $A_V$
+: Magnitudes of dust absorption in the V band, with a wavelength dependence
+  set by an **extinction law** (CCM by default).
+
+**Nebular mode**
+: How much of the ionised gas is modelled: `spop` (stars only), `espop`
+  (emission lines too), `nepop` (and a nebular continuum), `photopop` (and
+  the gas tied to the ionising photons of the young stars). See
+  [](../user_guide/modes.md).
+
+**Corrections**
+: Things undone *before* the fit: the redshift, and the Milky Way's
+  reddening (Galactic $E(B-V)$). The galaxy's own dust is not a correction; it
+  is fitted.
+
+**Mask**
+: Wavelength regions left out of the fit (weight 0) or counted more
+  (weight > 1). For a datacube a **signal-to-noise mask** also chooses which
+  spaxels are fitted.
+
+**Megacube**
+: The FITS file a datacube fit writes: the input cube, plus the observed and
+  model spectra, the population vectors, maps of every fitted and derived
+  quantity, and the emission-line products. See [](../user_guide/outputs.md).
+
+**Device**
+: Where JAX runs the fit: `cpu`, `gpu`, or `auto`. Chosen once per Python
+  process, before the first fit.
+
+**Settings**
+: Every choice BRAIN makes, 68 of them, each with a default: a
+  {class}`~brainsp.Settings` object, a YAML file, or the controls of the
+  interface. See [](../reference/settings.md).

@@ -1,0 +1,25 @@
+﻿brainsp.brain\_settings
+=======================
+
+.. automodule:: brainsp.brain_settings
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      AGN_FOLDER
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      build_base_list
+      describe_templates
+      load
+      read_catalogue
+      setting_docs
+      stellar_libraries
+      to_config
+      validate
+   

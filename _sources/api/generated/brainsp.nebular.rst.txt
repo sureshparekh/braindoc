@@ -1,0 +1,28 @@
+﻿brainsp.nebular
+===============
+
+.. automodule:: brainsp.nebular
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      Av_neb_from_balmer_decrement
+      compute_Q_eff
+      compute_qh_ratios
+      extract_line_flux
+      gamma_2q_HI
+      gamma_2q_HeI
+      gamma_eff
+      gamma_fb_HI
+      gamma_fb_HeI
+      gamma_ff
+      gaunt_ff
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      NebularModel
+   

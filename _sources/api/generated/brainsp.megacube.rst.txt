@@ -1,0 +1,23 @@
+﻿brainsp.megacube
+================
+
+.. automodule:: brainsp.megacube
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      bpt_nii_class
+      bpt_sii_class
+      cid10
+      kauffmann03
+      kewley01
+      whan_class
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Megacube
+   

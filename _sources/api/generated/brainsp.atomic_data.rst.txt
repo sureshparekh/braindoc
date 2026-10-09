@@ -1,0 +1,38 @@
+﻿brainsp.atomic\_data
+====================
+
+.. automodule:: brainsp.atomic_data
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      LAMBDA_HEPSILON
+      METAL_LINE_CALIBRATIONS
+      OII_BLEND_COMPONENTS
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      QH_per_Msun
+      Zgas_to_logOH
+      all_hydrogen_ratios
+      alpha_2S_eff
+      alpha_B
+      alpha_B_HeI
+      alpha_B_HeII
+      alpha_B_powerlaw
+      alpha_Halpha_eff
+      alpha_Hbeta_eff
+      balmer_ratios
+      chi_n
+      hydrogen_case_b_ratios
+      metal_calibration_wavelengths
+      nu_n
+      predicted_metal_ratios
+      qh_from_spectrum
+      two_photon_shape_HI
+      two_photon_shape_HeI
+   

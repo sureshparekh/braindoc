@@ -1,0 +1,22 @@
+Plot saved to fits/mock_old_population_fit.pdf
+<FitResult mock_old_population.spec: v0=149.02 km/s, sigma=201.38 km/s, AV=0.2073, chi2=0.665296>
+stellar velocity   v0    =   149.02 km/s
+velocity dispersion sigma =   201.38 km/s (observed)
+extinction         A_V   =    0.207 mag
+<log age>_L              =    9.988
+<log age>_M              =   10.017
+<Z>_L                    =   0.0221
+chi2 / N_eff             =    0.665
+
+truth: v0 = 150.0, sigma = 200.0, A_V = 0.2, <log age>_L = 9.983
+
+  x_j(%)  mass_j(%)   age (yr)      Z
+    9.20      5.03    5.01e+09  0.0190
+   15.90     14.23    8.91e+09  0.0190
+   50.30     57.78    1.26e+10  0.0190
+    4.20      2.63    5.01e+09  0.0315
+   20.04     20.28    8.91e+09  0.0315
+
+files:
+  fits/mock_old_population_summary.txt
+  fits/mock_old_population_fitted.txt

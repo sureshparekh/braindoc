@@ -1,0 +1,74 @@
+# Emission lines
+
+In `espop`, `nepop` and `photopop` every line of the catalogue that can reach
+the fitted range is a column of the linear system, with a free non-negative
+amplitude, and its velocity and dispersion are non-linear parameters shared
+with the other lines of its **kinematic group**.
+
+## The line profile
+
+Each line is a Gaussian in $\ln\lambda$ of dispersion $\sigma_g$ (km/s)
+centred on $\lambda_{\rm rest}(1 + v_g/c)$, **integrated over each pixel**,
+not sampled at pixel centres. It is built in Fourier space as the product of
+a Gaussian's transform and the transform of a one-pixel top hat,
+
+$$ \tilde g(\omega) = \exp\!\left[-\tfrac12(\omega x_\sigma)^2 - i\,\omega x_0\right]\, \frac{\sin(\omega/2)}{\omega/2}, $$
+
+with $x_0$ the line centre and $x_\sigma = \sigma_g/\Delta v$ its width, both in
+pixels (Westfall et al. 2019, §9.1.2). The profile has unit area at any
+width, including below a pixel; sampling a Gaussian at pixel centres would
+lose most of a narrow line's flux and force a floor on $\sigma_g$. The column
+is attenuated by the stars' $r_\lambda(A_V)$ ([](dust.md)), so its fitted
+weight is the line's flux before that dust.
+
+## The catalogue
+
+Lines are stored once, at **vacuum** wavelengths from NIST (H$_2$ from Roueff et
+al. 2019); air wavelengths are derived from them with Ciddor (1996). Which set
+is used is `wavelength_scale`, a fact about the *observed* spectrum: air and
+vacuum differ by about 83 km/s across the optical, and a wrong choice moves
+every gas velocity by that much with no other symptom, so it is required
+rather than guessed. The optical lines fitted:
+
+[O II] 3726, 3729; H10, H9, H8; [Ne III] 3869; H$\epsilon$, H$\delta$,
+H$\gamma$; [O III] 4363; He II 4686; H$\beta$; [O III] 4959, 5007; He I 5876;
+[O I] 6300; [N II] 6548, 6583; H$\alpha$; [S II] 6716, 6731. The near-infrared
+catalogue (Paschen, Brackett, [S III], He I 10830, H$_2$, [Fe II] ...) is used
+when the range reaches it.
+
+A line that cannot land on the fitted grid at any velocity and dispersion
+inside the bounds is left out (and named in the log), rather than fitted as a
+column of zeros: so a flux of zero in the results is a real non-detection.
+
+## Tied doublets
+
+[O III] 4959/5007 and [N II] 6548/6583 (and [S III] 9069/9531) come from one
+upper level each, so their ratio is fixed by atomic physics independently of
+temperature and density. Each pair is one column, the ratio-weighted sum of
+the two profiles:
+
+| Doublet | Ratio (weak/strong) | Source |
+|---|---|---|
+| [O III] 4959/5007 | 0.33510 | Storey & Zeippen 2000 |
+| [N II] 6548/6583 | 0.32739 | Storey & Zeippen 2000 |
+| [S III] 9069/9531 | 0.40506 | Froese Fischer, Tachiev & Irimia 2006 |
+
+The fitted weight is the strong line's flux, as the BPT calibrations use.
+[O II] 3726/3729 and [S II] 6716/6731 are density diagnostics and are left
+free.
+
+## Kinematic groups
+
+Lines in one group share $(v_g, \sigma_g)$. By default the recombination and
+low-ionisation lines (H$\alpha$, H$\beta$, [N II], [S II], ...) form one group
+and the high-ionisation lines ([O III], [Ne III], ...) another; `line_groups`
+sets them explicitly:
+
+```yaml
+line_groups:
+  0: [Halpha, Hbeta, "[N II]", "[S II]"]
+  1: ["[O III]", "[Ne III]"]
+```
+
+A group none of whose lines carries flux is reported as `unconstrained`
+rather than with numbers the optimiser happened to stop at.

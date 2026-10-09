@@ -1,0 +1,12 @@
+﻿brainsp.\_paths
+===============
+
+.. automodule:: brainsp._paths
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      repository_root
+   

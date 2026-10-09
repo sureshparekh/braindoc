@@ -1,0 +1,23 @@
+Filename: examples/cube/mock_cube.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       8   ()      
+  1  FLUX          1 ImageHDU        25   (16, 16, 2981)   float32   
+  2  IVAR          1 ImageHDU        25   (16, 16, 2981)   float32   
+  3  MASK          1 ImageHDU        25   (16, 16, 2981)   int32   
+  4  WAVE          1 ImageHDU         7   (2981,)   float64   
+wavelengths: 3672.0 ... 7292.9 A, 2981 pixels
+
+cube_out/mock_cube-BRAIN_MEGACUBE.fits
+in 69 s
+Populations      19 maps, e.g. ['xyy_light', 'xyo_light', 'xiy_light', 'xii_light']
+Kinematics        6 maps, e.g. ['Sigma_star', 'vrot_star', 'Sigma_gas_g0', 'vrot_gas_g0']
+Fit quality       8 maps, e.g. ['Adev', 'ChiSqrt', 'SNR', 'Nl_eff']
+Emission lines   84 maps, e.g. ['[O II]_3726  flux', '[O II]_3726  EW', '[O II]_3726  velocity', '[O II]_3726  sigma']
+Diagnostics       3 maps, e.g. ['BPT [N II]', 'BPT [S II]', 'WHAN']
+
+172 spaxels fitted
+velocity  : fit - truth  median   0.772, rms  6.418
+dispersion: fit - truth  median   0.084, rms  8.154
+A_V       : fit - truth  median  -0.009, rms  0.050
+
+the same run as one file: run_mock_cube.py

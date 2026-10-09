@@ -1,0 +1,63 @@
+# Nebular physics
+
+In `nepop` and `photopop` BRAIN models the continuum the ionised gas emits,
+not only its lines, from first principles.
+
+## The ionising photon rate
+
+Each SSP's rate of hydrogen-ionising photons, per unit of its normalisation,
+is integrated from the template itself below the Lyman limit:
+
+$$ Q(H)_j = \int_0^{911.76\,\text{Å}} \frac{L_{\lambda,j}\,\lambda}{hc}\, d\lambda . $$
+
+A library whose spectra start redward of 911.76 Å (BasesGM) has none to
+integrate, and these modes are refused for it. A library where only some
+templates reach the limit is refused too (unless
+`allow_partial_ionising_coverage`), because the ionising budget would then be
+a property of which templates happen to be long enough.
+
+## The nebular continuum
+
+The emission coefficient of the ionised gas, per unit emission measure, is
+the sum of
+
+- **free–free** emission of H$^+$ and He$^+$ (bremsstrahlung), with the
+  velocity-averaged Gaunt factor of Sutherland (1998);
+- **free–bound** recombination continua of H I (to $n_{\max} = 300$) and He I;
+- the **two-photon** continuum of H I $2s \to 1s$ (Nussbaumer & Schmutz 1984)
+  and He I,
+
+$$ \gamma_{\rm eff}(\lambda; T_e, n_e) = \gamma_{\rm ff} + \gamma_{\rm fb,HI} + y_{\rm He}\gamma_{\rm fb,HeI} + \gamma_{2q,\rm HI} + y_{\rm He}\gamma_{2q,\rm HeI}, $$
+
+at `gas_temperature` and `gas_density` (or the values measured from the lines,
+below), with helium abundance `helium_abundance`. Its strength is
+proportional to $Q(H)$ through the Case B recombination coefficient
+$\alpha_B$ (Osterbrock & Ferland 2006; Hummer & Storey 1987).
+
+**`nepop`** adds this continuum as one column with a free amplitude; its shape
+is physical, its strength fitted. **`photopop`** ties it, and the hydrogen
+line strengths, to $Q(H)$ of the stellar populations the fit finds, through
+penalty rows that make the hydrogen amplitudes equal the Case B prediction:
+
+$$ w_L = C_{\rm H\beta}\, \frac{j_L}{j_{\rm H\beta}}\, Q_{\rm eff}\, 10^{-0.4 (A_{V,\rm neb} - A_V)\,[q(\lambda_L) - q(\lambda_0)]}, $$
+
+with $A_{V,\rm neb}$ found by a golden-section search on $\chi^2$ over
+`nebular_dust_range`. That search is reported with its status (`converged`,
+`LOWER_BOUND`, ...) and how much $\chi^2$ varies across the range; read them
+before quoting $A_{V,\rm neb}$ ([](../user_guide/modes.md)).
+
+The Balmer jump at 3646 Å is the continuum's distinctive feature; with the
+fitting range starting redward of it, the nebular continuum is nearly
+degenerate with dust, and BRAIN warns.
+
+## Gas conditions
+
+Measured from the fitted lines where they are available, otherwise the
+settings' values:
+
+| | From | Reference |
+|---|---|---|
+| $n_e$ | [S II] 6716/6731 | Proxauf et al. 2014 |
+| $T_e$ | [O III] (4959 + 5007)/4363 | Osterbrock & Ferland 2006, eq. 5.4 |
+| $A_{V,\rm gas}$ (`nepop`) | H$\alpha$/H$\beta$ against Case B | |
+| BPT class | [N II]/H$\alpha$, [O III]/H$\beta$ | reported, never used to change the fit |

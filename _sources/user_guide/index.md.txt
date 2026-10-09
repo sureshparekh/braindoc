@@ -1,0 +1,46 @@
+# User guide
+
+Everything BRAIN does and how to ask for it, from code, the command line and
+the interface. The [tutorials](../tutorials/index.md) show these in use; the
+[theory](../theory/index.md) explains what each computes.
+
+```{toctree}
+:maxdepth: 1
+:caption: Fitting spectra
+
+inputs
+settings
+modes
+corrections
+masks
+resolution
+agn
+libraries
+batches
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Datacubes
+
+datacubes
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Results
+
+outputs
+results_python
+plotting
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Running BRAIN
+
+scripts
+performance
+mock_data
+troubleshooting
+```

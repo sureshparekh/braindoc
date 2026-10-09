@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API reference &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/brainsp.css?v=a44d817d" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="brainsp.fit_spectrum" href="generated/brainsp.fit_spectrum.html" />
+    <link rel="prev" title="Emission-line diagnostics" href="../theory/diagnostics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">API reference</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-reference">
+<h1>API reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<p>The public interface is everything importable from <code class="docutils literal notranslate"><span class="pre">brainsp</span></code> itself and
+the modules listed under <em>Public modules</em>; it is what the documentation and
+tutorials use and what is kept stable. The <em>Developer reference</em> documents
+every module underneath, for anyone changing BRAIN.</p>
+<section id="fitting">
+<h2>Fitting<a class="headerlink" href="#fitting" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.fit_spectrum.html#brainsp.fit_spectrum" title="brainsp.fit_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_spectrum</span></code></a></p></td>
+<td><p>Fit one spectrum.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.fit_spectra.html#brainsp.fit_spectra" title="brainsp.fit_spectra"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_spectra</span></code></a></p></td>
+<td><p>Fit several spectra, each with its own pre-fit corrections if given.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.fit_cube.html#brainsp.fit_cube" title="brainsp.fit_cube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_cube</span></code></a></p></td>
+<td><p>Fit one datacube and open the megacube it produces.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.CubePipeline.html#brainsp.CubePipeline" title="brainsp.CubePipeline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CubePipeline</span></code></a></p></td>
+<td><p>A datacube run: the preparation stages, the fit, and its outputs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.set_device.html#brainsp.set_device" title="brainsp.set_device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_device</span></code></a></p></td>
+<td><p>Choose the processor BRAIN fits on, before the first fit.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.Settings.html#brainsp.Settings" title="brainsp.Settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Settings</span></code></a></p></td>
+<td><p>Every BRAIN setting, with its default, as a dictionary.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.FitResult.html#brainsp.FitResult" title="brainsp.FitResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FitResult</span></code></a></p></td>
+<td><p>The result of fitting one spectrum, read from the files BRAIN wrote.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.read_result.html#brainsp.read_result" title="brainsp.read_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_result</span></code></a></p></td>
+<td><p>Read a fit already on disk.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.read_megacube.html#brainsp.read_megacube" title="brainsp.read_megacube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_megacube</span></code></a></p></td>
+<td><p>Open a megacube BRAIN wrote.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.read_corrections_table.html#brainsp.read_corrections_table" title="brainsp.read_corrections_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_corrections_table</span></code></a></p></td>
+<td><p>Per-spectrum pre-fit corrections from a CSV file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="masks">
+<h2>Masks<a class="headerlink" href="#masks" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.read_mask.html#brainsp.read_mask" title="brainsp.read_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_mask</span></code></a></p></td>
+<td><p>The regions of a wavelength mask file, as [(start, end, weight, label)].</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.write_mask.html#brainsp.write_mask" title="brainsp.write_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_mask</span></code></a></p></td>
+<td><p>Write regions as a .sm mask file: the count, then one per line.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="runs-as-scripts-the-self-test">
+<h2>Runs as scripts, the self-test<a class="headerlink" href="#runs-as-scripts-the-self-test" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.write_script.html#brainsp.write_script" title="brainsp.write_script"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_script</span></code></a></p></td>
+<td><p>Write a run as one Python file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.selftest.run.html#brainsp.selftest.run" title="brainsp.selftest.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selftest.run</span></code></a></p></td>
+<td><p>Run the self-test.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="public-modules">
+<h2>Public modules<a class="headerlink" href="#public-modules" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.plots.html#module-brainsp.plots" title="brainsp.plots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plots</span></code></a></p></td>
+<td><p>Figures from code: every plot the desktop interface draws, written to a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.megacube.html#module-brainsp.megacube" title="brainsp.megacube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">megacube</span></code></a></p></td>
+<td><p>Reading a BRAIN megacube, and the emission-line diagnostics drawn from it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.mock.html#module-brainsp.mock" title="brainsp.mock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mock</span></code></a></p></td>
+<td><p>Mock spectra and a mock datacube whose right answer is known.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.libraries.html#module-brainsp.libraries" title="brainsp.libraries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libraries</span></code></a></p></td>
+<td><p>Template libraries: where they are, what is in them, how to add one.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.scripts.html#module-brainsp.scripts" title="brainsp.scripts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scripts</span></code></a></p></td>
+<td><p>Runs written out as one Python file each.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.selftest.html#brainsp.selftest" title="brainsp.selftest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selftest</span></code></a>([quick, device, folder, keep, verbose])</p></td>
+<td><p>Run the self-test.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.cli.html#module-brainsp.cli" title="brainsp.cli"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cli</span></code></a></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">brainsp</span></code> command.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.corrections.html#module-brainsp.corrections" title="brainsp.corrections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">corrections</span></code></a></p></td>
+<td><p>BRAIN: corrections applied to a spectrum before it is fitted.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.reddening_laws.html#module-brainsp.reddening_laws" title="brainsp.reddening_laws"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reddening_laws</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="developer-reference">
+<h2>Developer reference<a class="headerlink" href="#developer-reference" title="Link to this heading">#</a></h2>
+<p>The modules BRAIN is built from. Their docstrings explain not only what each
+function does but why, including the defects each one was written to fix.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.api.html#module-brainsp.api" title="brainsp.api"><code class="xref py py-obj docutils literal notranslate"><span class="pre">api</span></code></a></p></td>
+<td><p>The brainsp scripting interface: everything the desktop interface does, from Python.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.brainv1.html#module-brainsp.brainv1" title="brainsp.brainv1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brainv1</span></code></a></p></td>
+<td><p>NewBrain — Next-Generation Stellar Population Fitting Code</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.config.html#module-brainsp.config" title="brainsp.config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
+<td><p>NewBrain Configuration Module All parameters in a single dataclass for clean management.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.brain_settings.html#module-brainsp.brain_settings" title="brainsp.brain_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_settings</span></code></a></p></td>
+<td><p>BRAIN — reads brain_setup.yaml and turns it into a validated fit configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.optimizer.html#module-brainsp.optimizer" title="brainsp.optimizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimizer</span></code></a></p></td>
+<td><p>NewBrain Optimizer Module — 100% JAX Backend Direct Pixel-Fitting via grid-search initialization + Levenberg-Marquardt.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.fast_engine.html#module-brainsp.fast_engine" title="brainsp.fast_engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fast_engine</span></code></a></p></td>
+<td><p>NewBrain Fast Engine — unified 100% JAX forward model for all three photoionization modes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.solver.html#module-brainsp.solver" title="brainsp.solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solver</span></code></a></p></td>
+<td><p>NewBrain Solver Module — JAX Backend Bounded Variable Least Squares (BVLS) with Tikhonov regularization.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.spectral_engine.html#module-brainsp.spectral_engine" title="brainsp.spectral_engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectral_engine</span></code></a></p></td>
+<td><p>NewBrain Spectral Engine — JAX Backend Core computational routines: log-rebinning, Fourier broadening, dust attenuation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.errors.html#module-brainsp.errors" title="brainsp.errors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">errors</span></code></a></p></td>
+<td><p>NewBrain Error Estimation Module — JAX Backend Monte Carlo bootstrap resampling for weight uncertainties.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.emission_lines.html#module-brainsp.emission_lines" title="brainsp.emission_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">emission_lines</span></code></a></p></td>
+<td><p>Tied doublets, kinematic groups, and the Gaussian design matrix, with per-group velocity and dispersion for the joint fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.line_catalogue.html#module-brainsp.line_catalogue" title="brainsp.line_catalogue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_catalogue</span></code></a></p></td>
+<td><p>BRAIN: which emission lines exist, where they are, and on which wavelength scale.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.atomic_data.html#module-brainsp.atomic_data" title="brainsp.atomic_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atomic_data</span></code></a></p></td>
+<td><p>BRAIN-v1 Atomic Data Module Reference tables for nebular physics: recombination coefficients, Balmer line ratios, Q(H) lookup tables, metal line calibrations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.nebular.html#module-brainsp.nebular" title="brainsp.nebular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nebular</span></code></a></p></td>
+<td><p>BRAIN-v1 Nebular Physics Module Photoionization-based nebular continuum and emission line predictions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.gas_diagnostics.html#module-brainsp.gas_diagnostics" title="brainsp.gas_diagnostics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gas_diagnostics</span></code></a></p></td>
+<td><p>BRAIN — nebular diagnostics measured from the fitted emission lines.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.instrumental_lsf.html#module-brainsp.instrumental_lsf" title="brainsp.instrumental_lsf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instrumental_lsf</span></code></a></p></td>
+<td><p>BRAIN — instrumental resolution and the line-spread function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.reddening_catalogue.html#module-brainsp.reddening_catalogue" title="brainsp.reddening_catalogue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reddening_catalogue</span></code></a></p></td>
+<td><p>BRAIN: which extinction curves exist, and what dust each one describes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.io_utils.html#module-brainsp.io_utils" title="brainsp.io_utils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io_utils</span></code></a></p></td>
+<td><p>NewBrain I/O Utilities Loading spectra, SSP libraries, masks, and writing output.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.plot_fit.html#module-brainsp.plot_fit" title="brainsp.plot_fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_fit</span></code></a></p></td>
+<td><p>Plot NewBrain spectral fit results.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.brain_cache.html#module-brainsp.brain_cache" title="brainsp.brain_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_cache</span></code></a></p></td>
+<td><p>BRAIN caching layer — pay each fixed cost once, ever.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.run_brain.html#module-brainsp.run_brain" title="brainsp.run_brain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_brain</span></code></a></p></td>
+<td><p>BRAIN — run it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.fit_megacube_jax.html#module-brainsp.fit_megacube_jax" title="brainsp.fit_megacube_jax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_megacube_jax</span></code></a></p></td>
+<td><p>BRAIN v1 — Pure JAX Datacube Fitter Fits all valid spaxels using jax.vmap batches.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.fast_cube.html#module-brainsp.fast_cube" title="brainsp.fast_cube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fast_cube</span></code></a></p></td>
+<td><p>A faster batch fitter for datacubes, kept apart from the one in use.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.fit_datacube.html#module-brainsp.fit_datacube" title="brainsp.fit_datacube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_datacube</span></code></a></p></td>
+<td><p>Parallel Datacube Fitter for NewBrain Fits an entire MEGACUBE or FITS datacube in parallel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.cube_worker.html#module-brainsp.cube_worker" title="brainsp.cube_worker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cube_worker</span></code></a></p></td>
+<td><p>One CPU worker of a datacube fit: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">brainsp.cube_worker</span> <span class="pre">JOB</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.spectra_worker.html#module-brainsp.spectra_worker" title="brainsp.spectra_worker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectra_worker</span></code></a></p></td>
+<td><p>One CPU worker of a batch of spectra: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">brainsp.spectra_worker</span> <span class="pre">JOB</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.brain_ifu.html#module-brainsp.brain_ifu" title="brainsp.brain_ifu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_ifu</span></code></a></p></td>
+<td><p>BRAIN — the IFU runner.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.ifu_modules.html#module-brainsp.ifu_modules" title="brainsp.ifu_modules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifu_modules</span></code></a></p></td>
+<td><p>Pre-pass processing modules for BRAIN's IFU mode.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.ifu_output.html#module-brainsp.ifu_output" title="brainsp.ifu_output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifu_output</span></code></a></p></td>
+<td><p>BRAIN — the megacube's extensions, and the compatibility contract.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.line_products.html#module-brainsp.line_products" title="brainsp.line_products"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_products</span></code></a></p></td>
+<td><p>BRAIN: per-line emission products for a datacube, in the megacube layout.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.ifu_script_export.html#module-brainsp.ifu_script_export" title="brainsp.ifu_script_export"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifu_script_export</span></code></a></p></td>
+<td><p>A configured datacube pipeline, written out as one Python file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.spectrum_script_export.html#module-brainsp.spectrum_script_export" title="brainsp.spectrum_script_export"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectrum_script_export</span></code></a></p></td>
+<td><p>A configured single-spectrum fit, written out as one Python file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.benchmark.html#module-brainsp.benchmark" title="brainsp.benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">benchmark</span></code></a></p></td>
+<td><p>BRAIN — timing benchmark.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.install_desktop.html#module-brainsp.install_desktop" title="brainsp.install_desktop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">install_desktop</span></code></a></p></td>
+<td><p>Register BRAIN with the desktop so it appears in the applications menu.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.brain_child.html#module-brainsp.brain_child" title="brainsp.brain_child"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_child</span></code></a></p></td>
+<td><p>BRAIN, one fit, in a process of its own.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.brain_subprocess.html#module-brainsp.brain_subprocess" title="brainsp.brain_subprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_subprocess</span></code></a></p></td>
+<td><p>BRAIN, the interface's end of a fit that runs somewhere else.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.brain_gui.html#module-brainsp.brain_gui" title="brainsp.brain_gui"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_gui</span></code></a></p></td>
+<td><p>BRAIN — desktop interface.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.brain_ifu_gui.html#module-brainsp.brain_ifu_gui" title="brainsp.brain_ifu_gui"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_ifu_gui</span></code></a></p></td>
+<td><p>BRAIN — the datacube page of the desktop interface.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.ifu_viewer.html#module-brainsp.ifu_viewer" title="brainsp.ifu_viewer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifu_viewer</span></code></a></p></td>
+<td><p>BRAIN — the datacube viewer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.results_view.html#module-brainsp.results_view" title="brainsp.results_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">results_view</span></code></a></p></td>
+<td><p>BRAIN GUI: the Results workspace, a viewer for a fitted megacube.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.brain_shell.html#module-brainsp.brain_shell" title="brainsp.brain_shell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_shell</span></code></a></p></td>
+<td><p>BRAIN GUI: the workspace shell.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.brain_qwidgets.html#module-brainsp.brain_qwidgets" title="brainsp.brain_qwidgets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_qwidgets</span></code></a></p></td>
+<td><p>BRAIN GUI — custom Qt widgets.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp.brain_theme.html#module-brainsp.brain_theme" title="brainsp.brain_theme"><code class="xref py py-obj docutils literal notranslate"><span class="pre">brain_theme</span></code></a></p></td>
+<td><p>BRAIN GUI — palette, typography and stylesheet.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/brainsp.plot_zoom.html#module-brainsp.plot_zoom" title="brainsp.plot_zoom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_zoom</span></code></a></p></td>
+<td><p>Mouse zoom and pan for a map drawn with imshow.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/brainsp._paths.html#module-brainsp._paths" title="brainsp._paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_paths</span></code></a></p></td>
+<td><p>Where brainsp's own files are.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../theory/diagnostics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Emission-line diagnostics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="generated/brainsp.fit_spectrum.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.fit_spectrum</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting">Fitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masks">Masks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runs-as-scripts-the-self-test">Runs as scripts, the self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#public-modules">Public modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#developer-reference">Developer reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

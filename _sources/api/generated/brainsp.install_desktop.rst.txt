@@ -1,0 +1,15 @@
+﻿brainsp.install\_desktop
+========================
+
+.. automodule:: brainsp.install_desktop
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      linux
+      macos
+      main
+      windows
+   

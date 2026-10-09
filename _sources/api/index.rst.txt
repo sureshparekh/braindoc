@@ -1,0 +1,135 @@
+API reference
+=============
+
+The public interface is everything importable from ``brainsp`` itself and
+the modules listed under *Public modules*; it is what the documentation and
+tutorials use and what is kept stable. The *Developer reference* documents
+every module underneath, for anyone changing BRAIN.
+
+.. currentmodule:: brainsp
+
+Fitting
+-------
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   fit_spectrum
+   fit_spectra
+   fit_cube
+   CubePipeline
+   set_device
+
+Settings
+--------
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   Settings
+
+Results
+-------
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   FitResult
+   read_result
+   read_megacube
+   read_corrections_table
+
+Masks
+-----
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   read_mask
+   write_mask
+
+Runs as scripts, the self-test
+------------------------------
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   write_script
+   selftest.run
+
+Public modules
+--------------
+
+.. autosummary::
+   :toctree: generated
+   :recursive:
+
+   plots
+   megacube
+   mock
+   libraries
+   scripts
+   selftest
+   cli
+   corrections
+   reddening_laws
+
+Developer reference
+-------------------
+
+The modules BRAIN is built from. Their docstrings explain not only what each
+function does but why, including the defects each one was written to fix.
+
+.. autosummary::
+   :toctree: generated
+   :recursive:
+
+   api
+   brainv1
+   config
+   brain_settings
+   optimizer
+   fast_engine
+   solver
+   spectral_engine
+   errors
+   emission_lines
+   line_catalogue
+   atomic_data
+   nebular
+   gas_diagnostics
+   instrumental_lsf
+   reddening_catalogue
+   io_utils
+   plot_fit
+   brain_cache
+   run_brain
+   fit_megacube_jax
+   fast_cube
+   fit_datacube
+   cube_worker
+   spectra_worker
+   brain_ifu
+   ifu_modules
+   ifu_output
+   line_products
+   ifu_script_export
+   spectrum_script_export
+   benchmark
+   install_desktop
+   brain_child
+   brain_subprocess
+   brain_gui
+   brain_ifu_gui
+   ifu_viewer
+   results_view
+   brain_shell
+   brain_qwidgets
+   brain_theme
+   plot_zoom
+   _paths

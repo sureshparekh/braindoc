@@ -1,0 +1,6 @@
+﻿brainsp.selftest.run
+====================
+
+.. currentmodule:: brainsp.selftest
+
+.. autofunction:: run

@@ -1,0 +1,70 @@
+# 9. The same, in the interface
+
+Tutorials 2, 7 and 8, done with the mouse. Write the mock data first, then
+start the interface from the same folder:
+
+```bash
+brainsp examples
+brainsp gui
+```
+
+## A spectrum with emission lines
+
+1. **Spectrum**: click `mock_star_forming_lines.spec`. It is drawn on the
+   right; scroll over it to zoom, double-click to see it whole.
+2. **Corrections**: nothing to do; the mock is at rest and has no Milky Way
+   dust. (For `mock_observed_frame.spec` you would enter z = 0.03, untick
+   *already in the rest frame*, and set E(B−V) = 0.05.)
+3. **Masks**: nothing; the lines will be fitted, not masked.
+4. **Model**: under *Nebular treatment* choose **espop**. Step 1 now shows a
+   red **!**: emission lines need the wavelength scale. Go back to step 1 and
+   choose **vacuum**.
+5. **Fit**: the summary reads *Ready to fit*. Press **Fit spectrum**.
+
+```{image} ../_static/gui/light_spectrum_fit.png
+:alt: The fitted spectrum, lines in green.
+:class: screenshot
+```
+
+The bottom bar shows $A_V$ = 0.49, $\sigma$ = 89 km/s, $v_0$ = 39 km/s, the
+same numbers tutorial 2 printed: the interface ran the same fit. The full
+results are in `brain_out/mock_star_forming_lines_summary.txt`.
+
+To fit all five mocks with their own corrections: **Load table…** in step 1,
+pick `spectra/corrections.csv`, then **Fit every spectrum in the table** in
+step 5.
+
+## The datacube
+
+1. **Datacube** (top left). **Open datacube…** and pick
+   `cube/mock_cube.fits`. The flux map appears; click a spaxel to see its
+   spectrum. Under *Wavelength scale* choose **vacuum**.
+2. **Corrections**: Redshift **0.02**. The spaxel's spectrum moves to the
+   rest frame.
+3. **Preparation**: nothing.
+4. **Masks**: tick *Signal-to-noise mask* and click **3**: the map hatches
+   the spaxels below S/N 3 in yellow and the caption says how many are kept.
+   (To try a wavelength mask, click a spaxel and drag across its spectrum.)
+5. **Model**: **espop**; under *Datacube fit*, *Fit these spaxels*:
+   **S/N > 3**.
+6. **Run**: **Run the pipeline**. The spaxels light up as they are fitted.
+   When it finishes, **View results**.
+
+```{image} ../_static/gui/light_cube_running.png
+:alt: The cube being fitted.
+:class: screenshot
+```
+
+In **Results** the maps of tutorial 8 are one click away: choose
+`vrot_star` for the rotation, `Mage_L` for the old centre, `Halpha_6563  flux`
+for the ring; click a spaxel for its spectrum and star-formation history;
+choose *BPT [N II] diagram* on the right to see the ring among the star
+forming spaxels and the nucleus among the LINERs.
+
+```{image} ../_static/gui/light_results.png
+:alt: The Results workspace.
+:class: screenshot
+```
+
+Before closing, **Export run script…** (Run step) writes the pipeline as one
+Python file, which reruns it from a terminal with `python run_brain_ifu.py`.

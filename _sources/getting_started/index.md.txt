@@ -1,0 +1,26 @@
+# Getting started
+
+```{toctree}
+:maxdepth: 1
+
+install
+selftest
+quickstart_python
+quickstart_cli
+quickstart_gui
+concepts
+```
+
+BRAIN can be driven three ways, and they share one engine and one set of
+settings, so the same input gives the same numbers whichever you use:
+
+| | Use it for | Start with |
+|---|---|---|
+| **Python** (`import brainsp`) | analysis in notebooks and scripts, results as Python objects | [](quickstart_python.md) |
+| **Command line** (`brainsp`) | batches, servers, pipelines, no display | [](quickstart_cli.md) |
+| **Desktop interface** (`brainsp gui`) | looking at the data, drawing masks, watching a cube being fitted, exploring maps | [](quickstart_gui.md) |
+
+Anything set up in the interface can be exported as one Python file that
+runs the same fit from a terminal, and anything run from Python can be read
+back in the interface. [](concepts.md) explains the ideas the rest of the
+documentation uses.

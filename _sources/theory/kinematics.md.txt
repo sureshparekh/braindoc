@@ -1,0 +1,50 @@
+# Kinematics
+
+## Log-wavelength sampling
+
+On a grid uniform in $\ln\lambda$ a Doppler shift is a translation:
+$\lambda_{\rm obs} = \lambda (1 + v/c)$ gives $\ln\lambda_{\rm obs} \simeq
+\ln\lambda + v/c$, a shift of $v / \Delta v$ pixels for every wavelength, and a
+velocity distribution becomes a convolution kernel independent of
+wavelength. The step $\Delta v$ (`velscale`) is chosen from the data's own
+sampling so that no information is thrown away.
+
+## Broadening in Fourier space
+
+For a Gaussian line-of-sight velocity distribution of mean $v_\star$ and
+dispersion $\sigma_\star$, each template is broadened and shifted at once in
+Fourier space:
+
+$$ \tilde b_j(\omega) \;\longmapsto\; \tilde b_j(\omega)\, \exp\!\left[-\tfrac12\left(\omega \frac{\sigma_\star}{\Delta v}\right)^2 - i\,\omega \frac{v_\star}{\Delta v}\right], $$
+
+with $\omega$ the angular frequency in radians per pixel. The transform of
+every template is computed once per fit; a trial $(v_\star, \sigma_\star)$
+costs one kernel multiplication and one inverse transform.
+
+A discrete Fourier transform makes the convolution periodic, so each template
+is first extended at both ends by as many pixels as the largest allowed
+shift plus several times the largest allowed dispersion, holding its first
+and last values (zero-filling would drag the ends of the model towards zero,
+which looks exactly like a continuum slope). Without this the model at 3700 Å
+would be built partly from the template at 6900 Å.
+
+## The velocity search
+
+The non-linear minimisation needs a starting velocity in the right basin.
+$\chi^2$ is evaluated on a grid of $v_\star$ across `velocity_range`, step
+`velocity_grid_step` (150 km/s), with $\sigma_\star$, $A_V$ at their starting
+values, in `spop` (the weights are discarded). With `coarse_to_fine_grid`
+(default) the grid is scanned in two passes, coarse then fine around the
+coarse minimum. The best point starts the Levenberg–Marquardt fit.
+
+`velocity_range` must contain the galaxy's actual velocity relative to the
+frame the spectrum is in: for a spectrum still at $z$ that is roughly $cz$.
+
+## Observed and intrinsic dispersion
+
+The fitted $\sigma_\star$ is the broadening applied to the library: the
+quadrature sum of the stars' intrinsic dispersion and the difference between
+the data's and the library's line-spread functions, unless those are given
+([](../user_guide/resolution.md)), in which case
+
+$$ \sigma_{\star,\rm intr} = \operatorname{sign}(x)\sqrt{|x|}, \qquad x = \sigma_{\rm obs}^2 - \Delta\sigma_{\rm inst}^2 . $$

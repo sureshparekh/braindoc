@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Datacubes &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/datacubes';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Output files" href="outputs.html" />
+    <link rel="prev" title="Many spectra" href="batches.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fitting spectra</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">Nebular modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corrections.html">Pre-fit corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masks.html">Masks and weights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resolution.html">Instrumental resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agn.html">AGN continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Template libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batches.html">Many spectra</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datacubes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Datacubes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results_python.html">Working with results in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Figures from code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Running BRAIN</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">One file per run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Speed, GPUs and CPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mock_data.html">Mock data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Datacubes</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="datacubes">
+<h1>Datacubes<a class="headerlink" href="#datacubes" title="Link to this heading">#</a></h1>
+<p>A datacube run is an ordered chain of preparation stages followed by the
+fit, over one or more cubes. Each cube is opened once, every stage adds the
+extensions it produces, and the result is written as a <strong>megacube</strong>: the cube
+you gave BRAIN with the fit added to it
+(<code class="docutils literal notranslate"><span class="pre">&lt;output_dir&gt;/&lt;name&gt;-BRAIN_MEGACUBE.fits</span></code>).</p>
+<p>The arrangement and the extension names are those of the MaNGA megacubes
+of Riffel et al. (2023), so tools written for those megacubes read BRAIN’s
+unchanged. Please cite that paper when you use BRAIN’s megacubes
+(<a class="reference internal" href="../reference/citing.html"><span class="std std-doc">Citing BRAIN</span></a>).</p>
+<section id="from-python">
+<h2>From Python<a class="headerlink" href="#from-python" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">CubePipeline</span><span class="p">(</span>
+    <span class="s2">&quot;manga-8626-12704-LOGCUBE.fits&quot;</span><span class="p">,</span>
+    <span class="n">redshift</span><span class="o">=</span><span class="mf">0.04724</span><span class="p">,</span>                          <span class="c1"># required: the galaxy&#39;s z</span>
+    <span class="n">settings</span><span class="o">=</span><span class="n">brainsp</span><span class="o">.</span><span class="n">Settings</span><span class="p">(</span><span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">),</span>
+    <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>                 <span class="c1"># required in line modes</span>
+    <span class="n">galactic_ebv</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span>                         <span class="c1"># Milky Way dust, removed first</span>
+    <span class="n">sn_mask</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">fit_sn_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>    <span class="c1"># fit spaxels with S/N &gt; 3</span>
+    <span class="n">wavelength_mask</span><span class="o">=</span><span class="s2">&quot;emission_lines.sm&quot;</span><span class="p">,</span>   <span class="c1"># applied to every spaxel</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;megacubes&quot;</span><span class="p">)</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>          <span class="c1"># every problem, before reading a spaxel</span>
+<span class="n">written</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s2">&quot;gpu&quot;</span><span class="p">)</span>
+<span class="n">cube</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">read_megacube</span><span class="p">(</span><span class="n">written</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../api/generated/brainsp.fit_cube.html#brainsp.fit_cube" title="brainsp.fit_cube"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.fit_cube()</span></code></a> is the short form for one cube; it returns the
+opened megacube. <code class="docutils literal notranslate"><span class="pre">pipeline.export_script(&quot;run.py&quot;)</span></code> writes the whole run as
+one Python file.</p>
+<p>From the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brainsp<span class="w"> </span>cube<span class="w"> </span>manga-8626-12704-LOGCUBE.fits<span class="w"> </span>--redshift<span class="w"> </span><span class="m">0</span>.04724<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--wavelength-scale<span class="w"> </span>vacuum<span class="w"> </span>--ebv<span class="w"> </span><span class="m">0</span>.03<span class="w"> </span>--sn<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">10</span><span class="w"> </span>--fit-sn<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--mask<span class="w"> </span>emission_lines.sm<span class="w"> </span>--set<span class="w"> </span><span class="nv">nebular_mode</span><span class="o">=</span>espop<span class="w"> </span>-o<span class="w"> </span>megacubes
+</pre></div>
+</div>
+<p>In the interface: the Datacube workspace (<a class="reference internal" href="../gui/datacube.html"><span class="std std-doc">The Datacube workspace</span></a>).</p>
+</section>
+<section id="the-options">
+<h2>The options<a class="headerlink" href="#the-options" title="Link to this heading">#</a></h2>
+<p>Every <a class="reference internal" href="../api/generated/brainsp.CubePipeline.html#brainsp.CubePipeline" title="brainsp.CubePipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">brainsp.CubePipeline</span></code></a> option, with its interface control:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Interface</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cubes</span></code></p></td>
+<td><p></p></td>
+<td><p>Cubes &gt; targets table</p></td>
+<td><p>files, or a glob pattern</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">redshift</span></code></p></td>
+<td><p>required</p></td>
+<td><p>Corrections &gt; Redshift</p></td>
+<td><p>wavelengths ÷ (1 + z); 0 for a rest-frame cube</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">settings</span></code></p></td>
+<td><p>defaults</p></td>
+<td><p>Model step</p></td>
+<td><p>the physics: templates, mode, dust, kinematics</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">output_dir</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">brain_ifu_out</span></code></p></td>
+<td><p>Output folder</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flux_hdu</span></code>, <code class="docutils literal notranslate"><span class="pre">error_hdu</span></code>, <code class="docutils literal notranslate"><span class="pre">mask_hdu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FLUX</span></code>, <code class="docutils literal notranslate"><span class="pre">IVAR</span></code>, <code class="docutils literal notranslate"><span class="pre">MASK</span></code></p></td>
+<td><p>Input extensions</p></td>
+<td><p>see <a class="reference internal" href="inputs.html"><span class="std std-doc">Input data</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">error_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">inv_variance</span></code></p></td>
+<td><p>Uncertainty is a</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">inv_variance</span></code>, <code class="docutils literal notranslate"><span class="pre">variance</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">inv_error</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wavelength_scale</span></code></p></td>
+<td><p></p></td>
+<td><p>Wavelength scale</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">air</span></code> / <code class="docutils literal notranslate"><span class="pre">vacuum</span></code>, required in line modes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">galactic_ebv</span></code>, <code class="docutils literal notranslate"><span class="pre">galactic_rv</span></code>, <code class="docutils literal notranslate"><span class="pre">galactic_law</span></code></p></td>
+<td><p>0, 3.1, CCM</p></td>
+<td><p>Dereddening</p></td>
+<td><p>0 = off</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spatial_binning</span></code></p></td>
+<td><p>off</p></td>
+<td><p>Spatial resampling</p></td>
+<td><p>n x n spaxels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">degrade_resolution</span></code></p></td>
+<td><p>off</p></td>
+<td><p>Resolution</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{&quot;input</span> <span class="pre">type&quot;,</span> <span class="pre">&quot;input</span> <span class="pre">value&quot;,</span> <span class="pre">&quot;output</span> <span class="pre">type&quot;,</span> <span class="pre">&quot;output</span> <span class="pre">value&quot;}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spectral_binning</span></code></p></td>
+<td><p>off</p></td>
+<td><p>Spectral binning</p></td>
+<td><p>resampling step</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">butterworth</span></code></p></td>
+<td><p>off</p></td>
+<td><p>Butterworth filter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">{&quot;order&quot;,</span> <span class="pre">&quot;range&quot;}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sn_mask</span></code></p></td>
+<td><p>off</p></td>
+<td><p>Signal-to-noise mask</p></td>
+<td><p>thresholds, or <code class="docutils literal notranslate"><span class="pre">{&quot;thresholds&quot;,</span> <span class="pre">&quot;sn</span> <span class="pre">window&quot;,</span> <span class="pre">&quot;method&quot;}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fit_sn_threshold</span></code></p></td>
+<td><p>every spaxel</p></td>
+<td><p>Fit these spaxels</p></td>
+<td><p>one of the thresholds</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wavelength_mask</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Wavelength mask</p></td>
+<td><p>a file or regions; every spaxel</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">batch_size</span></code></p></td>
+<td><p>automatic</p></td>
+<td><p>Batch size</p></td>
+<td><p>see <a class="reference internal" href="performance.html"><span class="std std-doc">Speed, GPUs and CPUs</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">population_bins</span></code></p></td>
+<td><p>the six MaNGA bins</p></td>
+<td><p>Outputs &gt; Population bins</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[(name,</span> <span class="pre">youngest,</span> <span class="pre">oldest),</span> <span class="pre">...]</span></code> yr</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flxobs_step</span></code></p></td>
+<td><p>1 Å</p></td>
+<td><p>Spectra step</p></td>
+<td><p>the linear grid of FLXOBS/FLXSYN</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">per_cube</span></code></p></td>
+<td><p></p></td>
+<td><p>the table’s other columns</p></td>
+<td><p>below</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code></p></td>
+<td><p>True</p></td>
+<td><p>Re-run a cube whose megacube exists</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">save_config</span></code></p></td>
+<td><p>True</p></td>
+<td><p>Record the pipeline inside each megacube</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fit</span></code></p></td>
+<td><p>True</p></td>
+<td><p>Datacube fit</p></td>
+<td><p>False runs the preparation only</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="the-stages-in-order">
+<h2>The stages, in order<a class="headerlink" href="#the-stages-in-order" title="Link to this heading">#</a></h2>
+<p>Every stage but the fit is off until asked for: each one changes the data,
+and a stage that ran because it was a default is one nobody decided to run.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Stage</p></th>
+<th class="head"><p>Writes</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Galactic dereddening</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FLUX_DRD</span></code></p></td>
+<td><p>removes <span class="math notranslate nohighlight">\(E(B-V)\)</span> of Milky Way dust at the observed wavelengths (<a class="reference internal" href="corrections.html"><span class="std std-doc">Pre-fit corrections</span></a>); records <code class="docutils literal notranslate"><span class="pre">DRD_LAW</span></code>, <code class="docutils literal notranslate"><span class="pre">DRD_EBV</span></code>, <code class="docutils literal notranslate"><span class="pre">DRD_RV</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Spatial resampling</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;X&gt;_RSP</span></code></p></td>
+<td><p>bins n x n spaxels (flux summed, uncertainties propagated)</p></td>
+</tr>
+<tr class="row-even"><td><p>Resolution</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;X&gt;_DEGR</span></code></p></td>
+<td><p>convolves the data to a coarser resolution; correlates the noise, warns, and is refused together with <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Spectral binning</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;X&gt;_BIN</span></code></p></td>
+<td><p>resamples the wavelength axis</p></td>
+</tr>
+<tr class="row-even"><td><p>Butterworth filter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FLUX_BW</span></code></p></td>
+<td><p>a 2-D low-pass filter over the field at each wavelength ; spreads each spaxel over about six neighbours, records the flux kept in <code class="docutils literal notranslate"><span class="pre">BW_KEPT</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>S/N mask</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SNMAP</span></code>, <code class="docutils literal notranslate"><span class="pre">SN_MASKS_&lt;t&gt;</span></code></p></td>
+<td><p>the S/N of each spaxel over a rest-frame window, and one 0/1 plane per threshold</p></td>
+</tr>
+<tr class="row-even"><td><p>The fit</p></td>
+<td><p>the fit extensions</p></td>
+<td><p>below</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each stage is handed the extension the previous one wrote, so the names
+never have to be threaded by hand.</p>
+<section id="signal-to-noise-masks">
+<h3>Signal-to-noise masks<a class="headerlink" href="#signal-to-noise-masks" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sn_mask</span></code> computes the S/N of every spaxel over a rest-frame window
+(4000–6000 Å by default) with one of five estimators (<code class="docutils literal notranslate"><span class="pre">method</span></code>):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>S/N</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ivar</span></code> (default)</p></td>
+<td><p>mean of <span class="math notranslate nohighlight">\(F\sqrt{\rm IVAR}\)</span> over the window: what the fit itself sees</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ivar_median</span></code></p></td>
+<td><p>median of the same</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">variance</span></code></p></td>
+<td><p>mean of <span class="math notranslate nohighlight">\(F/\sqrt{\rm VAR}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">error</span></code></p></td>
+<td><p>mean of <span class="math notranslate nohighlight">\(F/\sigma\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mean_std</span></code></p></td>
+<td><p>mean / standard deviation of the flux over the window</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>and writes <code class="docutils literal notranslate"><span class="pre">SN_MASKS_&lt;t&gt;</span></code>, 1 where the spaxel is above <span class="math notranslate nohighlight">\(t\)</span>, for each
+threshold. <code class="docutils literal notranslate"><span class="pre">fit_sn_threshold=t</span></code> then fits only those spaxels; the others are
+left unfitted (blank in every map). The interface previews each threshold on
+the map before anything runs.</p>
+</section>
+<section id="the-wavelength-mask">
+<h3>The wavelength mask<a class="headerlink" href="#the-wavelength-mask" title="Link to this heading">#</a></h3>
+<p>One mask, applied to every spaxel’s fit, in the rest frame: a file
+(<code class="docutils literal notranslate"><span class="pre">.sm</span></code>/<code class="docutils literal notranslate"><span class="pre">.gm</span></code> or a list) or regions <code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">weight),</span> <span class="pre">...]</span></code>
+(<a class="reference internal" href="masks.html"><span class="std std-doc">Masks and weights</span></a>). The interface builds it by dragging across any spaxel’s
+spectrum. It is written beside the outputs as <code class="docutils literal notranslate"><span class="pre">brain_wavelength_mask.sm</span></code> and
+recorded in the megacube.</p>
+</section>
+</section>
+<section id="several-cubes-each-with-its-own-values">
+<h2>Several cubes, each with its own values<a class="headerlink" href="#several-cubes-each-with-its-own-values" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">per_cube</span></code> takes a CSV file or a list of dictionaries. The first column (or
+<code class="docutils literal notranslate"><span class="pre">target</span></code>) names the cube; every other column overrides one setting for that
+cube alone:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target,redshift,ebv,mask file
+manga-8241-12705-LOGCUBE.fits,0.0281,0.0296,
+manga-8566-1901-LOGCUBE.fits,0.0882,0.0231,masks/8566.sm
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brainsp</span><span class="o">.</span><span class="n">CubePipeline</span><span class="p">(</span><span class="n">per_cube</span><span class="o">=</span><span class="s2">&quot;targets.csv&quot;</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brainsp<span class="w"> </span>cube<span class="w"> </span>cubes/*.fits<span class="w"> </span>--table<span class="w"> </span>targets.csv<span class="w"> </span>...
+</pre></div>
+</div>
+<p>The columns accepted are those the enabled stages read: <code class="docutils literal notranslate"><span class="pre">redshift</span></code>, <code class="docutils literal notranslate"><span class="pre">ebv</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rv</span></code>, <code class="docutils literal notranslate"><span class="pre">law</span></code>, <code class="docutils literal notranslate"><span class="pre">mask</span> <span class="pre">file</span></code>, <code class="docutils literal notranslate"><span class="pre">thresholds</span></code>, <code class="docutils literal notranslate"><span class="pre">sn</span> <span class="pre">window</span></code>, <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code>,
+<code class="docutils literal notranslate"><span class="pre">resample</span> <span class="pre">size</span></code>, <code class="docutils literal notranslate"><span class="pre">wavelength</span> <span class="pre">scale</span></code>. A column no enabled stage reads is
+refused before the run starts, with the accepted ones listed, rather than
+ignored.</p>
+</section>
+<section id="what-the-fit-does-to-each-spaxel">
+<h2>What the fit does to each spaxel<a class="headerlink" href="#what-the-fit-does-to-each-spaxel" title="Link to this heading">#</a></h2>
+<p>Exactly what a single spectrum’s fit does: the same model, solver and
+settings, run on many spaxels at once (<a class="reference internal" href="../theory/index.html"><span class="std std-doc">Theory</span></a>). A spaxel of
+a cube and the same spectrum fitted on its own give the same answer (the test
+suite checks it). The differences are in what is written: maps instead of a
+summary file, and observed emission-line fluxes in the cube’s own units
+(the megacube convention) instead of the normalised, extinction-corrected ones a
+spectrum’s summary holds (<a class="reference internal" href="outputs.html"><span class="std std-doc">Output files</span></a>).</p>
+<p>On a <strong>GPU</strong>, spaxels are fitted in batches sized to the card’s memory; on a
+<strong>CPU</strong>, by worker processes, one per core (<a class="reference internal" href="performance.html"><span class="std std-doc">Speed, GPUs and CPUs</span></a>). The result is
+the same either way to rounding.</p>
+</section>
+<section id="what-validate-refuses">
+<h2>What <code class="docutils literal notranslate"><span class="pre">validate()</span></code> refuses<a class="headerlink" href="#what-validate-refuses" title="Link to this heading">#</a></h2>
+<p>Everything that can be refused before a spaxel is read: no cube, a cube that
+is not there, no stage enabled, a fit asked to use an S/N threshold the S/N
+stage does not compute, an uncertainty declared to be a flux, an invalid
+settings, a missing wavelength scale in a line mode, the resolution stage
+together with <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code>, overlapping population bins, a
+per-cube column nothing reads, and a missing redshift. Every problem is
+listed at once, each with the stage it belongs to; the interface marks each
+in its own panel.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="batches.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Many spectra</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="outputs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Output files</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-python">From Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-options">The options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stages-in-order">The stages, in order</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-to-noise-masks">Signal-to-noise masks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-wavelength-mask">The wavelength mask</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#several-cubes-each-with-its-own-values">Several cubes, each with its own values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-fit-does-to-each-spaxel">What the fit does to each spaxel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-validate-refuses">What <code class="docutils literal notranslate"><span class="pre">validate()</span></code> refuses</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

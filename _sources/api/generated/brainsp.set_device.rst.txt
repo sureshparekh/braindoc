@@ -1,0 +1,6 @@
+﻿brainsp.set\_device
+===================
+
+.. currentmodule:: brainsp
+
+.. autofunction:: set_device

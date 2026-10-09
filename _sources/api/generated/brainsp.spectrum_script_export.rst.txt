@@ -1,0 +1,12 @@
+﻿brainsp.spectrum\_script\_export
+================================
+
+.. automodule:: brainsp.spectrum_script_export
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      export
+   

@@ -1,0 +1,572 @@
+# Output files
+
+## A spectrum
+
+Every fit of a spectrum writes, into the output folder (`brain_out` by
+default):
+
+| File | What |
+|---|---|
+| `<name>_summary.txt` | the fitted parameters, the population vector, the emission lines |
+| `<name>_fitted.txt` | the observed and model spectra, column by column |
+| `<name>_settings.txt` | every setting the fit used, and the templates |
+| `<name>_fit.pdf` | the standard figure (when `make_plot` is on) |
+
+From Python, {class}`brainsp.FitResult` reads the first two
+([](results_python.md)): `brainsp.read_result("<name>_summary.txt")`.
+
+
+Every fit writes two text files into the output folder.
+
+---
+
+## The summary file
+
+`*_summary.txt` is plain text: a value, then the key in square brackets.
+
+### Fit quality
+
+```
+  5.58653E-01                             [chi2/Nl_eff]
+     20.45878                             [adev (%)]
+```
+
+| Key | Meaning |
+|---|---|
+| `chi2/Nl_eff` | $\chi^2$ divided by the number of fitted pixels, nothing subtracted for the free parameters. Near 1 is a good fit; well below 1 usually means the errors are overestimated. The cube's `CHI2` extension carries this same quantity, and its `CHI2RED` extension the reduced $\chi^2$ |
+| `adev` | Mean absolute deviation between model and data, as a percentage |
+
+### Totals
+
+```
+  7.01277E-02                             [Flux_tot (units of input spectrum!)]
+  4.10394E+03                             [Mini_tot (apparent; x flux_unit * 4*pi*d_cm^2 / 3.828E33 for Msun)]
+  2.86073E+03                             [Mcor_tot (apparent; x flux_unit * 4*pi*d_cm^2 / 3.828E33 for Msun)]
+```
+
+| Key | Meaning |
+|---|---|
+| `Flux_tot` | the model's flux density at the normalisation wavelength, in the input spectrum's units: $\sum_j x_j$ times `fobs_norm` |
+| `fobs_norm` | the observed flux density at the normalisation wavelength (median of ±10 pixels), in the input spectrum's units: the factor the spectrum was divided by, and what turns a normalised flux back into the input's units |
+| `Mini_tot` | mass **initially formed**, over the stellar populations |
+| `Mcor_tot` | mass **still in stars** (and remnants) today |
+
+The masses are *apparent*: the observed flux divided by the library's flux
+per unit mass. BRAIN never uses a distance, so to turn them into solar masses
+multiply by your flux unit (in erg/s/cm²/Å) times $4\pi d^2$ (cm²) and divide
+by $L_\odot = 3.828\times10^{33}$ erg/s, as the label says.
+
+Both totals run over the stellar populations only. A featureless power-law
+component contributes light and no mass, so it is in `Flux_tot` and in `x_j`
+and in neither total; see the population table below.
+
+`Mcor_tot` is always the smaller of the two. Use it when comparing against a
+dynamical mass; use `Mini_tot` when comparing against an integrated
+star-formation history.
+
+### Parameters
+
+```
+  188.21                                  [v0_min  (km/s)]
+   40.70                                  [vd_min  (km/s), OBSERVED]
+ 0.0747                                   [AV_min  (mag)]
+ 0.0000                                   [YAV_min (mag)]
+```
+
+| Key | Meaning |
+|---|---|
+| `v0_min` | Systemic velocity of the stars |
+| `vd_min` | The broadening the kinematic kernel applied to the library |
+| `AV_min` | Extinction in magnitudes, against the chosen law |
+| `YAV_min` | Extra extinction applied to the youngest populations only |
+
+:::{admonition} The two dispersions in this file follow different conventions
+:class: warning
+Every line carrying a dispersion says which it is. `vd_min`, `sigma_obs`
+and every `sigma_gas` are **OBSERVED**: the instrument is still in them.
+`sigma_star` is **INTRINSIC**: the instrumental line-spread function has
+been taken out in quadrature. An observed and an intrinsic dispersion from
+the same file are not comparable as printed, which is why the label states
+the convention instead of leaving it to the name.
+
+The instrumental line-spread function is not yet applied to the emission
+line, so `sigma_gas` is an observed dispersion today. `sigma_inst` is
+printed beside it so that the subtraction is available; see below for why
+BRAIN does not do it for you.
+:::
+### Instrumental resolution
+
+Immediately below `vd_min`, the summary carries the three dispersions and where
+the two line-spread functions came from:
+
+```
+   47.00                                  [sigma_obs (km/s), OBSERVED, broadening applied to the library]
+  +31.05                                  [delta_sigma_inst (km/s), signed, data minus library LSF, flux-weighted]
+   35.28                                  [sigma_star (km/s), INTRINSIC, instrument removed in quadrature]
+ manga_lsf_fwhm.txt (2.48-4.95 A FWHM over 3622-10351 A) [instrumental_resolution, observed frame]
+ 0.3 A FWHM + 45 km/s sigma x28; 2.51 A FWHM x56 [library_resolution]
+ template file headers                    [library_resolution source]
+ 0.02300                                  [spectrum_redshift removed before fitting]
+ partial: 28 pre-convolved, 56 left at library resolution [LSF correction applied to the library]
+ 28                                       [templates pre-convolved]
+ 56                                       [templates left at library resolution]
+```
+
+| Key | Meaning |
+|---|---|
+| `sigma_obs` | The same number as `vd_min`. On its own it is a statement about the templates, not about the galaxy |
+| `delta_sigma_inst` | Signed quadrature difference between the two line-spread functions **as the library entered the fit**. Positive means the data is broader. A group that was pre-convolved contributes zero |
+| `sigma_star` | $\mathrm{sign}(x)\sqrt{|x|}$ with $x = \sigma_{\rm obs}^2 - \Delta\sigma_{\rm inst}^2$ |
+
+With `instrumental_resolution` blank, the last two read `unknown` and `vd_min`
+is an observed dispersion that includes the instrument.
+
+:::{admonition} `< value` means an upper limit
+:class: warning
+A `sigma_star` written with a leading `<` is not a measurement. Either the
+fit came back sitting on the lower bound of `dispersion_range`, or the
+broadening the two line-spread functions alone demand already exceeds what
+the fit applied. A comment block under the table says which, with numbers.
+:::
+### The population table
+
+One row per template:
+
+```
+# j    x_j(%)    Mini_j(%)   Mcor_j(%)   age_j(yr)     Z_j     (L/M)_j  YAV?  Mstars  component_j
+  1   21.0944   0.0000E+00  0.0000E+00  1.000000E+00  0.00000  9.787E+00  0   1.0000  Power_150
+  2    0.0000   0.0000E+00  0.0000E+00  1.000000E+06  0.00370  3.171E-03  0   1.0000  ageGe_00_z004
+```
+
+| Column | Meaning |
+|---|---|
+| `x_j` | **Light** fraction at the normalisation wavelength, in per cent |
+| `Mini_j` | **Initial mass** fraction |
+| `Mcor_j` | **Surviving mass** fraction |
+| `age_j`, `Z_j` | Age in years and metallicity |
+| `(L/M)_j` | Light-to-mass ratio for that population |
+| `Mstars` | Surviving stellar mass fraction at that age |
+
+:::{admonition} Light fractions are not mass fractions
+:class: warning
+A 1 Myr population can carry 20% of the light and a millionth of the mass.
+Young stars are enormously more luminous per unit mass. Always be explicit
+about which fraction you are quoting.
+:::
+:::{admonition} The power law carries light and no mass
+:class: note
+The row above is the AGN power law that `include_power_law` adds. Its
+`x_j` is whatever light it took — 21% in this fit — and its `Mini_j` and
+`Mcor_j` are exactly zero. That is the correct output and not a failed
+component: a power law has no stars, so there is no initial mass, no
+surviving fraction and nothing for `Mstars` to mean. Its `(L/M)_j` is the
+flux of the file it was generated from at the normalisation wavelength,
+which is an amplitude somebody chose, not a light-to-mass ratio.
+
+So the two sets of percentages are normalised over different components.
+`x_j` runs over the whole base and adds to 100. `Mini_j` and `Mcor_j` run
+over the stellar populations alone and add to 100 over those. A component
+that is 21% of the light and 0% of the mass is reading exactly right.
+:::
+Most rows will be exactly zero. That is expected and correct: the solver
+enforces non-negativity and finds a sparse solution, typically 10–20 non-zero
+populations out of 84. It is not a failure to converge.
+
+### Gas kinematics
+
+Under the population table, one block per kinematic group:
+
+```
+## Gas Kinematics ##
+         57.30                            [sigma_gas group 0 (km/s), OBSERVED]
+         30.85                            [v0_gas group 0 (km/s)]
+       unknown                            [sigma_inst group 0 (km/s), needs instrumental_resolution]
+          5/10                            [lines carrying flux in group 0]
+        <58.39                            [sigma_gas group 1 (km/s), OBSERVED, UPPER LIMIT]
+        353.12                            [v0_gas group 1 (km/s)]
+       unknown                            [sigma_inst group 1 (km/s), needs instrumental_resolution]
+           2/4                            [lines carrying flux in group 1]
+# group 1 came back on the lower bound of gas_dispersion_range ...
+```
+
+| Key | Meaning |
+|---|---|
+| `sigma_gas` | The dispersion fitted for that group's lines, **observed** |
+| `v0_gas` | The velocity fitted for that group's lines |
+| `sigma_inst` | The instrumental dispersion at that group's lines, flux-weighted, or `unknown` when `instrumental_resolution` is not set |
+| `lines carrying flux` | How many of the group's lines came back with non-zero flux |
+
+The block is absent from a `spop` fit, which fits no lines.
+
+:::{admonition} `<`, `>` and `unconstrained` are not numbers
+:class: warning
+These read exactly as `sigma_star` does, and for the same reason.
+
+- `<value` — the fit came back on the lower end of `gas_dispersion_range`.
+  It wanted a narrower line than it was allowed, so the value is an upper
+  limit and not a width.
+- `>value` — the same at the upper end: a lower limit.
+- `unconstrained` — **no line in that group has any flux.** All of them
+  came back at exactly zero from the non-negative solve, so nothing in the
+  spectrum constrains either the dispersion or the velocity of that group.
+  The optimiser still returns numbers and still reports success; they are
+  artefacts of where the search started. What it returned is in the `#`
+  comment underneath, where it cannot be mistaken for a result.
+
+A comment block under each group says which applies, with numbers.
+:::
+:::{admonition} BRAIN does not subtract the instrument from the gas, on purpose
+:class: note
+`sigma_gas` and `sigma_inst` are reported separately and nothing is
+clipped, floored or called zero when the first comes out below the second.
+That follows Westfall et al. (2019, §7.3), who report the observed and the
+instrumental dispersion as separate maps and leave the corrected velocity
+dispersion to the user. A measured dispersion below the instrumental
+one is not a measurement of $\sigma = 0$ and must not be clipped to one
+(§7.6.3); the recommendation there is to carry the negative
+$\sigma^2$ through rather than throw it away. Both numbers are in the
+file so that you can.
+:::
+---
+
+## The fitted spectrum
+
+`*_fitted.txt` has seven columns on the log-rebinned grid the fit actually used:
+
+```
+# Wavelength Flux_Obs Total_Fit Stellar_Fit Emission_Fit Err Resid
+3.541000e+03 6.959377e-01 9.943693e-01 9.943693e-01 0.000000e+00 1.229688e+00 -2.984316e-01
+```
+
+| Column | Meaning |
+|---|---|
+| `Wavelength` | Ångström, in the frame the fit ran in (the rest frame when a redshift was removed) |
+| `Flux_Obs` | The observation, normalised |
+| `Total_Fit` | The complete model |
+| `Stellar_Fit` | Stellar component alone |
+| `Emission_Fit` | Emission lines alone — zero in `spop` mode |
+| `Err` | Uncertainty used in the fit |
+| `Resid` | `Flux_Obs − Total_Fit` |
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+wl, obs, tot, star, emis, err, res = np.loadtxt(
+    "brain_out/mygalaxy_fitted.txt", unpack=True)
+
+fig, (a, b) = plt.subplots(2, sharex=True, height_ratios=[3, 1])
+a.plot(wl, obs, lw=0.6, color="0.6", label="observed")
+a.plot(wl, tot, lw=1.2, label="fit")
+a.legend()
+b.plot(wl, res, lw=0.6)
+b.axhline(0)
+plt.show()
+```
+
+---
+
+
+### Emission-line fluxes
+
+```text
+## Emission Lines ##
+ vacuum                                   [wavelength_scale of the OBSERVED spectrum; ...]
+# Fluxes are in units of the NORMALISED spectrum times Angstrom: multiply by fobs_norm ...
+# They are corrected for the stellar extinction AV_min, relative to the normalisation wavelength: ...
+# A tied doublet's flux is its strong line's; the weak line is fixed at the atomic ratio.
+Line/Doublet                        |         Flux |        Err
+[O II]_3726                         |   1.5283e+00 | 0.0000e+00
+```
+
+Two conventions apply to these numbers, and the file states both:
+
+1. **Normalised units.** The spectrum is fitted after dividing it by its
+   flux at the normalisation wavelength (`normalisation_wavelength`, 5500 Å),
+   so a line flux of 6 is six times the continuum flux density at 5500 Å
+   times one Ångström. Multiply by `fobs_norm` for the input spectrum's
+   units.
+2. **Corrected for the stellar extinction.** The model reddens the lines
+   with the stars' $A_V$, relative to the normalisation wavelength, so the
+   fitted amplitude is the flux *before* that dust: multiply by
+   $10^{-0.4 A_V [q(\lambda) - q(\lambda_0)]}$ for the flux as observed.
+
+{meth}`brainsp.FitResult.line_fluxes` does both: `units="input"` and
+`observed=True`. The `Err` column is zero unless `error_samples` is set.
+A datacube's line maps are already observed fluxes in the cube's units
+(below).
+
+## Gas diagnostics
+
+In `nepop` and `photopop` mode the summary carries extra measurements:
+
+| Quantity | From |
+|---|---|
+| Electron density $n_e$ | [S II] λ6716/λ6731 ratio |
+| Electron temperature $T_e$ | [O III] (λ4959+λ5007)/λ4363 ratio |
+| Balmer decrement | Hα/Hβ, from the dust-attenuated line fluxes |
+| $A_V$ of the gas | The Balmer decrement against Case B in `nepop` mode; the value that minimises $\chi^2$ in `photopop` mode |
+| BPT classification | Star-forming, composite, AGN or undetermined |
+
+Line fluxes are listed underneath, as `Line/Doublet | Flux | Err`, under a
+heading that states the wavelength scale the lines were placed on:
+
+```
+## Emission Lines ##
+ vacuum                                   [wavelength_scale of the OBSERVED spectrum; the rest wavelengths these lines were placed at are on it]
+Line/Doublet                        |         Flux |        Err
+```
+
+That line is a copy of the `wavelength_scale` setting, not a measurement. It is
+in the file because air and vacuum rest wavelengths differ by about 83 km/s and
+nothing else in the output would reveal which was used; a flux table that does
+not say is a table whose gas velocity is ambiguous by 83 km/s. The same
+declaration reaches a megacube as the `BRAINWSC` header card. BRAIN does
+not currently compute equivalent widths — `line_fitter.py`, which used to, was
+removed; if you need EWs, measure them from `*_fitted.txt` yourself.
+
+:::{admonition} Only lines that were actually fitted are listed
+:class: note
+A line is fitted only if it can land on your wavelength grid at some
+velocity and dispersion inside `gas_velocity_range` and
+`gas_dispersion_range`. One that cannot is dropped before the fit and
+named in the log:
+
+```
+2 emission line(s) cannot reach the 4800-5100 A grid at any velocity or
+dispersion the fit is allowed, and are NOT fitted or reported:
+Hgamma_4340 (4340 A), [O III]_4363 (4363 A)
+```
+
+It then does **not** appear in the flux table. A flux of `0.0000e+00` in
+that table therefore means a genuine non-detection — the line was fitted
+and the best fit gave it no flux — and never "the line was off the end of
+the spectrum". Those two used to be indistinguishable.
+:::
+:::{admonition} A doublet that lost one component is renamed
+:class: note
+If a tied doublet has one component on the grid and one off, the survivor
+is fitted alone, its ratio is set to 1.0, and the entry takes that
+component's own name — `[O III]_5007` rather than `[O III]_Doublet`. The
+listed flux is then the flux of that one line. The log says so:
+
+```
+[O III]_Doublet loses [O III]_4959 to the edge of the 4980-5300 A grid;
+the remaining [O III]_5007 is fitted alone, at ratio 1.0, and reported
+as '[O III]_5007'
+```
+:::
+In `photopop` mode four further lines say how well $A_{V,\rm neb}$ is pinned down.
+Read them before quoting it:
+
+| Field | Meaning |
+|---|---|
+| `AV_neb status` | `converged`, `LOWER_BOUND`, `UPPER_BOUND` or `BUDGET_EXHAUSTED`. Anything but `converged` means the number beside `AV_neb` is a bound or a truncated search, not a measurement |
+| `n_AV_neb refits` | How many full refits the search spent |
+| `AV_neb bracket width (mag)` | How tightly the minimum was bracketed |
+| `dchi2 across the whole AV_neb range` | How much $\chi^2$ varies over all of `nebular_dust_range`. A small number means the data barely care |
+| `AV_neb at dchi2 = 1 (mag)` | Where $\chi^2$ has risen by 1 above the minimum, or `NaN` if it never does inside the bounds |
+
+`tau` is also printed. It is a diagnostic, not a test — see
+[](modes.md).
+
+---
+
+## A datacube: the megacube
+
+Written to `<save_path_root>/<stem>-BRAIN_MEGACUBE.fits`, with any `-RAW`
+removed from the stem. The input extensions come through unchanged, then:
+
+### The compatibility contract
+
+Six extensions, spelled exactly like this, are what existing analysis tools
+read. The test suite fits a small cube and asserts all six.
+
+| Extension | Shape | Contents |
+|---|---|---|
+| `BaseAgeMetal` | `(n_base, 2)` | column 0 age in **years**, column 1 Z as a mass fraction |
+| `PoPBins` | `(n_map, y, x)` | the map stack, planes named by `DATA<n>` cards |
+| `PoPVecsL` | `(n_base, y, x)` | light fraction per template, **per cent** |
+| `PoPVecsM` | `(n_base, y, x)` | present-mass fraction per template, **per cent** |
+| `FLXOBS` | `(nλ, y, x)` | observed flux in input units, **linear** λ grid |
+| `FLXSYN` | `(nλ, y, x)` | synthetic stellar spectrum, same grid |
+
+`FLXOBS` and `FLXSYN` carry `CRPIX3`, `CRVAL3`, `CD3_3` and `WAT3_001`,
+because the viewers build their wavelength axis as
+`np.arange(CRVAL3, CD3_3*n + CRVAL3, CD3_3)` and have no fallback. The step
+is `flxobs_step`, 1 Å by default, which is the published value.
+
+:::{admonition} This is the only place BRAIN resamples an observed flux
+:class: note
+And only for the output copy, never for the fit, which runs on its own
+log grid. `WAVE` is written as well, so nothing has to trust the WCS, and
+`STELLAR` and `MODEL` stay on the cube's own wavelength grid, where no
+resolution is thrown away.
+:::
+### BRAIN's own extensions
+
+| Extension | Shape | Contents |
+|---|---|---|
+| `PoPVecsMini` | `(n_base, y, x)` | initial-mass fraction per template, per cent |
+| `STELLAR` | `(nλ, y, x)` | the stellar model — the same quantity as `FLXSYN`, on the input grid |
+| `MODEL` | `(nλ, y, x)` | stellar plus gas |
+| `KINEMATICS` | `(n_par, y, x)` | the fitted parameter vector, `PARAM<i>` cards naming each |
+| `CHI2` | `(y, x)` | χ²/N<sub>l,eff</sub> per spaxel — the same number as `PoPBins:ChiSqrt` |
+| `CHI2RED` | `(y, x)` | χ² / (N<sub>l,eff</sub> − n<sub>par</sub>), the reduced χ² |
+| `STATUS` | `(y, x)` | 0 unfitted, 1 converged, 2 did not converge |
+| `BADSPXL` | `(y, x)` | 1 wherever the spaxel is not a converged fit |
+| `SNMAP`, `SN_MASKS_<t>` | `(y, x)` | the continuous S/N map and the masks cut from it |
+| `LSFCORR` | `(3, y, x)` | dispersion corrected for the line-spread function, the difference, and a flag — **only** when `instrumental_resolution` is set |
+| `BRAINCFG` | table | every stage of the run with its settings |
+
+Every extension also carries the `BRAIN*` provenance cards, among them
+`BRAINZ` (the redshift removed), `BRAINFRM` (the frame fitted in) and
+`BRAINWSC` (`air` or `vacuum`, the wavelength scale of the observed spectrum
+that the emission-line rest wavelengths were placed on). A finished cube says
+which scale its gas velocities are measured against; the two differ by about
+83 km/s and nothing else in the file would reveal it.
+
+### `PoPBins`
+
+One 3D extension whose planes are addressed by header cards: `DATA7` holds
+the name of plane 7, and the card's comment describes it. In order:
+
+`FC<exp>` (only when `include_power_law` is on) · `<bin>_light` ·
+`<bin>_mass` · `Av` · `Mage_L` · `Mage_M` · `MZ_L` · `MZ_M` · `F_Norm` ·
+`Sigma_star` · `vrot_star` · `Adev` · `ChiSqrt` · `SNR` · then BRAIN's own:
+`YAV` · `Nl_eff` · `Niter` · `BadSpaxel` · `Sigma_gas_g<n>` ·
+`vrot_gas_g<n>` · `Sigma_star_c` · `Dsigma_inst` · `LSF_flag`.
+
+The tail is appended after `SNR` so that a reader indexing the stack by
+position still finds everything it knew about where it was.
+
+`Mage_L` is the light-weighted mean of log₁₀(age/yr), not the logarithm of
+the mean age. `MZ_L` is the weighted mean of Z as a mass fraction, not of
+[Z/H]. As in the published megacubes (Riffel et al. 2023), both sum over
+the stellar templates but divide by the light of **every** component,
+featureless ones included, so AGN light pulls them down: 10 per cent of it
+lowers `Mage_L` by about 0.94 dex. For the mean of the stars alone, divide
+by the stellar fraction, (100 − `AGN_light`)/100. `Mage_M` and `MZ_M` are
+unaffected, since a featureless component has no mass. `Sigma_star` is an **observed** dispersion: it includes the
+instrument unless `instrumental_resolution` is set, in which case
+`Sigma_star_c` is the corrected one and `LSF_flag` says whether that is a
+measurement, an upper limit, or not reportable.
+
+:::{admonition} An unfitted spaxel is 0, not blank
+:class: warning
+That is what the published megacubes carry and what their viewers scale
+their colour bars to. Since 0 is a plausible value for most of these
+quantities, the stack carries a `BadSpaxel` plane of its own, 1 wherever
+the spaxel is not a converged fit — including the spaxels nothing was
+ever attempted on — and the file carries `BADSPXL` and `STATUS`. **A map
+value is a measurement only where `BadSpaxel` is 0.** A spaxel whose fit did not converge is flagged
+there too: its maps are the last state of an optimisation that had not
+finished.
+:::
+### Emission-line products (line-fitting modes)
+
+In `espop`, `nepop` and `photopop` the megacube also carries the line fit in
+layout and with the definitions of the published MaNGA megacubes
+(Riffel et al. 2023):
+
+| Extension | Shape | Contents |
+|---|---|---|
+| `SOLUTION` | (3N + 1, y, x) | amplitude A, velocity v and dispersion s of each line; the last plane is $\chi^2/N_{\rm eff}$ |
+| `DISP` | (3N, y, x) | their uncertainties: NaN, not computed (as in the published megacubes) |
+| `INIGUESS` | (3N, y, x) | the starting dispersion; A and v NaN (never guessed) |
+| `FLUX_M` | (N, y, x) | line flux from the model, $\int$ line over $\lambda_c \pm 5s$ |
+| `FLUX_D` | (N, y, x) | line flux measured on the data: data − stars − every other line |
+| `EQW_M` | (N, y, x) | equivalent width from the model, $\int -{\rm line}/C$ (negative for emission) |
+| `EQW_D` | (N, y, x) | equivalent width on the data, $\int (1 - {\rm data}/C)$ |
+| `MASK2D` | (y, x) | 0 where fitted |
+| `PARNAMES`, `SPECIDX`, `FITCONFIG` | tables | parameter names, the fitted spaxels, the rest wavelengths, groups and continuum windows |
+
+$C$ is a straight line fitted to the stellar model in each line's two
+continuum windows, or a degree-7 polynomial with 3-sigma
+clipping where a line has none. Fluxes are in the cube's flux unit times Å
+and **observed** (attenuated by the fitted dust, like everything in the
+model); velocities and dispersions are the line's kinematic group's,
+observed. Checked against the published megacube of MaNGA 8626-12704 by
+rebuilding its own numbers: $F_M$ to $2\times10^{-5}$, $EW_M$ to
+$3\times10^{-5}$.
+
+The Results workspace and {class}`brainsp.megacube.Megacube` name these maps
+`"<line>  flux"`, `"<line>  EW"`, `"<line>  velocity"`, `"<line>  sigma"`.
+
+### Masses, star-formation rates and grouped AGN components
+
+BRAIN's masses are *apparent*: the observed flux divided by the library's
+flux per unit mass. With the galaxy's distance (`galaxy_distance`, Mpc; per
+cube, a `galaxy distance` column of the targets table) they become solar
+masses, multiplied by `flux_unit × 4πd² / L_sun` (L☉ = 3.826×10³³ erg/s and
+1 Mpc = 3.08567758×10²⁴ cm, the published megacubes' values; the
+flux unit's number is read from `BUNIT`, e.g. 10⁻¹⁷ for MaNGA, or given as
+`flux_scale`). PoPBins then also carries
+
+| Plane | Contents |
+|---|---|
+| `Mstar` | present mass in stars, M☉ |
+| `Mpcross` | mass processed into stars (initial mass), M☉ |
+| `<name>` from `sfr_bins` | star-formation rate, M☉/yr: `Mstar` × (initial-mass fraction with min < age ≤ max) / (max − min) |
+
+Without a distance none of these is written: the missing factor is about
+3.5 dex for a MaNGA spaxel and distance-dependent. The mass *fractions* need
+no distance and are always in `PoPVecsM` and the `<bin>_mass` planes.
+
+The SFR follows the published megacubes' definition: the initial-mass
+fraction in the bin times the *present* stellar mass. The initial mass
+actually formed in the bin is larger by `Mpcross / Mstar`, typically 1.6.
+
+`fc_bins` and `bb_bins` group the featureless AGN components by the power-law
+exponent or blackbody temperature their names give (`FC0.25`, `BB800`), each
+`[name, min, max]`, min exclusive, max inclusive, in per cent of all the
+light: for example `FC_Tot (0.245, 0.75]` or `BB_warm (699, 1000]`. Population
+bins may overlap, so totals such as `xy_Tot` are bins of their own.
+
+### Population age bins
+
+`population_bins` is a list of `[name, youngest, oldest]` in years. Each
+bin becomes two planes, `<name>_light` and `<name>_mass`. A template belongs
+to a bin when **min < age ≤ max** — min exclusive, max inclusive, which is
+the published convention and matters because the standard bin sets put edges
+exactly on template ages.
+
+The default is the six MaNGA bins, with the edges published MaNGA megacubes
+use, so a BRAIN map and one of those can be compared without re-binning
+either:
+
+| Bin | Ages (yr) |
+|---|---|
+| `xyy` | 9.0×10⁵ < age ≤ 1.0×10⁷ |
+| `xyo` | 1.4×10⁷ < age ≤ 5.6×10⁷ |
+| `xiy` | 1.0×10⁸ < age ≤ 5.0×10⁸ |
+| `xii` | 6.3×10⁸ < age ≤ 8.0×10⁸ |
+| `xio` | 8.9×10⁸ < age ≤ 2.0×10⁹ |
+| `xo`  | 5.0×10⁹ < age ≤ 1.3×10¹⁰ |
+
+Bins may leave gaps — these do — and the fit logs how much light falls into
+them. Overlapping bins are refused: a template inside two bins is counted
+twice and every map still looks reasonable afterwards. A power-law component
+is never in any bin; it is reported on its own `FC` card.
+
+:::{admonition} χ² convention — two extensions, named
+:class: warning
+`CHI2` and `PoPBins:ChiSqrt` both carry **χ² / N<sub>l,eff</sub>**, where
+N<sub>l,eff</sub> is the number of pixels of non-zero weight that entered
+the χ². That is what the single-spectrum summary file reports on its
+first line, and what the published megacubes report, so a
+spaxel of a BRAIN cube and the same spectrum fitted on its own quote the
+same number, computed by the same function.
+
+`CHI2RED` carries **χ² / (N<sub>l,eff</sub> − n<sub>par</sub>)**, the
+reduced χ², with n<sub>par</sub> = 4 + 2 × n<sub>groups</sub> free
+non-linear parameters — written into that extension's `NPAR` card. Each
+extension states its denominator in a `DENOM` card as well, so neither
+convention can be assumed silently.
+
+The two differ by N<sub>l,eff</sub>/(N<sub>l,eff</sub> − n<sub>par</sub>):
+a fraction of a per cent on a well-sampled spaxel, several per cent on a
+heavily masked one. `CHI2` held the reduced convention in cubes written
+before this change; those files carry no `CHI2RED` extension and no
+`DENOM` card, which is how to tell them apart.
+:::

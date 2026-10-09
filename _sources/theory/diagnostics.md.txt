@@ -1,0 +1,42 @@
+# Emission-line diagnostics
+
+With $x = \log([\mathrm{N\,II}]\,6583/\mathrm{H}\alpha)$,
+$y = \log([\mathrm{O\,III}]\,5007/\mathrm{H}\beta)$,
+$s = \log(([\mathrm{S\,II}]\,6716+6731)/\mathrm{H}\alpha)$ and $W$ the
+H$\alpha$ equivalent width (Å, positive for emission), each spaxel is
+classified only where every line it needs has a positive model flux.
+
+## BPT [N II]
+
+| Curve | Equation | Reference |
+|---|---|---|
+| pure star formation | $y = 0.61/(x - 0.05) + 1.30$, $x < 0.05$ | Kauffmann et al. 2003 |
+| maximum starburst | $y = 0.61/(x - 0.47) + 1.19$, $x < 0.47$ | Kewley et al. 2001 |
+| LINER / Seyfert | $y = 1.01x + 0.48$ | Cid Fernandes et al. 2010 |
+
+Star forming: below Kauffmann. Composite: between Kauffmann and Kewley. Above
+Kewley: Seyfert above the Cid Fernandes line, LINER below. (Class values in
+the maps: 1 SF, 2 composite, 3 LINER, 4 Seyfert.)
+
+## BPT [S II]
+
+Star forming: $s < 0.32$ and $y < 0.72/(s - 0.32) + 1.30$; otherwise Seyfert
+when $y > 1.89s + 0.76$, LINER below (Kewley et al. 2006). (1 SF, 2 LINER,
+3 Seyfert.)
+
+## WHAN
+
+Cid Fernandes et al. (2011): retired galaxies $W < 3$ Å; star forming
+$x < -0.4$; strong AGN $x \ge -0.4$ and $W > 6$ Å; weak AGN $x \ge -0.4$ and
+$3 \le W \le 6$ Å. (1 SF, 2 retired, 3 weak AGN, 4 strong AGN.)
+
+:::{note}
+BRAIN does not yet write line-flux uncertainties for a cube, so there is no
+signal-to-noise cut on the lines: a faint line the fit placed at a small
+positive flux is classified like a strong one. A spaxel's class is no
+stronger than its weakest line.
+:::
+
+{func}`brainsp.megacube.bpt_nii_class`, {func}`~brainsp.megacube.bpt_sii_class`
+and {func}`~brainsp.megacube.whan_class` apply these to any arrays;
+{func}`brainsp.plots.diagnostic` draws them.

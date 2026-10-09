@@ -1,0 +1,13 @@
+﻿brainsp.ifu\_script\_export
+===========================
+
+.. automodule:: brainsp.ifu_script_export
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      export
+      generate
+   

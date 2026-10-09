@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.fast_engine &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.fast_engine';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.solver" href="brainsp.solver.html" />
+    <link rel="prev" title="brainsp.optimizer" href="brainsp.optimizer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.fast_engine</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.fast_engine">
+<span id="brainsp-fast-engine"></span><h1>brainsp.fast_engine<a class="headerlink" href="#module-brainsp.fast_engine" title="Link to this heading">#</a></h1>
+<p>NewBrain Fast Engine — unified 100% JAX forward model for all three
+photoionization modes.</p>
+<p>Replaces two things at once:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. The scipy fallback that `nepop` and `photopop` modes used. The nebular
+   fixed point is now a `lax.fori_loop` with a constant trip count, so the
+   whole residual is traceable and the pure-JAX LM drives every mode.
+
+2. The redundant work in the `spop`-mode forward model. `rfft(M_star)` is
+   hoisted out of the fit (M_star never changes), and the Jacobian only
+   re-broadens for the two parameters that can actually alter the stellar
+   broadening.
+</pre></div>
+</div>
+<p>The parameter vector is unchanged:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Av</span><span class="p">,</span> <span class="n">YAV</span><span class="p">,</span> <span class="n">sigma_star</span><span class="p">,</span> <span class="n">v0_star</span><span class="p">,</span> <span class="n">sig_g0</span><span class="p">,</span> <span class="n">v0_g0</span><span class="p">,</span> <span class="n">sig_g1</span><span class="p">,</span> <span class="n">v0_g1</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Modes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;spop&quot;</span>     <span class="o">-</span> <span class="n">stellar</span> <span class="n">populations</span> <span class="n">alone</span><span class="p">;</span> <span class="n">emission</span> <span class="n">lines</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">fitted</span><span class="o">.</span>
+<span class="s2">&quot;nepop&quot;</span>    <span class="o">-</span> <span class="n">nebular</span> <span class="n">continuum</span> <span class="n">carried</span> <span class="k">as</span> <span class="n">a</span> <span class="n">free</span> <span class="n">NNLS</span> <span class="n">column</span><span class="p">,</span> <span class="n">its</span> <span class="n">amplitude</span>
+              <span class="n">read</span> <span class="n">back</span> <span class="k">as</span> <span class="n">Q_eff</span><span class="o">.</span> <span class="n">Emission</span> <span class="n">lines</span> <span class="n">stay</span> <span class="n">free</span> <span class="ow">and</span> <span class="n">empirical</span><span class="o">.</span>
+              <span class="n">The</span> <span class="n">nebular</span> <span class="n">light</span> <span class="n">enters</span> <span class="n">the</span> <span class="n">model</span> <span class="n">ONCE</span><span class="p">,</span> <span class="n">through</span> <span class="n">that</span> <span class="n">column</span><span class="p">;</span>
+              <span class="n">it</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">also</span> <span class="n">subtracted</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">data</span><span class="o">.</span>
+<span class="s2">&quot;photopop&quot;</span> <span class="o">-</span> <span class="k">as</span> <span class="n">nepop</span><span class="p">,</span> <span class="n">plus</span> <span class="n">hydrogen</span> <span class="n">line</span> <span class="n">amplitudes</span> <span class="n">tied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Case</span> <span class="n">B</span>
+              <span class="n">prediction</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">same</span> <span class="n">Q</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="n">via</span> <span class="n">augmented</span><span class="o">-</span><span class="n">NNLS</span> <span class="n">penalty</span> <span class="n">rows</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.fast_engine.broaden" title="brainsp.fast_engine.broaden"><code class="xref py py-obj docutils literal notranslate"><span class="pre">broaden</span></code></a>(C, sigma_v, v0, n_pad, n_pix, n_left)</p></td>
+<td><p>Broaden + shift all stellar templates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.fast_engine.build_constants" title="brainsp.fast_engine.build_constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_constants</span></code></a>(M_star, lam, flux, ...[, ...])</p></td>
+<td><p>Precompute every constant the forward model needs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.fast_engine.forward" title="brainsp.fast_engine.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a>(C, params, S[, Q_init, P_init])</p></td>
+<td><p>Forward model from parameters alone (broadens internally).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.fast_engine.forward_from_broad" title="brainsp.fast_engine.forward_from_broad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward_from_broad</span></code></a>(C, params, M_broad, S[, ...])</p></td>
+<td><p>Full forward model given an already-broadened stellar matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.fast_engine.grid_chi2" title="brainsp.fast_engine.grid_chi2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_chi2</span></code></a>(C, v0_grid, sigma_star_init, ...)</p></td>
+<td><p>chi2 across a velocity grid, vmapped.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.fast_engine.jacobian" title="brainsp.fast_engine.jacobian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jacobian</span></code></a>(C, params, S, n_par[, central, ...])</p></td>
+<td><p>Central (or forward) differences, exploiting two pieces of structure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.fast_engine.lm_optimize" title="brainsp.fast_engine.lm_optimize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lm_optimize</span></code></a>(C, x0, bounds_lo, bounds_hi, S, ...)</p></td>
+<td><p>Projected Levenberg-Marquardt, identical in structure and convergence logic to optimizer._lm_optimize, but driving the unified forward model so it serves all three photoionization modes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.fast_engine.residual_only" title="brainsp.fast_engine.residual_only"><code class="xref py py-obj docutils literal notranslate"><span class="pre">residual_only</span></code></a>(C, params, S)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.fast_engine.ForwardConstants" title="brainsp.fast_engine.ForwardConstants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForwardConstants</span></code></a>(M_fft, omega, velscale, ...)</p></td>
+<td><p>Everything that is fixed for the duration of one optimize() call.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.fast_engine.ForwardShapes" title="brainsp.fast_engine.ForwardShapes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForwardShapes</span></code></a>(n_pix, n_pad, n_left, n_star, ...)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">ForwardConstants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M_fft</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velscale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">yav_flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inv_sigma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D_full</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest_wl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratios</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_comp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neb_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neb_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neb_at_l0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">qh_ratios</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">H_gas_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H_ratios</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H_dk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C_Hbeta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">av_neb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sc_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sc_damping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#ForwardConstants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NamedTuple" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></a></p>
+<p>Everything that is fixed for the duration of one optimize() call.</p>
+<p>Registered as a pytree by virtue of being a NamedTuple, so it can be
+passed straight through jit/vmap boundaries.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.M_fft">
+<span class="sig-name descname"><span class="pre">M_fft</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.M_fft" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.omega">
+<span class="sig-name descname"><span class="pre">omega</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.omega" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.velscale">
+<span class="sig-name descname"><span class="pre">velscale</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.velscale" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.yav_flags">
+<span class="sig-name descname"><span class="pre">yav_flags</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.yav_flags" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.lam">
+<span class="sig-name descname"><span class="pre">lam</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.lam" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.flux">
+<span class="sig-name descname"><span class="pre">flux</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.flux" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.inv_sigma">
+<span class="sig-name descname"><span class="pre">inv_sigma</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.inv_sigma" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.dk">
+<span class="sig-name descname"><span class="pre">dk</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.dk" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 7</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.D_full">
+<span class="sig-name descname"><span class="pre">D_full</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.D_full" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 8</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.rest_wl">
+<span class="sig-name descname"><span class="pre">rest_wl</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.rest_wl" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 9</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.ratios">
+<span class="sig-name descname"><span class="pre">ratios</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.ratios" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 10</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.n_comp">
+<span class="sig-name descname"><span class="pre">n_comp</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.n_comp" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 11</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.group_indices">
+<span class="sig-name descname"><span class="pre">group_indices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.group_indices" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 12</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.neb_shape">
+<span class="sig-name descname"><span class="pre">neb_shape</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.neb_shape" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 13</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.neb_col">
+<span class="sig-name descname"><span class="pre">neb_col</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.neb_col" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 14</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.neb_at_l0">
+<span class="sig-name descname"><span class="pre">neb_at_l0</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.neb_at_l0" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 15</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.qh_ratios">
+<span class="sig-name descname"><span class="pre">qh_ratios</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.qh_ratios" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 16</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.k_norm">
+<span class="sig-name descname"><span class="pre">k_norm</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.k_norm" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 17</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.H_gas_idx">
+<span class="sig-name descname"><span class="pre">H_gas_idx</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.H_gas_idx" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 18</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.H_ratios">
+<span class="sig-name descname"><span class="pre">H_ratios</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.H_ratios" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 19</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.H_dk">
+<span class="sig-name descname"><span class="pre">H_dk</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.H_dk" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 20</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.C_Hbeta">
+<span class="sig-name descname"><span class="pre">C_Hbeta</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.C_Hbeta" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 21</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.av_neb">
+<span class="sig-name descname"><span class="pre">av_neb</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.av_neb" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 22</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.sc_weight">
+<span class="sig-name descname"><span class="pre">sc_weight</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.sc_weight" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 23</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardConstants.sc_damping">
+<span class="sig-name descname"><span class="pre">sc_damping</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardConstants.sc_damping" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 24</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">ForwardShapes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_pix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_pad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_gas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_par</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_comp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neb_iter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_lines</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#ForwardShapes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.NamedTuple" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_pix">
+<span class="sig-name descname"><span class="pre">n_pix</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_pix" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_pad">
+<span class="sig-name descname"><span class="pre">n_pad</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_pad" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_left">
+<span class="sig-name descname"><span class="pre">n_left</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_left" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_star">
+<span class="sig-name descname"><span class="pre">n_star</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_star" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_gas">
+<span class="sig-name descname"><span class="pre">n_gas</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_gas" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_par">
+<span class="sig-name descname"><span class="pre">n_par</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_par" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.max_comp">
+<span class="sig-name descname"><span class="pre">max_comp</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.max_comp" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.mode" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 7</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_neb_iter">
+<span class="sig-name descname"><span class="pre">n_neb_iter</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_neb_iter" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 8</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.live">
+<span class="sig-name descname"><span class="pre">live</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.live" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 9</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.n_neb">
+<span class="sig-name descname"><span class="pre">n_neb</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.n_neb" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 10</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.solver">
+<span class="sig-name descname"><span class="pre">solver</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.solver" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 11</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.simplex">
+<span class="sig-name descname"><span class="pre">simplex</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.simplex" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 12</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.fast_engine.ForwardShapes.fit_lines">
+<span class="sig-name descname"><span class="pre">fit_lines</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#brainsp.fast_engine.ForwardShapes.fit_lines" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 13</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.build_constants">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">build_constants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inv_sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velscale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D_full</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yav_flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'spop'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qh_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neb_template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">av_neb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_capture</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H_gas_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H_ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H_dk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C_Hbeta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sc_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sc_damping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neb_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'active_set'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#build_constants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.build_constants" title="Link to this definition">#</a></dt>
+<dd><p>Precompute every constant the forward model needs.</p>
+<p>On <cite>simplex</cite>: the constraint is sum(x_j) + y = 1, but the normalisation flux
+F_lambda0 is itself a fitted parameter bounded to [0.5, 1.5] times the
+measured value (fnormlow / fnormupp), so the equality pins the <em>fractions</em>
+while F_lambda0 absorbs the overall scale. That is equivalent to leaving
+the weights free with sum(w) inside [0.5, 1.5] — which is what BRAIN does,
+and its sum lands at ~1.07. Imposing a hard sum(x)=1 instead is a
+different, stricter condition: measured on the reference spectrum it costs
+chi2 (1843 -&gt; 1992), pushes Av from 0.24 to 0.73 and pins sigma_star at its
+lower bound. So it defaults off. The reported light fractions are
+normalised to 100% regardless, as they always were.</p>
+<p>The stellar templates are edge-padded at both ends before their transform
+is taken, so the broadening is a linear convolution and not a periodic one.
+<cite>v0_max</cite> and <cite>sigma_max</cite> set how far it has to reach; see
+_kinematic_reach, which also says what happens if a caller widens the
+fitted bounds past them.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.broaden">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">broaden</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_pad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_pix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_left</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#broaden"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.broaden" title="Link to this definition">#</a></dt>
+<dd><p>Broaden + shift all stellar templates.</p>
+<p>rfft(M_star) is supplied precomputed in C.M_fft, so this is a kernel
+multiply plus one inverse transform — the single biggest saving in the
+whole forward model.</p>
+<p>C.M_fft is the transform of the EDGE-PADDED matrix, <cite>n_left</cite> pixels of it
+before the first fitted pixel, so the window comes back out of the middle
+of the result and not off its front. Slicing from 0 instead would return a
+spectrum shifted by n_left pixels, which at 129 pixels and 58 km/s is
+7500 km/s and would be anything but subtle; slicing from n_left + 1 would
+be one pixel, which would not.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.forward_from_broad">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">forward_from_broad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M_broad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#forward_from_broad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.forward_from_broad" title="Link to this definition">#</a></dt>
+<dd><p>Full forward model given an already-broadened stellar matrix.</p>
+<p>Returns (residual, weights, Q_eff, M_full, P_out).</p>
+<p>The nebular continuum enters exactly once, and the two modes put it in
+different places. In “nepop” it is a column of M_full (built in
+_design when S.n_neb is 1) and the NNLS fits its amplitude, so the
+residual is formed against the untouched data. In “photopop” there is no such
+column – S.n_neb is 0 – and the nebular is instead subtracted from the
+data at the Q(H) the fixed point has reached. Subtracting in nepop mode
+as well minimised flux - stellar - gas - 2*(nebular), which is chi2 plus a
+shrinkage penalty ||nebular amplitude||^2 that the inner NNLS never sees;
+the outer LM could only satisfy it by driving A_V, sigma and v0 to where
+the NNLS wanted less nebular.</p>
+<p>This is the function the Jacobian calls for the six parameters that cannot
+change the stellar broadening (Av, YAV, and every gas kinematic), which is
+where the speedup comes from: no FFT at all on this path.</p>
+<p><cite>Q_init</cite> warm-starts the nebular fixed point. With Q_init = 0 the loop
+reproduces the original cold-start behaviour; the Jacobian passes the
+converged Q* from the centre point so a single extra iteration suffices.</p>
+<p>In photopop mode the loop runs a FIXED S.n_neb_iter passes, undamped, and
+returns the Q it actually built the residual with – not the Q the last
+pass would have gone on to use. Those differ by a factor of about two when
+the loop is truncated, and everything downstream (tau, the nebular
+spectrum, f_neb, the Nebular_Fit column) wants the one that is physically
+in the model.</p>
+<p>On the trip count: the first pass starts from Q = 0, which deactivates the
+SC penalty rows entirely, so it overshoots the fixed point by ~144x.
+Averaging that iterate into every subsequent step, which is what
+sc_damping &lt; 1 does, is what made the sequence non-monotone and slow –
+abs(dQ)/Q &lt; 1e-10 took a median of 44 iterations at damping 0.5 against 7
+undamped, over 25 parameter draws spanning the whole bounds box. Undamped
+with 12 passes the fixed point is reached everywhere tested, and the trip
+count is fixed, so the Jacobian runs the identical schedule to the residual
+by construction rather than by argument.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.forward">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.forward" title="Link to this definition">#</a></dt>
+<dd><p>Forward model from parameters alone (broadens internally).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.residual_only">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">residual_only</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#residual_only"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.residual_only" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.jacobian">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_par</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diff_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#jacobian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.jacobian" title="Link to this definition">#</a></dt>
+<dd><p>Central (or forward) differences, exploiting two pieces of structure.</p>
+<ol class="arabic simple">
+<li><p>Only params 2 and 3 (sigma_star, v0_star) alter M_broad. The remaining</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_par</span> <span class="o">-</span> <span class="mi">2</span> <span class="n">parameters</span> <span class="n">reuse</span> <span class="n">the</span> <span class="n">centre</span> <span class="n">point</span><span class="s1">&#39;s broadened matrix, so of</span>
+<span class="n">the</span> <span class="mi">2</span><span class="o">*</span><span class="n">n_par</span><span class="o">+</span><span class="mi">1</span> <span class="n">evaluations</span> <span class="n">only</span> <span class="mi">4</span> <span class="n">pay</span> <span class="k">for</span> <span class="n">an</span> <span class="n">inverse</span> <span class="n">FFT</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The nebular fixed point runs the SAME number of iterations from the</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SAME cold start (Q = 0) as the residual the LM is minimising.
+
+This matters more than it looks. An earlier version converged Q* once
+at the centre and warm-started each perturbation with a single extra
+iteration — 1.5x faster, and wrong. The Jacobian then described a
+different map than `residual_only`, so the predicted reduction never
+matched the actual one, the gain ratio went to noise, and every LM step
+was rejected: `photopop` mode terminated at its initial guess. Keep the two
+maps identical; the fixed point is cheap now that the Gram matrix is
+hoisted out of the loop.
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>The centre point’s passive set P0 is reused as the warm start for every</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>perturbed linear solve. That is exact — solve_active_set purges an
+illegal inherited set before it starts, so it reaches the same vertex
+wherever it starts. Measured max|J_warm - J_cold| = 0 exactly in all
+three modes, and it is cheaper in two of them (nepop Jacobian
+91 ms against 125 ms cold). Before the purge existed this warm start
+was NOT exact and inflated the photopop-mode A_V column by 19x.
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.lm_optimize">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">lm_optimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds_lo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds_hi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_par</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ftol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diff_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#lm_optimize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.lm_optimize" title="Link to this definition">#</a></dt>
+<dd><p>Projected Levenberg-Marquardt, identical in structure and convergence
+logic to optimizer._lm_optimize, but driving the unified forward model so
+it serves all three photoionization modes.</p>
+<p><cite>max_iter</cite> is a TRACED runtime value, not a static one — it only bounds a
+lax.while_loop, so it need not be baked into the compiled kernel. Together
+with the bounds, tolerances, starting point, reddening curve and
+regularisation strength (all already runtime arrays), this means the
+entire tunable surface of a fit can change without recompiling. Verified:
+max_iter 200 -&gt; 150 -&gt; 300 reuses the cached kernel and returns identical
+results. Only the problem’s <em>shape</em> forces a rebuild — pixel count,
+template count, regularisation order, photoionization mode.</p>
+<p>On the stagnation rule. <cite>n_stag</cite> counts consecutive iterations whose chi2
+moved by less than ftol*100, and five of them end the fit as converged.
+It advances only on ACCEPTED steps. A rejected trial leaves chi2 exactly
+where it was, so counting rejections as stagnation turned the rule into a
+five-rejection kill switch wearing a convergence label — and a rejection is
+precisely the event LM answers by raising lambda, which is the recovery
+mechanism, not a sign of convergence. Measured: a nepop fit took ten
+accepted steps still improving at 2.2e-3 per iteration, hit five
+rejections while lambda climbed from 5.1e-8 to 4.1e-6, and returned
+“converged” having thrown away 0.12 in chi2 and 18% of A_V. Rejections are
+already bounded by the n_rej &lt; 10 test in <cite>cond</cite>, which is the honest place
+for that limit and which now also reports convergence rather than
+“max iter”.</p>
+<p><cite>step_norm</cite> is measured against the width of the bounds box, not against
+abs(x). Against abs(x) it is scale-broken: sigma_star converges onto its lower
+bound of zero and yav is pinned at zero, so the denominator collapses to
+1e-10 and step_norm reads 1e7 or more, which made the <cite>classical</cite> test
+unreachable and left xtol with no effect at all.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.fast_engine.grid_chi2">
+<span class="sig-prename descclassname"><span class="pre">brainsp.fast_engine.</span></span><span class="sig-name descname"><span class="pre">grid_chi2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_star_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">av_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_gas_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_groups</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/fast_engine.html#grid_chi2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.fast_engine.grid_chi2" title="Link to this definition">#</a></dt>
+<dd><p>chi2 across a velocity grid, vmapped.</p>
+<p>Deliberately evaluated in “spop” mode regardless of the requested mode:
+this only picks the velocity basin for the LM, the weights are discarded,
+and adding the nebular fixed point here would cost 4x for no benefit.
+This matches the existing behaviour of SpectralFitter.grid_search_v0.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.optimizer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.optimizer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.solver.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.solver</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants"><code class="docutils literal notranslate"><span class="pre">ForwardConstants</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.M_fft"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.M_fft</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.omega"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.omega</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.velscale"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.velscale</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.yav_flags"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.yav_flags</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.lam"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.lam</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.flux"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.flux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.inv_sigma"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.inv_sigma</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.dk"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.dk</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.D_full"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.D_full</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.rest_wl"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.rest_wl</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.ratios"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.ratios</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.n_comp"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.n_comp</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.group_indices"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.group_indices</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.neb_shape"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.neb_shape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.neb_col"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.neb_col</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.neb_at_l0"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.neb_at_l0</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.qh_ratios"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.qh_ratios</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.k_norm"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.k_norm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.H_gas_idx"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.H_gas_idx</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.H_ratios"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.H_ratios</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.H_dk"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.H_dk</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.C_Hbeta"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.C_Hbeta</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.av_neb"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.av_neb</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.sc_weight"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.sc_weight</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardConstants.sc_damping"><code class="docutils literal notranslate"><span class="pre">ForwardConstants.sc_damping</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes"><code class="docutils literal notranslate"><span class="pre">ForwardShapes</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_pix"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_pix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_pad"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_pad</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_left"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_left</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_star"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_star</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_gas"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_gas</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_par"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_par</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.max_comp"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.max_comp</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.mode"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.mode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_neb_iter"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_neb_iter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.live"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.live</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.n_neb"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.n_neb</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.solver"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.solver</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.simplex"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.simplex</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.ForwardShapes.fit_lines"><code class="docutils literal notranslate"><span class="pre">ForwardShapes.fit_lines</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.build_constants"><code class="docutils literal notranslate"><span class="pre">build_constants()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.broaden"><code class="docutils literal notranslate"><span class="pre">broaden()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.forward_from_broad"><code class="docutils literal notranslate"><span class="pre">forward_from_broad()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.forward"><code class="docutils literal notranslate"><span class="pre">forward()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.residual_only"><code class="docutils literal notranslate"><span class="pre">residual_only()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.jacobian"><code class="docutils literal notranslate"><span class="pre">jacobian()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.lm_optimize"><code class="docutils literal notranslate"><span class="pre">lm_optimize()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.fast_engine.grid_chi2"><code class="docutils literal notranslate"><span class="pre">grid_chi2()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. A first fit &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/brainsp.css?v=a44d817d" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/first_fit';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Emission lines" href="emission_lines.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">1. A first fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emission_lines.html">2. Emission lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agn.html">3. An AGN continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batches.html">4. Observed-frame spectra, corrections and batches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masks.html">5. Wavelength masks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings_scripts.html">6. Settings, and a run as one file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datacube.html">7. A datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="megacube.html">8. Reading a megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_walkthrough.html">9. The same, in the interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">10. Runs on a server</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1. A first fit</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-first-fit">
+<h1>1. A first fit<a class="headerlink" href="#a-first-fit" title="Link to this heading">#</a></h1>
+<p>The mock spectrum <code class="docutils literal notranslate"><span class="pre">mock_old_population.spec</span></code> was built from three old,
+metal-rich BasesGM templates (12.6 Gyr and 5 Gyr at <span class="math notranslate nohighlight">\(Z = 0.019\)</span>, 8.9 Gyr at
+<span class="math notranslate nohighlight">\(Z = 0.0315\)</span>), behind <span class="math notranslate nohighlight">\(A_V = 0.2\)</span> mag of dust, with the stars moving at
+<span class="math notranslate nohighlight">\(v_\star = 150\)</span> km/s and <span class="math notranslate nohighlight">\(\sigma_\star = 200\)</span> km/s, at signal-to-noise 100.
+BRAIN is told none of that.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Tutorial 1: a first fit.&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+
+<span class="c1"># 1. The mock data used throughout the tutorials: five spectra and a</span>
+<span class="c1">#    16 x 16 datacube, each with the true values it was built from.</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">mock</span><span class="o">.</span><span class="n">write_examples</span><span class="p">(</span><span class="s2">&quot;examples&quot;</span><span class="p">)</span>
+<span class="n">spectrum</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">/spectra/mock_old_population.spec&quot;</span>
+
+<span class="c1"># 2. Fit it with BRAIN&#39;s default settings.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fits&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># 3. The numbers.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stellar velocity   v0    = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">v0</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2"> km/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;velocity dispersion sigma = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">sigma</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2"> km/s (observed)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;extinction         A_V   = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">av</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2"> mag&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;log age&gt;_L              = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;log age&gt;_M              = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">mean_log_age_mass</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;Z&gt;_L                    = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">mean_metallicity_light</span><span class="si">:</span><span class="s2">8.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chi2 / N_eff             = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">chi2</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4. Against the truth the mock was built from.</span>
+<span class="n">truth</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">spectrum</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.spec&quot;</span><span class="p">,</span> <span class="s2">&quot;.truth.json&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">truth: v0 = </span><span class="si">{v}</span><span class="s2">, sigma = </span><span class="si">{sigma}</span><span class="s2">, A_V = </span><span class="si">{av}</span><span class="s2">, &lt;log age&gt;_L = &quot;</span>
+      <span class="s2">&quot;</span><span class="si">{mean_log_age_light:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">truth</span><span class="p">))</span>
+
+<span class="c1"># 5. The population vector: the templates that carry light.</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">populations</span>
+<span class="n">used</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  x_j(%)  mass_j(%)   age (yr)      Z&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">used</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;mcor&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">10.3g</span><span class="si">}</span><span class="s2">  &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 6. Figures.</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;t01_spectrum.png&quot;</span><span class="p">)</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;t01_zoom.png&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">5100</span><span class="p">,</span> <span class="mi">5400</span><span class="p">),</span>
+                       <span class="n">residuals</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">sfh</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;t01_sfh.png&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">files:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">summary_file</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">fitted_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Plot saved to fits/mock_old_population_fit.pdf
+&lt;FitResult mock_old_population.spec: v0=149.02 km/s, sigma=201.38 km/s, AV=0.2073, chi2=0.665296&gt;
+stellar velocity   v0    =   149.02 km/s
+velocity dispersion sigma =   201.38 km/s (observed)
+extinction         A_V   =    0.207 mag
+&lt;log age&gt;_L              =    9.988
+&lt;log age&gt;_M              =   10.017
+&lt;Z&gt;_L                    =   0.0221
+chi2 / N_eff             =    0.665
+
+truth: v0 = 150.0, sigma = 200.0, A_V = 0.2, &lt;log age&gt;_L = 9.983
+
+  x_j(%)  mass_j(%)   age (yr)      Z
+    9.20      5.03    5.01e+09  0.0190
+   15.90     14.23    8.91e+09  0.0190
+   50.30     57.78    1.26e+10  0.0190
+    4.20      2.63    5.01e+09  0.0315
+   20.04     20.28    8.91e+09  0.0315
+
+files:
+  fits/mock_old_population_summary.txt
+  fits/mock_old_population_fitted.txt
+</pre></div>
+</div>
+<section id="reading-the-result">
+<h2>Reading the result<a class="headerlink" href="#reading-the-result" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="../api/generated/brainsp.fit_spectrum.html#brainsp.fit_spectrum" title="brainsp.fit_spectrum"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.fit_spectrum()</span></code></a> returns a <a class="reference internal" href="../api/generated/brainsp.FitResult.html#brainsp.FitResult" title="brainsp.FitResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">FitResult</span></code></a>. Its
+headline numbers came back within 1.0 km/s, 1.4 km/s and 0.007 mag of the
+truth.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">v0</span></code> and <code class="docutils literal notranslate"><span class="pre">sigma</span></code> are the stellar velocity and velocity dispersion. The
+dispersion is <em>observed</em>: it includes the instrument and the library’s own
+resolution difference unless <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> is set (see
+<a class="reference internal" href="../user_guide/resolution.html"><span class="std std-doc">Instrumental resolution</span></a>). The mock was built from the same
+templates BRAIN fits it with, so here there is no difference to remove.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">av</span></code> is the V-band extinction, with the CCM law (<code class="docutils literal notranslate"><span class="pre">reddening_law</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mean_log_age_light</span></code> is <span class="math notranslate nohighlight">\(\langle \log t \rangle_L = \sum_j x_j \log t_j /
+\sum_j x_j\)</span> over the stellar populations, the light-weighted mean of the
+logarithm of the age (not the logarithm of the mean age); see
+<a class="reference internal" href="../theory/derived.html"><span class="std std-doc">Derived quantities</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chi2</span></code> is <span class="math notranslate nohighlight">\(\chi^2 / N_{\rm eff}\)</span>. It comes out near 0.65 rather than 1
+because the mock’s error column is sampled on a 1 Å grid and BRAIN
+resamples onto its logarithmic grid, which averages neighbouring noise.</p></li>
+</ul>
+</section>
+<section id="the-population-vector">
+<h2>The population vector<a class="headerlink" href="#the-population-vector" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">r.populations</span></code> is a NumPy structured array, one row per template: <code class="docutils literal notranslate"><span class="pre">x</span></code>
+(light fraction, per cent, at 5500 Å), <code class="docutils literal notranslate"><span class="pre">mini</span></code> and <code class="docutils literal notranslate"><span class="pre">mcor</span></code> (initial and
+present mass fractions, per cent), <code class="docutils literal notranslate"><span class="pre">age</span></code>, <code class="docutils literal notranslate"><span class="pre">Z</span></code>, <code class="docutils literal notranslate"><span class="pre">mstars</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">stellar</span></code> (False for an AGN component). Only five of the 84 templates carry
+light: the non-negative least-squares solution is sparse, which is expected
+and correct, not a failure to converge.</p>
+<p>The fit splits the light between the true populations and their neighbours
+in age and metallicity: the 12.6 Gyr and 8.9 Gyr templates, at both
+metallicities. That is the age-metallicity degeneracy at work. Quantities
+that average over the population vector, like
+<span class="math notranslate nohighlight">\(\langle \log t \rangle_L\)</span> (10.00 against a true 9.98), are far more robust
+than any single <span class="math notranslate nohighlight">\(x_j\)</span>. Report averages, or sums over age bins, not
+individual components.</p>
+</section>
+<section id="figures">
+<h2>Figures<a class="headerlink" href="#figures" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="../api/generated/brainsp.plots.html#brainsp.plots.spectrum" title="brainsp.plots.spectrum"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.plots.spectrum()</span></code></a> draws the data and the model, with the
+residuals underneath:</p>
+<img alt="The fit of mock_old_population." src="../_images/t01_spectrum.png" />
+<p><code class="docutils literal notranslate"><span class="pre">xlim=</span></code> zooms; this is the Mg <em>b</em> and Fe region:</p>
+<img alt="Zoom on 5100-5400 A." src="../_images/t01_zoom.png" />
+<p><a class="reference internal" href="../api/generated/brainsp.plots.html#brainsp.plots.sfh" title="brainsp.plots.sfh"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.plots.sfh()</span></code></a> draws the star-formation history, the light and
+mass fractions in each age summed over metallicity:</p>
+<img alt="Star-formation history." src="../_images/t01_sfh.png" />
+<p>The fit also wrote <code class="docutils literal notranslate"><span class="pre">fits/mock_old_population_summary.txt</span></code> (the numbers), <code class="docutils literal notranslate"><span class="pre">_fitted.txt</span></code> (the spectra, column by column),
+<code class="docutils literal notranslate"><span class="pre">_settings.txt</span></code> (every setting used) and <code class="docutils literal notranslate"><span class="pre">_fit.pdf</span></code> (the standard figure).
+<a class="reference internal" href="../user_guide/outputs.html"><span class="std std-doc">Output files</span></a> describes every line of them.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tutorials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="emission_lines.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. Emission lines</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-result">Reading the result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-population-vector">The population vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figures">Figures</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

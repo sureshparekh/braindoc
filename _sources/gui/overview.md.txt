@@ -1,0 +1,81 @@
+# Layout and conventions
+
+```{image} ../_static/gui/light_spectrum_step1.png
+:alt: The interface with a spectrum chosen.
+:class: screenshot
+```
+
+## The header
+
+From left to right:
+
+**Spectrum / Datacube / Results**
+: the three workspaces. *Spectrum* fits one spectrum or a table of them;
+  *Datacube* prepares and fits datacubes; *Results* opens a fitted megacube.
+
+**Status**
+: a word or two on what is happening: `ready`, `fitting 3/40`, a file name.
+
+**Device** (`auto`, `cpu`, `gpu`)
+: where the next fit runs. Every fit runs in a process of its own started
+  for it, so the choice takes effect on the next run, whatever ran before.
+  `auto` uses a GPU when JAX can see one.
+
+**Theme**
+: the moon (switch to dark) or sun (switch to light).
+
+**Fit spectrum**
+: in the Spectrum workspace, runs the fit.
+
+## Steps
+
+Under the header, each workspace is a row of numbered steps, in the order
+the work is done. Each step shows an icon, its name and one line of state:
+
+- a **green check**: the step is ready (its settings are complete);
+- a **red !**: it needs something before the run can start, and the line
+  says what (*enter the redshift*, *say whether the file is air or vacuum*);
+- the **current step**, filled in blue and underlined.
+
+Click a step to go to it, or use **Next** and **Back** at the bottom of
+the step.
+
+## Required and Optional
+
+Every step and every panel is tagged:
+
+**Required**
+: the run is refused, or would be silently wrong, without an answer here.
+
+**Optional**
+: the defaults are a sound choice; change them only with a reason.
+
+**Not needed**
+: the current choices never read this panel (the wavelength scale in
+  `spop`, which places no emission line).
+
+## The stage
+
+The right-hand side shows the data being worked on and stays there whichever
+step is open: the spectrum and its fit, or the datacube with a map and the
+spectrum of the chosen spaxel.
+
+Mouse controls on every plot:
+
+| | Spectrum | Map |
+|---|---|---|
+| scroll wheel | zoom the wavelength axis about the pointer | zoom about the pointer |
+| drag | mark a wavelength region to mask | pan (when zoomed) |
+| right-click in a region | remove it | |
+| click | | choose a spaxel |
+| double-click | the whole range | the whole field |
+| arrow keys | | move the chosen spaxel (shift: by ten) |
+
+The toolbar above the spectrum (home, pan, zoom) does the same with
+matplotlib's tools. The pointer is always the operating system's own.
+
+## The bottom bar
+
+In the Spectrum workspace, the headline numbers of the last fit: $A_V$,
+$\sigma_\star$, $v_\star$, $\chi^2/N$ and the mean deviation. Left of them,
+the value under the pointer.

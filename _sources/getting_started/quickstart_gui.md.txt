@@ -1,0 +1,69 @@
+# Quick start: the desktop interface
+
+```bash
+brainsp examples        # mock data to ~/.brainsp/examples, which the
+                        # interface opens with
+brainsp gui
+```
+
+```{image} ../_static/gui/light_spectrum_empty.png
+:alt: BRAIN on start-up, Spectrum workspace, step 1.
+:class: screenshot
+```
+
+The window has three workspaces, chosen at the top left:
+
+**Spectrum**
+: fit one spectrum, or a table of them.
+
+**Datacube**
+: prepare and fit a datacube, and watch it being fitted.
+
+**Results**
+: open a fitted megacube and read its maps, spectra and diagrams.
+
+Under them, each workspace is a row of numbered **steps**, done in order.
+Each step shows its state on one line: a green check when it is ready, a
+red **!** when it needs input. The step's controls are on the left; the data
+being worked on (the spectrum, the cube) are on the right throughout. Every
+step and every panel is tagged **Required** or **Optional**: the optional
+ones have sound defaults and can be left alone.
+
+## Fit a spectrum in five steps
+
+1. **Spectrum** (required): pick `mock_old_population.spec` from the list.
+   It is drawn on the right.
+2. **Corrections** (optional): the redshift and the Milky Way's
+   reddening to remove before fitting. This mock is already in the rest
+   frame, so leave it.
+3. **Masks** (optional): drag across the spectrum to leave a region out of
+   the fit, or load a `.sm` mask file.
+4. **Model** (required): the template library, the ages and metallicities,
+   the nebular mode, dust and kinematics. The defaults fit this mock.
+5. **Fit**: check the summary and press **Fit spectrum** (top right).
+
+The fit appears over the data, with the stellar and emission-line
+components, and its headline numbers (A_V, sigma, v0, chi2, adev) in the
+bar at the bottom.
+
+```{image} ../_static/gui/light_spectrum_fit.png
+:alt: A fitted spectrum in the BRAIN interface.
+:class: screenshot
+```
+
+## Fit a datacube in six steps
+
+Choose **Datacube**, then:
+
+1. **Cubes**: *Open datacube…* and pick `cube/mock_cube.fits`. Its flux
+   map appears on the right; click a spaxel to see its spectrum.
+2. **Corrections**: the redshift, **0.02** for this mock (required).
+3. **Preparation** (optional): binning, resolution, filtering. Skip.
+4. **Masks**: click S/N **3**: the map greys out the spaxels it would leave
+   out. Optionally drag on the spaxel spectrum to mask wavelengths.
+5. **Model**: the same settings as for spectra; choose **espop** and, in
+   step 1, the wavelength scale **vacuum**.
+6. **Run**: *Run the pipeline*. Each spaxel lights up in blue on the map as
+   it is fitted; *View results* opens the megacube when it is done.
+
+[](../gui/index.md) goes through every control of every step, in both themes.

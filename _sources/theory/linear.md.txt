@@ -1,0 +1,56 @@
+# The linear solve
+
+For fixed non-linear parameters $\theta$, the model is linear in the weights:
+$M = A(\theta)\, w$, where column $j$ of $A$ is template $j$ broadened, shifted
+and attenuated (and the line and nebular columns). The weights solve
+
+$$ \min_{w \ge 0} \; \lVert W^{1/2}(A w - f) \rVert^2 + \lVert D w_\star \rVert^2, $$
+
+$W = \mathrm{diag}(m_\lambda/\sigma_\lambda^2)$, which is a non-negative
+least-squares problem on the augmented system
+
+$$ \tilde A = \begin{pmatrix} W^{1/2} A \\ D\; 0 \end{pmatrix}, \qquad \tilde f = \begin{pmatrix} W^{1/2} f \\ 0 \end{pmatrix}. $$
+
+## Active-set NNLS
+
+`linear_solver: active_set` (the default) solves it exactly with the
+Lawson–Hanson active-set method on the normal equations $\tilde A^{\rm
+T}\tilde A\, w = \tilde A^{\rm T}\tilde f$: weights move between an active set
+(held at zero) and a passive set (solved by unconstrained least squares) until
+the Karush–Kuhn–Tucker conditions hold. It reaches scipy's NNLS optimum to
+$\sim 10^{-12}$. Implemented in JAX with fixed-size loops so it compiles and
+vectorises over spaxels. A datacube's fast fitter starts each solve from the
+previous one's active set, which gives the same answer in fewer iterations.
+
+The solution is sparse: typically 5–20 of 84 templates carry light. That is
+the honest answer of a degenerate problem, not a failure to converge.
+
+`fista` is an older iterative solver kept to reproduce old results; it does
+not converge on this problem.
+
+## Double precision
+
+$\tilde A^{\rm T}\tilde A$ has condition numbers near $10^{10}$ (templates of
+neighbouring age and metallicity are nearly collinear), so the solve needs
+float64; in float32 the weights change. BRAIN enables JAX's 64-bit mode
+everywhere.
+
+## Regularisation
+
+`smoothness` $\lambda_s$ (default 0, off) adds a Tikhonov penalty on the
+stellar weights, $\lVert D w_\star\rVert^2$, with $D$ the first- or
+second-difference operator (`smoothness_order`):
+
+$$ (D_1 w)_j = \lambda_s (w_{j+1} - w_j), \qquad (D_2 w)_j = \lambda_s (w_{j+2} - 2w_{j+1} + w_j), $$
+
+over the templates in catalogue order (sorted by metallicity, then age), so
+it favours star-formation histories that vary smoothly with age. It biases the
+answer towards smoothness by design; use it to stabilise histories at low
+signal-to-noise, and report it.
+
+## The simplex constraint
+
+`enforce_simplex: true` adds $\sum_{j\le N_\star} w_j = 1$ to the system (via the
+KKT equations). Off by default: the constraint is only right together with a
+fitted normalisation, and the reported fractions are normalised to 100 per
+cent either way.

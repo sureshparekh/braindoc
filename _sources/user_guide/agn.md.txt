@@ -1,0 +1,36 @@
+# AGN continuum
+
+An active nucleus adds a featureless continuum that no stellar population
+reproduces. Fitted without it, its blue light is taken by spurious young
+populations and its red light by extra dust ([tutorial 3](../tutorials/agn.md)).
+
+```python
+brainsp.fit_spectrum("seyfert.spec", include_power_law=True)
+```
+
+`include_power_law: true` (interface: *Include AGN continuum templates (7)*)
+adds seven templates to whichever library is used:
+
+| Template | What it is |
+|---|---|
+| `FC0.50`, `FC1.00`, `FC1.50`, `FC2.00` | power laws $F_\nu \propto \nu^{-\alpha}$, $\alpha$ = 0.5, 1.0, 1.5, 2.0 |
+| `AGN_Cloudy_T1.0e5`, `T1.5e5`, `T2.0e5` | Cloudy's AGN incident continuum with a big-bump temperature of $1$, $1.5$ and $2\times10^5$ K, $\alpha_{ox} = -1.4$, $\alpha_{uv} = -0.5$, $\alpha_x = -1$ |
+
+All are normalised at 5268 Å and tabulated over 1000–25 000 Å. In the optical
+the Cloudy continua are power laws of slope 0.74, 0.64 and 0.59 to within
+1.4 per cent, so they and the FC series overlap: **only the summed AGN light
+is a measurement**, not its split between templates. A library's own power
+law (BasesGM's `PowerOpt_150`, identical to `FC1.50`) is left out when these
+are added.
+
+## In the results
+
+- The population table lists each AGN template with its light fraction
+  `x_j` and zero mass: a power law has no stars.
+- `FitResult.agn_fraction` is the summed AGN light at the normalisation
+  wavelength, in per cent; the summary has `x_AGN (%)`.
+- The megacube has an `FC<α>` plane per power law and an `AGN_light` plane.
+
+The AGN templates are in `brainsp/data/libraries/AGN` with a
+`CATALOGUE.txt` whose `KIND` is `powerlaw`; they are never offered as a
+library on their own.

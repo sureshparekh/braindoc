@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.io_utils &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.io_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.plot_fit" href="brainsp.plot_fit.html" />
+    <link rel="prev" title="brainsp.reddening_catalogue" href="brainsp.reddening_catalogue.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.atomic_data.html">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.io_utils</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.io_utils">
+<span id="brainsp-io-utils"></span><h1>brainsp.io_utils<a class="headerlink" href="#module-brainsp.io_utils" title="Link to this heading">#</a></h1>
+<p>NewBrain I/O Utilities
+Loading spectra, SSP libraries, masks, and writing output.</p>
+<p>Everything here is file handling and numpy except the resampling of a
+template onto the fitted grid, which is <cite>spectral_engine</cite> and therefore JAX.
+That import is made inside the two functions that resample, so that asking
+this module what a library covers, or what a spectrum contains, does not
+start a JAX backend. The desktop interface asks both of those questions
+before a device has been chosen, and a backend started in the process that
+asks is a backend the fit can no longer choose.</p>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.chi2_per_effective_pixel" title="brainsp.io_utils.chi2_per_effective_pixel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chi2_per_effective_pixel</span></code></a>(chi2, n_eff)</p></td>
+<td><p>chi2 divided by Nl_eff, which is the convention BRAIN reports.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.describe_coverage" title="brainsp.io_utils.describe_coverage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe_coverage</span></code></a>(cov)</p></td>
+<td><p>One or two lines stating what a library covers and what it supports.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.deviation_percent" title="brainsp.io_utils.deviation_percent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deviation_percent</span></code></a>(flux_observed, model, fitted)</p></td>
+<td><p>adev: the mean of abs(observed - model) / observed over the fitted pixels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.effective_pixel_count" title="brainsp.io_utils.effective_pixel_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">effective_pixel_count</span></code></a>(inv_sigma)</p></td>
+<td><p>Nl_eff: the pixels of non-zero weight, the ones that entered the chi2.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.library_coverage" title="brainsp.io_utils.library_coverage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">library_coverage</span></code></a>(ssp_folder, bases_info)</p></td>
+<td><p>What a template library covers, measured from its own files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.load_bases_dir" title="brainsp.io_utils.load_bases_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_bases_dir</span></code></a>(bases_file)</p></td>
+<td><p>Parse a BasesDir-format SSP library file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.load_mask" title="brainsp.io_utils.load_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_mask</span></code></a>(mask_file, wavelength)</p></td>
+<td><p>Load a wavelength mask as a per-pixel weight on <cite>wavelength</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.load_native_template" title="brainsp.io_utils.load_native_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_native_template</span></code></a>(path)</p></td>
+<td><p>Read one template file at the sampling the library wrote it on.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.load_spectrum" title="brainsp.io_utils.load_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_spectrum</span></code></a>(file_path[, has_errors])</p></td>
+<td><p>Load observed spectrum from text file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.load_ssp_templates" title="brainsp.io_utils.load_ssp_templates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_ssp_templates</span></code></a>(ssp_folder, bases_info, ...)</p></td>
+<td><p>Load all SSP templates and interpolate them onto the target wavelength grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.population_statistics" title="brainsp.io_utils.population_statistics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">population_statistics</span></code></a>(weights_star, ...)</p></td>
+<td><p>The per-template light and mass quantities, for one spectrum or a batch.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.read_mask_regions" title="brainsp.io_utils.read_mask_regions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_mask_regions</span></code></a>(mask_file)</p></td>
+<td><p>The regions of a wavelength mask file, as [(start, end, weight, label)].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.resample_template" title="brainsp.io_utils.resample_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample_template</span></code></a>(ssp_wl, ssp_fl, target_wl)</p></td>
+<td><p>Map one template onto the fitted grid, conserving flux.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.scan_ssp_folder" title="brainsp.io_utils.scan_ssp_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scan_ssp_folder</span></code></a>(folder[, suffix])</p></td>
+<td><p>Scan folder for SSP files matching a suffix (fallback if no BasesDir).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.stellar_component_flags" title="brainsp.io_utils.stellar_component_flags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stellar_component_flags</span></code></a>(bases_info, names)</p></td>
+<td><p>Which of the loaded templates are stellar populations, said by the library.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.write_fitted_spectrum" title="brainsp.io_utils.write_fitted_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_fitted_spectrum</span></code></a>(filepath, wavelength, ...)</p></td>
+<td><p>Write the fitted spectrum to a text file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.io_utils.write_mask_regions" title="brainsp.io_utils.write_mask_regions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_mask_regions</span></code></a>(path, regions)</p></td>
+<td><p>Write regions as a .sm mask file: the count, then one per line.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.io_utils.write_summary" title="brainsp.io_utils.write_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_summary</span></code></a>(filepath, config, params, ...)</p></td>
+<td><p>Write the fit summary to a text file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.load_spectrum">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">load_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#load_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.load_spectrum" title="Link to this definition">#</a></dt>
+<dd><p>Load observed spectrum from text file.</p>
+<p>Supports 2-column (wavelength, flux) or 3-column (wavelength, flux, error).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>file_path</strong><span class="classifier">str</span></dt><dd><p>Path to spectrum file.</p>
+</dd>
+<dt><strong>has_errors</strong><span class="classifier">bool</span></dt><dd><p>Whether to look for a 3rd column with errors.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">1D array</span></dt><dd></dd>
+<dt><strong>flux</strong><span class="classifier">1D array</span></dt><dd></dd>
+<dt><strong>err</strong><span class="classifier">1D array or None</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.load_bases_dir">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">load_bases_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bases_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#load_bases_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.load_bases_dir" title="Link to this definition">#</a></dt>
+<dd><p>Parse a BasesDir-format SSP library file.</p>
+<dl class="simple">
+<dt>Format:</dt><dd><p>Line 1: N_base
+Lines 2+: filename  age_yr  metallicity  short_name</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bases_file</strong><span class="classifier">str</span></dt><dd><p>Path to BasesDir file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>entries</strong><span class="classifier">list of dict</span></dt><dd><p>Each dict has: ‘filename’, ‘age_gyr’, ‘metallicity’, ‘short_name’</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.scan_ssp_folder">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">scan_ssp_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_baseFe'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#scan_ssp_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.scan_ssp_folder" title="Link to this definition">#</a></dt>
+<dd><p>Scan folder for SSP files matching a suffix (fallback if no BasesDir).</p>
+<p>Returns list of dicts with filename and placeholder metadata.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.library_coverage">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">library_coverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssp_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases_info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#library_coverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.library_coverage" title="Link to this definition">#</a></dt>
+<dd><p>What a template library covers, measured from its own files.</p>
+<p>Whether a library can support the nebular modes is arithmetic rather
+than preference. Q(H) is integrated from the raw spectra shortward of
+the Lyman limit, so a library whose files begin redward of it emits, by
+construction, no ionising photons at all, and its nebular continuum
+would be identically zero while the fit ran to completion and looked
+converged. A hardcoded list of which libraries qualify goes stale the
+first time one is regenerated or a variant is shipped, so the question
+is asked of the files.</p>
+<p>Only the first and last wavelength of each file are read, which is
+cheap enough to run before a fit rather than partway through one.</p>
+<p>Only the nebular modes are affected. spop and espop fit the emission
+lines from the catalogue with free amplitudes and predict nothing, so
+they need no ionising photon budget and are available for every
+library.</p>
+<p>Returns a dict with the bluest and reddest wavelength across the
+library, how many of its files reach below the Lyman limit, and the
+modes that are therefore available for it.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.describe_coverage">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">describe_coverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cov</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#describe_coverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.describe_coverage" title="Link to this definition">#</a></dt>
+<dd><p>One or two lines stating what a library covers and what it supports.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.load_native_template">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">load_native_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#load_native_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.load_native_template" title="Link to this definition">#</a></dt>
+<dd><p>Read one template file at the sampling the library wrote it on.</p>
+<p>Nothing is resampled, normalised or trimmed. This is the form a
+line-spread-function correction has to see: the kernel that separates two
+line-spread functions is a width in Angstrom on the grid the library was
+tabulated on, and a template that has already been mapped onto the fitted
+log-lambda grid no longer has that grid to be convolved on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">1D array</span></dt><dd><p>The template’s own wavelength axis, in Angstrom.</p>
+</dd>
+<dt><strong>flux</strong><span class="classifier">1D array</span></dt><dd><p>The template’s own flux density, in the library’s own units.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.resample_template">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">resample_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssp_wl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_fl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_wl</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#resample_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.resample_template" title="Link to this definition">#</a></dt>
+<dd><p>Map one template onto the fitted grid, conserving flux.</p>
+<p>Target pixels outside the template’s own span stay at exactly zero, which
+is the signal the coverage test downstream reads to decide which pixels no
+template reaches. Because the span is a property of the file and not of
+anything done to its flux, a template convolved before this step covers
+exactly the pixels it covered before.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.load_ssp_templates">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">load_ssp_templates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssp_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_wl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#load_ssp_templates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.load_ssp_templates" title="Link to this definition">#</a></dt>
+<dd><p>Load all SSP templates and interpolate them onto the target wavelength grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ssp_folder</strong><span class="classifier">str</span></dt><dd><p>Path to SSP files.</p>
+</dd>
+<dt><strong>bases_info</strong><span class="classifier">list of dict</span></dt><dd><p>SSP library entries (from load_bases_dir or scan_ssp_folder).</p>
+</dd>
+<dt><strong>target_wl</strong><span class="classifier">1D array</span></dt><dd><p>Target wavelength grid to interpolate onto.</p>
+</dd>
+<dt><strong>norm_wavelength</strong><span class="classifier">float</span></dt><dd><p>Normalization wavelength.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>matrix</strong><span class="classifier">2D array (N_pix, N_ssp)</span></dt><dd><p>Normalized SSP template matrix.</p>
+</dd>
+<dt><strong>names</strong><span class="classifier">list of str</span></dt><dd><p>SSP filenames.</p>
+</dd>
+<dt><strong>ages</strong><span class="classifier">1D array</span></dt><dd><p>SSP ages in Gyr.</p>
+</dd>
+<dt><strong>metals</strong><span class="classifier">1D array</span></dt><dd><p>SSP metallicities.</p>
+</dd>
+<dt><strong>short_names</strong><span class="classifier">list of str</span></dt><dd><p>Short names for output.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.read_mask_regions">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">read_mask_regions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#read_mask_regions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.read_mask_regions" title="Link to this definition">#</a></dt>
+<dd><p>The regions of a wavelength mask file, as [(start, end, weight, label)].</p>
+<p>Two layouts are read:</p>
+<ul class="simple">
+<li><p>The .sm / .gm layout (BRAIN’s own when it saves one): a first</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="n">holding</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">regions</span> <span class="n">N</span><span class="p">,</span> <span class="n">then</span> <span class="n">N</span> <span class="n">lines</span> <span class="n">of</span>
+
+    <span class="n">start</span>  <span class="n">end</span>  <span class="n">weight</span>  <span class="p">[</span><span class="n">label</span> <span class="o">...</span><span class="p">]</span>
+
+<span class="n">Exactly</span> <span class="n">N</span> <span class="n">lines</span> <span class="n">are</span> <span class="n">regions</span><span class="o">.</span> <span class="n">Whatever</span> <span class="n">follows</span> <span class="ow">is</span> <span class="n">free</span> <span class="n">text</span><span class="p">,</span> <span class="ow">and</span>
+<span class="n">published</span> <span class="n">mask</span> <span class="n">files</span> <span class="n">use</span> <span class="n">it</span><span class="p">:</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">SDSS</span> <span class="n">emission</span><span class="o">-</span><span class="n">line</span> <span class="n">mask</span> <span class="n">ends</span> <span class="k">with</span> <span class="n">an</span> <span class="o">*</span><span class="n">example</span><span class="o">*</span> <span class="n">that</span> <span class="n">gives</span> <span class="n">Ca</span> <span class="n">II</span> <span class="n">K</span> <span class="ow">and</span> <span class="n">the</span>
+<span class="n">G</span> <span class="n">band</span> <span class="n">twice</span> <span class="n">the</span> <span class="n">weight</span><span class="o">.</span> <span class="n">Reading</span> <span class="n">every</span> <span class="n">numeric</span> <span class="n">line</span><span class="p">,</span> <span class="k">as</span> <span class="n">this</span> <span class="n">function</span>
+<span class="n">once</span> <span class="n">did</span><span class="p">,</span> <span class="n">applied</span> <span class="n">that</span> <span class="n">example</span> <span class="ow">and</span> <span class="n">up</span><span class="o">-</span><span class="n">weighted</span> <span class="n">both</span> <span class="n">windows</span> <span class="ow">in</span> <span class="n">every</span>
+<span class="n">fit</span> <span class="n">that</span> <span class="n">used</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>A plain list, with no count: every line that starts with two numbers</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">is</span> <span class="n">a</span> <span class="n">region</span><span class="o">.</span> <span class="n">Lines</span> <span class="n">starting</span> <span class="k">with</span> <span class="s1">&#39;#&#39;</span> <span class="n">are</span> <span class="n">comments</span> <span class="ow">in</span> <span class="n">both</span> <span class="n">layouts</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The weight is optional and defaults to 0 (the region is excluded). A
+third field that is not a number is the start of the label, and the
+region is excluded as usual.</p>
+<p>Returns (regions, n_skipped): n_skipped counts lines that should have
+been regions and did not start with two numbers.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.write_mask_regions">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">write_mask_regions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#write_mask_regions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.write_mask_regions" title="Link to this definition">#</a></dt>
+<dd><p>Write regions as a .sm mask file: the count, then one per line.</p>
+<p><cite>regions</cite> holds (start, end, weight) or (start, end, weight, label). The
+file reads back the same.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.load_mask">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">load_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#load_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.load_mask" title="Link to this definition">#</a></dt>
+<dd><p>Load a wavelength mask as a per-pixel weight on <cite>wavelength</cite>.</p>
+<p>The file is read by read_mask_regions, which says which layouts are
+understood. A pixel no region covers has weight 1; a region sets the
+pixels inside it to its weight (0 excludes them, above 1 makes them count
+for more). Later regions override earlier ones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mask_file</strong><span class="classifier">str or None</span></dt><dd><p>Path to mask file.</p>
+</dd>
+<dt><strong>wavelength</strong><span class="classifier">1D array</span></dt><dd><p>Wavelength grid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>weight</strong><span class="classifier">1D float array</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.stellar_component_flags">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">stellar_component_flags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bases_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#stellar_component_flags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.stellar_component_flags" title="Link to this definition">#</a></dt>
+<dd><p>Which of the loaded templates are stellar populations, said by the library.</p>
+<p>The template catalogue’s KIND column is the declared answer: ‘ssp’ for a
+stellar population and something else – ‘powerlaw’ – for a component
+that is not one. brain_settings.read_catalogue carries that word onto
+every entry, and this reads it back. Nothing here looks at a filename, a
+short name, an age or the shape of a spectrum, because all four are
+conventions a new library is free to break, and breaking them would move
+a mass silently.</p>
+<p>The lookup is by filename rather than by position: load_ssp_templates
+skips an entry whose file is missing, so the loaded arrays can be shorter
+than bases_info and a positional flag would then be attached to the wrong
+component. A name that no entry describes is a programming error and is
+raised rather than assumed stellar.</p>
+<p>Libraries loaded through load_bases_dir or scan_ssp_folder carry no KIND
+at all; those formats cannot express a non-stellar component, so every
+entry is a stellar population and the flags come back all True.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.population_statistics">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">population_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">av</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yav</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_yav_flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_mstars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_fbase_norms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_norm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_stellar</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#population_statistics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.population_statistics" title="Link to this definition">#</a></dt>
+<dd><p>The per-template light and mass quantities, for one spectrum or a batch.</p>
+<p>x_j, Mini_j and Mcor_j are what every population product is built from –
+the summary file’s percentage columns, and every population map of a
+megacube. They are computed here, once, so that a map value and that
+spaxel’s summary line cannot disagree: they are the same arithmetic on
+the same weights rather than two implementations of the same formula.</p>
+<p>A weight is the contribution of a template to the <em>reddened</em> spectrum at
+the normalisation wavelength. Turning it into a mass means undoing the
+extinction that template suffered – A_V plus YAV for the templates
+flagged as young – and dividing by the library’s flux per unit initial
+mass at that wavelength, which is what ssp_fbase_norms holds. Leaving the
+extinction out makes the dustiest populations look lighter than they are,
+and the error grows with A_V, so it does not show up as an offset.</p>
+<p><cite>is_stellar</cite> says, per template, whether that division means anything.
+A featureless power law is not a stellar population: it has no stars, no
+surviving stellar fraction and no mass, and its fbase_norm is the flux of
+an arbitrarily scaled file rather than a flux per solar mass. Its Mini_j
+and Mcor_j are therefore exactly zero, it is out of Mini_tot and
+Mcor_tot, and its mass percentage columns read 0. The magnitude of what
+that removes is set by nothing physical: the same fit, with the same
+weights, reports whatever mass the power-law file’s normalisation
+happens to imply, so the error it fixes is unbounded rather than small.</p>
+<p>Its LIGHT is untouched and stays in x_j, in <cite>light</cite> and in flux_tot. The
+power law genuinely does contribute light, and a component that is 30 per
+cent of the light and 0 per cent of the mass is the correct reading of an
+AGN continuum sitting on top of a stellar population. The two columns are
+normalised over different sets on purpose: x_j over every component,
+Mini_j and Mcor_j over the stellar ones, which is why a summary file can
+show a non-zero x_j against a zero Mcor_j without either being a bug.</p>
+<p>The ionising photon budget is deliberately not touched here. Q(H)_total
+is built in brainv1 from the same expression, but what it multiplies is
+photons per unit of a template’s own normalisation, and a power law does
+ionise. Zeroing a mass is not a statement about photons.</p>
+<p>The leading axis is optional. Pass a (n_ssp,) weight vector and every
+returned array is one-dimensional; pass (n_spec, n_ssp) and the totals
+come back as (n_spec,). That is how the batched cube path and the single
+spectrum share one implementation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.deviation_percent">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">deviation_percent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flux_observed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fitted</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#deviation_percent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.deviation_percent" title="Link to this definition">#</a></dt>
+<dd><p>adev: the mean of abs(observed - model) / observed over the fitted pixels.</p>
+<p>A deviation relative to the observed flux is undefined where that flux is
+not positive, so those pixels are left out of the mean and counted
+separately rather than being given an arbitrary value. They are still
+fitted and still counted in the chi-square; this is a reporting decision
+and not a change to what was minimised.</p>
+<p>Works on one spectrum or on a batch: the last axis is wavelength.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.effective_pixel_count">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">effective_pixel_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inv_sigma</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#effective_pixel_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.effective_pixel_count" title="Link to this definition">#</a></dt>
+<dd><p>Nl_eff: the pixels of non-zero weight, the ones that entered the chi2.</p>
+<p>A pixel is in the chi2 exactly when its inverse sigma is above zero, so
+this is the count the summary file divides by and the count the cube’s
+Nl_eff plane carries. Works on one spectrum or on a batch: the last axis
+is wavelength.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.chi2_per_effective_pixel">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">chi2_per_effective_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_eff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#chi2_per_effective_pixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.chi2_per_effective_pixel" title="Link to this definition">#</a></dt>
+<dd><p>chi2 divided by Nl_eff, which is the convention BRAIN reports.</p>
+<p>The single-spectrum summary, the cube’s CHI2 extension and its PoPBins
+ChiSqrt plane all quote this one number, computed here so that they
+cannot drift apart: a reader comparing a spaxel of a cube against the
+same spectrum fitted on its own is comparing the same quantity. Nothing
+is subtracted for the free parameters – that is the other convention,
+and it is reported separately under its own name.</p>
+<p>Nl_eff is floored at one so that a spectrum which somehow reached this
+point with no fitted pixel returns its raw chi2 instead of an infinity.
+Scalars and batches alike.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.write_summary">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">write_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_short</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_ages</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_metals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_yav_flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_mstars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_fbase_norms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_stats</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_pix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wl_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runtime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_fev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nebular_stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lsf_report</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_report</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#write_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.write_summary" title="Link to this definition">#</a></dt>
+<dd><p>Write the fit summary to a text file.</p>
+<p><cite>vd_min</cite> keeps its historical meaning and its exact value: the dispersion
+the kinematic kernel applied to the template library. Everything the
+instrument contributes to that number is reported separately, in the
+instrumental resolution block, so that no reader has to assume vd_min is
+astrophysical and no reader is left with a bare 0.00 to interpret.</p>
+<p>The gas kinematics are written here too, per kinematic group, because
+until now they reached the log and nothing else: a summary file recording
+an espop fit stated the emission-line fluxes and said nothing about the
+velocity or the width they were fitted with. The two dispersions in this
+file follow DIFFERENT conventions and every line that carries one says
+which: sigma_star is INTRINSIC, the instrument taken out in quadrature,
+while sigma_gas and vd_min are OBSERVED, with the instrument still in
+them. See _write_gas_kinematics_block.</p>
+<p>The emission-line block states the wavelength scale the lines were placed
+on, for the same reason every dispersion in this file states its
+convention: a flux table that does not say whether its rest wavelengths
+were air or vacuum is a table whose gas velocity is ambiguous by 83 km/s,
+and nothing else in the file would reveal it. The scale is a declaration
+about the observed spectrum, made in the settings file and copied here;
+it is not a measurement and not something BRAIN infers.</p>
+<p><cite>Mini_tot</cite>, <cite>Mcor_tot</cite> and <cite>Q(H)_total</cite> are apparent, not absolute. They
+are the observed flux normalisation divided by the library’s flux per
+solar mass, which is a mass only once the flux has been turned into a
+luminosity. No distance enters this code anywhere, so the missing factor
+is flux_unit * 4*pi*d^2 / L_sun and the reader has to supply it. These
+were previously labelled “(Msun)”, which was wrong by whatever that factor
+happens to be — about 3.5 dex for a MaNGA spaxel at 100 Mpc, and
+distance-dependent, so not even a fixed offset across a sample.</p>
+<p>The factor carries no template index, so every fraction built from these
+numbers was and remains correct: the per-template percentage columns are
+bit-identical under a rescaling of the input flux. Only the absolute
+normalisation was ever mislabelled, which is why this is a change of
+wording and not of arithmetic.</p>
+<p>x_j, Mini_j(%) and Mcor_j(%) are taken from fit_stats as they were
+computed, not rebuilt here from the weights and the totals. They were
+rebuilt here once, from the same formulae, and a second implementation of
+a formula is a second place for it to change: the whole point of
+population_statistics is that a megacube’s population map and this file’s
+column are one arithmetic. A power law reaches this table with a non-zero
+x_j and a Mini_j(%) and Mcor_j(%) of exactly zero, because it carries
+light and has no stars; see population_statistics.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.io_utils.write_fitted_spectrum">
+<span class="sig-prename descclassname"><span class="pre">brainsp.io_utils.</span></span><span class="sig-name descname"><span class="pre">write_fitted_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux_obs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_fit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stellar_fit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emission_fit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nebular_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/io_utils.html#write_fitted_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.io_utils.write_fitted_spectrum" title="Link to this definition">#</a></dt>
+<dd><p>Write the fitted spectrum to a text file.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.reddening_catalogue.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.reddening_catalogue</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.plot_fit.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.plot_fit</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.load_spectrum"><code class="docutils literal notranslate"><span class="pre">load_spectrum()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.load_bases_dir"><code class="docutils literal notranslate"><span class="pre">load_bases_dir()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.scan_ssp_folder"><code class="docutils literal notranslate"><span class="pre">scan_ssp_folder()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.library_coverage"><code class="docutils literal notranslate"><span class="pre">library_coverage()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.describe_coverage"><code class="docutils literal notranslate"><span class="pre">describe_coverage()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.load_native_template"><code class="docutils literal notranslate"><span class="pre">load_native_template()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.resample_template"><code class="docutils literal notranslate"><span class="pre">resample_template()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.load_ssp_templates"><code class="docutils literal notranslate"><span class="pre">load_ssp_templates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.read_mask_regions"><code class="docutils literal notranslate"><span class="pre">read_mask_regions()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.write_mask_regions"><code class="docutils literal notranslate"><span class="pre">write_mask_regions()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.load_mask"><code class="docutils literal notranslate"><span class="pre">load_mask()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.stellar_component_flags"><code class="docutils literal notranslate"><span class="pre">stellar_component_flags()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.population_statistics"><code class="docutils literal notranslate"><span class="pre">population_statistics()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.deviation_percent"><code class="docutils literal notranslate"><span class="pre">deviation_percent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.effective_pixel_count"><code class="docutils literal notranslate"><span class="pre">effective_pixel_count()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.chi2_per_effective_pixel"><code class="docutils literal notranslate"><span class="pre">chi2_per_effective_pixel()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.write_summary"><code class="docutils literal notranslate"><span class="pre">write_summary()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.io_utils.write_fitted_spectrum"><code class="docutils literal notranslate"><span class="pre">write_fitted_spectrum()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

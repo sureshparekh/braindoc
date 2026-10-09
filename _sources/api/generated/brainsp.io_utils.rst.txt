@@ -1,0 +1,29 @@
+﻿brainsp.io\_utils
+=================
+
+.. automodule:: brainsp.io_utils
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      chi2_per_effective_pixel
+      describe_coverage
+      deviation_percent
+      effective_pixel_count
+      library_coverage
+      load_bases_dir
+      load_mask
+      load_native_template
+      load_spectrum
+      load_ssp_templates
+      population_statistics
+      read_mask_regions
+      resample_template
+      scan_ssp_folder
+      stellar_component_flags
+      write_fitted_spectrum
+      write_mask_regions
+      write_summary
+   

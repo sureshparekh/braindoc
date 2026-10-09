@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Output files &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/outputs';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Working with results in Python" href="results_python.html" />
+    <link rel="prev" title="Datacubes" href="datacubes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fitting spectra</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">Nebular modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corrections.html">Pre-fit corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="masks.html">Masks and weights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resolution.html">Instrumental resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agn.html">AGN continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Template libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batches.html">Many spectra</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datacubes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="datacubes.html">Datacubes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results_python.html">Working with results in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Figures from code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Running BRAIN</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">One file per run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Speed, GPUs and CPUs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mock_data.html">Mock data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Output files</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="output-files">
+<h1>Output files<a class="headerlink" href="#output-files" title="Link to this heading">#</a></h1>
+<section id="a-spectrum">
+<h2>A spectrum<a class="headerlink" href="#a-spectrum" title="Link to this heading">#</a></h2>
+<p>Every fit of a spectrum writes, into the output folder (<code class="docutils literal notranslate"><span class="pre">brain_out</span></code> by
+default):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>What</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_summary.txt</span></code></p></td>
+<td><p>the fitted parameters, the population vector, the emission lines</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_fitted.txt</span></code></p></td>
+<td><p>the observed and model spectra, column by column</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_settings.txt</span></code></p></td>
+<td><p>every setting the fit used, and the templates</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_fit.pdf</span></code></p></td>
+<td><p>the standard figure (when <code class="docutils literal notranslate"><span class="pre">make_plot</span></code> is on)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>From Python, <a class="reference internal" href="../api/generated/brainsp.FitResult.html#brainsp.FitResult" title="brainsp.FitResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">brainsp.FitResult</span></code></a> reads the first two
+(<a class="reference internal" href="results_python.html"><span class="std std-doc">Working with results in Python</span></a>): <code class="docutils literal notranslate"><span class="pre">brainsp.read_result(&quot;&lt;name&gt;_summary.txt&quot;)</span></code>.</p>
+<p>Every fit writes two text files into the output folder.</p>
+</section>
+<hr class="docutils" />
+<section id="the-summary-file">
+<h2>The summary file<a class="headerlink" href="#the-summary-file" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">*_summary.txt</span></code> is plain text: a value, then the key in square brackets.</p>
+<section id="fit-quality">
+<h3>Fit quality<a class="headerlink" href="#fit-quality" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mf">5.58653E-01</span>                             <span class="p">[</span><span class="n">chi2</span><span class="o">/</span><span class="n">Nl_eff</span><span class="p">]</span>
+     <span class="mf">20.45878</span>                             <span class="p">[</span><span class="n">adev</span> <span class="p">(</span><span class="o">%</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chi2/Nl_eff</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\chi^2\)</span> divided by the number of fitted pixels, nothing subtracted for the free parameters. Near 1 is a good fit; well below 1 usually means the errors are overestimated. The cube’s <code class="docutils literal notranslate"><span class="pre">CHI2</span></code> extension carries this same quantity, and its <code class="docutils literal notranslate"><span class="pre">CHI2RED</span></code> extension the reduced <span class="math notranslate nohighlight">\(\chi^2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">adev</span></code></p></td>
+<td><p>Mean absolute deviation between model and data, as a percentage</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="totals">
+<h3>Totals<a class="headerlink" href="#totals" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  7.01277E-02                             [Flux_tot (units of input spectrum!)]
+  4.10394E+03                             [Mini_tot (apparent; x flux_unit * 4*pi*d_cm^2 / 3.828E33 for Msun)]
+  2.86073E+03                             [Mcor_tot (apparent; x flux_unit * 4*pi*d_cm^2 / 3.828E33 for Msun)]
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Flux_tot</span></code></p></td>
+<td><p>the model’s flux density at the normalisation wavelength, in the input spectrum’s units: <span class="math notranslate nohighlight">\(\sum_j x_j\)</span> times <code class="docutils literal notranslate"><span class="pre">fobs_norm</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fobs_norm</span></code></p></td>
+<td><p>the observed flux density at the normalisation wavelength (median of ±10 pixels), in the input spectrum’s units: the factor the spectrum was divided by, and what turns a normalised flux back into the input’s units</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Mini_tot</span></code></p></td>
+<td><p>mass <strong>initially formed</strong>, over the stellar populations</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Mcor_tot</span></code></p></td>
+<td><p>mass <strong>still in stars</strong> (and remnants) today</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The masses are <em>apparent</em>: the observed flux divided by the library’s flux
+per unit mass. BRAIN never uses a distance, so to turn them into solar masses
+multiply by your flux unit (in erg/s/cm²/Å) times <span class="math notranslate nohighlight">\(4\pi d^2\)</span> (cm²) and divide
+by <span class="math notranslate nohighlight">\(L_\odot = 3.828\times10^{33}\)</span> erg/s, as the label says.</p>
+<p>Both totals run over the stellar populations only. A featureless power-law
+component contributes light and no mass, so it is in <code class="docutils literal notranslate"><span class="pre">Flux_tot</span></code> and in <code class="docutils literal notranslate"><span class="pre">x_j</span></code>
+and in neither total; see the population table below.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Mcor_tot</span></code> is always the smaller of the two. Use it when comparing against a
+dynamical mass; use <code class="docutils literal notranslate"><span class="pre">Mini_tot</span></code> when comparing against an integrated
+star-formation history.</p>
+</section>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mf">188.21</span>                                  <span class="p">[</span><span class="n">v0_min</span>  <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">)]</span>
+   <span class="mf">40.70</span>                                  <span class="p">[</span><span class="n">vd_min</span>  <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">OBSERVED</span><span class="p">]</span>
+ <span class="mf">0.0747</span>                                   <span class="p">[</span><span class="n">AV_min</span>  <span class="p">(</span><span class="n">mag</span><span class="p">)]</span>
+ <span class="mf">0.0000</span>                                   <span class="p">[</span><span class="n">YAV_min</span> <span class="p">(</span><span class="n">mag</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">v0_min</span></code></p></td>
+<td><p>Systemic velocity of the stars</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vd_min</span></code></p></td>
+<td><p>The broadening the kinematic kernel applied to the library</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AV_min</span></code></p></td>
+<td><p>Extinction in magnitudes, against the chosen law</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">YAV_min</span></code></p></td>
+<td><p>Extra extinction applied to the youngest populations only</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">The two dispersions in this file follow different conventions</p>
+<p>Every line carrying a dispersion says which it is. <code class="docutils literal notranslate"><span class="pre">vd_min</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_obs</span></code>
+and every <code class="docutils literal notranslate"><span class="pre">sigma_gas</span></code> are <strong>OBSERVED</strong>: the instrument is still in them.
+<code class="docutils literal notranslate"><span class="pre">sigma_star</span></code> is <strong>INTRINSIC</strong>: the instrumental line-spread function has
+been taken out in quadrature. An observed and an intrinsic dispersion from
+the same file are not comparable as printed, which is why the label states
+the convention instead of leaving it to the name.</p>
+<p>The instrumental line-spread function is not yet applied to the emission
+line, so <code class="docutils literal notranslate"><span class="pre">sigma_gas</span></code> is an observed dispersion today. <code class="docutils literal notranslate"><span class="pre">sigma_inst</span></code> is
+printed beside it so that the subtraction is available; see below for why
+BRAIN does not do it for you.</p>
+</div>
+</section>
+<section id="instrumental-resolution">
+<h3>Instrumental resolution<a class="headerlink" href="#instrumental-resolution" title="Link to this heading">#</a></h3>
+<p>Immediately below <code class="docutils literal notranslate"><span class="pre">vd_min</span></code>, the summary carries the three dispersions and where
+the two line-spread functions came from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mf">47.00</span>                                  <span class="p">[</span><span class="n">sigma_obs</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">OBSERVED</span><span class="p">,</span> <span class="n">broadening</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">library</span><span class="p">]</span>
+  <span class="o">+</span><span class="mf">31.05</span>                                  <span class="p">[</span><span class="n">delta_sigma_inst</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">signed</span><span class="p">,</span> <span class="n">data</span> <span class="n">minus</span> <span class="n">library</span> <span class="n">LSF</span><span class="p">,</span> <span class="n">flux</span><span class="o">-</span><span class="n">weighted</span><span class="p">]</span>
+   <span class="mf">35.28</span>                                  <span class="p">[</span><span class="n">sigma_star</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">INTRINSIC</span><span class="p">,</span> <span class="n">instrument</span> <span class="n">removed</span> <span class="ow">in</span> <span class="n">quadrature</span><span class="p">]</span>
+ <span class="n">manga_lsf_fwhm</span><span class="o">.</span><span class="n">txt</span> <span class="p">(</span><span class="mf">2.48</span><span class="o">-</span><span class="mf">4.95</span> <span class="n">A</span> <span class="n">FWHM</span> <span class="n">over</span> <span class="mi">3622</span><span class="o">-</span><span class="mi">10351</span> <span class="n">A</span><span class="p">)</span> <span class="p">[</span><span class="n">instrumental_resolution</span><span class="p">,</span> <span class="n">observed</span> <span class="n">frame</span><span class="p">]</span>
+ <span class="mf">0.3</span> <span class="n">A</span> <span class="n">FWHM</span> <span class="o">+</span> <span class="mi">45</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span> <span class="n">sigma</span> <span class="n">x28</span><span class="p">;</span> <span class="mf">2.51</span> <span class="n">A</span> <span class="n">FWHM</span> <span class="n">x56</span> <span class="p">[</span><span class="n">library_resolution</span><span class="p">]</span>
+ <span class="n">template</span> <span class="n">file</span> <span class="n">headers</span>                    <span class="p">[</span><span class="n">library_resolution</span> <span class="n">source</span><span class="p">]</span>
+ <span class="mf">0.02300</span>                                  <span class="p">[</span><span class="n">spectrum_redshift</span> <span class="n">removed</span> <span class="n">before</span> <span class="n">fitting</span><span class="p">]</span>
+ <span class="n">partial</span><span class="p">:</span> <span class="mi">28</span> <span class="n">pre</span><span class="o">-</span><span class="n">convolved</span><span class="p">,</span> <span class="mi">56</span> <span class="n">left</span> <span class="n">at</span> <span class="n">library</span> <span class="n">resolution</span> <span class="p">[</span><span class="n">LSF</span> <span class="n">correction</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">the</span> <span class="n">library</span><span class="p">]</span>
+ <span class="mi">28</span>                                       <span class="p">[</span><span class="n">templates</span> <span class="n">pre</span><span class="o">-</span><span class="n">convolved</span><span class="p">]</span>
+ <span class="mi">56</span>                                       <span class="p">[</span><span class="n">templates</span> <span class="n">left</span> <span class="n">at</span> <span class="n">library</span> <span class="n">resolution</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigma_obs</span></code></p></td>
+<td><p>The same number as <code class="docutils literal notranslate"><span class="pre">vd_min</span></code>. On its own it is a statement about the templates, not about the galaxy</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">delta_sigma_inst</span></code></p></td>
+<td><p>Signed quadrature difference between the two line-spread functions <strong>as the library entered the fit</strong>. Positive means the data is broader. A group that was pre-convolved contributes zero</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigma_star</span></code></p></td>
+<td><p>$\mathrm{sign}(x)\sqrt{</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> blank, the last two read <code class="docutils literal notranslate"><span class="pre">unknown</span></code> and <code class="docutils literal notranslate"><span class="pre">vd_min</span></code>
+is an observed dispersion that includes the instrument.</p>
+<div class="warning admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">value</span></code> means an upper limit</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">sigma_star</span></code> written with a leading <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> is not a measurement. Either the
+fit came back sitting on the lower bound of <code class="docutils literal notranslate"><span class="pre">dispersion_range</span></code>, or the
+broadening the two line-spread functions alone demand already exceeds what
+the fit applied. A comment block under the table says which, with numbers.</p>
+</div>
+</section>
+<section id="the-population-table">
+<h3>The population table<a class="headerlink" href="#the-population-table" title="Link to this heading">#</a></h3>
+<p>One row per template:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># j    x_j(%)    Mini_j(%)   Mcor_j(%)   age_j(yr)     Z_j     (L/M)_j  YAV?  Mstars  component_j</span>
+  <span class="mi">1</span>   <span class="mf">21.0944</span>   <span class="mf">0.0000E+00</span>  <span class="mf">0.0000E+00</span>  <span class="mf">1.000000E+00</span>  <span class="mf">0.00000</span>  <span class="mf">9.787E+00</span>  <span class="mi">0</span>   <span class="mf">1.0000</span>  <span class="n">Power_150</span>
+  <span class="mi">2</span>    <span class="mf">0.0000</span>   <span class="mf">0.0000E+00</span>  <span class="mf">0.0000E+00</span>  <span class="mf">1.000000E+06</span>  <span class="mf">0.00370</span>  <span class="mf">3.171E-03</span>  <span class="mi">0</span>   <span class="mf">1.0000</span>  <span class="n">ageGe_00_z004</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x_j</span></code></p></td>
+<td><p><strong>Light</strong> fraction at the normalisation wavelength, in per cent</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Mini_j</span></code></p></td>
+<td><p><strong>Initial mass</strong> fraction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Mcor_j</span></code></p></td>
+<td><p><strong>Surviving mass</strong> fraction</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">age_j</span></code>, <code class="docutils literal notranslate"><span class="pre">Z_j</span></code></p></td>
+<td><p>Age in years and metallicity</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">(L/M)_j</span></code></p></td>
+<td><p>Light-to-mass ratio for that population</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Mstars</span></code></p></td>
+<td><p>Surviving stellar mass fraction at that age</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Light fractions are not mass fractions</p>
+<p>A 1 Myr population can carry 20% of the light and a millionth of the mass.
+Young stars are enormously more luminous per unit mass. Always be explicit
+about which fraction you are quoting.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">The power law carries light and no mass</p>
+<p>The row above is the AGN power law that <code class="docutils literal notranslate"><span class="pre">include_power_law</span></code> adds. Its
+<code class="docutils literal notranslate"><span class="pre">x_j</span></code> is whatever light it took — 21% in this fit — and its <code class="docutils literal notranslate"><span class="pre">Mini_j</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Mcor_j</span></code> are exactly zero. That is the correct output and not a failed
+component: a power law has no stars, so there is no initial mass, no
+surviving fraction and nothing for <code class="docutils literal notranslate"><span class="pre">Mstars</span></code> to mean. Its <code class="docutils literal notranslate"><span class="pre">(L/M)_j</span></code> is the
+flux of the file it was generated from at the normalisation wavelength,
+which is an amplitude somebody chose, not a light-to-mass ratio.</p>
+<p>So the two sets of percentages are normalised over different components.
+<code class="docutils literal notranslate"><span class="pre">x_j</span></code> runs over the whole base and adds to 100. <code class="docutils literal notranslate"><span class="pre">Mini_j</span></code> and <code class="docutils literal notranslate"><span class="pre">Mcor_j</span></code> run
+over the stellar populations alone and add to 100 over those. A component
+that is 21% of the light and 0% of the mass is reading exactly right.</p>
+</div>
+<p>Most rows will be exactly zero. That is expected and correct: the solver
+enforces non-negativity and finds a sparse solution, typically 10–20 non-zero
+populations out of 84. It is not a failure to converge.</p>
+</section>
+<section id="gas-kinematics">
+<h3>Gas kinematics<a class="headerlink" href="#gas-kinematics" title="Link to this heading">#</a></h3>
+<p>Under the population table, one block per kinematic group:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Gas Kinematics ##</span>
+         <span class="mf">57.30</span>                            <span class="p">[</span><span class="n">sigma_gas</span> <span class="n">group</span> <span class="mi">0</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">OBSERVED</span><span class="p">]</span>
+         <span class="mf">30.85</span>                            <span class="p">[</span><span class="n">v0_gas</span> <span class="n">group</span> <span class="mi">0</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">)]</span>
+       <span class="n">unknown</span>                            <span class="p">[</span><span class="n">sigma_inst</span> <span class="n">group</span> <span class="mi">0</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">needs</span> <span class="n">instrumental_resolution</span><span class="p">]</span>
+          <span class="mi">5</span><span class="o">/</span><span class="mi">10</span>                            <span class="p">[</span><span class="n">lines</span> <span class="n">carrying</span> <span class="n">flux</span> <span class="ow">in</span> <span class="n">group</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="o">&lt;</span><span class="mf">58.39</span>                            <span class="p">[</span><span class="n">sigma_gas</span> <span class="n">group</span> <span class="mi">1</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">OBSERVED</span><span class="p">,</span> <span class="n">UPPER</span> <span class="n">LIMIT</span><span class="p">]</span>
+        <span class="mf">353.12</span>                            <span class="p">[</span><span class="n">v0_gas</span> <span class="n">group</span> <span class="mi">1</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">)]</span>
+       <span class="n">unknown</span>                            <span class="p">[</span><span class="n">sigma_inst</span> <span class="n">group</span> <span class="mi">1</span> <span class="p">(</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="p">),</span> <span class="n">needs</span> <span class="n">instrumental_resolution</span><span class="p">]</span>
+           <span class="mi">2</span><span class="o">/</span><span class="mi">4</span>                            <span class="p">[</span><span class="n">lines</span> <span class="n">carrying</span> <span class="n">flux</span> <span class="ow">in</span> <span class="n">group</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c1"># group 1 came back on the lower bound of gas_dispersion_range ...</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigma_gas</span></code></p></td>
+<td><p>The dispersion fitted for that group’s lines, <strong>observed</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">v0_gas</span></code></p></td>
+<td><p>The velocity fitted for that group’s lines</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigma_inst</span></code></p></td>
+<td><p>The instrumental dispersion at that group’s lines, flux-weighted, or <code class="docutils literal notranslate"><span class="pre">unknown</span></code> when <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> is not set</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">carrying</span> <span class="pre">flux</span></code></p></td>
+<td><p>How many of the group’s lines came back with non-zero flux</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The block is absent from a <code class="docutils literal notranslate"><span class="pre">spop</span></code> fit, which fits no lines.</p>
+<div class="warning admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">unconstrained</span></code> are not numbers</p>
+<p>These read exactly as <code class="docutils literal notranslate"><span class="pre">sigma_star</span></code> does, and for the same reason.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;value</span></code> — the fit came back on the lower end of <code class="docutils literal notranslate"><span class="pre">gas_dispersion_range</span></code>.
+It wanted a narrower line than it was allowed, so the value is an upper
+limit and not a width.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;value</span></code> — the same at the upper end: a lower limit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unconstrained</span></code> — <strong>no line in that group has any flux.</strong> All of them
+came back at exactly zero from the non-negative solve, so nothing in the
+spectrum constrains either the dispersion or the velocity of that group.
+The optimiser still returns numbers and still reports success; they are
+artefacts of where the search started. What it returned is in the <code class="docutils literal notranslate"><span class="pre">#</span></code>
+comment underneath, where it cannot be mistaken for a result.</p></li>
+</ul>
+<p>A comment block under each group says which applies, with numbers.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">BRAIN does not subtract the instrument from the gas, on purpose</p>
+<p><code class="docutils literal notranslate"><span class="pre">sigma_gas</span></code> and <code class="docutils literal notranslate"><span class="pre">sigma_inst</span></code> are reported separately and nothing is
+clipped, floored or called zero when the first comes out below the second.
+That follows Westfall et al. (2019, §7.3), who report the observed and the
+instrumental dispersion as separate maps and leave the corrected velocity
+dispersion to the user. A measured dispersion below the instrumental
+one is not a measurement of <span class="math notranslate nohighlight">\(\sigma = 0\)</span> and must not be clipped to one
+(§7.6.3); the recommendation there is to carry the negative
+<span class="math notranslate nohighlight">\(\sigma^2\)</span> through rather than throw it away. Both numbers are in the
+file so that you can.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-fitted-spectrum">
+<h2>The fitted spectrum<a class="headerlink" href="#the-fitted-spectrum" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">*_fitted.txt</span></code> has seven columns on the log-rebinned grid the fit actually used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wavelength Flux_Obs Total_Fit Stellar_Fit Emission_Fit Err Resid</span>
+<span class="mf">3.541000e+03</span> <span class="mf">6.959377e-01</span> <span class="mf">9.943693e-01</span> <span class="mf">9.943693e-01</span> <span class="mf">0.000000e+00</span> <span class="mf">1.229688e+00</span> <span class="o">-</span><span class="mf">2.984316e-01</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Wavelength</span></code></p></td>
+<td><p>Ångström, in the frame the fit ran in (the rest frame when a redshift was removed)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Flux_Obs</span></code></p></td>
+<td><p>The observation, normalised</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Total_Fit</span></code></p></td>
+<td><p>The complete model</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Stellar_Fit</span></code></p></td>
+<td><p>Stellar component alone</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Emission_Fit</span></code></p></td>
+<td><p>Emission lines alone — zero in <code class="docutils literal notranslate"><span class="pre">spop</span></code> mode</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Err</span></code></p></td>
+<td><p>Uncertainty used in the fit</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Resid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Flux_Obs</span> <span class="pre">−</span> <span class="pre">Total_Fit</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">wl</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">tot</span><span class="p">,</span> <span class="n">star</span><span class="p">,</span> <span class="n">emis</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+    <span class="s2">&quot;brain_out/mygalaxy_fitted.txt&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">height_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.6&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;observed&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">tot</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;fit&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="emission-line-fluxes">
+<h3>Emission-line fluxes<a class="headerlink" href="#emission-line-fluxes" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>## Emission Lines ##
+ vacuum                                   [wavelength_scale of the OBSERVED spectrum; ...]
+# Fluxes are in units of the NORMALISED spectrum times Angstrom: multiply by fobs_norm ...
+# They are corrected for the stellar extinction AV_min, relative to the normalisation wavelength: ...
+# A tied doublet&#39;s flux is its strong line&#39;s; the weak line is fixed at the atomic ratio.
+Line/Doublet                        |         Flux |        Err
+[O II]_3726                         |   1.5283e+00 | 0.0000e+00
+</pre></div>
+</div>
+<p>Two conventions apply to these numbers, and the file states both:</p>
+<ol class="arabic simple">
+<li><p><strong>Normalised units.</strong> The spectrum is fitted after dividing it by its
+flux at the normalisation wavelength (<code class="docutils literal notranslate"><span class="pre">normalisation_wavelength</span></code>, 5500 Å),
+so a line flux of 6 is six times the continuum flux density at 5500 Å
+times one Ångström. Multiply by <code class="docutils literal notranslate"><span class="pre">fobs_norm</span></code> for the input spectrum’s
+units.</p></li>
+<li><p><strong>Corrected for the stellar extinction.</strong> The model reddens the lines
+with the stars’ <span class="math notranslate nohighlight">\(A_V\)</span>, relative to the normalisation wavelength, so the
+fitted amplitude is the flux <em>before</em> that dust: multiply by
+<span class="math notranslate nohighlight">\(10^{-0.4 A_V [q(\lambda) - q(\lambda_0)]}\)</span> for the flux as observed.</p></li>
+</ol>
+<p><a class="reference internal" href="../api/generated/brainsp.FitResult.html#brainsp.FitResult.line_fluxes" title="brainsp.FitResult.line_fluxes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">brainsp.FitResult.line_fluxes()</span></code></a> does both: <code class="docutils literal notranslate"><span class="pre">units=&quot;input&quot;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">observed=True</span></code>. The <code class="docutils literal notranslate"><span class="pre">Err</span></code> column is zero unless <code class="docutils literal notranslate"><span class="pre">error_samples</span></code> is set.
+A datacube’s line maps are already observed fluxes in the cube’s units
+(below).</p>
+</section>
+</section>
+<section id="gas-diagnostics">
+<h2>Gas diagnostics<a class="headerlink" href="#gas-diagnostics" title="Link to this heading">#</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">nepop</span></code> and <code class="docutils literal notranslate"><span class="pre">photopop</span></code> mode the summary carries extra measurements:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantity</p></th>
+<th class="head"><p>From</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Electron density <span class="math notranslate nohighlight">\(n_e\)</span></p></td>
+<td><p>[S II] λ6716/λ6731 ratio</p></td>
+</tr>
+<tr class="row-odd"><td><p>Electron temperature <span class="math notranslate nohighlight">\(T_e\)</span></p></td>
+<td><p>[O III] (λ4959+λ5007)/λ4363 ratio</p></td>
+</tr>
+<tr class="row-even"><td><p>Balmer decrement</p></td>
+<td><p>Hα/Hβ, from the dust-attenuated line fluxes</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(A_V\)</span> of the gas</p></td>
+<td><p>The Balmer decrement against Case B in <code class="docutils literal notranslate"><span class="pre">nepop</span></code> mode; the value that minimises <span class="math notranslate nohighlight">\(\chi^2\)</span> in <code class="docutils literal notranslate"><span class="pre">photopop</span></code> mode</p></td>
+</tr>
+<tr class="row-even"><td><p>BPT classification</p></td>
+<td><p>Star-forming, composite, AGN or undetermined</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Line fluxes are listed underneath, as <code class="docutils literal notranslate"><span class="pre">Line/Doublet</span> <span class="pre">|</span> <span class="pre">Flux</span> <span class="pre">|</span> <span class="pre">Err</span></code>, under a
+heading that states the wavelength scale the lines were placed on:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Emission Lines ##</span>
+ <span class="n">vacuum</span>                                   <span class="p">[</span><span class="n">wavelength_scale</span> <span class="n">of</span> <span class="n">the</span> <span class="n">OBSERVED</span> <span class="n">spectrum</span><span class="p">;</span> <span class="n">the</span> <span class="n">rest</span> <span class="n">wavelengths</span> <span class="n">these</span> <span class="n">lines</span> <span class="n">were</span> <span class="n">placed</span> <span class="n">at</span> <span class="n">are</span> <span class="n">on</span> <span class="n">it</span><span class="p">]</span>
+<span class="n">Line</span><span class="o">/</span><span class="n">Doublet</span>                        <span class="o">|</span>         <span class="n">Flux</span> <span class="o">|</span>        <span class="n">Err</span>
+</pre></div>
+</div>
+<p>That line is a copy of the <code class="docutils literal notranslate"><span class="pre">wavelength_scale</span></code> setting, not a measurement. It is
+in the file because air and vacuum rest wavelengths differ by about 83 km/s and
+nothing else in the output would reveal which was used; a flux table that does
+not say is a table whose gas velocity is ambiguous by 83 km/s. The same
+declaration reaches a megacube as the <code class="docutils literal notranslate"><span class="pre">BRAINWSC</span></code> header card. BRAIN does
+not currently compute equivalent widths — <code class="docutils literal notranslate"><span class="pre">line_fitter.py</span></code>, which used to, was
+removed; if you need EWs, measure them from <code class="docutils literal notranslate"><span class="pre">*_fitted.txt</span></code> yourself.</p>
+<div class="note admonition">
+<p class="admonition-title">Only lines that were actually fitted are listed</p>
+<p>A line is fitted only if it can land on your wavelength grid at some
+velocity and dispersion inside <code class="docutils literal notranslate"><span class="pre">gas_velocity_range</span></code> and
+<code class="docutils literal notranslate"><span class="pre">gas_dispersion_range</span></code>. One that cannot is dropped before the fit and
+named in the log:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="n">emission</span> <span class="n">line</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">cannot</span> <span class="n">reach</span> <span class="n">the</span> <span class="mi">4800</span><span class="o">-</span><span class="mi">5100</span> <span class="n">A</span> <span class="n">grid</span> <span class="n">at</span> <span class="nb">any</span> <span class="n">velocity</span> <span class="ow">or</span>
+<span class="n">dispersion</span> <span class="n">the</span> <span class="n">fit</span> <span class="ow">is</span> <span class="n">allowed</span><span class="p">,</span> <span class="ow">and</span> <span class="n">are</span> <span class="n">NOT</span> <span class="n">fitted</span> <span class="ow">or</span> <span class="n">reported</span><span class="p">:</span>
+<span class="n">Hgamma_4340</span> <span class="p">(</span><span class="mi">4340</span> <span class="n">A</span><span class="p">),</span> <span class="p">[</span><span class="n">O</span> <span class="n">III</span><span class="p">]</span><span class="n">_4363</span> <span class="p">(</span><span class="mi">4363</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It then does <strong>not</strong> appear in the flux table. A flux of <code class="docutils literal notranslate"><span class="pre">0.0000e+00</span></code> in
+that table therefore means a genuine non-detection — the line was fitted
+and the best fit gave it no flux — and never “the line was off the end of
+the spectrum”. Those two used to be indistinguishable.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">A doublet that lost one component is renamed</p>
+<p>If a tied doublet has one component on the grid and one off, the survivor
+is fitted alone, its ratio is set to 1.0, and the entry takes that
+component’s own name — <code class="docutils literal notranslate"><span class="pre">[O</span> <span class="pre">III]_5007</span></code> rather than <code class="docutils literal notranslate"><span class="pre">[O</span> <span class="pre">III]_Doublet</span></code>. The
+listed flux is then the flux of that one line. The log says so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">O</span> <span class="n">III</span><span class="p">]</span><span class="n">_Doublet</span> <span class="n">loses</span> <span class="p">[</span><span class="n">O</span> <span class="n">III</span><span class="p">]</span><span class="n">_4959</span> <span class="n">to</span> <span class="n">the</span> <span class="n">edge</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">4980</span><span class="o">-</span><span class="mi">5300</span> <span class="n">A</span> <span class="n">grid</span><span class="p">;</span>
+<span class="n">the</span> <span class="n">remaining</span> <span class="p">[</span><span class="n">O</span> <span class="n">III</span><span class="p">]</span><span class="n">_5007</span> <span class="ow">is</span> <span class="n">fitted</span> <span class="n">alone</span><span class="p">,</span> <span class="n">at</span> <span class="n">ratio</span> <span class="mf">1.0</span><span class="p">,</span> <span class="ow">and</span> <span class="n">reported</span>
+<span class="k">as</span> <span class="s1">&#39;[O III]_5007&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">photopop</span></code> mode four further lines say how well <span class="math notranslate nohighlight">\(A_{V,\rm neb}\)</span> is pinned down.
+Read them before quoting it:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AV_neb</span> <span class="pre">status</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">converged</span></code>, <code class="docutils literal notranslate"><span class="pre">LOWER_BOUND</span></code>, <code class="docutils literal notranslate"><span class="pre">UPPER_BOUND</span></code> or <code class="docutils literal notranslate"><span class="pre">BUDGET_EXHAUSTED</span></code>. Anything but <code class="docutils literal notranslate"><span class="pre">converged</span></code> means the number beside <code class="docutils literal notranslate"><span class="pre">AV_neb</span></code> is a bound or a truncated search, not a measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">n_AV_neb</span> <span class="pre">refits</span></code></p></td>
+<td><p>How many full refits the search spent</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AV_neb</span> <span class="pre">bracket</span> <span class="pre">width</span> <span class="pre">(mag)</span></code></p></td>
+<td><p>How tightly the minimum was bracketed</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dchi2</span> <span class="pre">across</span> <span class="pre">the</span> <span class="pre">whole</span> <span class="pre">AV_neb</span> <span class="pre">range</span></code></p></td>
+<td><p>How much <span class="math notranslate nohighlight">\(\chi^2\)</span> varies over all of <code class="docutils literal notranslate"><span class="pre">nebular_dust_range</span></code>. A small number means the data barely care</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AV_neb</span> <span class="pre">at</span> <span class="pre">dchi2</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">(mag)</span></code></p></td>
+<td><p>Where <span class="math notranslate nohighlight">\(\chi^2\)</span> has risen by 1 above the minimum, or <code class="docutils literal notranslate"><span class="pre">NaN</span></code> if it never does inside the bounds</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">tau</span></code> is also printed. It is a diagnostic, not a test — see
+<a class="reference internal" href="modes.html"><span class="std std-doc">Nebular modes</span></a>.</p>
+</section>
+<hr class="docutils" />
+<section id="a-datacube-the-megacube">
+<h2>A datacube: the megacube<a class="headerlink" href="#a-datacube-the-megacube" title="Link to this heading">#</a></h2>
+<p>Written to <code class="docutils literal notranslate"><span class="pre">&lt;save_path_root&gt;/&lt;stem&gt;-BRAIN_MEGACUBE.fits</span></code>, with any <code class="docutils literal notranslate"><span class="pre">-RAW</span></code>
+removed from the stem. The input extensions come through unchanged, then:</p>
+<section id="the-compatibility-contract">
+<h3>The compatibility contract<a class="headerlink" href="#the-compatibility-contract" title="Link to this heading">#</a></h3>
+<p>Six extensions, spelled exactly like this, are what existing analysis tools
+read. The test suite fits a small cube and asserts all six.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Shape</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BaseAgeMetal</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(n_base,</span> <span class="pre">2)</span></code></p></td>
+<td><p>column 0 age in <strong>years</strong>, column 1 Z as a mass fraction</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PoPBins</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(n_map,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>the map stack, planes named by <code class="docutils literal notranslate"><span class="pre">DATA&lt;n&gt;</span></code> cards</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PoPVecsL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(n_base,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>light fraction per template, <strong>per cent</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PoPVecsM</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(n_base,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>present-mass fraction per template, <strong>per cent</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FLXOBS</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nλ,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>observed flux in input units, <strong>linear</strong> λ grid</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FLXSYN</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nλ,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>synthetic stellar spectrum, same grid</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">FLXOBS</span></code> and <code class="docutils literal notranslate"><span class="pre">FLXSYN</span></code> carry <code class="docutils literal notranslate"><span class="pre">CRPIX3</span></code>, <code class="docutils literal notranslate"><span class="pre">CRVAL3</span></code>, <code class="docutils literal notranslate"><span class="pre">CD3_3</span></code> and <code class="docutils literal notranslate"><span class="pre">WAT3_001</span></code>,
+because the viewers build their wavelength axis as
+<code class="docutils literal notranslate"><span class="pre">np.arange(CRVAL3,</span> <span class="pre">CD3_3*n</span> <span class="pre">+</span> <span class="pre">CRVAL3,</span> <span class="pre">CD3_3)</span></code> and have no fallback. The step
+is <code class="docutils literal notranslate"><span class="pre">flxobs_step</span></code>, 1 Å by default, which is the published value.</p>
+<div class="note admonition">
+<p class="admonition-title">This is the only place BRAIN resamples an observed flux</p>
+<p>And only for the output copy, never for the fit, which runs on its own
+log grid. <code class="docutils literal notranslate"><span class="pre">WAVE</span></code> is written as well, so nothing has to trust the WCS, and
+<code class="docutils literal notranslate"><span class="pre">STELLAR</span></code> and <code class="docutils literal notranslate"><span class="pre">MODEL</span></code> stay on the cube’s own wavelength grid, where no
+resolution is thrown away.</p>
+</div>
+</section>
+<section id="brain-s-own-extensions">
+<h3>BRAIN’s own extensions<a class="headerlink" href="#brain-s-own-extensions" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Shape</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PoPVecsMini</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(n_base,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>initial-mass fraction per template, per cent</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">STELLAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nλ,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>the stellar model — the same quantity as <code class="docutils literal notranslate"><span class="pre">FLXSYN</span></code>, on the input grid</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MODEL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nλ,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>stellar plus gas</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">KINEMATICS</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(n_par,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>the fitted parameter vector, <code class="docutils literal notranslate"><span class="pre">PARAM&lt;i&gt;</span></code> cards naming each</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CHI2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>χ²/N<sub>l,eff</sub> per spaxel — the same number as <code class="docutils literal notranslate"><span class="pre">PoPBins:ChiSqrt</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CHI2RED</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>χ² / (N<sub>l,eff</sub> − n<sub>par</sub>), the reduced χ²</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STATUS</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>0 unfitted, 1 converged, 2 did not converge</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BADSPXL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>1 wherever the spaxel is not a converged fit</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SNMAP</span></code>, <code class="docutils literal notranslate"><span class="pre">SN_MASKS_&lt;t&gt;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>the continuous S/N map and the masks cut from it</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LSFCORR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">y,</span> <span class="pre">x)</span></code></p></td>
+<td><p>dispersion corrected for the line-spread function, the difference, and a flag — <strong>only</strong> when <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> is set</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BRAINCFG</span></code></p></td>
+<td><p>table</p></td>
+<td><p>every stage of the run with its settings</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Every extension also carries the <code class="docutils literal notranslate"><span class="pre">BRAIN*</span></code> provenance cards, among them
+<code class="docutils literal notranslate"><span class="pre">BRAINZ</span></code> (the redshift removed), <code class="docutils literal notranslate"><span class="pre">BRAINFRM</span></code> (the frame fitted in) and
+<code class="docutils literal notranslate"><span class="pre">BRAINWSC</span></code> (<code class="docutils literal notranslate"><span class="pre">air</span></code> or <code class="docutils literal notranslate"><span class="pre">vacuum</span></code>, the wavelength scale of the observed spectrum
+that the emission-line rest wavelengths were placed on). A finished cube says
+which scale its gas velocities are measured against; the two differ by about
+83 km/s and nothing else in the file would reveal it.</p>
+</section>
+<section id="popbins">
+<h3><code class="docutils literal notranslate"><span class="pre">PoPBins</span></code><a class="headerlink" href="#popbins" title="Link to this heading">#</a></h3>
+<p>One 3D extension whose planes are addressed by header cards: <code class="docutils literal notranslate"><span class="pre">DATA7</span></code> holds
+the name of plane 7, and the card’s comment describes it. In order:</p>
+<p><code class="docutils literal notranslate"><span class="pre">FC&lt;exp&gt;</span></code> (only when <code class="docutils literal notranslate"><span class="pre">include_power_law</span></code> is on) · <code class="docutils literal notranslate"><span class="pre">&lt;bin&gt;_light</span></code> ·
+<code class="docutils literal notranslate"><span class="pre">&lt;bin&gt;_mass</span></code> · <code class="docutils literal notranslate"><span class="pre">Av</span></code> · <code class="docutils literal notranslate"><span class="pre">Mage_L</span></code> · <code class="docutils literal notranslate"><span class="pre">Mage_M</span></code> · <code class="docutils literal notranslate"><span class="pre">MZ_L</span></code> · <code class="docutils literal notranslate"><span class="pre">MZ_M</span></code> · <code class="docutils literal notranslate"><span class="pre">F_Norm</span></code> ·
+<code class="docutils literal notranslate"><span class="pre">Sigma_star</span></code> · <code class="docutils literal notranslate"><span class="pre">vrot_star</span></code> · <code class="docutils literal notranslate"><span class="pre">Adev</span></code> · <code class="docutils literal notranslate"><span class="pre">ChiSqrt</span></code> · <code class="docutils literal notranslate"><span class="pre">SNR</span></code> · then BRAIN’s own:
+<code class="docutils literal notranslate"><span class="pre">YAV</span></code> · <code class="docutils literal notranslate"><span class="pre">Nl_eff</span></code> · <code class="docutils literal notranslate"><span class="pre">Niter</span></code> · <code class="docutils literal notranslate"><span class="pre">BadSpaxel</span></code> · <code class="docutils literal notranslate"><span class="pre">Sigma_gas_g&lt;n&gt;</span></code> ·
+<code class="docutils literal notranslate"><span class="pre">vrot_gas_g&lt;n&gt;</span></code> · <code class="docutils literal notranslate"><span class="pre">Sigma_star_c</span></code> · <code class="docutils literal notranslate"><span class="pre">Dsigma_inst</span></code> · <code class="docutils literal notranslate"><span class="pre">LSF_flag</span></code>.</p>
+<p>The tail is appended after <code class="docutils literal notranslate"><span class="pre">SNR</span></code> so that a reader indexing the stack by
+position still finds everything it knew about where it was.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Mage_L</span></code> is the light-weighted mean of log₁₀(age/yr), not the logarithm of
+the mean age. <code class="docutils literal notranslate"><span class="pre">MZ_L</span></code> is the weighted mean of Z as a mass fraction, not of
+[Z/H]. As in the published megacubes (Riffel et al. 2023), both sum over
+the stellar templates but divide by the light of <strong>every</strong> component,
+featureless ones included, so AGN light pulls them down: 10 per cent of it
+lowers <code class="docutils literal notranslate"><span class="pre">Mage_L</span></code> by about 0.94 dex. For the mean of the stars alone, divide
+by the stellar fraction, (100 − <code class="docutils literal notranslate"><span class="pre">AGN_light</span></code>)/100. <code class="docutils literal notranslate"><span class="pre">Mage_M</span></code> and <code class="docutils literal notranslate"><span class="pre">MZ_M</span></code> are
+unaffected, since a featureless component has no mass. <code class="docutils literal notranslate"><span class="pre">Sigma_star</span></code> is an <strong>observed</strong> dispersion: it includes the
+instrument unless <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> is set, in which case
+<code class="docutils literal notranslate"><span class="pre">Sigma_star_c</span></code> is the corrected one and <code class="docutils literal notranslate"><span class="pre">LSF_flag</span></code> says whether that is a
+measurement, an upper limit, or not reportable.</p>
+<div class="warning admonition">
+<p class="admonition-title">An unfitted spaxel is 0, not blank</p>
+<p>That is what the published megacubes carry and what their viewers scale
+their colour bars to. Since 0 is a plausible value for most of these
+quantities, the stack carries a <code class="docutils literal notranslate"><span class="pre">BadSpaxel</span></code> plane of its own, 1 wherever
+the spaxel is not a converged fit — including the spaxels nothing was
+ever attempted on — and the file carries <code class="docutils literal notranslate"><span class="pre">BADSPXL</span></code> and <code class="docutils literal notranslate"><span class="pre">STATUS</span></code>. <strong>A map
+value is a measurement only where <code class="docutils literal notranslate"><span class="pre">BadSpaxel</span></code> is 0.</strong> A spaxel whose fit did not converge is flagged
+there too: its maps are the last state of an optimisation that had not
+finished.</p>
+</div>
+</section>
+<section id="emission-line-products-line-fitting-modes">
+<h3>Emission-line products (line-fitting modes)<a class="headerlink" href="#emission-line-products-line-fitting-modes" title="Link to this heading">#</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">espop</span></code>, <code class="docutils literal notranslate"><span class="pre">nepop</span></code> and <code class="docutils literal notranslate"><span class="pre">photopop</span></code> the megacube also carries the line fit in
+layout and with the definitions of the published MaNGA megacubes
+(Riffel et al. 2023):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Shape</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SOLUTION</span></code></p></td>
+<td><p>(3N + 1, y, x)</p></td>
+<td><p>amplitude A, velocity v and dispersion s of each line; the last plane is <span class="math notranslate nohighlight">\(\chi^2/N_{\rm eff}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DISP</span></code></p></td>
+<td><p>(3N, y, x)</p></td>
+<td><p>their uncertainties: NaN, not computed (as in the published megacubes)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INIGUESS</span></code></p></td>
+<td><p>(3N, y, x)</p></td>
+<td><p>the starting dispersion; A and v NaN (never guessed)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FLUX_M</span></code></p></td>
+<td><p>(N, y, x)</p></td>
+<td><p>line flux from the model, <span class="math notranslate nohighlight">\(\int\)</span> line over <span class="math notranslate nohighlight">\(\lambda_c \pm 5s\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FLUX_D</span></code></p></td>
+<td><p>(N, y, x)</p></td>
+<td><p>line flux measured on the data: data − stars − every other line</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">EQW_M</span></code></p></td>
+<td><p>(N, y, x)</p></td>
+<td><p>equivalent width from the model, <span class="math notranslate nohighlight">\(\int -{\rm line}/C\)</span> (negative for emission)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">EQW_D</span></code></p></td>
+<td><p>(N, y, x)</p></td>
+<td><p>equivalent width on the data, <span class="math notranslate nohighlight">\(\int (1 - {\rm data}/C)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MASK2D</span></code></p></td>
+<td><p>(y, x)</p></td>
+<td><p>0 where fitted</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PARNAMES</span></code>, <code class="docutils literal notranslate"><span class="pre">SPECIDX</span></code>, <code class="docutils literal notranslate"><span class="pre">FITCONFIG</span></code></p></td>
+<td><p>tables</p></td>
+<td><p>parameter names, the fitted spaxels, the rest wavelengths, groups and continuum windows</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math notranslate nohighlight">\(C\)</span> is a straight line fitted to the stellar model in each line’s two
+continuum windows, or a degree-7 polynomial with 3-sigma
+clipping where a line has none. Fluxes are in the cube’s flux unit times Å
+and <strong>observed</strong> (attenuated by the fitted dust, like everything in the
+model); velocities and dispersions are the line’s kinematic group’s,
+observed. Checked against the published megacube of MaNGA 8626-12704 by
+rebuilding its own numbers: <span class="math notranslate nohighlight">\(F_M\)</span> to <span class="math notranslate nohighlight">\(2\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(EW_M\)</span> to
+<span class="math notranslate nohighlight">\(3\times10^{-5}\)</span>.</p>
+<p>The Results workspace and <a class="reference internal" href="../api/generated/brainsp.megacube.html#brainsp.megacube.Megacube" title="brainsp.megacube.Megacube"><code class="xref py py-class docutils literal notranslate"><span class="pre">brainsp.megacube.Megacube</span></code></a> name these maps
+<code class="docutils literal notranslate"><span class="pre">&quot;&lt;line&gt;</span>&#160; <span class="pre">flux&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;&lt;line&gt;</span>&#160; <span class="pre">EW&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;&lt;line&gt;</span>&#160; <span class="pre">velocity&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;&lt;line&gt;</span>&#160; <span class="pre">sigma&quot;</span></code>.</p>
+</section>
+<section id="masses-star-formation-rates-and-grouped-agn-components">
+<h3>Masses, star-formation rates and grouped AGN components<a class="headerlink" href="#masses-star-formation-rates-and-grouped-agn-components" title="Link to this heading">#</a></h3>
+<p>BRAIN’s masses are <em>apparent</em>: the observed flux divided by the library’s
+flux per unit mass. With the galaxy’s distance (<code class="docutils literal notranslate"><span class="pre">galaxy_distance</span></code>, Mpc; per
+cube, a <code class="docutils literal notranslate"><span class="pre">galaxy</span> <span class="pre">distance</span></code> column of the targets table) they become solar
+masses, multiplied by <code class="docutils literal notranslate"><span class="pre">flux_unit</span> <span class="pre">×</span> <span class="pre">4πd²</span> <span class="pre">/</span> <span class="pre">L_sun</span></code> (L☉ = 3.826×10³³ erg/s and
+1 Mpc = 3.08567758×10²⁴ cm, the published megacubes’ values; the
+flux unit’s number is read from <code class="docutils literal notranslate"><span class="pre">BUNIT</span></code>, e.g. 10⁻¹⁷ for MaNGA, or given as
+<code class="docutils literal notranslate"><span class="pre">flux_scale</span></code>). PoPBins then also carries</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plane</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Mstar</span></code></p></td>
+<td><p>present mass in stars, M☉</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Mpcross</span></code></p></td>
+<td><p>mass processed into stars (initial mass), M☉</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> from <code class="docutils literal notranslate"><span class="pre">sfr_bins</span></code></p></td>
+<td><p>star-formation rate, M☉/yr: <code class="docutils literal notranslate"><span class="pre">Mstar</span></code> × (initial-mass fraction with min &lt; age ≤ max) / (max − min)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Without a distance none of these is written: the missing factor is about
+3.5 dex for a MaNGA spaxel and distance-dependent. The mass <em>fractions</em> need
+no distance and are always in <code class="docutils literal notranslate"><span class="pre">PoPVecsM</span></code> and the <code class="docutils literal notranslate"><span class="pre">&lt;bin&gt;_mass</span></code> planes.</p>
+<p>The SFR follows the published megacubes’ definition: the initial-mass
+fraction in the bin times the <em>present</em> stellar mass. The initial mass
+actually formed in the bin is larger by <code class="docutils literal notranslate"><span class="pre">Mpcross</span> <span class="pre">/</span> <span class="pre">Mstar</span></code>, typically 1.6.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fc_bins</span></code> and <code class="docutils literal notranslate"><span class="pre">bb_bins</span></code> group the featureless AGN components by the power-law
+exponent or blackbody temperature their names give (<code class="docutils literal notranslate"><span class="pre">FC0.25</span></code>, <code class="docutils literal notranslate"><span class="pre">BB800</span></code>), each
+<code class="docutils literal notranslate"><span class="pre">[name,</span> <span class="pre">min,</span> <span class="pre">max]</span></code>, min exclusive, max inclusive, in per cent of all the
+light: for example <code class="docutils literal notranslate"><span class="pre">FC_Tot</span> <span class="pre">(0.245,</span> <span class="pre">0.75]</span></code> or <code class="docutils literal notranslate"><span class="pre">BB_warm</span> <span class="pre">(699,</span> <span class="pre">1000]</span></code>. Population
+bins may overlap, so totals such as <code class="docutils literal notranslate"><span class="pre">xy_Tot</span></code> are bins of their own.</p>
+</section>
+<section id="population-age-bins">
+<h3>Population age bins<a class="headerlink" href="#population-age-bins" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">population_bins</span></code> is a list of <code class="docutils literal notranslate"><span class="pre">[name,</span> <span class="pre">youngest,</span> <span class="pre">oldest]</span></code> in years. Each
+bin becomes two planes, <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_light</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_mass</span></code>. A template belongs
+to a bin when <strong>min &lt; age ≤ max</strong> — min exclusive, max inclusive, which is
+the published convention and matters because the standard bin sets put edges
+exactly on template ages.</p>
+<p>The default is the six MaNGA bins, with the edges published MaNGA megacubes
+use, so a BRAIN map and one of those can be compared without re-binning
+either:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bin</p></th>
+<th class="head"><p>Ages (yr)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">xyy</span></code></p></td>
+<td><p>9.0×10⁵ &lt; age ≤ 1.0×10⁷</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xyo</span></code></p></td>
+<td><p>1.4×10⁷ &lt; age ≤ 5.6×10⁷</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">xiy</span></code></p></td>
+<td><p>1.0×10⁸ &lt; age ≤ 5.0×10⁸</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xii</span></code></p></td>
+<td><p>6.3×10⁸ &lt; age ≤ 8.0×10⁸</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">xio</span></code></p></td>
+<td><p>8.9×10⁸ &lt; age ≤ 2.0×10⁹</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xo</span></code></p></td>
+<td><p>5.0×10⁹ &lt; age ≤ 1.3×10¹⁰</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Bins may leave gaps — these do — and the fit logs how much light falls into
+them. Overlapping bins are refused: a template inside two bins is counted
+twice and every map still looks reasonable afterwards. A power-law component
+is never in any bin; it is reported on its own <code class="docutils literal notranslate"><span class="pre">FC</span></code> card.</p>
+<div class="warning admonition">
+<p class="admonition-title">χ² convention — two extensions, named</p>
+<p><code class="docutils literal notranslate"><span class="pre">CHI2</span></code> and <code class="docutils literal notranslate"><span class="pre">PoPBins:ChiSqrt</span></code> both carry <strong>χ² / N<sub>l,eff</sub></strong>, where
+N<sub>l,eff</sub> is the number of pixels of non-zero weight that entered
+the χ². That is what the single-spectrum summary file reports on its
+first line, and what the published megacubes report, so a
+spaxel of a BRAIN cube and the same spectrum fitted on its own quote the
+same number, computed by the same function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CHI2RED</span></code> carries <strong>χ² / (N<sub>l,eff</sub> − n<sub>par</sub>)</strong>, the
+reduced χ², with n<sub>par</sub> = 4 + 2 × n<sub>groups</sub> free
+non-linear parameters — written into that extension’s <code class="docutils literal notranslate"><span class="pre">NPAR</span></code> card. Each
+extension states its denominator in a <code class="docutils literal notranslate"><span class="pre">DENOM</span></code> card as well, so neither
+convention can be assumed silently.</p>
+<p>The two differ by N<sub>l,eff</sub>/(N<sub>l,eff</sub> − n<sub>par</sub>):
+a fraction of a per cent on a well-sampled spaxel, several per cent on a
+heavily masked one. <code class="docutils literal notranslate"><span class="pre">CHI2</span></code> held the reduced convention in cubes written
+before this change; those files carry no <code class="docutils literal notranslate"><span class="pre">CHI2RED</span></code> extension and no
+<code class="docutils literal notranslate"><span class="pre">DENOM</span></code> card, which is how to tell them apart.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="datacubes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Datacubes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="results_python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Working with results in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-spectrum">A spectrum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-summary-file">The summary file</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-quality">Fit quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#totals">Totals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumental-resolution">Instrumental resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-population-table">The population table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-kinematics">Gas kinematics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fitted-spectrum">The fitted spectrum</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emission-line-fluxes">Emission-line fluxes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-diagnostics">Gas diagnostics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-datacube-the-megacube">A datacube: the megacube</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-compatibility-contract">The compatibility contract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-s-own-extensions">BRAIN’s own extensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popbins"><code class="docutils literal notranslate"><span class="pre">PoPBins</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emission-line-products-line-fitting-modes">Emission-line products (line-fitting modes)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masses-star-formation-rates-and-grouped-agn-components">Masses, star-formation rates and grouped AGN components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#population-age-bins">Population age bins</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

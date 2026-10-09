@@ -1,0 +1,6 @@
+﻿brainsp.write\_script
+=====================
+
+.. currentmodule:: brainsp
+
+.. autofunction:: write_script

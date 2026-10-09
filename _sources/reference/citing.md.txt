@@ -1,0 +1,50 @@
+# Citing BRAIN
+
+If BRAIN contributes to published work, please cite the software:
+
+```bibtex
+@software{parekh_brain,
+  author  = {Parekh, Suresh},
+  title   = {{BRAIN}: stellar population synthesis by full spectral fitting
+             of spectra and IFU datacubes},
+  year    = {2026},
+  version = {2.0.0},
+  url     = {https://github.com/sureshparekh/brainv1}
+}
+```
+
+and the works whose data and methods it uses: the papers describing the
+stellar population models of the template library you fitted with, and the
+extinction law. The references for every equation are given where it is
+described ([](../theory/index.md)).
+
+## Megacubes
+
+BRAIN writes the results of a datacube as a **megacube**, the format of the
+MaNGA megacubes of Riffel et al. (2023). If you use BRAIN's megacubes,
+please also cite:
+
+> Riffel, R., Mallmann, N. D., Rembold, S. B., et al. 2023, *Mapping the
+> stellar population and gas excitation of MaNGA galaxies with MEGACUBES.
+> Results for AGN versus control sample*, MNRAS, 524, 5640.
+> [doi:10.1093/mnras/stad2234](https://doi.org/10.1093/mnras/stad2234)
+
+```bibtex
+@article{riffel2023megacubes,
+  author  = {Riffel, Rog{\'e}rio and Mallmann, Nicolas D. and Rembold, Sandro B.
+             and Ilha, Gabriele S. and Riffel, Rogemar A. and
+             Storchi-Bergmann, Thaisa and Ruschel-Dutra, Daniel and
+             Vazdekis, Alexandre and Mart{\'i}n-Navarro, Ignacio and
+             Schimoia, Jaderson S. and Ramos Almeida, Cristina and
+             da Costa, Luiz N. and Vila-Verde, Glauber C. and Gatto, Lara},
+  title   = {Mapping the stellar population and gas excitation of {MaNGA}
+             galaxies with {MEGACUBES}. Results for {AGN} versus control
+             sample},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {2023},
+  volume  = {524},
+  number  = {4},
+  pages   = {5640--5657},
+  doi     = {10.1093/mnras/stad2234}
+}
+```

@@ -1,0 +1,13 @@
+﻿brainsp.plot\_zoom
+==================
+
+.. automodule:: brainsp.plot_zoom
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AxesZoom
+      ImageZoom
+   

@@ -1,0 +1,26 @@
+﻿brainsp.fast\_engine
+====================
+
+.. automodule:: brainsp.fast_engine
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      broaden
+      build_constants
+      forward
+      forward_from_broad
+      grid_chi2
+      jacobian
+      lm_optimize
+      residual_only
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ForwardConstants
+      ForwardShapes
+   

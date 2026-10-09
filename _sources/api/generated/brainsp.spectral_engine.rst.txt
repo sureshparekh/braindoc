@@ -1,0 +1,19 @@
+﻿brainsp.spectral\_engine
+========================
+
+.. automodule:: brainsp.spectral_engine
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      apply_dust_matrix
+      clean_fraction
+      dust_vector
+      flux_conserving_resample
+      fourier_broaden_matrix
+      fourier_broaden_single
+      log_rebin
+      normalize_at_wavelength
+   

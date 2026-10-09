@@ -1,0 +1,81 @@
+# Quick start: command line
+
+Every command is a sub-command of `brainsp`; `brainsp --help` lists them and
+`brainsp COMMAND --help` describes one. The full reference is
+[](../reference/cli.md).
+
+```bash
+brainsp examples                         # mock data to ~/.brainsp/examples
+cd ~/.brainsp/examples
+```
+
+## Fit spectra
+
+```bash
+brainsp fit spectra/mock_old_population.spec
+brainsp fit spectra/*.spec -o results --corrections spectra/corrections.csv
+```
+
+Each spectrum writes `<name>_summary.txt`, `<name>_fitted.txt`,
+`<name>_settings.txt` and, unless `make_plot` is off, `<name>_fit.pdf` to the
+output folder (`brain_out` by default).
+
+Change any setting with `--set` (values are read as YAML):
+
+```bash
+brainsp fit spectra/mock_star_forming_lines.spec \
+    --set nebular_mode=espop --set wavelength_scale=vacuum \
+    --set "dust_range=[0, 3]"
+```
+
+or keep them in a settings file:
+
+```bash
+brainsp init settings.yaml               # every setting, documented
+nano settings.yaml
+brainsp check settings.yaml              # validate, fit nothing
+brainsp fit --settings settings.yaml spectra/*.spec
+```
+
+`brainsp settings NAME` prints what a setting does.
+
+## Fit a datacube
+
+```bash
+brainsp cube cube/mock_cube.fits --redshift 0.02 \
+    --wavelength-scale vacuum --sn 3 10 --fit-sn 3 \
+    --set nebular_mode=espop -o cube_out
+```
+
+writes `cube_out/mock_cube-BRAIN_MEGACUBE.fits`. `--check` validates without
+fitting and `--export run_cube.py` writes the run as one Python file instead.
+
+## Figures
+
+```bash
+brainsp plot brain_out/mock_old_population_summary.txt -o fit.png
+brainsp plot cube_out/mock_cube-BRAIN_MEGACUBE.fits            # list the maps
+brainsp plot cube_out/mock_cube-BRAIN_MEGACUBE.fits --map vrot_star -o v.png
+brainsp plot cube_out/mock_cube-BRAIN_MEGACUBE.fits --diagnostic "BPT [N II]" -o bpt.png
+brainsp plot cube_out/mock_cube-BRAIN_MEGACUBE.fits --export maps --formats png,pdf,fits
+```
+
+## One file per run
+
+```bash
+brainsp init run.py spectra/*.spec       # a Python file with every setting
+python run.py --check
+python run.py --device gpu
+```
+
+## On a server
+
+Nothing above needs a display. A typical batch job:
+
+```bash
+#!/bin/bash
+#SBATCH --gres=gpu:1 --time=02:00:00
+source ~/miniconda3/bin/activate brain
+brainsp cube cubes/*.fits --table targets.csv --wavelength-scale vacuum \
+    --sn 3 --fit-sn 3 --device gpu -o megacubes
+```

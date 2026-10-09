@@ -1,0 +1,17 @@
+maps/vrot_star.png
+maps/vrot_star.pdf
+maps/vrot_star.fits
+maps/Sigma_star.png
+maps/Sigma_star.pdf
+maps/Sigma_star.fits
+maps/Av.png
+maps/Av.pdf
+maps/Av.fits
+Filename: maps/vrot_star.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      26   (16, 16)   float64   
+  1  TRUST         1 ImageHDU        26   (16, 16)   uint8   
+'RA---TAN' 'DEC--TAN'
+
+central spaxel: light in templates older than 5 Gyr: 77.5 %
+truth (old population light): 77.4 %

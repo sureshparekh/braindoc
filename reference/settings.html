@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Settings reference &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/brainsp.css?v=a44d817d" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/settings';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Command-line reference" href="cli.html" />
+    <link rel="prev" title="Reference" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Settings reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command-line reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skill.html">The Claude skill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing BRAIN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Settings reference</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="settings-reference">
+<h1>Settings reference<a class="headerlink" href="#settings-reference" title="Link to this heading">#</a></h1>
+<p>Every setting BRAIN understands, with its default and what it does, grouped as in the documented settings file (<code class="docutils literal notranslate"><span class="pre">brainsp</span> <span class="pre">init</span> <span class="pre">settings.yaml</span></code> writes a copy). In Python each is a keyword of <a class="reference internal" href="../api/generated/brainsp.fit_spectrum.html#brainsp.fit_spectrum" title="brainsp.fit_spectrum"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.fit_spectrum()</span></code></a> and a key of <a class="reference internal" href="../api/generated/brainsp.Settings.html#brainsp.Settings" title="brainsp.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">brainsp.Settings</span></code></a>; on the command line <code class="docutils literal notranslate"><span class="pre">--set</span> <span class="pre">name=value</span></code>. This page is generated from the code.</p>
+<p>There are 71 settings.</p>
+<section id="what-to-fit">
+<h2>What To Fit<a class="headerlink" href="#what-to-fit" title="Link to this heading">#</a></h2>
+<section id="spectrum">
+<h3><code class="docutils literal notranslate"><span class="pre">spectrum</span></code><a class="headerlink" href="#spectrum" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The spectrum to fit. A plain text file with four columns:
+    wavelength[Angstrom]   flux   error   flag
+(error and flag are optional; flag &gt; 0 marks a bad pixel). For example:
+    spectrum: my_spectra/galaxy.spec
+Mock spectra to try BRAIN on:  brainsp examples   (writes ~/.brainsp/examples)
+
+To fit many spectra in one go, use a wildcard instead:
+    spectrum: my_spectra/*.spec
+Everything stays loaded between them, so 100 spectra cost far less than
+100 separate runs.
+</pre></div>
+</div>
+</section>
+<section id="mask">
+<h3><code class="docutils literal notranslate"><span class="pre">mask</span></code><a class="headerlink" href="#mask" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Optional list of wavelength regions to treat specially — sky lines, bad
+columns, or features you want the fit to try harder on. One region per line:
+
+      start_wavelength   end_wavelength   [weight]
+
+The weight is optional and defaults to 0, meaning the region is thrown away.
+A weight above 1 makes those pixels count for more; 2 counts them double.
+A .sm / .gm mask file works as it is: its first line is the number of
+regions N, and only the N lines after it are read; anything below them is
+treated as notes.
+For a datacube the same mask is applied to every spaxel.
+Leave blank for no mask. The desktop interface can draw one for you.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="wavelength-range">
+<h2>Wavelength Range<a class="headerlink" href="#wavelength-range" title="Link to this heading">#</a></h2>
+<section id="wavelength-min">
+<h3><code class="docutils literal notranslate"><span class="pre">wavelength_min</span></code><a class="headerlink" href="#wavelength-min" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">3700.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fit only between these wavelengths, in Angstroms. Trim the noisy ends of
+your spectrum here. Leave blank to use everything.
+
+Changing this changes the size of the problem, so BRAIN rebuilds its
+compiled engine once (a few seconds). Keeping one range across a batch
+keeps every run fast.
+</pre></div>
+</div>
+</section>
+<section id="wavelength-max">
+<h3><code class="docutils literal notranslate"><span class="pre">wavelength_max</span></code><a class="headerlink" href="#wavelength-max" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">6900.0</span></code></p>
+</section>
+</section>
+<section id="instrumental-resolution">
+<h2>Instrumental Resolution<a class="headerlink" href="#instrumental-resolution" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Your spectrograph smears every spectral line by a fixed amount, and so does
+whatever machine produced the template library. Those two smearings are
+almost never equal, and the difference goes straight onto the velocity
+dispersion BRAIN reports. Tell BRAIN about them and it corrects for the
+difference and reports a stellar dispersion. Leave them blank and BRAIN
+still fits, but the dispersion it reports is an OBSERVED one that includes
+the instrument.
+
+BRAIN will never smooth your spectrum to make the two match. Smoothing
+correlates neighbouring noise values, and every chi-squared in this code
+assumes they are independent, so a smoothed spectrum produces a better
+looking fit that means nothing.
+
+Your data&#39;s resolution, in the OBSERVED frame, written any of these ways:
+    instrumental_resolution: 2.9             a FWHM in Angstrom
+    instrumental_resolution: &quot;70 km/s&quot;       constant in velocity (a sigma)
+    instrumental_resolution: lsf_10517.txt   two columns: wavelength, FWHM
+Leave blank if you do not know it.
+
+If your data came from the MaNGA DRP, you do not have to model this: the
+cube ships the line-spread function per spaxel, as a 1-sigma width in
+Angstrom. DR17 names the extensions LSFPRE and LSFPOST; in DR15 and DR16 the
+same two were called PREDISP and DISP. Take the pre-pixelised one, LSFPRE:
+it is the width before integration over the pixel, which is the convention
+that matches this kind of fitting. Carrying that array through from wherever
+you extracted the spectrum is always better than a single number here.
+</pre></div>
+</div>
+</section>
+<section id="library-resolution">
+<h3><code class="docutils literal notranslate"><span class="pre">library_resolution</span></code><a class="headerlink" href="#library-resolution" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The template library&#39;s resolution, at rest wavelengths. Leave blank and
+BRAIN reads it from the template files&#39; own headers; if they do not state
+one, BRAIN says so and applies no correction rather than guessing.
+    library_resolution: 3.4            a FWHM in Angstrom
+    library_resolution: &quot;45 km/s&quot;      constant in velocity (a sigma)
+</pre></div>
+</div>
+</section>
+<section id="spectrum-redshift">
+<h3><code class="docutils literal notranslate"><span class="pre">spectrum_redshift</span></code><a class="headerlink" href="#spectrum-redshift" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The redshift that was removed from your spectrum before you handed it to
+BRAIN. This matters: the instrument smeared the light at the wavelength it
+was observed at, lambda_rest * (1 + z), while the library is smeared at the
+rest wavelength. Leave it 0.0 if your spectrum is still in the observed
+frame.
+</pre></div>
+</div>
+</section>
+<section id="spectrum-in-rest-frame">
+<h3><code class="docutils literal notranslate"><span class="pre">spectrum_in_rest_frame</span></code><a class="headerlink" href="#spectrum-in-rest-frame" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Is the spectrum already in the rest frame?
+  true  : you de-redshifted it; spectrum_redshift records what you removed.
+  false : it is still in the OBSERVED frame; BRAIN removes spectrum_redshift
+          itself before fitting, by dividing the wavelengths by 1 + z, the
+          way it does for a datacube.
+</pre></div>
+</div>
+</section>
+<section id="galactic-ebv">
+<h3><code class="docutils literal notranslate"><span class="pre">galactic_ebv</span></code><a class="headerlink" href="#galactic-ebv" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Galactic (Milky Way) reddening, removed BEFORE fitting, single spectra only.
+This is the foreground dust between us and the galaxy, so it is undone at
+the OBSERVED wavelengths: flux and errors are multiplied by 10^(0.4 A_lambda)
+with A_lambda = R_V E(B-V) q(lambda). The galaxy&#39;s OWN dust is not touched:
+it is a fitted parameter (A_V). E(B-V) for a sky position: e.g. the
+Schlafly &amp; Finkbeiner (2011) maps. For a datacube, use the dereddening stage
+(or the &#39;ebv&#39; column of a targets table) instead.
+</pre></div>
+</div>
+</section>
+<section id="galactic-rv">
+<h3><code class="docutils literal notranslate"><span class="pre">galactic_rv</span></code><a class="headerlink" href="#galactic-rv" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">3.1</span></code></p>
+</section>
+<section id="galactic-law">
+<h3><code class="docutils literal notranslate"><span class="pre">galactic_law</span></code><a class="headerlink" href="#galactic-law" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'CCM'</span></code></p>
+</section>
+<section id="cube-redshift">
+<h3><code class="docutils literal notranslate"><span class="pre">cube_redshift</span></code><a class="headerlink" href="#cube-redshift" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The redshift BRAIN should REMOVE from a datacube before fitting it.
+This is the opposite of the setting above, and it applies to datacubes only.
+
+  A SPECTRUM you hand BRAIN is expected to be in the rest frame already:
+  you de-redshifted it, and &#39;spectrum_redshift&#39; records what you removed.
+
+  A DATACUBE arrives from the telescope in the OBSERVED frame, so BRAIN
+  de-redshifts it for you. Put the galaxy&#39;s redshift here and BRAIN divides
+  the wavelength axis by 1+z before it does anything else.
+
+Leave it 0.0 for a cube that is already in the rest frame. Setting this and
+&#39;spectrum_redshift&#39; both is refused, because it describes a cube that gets
+de-redshifted twice.
+
+MaNGA cubes do not carry the galaxy redshift anywhere in the file; it lives
+in the DRPall catalogue. You have to supply it.
+
+The value used is written into the output as BRAINZ, so a finished cube
+says which frame it was fitted in.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="stellar-templates-which-populations-brain-may-find">
+<h2>Stellar Templates — Which Populations Brain May Find<a class="headerlink" href="#stellar-templates-which-populations-brain-may-find" title="Link to this heading">#</a></h2>
+<section id="base-folder">
+<h3><code class="docutils literal notranslate"><span class="pre">base_folder</span></code><a class="headerlink" href="#base-folder" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'BasesGM'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>BRAIN describes your galaxy as a mixture of simple stellar populations, each
+with one age and one metallicity. You choose which are on the menu.
+
+The library ships a catalogue of everything available:
+      brainsp/data/libraries/BasesGM/CATALOGUE.txt
+or run:
+      brainsp libraries info BasesGM
+
+Copy the exact values from there. Asking for one that does not exist is an
+error, and BRAIN will tell you the nearest ones available.
+</pre></div>
+</div>
+</section>
+<section id="ages">
+<h3><code class="docutils literal notranslate"><span class="pre">ages</span></code><a class="headerlink" href="#ages" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'all'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ages in YEARS, or the word  all  for every age in the catalogue.
+  all  is the safe choice. A shorter list fits faster and is less
+  degenerate, but describes a coarser star-formation history. If you do
+  shorten it, spread the ages out rather than clustering them.
+
+Example of a compact 6-age set spanning 1 Myr to 12.6 Gyr:
+  ages: [1e6, 1e7, 1e8, 1e9, 5.01e9, 1.26e10]
+</pre></div>
+</div>
+</section>
+<section id="metallicities">
+<h3><code class="docutils literal notranslate"><span class="pre">metallicities</span></code><a class="headerlink" href="#metallicities" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'all'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Metallicities (mass fraction of elements heavier than helium).
+0.0190 is solar. Use  all  for every one in the catalogue.
+  metallicities: [0.0076, 0.0190]
+</pre></div>
+</div>
+</section>
+<section id="include-power-law">
+<h3><code class="docutils literal notranslate"><span class="pre">include_power_law</span></code><a class="headerlink" href="#include-power-law" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Add a featureless power-law component? This soaks up light from an active
+galactic nucleus. Leave false for normal galaxies — switching it on when
+there is no AGN lets it absorb light that belongs to real stars.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dust">
+<h2>Dust<a class="headerlink" href="#dust" title="Link to this heading">#</a></h2>
+<section id="reddening-law">
+<h3><code class="docutils literal notranslate"><span class="pre">reddening_law</span></code><a class="headerlink" href="#reddening-law" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'CCM'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>How dust dims and reddens the light of the stars. Pick the curve that
+matches the dust you think you are looking through, not the newest paper.
+
+  Milky Way
+    CCM   Cardelli, Clayton &amp; Mathis (1989), R_V = 3.1.  Good default.
+    HZ1   Allen (1976).
+    HZ2   Seaton (1979), fit by Fitzpatrick (1986).
+
+  Starburst
+    CAL   Calzetti et al. (2000), R_V = 4.05.
+    CCC   Calzetti (2000) with a Leitherer (2002) far-UV extension.
+    HZ5   Calzetti (2000), starburst (SB) form. Same curve as CAL.
+
+  Large Magellanic Cloud
+    HZ3   Fitzpatrick (1986).
+    GD3   Gordon et al. (2003), LMC average.
+    GD2   Gordon et al. (2003), LMC2 supershell near 30 Doradus.
+
+  Small Magellanic Cloud
+    HZ4   Prevot (1984) &amp; Bouchet (1985).
+    GD1   Gordon et al. (2003), SMC bar. Steep UV, no 2175 A bump.
+    GD24  Gordon et al. (2024).
+
+The Magellanic curves differ from the Milky Way ones mostly in the
+ultraviolet, so for a purely optical fit the choice matters far less than
+it looks. It matters a great deal if your range reaches below ~3000 A.
+</pre></div>
+</div>
+</section>
+<section id="dust-range">
+<h3><code class="docutils literal notranslate"><span class="pre">dust_range</span></code><a class="headerlink" href="#dust-range" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">[-1.0,</span> <span class="pre">5.0]</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>How much dust BRAIN may find, in magnitudes of V-band extinction.
+[-1, 5] spans a dust-free galaxy to a heavily obscured one, and lets A_V go
+a little negative. A negative A_V compensates for extinction that is not
+otherwise corrected: light that reaches us through the galaxy itself (from
+its far side, say) has crossed its dust, and correcting for that depends on
+a model of the geometry that no two groups make the same way, so it is
+common practice to allow A_V down to -1. Use [0, 5] to forbid it.
+</pre></div>
+</div>
+</section>
+<section id="young-extra-dust-range">
+<h3><code class="docutils literal notranslate"><span class="pre">young_extra_dust_range</span></code><a class="headerlink" href="#young-extra-dust-range" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">5.0]</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Extra dust allowed in front of the YOUNGEST populations only — young stars
+sit in their birth clouds and are often dustier. Use [0.0, 0.0] to disable.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="motion-of-the-stars">
+<h2>Motion Of The Stars<a class="headerlink" href="#motion-of-the-stars" title="Link to this heading">#</a></h2>
+<section id="velocity-range">
+<h3><code class="docutils literal notranslate"><span class="pre">velocity_range</span></code><a class="headerlink" href="#velocity-range" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">[-2000.0,</span> <span class="pre">5000.0]</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Velocity in km/s; positive means receding. This range must contain your
+galaxy&#39;s actual velocity. If you know the redshift z, velocity is roughly
+z * 300000 km/s.
+</pre></div>
+</div>
+</section>
+<section id="dispersion-range">
+<h3><code class="docutils literal notranslate"><span class="pre">dispersion_range</span></code><a class="headerlink" href="#dispersion-range" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">[10.0,</span> <span class="pre">500.0]</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Velocity dispersion in km/s — how much the stars&#39; individual motions blur
+the spectral lines. Typical galaxies sit between 50 and 300.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="gas-emission-lines">
+<h2>Gas Emission Lines<a class="headerlink" href="#gas-emission-lines" title="Link to this heading">#</a></h2>
+<section id="fit-emission-lines">
+<h3><code class="docutils literal notranslate"><span class="pre">fit_emission_lines</span></code><a class="headerlink" href="#fit-emission-lines" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fit the bright lines from glowing gas (H-alpha, [O III], ...)?
+Only has an effect when nebular_mode is &#39;espop&#39;, &#39;nepop&#39; or &#39;photopop&#39;.
+With nebular_mode &#39;spop&#39; the fit is purely stellar and the lines stay
+masked. Setting this false under &#39;espop&#39; is rejected: espop with no
+lines is spop.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Instrumental Resolution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="wavelength-scale">
+<h3><code class="docutils literal notranslate"><span class="pre">wavelength_scale</span></code><a class="headerlink" href="#wavelength-scale" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The wavelength scale YOUR SPECTRUM is on: &#39;air&#39; or &#39;vacuum&#39;.
+
+This is a property of your data, not of your galaxy, and it is not about
+the template library — BRAIN puts the emission-line rest wavelengths on the
+scale you declare here and leaves the library&#39;s own scale alone.
+
+  vacuum   SDSS, MaNGA, DESI, LAMOST.
+  air      MUSE (its cube header says CTYPE3 = &#39;AWAV&#39;), CALIFA.
+
+BRAIN REFUSES TO GUESS, and only asks when the answer can change a number:
+it is required when &#39;fit_emission_lines&#39; is true and &#39;nebular_mode&#39; fits
+lines, and it is ignored in &#39;spop&#39;, which builds no lines at all.
+
+The reason it is refused rather than defaulted is that a wrong answer here
+is invisible. Air and vacuum wavelengths differ by about 83 km/s across the
+optical — 85.2 km/s at [O II] 3726, 82.7 at [S II] 6731 — and the offset is
+very nearly constant in velocity, so it is absorbed almost entirely by the
+fitted gas velocity. chi2 moves by less than 0.05%, with a sign that
+depends on the spectrum. The fit converges, the line fluxes look ordinary,
+and the only symptom is a gas-to-stars velocity offset that is not real.
+
+The shipped example spectrum is MaNGA-derived, so it is VACUUM. That is not
+an assumption: Law et al. 2016, AJ 152, 83, Section 3.1 and the Appendix B
+datamodel both state that the DRP delivers wavelengths in the vacuum
+heliocentric frame.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>Gas Emission Lines<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="gas-velocity-range">
+<h3><code class="docutils literal notranslate"><span class="pre">gas_velocity_range</span></code><a class="headerlink" href="#gas-velocity-range" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">[-2000.0,</span> <span class="pre">5000.0]</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The gas often moves slightly differently from the stars, so it gets its own
+velocity and dispersion.
+</pre></div>
+</div>
+</section>
+<section id="gas-dispersion-range">
+<h3><code class="docutils literal notranslate"><span class="pre">gas_dispersion_range</span></code><a class="headerlink" href="#gas-dispersion-range" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">[1.0,</span> <span class="pre">500.0]</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Nothing raises that lower end behind your back. It used to be pushed up to
+your spectrum&#39;s pixel width, back when a line narrower than a pixel was
+drawn by sampling a Gaussian at pixel centres and most of its flux went
+missing; the line is now integrated over the pixel and is exact at any
+width. 1.0 km/s is below the thermal width of every ion in the catalogue at
+10000 K, so a dispersion that lands there is a bound and BRAIN reports it as
+one rather than printing a number you could mistake for a measurement.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nebular-physics-advanced-spop-is-a-perfectly-good-choice">
+<h2>Nebular Physics   (Advanced — “Spop” Is A Perfectly Good Choice)<a class="headerlink" href="#nebular-physics-advanced-spop-is-a-perfectly-good-choice" title="Link to this heading">#</a></h2>
+<section id="nebular-mode">
+<h3><code class="docutils literal notranslate"><span class="pre">nebular_mode</span></code><a class="headerlink" href="#nebular-mode" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'spop'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Young stars emit ultraviolet light that ionises nearby gas, which glows back.
+
+  spop       Purely stellar populations. The emission lines are left masked
+             and are not fitted at all.
+             Fastest, and correct unless you specifically need the gas.
+             THIS IS THE DEFAULT.
+
+  espop      Emission lines and stellar populations together. Every line is
+             fitted from its rest position with a free amplitude; nothing
+             is predicted, so no ionising photon budget is needed and this
+             mode works with ANY template library.
+             What it does NOT do: there is no nebular continuum. Real gas
+             also emits a smooth free-free, free-bound and two-photon
+             continuum, and in this mode that light has nowhere to go, so
+             it is absorbed into the stellar populations and the
+             extinction. A_V and the young populations will be biased by
+             however much of it is there. If your spectrum has strong
+             lines and your library reaches the Lyman limit, use nepop.
+
+  nepop      As espop, plus the smooth glow from the ionised gas modelled
+             as its own fitted component, its brightness set by the young
+             stars BRAIN finds. Needs a template library whose spectra
+             reach below the Lyman limit at 911.76 A; run
+             brainsp libraries info &lt;library&gt; to see what yours supports.
+
+  photopop   As nepop, plus forcing hydrogen line strengths to agree
+             with the ionising photon budget.
+             *** NOT READY FOR SCIENCE USE. The machinery works, but the
+             predicted line strengths are currently mis-scaled by a large
+             factor. Use nepop. ***
+</pre></div>
+</div>
+</section>
+<section id="gas-temperature">
+<h3><code class="docutils literal notranslate"><span class="pre">gas_temperature</span></code><a class="headerlink" href="#gas-temperature" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">10000.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Gas conditions. Used only when nebular_mode is not spop.
+Kelvin
+</pre></div>
+</div>
+</section>
+<section id="gas-density">
+<h3><code class="docutils literal notranslate"><span class="pre">gas_density</span></code><a class="headerlink" href="#gas-density" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">100.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>electrons per cubic cm
+</pre></div>
+</div>
+</section>
+<section id="gas-metallicity">
+<h3><code class="docutils literal notranslate"><span class="pre">gas_metallicity</span></code><a class="headerlink" href="#gas-metallicity" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0.02 is solar
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fit-quality-vs-speed">
+<h2>Fit Quality Vs Speed<a class="headerlink" href="#fit-quality-vs-speed" title="Link to this heading">#</a></h2>
+<section id="smoothness">
+<h3><code class="docutils literal notranslate"><span class="pre">smoothness</span></code><a class="headerlink" href="#smoothness" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Smoothness of the recovered star-formation history. Higher is smoother and
+more stable, lower is more detailed but noisier. 0 applies no prior at all,
+which is the default; raise it if you want the
+history smoothed and can say why.
+</pre></div>
+</div>
+</section>
+<section id="error-samples">
+<h3><code class="docutils literal notranslate"><span class="pre">error_samples</span></code><a class="headerlink" href="#error-samples" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Error bars from resampling the data. 0 skips them (fast). 100-300 gives
+reliable uncertainties. This is the slowest part of a run.
+</pre></div>
+</div>
+</section>
+<section id="reject-outliers">
+<h3><code class="docutils literal notranslate"><span class="pre">reject_outliers</span></code><a class="headerlink" href="#reject-outliers" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Reject individual pixels that disagree wildly with the model (cosmic rays,
+unmasked artefacts). Their weight goes to zero and the spectrum is fitted
+again without them, so the fitted parameters move as well as Nl_eff, adev
+and the error bars. One clip-and-refit pass, on a spectrum and on every
+spaxel of a datacube alike. A pixel is an outlier beyond outlier_threshold
+times its error (outlier_scale, below). See the settings page. Leave on.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
+<section id="output-folder">
+<h3><code class="docutils literal notranslate"><span class="pre">output_folder</span></code><a class="headerlink" href="#output-folder" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'brain_out'</span></code></p>
+</section>
+<section id="make-plot">
+<h3><code class="docutils literal notranslate"><span class="pre">make_plot</span></code><a class="headerlink" href="#make-plot" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Save a plot of the fit alongside the numbers?
+</pre></div>
+</div>
+</section>
+</section>
+<section id="advanced-everything-else-brain-can-be-told">
+<h2>Advanced — Everything Else Brain Can Be Told<a class="headerlink" href="#advanced-everything-else-brain-can-be-told" title="Link to this heading">#</a></h2>
+<section id="linear-solver">
+<h3><code class="docutils literal notranslate"><span class="pre">linear_solver</span></code><a class="headerlink" href="#linear-solver" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'active_set'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>active_set : exact. Reaches the same answer as a reference solver to ~1e-12.
+  fista      : the previous iterative solver. Does not converge on this
+               problem and returns near-zero fluxes for strong emission
+               lines. Kept only to reproduce older results.
+</pre></div>
+</div>
+</section>
+<section id="cube-fitter">
+<h3><code class="docutils literal notranslate"><span class="pre">cube_fitter</span></code><a class="headerlink" href="#cube-fitter" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'fast'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>fast      : the same fit, computed faster (fast_cube.py). The NNLS starts
+              from the previous solution&#39;s active templates, the LM
+              derivative is exact (variable projection) instead of estimated
+              by finite differences, and the velocity grid is scanned.
+              Measured on 64 MaNGA spaxels: 2.4x (spop) to 3.9x (espop)
+              faster; largest change in any fitted value 5e-4 km/s, 2e-5 mag,
+              2e-5 dex, chi2 identical to 1e-9. YAV is exactly 0 when no
+              template carries extra dust; the reference lets it drift.
+              Since then also: broadening transforms padded only as far as
+              the bounds reach, a Jacobian contracted from four model
+              derivatives, and on one device a work queue in place of
+              fixed batches (see the performance page): espop on MaNGA
+              8626-12704 another 8.8x faster.
+  reference : the original batch fitter, kept to reproduce older results.
+Only the active_set solver can be run fast; fista always uses reference.
+</pre></div>
+</div>
+</section>
+<section id="missing-error">
+<h3><code class="docutils literal notranslate"><span class="pre">missing_error</span></code><a class="headerlink" href="#missing-error" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'exclude'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Datacubes only: a pixel with a finite flux but no usable error.
+  exclude     : leave it out (the default). In MaNGA an inverse variance of 0
+                marks a pixel not to be trusted.
+  interpolate : keep it, with its error interpolated from the spaxel&#39;s
+                neighbouring errors, when the flux is finite and the quality
+                mask does not flag it; the flux itself is never changed.
+                Some cubes give no error for real data: the JWST NIRSpec
+                cubes of 3C 293, CGCG 012-070 and NGC 3884 carry NaN errors
+                on 15 % of their pixels and on ~45 % at 2.20-2.27 um.
+</pre></div>
+</div>
+</section>
+<section id="coarse-to-fine-grid">
+<h3><code class="docutils literal notranslate"><span class="pre">coarse_to_fine_grid</span></code><a class="headerlink" href="#coarse-to-fine-grid" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Search the starting velocity in two passes, a coarse grid over the whole
+velocity range and then a finer one around its best point, instead of one
+fine grid. Same answer, far fewer evaluations. Single spectra only.
+</pre></div>
+</div>
+</section>
+<section id="central-differences">
+<h3><code class="docutils literal notranslate"><span class="pre">central_differences</span></code><a class="headerlink" href="#central-differences" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Estimate the Levenberg-Marquardt derivatives with central rather than
+forward differences: twice the cost per step, more accurate near the
+bounds. Single spectra only (a datacube&#39;s fast fitter computes them exactly).
+</pre></div>
+</div>
+</section>
+<section id="enforce-simplex">
+<h3><code class="docutils literal notranslate"><span class="pre">enforce_simplex</span></code><a class="headerlink" href="#enforce-simplex" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Force the stellar light fractions to sum to exactly 1. Off by default: the
+constraint only holds alongside a fitted normalisation flux, so imposing it
+alone costs accuracy. Reported fractions are normalised to 100% either way.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="speed-you-should-not-need-to-change-these">
+<h2>Speed   (You Should Not Need To Change These)<a class="headerlink" href="#speed-you-should-not-need-to-change-these" title="Link to this heading">#</a></h2>
+<section id="use-cached-engine">
+<h3><code class="docutils literal notranslate"><span class="pre">use_cached_engine</span></code><a class="headerlink" href="#use-cached-engine" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>BRAIN stores its compiled engine and prepared templates on disk, so the
+first run is slow and every run after it is fast. Leave both on.
+To wipe them (always safe, just costs time):  brainsp clear-cache
+</pre></div>
+</div>
+</section>
+<section id="use-cached-templates">
+<h3><code class="docutils literal notranslate"><span class="pre">use_cached_templates</span></code><a class="headerlink" href="#use-cached-templates" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</section>
+<section id="device">
+<h3><code class="docutils literal notranslate"><span class="pre">device</span></code><a class="headerlink" href="#device" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'auto'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>auto picks GPU or CPU sensibly. Force with cpu or gpu if you need to.
+</pre></div>
+</div>
+</section>
+<section id="cpu-workers">
+<h3><code class="docutils literal notranslate"><span class="pre">cpu_workers</span></code><a class="headerlink" href="#cpu-workers" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'auto'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Datacubes on a CPU are fitted by several worker processes, one thread
+each, which scales with the cores (one process cannot: measured 0.9
+spaxels/s on 4, 16 or 64 cores, and 0.55 on a single core). auto uses
+every core but one, no more than the free memory allows (about 1.2 GB per
+worker) and no more than there are spaxels; a number sets it; 1 turns the
+pool off. A GPU ignores it and fits batches of spaxels at once.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>Advanced — Everything Else Brain Can Be Told<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="has-errorbars">
+<h3><code class="docutils literal notranslate"><span class="pre">has_errorbars</span></code><a class="headerlink" href="#has-errorbars" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>is column 3 a real error bar?
+</pre></div>
+</div>
+</section>
+<section id="normalisation-wavelength">
+<h3><code class="docutils literal notranslate"><span class="pre">normalisation_wavelength</span></code><a class="headerlink" href="#normalisation-wavelength" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">5500.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>must sit in clean continuum, inside range
+</pre></div>
+</div>
+</section>
+<section id="smoothness-order">
+<h3><code class="docutils literal notranslate"><span class="pre">smoothness_order</span></code><a class="headerlink" href="#smoothness-order" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 penalises differences between neighbouring populations, 2 penalises
+curvature. Changing this rebuilds the compiled engine.
+</pre></div>
+</div>
+</section>
+<section id="av-start">
+<h3><code class="docutils literal notranslate"><span class="pre">av_start</span></code><a class="headerlink" href="#av-start" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.3</span></code></p>
+</section>
+<section id="dispersion-start">
+<h3><code class="docutils literal notranslate"><span class="pre">dispersion_start</span></code><a class="headerlink" href="#dispersion-start" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">150.0</span></code></p>
+</section>
+<section id="v0-start">
+<h3><code class="docutils literal notranslate"><span class="pre">v0_start</span></code><a class="headerlink" href="#v0-start" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>normally overridden by the velocity search
+</pre></div>
+</div>
+</section>
+<section id="gas-dispersion-start">
+<h3><code class="docutils literal notranslate"><span class="pre">gas_dispersion_start</span></code><a class="headerlink" href="#gas-dispersion-start" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">100.0</span></code></p>
+</section>
+<section id="gas-v0-start">
+<h3><code class="docutils literal notranslate"><span class="pre">gas_v0_start</span></code><a class="headerlink" href="#gas-v0-start" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+</section>
+<section id="velocity-grid-step">
+<h3><code class="docutils literal notranslate"><span class="pre">velocity_grid_step</span></code><a class="headerlink" href="#velocity-grid-step" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">150.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>km/s step of the initial velocity search
+</pre></div>
+</div>
+</section>
+<section id="fit-tolerance">
+<h3><code class="docutils literal notranslate"><span class="pre">fit_tolerance</span></code><a class="headerlink" href="#fit-tolerance" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1e-07</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>relative chi-squared and step tolerance
+</pre></div>
+</div>
+</section>
+<section id="max-iterations">
+<h3><code class="docutils literal notranslate"><span class="pre">max_iterations</span></code><a class="headerlink" href="#max-iterations" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">200</span></code></p>
+</section>
+<section id="max-function-evals">
+<h3><code class="docutils literal notranslate"><span class="pre">max_function_evals</span></code><a class="headerlink" href="#max-function-evals" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">500</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>legacy engine only
+</pre></div>
+</div>
+</section>
+<section id="outlier-threshold">
+<h3><code class="docutils literal notranslate"><span class="pre">outlier_threshold</span></code><a class="headerlink" href="#outlier-threshold" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">3.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sigma, for reject_outliers
+</pre></div>
+</div>
+</section>
+<section id="outlier-scale">
+<h3><code class="docutils literal notranslate"><span class="pre">outlier_scale</span></code><a class="headerlink" href="#outlier-scale" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'error'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>What outlier_threshold multiplies. error: each pixel&#39;s own error, as
+STARLIGHT&#39;s NSIGMA clipping (a pixel more than 3 sigma off the model is
+dropped however the rest of the spectrum fits). typical: the larger of the
+error and the spectrum&#39;s typical residual, so a model that cannot match a
+very high-S/N spectrum anywhere does not lose most of its pixels.
+</pre></div>
+</div>
+</section>
+<section id="line-groups">
+<h3><code class="docutils literal notranslate"><span class="pre">line_groups</span></code><a class="headerlink" href="#line-groups" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Lines in one group share a velocity and dispersion. Leave blank to let
+BRAIN group them automatically. To set them yourself, naming species
+exactly as BRAIN spells them, spaces and all:
+  line_groups:
+    0: [Halpha, Hbeta, &quot;[N II]&quot;, &quot;[S II]&quot;]
+    1: [&quot;[O III]&quot;, &quot;[Ne III]&quot;]
+The labels are names, not positions: they need not be 0 and 1, and need
+not be contiguous. Every species you do not list falls into group 0,
+which BRAIN then fits as a group of its own even if you never named it.
+</pre></div>
+</div>
+</section>
+<section id="helium-abundance">
+<h3><code class="docutils literal notranslate"><span class="pre">helium_abundance</span></code><a class="headerlink" href="#helium-abundance" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.25</span></code></p>
+</section>
+<section id="lyman-escape-fraction">
+<h3><code class="docutils literal notranslate"><span class="pre">lyman_escape_fraction</span></code><a class="headerlink" href="#lyman-escape-fraction" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+</section>
+<section id="allow-partial-ionising-coverage">
+<h3><code class="docutils literal notranslate"><span class="pre">allow_partial_ionising_coverage</span></code><a class="headerlink" href="#allow-partial-ionising-coverage" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Q(H) is integrated from the raw template files shortward of the Lyman
+limit. If only some of them reach it, the ones that do carry the whole
+ionising budget and the rest contribute none, so the number is a property
+of which templates happen to be long enough rather than of the galaxy.
+BRAIN refuses that by default. Set true to accept it anyway.
+</pre></div>
+</div>
+</section>
+<section id="nebular-dust-range">
+<h3><code class="docutils literal notranslate"><span class="pre">nebular_dust_range</span></code><a class="headerlink" href="#nebular-dust-range" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">6.0]</span></code></p>
+</section>
+<section id="nebular-dust-start">
+<h3><code class="docutils literal notranslate"><span class="pre">nebular_dust_start</span></code><a class="headerlink" href="#nebular-dust-start" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.5</span></code></p>
+</section>
+<section id="nebular-iterations">
+<h3><code class="docutils literal notranslate"><span class="pre">nebular_iterations</span></code><a class="headerlink" href="#nebular-iterations" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">12</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>undamped, |dQ|/Q &lt; 1e-10 by iteration 9 worst case
+</pre></div>
+</div>
+</section>
+<section id="ssp-flux-unit">
+<h3><code class="docutils literal notranslate"><span class="pre">ssp_flux_unit</span></code><a class="headerlink" href="#ssp-flux-unit" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">'Lsun'</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Lsun or cgs — units of your template files
+</pre></div>
+</div>
+</section>
+<section id="sc-tolerance">
+<h3><code class="docutils literal notranslate"><span class="pre">sc_tolerance</span></code><a class="headerlink" href="#sc-tolerance" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.15</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>|tau-1| above this is warned about, not tested
+</pre></div>
+</div>
+</section>
+<section id="sc-av-neb-tolerance">
+<h3><code class="docutils literal notranslate"><span class="pre">sc_av_neb_tolerance</span></code><a class="headerlink" href="#sc-av-neb-tolerance" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">0.01</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bracket width that ends the Av_neb search
+</pre></div>
+</div>
+</section>
+<section id="sc-max-iterations">
+<h3><code class="docutils literal notranslate"><span class="pre">sc_max_iterations</span></code><a class="headerlink" href="#sc-max-iterations" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">20</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>refits the Av_neb search may spend
+</pre></div>
+</div>
+</section>
+<section id="sc-damping">
+<h3><code class="docutils literal notranslate"><span class="pre">sc_damping</span></code><a class="headerlink" href="#sc-damping" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>damping averages in the Q=0 first iterate; do not lower
+</pre></div>
+</div>
+</section>
+<section id="sc-penalty-weight">
+<h3><code class="docutils literal notranslate"><span class="pre">sc_penalty_weight</span></code><a class="headerlink" href="#sc-penalty-weight" title="Link to this heading">#</a></h3>
+<p><strong>Default:</strong> <code class="docutils literal notranslate"><span class="pre">1000.0</span></code></p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cli.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Command-line reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-fit">What To Fit</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectrum"><code class="docutils literal notranslate"><span class="pre">spectrum</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mask"><code class="docutils literal notranslate"><span class="pre">mask</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wavelength-range">Wavelength Range</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavelength-min"><code class="docutils literal notranslate"><span class="pre">wavelength_min</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavelength-max"><code class="docutils literal notranslate"><span class="pre">wavelength_max</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumental-resolution">Instrumental Resolution</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#library-resolution"><code class="docutils literal notranslate"><span class="pre">library_resolution</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectrum-redshift"><code class="docutils literal notranslate"><span class="pre">spectrum_redshift</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectrum-in-rest-frame"><code class="docutils literal notranslate"><span class="pre">spectrum_in_rest_frame</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#galactic-ebv"><code class="docutils literal notranslate"><span class="pre">galactic_ebv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#galactic-rv"><code class="docutils literal notranslate"><span class="pre">galactic_rv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#galactic-law"><code class="docutils literal notranslate"><span class="pre">galactic_law</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cube-redshift"><code class="docutils literal notranslate"><span class="pre">cube_redshift</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stellar-templates-which-populations-brain-may-find">Stellar Templates — Which Populations Brain May Find</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-folder"><code class="docutils literal notranslate"><span class="pre">base_folder</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ages"><code class="docutils literal notranslate"><span class="pre">ages</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metallicities"><code class="docutils literal notranslate"><span class="pre">metallicities</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-power-law"><code class="docutils literal notranslate"><span class="pre">include_power_law</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dust">Dust</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reddening-law"><code class="docutils literal notranslate"><span class="pre">reddening_law</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dust-range"><code class="docutils literal notranslate"><span class="pre">dust_range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#young-extra-dust-range"><code class="docutils literal notranslate"><span class="pre">young_extra_dust_range</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-of-the-stars">Motion Of The Stars</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-range"><code class="docutils literal notranslate"><span class="pre">velocity_range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispersion-range"><code class="docutils literal notranslate"><span class="pre">dispersion_range</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-emission-lines">Gas Emission Lines</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-emission-lines"><code class="docutils literal notranslate"><span class="pre">fit_emission_lines</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Instrumental Resolution</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wavelength-scale"><code class="docutils literal notranslate"><span class="pre">wavelength_scale</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Gas Emission Lines</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-velocity-range"><code class="docutils literal notranslate"><span class="pre">gas_velocity_range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-dispersion-range"><code class="docutils literal notranslate"><span class="pre">gas_dispersion_range</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nebular-physics-advanced-spop-is-a-perfectly-good-choice">Nebular Physics   (Advanced — “Spop” Is A Perfectly Good Choice)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nebular-mode"><code class="docutils literal notranslate"><span class="pre">nebular_mode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-temperature"><code class="docutils literal notranslate"><span class="pre">gas_temperature</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-density"><code class="docutils literal notranslate"><span class="pre">gas_density</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-metallicity"><code class="docutils literal notranslate"><span class="pre">gas_metallicity</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-quality-vs-speed">Fit Quality Vs Speed</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothness"><code class="docutils literal notranslate"><span class="pre">smoothness</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-samples"><code class="docutils literal notranslate"><span class="pre">error_samples</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reject-outliers"><code class="docutils literal notranslate"><span class="pre">reject_outliers</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-folder"><code class="docutils literal notranslate"><span class="pre">output_folder</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-plot"><code class="docutils literal notranslate"><span class="pre">make_plot</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-everything-else-brain-can-be-told">Advanced — Everything Else Brain Can Be Told</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-solver"><code class="docutils literal notranslate"><span class="pre">linear_solver</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cube-fitter"><code class="docutils literal notranslate"><span class="pre">cube_fitter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-error"><code class="docutils literal notranslate"><span class="pre">missing_error</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-to-fine-grid"><code class="docutils literal notranslate"><span class="pre">coarse_to_fine_grid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-differences"><code class="docutils literal notranslate"><span class="pre">central_differences</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enforce-simplex"><code class="docutils literal notranslate"><span class="pre">enforce_simplex</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speed-you-should-not-need-to-change-these">Speed   (You Should Not Need To Change These)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cached-engine"><code class="docutils literal notranslate"><span class="pre">use_cached_engine</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cached-templates"><code class="docutils literal notranslate"><span class="pre">use_cached_templates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device"><code class="docutils literal notranslate"><span class="pre">device</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-workers"><code class="docutils literal notranslate"><span class="pre">cpu_workers</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Advanced — Everything Else Brain Can Be Told</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#has-errorbars"><code class="docutils literal notranslate"><span class="pre">has_errorbars</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisation-wavelength"><code class="docutils literal notranslate"><span class="pre">normalisation_wavelength</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothness-order"><code class="docutils literal notranslate"><span class="pre">smoothness_order</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#av-start"><code class="docutils literal notranslate"><span class="pre">av_start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispersion-start"><code class="docutils literal notranslate"><span class="pre">dispersion_start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v0-start"><code class="docutils literal notranslate"><span class="pre">v0_start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-dispersion-start"><code class="docutils literal notranslate"><span class="pre">gas_dispersion_start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-v0-start"><code class="docutils literal notranslate"><span class="pre">gas_v0_start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-grid-step"><code class="docutils literal notranslate"><span class="pre">velocity_grid_step</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-tolerance"><code class="docutils literal notranslate"><span class="pre">fit_tolerance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-iterations"><code class="docutils literal notranslate"><span class="pre">max_iterations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-function-evals"><code class="docutils literal notranslate"><span class="pre">max_function_evals</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outlier-threshold"><code class="docutils literal notranslate"><span class="pre">outlier_threshold</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outlier-scale"><code class="docutils literal notranslate"><span class="pre">outlier_scale</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-groups"><code class="docutils literal notranslate"><span class="pre">line_groups</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helium-abundance"><code class="docutils literal notranslate"><span class="pre">helium_abundance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lyman-escape-fraction"><code class="docutils literal notranslate"><span class="pre">lyman_escape_fraction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allow-partial-ionising-coverage"><code class="docutils literal notranslate"><span class="pre">allow_partial_ionising_coverage</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nebular-dust-range"><code class="docutils literal notranslate"><span class="pre">nebular_dust_range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nebular-dust-start"><code class="docutils literal notranslate"><span class="pre">nebular_dust_start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nebular-iterations"><code class="docutils literal notranslate"><span class="pre">nebular_iterations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ssp-flux-unit"><code class="docutils literal notranslate"><span class="pre">ssp_flux_unit</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sc-tolerance"><code class="docutils literal notranslate"><span class="pre">sc_tolerance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sc-av-neb-tolerance"><code class="docutils literal notranslate"><span class="pre">sc_av_neb_tolerance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sc-max-iterations"><code class="docutils literal notranslate"><span class="pre">sc_max_iterations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sc-damping"><code class="docutils literal notranslate"><span class="pre">sc_damping</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sc-penalty-weight"><code class="docutils literal notranslate"><span class="pre">sc_penalty_weight</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

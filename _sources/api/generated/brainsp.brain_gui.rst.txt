@@ -1,0 +1,27 @@
+﻿brainsp.brain\_gui
+==================
+
+.. automodule:: brainsp.brain_gui
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      centre_on
+      count_spin
+      coverage_sentence
+      enable
+      launch_screen
+      main
+      spin
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BatchFitThread
+      Brain
+      FitThread
+      Splash
+   

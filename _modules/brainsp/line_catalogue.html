@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainsp.line_catalogue &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/brainsp/line_catalogue';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.line_catalogue</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for brainsp.line_catalogue</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">BRAIN: which emission lines exist, where they are, and on which wavelength</span>
+<span class="sd">scale.</span>
+
+<span class="sd">Pure data and one dispersion formula. This module imports numpy and nothing</span>
+<span class="sd">else, so the settings validator and the desktop interface can ask what lines</span>
+<span class="sd">and species exist without starting a JAX backend in the process that draws</span>
+<span class="sd">the menus. `emission_lines` imports from here and adds the design matrix;</span>
+<span class="sd">this is the same split `reddening_catalogue` makes against `reddening_laws`,</span>
+<span class="sd">and for the same reason.</span>
+
+<span class="sd">THIS MODULE IS ABOUT THE OBSERVED SPECTRUM&#39;S WAVELENGTH SCALE AND NOTHING</span>
+<span class="sd">ELSE. The template library&#39;s scale is a separate open question: an SSP file</span>
+<span class="sd">states its own wavelengths, BRAIN resamples the library onto the observed</span>
+<span class="sd">grid, and nothing here inspects or converts that grid. Conflating the two</span>
+<span class="sd">would mean a single setting silently moving both the lines and the stellar</span>
+<span class="sd">continuum, which are measured against each other. Do not extend this module</span>
+<span class="sd">to the library without settling that question first.</span>
+
+<span class="sd">VACUUM IS THE SOURCE OF TRUTH, AIR IS DERIVED</span>
+
+<span class="sd">Every wavelength below is stored once, in vacuum, at the precision its</span>
+<span class="sd">source gives. The air set is computed from it at import time. Both sets end</span>
+<span class="sd">up module-level, importable and printable, so both are available to be</span>
+<span class="sd">inspected; only one is maintained.</span>
+
+<span class="sd">Hardcoding both would drift: a label and a number written separately can</span>
+<span class="sd">come to disagree while the code around them is corrected. Deriving one set</span>
+<span class="sd">from the other removes the opportunity, because there is only one number.</span>
+
+<span class="sd">THE CONVERSION</span>
+
+<span class="sd">Ciddor (1996), Applied Optics 35, 1566, equation 1, for standard air: dry</span>
+<span class="sd">air at 15 C, 101325 Pa, 0 per cent humidity, 450 ppm CO2.</span>
+
+<span class="sd">    sigma^2 = (1e4 / lambda_vac[A])^2</span>
+<span class="sd">    n       = 1 + 5.792105e-2 / (238.0185 - sigma^2)</span>
+<span class="sd">                + 1.67917e-3 / (57.362 - sigma^2)</span>
+<span class="sd">    lambda_air = lambda_vac / n</span>
+
+<span class="sd">The inverse needs no iteration: lambda_vac = lambda_air * n(lambda_air).</span>
+<span class="sd">Evaluating n at the air wavelength instead of the vacuum one is a second</span>
+<span class="sd">order error, and the measured round trip over the catalogue&#39;s own span,</span>
+<span class="sd">3727 to 22477 A, closes to 0.0022 km/s. Over 2000 to 25000 A it closes to</span>
+<span class="sd">0.014 km/s, the worst of it at the blue end where the dispersion is</span>
+<span class="sd">steepest. Both are four orders below the 83 km/s the conversion itself is</span>
+<span class="sd">worth, so the analytic inverse is used rather than a fixed point iteration.</span>
+
+<span class="sd">THE 2000 A GATE</span>
+
+<span class="sd">Below 2000 A the conversion returns the vacuum wavelength unchanged, and</span>
+<span class="sd">that is a physical statement, not a numerical guard.</span>
+
+<span class="sd">  - Air is opaque below about 2000 A: molecular oxygen absorbs, there is no</span>
+<span class="sd">    propagating beam, and &quot;the wavelength this line would have in air&quot; is</span>
+<span class="sd">    not a measurable quantity. The universal convention, NIST ASD included,</span>
+<span class="sd">    is that wavelengths below 2000 A are quoted in vacuum and never</span>
+<span class="sd">    converted.</span>
+<span class="sd">  - Ciddor&#39;s expression has poles. Its denominators vanish at sigma^2 =</span>
+<span class="sd">    238.0185 and 57.362, which is 648.2 A and 1320.3 A. Ungated it fails in</span>
+<span class="sd">    two ways below 2000 A, and the quiet failure is the dangerous one. Just</span>
+<span class="sd">    above the 1320.3 A pole it returns n = 0.945, an index below unity that</span>
+<span class="sd">    no transparent medium has, and a shift of +77 A in the wrong direction.</span>
+<span class="sd">    At Lyman alpha, 1215.67 A, it returns n = 1.000177 and a shift of</span>
+<span class="sd">    -0.2 A: a perfectly ordinary looking answer to a question that has none.</span>
+
+<span class="sd">VALIDITY AT THE RED END, WHICH IS AN EXTRAPOLATION</span>
+
+<span class="sd">Ciddor&#39;s dispersion rests on the measurements of Peck &amp; Reeder (1972),</span>
+<span class="sd">which span 230 to 1690 nm. BRAIN&#39;s catalogue reaches 22477 A, so every</span>
+<span class="sd">entry beyond 16900 A is extrapolated. This was checked against Mathar</span>
+<span class="sd">(2007), J. Opt. A 9, 470, whose multivariate fit covers 1.3 to 2.5 micron</span>
+<span class="sd">and is therefore a measurement where Ciddor is an extrapolation. Evaluating</span>
+<span class="sd">Mathar&#39;s 1.3-2.5 micron coefficients at 288.15 K, 101325 Pa and 0 per cent</span>
+<span class="sd">humidity against Ciddor&#39;s standard air:</span>
+
+<span class="sd">  - the two differ by a flat 11.7 m/s zero point across the whole band;</span>
+<span class="sd">  - that offset varies by 0.17 m/s between 1.7 and 2.25 micron, which is</span>
+<span class="sd">    the span BRAIN&#39;s NIR entries occupy;</span>
+<span class="sd">  - it varies by 0.18 m/s across the full 1.3-2.5 micron band.</span>
+
+<span class="sd">A zero point that flat is not a failure of the extrapolation, it is a</span>
+<span class="sd">difference in the two authors&#39; reference states. The measured figures above</span>
+<span class="sd">are what was reproduced here. A frequently repeated explanation attributes</span>
+<span class="sd">the offset to the 370 ppm CO2 Mathar adopts against Ciddor&#39;s 450 ppm; by</span>
+<span class="sd">the standard CO2 scaling of the refractivity, 0.534e-6 per ppm, that</span>
+<span class="sd">accounts for only -3.5 m/s and in the opposite sense, so it is not the</span>
+<span class="sd">explanation. What matters for BRAIN is the shape, not the zero point: a</span>
+<span class="sd">flat offset of 11.7 m/s is 4e-5 of the conversion&#39;s own size, so the red</span>
+<span class="sd">end of the catalogue is safe to convert.</span>
+
+<span class="sd">ABOVE 2 MICRON THE CONVENTION FLIPS BACK TO VACUUM</span>
+
+<span class="sd">NIST ASD changes its default output from air to vacuum at exactly 5000</span>
+<span class="sd">cm^-1, which is 20000 A. So the six catalogue entries beyond 2 micron --</span>
+<span class="sd">H2 20332, He I 20580, H2 21218, Brgamma 21654, H2 22230 and H2 22470 --</span>
+<span class="sd">are conventionally quoted in vacuum even by observers who</span>
+<span class="sd">quote everything bluewards of them in air. A user who asks BRAIN for &quot;air&quot;</span>
+<span class="sd">because their optical data are air, and who then reads a NIR line list off</span>
+<span class="sd">a paper, is very likely comparing a converted air wavelength against a</span>
+<span class="sd">published vacuum one. BRAIN converts what it is told to convert; the</span>
+<span class="sd">convention is stated here so that a 82 km/s disagreement in the K band has</span>
+<span class="sd">a written explanation.</span>
+
+<span class="sd">THE CHOICE OF FORMULA IS FREE AT THIS TOLERANCE</span>
+
+<span class="sd">Measured here, as velocity:</span>
+
+<span class="sd">  formula pair                   3700 A      6563 A      22000 A</span>
+<span class="sd">  Ciddor vs Morton (2000)        0.05 m/s    0.30 m/s     1.7 m/s</span>
+<span class="sd">  Ciddor vs Edlen (1966)         4.2 m/s     3.8 m/s      2.4 m/s</span>
+
+<span class="sd">Against 82-85 km/s for the conversion itself, every published formula is</span>
+<span class="sd">the same formula. What matters is whether you convert at all. The one</span>
+<span class="sd">genuinely wrong option is the truncated series that circulates as &quot;the SDSS</span>
+<span class="sd">formula&quot;,</span>
+
+<span class="sd">    n = 1 + 2.735182e-4 + 131.4182/lam^2 + 2.76249e8/lam^4</span>
+
+<span class="sd">which departs from Ciddor by 0.14 km/s at H alpha and 0.26 km/s at 22000 A.</span>
+<span class="sd">That is still small, but it is a systematic with no source behind it, and</span>
+<span class="sd">it is 30 to 60 times the spread among the real formulae.</span>
+
+<span class="sd">THE NAMING RULE</span>
+
+<span class="sd">The integer in a catalogue name is a CONVENTIONAL LABEL. It is not the</span>
+<span class="sd">wavelength, it is not rounded from the wavelength, and nothing may derive a</span>
+<span class="sd">wavelength from it. `He I_10830` holds 10833.138. `H2_21218` holds</span>
+<span class="sd">21218.337, whose air value is 21212.547. `Pabeta_12820` holds 12821.576,</span>
+<span class="sd">whose air value is 12818.070, so the label rounds to neither scale.</span>
+
+<span class="sd">Every label here is the traditional one and every label stays as it is, so</span>
+<span class="sd">no consumer that matches a name breaks. This is what lets the [O II]</span>
+<span class="sd">doublet keep the literature labels 3726 and 3729 rather than being renamed</span>
+<span class="sd">to their vacuum roundings 3727 and 3730: renaming would have put one</span>
+<span class="sd">component under `[O II]_3727`, which is the historic name of the</span>
+<span class="sd">UNRESOLVED BLEND, and every reader of that name would have taken a single</span>
+<span class="sd">component for the sum of two.</span>
+
+<span class="sd">PROVENANCE, LINE BY LINE</span>
+
+<span class="sd">Riffel et al. (2019) remains the authority for WHICH lines belong in the</span>
+<span class="sd">catalogue. It is not the source of the numbers. Every atomic wavelength</span>
+<span class="sd">below is from the NIST Atomic Spectra Database, and every molecular</span>
+<span class="sd">hydrogen wavelength is from Roueff, Abgrall, Czachorowski, Pachucki,</span>
+<span class="sd">Puchalski &amp; Komasa (2019), A&amp;A 630, A58, Table 2, because NIST ASD carries</span>
+<span class="sd">no molecular hydrogen.</span>
+
+<span class="sd">NIST entries are Ritz wavelengths -- computed from the fitted energy levels</span>
+<span class="sd">-- except where marked. Ritz values are usually the more precise of the two</span>
+<span class="sd">because they are constrained by the whole level system rather than by one</span>
+<span class="sd">measurement.</span>
+
+<span class="sd">  [O II] 3726, 3729   Ritz. O II 4S*_3/2 - 2D*_3/2 and - 2D*_5/2.</span>
+<span class="sd">  H10, H9, H8         Ritz. n = 10, 9, 8 -&gt; 2.</span>
+<span class="sd">  H epsilon           Ritz. n = 7 -&gt; 2.</span>
+<span class="sd">  H delta, H gamma    Ritz. n = 6, 5 -&gt; 2.</span>
+<span class="sd">  H beta, H alpha     Ritz. n = 4, 3 -&gt; 2.</span>
+<span class="sd">  [Ne III] 3869       Ritz.</span>
+<span class="sd">  [O III] 4363        Ritz.</span>
+<span class="sd">  He II 4686          g.A-weighted centroid of the n = 4 -&gt; 3 multiplet.</span>
+<span class="sd">  [O III] 4959, 5007  Ritz.</span>
+<span class="sd">  He I 5876           emissivity-weighted centroid of the</span>
+<span class="sd">                      1s2p 3P* - 1s3d 3D multiplet.</span>
+<span class="sd">  [O I] 6300          Ritz.</span>
+<span class="sd">  [N II] 6548, 6583   Ritz.</span>
+<span class="sd">  [S II] 6716, 6731   NIST OBSERVED, not Ritz. See below.</span>
+<span class="sd">  [S III] 9069, 9531  Ritz, to one decimal only. See below.</span>
+<span class="sd">  [C I] 9824, 9850    Ritz.</span>
+<span class="sd">  Pa delta, gamma,    Ritz. n = 7, 6, 5, 4 -&gt; 3.</span>
+<span class="sd">    beta, alpha</span>
+<span class="sd">  He I 10830          g-weighted centroid of the</span>
+<span class="sd">                      1s2s 3S_1 - 1s2p 3P* triplet.</span>
+<span class="sd">  [P II] 11470, 11886 Ritz, derived from NIST ASD LEVELS rather than lines.</span>
+<span class="sd">                      See below.</span>
+<span class="sd">  [Fe II] 12567,      Ritz.</span>
+<span class="sd">    13209, 16436</span>
+<span class="sd">  Br 10, Br delta,    Ritz. n = 10, 8, 7 -&gt; 4.</span>
+<span class="sd">    Br gamma</span>
+<span class="sd">  H2 19570 .. 22470   Roueff et al. (2019) Table 2: 1-0 S(3), 1-0 S(2),</span>
+<span class="sd">                      1-0 S(1), 1-0 S(0) and 2-1 S(1).</span>
+
+<span class="sd">FOUR DELIBERATE CHOICES, EACH MEASURED</span>
+
+<span class="sd">1. [S II] 6716 and 6731 use NIST OBSERVED rather than Ritz. The two agree</span>
+<span class="sd">   inside their stated uncertainties, so this is not a claim that one is</span>
+<span class="sd">   more accurate. It is a claim about continuity: the observed values</span>
+<span class="sd">   reduce through Ciddor to 6716.440 and 6730.815 in air, which are the</span>
+<span class="sd">   canonical numbers every published [S II] density calibration is keyed</span>
+<span class="sd">   to, while the Ritz values give 6716.43 and 6730.80. BRAIN&#39;s own density</span>
+<span class="sd">   diagnostic reads this doublet, and the calibration it reads is quoted</span>
+<span class="sd">   against the canonical pair.</span>
+
+<span class="sd">2. He I 5876 uses the emissivity-weighted centroid of the 1s2p 3P* - 1s3d</span>
+<span class="sd">   3D multiplet, 5877.289, which sits 0.046 A -- 2.35 km/s -- redward of</span>
+<span class="sd">   the strongest single component, 5877.243. BRAIN fits this line as one</span>
+<span class="sd">   Gaussian against a blend it cannot resolve, and the centre of a single</span>
+<span class="sd">   Gaussian fitted to that blend is the emissivity centroid, not the</span>
+<span class="sd">   strongest component.</span>
+
+<span class="sd">3. [S III] 9069 and 9531 are given to one decimal because that is all</span>
+<span class="sd">   there is. The S III 1D2 upper level is tabulated in NIST ASD to 0.1</span>
+<span class="sd">   cm^-1, which is 0.08 A at 9069 A, so a third decimal here would be</span>
+<span class="sd">   invented. The air values that follow, 9068.61 and 9530.59, carry the</span>
+<span class="sd">   same 0.08 A uncertainty.</span>
+
+<span class="sd">4. [P II] 11470 and 11886 are Ritz values computed here from the NIST ASD</span>
+<span class="sd">   LEVELS tables, because ASD has no P II line entries in this range at</span>
+<span class="sd">   all. They are therefore one derivation removed from the other atomic</span>
+<span class="sd">   entries, and are given to one decimal for the same reason as [S III].</span>
+
+<span class="sd">THE FIVE ENTRIES THAT WERE UNDER REVIEW, AND WHAT THE REVIEW FOUND</span>
+
+<span class="sd">Five NIR entries were held at the whole-Angstrom value they had always</span>
+<span class="sd">had, because each was reported MISIDENTIFIED -- the wrong species or the</span>
+<span class="sd">wrong transition, not merely a rounded wavelength -- and a precise</span>
+<span class="sd">wavelength for the wrong transition is worse than a rounded one, because</span>
+<span class="sd">it looks authoritative. The review is done. Every value below was</span>
+<span class="sd">re-derived here from the NIST ASD LEVELS tables as 1e8/d(sigma) and agreed</span>
+<span class="sd">with the published Ritz wavelength to the last printed digit.</span>
+
+<span class="sd">Three of the five claims were upheld, two were not:</span>
+
+<span class="sd">  He II_10122     IDENTIFICATION UPHELD, WAVELENGTH WRONG. It is He II,</span>
+<span class="sd">                  not the Pa gamma or He I blend that was alleged: Pa gamma</span>
+<span class="sd">                  is 820 A away, and NIST lists no He I transition between</span>
+<span class="sd">                  10074.786 and 10141.203, so there is nothing to blend</span>
+<span class="sd">                  with. The line is the n = 5 -&gt; 4 multiplet, 19 components</span>
+<span class="sd">                  spanning 10125.628 to 10126.762, whose g.A-weighted</span>
+<span class="sd">                  centroid is 10126.385 -- the same construction as He II</span>
+<span class="sd">                  4686. The old 10122.0 was 129.8 km/s blueward of that.</span>
+
+<span class="sd">  [Fe II]_12950   SPECIES UPHELD, MULTIPLET CLAIM REJECTED. It was alleged</span>
+<span class="sd">                  to be the wrong member of the multiplet. It is not: the</span>
+<span class="sd">                  only other forbidden [Fe II] line in the window is</span>
+<span class="sd">                  a6D1/2 - a4D3/2 at 12981.246, 720 km/s away. The entry is</span>
+<span class="sd">                  a6D5/2 - a4D5/2 and always was; only the number was</span>
+<span class="sd">                  wrong, by +87.9 km/s. 12946.2030, Ritz, +-0.0010 A.</span>
+
+<span class="sd">  [Fe II]_15342   SPECIES UPHELD, &quot;NOT [Fe II]&quot; REJECTED. It is the</span>
+<span class="sd">                  forbidden a4F9/2 - a4D5/2 line at 15338.9393, Ritz,</span>
+<span class="sd">                  +-0.0016 A; the old value was +59.8 km/s redward. There</span>
+<span class="sd">                  are permitted Fe II components at 15340.54 and 15343.04,</span>
+<span class="sd">                  but they are high-excitation 3d6(5D)6p-6d transitions,</span>
+<span class="sd">                  not nebular, and no NIR line list identifies the 1.534</span>
+<span class="sd">                  micron feature as anything but the forbidden line. That</span>
+<span class="sd">                  exclusion rests on the physics; no paper was found that</span>
+<span class="sd">                  states it outright.</span>
+
+<span class="sd">  [Fe II]+Br11    BLEND CLAIM UPHELD. [Fe II] a4F7/2 - a4D5/2 is at</span>
+<span class="sd">                  16773.4056 and Br 11-4 at 16811.129: 37.7 A apart, which</span>
+<span class="sd">                  is 674 km/s. Resolving that needs only R &gt; 450, and every</span>
+<span class="sd">                  NIR spectrograph that reaches 1.68 micron does far</span>
+<span class="sd">                  better; Riffel et al. 2006, the source of this entry&#39;s</span>
+<span class="sd">                  label, tabulates the two as separate rows with</span>
+<span class="sd">                  independent fluxes. Worse, Br 11 was named in the label</span>
+<span class="sd">                  and then never modelled -- the composite carried one</span>
+<span class="sd">                  column at 16773, so 16811 was left to the continuum. The</span>
+<span class="sd">                  entry is now [Fe II]_16773, and Br11_16811 is a line in</span>
+<span class="sd">                  its own right with a column of its own.</span>
+
+<span class="sd">  H2_20580        MISIDENTIFICATION UPHELD. It is He I 1s2s 1S0 - 1s2p</span>
+<span class="sd">                  1P*1 at 20586.90463, Ritz, +-0.00003 A, and Riffel et al.</span>
+<span class="sd">                  2006 labels this row He I, not H2. The nearest H2</span>
+<span class="sd">                  transition observable in a galaxy spectrum -- v_upper &lt;=</span>
+<span class="sd">                  3 -- is 3-2 S(5) at 20655.84, 1104 km/s away; the nearest</span>
+<span class="sd">                  member of the 1-0 S branch that supplies the catalogue&#39;s</span>
+<span class="sd">                  other H2 entries is 1-0 S(2) at 20337.578, 242 A away.</span>
+<span class="sd">                  The entry is now He I_20580, 100.6 km/s redward of the</span>
+<span class="sd">                  value it replaces.</span>
+
+<span class="sd">Both species corrections keep the line in kinematic group 0, so nothing</span>
+<span class="sd">moves between groups, and Br11 joins group 0 with the rest of the series.</span>
+
+<span class="sd">WHY THIS MATTERED, AND WHAT IT DID NOT MATTER FOR</span>
+
+<span class="sd">It was separately alleged that the NIR table mixes air and vacuum. It does</span>
+<span class="sd">not. Twenty-two of the 27 entries were on one scale, vacuum, and 20 of</span>
+<span class="sd">those reproduce NIST or Roueff to 0.00 km/s. The five above were wrong by</span>
+<span class="sd">the SAME velocity in air mode as in vacuum mode, because the stored value</span>
+<span class="sd">and the truth convert through Ciddor alike and the fractional error</span>
+<span class="sd">survives. So declaring a wavelength_scale did put NIR data on one scale;</span>
+<span class="sd">what it could not do was put these five at the right place on it.</span>
+
+<span class="sd">What is genuinely mixed is the integer LABELS, which are transcribed from</span>
+<span class="sd">the lambda_lab column of Riffel et al. 2006 and inherit its own mixture:</span>
+<span class="sd">mostly air (9069, 9531, 10830, 21213) but vacuum for 11886, 12570, 13209,</span>
+<span class="sd">16773. Comparing a label against an air value therefore shows the 82 km/s</span>
+<span class="sd">air-vacuum difference for every CORRECT entry, which is almost certainly</span>
+<span class="sd">where the mixed-scale report came from. Under THE NAMING RULE above this is</span>
+<span class="sd">inert: nothing in the tree derives a wavelength from a name, and a sweep</span>
+<span class="sd">for digit-matching against line names found no such code. The labels stay.</span>
+
+<span class="sd">The cost of the five bad numbers was not in the conversion but in the</span>
+<span class="sd">kinematic groups. [Fe II], H2 and He I all sit in group 0 and share one</span>
+<span class="sd">velocity, and the six [Fe II] entries carried errors of 0.0, +87.9, 0.0,</span>
+<span class="sd">+59.8, 0.0 and -7.2 km/s -- a 95 km/s spread inside a single shared-</span>
+<span class="sd">velocity group, with the old H2_20580 a further -100.6 km/s from the four</span>
+<span class="sd">H2 lines it was tied to. For scale, the optical defect corrected in the</span>
+<span class="sd">commit before this one was a 28.8 km/s spread between H alpha and [N II]</span>
+<span class="sd">6583, and it was enough to produce near-maximal antisymmetric residuals,</span>
+<span class="sd">45 spurious 3-sigma outliers and twice the whole-spectrum chi2.</span>
+
+<span class="sd">That damage is argued, not measured: no NIR spectrum ships with this</span>
+<span class="sd">repository, so none of these entries has been exercised on data. The</span>
+<span class="sd">optical half of the catalogue is what the measurements in the previous</span>
+<span class="sd">commit cover.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">WAVELENGTH_SCALES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;air&quot;</span><span class="p">,</span> <span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+
+<span class="n">AIR_CONVERSION_FLOOR</span> <span class="o">=</span> <span class="mf">2000.0</span>
+
+<span class="n">_CIDDOR_A</span> <span class="o">=</span> <span class="mf">5.792105e-2</span>
+<span class="n">_CIDDOR_B</span> <span class="o">=</span> <span class="mf">238.0185</span>
+<span class="n">_CIDDOR_C</span> <span class="o">=</span> <span class="mf">1.67917e-3</span>
+<span class="n">_CIDDOR_D</span> <span class="o">=</span> <span class="mf">57.362</span>
+
+<span class="n">_FLOOR_INDEX</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span>
+                <span class="o">+</span> <span class="n">_CIDDOR_A</span> <span class="o">/</span> <span class="p">(</span><span class="n">_CIDDOR_B</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.0e4</span> <span class="o">/</span> <span class="n">AIR_CONVERSION_FLOOR</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="o">+</span> <span class="n">_CIDDOR_C</span> <span class="o">/</span> <span class="p">(</span><span class="n">_CIDDOR_D</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.0e4</span> <span class="o">/</span> <span class="n">AIR_CONVERSION_FLOOR</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">AIR_CONVERSION_FLOOR_ON_AIR_SCALE</span> <span class="o">=</span> <span class="n">AIR_CONVERSION_FLOOR</span> <span class="o">/</span> <span class="n">_FLOOR_INDEX</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The 2000 A floor, measured in air instead of in vacuum: 1999.3526 A.</span>
+
+<span class="sd">One boundary, two numbers, because the boundary is a wavelength and the two</span>
+<span class="sd">scales disagree by 97 km/s this far into the blue. air_to_vacuum gates here</span>
+<span class="sd">and vacuum_to_air gates at AIR_CONVERSION_FLOOR, so the pair is an identity</span>
+<span class="sd">everywhere rather than everywhere except the 0.65 A between the two</span>
+<span class="sd">expressions of the floor, where a vacuum wavelength would have converted</span>
+<span class="sd">down across the boundary and then refused to come back.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ciddor_index</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">floor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ciddor&#39;s expression, evaluated above `floor` and exactly 1.0 below it.</span>
+
+<span class="sd">    The floor is an argument rather than a constant because the same physical</span>
+<span class="sd">    boundary has two numbers: 2000 A measured in vacuum is 1999.3526 A</span>
+<span class="sd">    measured in air. Gating both directions at 2000 would leave the 0.65 A</span>
+<span class="sd">    between them converting one way and not the other, and a vacuum</span>
+<span class="sd">    wavelength just above the floor would fail to come back from its own air</span>
+<span class="sd">    value by 97 km/s. Measured. See AIR_CONVERSION_FLOOR_ON_AIR_SCALE.</span>
+
+<span class="sd">    Clamping the wavelength before the arithmetic rather than after keeps the</span>
+<span class="sd">    poles out of the expression entirely, so nothing below the floor is ever</span>
+<span class="sd">    divided by a denominator near zero.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">above</span> <span class="o">=</span> <span class="n">lam</span> <span class="o">&gt;=</span> <span class="n">floor</span>
+    <span class="n">safe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">above</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">floor</span><span class="p">)</span>
+    <span class="n">sigma_squared</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0e4</span> <span class="o">/</span> <span class="n">safe</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span>
+             <span class="o">+</span> <span class="n">_CIDDOR_A</span> <span class="o">/</span> <span class="p">(</span><span class="n">_CIDDOR_B</span> <span class="o">-</span> <span class="n">sigma_squared</span><span class="p">)</span>
+             <span class="o">+</span> <span class="n">_CIDDOR_C</span> <span class="o">/</span> <span class="p">(</span><span class="n">_CIDDOR_D</span> <span class="o">-</span> <span class="n">sigma_squared</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">above</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="refractive_index_of_air">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_catalogue.html#brainsp.line_catalogue.refractive_index_of_air">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">refractive_index_of_air</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The refractive index of standard air at a VACUUM wavelength in Angstrom.</span>
+
+<span class="sd">    Ciddor (1996) equation 1: dry air at 15 C, 101325 Pa, 0 per cent</span>
+<span class="sd">    humidity, 450 ppm CO2.</span>
+
+<span class="sd">    Returns exactly 1.0 below AIR_CONVERSION_FLOOR, so that a caller who</span>
+<span class="sd">    multiplies or divides by this index gets the wavelength back unchanged.</span>
+<span class="sd">    Below 2000 A air does not transmit, the air wavelength is not a physical</span>
+<span class="sd">    quantity, and the formula itself has poles at 1320.3 A and 648.2 A where</span>
+<span class="sd">    its denominators vanish. Ungated it fails in two ways there, and the</span>
+<span class="sd">    quiet one is the dangerous one: at 1320 A it returns 0.945, an index</span>
+<span class="sd">    below unity that no transparent medium has, while at Lyman alpha it</span>
+<span class="sd">    returns 1.000177 and a shift of 0.2 A, which looks like an answer and is</span>
+<span class="sd">    not one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_ciddor_index</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">AIR_CONVERSION_FLOOR</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="vacuum_to_air">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_catalogue.html#brainsp.line_catalogue.vacuum_to_air">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">vacuum_to_air</span><span class="p">(</span><span class="n">wavelength_vacuum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Vacuum wavelength to standard-air wavelength, in Angstrom.</span>
+
+<span class="sd">    The shift is 82 to 85 km/s across BRAIN&#39;s catalogue: 85.2 km/s at</span>
+<span class="sd">    [O II] 3726, 82.8 at H alpha, 81.8 at the reddest H2 entry. It is very</span>
+<span class="sd">    nearly constant in velocity, which is exactly what makes getting the</span>
+<span class="sd">    scale wrong so hard to see in a fit.</span>
+
+<span class="sd">    Below AIR_CONVERSION_FLOOR the input is returned unchanged. See</span>
+<span class="sd">    refractive_index_of_air.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength_vacuum</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">converted</span> <span class="o">=</span> <span class="n">lam</span> <span class="o">/</span> <span class="n">_ciddor_index</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">AIR_CONVERSION_FLOOR</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">converted</span> <span class="k">if</span> <span class="n">converted</span><span class="o">.</span><span class="n">ndim</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">converted</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="air_to_vacuum">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_catalogue.html#brainsp.line_catalogue.air_to_vacuum">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">air_to_vacuum</span><span class="p">(</span><span class="n">wavelength_air</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Standard-air wavelength to vacuum wavelength, in Angstrom.</span>
+
+<span class="sd">    lambda_vac = lambda_air * n(lambda_air), with no iteration. Evaluating</span>
+<span class="sd">    the index at the air wavelength rather than at the vacuum one it is</span>
+<span class="sd">    defined against is a second order error: the measured round trip</span>
+<span class="sd">    vacuum -&gt; air -&gt; vacuum closes to 0.0022 km/s over the catalogue&#39;s own</span>
+<span class="sd">    3727-22477 A span and to 0.014 km/s over 2000-25000 A. A fixed point</span>
+<span class="sd">    iteration would buy nothing measurable and would put a loop in a path</span>
+<span class="sd">    that does not need one.</span>
+
+<span class="sd">    Below AIR_CONVERSION_FLOOR_ON_AIR_SCALE the input is returned unchanged.</span>
+<span class="sd">    That is the 2000 A floor expressed on the air scale, 1999.3526 A, rather</span>
+<span class="sd">    than 2000 A again: the floor is one boundary, and gating both directions</span>
+<span class="sd">    at the same number would leave the 0.65 A between the two expressions of</span>
+<span class="sd">    it converting one way and not the other.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength_air</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">converted</span> <span class="o">=</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">_ciddor_index</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">AIR_CONVERSION_FLOOR_ON_AIR_SCALE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">converted</span> <span class="k">if</span> <span class="n">converted</span><span class="o">.</span><span class="n">ndim</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">converted</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_derive_air</span><span class="p">(</span><span class="n">table_vacuum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The air counterpart of a {name: vacuum wavelength} table.</span>
+
+<span class="sd">    Written as a helper rather than inline so that every air table in this</span>
+<span class="sd">    module is produced by one expression, and a table added later cannot</span>
+<span class="sd">    quietly acquire a second conversion.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">vacuum_to_air</span><span class="p">(</span><span class="n">wl</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">wl</span> <span class="ow">in</span> <span class="n">table_vacuum</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+
+<div class="viewcode-block" id="require_scale">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_catalogue.html#brainsp.line_catalogue.require_scale">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">require_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check a wavelength scale and return it, or raise saying what is allowed.</span>
+
+<span class="sd">    Refuses None as loudly as it refuses a misspelling. A scale that</span>
+<span class="sd">    defaults to one of its two values is a scale that gets guessed, and the</span>
+<span class="sd">    whole point of the setting is that BRAIN does not guess it; see</span>
+<span class="sd">    brain_settings for the consequence of guessing wrong.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">scale</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">WAVELENGTH_SCALES</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;wavelength scale is </span><span class="si">{</span><span class="n">scale</span><span class="si">!r}</span><span class="s2">; it must be one of &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">WAVELENGTH_SCALES</span><span class="p">)</span><span class="si">}</span><span class="s2">. It describes &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;the wavelength scale of the OBSERVED spectrum, and BRAIN will &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;not choose one for you: the two scales differ by about 83 km/s &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;and the difference lands on the fitted gas velocity.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">scale</span></div>
+
+
+
+<span class="n">HYDROGEN_LINES_VACUUM</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;H10&#39;</span><span class="p">:</span> <span class="mf">3798.9827</span><span class="p">,</span>
+    <span class="s1">&#39;H9&#39;</span><span class="p">:</span> <span class="mf">3836.4789</span><span class="p">,</span>
+    <span class="s1">&#39;H8&#39;</span><span class="p">:</span> <span class="mf">3890.1577</span><span class="p">,</span>
+    <span class="s1">&#39;Hepsilon&#39;</span><span class="p">:</span> <span class="mf">3971.2020</span><span class="p">,</span>
+    <span class="s1">&#39;Hdelta&#39;</span><span class="p">:</span> <span class="mf">4102.8991</span><span class="p">,</span>
+    <span class="s1">&#39;Hgamma&#39;</span><span class="p">:</span> <span class="mf">4341.691</span><span class="p">,</span>
+    <span class="s1">&#39;Hbeta&#39;</span><span class="p">:</span> <span class="mf">4862.691</span><span class="p">,</span>
+    <span class="s1">&#39;Halpha&#39;</span><span class="p">:</span> <span class="mf">6564.632</span><span class="p">,</span>
+    <span class="s1">&#39;Padelta&#39;</span><span class="p">:</span> <span class="mf">10052.123</span><span class="p">,</span>
+    <span class="s1">&#39;Pagamma&#39;</span><span class="p">:</span> <span class="mf">10941.082</span><span class="p">,</span>
+    <span class="s1">&#39;Pabeta&#39;</span><span class="p">:</span> <span class="mf">12821.576</span><span class="p">,</span>
+    <span class="s1">&#39;Paalpha&#39;</span><span class="p">:</span> <span class="mf">18756.096</span><span class="p">,</span>
+    <span class="s1">&#39;Brdelta&#39;</span><span class="p">:</span> <span class="mf">19450.890</span><span class="p">,</span>
+    <span class="s1">&#39;Br10&#39;</span><span class="p">:</span> <span class="mf">17366.868</span><span class="p">,</span>
+    <span class="s1">&#39;Br11&#39;</span><span class="p">:</span> <span class="mf">16811.129</span><span class="p">,</span>
+    <span class="s1">&#39;Brgamma&#39;</span><span class="p">:</span> <span class="mf">21661.21</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The hydrogen recombination lines, in vacuum Angstrom, keyed by series name.</span>
+
+<span class="sd">NIST ASD Ritz values throughout: n -&gt; 2 for the Balmer series, n -&gt; 3 for</span>
+<span class="sd">Paschen, n -&gt; 4 for Brackett.</span>
+
+<span class="sd">This table exists separately from the emission-line catalogue because the</span>
+<span class="sd">Case B predictions in atomic_data cover hydrogen lines the catalogue does</span>
+<span class="sd">not fit -- H11, H12 -- and the catalogue carries lines that are not</span>
+<span class="sd">hydrogen. Where the two overlap, the catalogue entry is written as a</span>
+<span class="sd">reference to this dict rather than as a second literal, so there is one</span>
+<span class="sd">number per transition and it cannot be edited in one place and not the</span>
+<span class="sd">other.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">HYDROGEN_SERIES_EXTRA_VACUUM</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;H11&#39;</span><span class="p">:</span> <span class="mf">3771.7011</span><span class="p">,</span>
+    <span class="s1">&#39;H12&#39;</span><span class="p">:</span> <span class="mf">3751.2174</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Balmer lines predicted by the Case B tables but not fitted by BRAIN.</span>
+
+<span class="sd">NIST ASD Ritz, n = 11 and 12 -&gt; 2. They are separate from</span>
+<span class="sd">HYDROGEN_LINES_VACUUM only so that a reader of that dict sees exactly the</span>
+<span class="sd">transitions the catalogue can fit; atomic_data takes the union.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">EMISSION_LINES_OPTICAL_VACUUM</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;[O II]_3726&#39;</span><span class="p">:</span> <span class="mf">3727.092</span><span class="p">,</span>
+    <span class="s1">&#39;[O II]_3729&#39;</span><span class="p">:</span> <span class="mf">3729.875</span><span class="p">,</span>
+    <span class="s1">&#39;H10_3798&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;H10&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;H9_3835&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;H9&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;[Ne III]_3869&#39;</span><span class="p">:</span> <span class="mf">3869.86</span><span class="p">,</span>
+    <span class="s1">&#39;H8_3889&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;H8&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Hepsilon_3970&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hepsilon&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Hdelta_4102&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hdelta&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Hgamma_4340&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hgamma&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;[O III]_4363&#39;</span><span class="p">:</span> <span class="mf">4364.436</span><span class="p">,</span>
+    <span class="s1">&#39;He II_4686&#39;</span><span class="p">:</span> <span class="mf">4687.017</span><span class="p">,</span>
+    <span class="s1">&#39;Hbeta_4861&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Hbeta&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;[O III]_4959&#39;</span><span class="p">:</span> <span class="mf">4960.295</span><span class="p">,</span>
+    <span class="s1">&#39;[O III]_5007&#39;</span><span class="p">:</span> <span class="mf">5008.240</span><span class="p">,</span>
+    <span class="s1">&#39;He I_5876&#39;</span><span class="p">:</span> <span class="mf">5877.289</span><span class="p">,</span>
+    <span class="s1">&#39;[O I]_6300&#39;</span><span class="p">:</span> <span class="mf">6302.046</span><span class="p">,</span>
+    <span class="s1">&#39;[N II]_6548&#39;</span><span class="p">:</span> <span class="mf">6549.86</span><span class="p">,</span>
+    <span class="s1">&#39;Halpha_6563&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Halpha&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;[N II]_6583&#39;</span><span class="p">:</span> <span class="mf">6585.27</span><span class="p">,</span>
+    <span class="s1">&#39;[S II]_6716&#39;</span><span class="p">:</span> <span class="mf">6718.294</span><span class="p">,</span>
+    <span class="s1">&#39;[S II]_6731&#39;</span><span class="p">:</span> <span class="mf">6732.673</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">EMISSION_LINES_NIR_VACUUM</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;[S III]_9069&#39;</span><span class="p">:</span> <span class="mf">9071.1</span><span class="p">,</span>
+    <span class="s1">&#39;[S III]_9531&#39;</span><span class="p">:</span> <span class="mf">9533.2</span><span class="p">,</span>
+    <span class="s1">&#39;[C I]_9824&#39;</span><span class="p">:</span> <span class="mf">9826.812</span><span class="p">,</span>
+    <span class="s1">&#39;[C I]_9850&#39;</span><span class="p">:</span> <span class="mf">9852.951</span><span class="p">,</span>
+    <span class="s1">&#39;Padelta_10049&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Padelta&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;He II_10122&#39;</span><span class="p">:</span> <span class="mf">10126.385</span><span class="p">,</span>
+    <span class="s1">&#39;He I_10830&#39;</span><span class="p">:</span> <span class="mf">10833.138</span><span class="p">,</span>
+    <span class="s1">&#39;Pagamma_10938&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Pagamma&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;[P II]_11470&#39;</span><span class="p">:</span> <span class="mf">11471.3</span><span class="p">,</span>
+    <span class="s1">&#39;[P II]_11886&#39;</span><span class="p">:</span> <span class="mf">11886.1</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_12567&#39;</span><span class="p">:</span> <span class="mf">12570.2068</span><span class="p">,</span>
+    <span class="s1">&#39;Pabeta_12820&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Pabeta&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;[Fe II]_12950&#39;</span><span class="p">:</span> <span class="mf">12946.2030</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_13209&#39;</span><span class="p">:</span> <span class="mf">13209.1124</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_15342&#39;</span><span class="p">:</span> <span class="mf">15338.9393</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_16436&#39;</span><span class="p">:</span> <span class="mf">16440.0169</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_16773&#39;</span><span class="p">:</span> <span class="mf">16773.4056</span><span class="p">,</span>
+    <span class="s1">&#39;Br11_16811&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Br11&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Br10_17360&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Br10&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Paalpha_18750&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Paalpha&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Brdelta_19446&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Brdelta&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;H2_19570&#39;</span><span class="p">:</span> <span class="mf">19575.590</span><span class="p">,</span>
+    <span class="s1">&#39;H2_20332&#39;</span><span class="p">:</span> <span class="mf">20337.578</span><span class="p">,</span>
+    <span class="s1">&#39;He I_20580&#39;</span><span class="p">:</span> <span class="mf">20586.90463</span><span class="p">,</span>
+    <span class="s1">&#39;H2_21218&#39;</span><span class="p">:</span> <span class="mf">21218.337</span><span class="p">,</span>
+    <span class="s1">&#39;Brgamma_21654&#39;</span><span class="p">:</span> <span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">[</span><span class="s1">&#39;Brgamma&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;H2_22230&#39;</span><span class="p">:</span> <span class="mf">22232.902</span><span class="p">,</span>
+    <span class="s1">&#39;H2_22470&#39;</span><span class="p">:</span> <span class="mf">22477.156</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">ENTRIES_UNDER_REVIEW</span> <span class="o">=</span> <span class="p">()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Catalogue entries whose IDENTIFICATION, not whose precision, is in doubt.</span>
+
+<span class="sd">Empty, and kept rather than deleted so that a consumer which asks keeps</span>
+<span class="sd">getting an answer. It held five NIR entries until the review recorded in</span>
+<span class="sd">the module docstring resolved all five: three kept their species and</span>
+<span class="sd">gained a correct wavelength, [Fe II]+Br11_16773 split into two lines, and</span>
+<span class="sd">H2_20580 became He I_20580. Nothing is outstanding.</span>
+
+<span class="sd">An entry belongs here when the species or the transition is disputed, not</span>
+<span class="sd">when the wavelength is merely imprecise -- imprecision is recorded in the</span>
+<span class="sd">provenance notes instead. The distinction matters because a line under</span>
+<span class="sd">review must not be given a full-precision value: a precise wavelength for</span>
+<span class="sd">the wrong transition looks authoritative and is harder to catch than a</span>
+<span class="sd">rounded one.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">EMISSION_LINES_ALL_VACUUM</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">EMISSION_LINES_OPTICAL_VACUUM</span><span class="p">,</span>
+                             <span class="o">**</span><span class="n">EMISSION_LINES_NIR_VACUUM</span><span class="p">}</span>
+
+<span class="n">EMISSION_LINES_OPTICAL_AIR</span> <span class="o">=</span> <span class="n">_derive_air</span><span class="p">(</span><span class="n">EMISSION_LINES_OPTICAL_VACUUM</span><span class="p">)</span>
+<span class="n">EMISSION_LINES_NIR_AIR</span> <span class="o">=</span> <span class="n">_derive_air</span><span class="p">(</span><span class="n">EMISSION_LINES_NIR_VACUUM</span><span class="p">)</span>
+<span class="n">EMISSION_LINES_ALL_AIR</span> <span class="o">=</span> <span class="n">_derive_air</span><span class="p">(</span><span class="n">EMISSION_LINES_ALL_VACUUM</span><span class="p">)</span>
+
+<span class="n">HYDROGEN_LINES_AIR</span> <span class="o">=</span> <span class="n">_derive_air</span><span class="p">(</span><span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">)</span>
+<span class="n">HYDROGEN_SERIES_EXTRA_AIR</span> <span class="o">=</span> <span class="n">_derive_air</span><span class="p">(</span><span class="n">HYDROGEN_SERIES_EXTRA_VACUUM</span><span class="p">)</span>
+
+<span class="n">_EMISSION_LINES_BY_SCALE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;vacuum&#39;</span><span class="p">:</span> <span class="n">EMISSION_LINES_ALL_VACUUM</span><span class="p">,</span>
+    <span class="s1">&#39;air&#39;</span><span class="p">:</span> <span class="n">EMISSION_LINES_ALL_AIR</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">_HYDROGEN_BY_SCALE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;vacuum&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">**</span><span class="n">HYDROGEN_LINES_VACUUM</span><span class="p">,</span> <span class="o">**</span><span class="n">HYDROGEN_SERIES_EXTRA_VACUUM</span><span class="p">},</span>
+    <span class="s1">&#39;air&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">**</span><span class="n">HYDROGEN_LINES_AIR</span><span class="p">,</span> <span class="o">**</span><span class="n">HYDROGEN_SERIES_EXTRA_AIR</span><span class="p">},</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="emission_lines_on_scale">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_catalogue.html#brainsp.line_catalogue.emission_lines_on_scale">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">emission_lines_on_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The whole catalogue, {name: rest wavelength}, on a declared scale.</span>
+
+<span class="sd">    Returns a copy, because a caller that filters or edits the result must</span>
+<span class="sd">    not be able to reach back into the module-level table. The scale is</span>
+<span class="sd">    required and unknown values raise; see require_scale.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_EMISSION_LINES_BY_SCALE</span><span class="p">[</span><span class="n">require_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">)])</span></div>
+
+
+
+<div class="viewcode-block" id="hydrogen_lines_on_scale">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_catalogue.html#brainsp.line_catalogue.hydrogen_lines_on_scale">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hydrogen_lines_on_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The hydrogen recombination series, {series name: rest wavelength}, on a</span>
+<span class="sd">    declared scale, including the H11 and H12 that BRAIN predicts but does</span>
+<span class="sd">    not fit.</span>
+
+<span class="sd">    Keyed by species -- &#39;Halpha&#39;, not &#39;Halpha_6563&#39; -- because this is what</span>
+<span class="sd">    the Case B tables in atomic_data are indexed by.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_HYDROGEN_BY_SCALE</span><span class="p">[</span><span class="n">require_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">)])</span></div>
+
+
+
+<span class="n">LINE_SPECIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;[O II]_3726&#39;</span><span class="p">:</span> <span class="s1">&#39;[O II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[O II]_3729&#39;</span><span class="p">:</span> <span class="s1">&#39;[O II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H10_3798&#39;</span><span class="p">:</span> <span class="s1">&#39;H10&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H9_3835&#39;</span><span class="p">:</span> <span class="s1">&#39;H9&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[Ne III]_3869&#39;</span><span class="p">:</span> <span class="s1">&#39;[Ne III]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H8_3889&#39;</span><span class="p">:</span> <span class="s1">&#39;H8&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Hepsilon_3970&#39;</span><span class="p">:</span> <span class="s1">&#39;Hepsilon&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Hdelta_4102&#39;</span><span class="p">:</span> <span class="s1">&#39;Hdelta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Hgamma_4340&#39;</span><span class="p">:</span> <span class="s1">&#39;Hgamma&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[O III]_4363&#39;</span><span class="p">:</span> <span class="s1">&#39;[O III]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;He II_4686&#39;</span><span class="p">:</span> <span class="s1">&#39;He II&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Hbeta_4861&#39;</span><span class="p">:</span> <span class="s1">&#39;Hbeta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[O III]_4959&#39;</span><span class="p">:</span> <span class="s1">&#39;[O III]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[O III]_5007&#39;</span><span class="p">:</span> <span class="s1">&#39;[O III]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;He I_5876&#39;</span><span class="p">:</span> <span class="s1">&#39;He I&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[O I]_6300&#39;</span><span class="p">:</span> <span class="s1">&#39;[O I]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[N II]_6548&#39;</span><span class="p">:</span> <span class="s1">&#39;[N II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Halpha_6563&#39;</span><span class="p">:</span> <span class="s1">&#39;Halpha&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[N II]_6583&#39;</span><span class="p">:</span> <span class="s1">&#39;[N II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[S II]_6716&#39;</span><span class="p">:</span> <span class="s1">&#39;[S II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[S II]_6731&#39;</span><span class="p">:</span> <span class="s1">&#39;[S II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[C I]_9824&#39;</span><span class="p">:</span> <span class="s1">&#39;[C I]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[C I]_9850&#39;</span><span class="p">:</span> <span class="s1">&#39;[C I]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[S III]_9069&#39;</span><span class="p">:</span> <span class="s1">&#39;[S III]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[S III]_9531&#39;</span><span class="p">:</span> <span class="s1">&#39;[S III]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Padelta_10049&#39;</span><span class="p">:</span> <span class="s1">&#39;Padelta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;He II_10122&#39;</span><span class="p">:</span> <span class="s1">&#39;He II&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;He I_10830&#39;</span><span class="p">:</span> <span class="s1">&#39;He I&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pagamma_10938&#39;</span><span class="p">:</span> <span class="s1">&#39;Pagamma&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[P II]_11470&#39;</span><span class="p">:</span> <span class="s1">&#39;[P II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[P II]_11886&#39;</span><span class="p">:</span> <span class="s1">&#39;[P II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pabeta_12820&#39;</span><span class="p">:</span> <span class="s1">&#39;Pabeta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_12567&#39;</span><span class="p">:</span> <span class="s1">&#39;[Fe II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_12950&#39;</span><span class="p">:</span> <span class="s1">&#39;[Fe II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_13209&#39;</span><span class="p">:</span> <span class="s1">&#39;[Fe II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_15342&#39;</span><span class="p">:</span> <span class="s1">&#39;[Fe II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_16436&#39;</span><span class="p">:</span> <span class="s1">&#39;[Fe II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[Fe II]_16773&#39;</span><span class="p">:</span> <span class="s1">&#39;[Fe II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Br11_16811&#39;</span><span class="p">:</span> <span class="s1">&#39;Br11&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Br10_17360&#39;</span><span class="p">:</span> <span class="s1">&#39;Br10&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Paalpha_18750&#39;</span><span class="p">:</span> <span class="s1">&#39;Paalpha&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Brdelta_19446&#39;</span><span class="p">:</span> <span class="s1">&#39;Brdelta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H2_19570&#39;</span><span class="p">:</span> <span class="s1">&#39;H2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H2_20332&#39;</span><span class="p">:</span> <span class="s1">&#39;H2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;He I_20580&#39;</span><span class="p">:</span> <span class="s1">&#39;He I&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H2_21218&#39;</span><span class="p">:</span> <span class="s1">&#39;H2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Brgamma_21654&#39;</span><span class="p">:</span> <span class="s1">&#39;Brgamma&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H2_22230&#39;</span><span class="p">:</span> <span class="s1">&#39;H2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;H2_22470&#39;</span><span class="p">:</span> <span class="s1">&#39;H2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[O III]_Doublet&#39;</span><span class="p">:</span> <span class="s1">&#39;[O III]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[N II]_Doublet&#39;</span><span class="p">:</span> <span class="s1">&#39;[N II]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;[S III]_Doublet&#39;</span><span class="p">:</span> <span class="s1">&#39;[S III]&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The species every catalogue entry and every tied doublet belongs to.</span>
+
+<span class="sd">Declared, never parsed from the name. Kinematic group membership, line flux</span>
+<span class="sd">extraction and the Case B comparison all look their answer up here, so a</span>
+<span class="sd">new catalogue entry without an entry here is invisible to all three rather</span>
+<span class="sd">than being quietly assigned by string matching. Kinematic groups were once</span>
+<span class="sd">assigned with name.startswith(prefix), and &#39;He I&#39; is a prefix of &#39;He II&#39;,</span>
+<span class="sd">which put the highest-ionisation line in the optical catalogue in the</span>
+<span class="sd">low-ionisation group.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">DEFAULT_GROUP_SPECIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;Halpha&#39;</span><span class="p">,</span> <span class="s1">&#39;Hbeta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hgamma&#39;</span><span class="p">,</span> <span class="s1">&#39;Hdelta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hepsilon&#39;</span><span class="p">,</span> <span class="s1">&#39;H8&#39;</span><span class="p">,</span> <span class="s1">&#39;H9&#39;</span><span class="p">,</span> <span class="s1">&#39;H10&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Paalpha&#39;</span><span class="p">,</span> <span class="s1">&#39;Pabeta&#39;</span><span class="p">,</span> <span class="s1">&#39;Pagamma&#39;</span><span class="p">,</span> <span class="s1">&#39;Padelta&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Brgamma&#39;</span><span class="p">,</span> <span class="s1">&#39;Brdelta&#39;</span><span class="p">,</span> <span class="s1">&#39;Br10&#39;</span><span class="p">,</span> <span class="s1">&#39;Br11&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;[N II]&#39;</span><span class="p">,</span> <span class="s1">&#39;[S II]&#39;</span><span class="p">,</span> <span class="s1">&#39;[O I]&#39;</span><span class="p">,</span> <span class="s1">&#39;[O II]&#39;</span><span class="p">,</span> <span class="s1">&#39;[S III]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;He I&#39;</span><span class="p">,</span> <span class="s1">&#39;[C I]&#39;</span><span class="p">,</span> <span class="s1">&#39;[P II]&#39;</span><span class="p">,</span> <span class="s1">&#39;[Fe II]&#39;</span><span class="p">,</span> <span class="s1">&#39;H2&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;[O III]&#39;</span><span class="p">,</span> <span class="s1">&#39;[Ne III]&#39;</span><span class="p">,</span> <span class="s1">&#39;He II&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The two kinematic groups BRAIN fits by default: low ionisation and high.</span>
+
+<span class="sd">Group 1 holds the species whose ionisation potentials put them in a</span>
+<span class="sd">different part of the gas. Every other species shares one velocity and one</span>
+<span class="sd">dispersion.</span>
+
+<span class="sd">The high-order Balmer lines H8, H9 and H10 sit in group 0 with the rest of</span>
+<span class="sd">the series. Hepsilon was already listed here before any of the four had a</span>
+<span class="sd">catalogue entry behind it, so the list named a species BRAIN could not fit;</span>
+<span class="sd">adding the lines is what makes all four live.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="species_of">
+<a class="viewcode-back" href="../../api/generated/brainsp.line_catalogue.html#brainsp.line_catalogue.species_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">species_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The species a catalogue entry belongs to, declared rather than parsed.</span>
+
+<span class="sd">    Returns None for an entry that is not in LINE_SPECIES, so a caller can</span>
+<span class="sd">    tell &quot;no species recorded&quot; from a species that happens to be falsy. A</span>
+<span class="sd">    user-supplied line that omits one is a validation failure, not something</span>
+<span class="sd">    to guess at from its name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">LINE_SPECIES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

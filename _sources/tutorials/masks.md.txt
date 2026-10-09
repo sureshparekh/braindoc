@@ -1,0 +1,26 @@
+# 5. Wavelength masks
+
+A mask leaves wavelength regions out of the fit (weight 0) or counts them
+more (weight above 1). A mask file holds the number of regions on the
+first line, then `start end weight [label]` for each. Exactly that many
+lines are regions; anything after them is notes.
+
+```{literalinclude} ../../tutorials_src/t05_masks.py
+:language: python
+```
+
+Output:
+
+```{literalinclude} ../_static/tutorials/t05_masks.txt
+:language: text
+```
+
+Fitting the stars alone (`spop`) with the emission lines left in drags the
+continuum: the dispersion and $\chi^2$ rise. Masking the standard optical
+emission-line windows (`brainsp.STANDARD_OPTICAL_MASK`) removes them. In `espop` the lines are
+fitted instead and need no mask.
+
+{func}`brainsp.read_mask` returns `(regions, n_skipped)` with each region as
+`(start, end, weight, label)`; {func}`brainsp.write_mask` writes the same
+layout. A datacube takes one mask for every spaxel
+(`CubePipeline(wavelength_mask=...)`); see [](../user_guide/masks.md).

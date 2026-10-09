@@ -1,0 +1,76 @@
+# Instrumental resolution
+
+A spectrograph smears every spectral line by its line-spread function (LSF),
+and so did whatever produced the template library. The two are almost never
+equal, and the difference goes straight onto the velocity dispersion BRAIN
+reports. Tell BRAIN both and it corrects for the difference and reports an
+intrinsic stellar dispersion; leave them blank and it still fits, but the
+dispersion it reports is an *observed* one, which includes the instrument.
+
+| Setting | Means | Default |
+|---|---|---|
+| `instrumental_resolution` | the data's LSF, in the **observed** frame | blank |
+| `library_resolution` | the library's LSF, at **rest** wavelengths | read from the template headers |
+| `spectrum_redshift` | the redshift removed from the spectrum | 0 |
+
+## Writing a resolution
+
+```yaml
+instrumental_resolution: 2.9             # a FWHM in Angstrom
+instrumental_resolution: "70 km/s"       # constant in velocity, a 1-sigma width
+instrumental_resolution: lsf_10517.txt   # a file: wavelength, FWHM (Angstrom)
+```
+
+A string must carry a unit: `"2.51"` is refused rather than guessed, because
+Ångström and km/s differ by a factor of about twenty in the answer. A plain
+number is a FWHM in Ångström. `"45 km/s"` is a **1-sigma** width; spectrograph
+manuals usually quote a FWHM, and reading one as the other changes the
+variance by a factor of 5.55, so the log says which was used.
+
+MaNGA cubes ship the LSF per spaxel, as a 1-sigma width in Ångström:
+`LSFPRE` and `LSFPOST` in DR17 (`PREDISP` and `DISP` in DR15 and DR16). Take
+the pre-pixelised one, `LSFPRE`, the convention that matches this kind of
+fitting.
+
+## What BRAIN does with them
+
+It convolves the **templates** up to the data's resolution, once, at load
+time, on each template's own wavelength grid, before mapping them onto the
+fitting grid. It never smooths the spectrum: every $\chi^2$ here assumes
+independent pixel noise, and smoothing correlates it, so a smoothed spectrum
+would give a better-looking fit that means nothing.
+
+The decision is taken separately for each group of templates sharing a
+stated resolution, over the pixels actually fitted. BasesGM is mixed (56
+templates at 2.51 Å FWHM, 28 at 0.3 Å FWHM plus 45 km/s), and a group sharper
+than the data is broadened while a group broader than the data somewhere in
+the window is left alone; the summary counts each.
+
+The data's resolution is applied at the observed wavelength,
+$\lambda_{\rm rest}(1+z)$, with $z$ the redshift that was removed. If any
+template states no resolution and `library_resolution` is not set, no
+correction is applied and the intrinsic dispersion is reported as `unknown`
+rather than averaged over the templates that do state one.
+
+## In the results
+
+| | |
+|---|---|
+| `vd_min`, `sigma_obs` | the dispersion the fit applied to the library: **observed** |
+| `delta_sigma_inst` | the signed quadrature difference of the two LSFs (data minus library) |
+| `sigma_star` | $\mathrm{sign}(x)\sqrt{|x|}$, $x = \sigma_{\rm obs}^2 - \Delta\sigma_{\rm inst}^2$: **intrinsic** |
+| `FitResult.sigma`, `.sigma_star` | the same, in Python |
+| megacube `Sigma_star` / `Sigma_star_c` | observed / corrected maps, with `LSF_flag` |
+
+A `sigma_star` written with a leading `<` is an upper limit: the fit sat on
+the lower bound of `dispersion_range`, or the LSF difference alone exceeds
+what the fit applied. The gas dispersions are always *observed*; `sigma_inst`
+is printed beside each so the subtraction is available, as in Westfall et al.
+(2019).
+
+## Degrading the data instead
+
+The datacube pipeline can also smooth the data to a coarser resolution
+(`degrade_resolution`), to reproduce an older analysis. It
+correlates the noise and warns every time it runs, and using it together with
+`instrumental_resolution` is refused: that would count the instrument twice.

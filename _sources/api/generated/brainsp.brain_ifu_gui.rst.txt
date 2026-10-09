@@ -1,0 +1,21 @@
+﻿brainsp.brain\_ifu\_gui
+=======================
+
+.. automodule:: brainsp.brain_ifu_gui
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      BATCH_CONVERGED
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AgeBinTable
+      IFUPage
+      RunThread
+      TargetsTable
+   

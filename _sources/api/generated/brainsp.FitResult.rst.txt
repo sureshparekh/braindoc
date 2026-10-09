@@ -1,0 +1,58 @@
+﻿brainsp.FitResult
+=================
+
+.. currentmodule:: brainsp
+
+.. autoclass:: FitResult
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FitResult.__init__
+      ~FitResult.as_dict
+      ~FitResult.line_fluxes
+      ~FitResult.plot
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FitResult.adev
+      ~FitResult.agn_fraction
+      ~FitResult.av
+      ~FitResult.chi2
+      ~FitResult.chi2_data
+      ~FitResult.emission
+      ~FitResult.error
+      ~FitResult.error_message
+      ~FitResult.flux_tot
+      ~FitResult.fobs_norm
+      ~FitResult.mcor_tot
+      ~FitResult.mean_log_age_light
+      ~FitResult.mean_log_age_mass
+      ~FitResult.mean_metallicity_light
+      ~FitResult.mean_metallicity_mass
+      ~FitResult.mini_tot
+      ~FitResult.mode
+      ~FitResult.model
+      ~FitResult.observed
+      ~FitResult.residual
+      ~FitResult.sigma
+      ~FitResult.sigma_gas
+      ~FitResult.sigma_star
+      ~FitResult.stellar
+      ~FitResult.v0
+      ~FitResult.v_gas
+      ~FitResult.wavelength
+      ~FitResult.yav
+   
+   

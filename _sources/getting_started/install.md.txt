@@ -1,0 +1,161 @@
+# Installation
+
+BRAIN is a Python package, `brainsp`, that needs Python 3.10 or newer. One
+`pip` command installs it with everything it needs, the desktop interface
+included.
+
+## Install from GitHub
+
+```bash
+pip install git+https://github.com/sureshparekh/brainv1
+```
+
+pip reads the package's requirements and installs them first:
+
+| Package | For |
+|---|---|
+| `jax` (≥ 0.4.30) | the fit itself, compiled, on CPU or GPU |
+| `numpy`, `scipy` | arrays and numerics |
+| `astropy` | FITS files: datacubes and megacubes |
+| `matplotlib` | every figure |
+| `PyYAML` | settings files |
+| `PySide6` (≥ 6.5) | the desktop interface |
+
+Nothing else has to be installed by hand, and the BasesGM template library
+and the AGN continuum templates come inside the package.
+
+:::{note}
+While the repository is private, pip needs your GitHub access. With an SSH
+key on your GitHub account:
+
+```bash
+pip install git+ssh://git@github.com/sureshparekh/brainv1.git
+```
+
+Over HTTPS, pip asks for your GitHub user name and a personal access token
+(not your password).
+:::
+
+````{tip}
+Install into an environment of its own, so BRAIN's versions of JAX and Qt
+do not meet another project's:
+
+```bash
+conda create -n brain python=3.12
+conda activate brain
+pip install git+https://github.com/sureshparekh/brainv1
+```
+
+or, without conda, `python -m venv brain && source brain/bin/activate`.
+````
+
+## On an NVIDIA GPU
+
+The default `jax` runs on the CPU. For an NVIDIA GPU on Linux, install the
+CUDA build as well:
+
+```bash
+pip install "brainsp[cuda] @ git+https://github.com/sureshparekh/brainv1"
+```
+
+which adds `jax[cuda12]` 0.6 or newer: JAX with the CUDA 12 libraries
+bundled, so no system CUDA toolkit is needed, only a recent NVIDIA driver
+(`nvidia-smi` prints its version). JAX 0.6 is the first built with CUDA 12.8,
+the first to run on RTX 50-series (Blackwell) cards. Check that BRAIN
+computes on the card, not only that JAX lists it:
+
+```bash
+brainsp selftest --quick --device gpu
+# [PASS] GPU computes   NVIDIA GeForce RTX 3060, compute capability 8.6: float64 product correct
+```
+
+A card newer than the installed JAX is listed and then fails at its first
+kernel; the self-test says so, and `pip install -U "jax[cuda12]"` fixes it.
+
+BRAIN fits in double precision (float64) everywhere. Consumer GeForce cards
+run float64 at 1/32 or 1/64 of their float32 speed, data-centre cards
+(A100, H100) at 1/2, so the same fit gains far more on the second kind. See
+[](../user_guide/performance.md).
+
+## From a clone, for development
+
+```bash
+git clone https://github.com/sureshparekh/brainv1
+cd brainv1
+pip install -e ".[test,docs]"
+pytest                       # the test suite
+```
+
+An editable install (`-e`) runs the code in the clone, so a change is live
+without reinstalling. `[test,docs]` adds pytest and the documentation
+toolchain.
+
+## Check the installation
+
+```bash
+brainsp selftest --quick     # about a minute
+brainsp selftest             # everything, a few minutes
+```
+
+The self-test builds mock spectra and a mock datacube whose right answers
+are known, fits them, and checks every recovered quantity against the truth.
+pip cannot run a program at the end of an installation, so run it yourself
+once. See [](selftest.md).
+
+## What is installed where
+
+| | |
+|---|---|
+| the package | wherever pip installs (`python -c "import brainsp; print(brainsp.__file__)"`) |
+| commands | `brainsp` (everything) and `brainsp-gui` (the interface) |
+| templates | inside the package: `brainsp/data/libraries/BasesGM`, `.../AGN` |
+| your libraries, examples, caches | `~/.brainsp/` (set `BRAINSP_HOME` to move it) |
+| results | where you ask, `./brain_out` and `./brain_ifu_out` by default |
+
+## The desktop interface
+
+```bash
+brainsp gui                  # or: brainsp-gui
+brainsp desktop              # add BRAIN to the applications menu
+brainsp desktop --remove     # and take it out again
+```
+
+On Linux the menu entry is a `.desktop` file in
+`~/.local/share/applications`; on macOS an app bundle in `~/Applications`; on
+Windows a Start Menu shortcut (which needs `pip install pywin32`).
+
+## Updating and removing
+
+```bash
+pip install --upgrade git+https://github.com/sureshparekh/brainv1
+pip uninstall brainsp
+```
+
+Uninstalling leaves `~/.brainsp` (your added libraries, examples and caches);
+delete it by hand if you want it gone. `brainsp clear-cache` empties only the
+caches.
+
+## Troubleshooting the installation
+
+**`No module named brainsp`** — the environment pip installed into is not the
+one running Python. `python -m pip install ...` installs into exactly the
+Python you then run.
+
+**`qt.qpa.plugin: Could not load the Qt platform plugin "xcb"`** (Linux) —
+Qt needs a few system libraries the interface draws with:
+`sudo apt install libxcb-cursor0 libxkbcommon-x11-0` on Debian and Ubuntu.
+The fitting itself does not need them; on a server with no display use the
+Python interface or the command line.
+
+**JAX finds no GPU** — the CUDA build is not installed (`pip install
+"jax[cuda12]"`), or the NVIDIA driver is older than the CUDA 12 runtime
+needs. `nvidia-smi` prints the driver version.
+
+**The GPU is found but the fit fails on it** (`no kernel image`, or an
+unsupported architecture) — the card is newer than the installed JAX, as an
+RTX 50-series card is for JAX before 0.6: `pip install -U "jax[cuda12]"`.
+
+**The first fit is slow** — JAX compiles the fit the first time it sees a
+given problem size, which takes seconds to a minute. The compiled code is
+cached on disk and reused by every later run. See
+[](../user_guide/performance.md).

@@ -1,0 +1,12 @@
+﻿brainsp.config
+==============
+
+.. automodule:: brainsp.config
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      NewBrainConfig
+   

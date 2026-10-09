@@ -1,0 +1,41 @@
+﻿brainsp.brain\_ifu
+==================
+
+.. automodule:: brainsp.brain_ifu
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      accepted_columns
+      age_bin_errors
+      age_bins
+      build_module_chain
+      build_runner
+      config_record_hdu
+      default_config
+      describe
+      extra_bin_errors
+      load_config
+      main
+      merge_config
+      missing_extensions
+      output_path
+      override_column_errors
+      read_targets_csv
+      run
+      save_config
+      sn_method_problem
+      target_overrides
+      validate
+      validate_detailed
+      write_targets_csv
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BrainFit
+      BrainIFU
+   

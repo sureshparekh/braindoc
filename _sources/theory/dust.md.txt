@@ -1,0 +1,64 @@
+# Dust
+
+## Attenuation
+
+Every stellar template, and the emission lines, are attenuated by
+
+$$ r_\lambda(A_V) = 10^{-0.4\, A_V \,[\,q(\lambda) - q(\lambda_0)\,]}, \qquad q(\lambda) = A_\lambda / A_V , $$
+
+a screen of dust normalised at $\lambda_0$, so that $A_V$ changes the
+continuum's *shape* and the light fractions at $\lambda_0$ stay light
+fractions. $A_V$ is fitted within `dust_range` ([-1, 5] mag by default). A
+negative $A_V$ is allowed on purpose: light reaching us through the galaxy
+itself (from its far side, say) has crossed its dust, and correcting for
+that needs a model of the geometry that is made differently by every group,
+so it is common practice to let $A_V$ go down to $-1$ instead. Set
+`dust_range: [0, 5]` to forbid it. The templates
+flagged young in the library's catalogue receive $A_V + Y_V$, with $Y_V$
+fitted within `young_extra_dust_range`; BasesGM flags none, so $Y_V$ is
+exactly 0 there.
+
+The nebular continuum is not attenuated by $A_V$ (it carries its own
+extinction in `photopop`); the emission lines are, which is why a spectrum's
+line fluxes are reported corrected for it ([](../user_guide/outputs.md)).
+
+## The laws
+
+`reddening_law` (default CCM). All twelve:
+
+| Key | Reference | Use |
+|---|---|---|
+| `CCM` | Cardelli, Clayton & Mathis (1989) | Milky Way average, $R_V = 3.1$: the default |
+| `HZ1` | Allen (1976) | Milky Way, tabulated |
+| `HZ2` | Seaton (1979), fit by Fitzpatrick (1986) | Milky Way |
+| `CAL` | Calzetti et al. (2000) | starbursts, $R_V = 4.05$ |
+| `CCC` | Calzetti (2000) + Leitherer (2002) | starbursts, far-UV extension below 1846 Å |
+| `HZ5` | Calzetti (2000), starburst (SB) form | the same curve as `CAL` |
+| `HZ3` | Fitzpatrick (1986) | Large Magellanic Cloud |
+| `GD3` | Gordon et al. (2003) | LMC average |
+| `GD2` | Gordon et al. (2003) | LMC2 supershell, near 30 Doradus |
+| `HZ4` | Prévot et al. (1984), Bouchet et al. (1985) | Small Magellanic Cloud |
+| `GD1` | Gordon et al. (2003) | SMC bar: steep far-UV, no 2175 Å bump |
+| `GD24` | Gordon et al. (2024) | SMC |
+
+The CCM law, for $x = 1/\lambda$ in $\mu$m$^{-1}$:
+
+$$ q(\lambda) = a(x) + b(x)/R_V, $$
+
+with, in the optical and near-infrared ($1.1 \le x < 3.3$, $y = x - 1.82$),
+
+$$ a = 1 + 0.17699y - 0.50447y^2 - 0.02427y^3 + 0.72085y^4 + 0.01979y^5 - 0.77530y^6 + 0.32999y^7, $$
+$$ b = 1.41338y + 2.28305y^2 + 1.07233y^3 - 5.38434y^4 - 0.62251y^5 + 5.30260y^6 - 2.09002y^7, $$
+
+$a = 0.574x^{1.61}$, $b = -0.527x^{1.61}$ in the infrared ($0.3 \le x < 1.1$), and
+the ultraviolet branches of Cardelli et al. above $x = 3.3$.
+
+The curves differ mostly in the ultraviolet; fitted over 3700–6900 Å they
+give similar answers. On one MaNGA spectrum: $A_V$ = 0.220 (CCM), 0.254
+(CAL), 0.188 (GD1), 0.211 (GD24), with $\chi^2/N$ within 0.3 per cent.
+
+## Galactic dust
+
+The Milky Way's reddening is not fitted: it is removed before the fit, at the
+observed wavelengths, with $A_\lambda = R_V E(B-V) q(\lambda)$
+([](../user_guide/corrections.md)).

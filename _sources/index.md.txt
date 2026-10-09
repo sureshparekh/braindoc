@@ -1,0 +1,109 @@
+---
+html_theme.sidebar_secondary.remove: true
+---
+
+# BRAIN
+
+**Stellar population synthesis by full spectral fitting, for spectra and IFU
+datacubes, on a CPU or a GPU.**
+
+BRAIN takes a galaxy spectrum, or every spaxel of an integral-field
+datacube, and finds the mixture of stellar populations that produced it:
+their ages and metallicities, the dust in front of them and the motion of
+the stars. It can fit the ionised gas at the same time (emission lines and,
+with a library that reaches the ionising ultraviolet, the nebular
+continuum) and a featureless AGN continuum. It is written in
+[JAX](https://jax.readthedocs.io), so the same code runs on a laptop CPU or a
+datacentre GPU.
+
+The Python package is called **`brainsp`** (the name `brain` was taken).
+
+```python
+import brainsp
+
+r = brainsp.fit_spectrum("galaxy.spec")                 # one spectrum
+print(r.v0, r.sigma, r.av, r.mean_log_age_light)
+brainsp.plots.spectrum(r, "fit.png")
+
+cube = brainsp.fit_cube("cube.fits", redshift=0.02)     # a datacube
+brainsp.plots.map(cube, "vrot_star", "velocity.png")
+```
+
+```{image} _static/gui/light_spectrum_fit.png
+:alt: The BRAIN desktop interface, light theme, showing a fitted spectrum.
+:class: hero-shot
+```
+
+::::{grid} 1 2 2 3
+:gutter: 3
+
+:::{grid-item-card} {octicon}`rocket` Getting started
+:link: getting_started/index
+:link-type: doc
+
+Install BRAIN, check the installation with the self-test, and fit a first
+spectrum from Python, the command line and the interface.
+:::
+
+:::{grid-item-card} {octicon}`mortar-board` Tutorials
+:link: tutorials/index
+:link-type: doc
+
+Worked examples on mock spectra and a 16 x 16 mock datacube whose right
+answers are known: from a first fit to emission lines, AGN, batches, masks,
+datacubes, maps and server runs.
+:::
+
+:::{grid-item-card} {octicon}`book` User guide
+:link: user_guide/index
+:link-type: doc
+
+Everything BRAIN does and how to ask for it: inputs, settings, corrections,
+masks, modes, batches, datacube pipelines, outputs, plots and scripts.
+:::
+
+:::{grid-item-card} {octicon}`browser` The desktop interface
+:link: gui/index
+:link-type: doc
+
+Every page and step of the interface, with screenshots, in the light and the
+dark theme.
+:::
+
+:::{grid-item-card} {octicon}`beaker` Theory
+:link: theory/index
+:link-type: doc
+
+The model and every equation behind it: populations, kinematics, dust,
+the linear and non-linear solves, emission lines, nebular physics, errors
+and derived quantities.
+:::
+
+:::{grid-item-card} {octicon}`code` API reference
+:link: api/index
+:link-type: doc
+
+Every public function and class, and every module of the code underneath.
+:::
+
+:::{grid-item-card} {octicon}`people` About
+:link: about
+:link-type: doc
+
+Who develops BRAIN, where, and how to cite it.
+:::
+::::
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+
+getting_started/index
+tutorials/index
+user_guide/index
+gui/index
+theory/index
+api/index
+reference/index
+about
+```

@@ -1,0 +1,71 @@
+# Working with results in Python
+
+## A spectrum: `FitResult`
+
+{func}`brainsp.fit_spectrum` returns a {class}`~brainsp.FitResult`;
+{func}`brainsp.read_result` makes one from files already on disk.
+
+```python
+r = brainsp.read_result("brain_out/galaxy_summary.txt")
+```
+
+| Attribute | |
+|---|---|
+| `v0`, `sigma` | stellar velocity and dispersion, km/s (observed dispersion) |
+| `sigma_star` | intrinsic dispersion, when the instrumental resolution was known |
+| `av`, `yav` | extinction, and the extra extinction of young populations, mag |
+| `v_gas`, `sigma_gas` | velocity and (observed) dispersion of the first group of lines |
+| `chi2`, `chi2_data`, `adev` | $\chi^2/N_{\rm eff}$ with and without penalty rows; mean deviation, % |
+| `mean_log_age_light`, `mean_log_age_mass` | $\langle\log t\rangle_L$, $\langle\log t\rangle_M$ |
+| `mean_metallicity_light`, `mean_metallicity_mass` | $\langle Z\rangle_L$, $\langle Z\rangle_M$ |
+| `agn_fraction` | light in AGN components at $\lambda_0$, % |
+| `flux_tot`, `mini_tot`, `mcor_tot` | normalisation flux; apparent initial and present mass |
+| `mode` | the nebular mode |
+| `populations` | structured array: `x`, `mini`, `mcor`, `age`, `Z`, `mstars`, `name`, `stellar` |
+| `lines` | `{name: (flux, error)}`, as in the summary file |
+| `line_fluxes(units, observed)` | converted fluxes ([](outputs.md)) |
+| `wavelength`, `observed`, `model`, `stellar`, `emission`, `error`, `residual` | the fitted-spectrum columns |
+| `values` | every `value [label]` of the summary, as text |
+| `summary_file`, `fitted_file`, `spectrum` | the files |
+| `as_dict()` | the headline numbers as a plain dict |
+| `plot(path)` | the standard figure |
+| `error_message` | why a fit in a batch failed (otherwise `None`) |
+
+Common analyses:
+
+```python
+p = r.populations[r.populations["stellar"]]
+young_light = p[p["age"] < 1e8]["x"].sum()          # % of light under 100 Myr
+old_mass = p[p["age"] > 5e9]["mcor"].sum()          # % of mass over 5 Gyr
+
+import pandas as pd                                 # if you use pandas
+table = pd.DataFrame([r.as_dict() for r in results],
+                     index=[r.spectrum for r in results])
+```
+
+## A datacube: `Megacube`
+
+{func}`brainsp.read_megacube` (or {func}`brainsp.fit_cube`) returns a
+{class}`~brainsp.megacube.Megacube`:
+
+```python
+cube = brainsp.read_megacube("megacubes/galaxy-BRAIN_MEGACUBE.fits")
+cube.shape                    # (ny, nx)
+cube.names()                  # every map
+cube.groups                   # {"Populations": [...], "Kinematics": [...], ...}
+v = cube.plane("vrot_star")   # 2-D array, NaN where not fitted
+cube.lines                    # the fitted emission lines
+obs, model, lines = cube.spectrum(y, x)     # on cube.wave (rest frame)
+light, mass = cube.populations(y, x)        # per template, cube.ages
+cube.numbers(y, x)            # every PoPBins value at one spaxel
+n2, o3, s2, ew = cube.diagnostic_inputs()   # log ratios and EW(H-alpha) maps
+cube.close()                  # or: with brainsp.read_megacube(...) as cube:
+```
+
+The map names are the megacube's own ([](outputs.md)): `vrot_star`,
+`Sigma_star`, `Av`, `Mage_L`, `MZ_L`, `xo_light`, `xyy_mass`, ...; for lines
+`"Halpha_6563  flux"` (two spaces), `"... EW"`, `"... velocity"`,
+`"... sigma"`; and the classifications `"BPT [N II]"`, `"BPT [S II]"`,
+`"WHAN"` (1 star forming, 2 composite, 3 LINER, 4 Seyfert, and so on, NaN
+where a line is missing). Everything is also a plain FITS file, readable with
+astropy alone.

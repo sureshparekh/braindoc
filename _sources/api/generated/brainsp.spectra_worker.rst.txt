@@ -1,0 +1,12 @@
+﻿brainsp.spectra\_worker
+=======================
+
+.. automodule:: brainsp.spectra_worker
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      main
+   

@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>brainsp.atomic_data &#8212; BRAIN 2.0.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brainsp.css?v=c75fd39e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=fd10adb8"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/generated/brainsp.atomic_data';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.nebular" href="brainsp.nebular.html" />
+    <link rel="prev" title="brainsp.line_catalogue" href="brainsp.line_catalogue.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="light">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">BRAIN</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../gui/index.html">
+    The desktop interface
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../theory/index.html">
+    Theory
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../about.html">
+    About
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/sureshparekh/brainv1" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectrum.html">brainsp.fit_spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_spectra.html">brainsp.fit_spectra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_cube.html">brainsp.fit_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.CubePipeline.html">brainsp.CubePipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.set_device.html">brainsp.set_device</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.Settings.html">brainsp.Settings</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.FitResult.html">brainsp.FitResult</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_result.html">brainsp.read_result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_megacube.html">brainsp.read_megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_corrections_table.html">brainsp.read_corrections_table</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.read_mask.html">brainsp.read_mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_mask.html">brainsp.write_mask</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.write_script.html">brainsp.write_script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.run.html">brainsp.selftest.run</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plots.html">brainsp.plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.megacube.html">brainsp.megacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.mock.html">brainsp.mock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.libraries.html">brainsp.libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.scripts.html">brainsp.scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.selftest.html">brainsp.selftest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cli.html">brainsp.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.corrections.html">brainsp.corrections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_laws.html">brainsp.reddening_laws</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brainsp.api.html">brainsp.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brainv1.html">brainsp.brainv1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.config.html">brainsp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_settings.html">brainsp.brain_settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.optimizer.html">brainsp.optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_engine.html">brainsp.fast_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.solver.html">brainsp.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectral_engine.html">brainsp.spectral_engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.errors.html">brainsp.errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.emission_lines.html">brainsp.emission_lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_catalogue.html">brainsp.line_catalogue</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">brainsp.atomic_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.nebular.html">brainsp.nebular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.gas_diagnostics.html">brainsp.gas_diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.instrumental_lsf.html">brainsp.instrumental_lsf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.reddening_catalogue.html">brainsp.reddening_catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.io_utils.html">brainsp.io_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_fit.html">brainsp.plot_fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_cache.html">brainsp.brain_cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.run_brain.html">brainsp.run_brain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_megacube_jax.html">brainsp.fit_megacube_jax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fast_cube.html">brainsp.fast_cube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.fit_datacube.html">brainsp.fit_datacube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.cube_worker.html">brainsp.cube_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectra_worker.html">brainsp.spectra_worker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu.html">brainsp.brain_ifu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_modules.html">brainsp.ifu_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_output.html">brainsp.ifu_output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.line_products.html">brainsp.line_products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_script_export.html">brainsp.ifu_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.spectrum_script_export.html">brainsp.spectrum_script_export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.benchmark.html">brainsp.benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.install_desktop.html">brainsp.install_desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_child.html">brainsp.brain_child</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_subprocess.html">brainsp.brain_subprocess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_gui.html">brainsp.brain_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_ifu_gui.html">brainsp.brain_ifu_gui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.ifu_viewer.html">brainsp.ifu_viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.results_view.html">brainsp.results_view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_shell.html">brainsp.brain_shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_qwidgets.html">brainsp.brain_qwidgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.brain_theme.html">brainsp.brain_theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp.plot_zoom.html">brainsp.plot_zoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brainsp._paths.html">brainsp._paths</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">brainsp.atomic_data</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-brainsp.atomic_data">
+<span id="brainsp-atomic-data"></span><h1>brainsp.atomic_data<a class="headerlink" href="#module-brainsp.atomic_data" title="Link to this heading">#</a></h1>
+<p>BRAIN-v1 Atomic Data Module
+Reference tables for nebular physics: recombination coefficients,
+Balmer line ratios, Q(H) lookup tables, metal line calibrations.</p>
+<p>All data from Osterbrock &amp; Ferland (2006), Hummer &amp; Storey (1987),
+Storey &amp; Hummer (1995), Schaerer (2003), Leitherer et al. (1999).</p>
+<p class="rubric">Module Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.LAMBDA_HEPSILON" title="brainsp.atomic_data.LAMBDA_HEPSILON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LAMBDA_HEPSILON</span></code></a></p></td>
+<td><p>The Balmer wavelengths this module needs as scalars, in VACUUM Angstrom.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.METAL_LINE_CALIBRATIONS" title="brainsp.atomic_data.METAL_LINE_CALIBRATIONS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METAL_LINE_CALIBRATIONS</span></code></a></p></td>
+<td><p>Semi-empirical metal line strengths relative to H beta, keyed by catalogue name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.OII_BLEND_COMPONENTS" title="brainsp.atomic_data.OII_BLEND_COMPONENTS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OII_BLEND_COMPONENTS</span></code></a></p></td>
+<td><p>The two catalogue entries whose fitted fluxes sum to the '[O II]_3727' prediction.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.QH_per_Msun" title="brainsp.atomic_data.QH_per_Msun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QH_per_Msun</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Removed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.Zgas_to_logOH" title="brainsp.atomic_data.Zgas_to_logOH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Zgas_to_logOH</span></code></a>(Z_gas[, Z_solar])</p></td>
+<td><p>Convert gas metallicity to 12+log(O/H).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.all_hydrogen_ratios" title="brainsp.atomic_data.all_hydrogen_ratios"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_hydrogen_ratios</span></code></a>(Te, wavelength_scale)</p></td>
+<td><p>Balmer + Paschen ratios relative to H beta, on a declared scale.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.alpha_2S_eff" title="brainsp.atomic_data.alpha_2S_eff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha_2S_eff</span></code></a>(Te)</p></td>
+<td><p>Effective recombination coefficient for 2S level [cm^3 s^-1].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.alpha_B" title="brainsp.atomic_data.alpha_B"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha_B</span></code></a>(Te)</p></td>
+<td><p>Case B total recombination coefficient for H [cm^3 s^-1].</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.alpha_B_HeI" title="brainsp.atomic_data.alpha_B_HeI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha_B_HeI</span></code></a>(Te)</p></td>
+<td><p>Case B total recombination coefficient for He I [cm^3 s^-1].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.alpha_B_HeII" title="brainsp.atomic_data.alpha_B_HeII"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha_B_HeII</span></code></a>(Te)</p></td>
+<td><p>Case B total recombination coefficient for He II [cm^3 s^-1].</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.alpha_B_powerlaw" title="brainsp.atomic_data.alpha_B_powerlaw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha_B_powerlaw</span></code></a>(Te)</p></td>
+<td><p>Power-law approximation for alpha_B (Osterbrock &amp; Ferland 2006).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.alpha_Halpha_eff" title="brainsp.atomic_data.alpha_Halpha_eff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha_Halpha_eff</span></code></a>(Te)</p></td>
+<td><p>Effective recombination coefficient for H-alpha [cm^3 s^-1].</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.alpha_Hbeta_eff" title="brainsp.atomic_data.alpha_Hbeta_eff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha_Hbeta_eff</span></code></a>(Te)</p></td>
+<td><p>Effective recombination coefficient for H-beta [cm^3 s^-1].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.balmer_ratios" title="brainsp.atomic_data.balmer_ratios"><code class="xref py py-obj docutils literal notranslate"><span class="pre">balmer_ratios</span></code></a>(Te, wavelength_scale)</p></td>
+<td><p>Case B Balmer line ratios relative to H beta at a given Te.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.chi_n" title="brainsp.atomic_data.chi_n"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chi_n</span></code></a>(n[, Z])</p></td>
+<td><p>Binding energy of level n [erg].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.hydrogen_case_b_ratios" title="brainsp.atomic_data.hydrogen_case_b_ratios"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hydrogen_case_b_ratios</span></code></a>(Te)</p></td>
+<td><p>Case B hydrogen intensities relative to H beta, with no wavelengths.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.metal_calibration_wavelengths" title="brainsp.atomic_data.metal_calibration_wavelengths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metal_calibration_wavelengths</span></code></a>(wavelength_scale)</p></td>
+<td><p>{catalogue name: wavelength} for every metal line calibration, on a declared scale.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.nu_n" title="brainsp.atomic_data.nu_n"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nu_n</span></code></a>(n[, Z])</p></td>
+<td><p>Ionization threshold frequency for level n [Hz].</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.predicted_metal_ratios" title="brainsp.atomic_data.predicted_metal_ratios"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predicted_metal_ratios</span></code></a>(Z_gas, wavelength_scale)</p></td>
+<td><p>Return semi-empirical metal line ratios relative to H-beta.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.qh_from_spectrum" title="brainsp.atomic_data.qh_from_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qh_from_spectrum</span></code></a>(wavelength, flux[, ...])</p></td>
+<td><p>Ionising photon rates of an SSP, integrated from its own spectrum.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brainsp.atomic_data.two_photon_shape_HI" title="brainsp.atomic_data.two_photon_shape_HI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">two_photon_shape_HI</span></code></a>(x)</p></td>
+<td><p>Two-photon spectral shape function A(x) for H I.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brainsp.atomic_data.two_photon_shape_HeI" title="brainsp.atomic_data.two_photon_shape_HeI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">two_photon_shape_HeI</span></code></a>(x)</p></td>
+<td><p>Two-photon spectral shape for He I (1s2s ^1S_0 -&gt; 1s^2 ^1S_0).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.atomic_data.LAMBDA_HEPSILON">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">LAMBDA_HEPSILON</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3971.202</span></span><a class="headerlink" href="#brainsp.atomic_data.LAMBDA_HEPSILON" title="Link to this definition">#</a></dt>
+<dd><p>The Balmer wavelengths this module needs as scalars, in VACUUM Angstrom.</p>
+<p>Read from line_catalogue rather than written out again here. There were
+three tables of hydrogen wavelengths in this tree: air values to two
+decimals here, whole-Angstrom labels in the emission-line catalogue, and
+whole-Angstrom values again in METAL_LINE_CALIBRATIONS. The predicted Case
+B lines were therefore placed on a different scale from the lines they are
+printed beside and compared against. A second copy of a wavelength is a
+second thing to keep in step; BRAIN has already been bitten by four copies
+of the [N II] branching ratio.</p>
+<p>These five are used for exactly two things: evaluating the extinction curve
+at H alpha and H beta, and computing NU_HALPHA and NU_HBETA for the Case B
+line energies. Neither is sensitive to the scale. k(lambda) for CCM changes
+by 2.8e-4 between the air and vacuum H alpha, which multiplies A_V in a
+magnitude exponent, and the photon energy changes by 2.8e-4 relative. The
+tables that DO care which scale they are on – the ones whose wavelengths
+are compared against fitted lines, or printed beside them – take the scale
+as an argument and do not read these constants.</p>
+<p>LAMBDA_LYMAN_ALPHA stays a literal because it is below the 2000 A floor
+where an air wavelength does not exist, so vacuum is the only scale it has.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.alpha_B">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">alpha_B</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#alpha_B"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.alpha_B" title="Link to this definition">#</a></dt>
+<dd><p>Case B total recombination coefficient for H [cm^3 s^-1].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.alpha_Hbeta_eff">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">alpha_Hbeta_eff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#alpha_Hbeta_eff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.alpha_Hbeta_eff" title="Link to this definition">#</a></dt>
+<dd><p>Effective recombination coefficient for H-beta [cm^3 s^-1].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.alpha_Halpha_eff">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">alpha_Halpha_eff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#alpha_Halpha_eff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.alpha_Halpha_eff" title="Link to this definition">#</a></dt>
+<dd><p>Effective recombination coefficient for H-alpha [cm^3 s^-1].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.alpha_2S_eff">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">alpha_2S_eff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#alpha_2S_eff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.alpha_2S_eff" title="Link to this definition">#</a></dt>
+<dd><p>Effective recombination coefficient for 2S level [cm^3 s^-1].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.alpha_B_powerlaw">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">alpha_B_powerlaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#alpha_B_powerlaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.alpha_B_powerlaw" title="Link to this definition">#</a></dt>
+<dd><p>Power-law approximation for alpha_B (Osterbrock &amp; Ferland 2006).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.hydrogen_case_b_ratios">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">hydrogen_case_b_ratios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#hydrogen_case_b_ratios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.hydrogen_case_b_ratios" title="Link to this definition">#</a></dt>
+<dd><p>Case B hydrogen intensities relative to H beta, with no wavelengths.</p>
+<p>{species: ratio}, Balmer and Paschen together, interpolated in log Te
+and clipped to the ends of the tabulated grid.</p>
+<p>Separate from balmer_ratios and all_hydrogen_ratios because a caller
+that wants only the intrinsic Balmer decrement – which is what the
+nebular extinction is derived from – has no wavelength to place and
+therefore no wavelength scale to declare. Making it ask for one would be
+demanding an answer that cannot change its result.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.balmer_ratios">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">balmer_ratios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#balmer_ratios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.balmer_ratios" title="Link to this definition">#</a></dt>
+<dd><p>Case B Balmer line ratios relative to H beta at a given Te.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Te</strong><span class="classifier">float</span></dt><dd><p>Electron temperature [K].</p>
+</dd>
+<dt><strong>wavelength_scale</strong><span class="classifier">{‘air’, ‘vacuum’}</span></dt><dd><p>The scale the returned wavelengths are on. REQUIRED. These
+wavelengths are printed beside the fitted line fluxes they are meant
+to be compared with, so a predicted line on the other scale from the
+fitted one sits 83 km/s away from it with nothing in the output to
+say why.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>ratios</strong><span class="classifier">dict {species: (wavelength, ratio)}</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.all_hydrogen_ratios">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">all_hydrogen_ratios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#all_hydrogen_ratios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.all_hydrogen_ratios" title="Link to this definition">#</a></dt>
+<dd><p>Balmer + Paschen ratios relative to H beta, on a declared scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.alpha_B_HeI">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">alpha_B_HeI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#alpha_B_HeI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.alpha_B_HeI" title="Link to this definition">#</a></dt>
+<dd><p>Case B total recombination coefficient for He I [cm^3 s^-1].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.alpha_B_HeII">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">alpha_B_HeII</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Te</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#alpha_B_HeII"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.alpha_B_HeII" title="Link to this definition">#</a></dt>
+<dd><p>Case B total recombination coefficient for He II [cm^3 s^-1].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.qh_from_spectrum">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">qh_from_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssp_flux_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Lsun'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#qh_from_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.qh_from_spectrum" title="Link to this definition">#</a></dt>
+<dd><p>Ionising photon rates of an SSP, integrated from its own spectrum.</p>
+<blockquote>
+<div><p>Q = integral_0^lambda_edge  L_lambda * lambda / (h c)  d lambda</p>
+</div></blockquote>
+<p>evaluated at the three ionisation edges, which is what sets how many
+photons are available to ionise H, He and He+ respectively.</p>
+<p>This replaces the age/metallicity lookup BRAIN used previously. A lookup
+cannot know what is actually in the library it is being applied to: it
+silently returns a number for an SSP whose real ionising output is
+different, and there is no way for the fit to notice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>wavelength</strong><span class="classifier">1D array</span></dt><dd><p>SSP wavelength grid in Angstrom. Must extend below 911.76 A, or there
+is no ionising continuum to integrate and the result is meaningless.</p>
+</dd>
+<dt><strong>flux</strong><span class="classifier">1D array</span></dt><dd><p>L_lambda per unit initial mass, on the same grid.</p>
+</dd>
+<dt><strong>ssp_flux_unit</strong><span class="classifier">{‘Lsun’, ‘cgs’}</span></dt><dd><p>Units of <cite>flux</cite>: L_sun/A/Msun or erg/s/A/Msun.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>{‘QHc’, ‘QHe1’, ‘QHe2’} in photons/s per Msun formed. Entries whose
+edge lies outside the library’s coverage are absent, not zero — a
+caller must not be able to mistake “not measured” for “no photons”.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The edge bin is closed by interpolating the flux onto the edge exactly
+rather than truncating at the last grid point, which otherwise biases the
+result by the width of one bin. The integrand is interpolated
+logarithmically, because the Lyman continuum falls by orders of magnitude
+across a few Angstrom and a linear rule over the native grid overestimates
+it — by 2% at the He II edge on the BC03 grid.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.QH_per_Msun">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">QH_per_Msun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#QH_per_Msun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.QH_per_Msun" title="Link to this definition">#</a></dt>
+<dd><p>Removed. Q(H) is integrated from the SSP spectrum – see
+<cite>qh_from_spectrum</cite>. The age/metallicity table this used was not traceable
+to any published library and disagreed with BC03 by up to a factor of 3.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.Zgas_to_logOH">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">Zgas_to_logOH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Z_gas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z_solar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0142</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#Zgas_to_logOH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.Zgas_to_logOH" title="Link to this definition">#</a></dt>
+<dd><p>Convert gas metallicity to 12+log(O/H).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.atomic_data.METAL_LINE_CALIBRATIONS">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">METAL_LINE_CALIBRATIONS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'[N</span> <span class="pre">II]_6548':</span> <span class="pre">&lt;function</span> <span class="pre">_nii_6548_ratio&gt;,</span> <span class="pre">'[N</span> <span class="pre">II]_6583':</span> <span class="pre">&lt;function</span> <span class="pre">_nii_6583_ratio&gt;,</span> <span class="pre">'[Ne</span> <span class="pre">III]_3869':</span> <span class="pre">&lt;function</span> <span class="pre">_neiii_3869_ratio&gt;,</span> <span class="pre">'[O</span> <span class="pre">III]_4363':</span> <span class="pre">&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;,</span> <span class="pre">'[O</span> <span class="pre">III]_4959':</span> <span class="pre">&lt;function</span> <span class="pre">_oiii_4959_ratio&gt;,</span> <span class="pre">'[O</span> <span class="pre">III]_5007':</span> <span class="pre">&lt;function</span> <span class="pre">_oiii_5007_ratio&gt;,</span> <span class="pre">'[O</span> <span class="pre">II]_3727':</span> <span class="pre">&lt;function</span> <span class="pre">_oii_3727_ratio&gt;,</span> <span class="pre">'[O</span> <span class="pre">I]_6300':</span> <span class="pre">&lt;function</span> <span class="pre">_oi_6300_ratio&gt;,</span> <span class="pre">'[S</span> <span class="pre">II]_6716':</span> <span class="pre">&lt;function</span> <span class="pre">_sii_6716_ratio&gt;,</span> <span class="pre">'[S</span> <span class="pre">II]_6731':</span> <span class="pre">&lt;function</span> <span class="pre">_sii_6731_ratio&gt;}</span></span><a class="headerlink" href="#brainsp.atomic_data.METAL_LINE_CALIBRATIONS" title="Link to this definition">#</a></dt>
+<dd><p>Semi-empirical metal line strengths relative to H beta, keyed by catalogue
+name.</p>
+<p>The whole-Angstrom wavelength that used to travel with each calibration is
+gone. It was a third copy of the emission-line wavelengths, rounded harder
+than either of the other two, and it placed the predicted lines on no scale
+at all. metal_calibration_wavelengths supplies the wavelength from
+line_catalogue on a declared scale instead.</p>
+<p>‘[O II]_3727’ is not a catalogue entry. It is the historic name of the
+UNRESOLVED 3726 + 3729 blend, and _oii_3727_ratio predicts the SUM of the
+two, so the entry is kept under that name and the comparison against the
+fit sums the two fitted components. Splitting the prediction by some fixed
+3729/3726 ratio would be wrong: that ratio is the density diagnostic, which
+is the reason the doublet is fitted as two untied lines in the first place.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="brainsp.atomic_data.OII_BLEND_COMPONENTS">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">OII_BLEND_COMPONENTS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('[O</span> <span class="pre">II]_3726',</span> <span class="pre">'[O</span> <span class="pre">II]_3729')</span></span><a class="headerlink" href="#brainsp.atomic_data.OII_BLEND_COMPONENTS" title="Link to this definition">#</a></dt>
+<dd><p>The two catalogue entries whose fitted fluxes sum to the ‘[O II]_3727’
+prediction.</p>
+<p>Named here, where the prediction is defined, so that the consumer doing the
+summing does not have to know which components the blend is made of. The
+[O II] doublet used to be a single catalogue entry at 3727 and the
+prediction matched it by name; once the catalogue split it, the predicted
+name matched nothing fitted and [O II] fell silently out of the
+predicted-versus-observed table.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.metal_calibration_wavelengths">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">metal_calibration_wavelengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#metal_calibration_wavelengths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.metal_calibration_wavelengths" title="Link to this definition">#</a></dt>
+<dd><p>{catalogue name: wavelength} for every metal line calibration, on a
+declared scale.</p>
+<p>Every key but ‘[O II]_3727’ is a catalogue entry and takes that entry’s
+wavelength. ‘[O II]_3727’ names the unresolved blend and is placed at
+the mean of its two components, which is a label for a prediction that
+is itself a sum, not a claim about where either component sits.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.predicted_metal_ratios">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">predicted_metal_ratios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Z_gas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z_solar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0142</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#predicted_metal_ratios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.predicted_metal_ratios" title="Link to this definition">#</a></dt>
+<dd><p>Return semi-empirical metal line ratios relative to H-beta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Z_gas</strong><span class="classifier">float</span></dt><dd><p>Gas-phase metallicity (mass fraction).</p>
+</dd>
+<dt><strong>wavelength_scale</strong><span class="classifier">{‘air’, ‘vacuum’}</span></dt><dd><p>The scale the returned wavelengths are on. REQUIRED; see
+balmer_ratios for why there is no default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>ratios</strong><span class="classifier">dict {name: (wavelength, ratio_to_Hbeta)}</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.chi_n">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">chi_n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#chi_n"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.chi_n" title="Link to this definition">#</a></dt>
+<dd><p>Binding energy of level n [erg].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.nu_n">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">nu_n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#nu_n"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.nu_n" title="Link to this definition">#</a></dt>
+<dd><p>Ionization threshold frequency for level n [Hz].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.two_photon_shape_HI">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">two_photon_shape_HI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#two_photon_shape_HI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.two_photon_shape_HI" title="Link to this definition">#</a></dt>
+<dd><p>Two-photon spectral shape function A(x) for H I.
+x = nu / nu_Lya (0 to 1).</p>
+<p>Returns A(x) in [s^-1], unnormalized.
+The total rate is integral_0^1 A(x) dx = A_2q = 8.2249 s^-1.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.atomic_data.two_photon_shape_HeI">
+<span class="sig-prename descclassname"><span class="pre">brainsp.atomic_data.</span></span><span class="sig-name descname"><span class="pre">two_photon_shape_HeI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/atomic_data.html#two_photon_shape_HeI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.atomic_data.two_photon_shape_HeI" title="Link to this definition">#</a></dt>
+<dd><p>Two-photon spectral shape for He I (1s2s ^1S_0 -&gt; 1s^2 ^1S_0).
+x = nu / nu_2q_HeI (0 to 1), where nu_2q_HeI corresponds to 601.4 A.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="brainsp.line_catalogue.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">brainsp.line_catalogue</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="brainsp.nebular.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">brainsp.nebular</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.LAMBDA_HEPSILON"><code class="docutils literal notranslate"><span class="pre">LAMBDA_HEPSILON</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.alpha_B"><code class="docutils literal notranslate"><span class="pre">alpha_B()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.alpha_Hbeta_eff"><code class="docutils literal notranslate"><span class="pre">alpha_Hbeta_eff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.alpha_Halpha_eff"><code class="docutils literal notranslate"><span class="pre">alpha_Halpha_eff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.alpha_2S_eff"><code class="docutils literal notranslate"><span class="pre">alpha_2S_eff()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.alpha_B_powerlaw"><code class="docutils literal notranslate"><span class="pre">alpha_B_powerlaw()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.hydrogen_case_b_ratios"><code class="docutils literal notranslate"><span class="pre">hydrogen_case_b_ratios()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.balmer_ratios"><code class="docutils literal notranslate"><span class="pre">balmer_ratios()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.all_hydrogen_ratios"><code class="docutils literal notranslate"><span class="pre">all_hydrogen_ratios()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.alpha_B_HeI"><code class="docutils literal notranslate"><span class="pre">alpha_B_HeI()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.alpha_B_HeII"><code class="docutils literal notranslate"><span class="pre">alpha_B_HeII()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.qh_from_spectrum"><code class="docutils literal notranslate"><span class="pre">qh_from_spectrum()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.QH_per_Msun"><code class="docutils literal notranslate"><span class="pre">QH_per_Msun()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.Zgas_to_logOH"><code class="docutils literal notranslate"><span class="pre">Zgas_to_logOH()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.METAL_LINE_CALIBRATIONS"><code class="docutils literal notranslate"><span class="pre">METAL_LINE_CALIBRATIONS</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.OII_BLEND_COMPONENTS"><code class="docutils literal notranslate"><span class="pre">OII_BLEND_COMPONENTS</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.metal_calibration_wavelengths"><code class="docutils literal notranslate"><span class="pre">metal_calibration_wavelengths()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.predicted_metal_ratios"><code class="docutils literal notranslate"><span class="pre">predicted_metal_ratios()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.chi_n"><code class="docutils literal notranslate"><span class="pre">chi_n()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.nu_n"><code class="docutils literal notranslate"><span class="pre">nu_n()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.two_photon_shape_HI"><code class="docutils literal notranslate"><span class="pre">two_photon_shape_HI()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brainsp.atomic_data.two_photon_shape_HeI"><code class="docutils literal notranslate"><span class="pre">two_photon_shape_HeI()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Suresh Parekh (UFRGS).
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
