@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Exploring a megacube · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exporting maps and runs" href="export.html" />
+    <link rel="prev" title="A fitted spectrum" href="results.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab is-active" href="index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab" href="../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab is-active" href="index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The interface</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">The desktop interface</a></li>
+          <li><a class="nav-link" href="launch.html">Starting the interface</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Spectra</p>
+        <ul>
+          <li><a class="nav-link" href="spectrum.html">Fitting a spectrum</a></li>
+          <li><a class="nav-link" href="table.html">Fitting a table of spectra</a></li>
+          <li><a class="nav-link" href="masks.html">Wavelength masks</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Datacubes</p>
+        <ul>
+          <li><a class="nav-link" href="cube.html">Fitting a datacube</a></li>
+          <li><a class="nav-link" href="prefit.html">Preparing a datacube</a></li>
+          <li><a class="nav-link" href="run.html">Running a datacube</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The model</p>
+        <ul>
+          <li><a class="nav-link" href="model.html">The model panel</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Results</p>
+        <ul>
+          <li><a class="nav-link" href="results.html">A fitted spectrum</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">Exploring a megacube</a></li>
+          <li><a class="nav-link" href="export.html">Exporting maps and runs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Interface</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Results</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="exploring-a-megacube">
+<h1>Exploring a megacube<a class="headerlink" href="#exploring-a-megacube" title="Link to this heading">#</a></h1>
+<p>The <strong>Results</strong> workspace opens a megacube and shows what the fit found: any two maps side by side, and for any spaxel its spectrum with the fit, its star formation history, its emission-line diagnostics and its numbers. It reads the file only; nothing is fitted here.</p>
+<div class="shots-figure docutils container">
+<figure class="shots" style="max-width:100%"><img class="shot-light" src="../_static/gui/light_results.png" alt="The Results workspace with two maps and a spaxel&#x27;s spectrum and star formation history." loading="lazy"><img class="shot-dark" src="../_static/gui/dark_results.png" alt="The Results workspace with two maps and a spaxel&#x27;s spectrum and star formation history." loading="lazy"><figcaption><div class="figcaption-wrap docutils container">
+<p>The Results workspace. Left: the list of maps. Middle: Map A (the light-weighted mean age) and Map B (the BPT [N II] class). Right: the spectrum and the star formation history of the spaxel clicked, and its numbers underneath.</p>
+</div>
+</figcaption></figure></div>
+<section id="open-a-megacube">
+<h2>Open a megacube<a class="headerlink" href="#open-a-megacube" title="Link to this heading">#</a></h2>
+<p>Press <strong>Open megacube…</strong> and choose a <code class="docutils literal notranslate"><span class="pre">*-BRAIN_MEGACUBE.fits</span></code> file, or press <strong>View results</strong> at the end of a datacube run, which opens the megacube it wrote. The line under the button gives the file’s name, its size, the number of spaxels fitted and the number of emission lines.</p>
+</section>
+<section id="the-maps">
+<h2>The maps<a class="headerlink" href="#the-maps" title="Link to this heading">#</a></h2>
+<p>The list on the left holds every map the file can draw, grouped:</p>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p>Maps</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Populations</strong></p></td>
+<td><p>light and mass fractions of the age bins, mean ages and metallicities, <span class="math notranslate nohighlight">\(A_V\)</span>, <span class="math notranslate nohighlight">\(Y_V\)</span>, the normalisation flux</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Kinematics</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_\star\)</span> and <span class="math notranslate nohighlight">\(v_\star\)</span>, and the dispersion and velocity of each gas group</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Fit quality</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\chi^2\)</span>, adev, S/N, the number of pixels fitted and of iterations, and the fit status</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Emission lines</strong></p></td>
+<td><p>every line’s flux, equivalent width, velocity and dispersion</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Diagnostics</strong></p></td>
+<td><p>the BPT [N II], BPT [S II] and WHAN classes</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Nebular</strong></p></td>
+<td><p>in <code class="docutils literal notranslate"><span class="pre">nespop</span></code>: <span class="math notranslate nohighlight">\(A_V^{\rm neb}\)</span> and its source, the FC/NC treatment, <span class="math notranslate nohighlight">\(y_{\rm neb}\)</span>, <span class="math notranslate nohighlight">\(\log Q(\mathrm{H})\)</span>, H<span class="math notranslate nohighlight">\(\beta\)</span> predicted and observed, H<span class="math notranslate nohighlight">\(\alpha\)</span>/H<span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(T_e\)</span>, <span class="math notranslate nohighlight">\(n_e\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Line-spread function</strong></p></td>
+<td><p>the intrinsic <span class="math notranslate nohighlight">\(\sigma_\star\)</span> and the instrumental correction behind it</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Uncertainties</strong></p></td>
+<td><p>the 1σ error of each map that has one, as <code class="docutils literal notranslate"><span class="pre">&lt;map&gt;</span> <span class="pre">error</span></code></p></td>
+</tr>
+</tbody>
+</table></div>
+<p>Type in <strong>find a map…</strong> to narrow the list. <strong>Show in</strong> decides whether the next map you click goes to <strong>Map A</strong> (top) or <strong>Map B</strong> (bottom).</p>
+<p>Above each map:</p>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Control</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>colour map</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">viridis</span></code>, <code class="docutils literal notranslate"><span class="pre">magma</span></code>, <code class="docutils literal notranslate"><span class="pre">RdBu_r</span></code> (for velocities), <code class="docutils literal notranslate"><span class="pre">cividis</span></code>, <code class="docutils literal notranslate"><span class="pre">gray</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>scaling</p></td>
+<td><p>what the ends of the colour bar mean: the 1st to 99th percentile, the 5th to 95th, or the minimum to maximum</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>contours</strong></p></td>
+<td><p>draws contours over the map</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Export…</strong></p></td>
+<td><p>saves the figure</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>Spaxels that were not fitted are left blank. A spaxel whose uncertainty was withheld (a formal error in a poorly fitted spaxel) is blank in its error map, not zero.</p>
+</section>
+<section id="one-spaxel">
+<h2>One spaxel<a class="headerlink" href="#one-spaxel" title="Link to this heading">#</a></h2>
+<p>Click a spaxel on either map, or move from one to the next with the arrow keys (Shift moves by ten). The right-hand side then shows:</p>
+<ul class="simple">
+<li><p><strong>the spectrum</strong>: the observed spectrum, the stars and the stars plus lines;</p></li>
+<li><p><strong>the lower panel</strong>, chosen in the menu above it: the <strong>Star-formation history</strong> (light and mass fractions against age), or the spaxel’s place on the <strong>BPT [N II]</strong>, <strong>BPT [S II]</strong> or <strong>WHAN</strong> diagram;</p></li>
+<li><p><strong>the numbers</strong> of the spaxel underneath: <span class="math notranslate nohighlight">\(\langle\log t\rangle_L\)</span>, <span class="math notranslate nohighlight">\(\langle Z\rangle_L\)</span>, <span class="math notranslate nohighlight">\(A_V\)</span>, <span class="math notranslate nohighlight">\(\sigma_\star\)</span>, <span class="math notranslate nohighlight">\(v_\star\)</span>, <span class="math notranslate nohighlight">\(\chi^2/N\)</span> and adev.</p></li>
+</ul>
+<p><strong>Export…</strong> above the right-hand side saves its figure.</p>
+<div class="shots-figure docutils container">
+<figure class="shots" style="max-width:100%"><img class="shot-light" src="../_static/gui/light_results_bpt.png" alt="The BPT [N II] diagram of a spaxel, beside the class maps." loading="lazy"><img class="shot-dark" src="../_static/gui/dark_results_bpt.png" alt="The BPT [N II] diagram of a spaxel, beside the class maps." loading="lazy"><figcaption><div class="figcaption-wrap docutils container">
+<p>A spaxel on the BPT [N II] diagram, with the demarcation curves of Kewley et al. (2001), Kauffmann et al. (2003) and Cid Fernandes et al. (2010).</p>
+</div>
+</figcaption></figure></div>
+</section>
+<section id="the-diagnostics">
+<h2>The diagnostics<a class="headerlink" href="#the-diagnostics" title="Link to this heading">#</a></h2>
+<p>The classes follow Kewley et al. (2001) and Kauffmann et al. (2003) for the [N II] BPT diagram, Cid Fernandes et al. (2010) for its LINER/Seyfert division, Kewley et al. (2006) for the [S II] diagram and Cid Fernandes et al. (2011) for WHAN. A class is drawn only where every line it needs has a positive flux. <a class="reference internal" href="../science/diagnostics.html"><span class="std std-doc">Line diagnostics</span></a> gives the curves.</p>
+</section>
+<section id="the-same-in-python">
+<h2>The same in Python<a class="headerlink" href="#the-same-in-python" title="Link to this heading">#</a></h2>
+<p>Everything this workspace shows can be read and drawn in Python, with <a class="reference internal" href="../reference/generated/brainsp.Megacube.html#brainsp.Megacube" title="brainsp.Megacube"><code class="xref py py-class docutils literal notranslate"><span class="pre">Megacube</span></code></a> and <a class="reference internal" href="../reference/modules/brainsp.plots.html#module-brainsp.plots" title="brainsp.plots"><code class="xref py py-mod docutils literal notranslate"><span class="pre">brainsp.plots</span></code></a> (<a class="reference internal" href="../python/megacube.html"><span class="std std-doc">Reading a megacube</span></a>).</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="results.html"><span class="pager-dir">← Previous</span><span class="pager-title">A fitted spectrum</span></a>
+        <a class="pager-link next" href="export.html"><span class="pager-dir">Next →</span><span class="pager-title">Exporting maps and runs</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 15 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

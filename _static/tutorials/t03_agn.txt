@@ -1,0 +1,14 @@
+Plot saved to fits/no_agn/mock_seyfert_agn_fit.pdf
+Plot saved to fits/agn/mock_seyfert_agn_fit.pdf
+                     no AGN templates   with AGN templates   truth
+AGN light fraction           0.0 %           24.4 %     25 %
+<log age>_L                 9.42             9.85       9.83
+A_V                        0.537            0.304       0.30
+chi2/N                     1.354            0.985
+
+light in populations younger than 100 Myr: 8.1 % without AGN templates, 0.0 % with
+
+AGN components used:
+  FC1.50                  11.04 %
+  FC2.00                   7.35 %
+  AGN_T1.0e5               6.01 %

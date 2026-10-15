@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Key concepts · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The three fitting modes" href="modes.html" />
+    <link rel="prev" title="Your first fit from a terminal" href="first-fit-cli.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab is-active" href="index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab" href="../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab is-active" href="index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Introduction</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">What BRAIN is</a></li>
+          <li><a class="nav-link" href="install.html">Installation</a></li>
+          <li><a class="nav-link" href="selftest.html">Check your installation</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Your first fit</p>
+        <ul>
+          <li><a class="nav-link" href="first-fit-gui.html">Your first fit in the interface</a></li>
+          <li><a class="nav-link" href="first-fit-python.html">Your first fit in Python</a></li>
+          <li><a class="nav-link" href="first-fit-cli.html">Your first fit from a terminal</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Essentials</p>
+        <ul>
+          <li><a class="nav-link is-active" href="#" aria-current="page">Key concepts</a></li>
+          <li><a class="nav-link" href="modes.html">The three fitting modes</a></li>
+          <li><a class="nav-link" href="inputs.html">Your data</a></li>
+          <li><a class="nav-link" href="outputs.html">What a fit writes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Get started</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Essentials</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="key-concepts">
+<h1>Key concepts<a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h1>
+<p>The words the rest of these pages use, each in a few lines, in the order you meet them.</p>
+<section id="the-data">
+<h2>The data<a class="headerlink" href="#the-data" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>Spectrum</dt><dd><p>A one-dimensional galaxy spectrum: wavelength in Å, flux, and ideally an error and a quality flag for every pixel, in a plain text file. <a class="reference internal" href="inputs.html"><span class="std std-doc">Your data</span></a> gives the format.</p>
+</dd>
+<dt>Datacube</dt><dd><p>An integral-field (IFU) observation, a spectrum at every spaxel of a two-dimensional field, in a FITS file (MaNGA, MUSE, CALIFA, JWST NIRSpec, …).</p>
+</dd>
+<dt>Spaxel</dt><dd><p>One spatial element of a datacube, with its own spectrum. BRAIN fits every spaxel independently.</p>
+</dd>
+<dt>Native pixels</dt><dd><p>BRAIN compares the model with the data on the data’s own pixels, never on a resampled copy. Resampling blurs the lines and correlates the noise, which biases the dispersions and makes <span class="math notranslate nohighlight">\(\chi^2\)</span> look better than it is; <a class="reference internal" href="../science/native-pixels.html"><span class="std std-doc">Native pixels</span></a> shows by how much.</p>
+</dd>
+</dl>
+</section>
+<section id="the-model">
+<h2>The model<a class="headerlink" href="#the-model" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>Template library (or <em>base</em>)</dt><dd><p>A set of simple stellar population (SSP) spectra: the light of stars of one age and one metallicity, all born at once. BRAIN ships BasesGM (84 SSPs, 3540 to 6996 Å), M13 (47 SSPs, from the far ultraviolet into the infrared) and BC03 (100 SSPs, from the far ultraviolet into the infrared), and you can add others (<a class="reference internal" href="../python/libraries.html"><span class="std std-doc">Template libraries</span></a>).</p>
+</dd>
+<dt>Full spectral fitting</dt><dd><p>Finding the non-negative mixture of templates, reddened by dust and shifted and broadened by the stars’ motions, that reproduces the spectrum pixel by pixel. <a class="reference internal" href="../science/model.html"><span class="std std-doc">The model</span></a> writes down the model.</p>
+</dd>
+<dt>Light fraction <span class="math notranslate nohighlight">\(x_j\)</span></dt><dd><p>The share of the light at the normalisation wavelength (5500 Å by default) that template <span class="math notranslate nohighlight">\(j\)</span> contributes. A light fraction is not a mass fraction: a young population is far brighter per unit mass than an old one.</p>
+</dd>
+<dt>Mass fraction <span class="math notranslate nohighlight">\(\mu_j\)</span></dt><dd><p>The share of the stellar mass in template <span class="math notranslate nohighlight">\(j\)</span>. The initial mass (all ever formed) and the present mass (still in stars and remnants) differ by what the stars returned to the gas.</p>
+</dd>
+<dt>Extinction <span class="math notranslate nohighlight">\(A_V\)</span></dt><dd><p>Magnitudes of absorption by dust in the V band, with a wavelength dependence set by an extinction law (Cardelli, Clayton &amp; Mathis 1989 by default). <span class="math notranslate nohighlight">\(Y_V\)</span> is an extra extinction for the youngest populations only.</p>
+</dd>
+<dt>Kinematics</dt><dd><p>The line-of-sight velocity <span class="math notranslate nohighlight">\(v_\star\)</span> and velocity dispersion <span class="math notranslate nohighlight">\(\sigma_\star\)</span> of the stars, and the same for each kinematic group of emission lines.</p>
+</dd>
+<dt>Fitting mode (<code class="docutils literal notranslate"><span class="pre">nebular_mode</span></code>)</dt><dd><p>How much of the light is attributed to ionised gas: <code class="docutils literal notranslate"><span class="pre">spop</span></code> (stars only), <code class="docutils literal notranslate"><span class="pre">espop</span></code> (and emission lines), <code class="docutils literal notranslate"><span class="pre">nespop</span></code> (and the nebular continuum). See <a class="reference internal" href="modes.html"><span class="std std-doc">The three fitting modes</span></a>.</p>
+</dd>
+</dl>
+</section>
+<section id="the-steps-around-the-fit">
+<h2>The steps around the fit<a class="headerlink" href="#the-steps-around-the-fit" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>Corrections</dt><dd><p>What BRAIN undoes before fitting: the redshift, and the reddening by the Milky Way’s dust (the Galactic <span class="math notranslate nohighlight">\(E(B-V)\)</span>). The galaxy’s own dust is not a correction; it is fitted.</p>
+</dd>
+<dt>Preparation (datacubes)</dt><dd><p>Optional changes to a datacube before the fit: binning spaxels, binning or degrading the spectral axis, a spatial filter. <a class="reference internal" href="../python/prefit.html"><span class="std std-doc">Pre-fitting stages</span></a> describes each.</p>
+</dd>
+<dt>Mask</dt><dd><p>Wavelength regions left out of the fit (weight 0) or counted more (weight above 1). For a datacube, a signal-to-noise mask also chooses which spaxels are fitted.</p>
+</dd>
+<dt>Settings</dt><dd><p>Every choice BRAIN makes, 83 of them, each with a default: a <a class="reference internal" href="../reference/generated/brainsp.Settings.html#brainsp.Settings" title="brainsp.Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Settings</span></code></a> object in Python, a YAML file, or the controls of the interface. <a class="reference internal" href="../reference/settings.html"><span class="std std-doc">Settings</span></a> lists them all.</p>
+</dd>
+</dl>
+</section>
+<section id="what-comes-out">
+<h2>What comes out<a class="headerlink" href="#what-comes-out" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>Summary file</dt><dd><p>The text file a spectrum’s fit writes: every fitted and derived quantity, the population vector and the uncertainties (<a class="reference internal" href="outputs.html"><span class="std std-doc">What a fit writes</span></a>).</p>
+</dd>
+<dt>Megacube</dt><dd><p>The FITS file a datacube’s fit writes: the input cube with, for every spaxel, the observed and model spectra, the population vectors, a map of every fitted and derived quantity, the emission-line products and their errors (<a class="reference internal" href="../reference/megacube-files.html"><span class="std std-doc">Megacube files</span></a>).</p>
+</dd>
+<dt>Formal and bootstrap errors</dt><dd><p>The two ways BRAIN computes uncertainties: from the fit’s own covariance (fast, default) or by refitting many noise-resampled copies of the data (slower, <code class="docutils literal notranslate"><span class="pre">error_samples</span></code>). <a class="reference internal" href="../python/uncertainties.html"><span class="std std-doc">Uncertainties</span></a> says which to trust for what.</p>
+</dd>
+<dt>Device</dt><dd><p>Where JAX runs the fit: the CPU, a GPU, or <code class="docutils literal notranslate"><span class="pre">auto</span></code> (a GPU when one is visible). The choice changes the speed, never the numbers (<a class="reference internal" href="../python/devices.html"><span class="std std-doc">CPUs and GPUs</span></a>).</p>
+</dd>
+</dl>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="first-fit-cli.html"><span class="pager-dir">← Previous</span><span class="pager-title">Your first fit from a terminal</span></a>
+        <a class="pager-link next" href="modes.html"><span class="pager-dir">Next →</span><span class="pager-title">The three fitting modes</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 15 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>brainsp.uncertainties · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brain.css?v=44370469" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments-brain.css?v=b4cc1d98" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Open the navigation" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="brand" href="../../index.html">
+      <img class="brand-logo" src="../../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../../start/index.html">Get started</a>
+    <a class="tab" href="../../gui/index.html">Interface</a>
+    <a class="tab" href="../../python/index.html">Python</a>
+    <a class="tab" href="../../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../../science/index.html">Science</a>
+    <a class="tab" href="../../reference/index.html">Reference</a>
+    <a class="tab" href="../../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../../about.html">About</a>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <div class="body" role="main">
+        <h1>Source code for brainsp.uncertainties</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The uncertainties of everything a fit reports, in every mode.</span>
+
+<span class="sd">Two methods, chosen by error_samples:</span>
+
+<span class="sd">  0 (the default)  FORMAL. Each fit&#39;s covariance from the data&#39;s errors</span>
+<span class="sd">                   (fast_cube.parameter_covariance): the inverse Fisher</span>
+<span class="sd">                   matrix of the weights and the non-linear parameters</span>
+<span class="sd">                   together, at the solution, on the fit&#39;s active set. It is</span>
+<span class="sd">                   scaled by the fit&#39;s chi2 per degree of freedom where that</span>
+<span class="sd">                   exceeds 1, so a fit worse than its errors allow (template</span>
+<span class="sd">                   mismatch, underestimated errors) gets wider bars; it is</span>
+<span class="sd">                   never narrowed below what the errors give. Every reported</span>
+<span class="sd">                   quantity is then propagated from it to first order.</span>
+<span class="sd">  N &gt; 0            BOOTSTRAP. The whole fit, every stage of it, is repeated</span>
+<span class="sd">                   on N spectra made from the best model and the fit&#39;s own</span>
+<span class="sd">                   residuals with random signs (the wild bootstrap; Davidson</span>
+<span class="sd">                   &amp; Flachaire 2008, as Kacharov et al. 2018 for pPXF), and</span>
+<span class="sd">                   each quantity&#39;s error is half the 16-84 per cent range of</span>
+<span class="sd">                   its N values. It sees what the formal errors cannot: a</span>
+<span class="sd">                   template that leaves or joins the solution, a parameter</span>
+<span class="sd">                   that moves to a bound, a spaxel that changes between FC</span>
+<span class="sd">                   and NC, T_e that is measured in some resamples and not in</span>
+<span class="sd">                   others, and residuals larger than the errors.</span>
+
+<span class="sd">Where each quantity&#39;s formal error comes from:</span>
+
+<span class="sd">  A_V, Y_V, sigma_*, v_*, the weights and everything built from them (light</span>
+<span class="sd">  and mass fractions, mean ages and metallicities, masses, SFRs, the age</span>
+<span class="sd">  bins):  the population fit, the one whose values are reported. In nespop</span>
+<span class="sd">  that fit has A_V^neb free within its Balmer-decrement error and, in FC,</span>
+<span class="sd">  the measured H-alpha and H-beta with their errors constraining the</span>
+<span class="sd">  ionising photons, so y_neb, Q(H) and tau carry both.</span>
+<span class="sd">  sigma_gas, v_gas:  the joint fit of stars and lines, which measures them.</span>
+<span class="sd">  Line fluxes:  the linear measurement at the fitted kinematics</span>
+<span class="sd">  (fast_cube.line_flux_errors), scaled as above.</span>
+<span class="sd">  A_V^neb, H-alpha/H-beta, T_e, n_e:  from the line-flux errors, through</span>
+<span class="sd">  the same formulae that compute them.</span>
+
+<span class="sd">A parameter on a bound of its range has no error (NaN): the fit did not</span>
+<span class="sd">find a minimum there, it stopped at the edge. Flags, counts and the fit&#39;s</span>
+<span class="sd">own statistics (STATUS, MODE, Niter, chi2 ...) have none either.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;NEWBRAIN&quot;</span><span class="p">)</span>
+
+<span class="c1"># Planes of PoPBins and NEBMAPS that are flags, counts or the fit&#39;s own</span>
+<span class="c1"># statistics: no error.</span>
+<span class="n">NO_ERROR</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">((</span>
+    <span class="s1">&#39;F_Norm&#39;</span><span class="p">,</span> <span class="s1">&#39;Adev&#39;</span><span class="p">,</span> <span class="s1">&#39;ChiSqrt&#39;</span><span class="p">,</span> <span class="s1">&#39;SNR&#39;</span><span class="p">,</span> <span class="s1">&#39;Nl_eff&#39;</span><span class="p">,</span> <span class="s1">&#39;Niter&#39;</span><span class="p">,</span> <span class="s1">&#39;BadSpaxel&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LSF_flag&#39;</span><span class="p">,</span> <span class="s1">&#39;Dsigma_inst&#39;</span><span class="p">,</span> <span class="s1">&#39;AV_src&#39;</span><span class="p">,</span> <span class="s1">&#39;MODE&#39;</span><span class="p">,</span> <span class="s1">&#39;BPT&#39;</span><span class="p">,</span> <span class="s1">&#39;cond_src&#39;</span><span class="p">))</span>
+
+<span class="c1"># The quantities whose formal errors the calibration bears out (noise draws</span>
+<span class="c1"># of mock spectra with known truth, every mode, 2026-10-14: the scatter of</span>
+<span class="c1"># the fits over the median error within a factor of ~1.3, or conservative).</span>
+<span class="c1"># Every other product is a sum or ratio over the weights that a template</span>
+<span class="c1"># entering or leaving the fit moves -- the age bins, x_j, mass-weighted</span>
+<span class="c1"># means, masses, SFRs, y_neb, tau -- where a linear covariance at one</span>
+<span class="c1"># solution cannot see the change (an empty bin gets an error of ~0, y_neb&#39;s</span>
+<span class="c1"># was 5-8 times too small): no formal error is written for them (NaN), and</span>
+<span class="c1"># the bootstrap (error_samples) gives theirs.</span>
+<span class="n">FORMAL_POPBINS</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">((</span><span class="s1">&#39;Av&#39;</span><span class="p">,</span> <span class="s1">&#39;YAV&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigma_star&#39;</span><span class="p">,</span> <span class="s1">&#39;vrot_star&#39;</span><span class="p">,</span> <span class="s1">&#39;Mage_L&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;MZ_L&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigma_star_c&#39;</span><span class="p">))</span>
+<span class="n">FORMAL_NEBMAPS</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">((</span><span class="s1">&#39;AV_neb&#39;</span><span class="p">,</span> <span class="s1">&#39;logQH&#39;</span><span class="p">,</span> <span class="s1">&#39;Hb_pred&#39;</span><span class="p">,</span> <span class="s1">&#39;Hb_obs&#39;</span><span class="p">,</span> <span class="s1">&#39;HaHb&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Te&#39;</span><span class="p">,</span> <span class="s1">&#39;ne&#39;</span><span class="p">))</span>
+
+
+<span class="c1"># chi2 per degree of freedom above which a spaxel&#39;s formal errors are not</span>
+<span class="c1"># written. On MaNGA 8626-12704 (60 spaxels, nespop, formal against a</span>
+<span class="c1"># 50-resample bootstrap) the two agreed within 0.9-1.5 where chi2/dof ~ 1.4</span>
+<span class="c1"># (S/N 3-8); at chi2/dof 9 and 45 (S/N 8-20, 20-90) the misfit is template</span>
+<span class="c1"># mismatch, correlated over pixels, which no chi2 factor turns into an error:</span>
+<span class="c1"># the formal errors were 1.5-6.5 times too small for most quantities and</span>
+<span class="c1"># too large for some lines.</span>
+<span class="n">FORMAL_CHI2_MAX</span> <span class="o">=</span> <span class="mf">2.0</span>
+
+
+<div class="viewcode-block" id="withhold_misfit">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.withhold_misfit">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">withhold_misfit</span><span class="p">(</span><span class="n">errs</span><span class="p">,</span> <span class="n">chi2_dof</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">FORMAL_CHI2_MAX</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;NaN for every formal error of the spaxels whose chi2/dof exceeds</span>
+<span class="sd">    limit; returns how many.&quot;&quot;&quot;</span>
+    <span class="n">bad</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">chi2_dof</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">bad</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">errs</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k2</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">v</span><span class="p">[</span><span class="n">k2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bad</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">k2</span><span class="p">],</span> <span class="nb">float</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">bad</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">bad</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="k">elif</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">bad</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">a</span><span class="p">[:,</span> <span class="n">bad</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">errs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">bad</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span></div>
+
+
+
+<div class="viewcode-block" id="formal_validated">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.formal_validated">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">formal_validated</span><span class="p">(</span><span class="n">ext</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Whether a formal error of this plane is written (see above).&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;PoPBins&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">name</span> <span class="ow">in</span> <span class="n">FORMAL_POPBINS</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Sigma_gas_g&quot;</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;vrot_gas_g&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;NEBMAPS&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">FORMAL_NEBMAPS</span>
+    <span class="k">return</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;KINEMATICS&quot;</span><span class="p">,</span> <span class="s2">&quot;LSFCORR&quot;</span><span class="p">,</span> <span class="s2">&quot;LINES&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># Relative step of the first-order propagation along each direction of the</span>
+<span class="c1"># covariance (q(z + h L_k) - q(z - h L_k)) / 2h: small enough to be the</span>
+<span class="c1"># derivative, large enough to be far above rounding in float64.</span>
+<span class="n">FD_STEP</span> <span class="o">=</span> <span class="mf">1e-4</span>
+
+
+<div class="viewcode-block" id="chi2_scale">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.chi2_scale">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">chi2_scale</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">n_eff</span><span class="p">,</span> <span class="n">n_free</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;max(1, chi2 / (N_eff - n_free)): the formal covariance&#39;s factor.&quot;&quot;&quot;</span>
+    <span class="n">dof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">n_eff</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">n_free</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="o">/</span> <span class="n">dof</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="stage_covariance">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.stage_covariance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">stage_covariance</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="n">aw</span><span class="p">,</span> <span class="n">fl</span><span class="p">,</span> <span class="n">isig</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">ld</span><span class="p">,</span> <span class="n">vs</span><span class="p">,</span> <span class="n">dk</span><span class="p">,</span> <span class="n">Df</span><span class="p">,</span> <span class="n">yd</span><span class="p">,</span> <span class="n">rwd</span><span class="p">,</span>
+                     <span class="n">rad</span><span class="p">,</span> <span class="n">ncd</span><span class="p">,</span> <span class="n">gid</span><span class="p">,</span> <span class="n">mc_</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">nssp</span><span class="p">,</span> <span class="n">neb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                     <span class="n">lines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">i0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pad_pixels</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    One fit&#39;s formal covariance, for every spaxel, in batches.</span>
+
+<span class="sd">    ap, aw, isig: the fit&#39;s parameters, weights and the pixel weights it</span>
+<span class="sd">    ended on (clipped, masked); lo, hi its per-spaxel bounds. The rest are</span>
+<span class="sd">    that fit&#39;s constants as fast_cube.fit_queue_fast took them. It returns::</span>
+
+<span class="sd">      sig    (n, n_par + 1 + n_cols)  1-sigma of every quantity, scaled,</span>
+<span class="sd">             NaN where it was not free (on a bound, zero weight)</span>
+<span class="sd">      L      (n, n_par + 1 + nssp, K) the population block&#39;s square root</span>
+<span class="sd">             (A_V .. gas, A_V^neb, stellar weights), scaled: its covariance</span>
+<span class="sd">             is L L^T. K is the largest number of free quantities in it.</span>
+<span class="sd">      g      (n, 3, n_par + 1 + nssp) or None: gradients of S, the nebular</span>
+<span class="sd">             continuum and the model at pixel i0 (nebular fits)</span>
+<span class="sd">      scale  (n,) the chi2 factor applied</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">fast_cube</span>
+    <span class="k">if</span> <span class="n">neb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># as fit_queue_fast prepares it: without its transform the model</span>
+        <span class="c1"># has no nebular continuum</span>
+        <span class="n">neb</span> <span class="o">=</span> <span class="n">fast_cube</span><span class="o">.</span><span class="n">prepared_neb</span><span class="p">(</span><span class="n">neb</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">pad_pixels</span><span class="p">)</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">npar</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">lo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">npar</span><span class="p">))</span>
+    <span class="n">hi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">hi</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">npar</span><span class="p">))</span>
+    <span class="n">nl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">if</span> <span class="n">nl</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="n">n_r</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">neb</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">neb</span><span class="o">.</span><span class="n">line_idx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># (F_L, E_L, dA_V^neb/dF_L) of nespop&#39;s row lines, per spaxel</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">n_r</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span> <span class="k">if</span> <span class="n">lines</span> <span class="ow">is</span> <span class="kc">None</span>
+             <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="nb">float</span><span class="p">)))</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">npar</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">nssp</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">npar</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">aw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">Ls</span><span class="p">,</span> <span class="n">gs</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">batch_size</span> <span class="ow">or</span> <span class="mi">32</span><span class="p">),</span> <span class="mi">32</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">fast_cube</span><span class="o">.</span><span class="n">POOL</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># on CPU workers each computes a few rows of its own, so a batch</span>
+        <span class="c1"># can keep them all busy (the cap of 32 is a GPU&#39;s memory)</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">fast_cube</span><span class="o">.</span><span class="n">POOL</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i0b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">sl</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">i0b</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">i0b</span> <span class="o">+</span> <span class="n">step</span><span class="p">))</span>
+        <span class="c1"># one batch at a time (a cube&#39;s full covariances would not fit in</span>
+        <span class="c1"># memory), padded to a shared shape (fast_cube.run_rows)</span>
+        <span class="n">Cd</span><span class="p">,</span> <span class="n">Sl</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">nfree</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">fast_cube</span><span class="o">.</span><span class="n">run_rows</span><span class="p">(</span>
+            <span class="n">fast_cube</span><span class="o">.</span><span class="n">parameter_covariance</span><span class="p">,</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">)[</span><span class="n">sl</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="n">aw</span><span class="p">,</span> <span class="n">fl</span><span class="p">,</span> <span class="n">isig</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">nl</span><span class="p">,</span>
+                                              <span class="n">lines</span><span class="p">)),</span>
+            <span class="n">sl</span><span class="o">.</span><span class="n">stop</span> <span class="o">-</span> <span class="n">sl</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">n_left</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">n_fft</span><span class="p">),</span> <span class="n">ld</span><span class="p">,</span> <span class="n">vs</span><span class="p">,</span> <span class="n">dk</span><span class="p">,</span> <span class="n">Df</span><span class="p">,</span> <span class="n">yd</span><span class="p">,</span> <span class="n">rwd</span><span class="p">,</span> <span class="n">rad</span><span class="p">,</span> <span class="n">ncd</span><span class="p">,</span> <span class="n">gid</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">mc_</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">i0</span><span class="p">),</span> <span class="n">neb</span><span class="o">=</span><span class="n">neb</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">chi2_scale</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">isig</span><span class="p">[</span><span class="n">sl</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nfree</span><span class="p">)</span>
+        <span class="n">scale</span><span class="p">[</span><span class="n">sl</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span>
+        <span class="c1"># the data&#39;s part widened by the fit&#39;s chi2 factor; the measured</span>
+        <span class="c1"># lines&#39; part by their own errors (already widened by the fit that</span>
+        <span class="c1"># measured them)</span>
+        <span class="n">SE</span> <span class="o">=</span> <span class="n">Sl</span> <span class="o">*</span> <span class="n">lines</span><span class="p">[</span><span class="n">sl</span><span class="p">,</span> <span class="mi">1</span><span class="p">][:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">Cb_</span> <span class="o">=</span> <span class="n">Cd</span> <span class="o">*</span> <span class="n">f</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;nik,njk-&gt;nij&quot;</span><span class="p">,</span> <span class="n">SE</span><span class="p">,</span> <span class="n">SE</span><span class="p">)</span>
+        <span class="n">dg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;nii-&gt;ni&#39;</span><span class="p">,</span> <span class="n">Cb_</span><span class="p">)</span>
+        <span class="n">sig</span><span class="p">[</span><span class="n">sl</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">dg</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">dg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="n">vals</span><span class="p">,</span> <span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">Cb_</span><span class="p">[:,</span> <span class="p">:</span><span class="n">nb</span><span class="p">,</span> <span class="p">:</span><span class="n">nb</span><span class="p">])</span>
+        <span class="n">Ls</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">vals</span><span class="p">,</span> <span class="n">vecs</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">neb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">gs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">g</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">nb</span><span class="p">])</span>
+    <span class="c1"># the rank: eigenvalues above rounding relative to the largest</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+        <span class="n">v</span> <span class="o">&gt;</span> <span class="mf">1e-13</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">Ls</span><span class="p">))</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">nb</span><span class="p">,</span> <span class="n">K</span><span class="p">))</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">vals</span><span class="p">,</span> <span class="n">vecs</span> <span class="ow">in</span> <span class="n">Ls</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+        <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">vecs</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="n">K</span><span class="p">:]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">vals</span><span class="p">[:,</span> <span class="o">-</span><span class="n">K</span><span class="p">:],</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">))[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="n">m</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sig_p</span><span class="o">=</span><span class="n">sig</span><span class="p">[:,</span> <span class="p">:</span><span class="n">npar</span><span class="p">],</span> <span class="n">sig_a</span><span class="o">=</span><span class="n">sig</span><span class="p">[:,</span> <span class="n">npar</span><span class="p">],</span>
+                <span class="n">sig_w</span><span class="o">=</span><span class="n">sig</span><span class="p">[:,</span> <span class="n">npar</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">,</span>
+                <span class="n">g</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">gs</span><span class="p">)</span> <span class="k">if</span> <span class="n">gs</span> <span class="k">else</span> <span class="kc">None</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
+                <span class="n">npar</span><span class="o">=</span><span class="n">npar</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="pad_params">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.pad_params">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pad_params</span><span class="p">(</span><span class="n">cov</span><span class="p">,</span> <span class="n">npar</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A stage_covariance result of a fit with fewer non-linear</span>
+<span class="sd">    parameters (the population fits carry A_V .. v_* only) in the layout of</span>
+<span class="sd">    one with npar: the missing ones (the gas kinematics) not free.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cov</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">cov</span><span class="p">[</span><span class="s2">&quot;npar&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">npar</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cov</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">cov</span><span class="p">[</span><span class="s2">&quot;npar&quot;</span><span class="p">]</span>
+    <span class="n">ins</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">npar</span> <span class="o">-</span> <span class="n">k</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">[</span><span class="s2">&quot;sig_p&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="s2">&quot;sig_p&quot;</span><span class="p">],</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">npar</span> <span class="o">-</span> <span class="n">k</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ins</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cov</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">out</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ins</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">[</span><span class="s2">&quot;npar&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">npar</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="merge">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.merge">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">parts</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;stage_covariance results of disjoint spaxel subsets, in one.&quot;&quot;&quot;</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[(</span><span class="n">idx</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">parts</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">parts</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">c0</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sig_p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n</span><span class="p">,)</span> <span class="o">+</span> <span class="n">c0</span><span class="p">[</span><span class="s2">&quot;sig_p&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">),</span>
+               <span class="n">sig_a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">),</span>
+               <span class="n">sig_w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n</span><span class="p">,)</span> <span class="o">+</span> <span class="n">c0</span><span class="p">[</span><span class="s2">&quot;sig_w&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">),</span>
+               <span class="n">L</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">K</span><span class="p">)),</span>
+               <span class="n">g</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span> <span class="k">if</span> <span class="n">c0</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,)</span> <span class="o">+</span> <span class="n">c0</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])),</span>
+               <span class="n">scale</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">npar</span><span class="o">=</span><span class="n">c0</span><span class="p">[</span><span class="s2">&quot;npar&quot;</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;sig_p&quot;</span><span class="p">,</span> <span class="s2">&quot;sig_a&quot;</span><span class="p">,</span> <span class="s2">&quot;sig_w&quot;</span><span class="p">,</span> <span class="s2">&quot;scale&quot;</span><span class="p">):</span>
+            <span class="n">out</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">out</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">][</span><span class="n">idx</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">out</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="bound_free">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.bound_free">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">bound_free</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">ap</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;NaN for a parameter on a bound (or held), whatever its column gave.&quot;&quot;&quot;</span>
+    <span class="n">ap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="n">lo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="n">ap</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">hi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">hi</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="n">ap</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">,</span> <span class="mf">1e-30</span><span class="p">)</span>
+    <span class="n">free</span> <span class="o">=</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ap</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">ap</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">free</span><span class="p">,</span> <span class="n">sig</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="propagate">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.propagate">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">propagate</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">FD_STEP</span><span class="p">,</span> <span class="n">chunk</span><span class="o">=</span><span class="mi">128</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    First-order propagation of z&#39;s covariance L L^T through fn, for every</span>
+<span class="sd">    spaxel: sigma_q^2 = sum_k (dq/dz . L_k)^2, the derivative along each</span>
+<span class="sd">    column of L by central differences of size step x L_k.</span>
+
+<span class="sd">    fn(zs, idx) maps a (m, nz) array of z&#39;s, each a perturbed copy of</span>
+<span class="sd">    spaxel idx[i], to a dict of (m,) or (m, k) arrays; it is called on all</span>
+<span class="sd">    2 K copies of `chunk` spaxels at a time.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">c0</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">chunk</span><span class="p">):</span>
+        <span class="n">sl</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span> <span class="o">+</span> <span class="n">chunk</span><span class="p">))</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">stop</span> <span class="o">-</span> <span class="n">sl</span><span class="o">.</span><span class="n">start</span>
+        <span class="n">Lt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">sl</span><span class="p">],</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>                  <span class="c1"># (m, K, nz)</span>
+        <span class="n">zp</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">sl</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="n">Lt</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="n">K</span><span class="p">,</span> <span class="n">nz</span><span class="p">)</span>
+        <span class="n">zm</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">sl</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">step</span> <span class="o">*</span> <span class="n">Lt</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="n">K</span><span class="p">,</span> <span class="n">nz</span><span class="p">)</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">sl</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">sl</span><span class="o">.</span><span class="n">stop</span><span class="p">),</span> <span class="n">K</span><span class="p">)</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">zp</span><span class="p">,</span> <span class="n">zm</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">]))</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+            <span class="n">dv</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="p">[:</span><span class="n">m</span> <span class="o">*</span> <span class="n">K</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">m</span> <span class="o">*</span> <span class="n">K</span><span class="p">:])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">m</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">step</span><span class="p">)</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">dv</span><span class="p">),</span> <span class="n">dv</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">out</span><span class="p">:</span>
+                <span class="n">out</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,)</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="n">out</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">sl</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+
+
+<div class="viewcode-block" id="robust_sigma">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.robust_sigma">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">robust_sigma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Half the 16-84 per cent range: the 1-sigma of a Gaussian, and not</span>
+<span class="sd">    pulled by the odd resample that ran to a bound.&quot;&quot;&quot;</span>
+    <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mf">15.865525</span><span class="p">,</span> <span class="mf">84.134475</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="wild_resamples">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.wild_resamples">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wild_resamples</span><span class="p">(</span><span class="n">fl</span><span class="p">,</span> <span class="n">af</span><span class="p">,</span> <span class="n">isl</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    N spectra per spaxel, (n, N, n_pix): the model plus the residual with a</span>
+<span class="sd">    random sign on every pixel the fit used, the data as they are on the</span>
+<span class="sd">    rest (masked or clipped pixels stay what they were, so they are masked</span>
+<span class="sd">    or clipped again).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">npx</span> <span class="o">=</span> <span class="n">fl</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="n">isl</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">sign</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">((</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">npx</span><span class="p">))</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">fl</span> <span class="o">-</span> <span class="n">af</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">star</span> <span class="o">=</span> <span class="n">af</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">used</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">star</span><span class="p">,</span> <span class="n">fl</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:])</span></div>
+
+
+
+<div class="viewcode-block" id="err_hdu">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.err_hdu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">err_hdu</span><span class="p">(</span><span class="n">hdu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;&lt;EXT&gt;_ERR: hdu&#39;s layout and cards, sigma in place of the values.&quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">ImageHDU</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>
+                      <span class="n">header</span><span class="o">=</span><span class="n">hdu</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hdu</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_ERR&quot;</span><span class="p">)</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;EXTNAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hdu</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_ERR&quot;</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ERRMETH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="s2">&quot;formal covariance or wild bootstrap&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;formal&quot;</span><span class="p">:</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ERRNOTE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;NaN planes: bootstrap only (error_samples)&quot;</span><span class="p">,</span>
+                               <span class="s2">&quot;formal errors kept where calibrated&quot;</span><span class="p">)</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ERRWHAT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;1 sigma of the same plane of &quot;</span> <span class="o">+</span> <span class="n">hdu</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                           <span class="s2">&quot;NaN: no error defined&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">extra</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">return</span> <span class="n">h</span></div>
+
+
+
+<div class="viewcode-block" id="formal_errors">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.formal_errors">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">formal_errors</span><span class="p">(</span><span class="n">cov_pop</span><span class="p">,</span> <span class="n">gas_sig</span><span class="p">,</span> <span class="n">ap</span><span class="p">,</span> <span class="n">aw</span><span class="p">,</span> <span class="n">nssp</span><span class="p">,</span> <span class="n">pop_fn</span><span class="p">,</span> <span class="n">av_neb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                  <span class="n">lsf_planes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gerr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Every reported quantity&#39;s formal 1-sigma, from the population fit&#39;s</span>
+<span class="sd">    covariance (cov_pop, in the layout of the final parameters) and the</span>
+<span class="sd">    gas kinematics&#39; (gas_sig, (n, n_par - 4), NaN where not available).</span>
+
+<span class="sd">    pop_fn(z, idx) -&gt; {key: values}: the products of a (m, n_par + 1 +</span>
+<span class="sd">    nssp) array of [parameters, A_V^neb, stellar weights], keys</span>
+<span class="sd">    (&#39;PoPBins&#39;, card) for the PoPBins planes and &#39;PoPVecsL&#39;, &#39;PoPVecsM&#39;,</span>
+<span class="sd">    &#39;PoPVecsMini&#39; for the vectors. Returns the errors as a dict of the</span>
+<span class="sd">    same keys plus &#39;KINEMATICS&#39; (n, n_par), &#39;LSFCORR&#39; {plane: values} and</span>
+<span class="sd">    &#39;LINES&#39; (the line weights&#39; errors, gerr as given).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">npar</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">av_neb</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">av_neb</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">ap</span><span class="p">,</span> <span class="n">a</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">aw</span><span class="p">[:,</span> <span class="p">:</span><span class="n">nssp</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">propagate</span><span class="p">(</span><span class="n">pop_fn</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cov_pop</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">])</span>
+    <span class="n">p_sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cov_pop</span><span class="p">[</span><span class="s2">&quot;sig_p&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">npar</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">p_sig</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">npar</span> <span class="o">-</span> <span class="mi">4</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="k">if</span> <span class="n">gas_sig</span> <span class="ow">is</span> <span class="kc">None</span>
+                        <span class="k">else</span> <span class="n">gas_sig</span><span class="p">)</span>
+    <span class="n">errs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;KINEMATICS&quot;</span><span class="p">:</span> <span class="n">p_sig</span><span class="p">,</span> <span class="s2">&quot;LINES&quot;</span><span class="p">:</span> <span class="n">gerr</span><span class="p">,</span> <span class="s2">&quot;PoPBins&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">errs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">{})[</span><span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">errs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">pb</span> <span class="o">=</span> <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">]</span>
+    <span class="c1"># parameters read straight off: their own errors, NaN on a bound</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;Av&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;YAV&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Sigma_star&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                    <span class="p">(</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">pb</span><span class="p">:</span>
+            <span class="n">pb</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_sig</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">pb</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">NO_ERROR</span><span class="p">:</span>
+            <span class="n">pb</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="c1"># only what the calibration bears out (FORMAL_POPBINS)</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">pb</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">formal_validated</span><span class="p">(</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s2">&quot;Sigma_gas_g&quot;</span><span class="p">,</span> <span class="s2">&quot;vrot_gas_g&quot;</span><span class="p">))):</span>
+            <span class="n">pb</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;PoPVecsL&quot;</span><span class="p">,</span> <span class="s2">&quot;PoPVecsM&quot;</span><span class="p">,</span> <span class="s2">&quot;PoPVecsMini&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">errs</span><span class="p">:</span>
+            <span class="n">errs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">errs</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">float</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">errs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;SUM&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lsf_planes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sig_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">lsf_planes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+            <span class="n">e_c</span> <span class="o">=</span> <span class="n">p_sig</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ap</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">sig_c</span><span class="p">)</span>
+        <span class="n">e_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">sig_c</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sig_c</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">),</span> <span class="n">e_c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="n">pb</span><span class="p">[</span><span class="s2">&quot;Sigma_star_c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">e_c</span>
+        <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;LSFCORR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">e_c</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">errs</span></div>
+
+
+
+<div class="viewcode-block" id="gas_planes">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.gas_planes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gas_planes</span><span class="p">(</span><span class="n">errs</span><span class="p">,</span> <span class="n">groups</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Sigma_gas / vrot_gas planes of PoPBins from KINEMATICS&#39; errors.&quot;&quot;&quot;</span>
+    <span class="n">p_sig</span> <span class="o">=</span> <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;KINEMATICS&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
+        <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">][</span><span class="sa">f</span><span class="s2">&quot;Sigma_gas_g</span><span class="si">{</span><span class="n">group</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_sig</span><span class="p">[:,</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">index</span><span class="p">]</span>
+        <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">][</span><span class="sa">f</span><span class="s2">&quot;vrot_gas_g</span><span class="si">{</span><span class="n">group</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_sig</span><span class="p">[:,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">index</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="nebular_errors">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.nebular_errors">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">nebular_errors</span><span class="p">(</span><span class="n">neb_out</span><span class="p">,</span> <span class="n">cov_pop</span><span class="p">,</span> <span class="n">p_sig</span><span class="p">,</span> <span class="n">af</span><span class="p">,</span> <span class="n">nf</span><span class="p">,</span> <span class="n">i0</span><span class="p">,</span> <span class="n">k_hb</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NEBMAPS&#39; formal errors: y_neb, Q(H) and the predicted H-beta from the</span>
+<span class="sd">    population fit&#39;s covariance (their gradients, cov_pop[&quot;g&quot;]); A_V^neb</span>
+<span class="sd">    its posterior there (the decrement&#39;s error as the prior, the photons</span>
+<span class="sd">    in FC) or A_V&#39;s where tied; the measured lines&#39;, the decrement&#39;s, T_e&#39;s</span>
+<span class="sd">    and n_e&#39;s from the lines&#39; errors. Flags have none.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">si</span><span class="p">,</span> <span class="n">S</span> <span class="o">=</span> <span class="n">neb_out</span><span class="p">[</span><span class="s2">&quot;inputs&quot;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">neb_out</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">L</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">cov_pop</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">],</span> <span class="n">cov_pop</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span>
+    <span class="n">npar</span> <span class="o">=</span> <span class="n">cov_pop</span><span class="p">[</span><span class="s2">&quot;npar&quot;</span><span class="p">]</span>
+    <span class="n">nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">grad</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;nb,nbk-&gt;nk&quot;</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">tied</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">si</span><span class="p">[</span><span class="s2">&quot;av_source&quot;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">1</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">N0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">neb_out</span><span class="p">[</span><span class="s2">&quot;neb_spec&quot;</span><span class="p">])[:,</span> <span class="n">i0</span><span class="p">]</span>
+        <span class="n">T0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">af</span><span class="p">)[:,</span> <span class="n">i0</span><span class="p">]</span>
+        <span class="n">gy</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">T0</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">N0</span> <span class="o">/</span> <span class="n">T0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="n">e_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">g</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">e_a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tied</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">npar</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">g_lnpred</span> <span class="o">=</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">S</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">k_hb</span> <span class="o">*</span> <span class="n">e_a</span>
+        <span class="n">s_lnpred</span> <span class="o">=</span> <span class="n">sd</span><span class="p">(</span><span class="n">g_lnpred</span><span class="p">)</span>
+        <span class="n">F2</span><span class="p">,</span> <span class="n">E2</span> <span class="o">=</span> <span class="n">neb_out</span><span class="p">[</span><span class="s2">&quot;lines&quot;</span><span class="p">]</span>
+        <span class="n">hb</span><span class="p">,</span> <span class="n">ehb</span> <span class="o">=</span> <span class="n">F2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Hbeta&quot;</span><span class="p">,</span> <span class="n">nan</span><span class="p">),</span> <span class="n">E2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Hbeta&quot;</span><span class="p">,</span> <span class="n">nan</span><span class="p">)</span>
+        <span class="n">c_hb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;C_Hb&quot;</span><span class="p">,</span> <span class="n">nan</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="n">av_neb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">si</span><span class="p">[</span><span class="s2">&quot;av_neb&quot;</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="n">hb_pred</span> <span class="o">=</span> <span class="n">c_hb</span> <span class="o">*</span> <span class="n">S</span> <span class="o">*</span> <span class="mf">10.0</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">av_neb</span> <span class="o">*</span> <span class="n">k_hb</span><span class="p">)</span>
+        <span class="n">rel_obs</span> <span class="o">=</span> <span class="n">ehb</span> <span class="o">/</span> <span class="n">hb</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;AV_neb&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tied</span><span class="p">,</span> <span class="n">p_sig</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">cov_pop</span><span class="p">[</span><span class="s2">&quot;sig_a&quot;</span><span class="p">]),</span>
+            <span class="s2">&quot;y_neb&quot;</span><span class="p">:</span> <span class="n">sd</span><span class="p">(</span><span class="n">gy</span><span class="p">),</span>
+            <span class="s2">&quot;logQH&quot;</span><span class="p">:</span> <span class="n">sd</span><span class="p">(</span><span class="n">g</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">S</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)),</span>
+            <span class="s2">&quot;tau_Hb&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">hb_pred</span> <span class="o">/</span> <span class="n">hb</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">s_lnpred</span><span class="p">,</span> <span class="n">rel_obs</span><span class="p">),</span>
+            <span class="s2">&quot;Hb_pred&quot;</span><span class="p">:</span> <span class="n">hb_pred</span> <span class="o">*</span> <span class="n">nf</span> <span class="o">*</span> <span class="n">s_lnpred</span><span class="p">,</span>
+            <span class="s2">&quot;Hb_obs&quot;</span><span class="p">:</span> <span class="n">ehb</span> <span class="o">*</span> <span class="n">nf</span><span class="p">,</span>
+            <span class="s2">&quot;HaHb&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;decrement_err&quot;</span><span class="p">,</span> <span class="n">nan</span><span class="p">),</span> <span class="nb">float</span><span class="p">),</span>
+            <span class="s2">&quot;Te&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Te_err&quot;</span><span class="p">,</span> <span class="n">nan</span><span class="p">),</span> <span class="nb">float</span><span class="p">),</span>
+            <span class="s2">&quot;ne&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ne_err&quot;</span><span class="p">,</span> <span class="n">nan</span><span class="p">),</span> <span class="nb">float</span><span class="p">),</span>
+        <span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">v</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">formal_validated</span><span class="p">(</span><span class="s2">&quot;NEBMAPS&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+
+
+<div class="viewcode-block" id="error_hdus">
+<a class="viewcode-back" href="../../reference/modules/brainsp.uncertainties.html#brainsp.uncertainties.error_hdus">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">error_hdus</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="n">errs</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">yc</span><span class="p">,</span> <span class="n">xc</span><span class="p">,</span> <span class="n">npar</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;&lt;EXT&gt;_ERR for every product extension errs covers, aligned with</span>
+<span class="sd">    the extension&#39;s own planes (by card for PoPBins and NEBMAPS).&quot;&quot;&quot;</span>
+    <span class="n">hdus</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">place</span><span class="p">(</span><span class="n">values_by_plane</span><span class="p">,</span> <span class="n">n_planes</span><span class="p">):</span>
+        <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n_planes</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values_by_plane</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n_planes</span><span class="p">:</span>
+                <span class="n">cube</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">yc</span><span class="p">,</span> <span class="n">xc</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="n">cube</span>
+
+    <span class="k">if</span> <span class="s2">&quot;PoPBins&quot;</span> <span class="ow">in</span> <span class="n">errs</span> <span class="ow">and</span> <span class="s2">&quot;PoPBins&quot;</span> <span class="ow">in</span> <span class="n">products</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">]</span>
+        <span class="n">n_planes</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_planes</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DATA</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">NO_ERROR</span><span class="p">:</span>
+                <span class="n">by</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;PoPBins&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">hdus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err_hdu</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">place</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">n_planes</span><span class="p">),</span> <span class="n">method</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;PoPVecsL&quot;</span><span class="p">,</span> <span class="s2">&quot;PoPVecsM&quot;</span><span class="p">,</span> <span class="s2">&quot;PoPVecsMini&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">errs</span> <span class="ow">and</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">products</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">errs</span><span class="p">[</span><span class="n">ext</span><span class="p">])</span>
+            <span class="n">hdus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err_hdu</span><span class="p">(</span><span class="n">products</span><span class="p">[</span><span class="n">ext</span><span class="p">],</span> <span class="n">place</span><span class="p">(</span>
+                <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])},</span>
+                <span class="n">products</span><span class="p">[</span><span class="n">ext</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">method</span><span class="p">))</span>
+    <span class="k">if</span> <span class="s2">&quot;KINEMATICS&quot;</span> <span class="ow">in</span> <span class="n">errs</span> <span class="ow">and</span> <span class="s2">&quot;KINEMATICS&quot;</span> <span class="ow">in</span> <span class="n">products</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">errs</span><span class="p">[</span><span class="s2">&quot;KINEMATICS&quot;</span><span class="p">])</span>
+        <span class="n">hdus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err_hdu</span><span class="p">(</span><span class="n">products</span><span class="p">[</span><span class="s2">&quot;KINEMATICS&quot;</span><span class="p">],</span> <span class="n">place</span><span class="p">(</span>
+            <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">npar</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))},</span>
+            <span class="n">products</span><span class="p">[</span><span class="s2">&quot;KINEMATICS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">method</span><span class="p">))</span>
+    <span class="k">if</span> <span class="s2">&quot;NEBMAPS&quot;</span> <span class="ow">in</span> <span class="n">errs</span> <span class="ow">and</span> <span class="s2">&quot;NEBMAPS&quot;</span> <span class="ow">in</span> <span class="n">products</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="s2">&quot;NEBMAPS&quot;</span><span class="p">]</span>
+        <span class="n">n_planes</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;NEBMAPS&quot;</span><span class="p">][</span><span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;PLANE</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]]</span>
+              <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_planes</span><span class="p">)</span>
+              <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PLANE</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">errs</span><span class="p">[</span><span class="s2">&quot;NEBMAPS&quot;</span><span class="p">]</span>
+              <span class="ow">and</span> <span class="n">h</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PLANE</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">NO_ERROR</span><span class="p">}</span>
+        <span class="n">hdus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err_hdu</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">place</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">n_planes</span><span class="p">),</span> <span class="n">method</span><span class="p">))</span>
+    <span class="k">if</span> <span class="s2">&quot;LSFCORR&quot;</span> <span class="ow">in</span> <span class="n">errs</span> <span class="ow">and</span> <span class="s2">&quot;LSFCORR&quot;</span> <span class="ow">in</span> <span class="n">products</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="s2">&quot;LSFCORR&quot;</span><span class="p">]</span>
+        <span class="n">hdus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err_hdu</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">place</span><span class="p">(</span><span class="n">errs</span><span class="p">[</span><span class="s2">&quot;LSFCORR&quot;</span><span class="p">],</span> <span class="n">h</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                            <span class="n">method</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">hdus</span></div>
+
+</pre></div>
+      </div>
+      <nav class="pager" aria-label="Previous and next page"><span></span>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (SAFFARY group) · Last built 14 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../../"; window.BRAIN_SEARCH_INDEX = "../../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../../search.html";</script>
+<script src="../../_static/brain.js" defer></script>
+  </body>
+</html>

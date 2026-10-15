@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Dust · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Emission lines and resolution" href="emission-lines.html" />
+    <link rel="prev" title="Kinematics and the non-linear fit" href="nonlinear.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab" href="../tutorials/index.html">Tutorials</a>
+    <a class="tab is-active" href="index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab is-active" href="index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The model</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">The science of the fit</a></li>
+          <li><a class="nav-link" href="model.html">The model</a></li>
+          <li><a class="nav-link" href="native-pixels.html">Native pixels</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The fit</p>
+        <ul>
+          <li><a class="nav-link" href="linear.html">The linear solve</a></li>
+          <li><a class="nav-link" href="nonlinear.html">Kinematics and the non-linear fit</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">Dust</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Gas</p>
+        <ul>
+          <li><a class="nav-link" href="emission-lines.html">Emission lines and resolution</a></li>
+          <li><a class="nav-link" href="nebular.html">The nebular emission</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Products</p>
+        <ul>
+          <li><a class="nav-link" href="derived.html">Derived quantities</a></li>
+          <li><a class="nav-link" href="diagnostics.html">Line diagnostics</a></li>
+          <li><a class="nav-link" href="uncertainties.html">Uncertainties</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Science</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>The fit</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="dust">
+<h1>Dust<a class="headerlink" href="#dust" title="Link to this heading">#</a></h1>
+<section id="the-attenuation">
+<h2>The attenuation<a class="headerlink" href="#the-attenuation" title="Link to this heading">#</a></h2>
+<p>Every stellar template, every featureless template and every emission line is attenuated by a screen of dust normalised at <span class="math notranslate nohighlight">\(\lambda_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ r_\lambda(A_V) = 10^{-0.4\,A_V\,[k(\lambda) - k(\lambda_0)]}, \qquad k(\lambda) = A_\lambda/A_V . \]</div>
+<p>Normalised this way, <span class="math notranslate nohighlight">\(A_V\)</span> changes the continuum’s shape but not its value at <span class="math notranslate nohighlight">\(\lambda_0\)</span>, so the weights stay light fractions at <span class="math notranslate nohighlight">\(\lambda_0\)</span>. <span class="math notranslate nohighlight">\(A_V\)</span> is fitted within <code class="docutils literal notranslate"><span class="pre">dust_range</span></code>, <span class="math notranslate nohighlight">\([-1, 5]\)</span> mag by default.</p>
+<p><strong>Young populations.</strong> The templates flagged young in the library’s catalogue receive <span class="math notranslate nohighlight">\(A_V + Y_V\)</span>, with <span class="math notranslate nohighlight">\(Y_V\)</span> fitted within <code class="docutils literal notranslate"><span class="pre">young_extra_dust_range</span></code> (<span class="math notranslate nohighlight">\([0, 5]\)</span> mag): young stars often sit inside their birth clouds, behind more dust than the older population. BasesGM flags none, so <span class="math notranslate nohighlight">\(Y_V\)</span> is exactly 0 with it.</p>
+<p><strong>The emission lines</strong> are attenuated by the stellar <span class="math notranslate nohighlight">\(A_V\)</span> in the model, so a line’s fitted weight is its flux before that dust: the summary reports line fluxes corrected for <span class="math notranslate nohighlight">\(A_V\)</span> relative to <span class="math notranslate nohighlight">\(\lambda_0\)</span>, and <a class="reference internal" href="../reference/generated/brainsp.FitResult.html#brainsp.FitResult.line_fluxes" title="brainsp.FitResult.line_fluxes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">line_fluxes()</span></code></a> with <code class="docutils literal notranslate"><span class="pre">observed=True</span></code> gives them as they arrive.</p>
+<p><strong>The nebular continuum</strong> of <code class="docutils literal notranslate"><span class="pre">nespop</span></code> carries its own extinction, <span class="math notranslate nohighlight">\(A_V^{\rm neb}\)</span>, not the stellar <span class="math notranslate nohighlight">\(A_V\)</span> (<a class="reference internal" href="nebular.html"><span class="std std-doc">The nebular emission</span></a>).</p>
+</section>
+<section id="why-a-v-may-be-negative">
+<h2>Why <span class="math notranslate nohighlight">\(A_V\)</span> may be negative<a class="headerlink" href="#why-a-v-may-be-negative" title="Link to this heading">#</a></h2>
+<p>The lower limit of <span class="math notranslate nohighlight">\(-1\)</span> is deliberate. Light reaching us through the galaxy itself, from its far side for example, has crossed the galaxy’s own dust; correcting for it would need a model of the geometry, which every group builds differently. It is common practice instead to let <span class="math notranslate nohighlight">\(A_V\)</span> go below zero, and a negative value also lets the fit say that the templates are bluer than the data need, rather than pinning <span class="math notranslate nohighlight">\(A_V\)</span> at zero and hiding the mismatch in the populations. Set <code class="docutils literal notranslate"><span class="pre">dust_range:</span> <span class="pre">[0,</span> <span class="pre">5]</span></code> to forbid it.</p>
+</section>
+<section id="the-laws">
+<h2>The laws<a class="headerlink" href="#the-laws" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">reddening_law</span></code> (default <code class="docutils literal notranslate"><span class="pre">CCM</span></code>) chooses the curve <span class="math notranslate nohighlight">\(k(\lambda)\)</span>:</p>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Dust it describes</p></th>
+<th class="head"><p>Reference</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CCM</span></code></p></td>
+<td><p>Milky Way average, <span class="math notranslate nohighlight">\(R_V = 3.1\)</span></p></td>
+<td><p>Cardelli, Clayton &amp; Mathis (1989)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HZ1</span></code></p></td>
+<td><p>Milky Way, tabulated</p></td>
+<td><p>Allen (1976)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HZ2</span></code></p></td>
+<td><p>Milky Way</p></td>
+<td><p>Seaton (1979), fit by Fitzpatrick (1986)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CAL</span></code></p></td>
+<td><p>starburst galaxies, <span class="math notranslate nohighlight">\(R_V = 4.05\)</span></p></td>
+<td><p>Calzetti et al. (2000)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CCC</span></code></p></td>
+<td><p>starburst, with a far-ultraviolet extension below 1846 Å</p></td>
+<td><p>Calzetti (2000) and Leitherer (2002)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HZ5</span></code></p></td>
+<td><p>starburst, the same curve as <code class="docutils literal notranslate"><span class="pre">CAL</span></code></p></td>
+<td><p>Calzetti (2000)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HZ3</span></code></p></td>
+<td><p>Large Magellanic Cloud</p></td>
+<td><p>Fitzpatrick (1986)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GD3</span></code></p></td>
+<td><p>LMC average</p></td>
+<td><p>Gordon et al. (2003)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GD2</span></code></p></td>
+<td><p>LMC2 supershell, near 30 Doradus</p></td>
+<td><p>Gordon et al. (2003)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HZ4</span></code></p></td>
+<td><p>Small Magellanic Cloud</p></td>
+<td><p>Prévot et al. (1984), Bouchet et al. (1985)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GD1</span></code></p></td>
+<td><p>SMC bar: a steep far-ultraviolet rise, no 2175 Å bump</p></td>
+<td><p>Gordon et al. (2003)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GD24</span></code></p></td>
+<td><p>Small Magellanic Cloud</p></td>
+<td><p>Gordon et al. (2024)</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>The CCM law, with <span class="math notranslate nohighlight">\(x = 1/\lambda\)</span> in µm⁻¹, is <span class="math notranslate nohighlight">\(k = a(x) + b(x)/R_V\)</span>, with, in the optical and near-infrared (<span class="math notranslate nohighlight">\(1.1 \le x &lt; 3.3\)</span>, <span class="math notranslate nohighlight">\(y = x - 1.82\)</span>),</p>
+<div class="math notranslate nohighlight">
+\[ a = 1 + 0.17699y - 0.50447y^2 - 0.02427y^3 + 0.72085y^4 + 0.01979y^5 - 0.77530y^6 + 0.32999y^7, \]</div>
+<div class="math notranslate nohighlight">
+\[ b = 1.41338y + 2.28305y^2 + 1.07233y^3 - 5.38434y^4 - 0.62251y^5 + 5.30260y^6 - 2.09002y^7, \]</div>
+<p><span class="math notranslate nohighlight">\(a = 0.574x^{1.61}\)</span> and <span class="math notranslate nohighlight">\(b = -0.527x^{1.61}\)</span> in the infrared (<span class="math notranslate nohighlight">\(0.3 \le x &lt; 1.1\)</span>), and the ultraviolet branches of Cardelli et al. above <span class="math notranslate nohighlight">\(x = 3.3\)</span>.</p>
+<p>The curves differ mostly in the ultraviolet, so over 3700–6900 Å they give similar answers. On one MaNGA spectrum: <span class="math notranslate nohighlight">\(A_V\)</span> = 0.220 (CCM), 0.254 (CAL), 0.188 (GD1) and 0.211 (GD24), with <span class="math notranslate nohighlight">\(\chi^2/N\)</span> within 0.3 per cent of each other. <a class="reference internal" href="../reference/modules/brainsp.reddening_laws.html#module-brainsp.reddening_laws" title="brainsp.reddening_laws"><code class="xref py py-mod docutils literal notranslate"><span class="pre">brainsp.reddening_laws</span></code></a> evaluates any of them.</p>
+</section>
+<section id="dust-and-age">
+<h2>Dust and age<a class="headerlink" href="#dust-and-age" title="Link to this heading">#</a></h2>
+<p>Age, metallicity and dust trade against one another in an optical spectrum: a little more dust makes a population look a little older, and an older, metal-poorer population looks like a younger, metal-richer one. This degeneracy, a long-standing and remarkably faithful companion of stellar population studies, is why BRAIN reports averages over templates and why the bootstrap is the uncertainty to quote for them (<a class="reference internal" href="uncertainties.html"><span class="std std-doc">Uncertainties</span></a>).</p>
+</section>
+<section id="the-milky-way-s-dust">
+<h2>The Milky Way’s dust<a class="headerlink" href="#the-milky-way-s-dust" title="Link to this heading">#</a></h2>
+<p>The Milky Way’s reddening is not fitted. It is removed before the fit, at the observed wavelengths, with <span class="math notranslate nohighlight">\(A_\lambda = R_V\,E(B-V)\,k(\lambda)\)</span> from the Galactic law, <span class="math notranslate nohighlight">\(R_V\)</span> and <span class="math notranslate nohighlight">\(E(B-V)\)</span> you give (<a class="reference internal" href="../python/corrections.html"><span class="std std-doc">Corrections before the fit</span></a>).</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="nonlinear.html"><span class="pager-dir">← Previous</span><span class="pager-title">Kinematics and the non-linear fit</span></a>
+        <a class="pager-link next" href="emission-lines.html"><span class="pager-dir">Next →</span><span class="pager-title">Emission lines and resolution</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 15 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

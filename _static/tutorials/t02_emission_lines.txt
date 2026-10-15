@@ -1,0 +1,23 @@
+Plot saved to fits/mock_star_forming_lines_fit.pdf
+<FitResult mock_star_forming_lines.spec: v0=39.06 km/s, sigma=87.07 km/s, AV=0.4671, chi2=0.98578>
+stars: v0 = 39.1 km/s, sigma = 87.1 km/s, A_V = 0.467
+gas:   v  = 49.8 km/s, sigma = 58.0 km/s   (truth 50.0, 60.0)
+
+ line              written   as observed   truth
+ [O II]_3726         1.518      1.203      1.200
+ [O II]_3729         2.123      1.683      1.620
+ Hdelta_4102         0.694      0.576      0.546
+ Hgamma_4340         1.170      1.008      0.984
+ Hbeta_4861          2.337      2.177      2.100
+ [O III]_4959        0.243      0.229      0.241
+ [O III]_5007        0.725      0.688      0.720
+ He I_5876           0.180      0.186      0.210
+ [O I]_6300          0.163      0.173      0.180
+ [N II]_6548         0.469      0.506      0.491
+ Halpha_6563         5.654      6.112      6.000
+ [N II]_6583         1.432      1.551      1.500
+ [S II]_6716         0.768      0.839      0.840
+ [S II]_6731         0.513      0.561      0.600
+
+H-alpha, input units: 5.983
+log [N II]/Ha = -0.60, log [O III]/Hb = -0.50 -> star forming

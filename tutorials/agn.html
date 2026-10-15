@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>An active nucleus · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Many spectra" href="many-spectra.html" />
+    <link rel="prev" title="Emission lines" href="emission-lines.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab is-active" href="index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab is-active" href="index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Start here</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">Tutorials</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Spectra</p>
+        <ul>
+          <li><a class="nav-link" href="first-spectrum.html">A first spectrum</a></li>
+          <li><a class="nav-link" href="emission-lines.html">Emission lines</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">An active nucleus</a></li>
+          <li><a class="nav-link" href="many-spectra.html">Many spectra</a></li>
+          <li><a class="nav-link" href="masks-settings.html">Masks and settings files</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Datacubes</p>
+        <ul>
+          <li><a class="nav-link" href="datacube.html">A datacube</a></li>
+          <li><a class="nav-link" href="megacube.html">Exploring a megacube</a></li>
+          <li><a class="nav-link" href="server.html">On a server or a cluster</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Interface</p>
+        <ul>
+          <li><a class="nav-link" href="gui-walkthrough.html">The interface, end to end</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Tutorials</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Spectra</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="an-active-nucleus">
+<h1>An active nucleus<a class="headerlink" href="#an-active-nucleus" title="Link to this heading">#</a></h1>
+<p>The light of an active galactic nucleus adds a featureless, blue continuum to the host galaxy’s starlight. A fit without a template for it has to imitate it with what it has, young stars and less dust, and the host’s populations come out wrong. This tutorial fits a mock Seyfert, an old host with a power law carrying 25 per cent of the light at 5500 Å, without and with BRAIN’s AGN templates.</p>
+<p>The whole tutorial as one file, ready to run: <a class="reference download internal" download="" href="../_downloads/0f66059f1564b2b38f6b114141707f61/03_agn.py"><code class="xref download docutils literal notranslate"><span class="pre">03_agn.py</span></code></a>.</p>
+<section id="two-fits">
+<h2>Two fits<a class="headerlink" href="#two-fits" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+
+<span class="n">spectrum</span> <span class="o">=</span> <span class="s2">&quot;examples/spectra/mock_seyfert_agn.spec&quot;</span>
+<span class="n">truth</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">spectrum</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.spec&quot;</span><span class="p">,</span> <span class="s2">&quot;.truth.json&quot;</span><span class="p">)))</span>
+
+<span class="n">plain</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fits/no_agn&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                             <span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="n">agn</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fits/agn&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>
+                           <span class="n">include_power_law</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">include_power_law=True</span></code> adds seven featureless continua to the library: power laws <span class="math notranslate nohighlight">\(F_\nu \propto \nu^{-\alpha}\)</span> with <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.5, 1, 1.5 and 2, and three Cloudy AGN continua (<a class="reference internal" href="../python/libraries.html"><span class="std std-doc">Template libraries</span></a>). They carry light but no mass.</p>
+</section>
+<section id="compare">
+<h2>Compare<a class="headerlink" href="#compare" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                     no AGN templates   with AGN templates   truth&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AGN light fraction  </span><span class="si">{</span><span class="n">plain</span><span class="o">.</span><span class="n">agn_fraction</span><span class="si">:</span><span class="s2">12.1f</span><span class="si">}</span><span class="s2"> %   &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">agn</span><span class="o">.</span><span class="n">agn_fraction</span><span class="si">:</span><span class="s2">12.1f</span><span class="si">}</span><span class="s2"> %     </span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">truth</span><span class="p">[</span><span class="s1">&#39;agn_fraction&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;log age&gt;_L         </span><span class="si">{</span><span class="n">plain</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="si">:</span><span class="s2">12.2f</span><span class="si">}</span><span class="s2">     &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">agn</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="si">:</span><span class="s2">12.2f</span><span class="si">}</span><span class="s2">       </span><span class="si">{</span><span class="n">truth</span><span class="p">[</span><span class="s1">&#39;mean_log_age_light&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A_V                 </span><span class="si">{</span><span class="n">plain</span><span class="o">.</span><span class="n">av</span><span class="si">:</span><span class="s2">12.3f</span><span class="si">}</span><span class="s2">     </span><span class="si">{</span><span class="n">agn</span><span class="o">.</span><span class="n">av</span><span class="si">:</span><span class="s2">12.3f</span><span class="si">}</span><span class="s2">       </span><span class="si">{</span><span class="n">truth</span><span class="p">[</span><span class="s1">&#39;av&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chi2/N              </span><span class="si">{</span><span class="n">plain</span><span class="o">.</span><span class="n">chi2</span><span class="si">:</span><span class="s2">12.3f</span><span class="si">}</span><span class="s2">     </span><span class="si">{</span><span class="n">agn</span><span class="o">.</span><span class="n">chi2</span><span class="si">:</span><span class="s2">12.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">young</span> <span class="o">=</span> <span class="n">plain</span><span class="o">.</span><span class="n">populations</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">light in populations younger than 100 Myr:&quot;</span><span class="p">,</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">young</span><span class="p">[(</span><span class="n">young</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e8</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">young</span><span class="p">[</span><span class="s1">&#39;stellar&#39;</span><span class="p">]][</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> % &quot;</span>
+      <span class="s2">&quot;without AGN templates,&quot;</span><span class="p">,</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">agn</span><span class="o">.</span><span class="n">populations</span><span class="p">[(</span><span class="n">agn</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e8</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">agn</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="s1">&#39;stellar&#39;</span><span class="p">]][</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> % with&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">AGN components used:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">agn</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="o">~</span><span class="n">agn</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="s2">&quot;stellar&quot;</span><span class="p">]]:</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">22s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="what-it-printed">
+<h2>What it printed<a class="headerlink" href="#what-it-printed" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Plot saved to fits/no_agn/mock_seyfert_agn_fit.pdf
+Plot saved to fits/agn/mock_seyfert_agn_fit.pdf
+                     no AGN templates   with AGN templates   truth
+AGN light fraction           0.0 %           24.4 %     25 %
+&lt;log age&gt;_L                 9.42             9.85       9.83
+A_V                        0.537            0.304       0.30
+chi2/N                     1.354            0.985
+
+light in populations younger than 100 Myr: 8.1 % without AGN templates, 0.0 % with
+
+AGN components used:
+  FC1.50                  11.04 %
+  FC2.00                   7.35 %
+  AGN_T1.0e5               6.01 %
+</pre></div>
+</div>
+<p>Without the AGN templates, the fit invents 8 per cent of light in stars younger than 100 Myr, makes the host 0.4 dex younger than it is, raises <span class="math notranslate nohighlight">\(A_V\)</span> by 0.24 mag, and still fits worse (<span class="math notranslate nohighlight">\(\chi^2/N\)</span> = 1.35). With them, the AGN fraction comes back at 24 per cent for 25, the host’s age and extinction are right, and <span class="math notranslate nohighlight">\(\chi^2/N\)</span> is 0.99. The AGN light is shared among three of the seven continua; only their sum, <code class="docutils literal notranslate"><span class="pre">agn_fraction</span></code>, is a measurement, since a blue continuum can be built from several of them in many ways.</p>
+<figure class="align-default" id="id1">
+<img alt="Star formation history without AGN templates, with a spurious young component." src="../_images/t03_sfh_no_agn.png" />
+<figcaption>
+<p><span class="caption-text">Without AGN templates: the power law is imitated by young stars.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="Star formation history with AGN templates, old populations only." src="../_images/t03_sfh_agn.png" />
+<figcaption>
+<p><span class="caption-text">With AGN templates: the host’s populations are old, as built.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="when-to-include-them">
+<h2>When to include them<a class="headerlink" href="#when-to-include-them" title="Link to this heading">#</a></h2>
+<p>Include the AGN templates where an active nucleus is expected (a Seyfert, a quasar host, the nucleus of a cube) and leave them out elsewhere: a featureless continuum can also stand in for dust or for a young population, and the fit has no way to know it is not there. In a datacube, compare the AGN fraction map with the BPT classes; a featureless continuum far from the nucleus is a warning, not a discovery.</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="emission-lines.html"><span class="pager-dir">← Previous</span><span class="pager-title">Emission lines</span></a>
+        <a class="pager-link next" href="many-spectra.html"><span class="pager-dir">Next →</span><span class="pager-title">Many spectra</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 15 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

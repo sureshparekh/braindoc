@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>brainsp.scripts · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brain.css?v=44370469" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments-brain.css?v=b4cc1d98" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Open the navigation" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="brand" href="../../index.html">
+      <img class="brand-logo" src="../../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../../start/index.html">Get started</a>
+    <a class="tab" href="../../gui/index.html">Interface</a>
+    <a class="tab" href="../../python/index.html">Python</a>
+    <a class="tab" href="../../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../../science/index.html">Science</a>
+    <a class="tab" href="../../reference/index.html">Reference</a>
+    <a class="tab" href="../../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../../about.html">About</a>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <div class="body" role="main">
+        <h1>Source code for brainsp.scripts</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Runs written out as one Python file each.</span>
+
+<span class="sd">A BRAIN run is completely described by one ``.py`` file: every setting, with</span>
+<span class="sd">its documentation as comments, every spectrum or cube with its own</span>
+<span class="sd">corrections, every preparation stage of a datacube. ``python run.py`` runs</span>
+<span class="sd">it, on any machine with brainsp installed. The desktop interface&#39;s &quot;Export</span>
+<span class="sd">run script&quot; writes these files, and so does ``brainsp init``.</span>
+
+<span class="sd">Paths inside the folder the script is saved in are written relative to that</span>
+<span class="sd">folder, and the script finds them from its own location, wherever it is run</span>
+<span class="sd">from. So a folder holding the data and the script can be copied to a server</span>
+<span class="sd">as it is and run there with ``python run.py``. A path outside that folder is</span>
+<span class="sd">kept as it is and listed at the top of the script, because it will not</span>
+<span class="sd">travel with the folder.</span>
+
+<span class="sd">Each script understands three options::</span>
+
+<span class="sd">    python run.py                 run it</span>
+<span class="sd">    python run.py --check         check everything, fit nothing</span>
+<span class="sd">    python run.py --device gpu    choose the processor (auto, cpu, gpu)</span>
+
+<span class="sd">and a spectrum script also takes file names, to fit those instead::</span>
+
+<span class="sd">    python run.py more/*.spec</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">brain_settings</span> <span class="k">as</span> <span class="n">_bs</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;settings_block&quot;</span><span class="p">,</span> <span class="s2">&quot;spectrum_script&quot;</span><span class="p">,</span> <span class="s2">&quot;cube_script&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;write_script&quot;</span><span class="p">]</span>
+
+<span class="n">HEADER</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&quot;&quot;&quot;</span>
+<span class="si">{title}</span>
+
+<span class="s1">Written by brainsp </span><span class="si">{version}</span><span class="s1"> on </span><span class="si">{when}</span><span class="s1">. Every setting of the run is in this</span>
+<span class="s1">file; edit it here and run it again:</span>
+
+<span class="s1">    python </span><span class="si">{script}</span><span class="s1">                  run it</span>
+<span class="s1">    python </span><span class="si">{script}</span><span class="s1"> --check          check everything, fit nothing</span>
+<span class="s1">    python </span><span class="si">{script}</span><span class="s1"> --device gpu     choose the processor: auto, cpu or gpu</span>
+<span class="si">{extra}</span>
+<span class="s1">Each setting is documented where it is set. The same text, and more, is in</span>
+<span class="s1">the BRAIN documentation (Settings reference), and in Python:</span>
+<span class="s1">    import brainsp; print(brainsp.Settings.describe(&quot;dust_range&quot;))</span>
+<span class="s1">&quot;&quot;&quot;</span>
+
+<span class="s1">import os</span>
+<span class="s1">import sys</span>
+
+<span class="s1">import brainsp</span>
+
+<span class="s1">HERE = os.path.dirname(os.path.abspath(__file__))</span>
+
+
+<span class="s1">def here(path):</span>
+<span class="s1">    &quot;&quot;&quot;A path written relative to this file&#39;s folder, made usable from any</span>
+<span class="s1">    working directory. Absolute paths are left as they are.&quot;&quot;&quot;</span>
+<span class="s1">    return path if os.path.isabs(path) else os.path.join(HERE, path)</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="c1"># Settings that may name a file, made relative like the data.</span>
+<span class="n">PATH_SETTINGS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;instrumental_resolution&quot;</span><span class="p">,</span> <span class="s2">&quot;library_resolution&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;base_folder&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_portable</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    `value` as a script saved in folder `base` should write it.</span>
+
+<span class="sd">    A path inside `base` becomes relative to it, with forward slashes, so</span>
+<span class="sd">    the folder can be copied anywhere. A path outside it stays absolute and</span>
+<span class="sd">    is added to `outside`. Anything that is not a path to an existing file</span>
+<span class="sd">    or folder, and is not absolute -- a library name, &quot;2.5 A&quot;, an output</span>
+<span class="sd">    folder not made yet -- is left as it is.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">text</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">text</span>
+    <span class="n">full</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">relative</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">full</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>              <span class="c1"># another drive, on Windows</span>
+        <span class="n">relative</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">relative</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">relative</span> <span class="o">!=</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span> \
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">relative</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">pardir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">relative</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+    <span class="n">outside</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">full</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">full</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_portable_output</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An output folder: a relative one already means beside the script.&quot;&quot;&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">else</span> <span class="n">_portable</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_outside_note</span><span class="p">(</span><span class="n">outside</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The warning at the top of a script that names paths outside it.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">outside</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;# NOTE: these paths are outside this script&#39;s folder and do &quot;</span>
+             <span class="s2">&quot;not travel&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;# with it. Copy them along and edit the paths below, or move &quot;</span>
+             <span class="s2">&quot;them into&quot;</span><span class="p">,</span> <span class="s2">&quot;# the folder and export again:&quot;</span><span class="p">]</span>
+    <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;#   </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">outside</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># Settings a script sets for itself, so they are not repeated in SETTINGS.</span>
+<span class="n">_SET_BY_SCRIPT</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;spectrum&quot;</span><span class="p">,</span> <span class="s2">&quot;output_folder&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_comment</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">indent</span> <span class="o">+</span> <span class="s2">&quot;# &quot;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="settings_block">
+<a class="viewcode-back" href="../../reference/modules/brainsp.scripts.html#brainsp.settings_block">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">settings_block</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SETTINGS&quot;</span><span class="p">,</span> <span class="n">skip</span><span class="o">=</span><span class="n">_SET_BY_SCRIPT</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Python source building a :class:`~brainsp.Settings` with every setting,</span>
+<span class="sd">    each under its documentation, grouped by section.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">docs</span> <span class="o">=</span> <span class="n">_bs</span><span class="o">.</span><span class="n">setting_docs</span><span class="p">()</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> = brainsp.Settings(&quot;</span><span class="p">]</span>
+    <span class="n">section</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">_bs</span><span class="o">.</span><span class="n">DEFAULTS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">skip</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">docs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;section&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
+        <span class="k">if</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;section&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;section&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">section</span><span class="p">:</span>
+            <span class="n">section</span> <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;section&quot;</span><span class="p">]</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    # </span><span class="si">{</span><span class="s1">&#39;=&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">70</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    # </span><span class="si">{</span><span class="n">section</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    # </span><span class="si">{</span><span class="s1">&#39;=&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">70</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]:</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_comment</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="s2">&quot;    &quot;</span><span class="p">))</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">_bs</span><span class="o">.</span><span class="n">DEFAULTS</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="n">default</span> <span class="o">=</span> <span class="n">_bs</span><span class="o">.</span><span class="n">DEFAULTS</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="n">mark</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">default</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;   # default: </span><span class="si">{</span><span class="n">default</span><span class="si">!r}</span><span class="s2">&quot;</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">,</span><span class="si">{</span><span class="n">mark</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="spectrum_script">
+<a class="viewcode-back" href="../../reference/modules/brainsp.scripts.html#brainsp.spectrum_script">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spectrum_script</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">spectra</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;brain_out&quot;</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+                    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A BRAIN run: spectra.&quot;</span><span class="p">,</span> <span class="n">script_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">outside</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The source of a script that fits `spectra` with `settings`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    settings : Settings or dict</span>
+<span class="sd">    spectra : list of (str, dict)</span>
+<span class="sd">        Each spectrum&#39;s path and its own settings (typically the pre-fit</span>
+<span class="sd">        corrections: ``spectrum_redshift``, ``spectrum_in_rest_frame``,</span>
+<span class="sd">        ``galactic_ebv``, ``galactic_rv``, ``galactic_law``).</span>
+<span class="sd">    output_dir : str</span>
+<span class="sd">        Relative paths are taken from the script&#39;s folder.</span>
+<span class="sd">    device : str</span>
+<span class="sd">    script_dir : str, optional</span>
+<span class="sd">        The folder the script will be saved in (default: the working</span>
+<span class="sd">        directory). Paths inside it are written relative to it.</span>
+<span class="sd">    outside : list, optional</span>
+<span class="sd">        Collects the paths that are outside `script_dir`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">script_dir</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="n">outside</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">outside</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">outside</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">extra</span> <span class="ow">in</span> <span class="n">spectra</span><span class="p">:</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">_portable</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">outside</span><span class="p">)</span><span class="si">!r}</span><span class="s2">: </span><span class="si">{</span><span class="nb">dict</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span><span class="si">!r}</span><span class="s2">,&quot;</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mask&quot;</span><span class="p">)</span>
+    <span class="n">portable</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">_portable</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">PATH_SETTINGS</span> <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)}</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">_portable_output</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">HEADER</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span>
+        <span class="n">when</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">),</span>
+        <span class="n">script</span><span class="o">=</span><span class="s2">&quot;run.py&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s2">&quot;    python run.py more/*.spec       fit &quot;</span>
+        <span class="s2">&quot;these files instead</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="n">_outside_note</span><span class="p">(</span><span class="n">outside</span><span class="p">)</span>
+    <span class="c1"># The mask travels in this file (MASK below), not as a path.</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">settings_block</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">portable</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span><span class="s2">&quot;# Each spectrum, with the settings that are its own: the redshift</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;# BRAIN removes (spectrum_in_rest_frame False) or that was already</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;# removed (True), and the Milky Way&#39;s reddening, E(B-V), R_V and law.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span><span class="s2">&quot;# Paths relative to this file&#39;s folder.</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;SPECTRA = {</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span><span class="s2">&quot;# Where the results go: &lt;name&gt;_summary.txt, &lt;name&gt;_fitted.txt and,</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;# with make_plot, &lt;name&gt;_fit.pdf. Relative to this file&#39;s folder.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;OUTPUT_DIR = </span><span class="si">{</span><span class="n">output_dir</span><span class="si">!r}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;# The processor: auto (a GPU when JAX sees one), cpu or gpu.</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;DEVICE = </span><span class="si">{</span><span class="n">device</span><span class="si">!r}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">mask</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">mask</span><span class="p">)):</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.io_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_mask_regions</span>
+        <span class="n">regions</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_mask_regions</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">mask</span><span class="p">))</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># The wavelength mask: (start, end, weight) in Angstrom; &quot;</span>
+                 <span class="s2">&quot;weight 0</span><span class="se">\n</span><span class="s2"># leaves the pixels out, above 1 counts them for &quot;</span>
+                 <span class="s2">&quot;more.</span><span class="se">\n</span><span class="s2">MASK = [</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                     <span class="sa">f</span><span class="s2">&quot;    (</span><span class="si">{</span><span class="n">lo</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">hi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">),&quot;</span>
+                     <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   # </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">label</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                     <span class="k">for</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># The wavelength mask, as (start, end, weight); none.</span><span class="se">\n</span><span class="s2">MASK = []</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">def main(argv):</span>
+<span class="s1">    flags = [a for a in argv[1:] if a.startswith(&quot;--&quot;)]</span>
+<span class="s1">    files = [a for a in argv[1:] if not a.startswith(&quot;--&quot;)]</span>
+<span class="s1">    device = DEVICE</span>
+<span class="s1">    if &quot;--device&quot; in argv:</span>
+<span class="s1">        device = argv[argv.index(&quot;--device&quot;) + 1]</span>
+<span class="s1">        files = [f for f in files if f != device]</span>
+<span class="s1">    out = here(OUTPUT_DIR)</span>
+<span class="s1">    settings = SETTINGS.copy()</span>
+<span class="s1">    for key in (&quot;instrumental_resolution&quot;, &quot;library_resolution&quot;,</span>
+<span class="s1">                &quot;base_folder&quot;):</span>
+<span class="s1">        value = settings.get(key)</span>
+<span class="s1">        if isinstance(value, str) and value and os.path.exists(here(value)):</span>
+<span class="s1">            settings[key] = here(value)</span>
+<span class="s1">    if MASK:</span>
+<span class="s1">        os.makedirs(out, exist_ok=True)</span>
+<span class="s1">        mask_file = os.path.join(out, &quot;mask.sm&quot;)</span>
+<span class="s1">        brainsp.write_mask(mask_file, MASK)</span>
+<span class="s1">        settings[&quot;mask&quot;] = mask_file</span>
+<span class="s1">    listed = {here(f): extra for f, extra in SPECTRA.items()}</span>
+<span class="s1">    spectra = [os.path.abspath(f) for f in files] or list(listed)</span>
+<span class="s1">    corrections = {f: listed.get(f, next(iter(listed.values()), </span><span class="si">{}</span><span class="s1">))</span>
+<span class="s1">                   for f in spectra}</span>
+<span class="s1">    missing = [f for f in spectra if not os.path.isfile(f)]</span>
+<span class="s1">    if missing:</span>
+<span class="s1">        print(&quot;These spectra are not here:</span><span class="se">\\</span><span class="s1">n  &quot; + &quot;</span><span class="se">\\</span><span class="s1">n  &quot;.join(missing))</span>
+<span class="s1">        return 1</span>
+<span class="s1">    if &quot;--check&quot; in flags:</span>
+<span class="s1">        for f in spectra:</span>
+<span class="s1">            settings.copy(spectrum=f, **corrections[f]).validate()</span>
+<span class="s1">        print(f&quot;{len(spectra)} spectra, all valid. Output: </span><span class="si">{out}</span><span class="s1">&quot;)</span>
+<span class="s1">        return 0</span>
+<span class="s1">    results = brainsp.fit_spectra(spectra, settings, corrections=corrections,</span>
+<span class="s1">                                  output_dir=out, device=device)</span>
+<span class="s1">    failed = [r for r in results if r.error_message]</span>
+<span class="s1">    print(f&quot;</span><span class="se">\\</span><span class="s1">nDone: {len(results) - len(failed)} fitted, {len(failed)} &quot;</span>
+<span class="s1">          f&quot;failed. Results in </span><span class="si">{out}</span><span class="s1">&quot;)</span>
+<span class="s1">    for r in results:</span>
+<span class="s1">        print(f&quot;  </span><span class="si">{r!r}</span><span class="s1">&quot;)</span>
+<span class="s1">    return 1 if failed else 0</span>
+
+
+<span class="s1">if __name__ == &quot;__main__&quot;:</span>
+<span class="s1">    sys.exit(main(sys.argv))</span>
+<span class="s1">&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">text</span></div>
+
+
+
+<span class="n">_PIPELINE_DOCS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;cubes&quot;</span><span class="p">,</span> <span class="s2">&quot;The datacubes; relative paths are taken from this file&#39;s folder.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;redshift&quot;</span><span class="p">,</span> <span class="s2">&quot;The galaxy&#39;s redshift: wavelengths are divided by 1 + z.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;0 for a cube already in the rest frame. Required, unless</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;PER_CUBE gives every cube its own.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;output_dir&quot;</span><span class="p">,</span> <span class="s2">&quot;Where the megacubes go; relative to this file&#39;s folder.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;flux_hdu&quot;</span><span class="p">,</span> <span class="s2">&quot;The extension holding the flux.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;error_hdu&quot;</span><span class="p">,</span> <span class="s2">&quot;The extension holding the uncertainty.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;error_type&quot;</span><span class="p">,</span> <span class="s2">&quot;What error_hdu holds: inv_variance, variance, error or &quot;</span>
+                   <span class="s2">&quot;inv_error.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;mask_hdu&quot;</span><span class="p">,</span> <span class="s2">&quot;The extension of bad-pixel flags (None if there is none).&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;wavelength_scale&quot;</span><span class="p">,</span> <span class="s2">&quot;air or vacuum: the cube&#39;s wavelength scale. Needed &quot;</span>
+                         <span class="s2">&quot;to place</span><span class="se">\n</span><span class="s2">emission lines (espop, nespop). &quot;</span>
+                         <span class="s2">&quot;MaNGA/SDSS: vacuum;</span><span class="se">\n</span><span class="s2">MUSE, CALIFA: air.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;galactic_ebv&quot;</span><span class="p">,</span> <span class="s2">&quot;Milky Way E(B-V) removed before anything else; 0 = off.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;galactic_rv&quot;</span><span class="p">,</span> <span class="s2">&quot;R_V of the Galactic reddening law.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;galactic_law&quot;</span><span class="p">,</span> <span class="s2">&quot;The Galactic reddening law (CCM, ...).&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;spatial_binning&quot;</span><span class="p">,</span> <span class="s2">&quot;Bin spaxels n x n; None = off.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;degrade_resolution&quot;</span><span class="p">,</span> <span class="s2">&quot;Smooth the data to a coarser resolution (to &quot;</span>
+                           <span class="s2">&quot;reproduce an older</span><span class="se">\n</span><span class="s2">run; it correlates the &quot;</span>
+                           <span class="s2">&quot;noise). None = off.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;spectral_binning&quot;</span><span class="p">,</span> <span class="s2">&quot;Resample the wavelength axis; None = off.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;butterworth&quot;</span><span class="p">,</span> <span class="s2">&quot;Spatial low-pass Butterworth filter {order, range}; &quot;</span>
+                    <span class="s2">&quot;None = off.</span><span class="se">\n</span><span class="s2">It mixes neighbouring spaxels.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;sn_mask&quot;</span><span class="p">,</span> <span class="s2">&quot;Signal-to-noise masks to compute: thresholds, the window &quot;</span>
+                <span class="s2">&quot;(Angstrom,</span><span class="se">\n</span><span class="s2">rest frame) and the method; None = off.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;fit_sn_threshold&quot;</span><span class="p">,</span> <span class="s2">&quot;Fit only spaxels above this S/N (one of the &quot;</span>
+                         <span class="s2">&quot;thresholds);</span><span class="se">\n</span><span class="s2">None = every spaxel with data.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;wavelength_mask&quot;</span><span class="p">,</span> <span class="s2">&quot;(start, end, weight) regions applied to every &quot;</span>
+                        <span class="s2">&quot;spaxel, or a mask file.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;batch_size&quot;</span><span class="p">,</span> <span class="s2">&quot;Spaxels fitted at once; None = automatic.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;population_bins&quot;</span><span class="p">,</span> <span class="s2">&quot;Age bins of the PoPBins maps: (name, youngest yr, &quot;</span>
+                        <span class="s2">&quot;oldest yr).&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;flxobs_step&quot;</span><span class="p">,</span> <span class="s2">&quot;Step, in Angstrom, of the linear grid FLXOBS and FLXSYN &quot;</span>
+                    <span class="s2">&quot;are written on.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;sfr_bins&quot;</span><span class="p">,</span> <span class="s2">&quot;Star-formation-rate maps: (name, min yr, max yr), Msun/yr;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;need galaxy_distance. None = none.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;fc_bins&quot;</span><span class="p">,</span> <span class="s2">&quot;Featureless power laws grouped by exponent: (name, min, max).&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;bb_bins&quot;</span><span class="p">,</span> <span class="s2">&quot;Blackbodies grouped by temperature: (name, min K, max K).&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;galaxy_distance&quot;</span><span class="p">,</span> <span class="s2">&quot;Distance in Mpc, for Mstar, Mpcross and the SFRs &quot;</span>
+                        <span class="s2">&quot;(per cube:</span><span class="se">\n</span><span class="s2">a &#39;galaxy distance&#39; column of per_cube). &quot;</span>
+                        <span class="s2">&quot;None = no masses.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;flux_scale&quot;</span><span class="p">,</span> <span class="s2">&quot;The factor the cube&#39;s flux unit carries (1e-17 for &quot;</span>
+                   <span class="s2">&quot;MaNGA);</span><span class="se">\n</span><span class="s2">None = read from BUNIT.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;per_cube&quot;</span><span class="p">,</span> <span class="s2">&quot;Settings that differ from cube to cube, one dict per cube</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;(target, redshift, ebv, ...); None = none. Files in it are</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;relative to this file&#39;s folder.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">,</span> <span class="s2">&quot;Re-run a cube whose megacube already exists.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;save_config&quot;</span><span class="p">,</span> <span class="s2">&quot;Record the pipeline inside each megacube.&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span> <span class="s2">&quot;Run the fit (False runs the preparation stages only).&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="cube_script">
+<a class="viewcode-back" href="../../reference/modules/brainsp.scripts.html#brainsp.cube_script">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cube_script</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A BRAIN run: datacubes.&quot;</span><span class="p">,</span>
+                <span class="n">script_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">outside</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The source of a script that runs a :class:`~brainsp.CubePipeline`.</span>
+
+<span class="sd">    Paths inside `script_dir` (default: the working directory), the folder</span>
+<span class="sd">    the script will be saved in, are written relative to it; `outside`, if</span>
+<span class="sd">    given, collects the ones that are not.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">script_dir</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="n">outside</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">outside</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">outside</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">pipeline</span><span class="o">.</span><span class="n">settings</span><span class="p">)</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">_portable</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span>
+                     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">PATH_SETTINGS</span> <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)})</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">_PIPELINE_DOCS</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;cubes&quot;</span><span class="p">,):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="n">_portable</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;output_dir&quot;</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">_portable_output</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;per_cube&quot;</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">)):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">_portable</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;per_cube&quot;</span> <span class="ow">and</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="p">(</span><span class="n">_portable</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">outside</span><span class="p">)</span>
+                          <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="s2">&quot;mask file&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">v</span><span class="p">)</span>
+                      <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">HEADER</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span>
+        <span class="n">when</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">),</span>
+        <span class="n">script</span><span class="o">=</span><span class="s2">&quot;run.py&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="n">_outside_note</span><span class="p">(</span><span class="n">outside</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">settings_block</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;PIPELINE = dict(</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">_PIPELINE_DOCS</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;wavelength_mask&quot;</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">))</span> \
+                <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)):</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.io_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_mask_regions</span>
+            <span class="n">regions</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_mask_regions</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="p">[(</span><span class="nb">round</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">hi</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">]</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">_comment</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="s2">&quot;    &quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=[</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;        </span><span class="si">{</span><span class="n">v</span><span class="si">!r}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;    ],</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;)</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;# The processor: auto (a GPU when JAX sees one), cpu or gpu.</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;DEVICE = </span><span class="si">{</span><span class="n">device</span><span class="si">!r}</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">def main(argv):</span>
+<span class="s1">    device = DEVICE</span>
+<span class="s1">    if &quot;--device&quot; in argv:</span>
+<span class="s1">        device = argv[argv.index(&quot;--device&quot;) + 1]</span>
+<span class="s1">    options = dict(PIPELINE)</span>
+<span class="s1">    options[&quot;output_dir&quot;] = here(options[&quot;output_dir&quot;])</span>
+<span class="s1">    options[&quot;cubes&quot;] = [here(c) for c in options[&quot;cubes&quot;]]</span>
+<span class="s1">    per_cube = options.get(&quot;per_cube&quot;)</span>
+<span class="s1">    if isinstance(per_cube, str):</span>
+<span class="s1">        options[&quot;per_cube&quot;] = here(per_cube)</span>
+<span class="s1">    elif per_cube:</span>
+<span class="s1">        options[&quot;per_cube&quot;] = [</span>
+<span class="s1">            {k: (here(v) if k in (&quot;target&quot;, &quot;mask file&quot;) and isinstance(v, str)</span>
+<span class="s1">                 and v else v) for k, v in entry.items()}</span>
+<span class="s1">            for entry in per_cube]</span>
+<span class="s1">    settings = SETTINGS.copy()</span>
+<span class="s1">    for key in (&quot;instrumental_resolution&quot;, &quot;library_resolution&quot;,</span>
+<span class="s1">                &quot;base_folder&quot;):</span>
+<span class="s1">        value = settings.get(key)</span>
+<span class="s1">        if isinstance(value, str) and value and os.path.exists(here(value)):</span>
+<span class="s1">            settings[key] = here(value)</span>
+<span class="s1">    pipeline = brainsp.CubePipeline(settings=settings, **options)</span>
+<span class="s1">    if &quot;--check&quot; in argv:</span>
+<span class="s1">        pipeline.validate()</span>
+<span class="s1">        print(f&quot;{len(pipeline.cubes)} cube(s), valid. Output: &quot;</span>
+<span class="s1">              f&quot;</span><span class="si">{options[&#39;output_dir&#39;]}</span><span class="s1">&quot;)</span>
+<span class="s1">        return 0</span>
+<span class="s1">    written = pipeline.run(device=device)</span>
+<span class="s1">    print(&quot;</span><span class="se">\\</span><span class="s1">nMegacubes written:</span><span class="se">\\</span><span class="s1">n  &quot; + &quot;</span><span class="se">\\</span><span class="s1">n  &quot;.join(written))</span>
+<span class="s1">    return 0 if len(written) == len(pipeline.cubes) else 1</span>
+
+
+<span class="s1">if __name__ == &quot;__main__&quot;:</span>
+<span class="s1">    sys.exit(main(sys.argv))</span>
+<span class="s1">&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">text</span></div>
+
+
+
+<div class="viewcode-block" id="write_script">
+<a class="viewcode-back" href="../../reference/modules/brainsp.scripts.html#brainsp.write_script">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_script</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;spectrum&quot;</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spectra</span><span class="o">=</span><span class="p">(),</span>
+                 <span class="n">pipeline</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">pipeline_options</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Write a run as one Python file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path : str</span>
+<span class="sd">        The ``.py`` file to write.</span>
+<span class="sd">    kind : {&quot;spectrum&quot;, &quot;cube&quot;}</span>
+<span class="sd">    settings : Settings, dict or str, optional</span>
+<span class="sd">    spectra : list of str or (str, dict)</span>
+<span class="sd">        For ``kind=&quot;spectrum&quot;``: the spectra, optionally with their own</span>
+<span class="sd">        settings.</span>
+<span class="sd">    pipeline : CubePipeline, optional</span>
+<span class="sd">        For ``kind=&quot;cube&quot;``; or give its options as keyword arguments</span>
+<span class="sd">        (``cubes=``, ``redshift=`` ...).</span>
+<span class="sd">    device : str</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        `path`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; brainsp.write_script(&quot;run_spectra.py&quot;, spectra=[&quot;a.spec&quot;, &quot;b.spec&quot;],</span>
+<span class="sd">    ...                      settings=brainsp.Settings(nebular_mode=&quot;espop&quot;))</span>
+<span class="sd">    &gt;&gt;&gt; brainsp.write_script(&quot;run_cube.py&quot;, kind=&quot;cube&quot;, cubes=[&quot;c.fits&quot;],</span>
+<span class="sd">    ...                      redshift=0.02)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">Settings</span><span class="p">,</span> <span class="n">CubePipeline</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">settings</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">Settings</span><span class="p">)</span> <span class="k">else</span> <span class="n">Settings</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;spectrum&quot;</span><span class="p">:</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="p">[(</span><span class="n">e</span><span class="p">,</span> <span class="p">{})</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">))</span> <span class="k">else</span> <span class="n">e</span>
+                   <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">spectra</span><span class="p">]</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">spectrum_script</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">entries</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                                 <span class="n">script_dir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
+                                     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span>
+    <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;cube&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pipeline</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pipeline</span> <span class="o">=</span> <span class="n">CubePipeline</span><span class="p">(</span><span class="n">settings</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="o">**</span><span class="n">pipeline_options</span><span class="p">)</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">cube_script</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                             <span class="n">script_dir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;kind is &#39;spectrum&#39; or &#39;cube&#39;&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+        <span class="n">handle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+</pre></div>
+      </div>
+      <nav class="pager" aria-label="Previous and next page"><span></span>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (SAFFARY group) · Last built 14 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../../"; window.BRAIN_SEARCH_INDEX = "../../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../../search.html";</script>
+<script src="../../_static/brain.js" defer></script>
+  </body>
+</html>

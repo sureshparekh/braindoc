@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Kinematics and the non-linear fit · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dust" href="dust.html" />
+    <link rel="prev" title="The linear solve" href="linear.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab" href="../tutorials/index.html">Tutorials</a>
+    <a class="tab is-active" href="index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab is-active" href="index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The model</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">The science of the fit</a></li>
+          <li><a class="nav-link" href="model.html">The model</a></li>
+          <li><a class="nav-link" href="native-pixels.html">Native pixels</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The fit</p>
+        <ul>
+          <li><a class="nav-link" href="linear.html">The linear solve</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">Kinematics and the non-linear fit</a></li>
+          <li><a class="nav-link" href="dust.html">Dust</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Gas</p>
+        <ul>
+          <li><a class="nav-link" href="emission-lines.html">Emission lines and resolution</a></li>
+          <li><a class="nav-link" href="nebular.html">The nebular emission</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Products</p>
+        <ul>
+          <li><a class="nav-link" href="derived.html">Derived quantities</a></li>
+          <li><a class="nav-link" href="diagnostics.html">Line diagnostics</a></li>
+          <li><a class="nav-link" href="uncertainties.html">Uncertainties</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Science</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>The fit</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="kinematics-and-the-non-linear-fit">
+<h1>Kinematics and the non-linear fit<a class="headerlink" href="#kinematics-and-the-non-linear-fit" title="Link to this heading">#</a></h1>
+<section id="the-parameters">
+<h2>The parameters<a class="headerlink" href="#the-parameters" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \boldsymbol\theta = (A_V,\; Y_V,\; \sigma_\star,\; v_\star,\; \sigma_{g_1}, v_{g_1},\; \sigma_{g_2}, v_{g_2}, \dots) , \]</div>
+<p>two per kinematic group of emission lines in the line modes. Each is bounded: <code class="docutils literal notranslate"><span class="pre">dust_range</span></code>, <code class="docutils literal notranslate"><span class="pre">young_extra_dust_range</span></code>, <code class="docutils literal notranslate"><span class="pre">dispersion_range</span></code>, <code class="docutils literal notranslate"><span class="pre">velocity_range</span></code>, <code class="docutils literal notranslate"><span class="pre">gas_dispersion_range</span></code> and <code class="docutils literal notranslate"><span class="pre">gas_velocity_range</span></code>.</p>
+</section>
+<section id="broadening-in-fourier-space">
+<h2>Broadening in Fourier space<a class="headerlink" href="#broadening-in-fourier-space" title="Link to this heading">#</a></h2>
+<p>On a grid uniform in <span class="math notranslate nohighlight">\(\ln\lambda\)</span>, a Doppler shift is a translation: <span class="math notranslate nohighlight">\(\lambda_{\rm obs} = \lambda(1+v/c)\)</span> gives <span class="math notranslate nohighlight">\(\ln\lambda_{\rm obs} \simeq \ln\lambda + v/c\)</span>, a shift of <span class="math notranslate nohighlight">\(v/\Delta v\)</span> cells at every wavelength, and a velocity distribution becomes a convolution kernel independent of wavelength. BRAIN builds this grid finer than the narrowest data pixel (<a class="reference internal" href="native-pixels.html"><span class="std std-doc">Native pixels</span></a>). For a Gaussian line-of-sight velocity distribution, each template is broadened and shifted at once in Fourier space,</p>
+<div class="math notranslate nohighlight">
+\[ \tilde b_j(\omega) \;\longmapsto\; \tilde b_j(\omega)\, \exp\!\left[-\tfrac12\left(\frac{\omega\,\sigma_\star}{\Delta v}\right)^2 - i\,\frac{\omega\, v_\star}{\Delta v}\right], \]</div>
+<p>with <span class="math notranslate nohighlight">\(\omega\)</span> in radians per cell. The transform of every template is computed once per fit, so a trial <span class="math notranslate nohighlight">\((v_\star, \sigma_\star)\)</span> costs one multiplication and one inverse transform. The templates are first extended at both ends, holding their end values, by more than the largest shift plus eight times the largest dispersion the bounds allow, so that the periodic transform never wraps one end of the spectrum onto the other.</p>
+</section>
+<section id="the-velocity-search">
+<h2>The velocity search<a class="headerlink" href="#the-velocity-search" title="Link to this heading">#</a></h2>
+<p>The non-linear fit needs a starting velocity in the right basin. <span class="math notranslate nohighlight">\(\chi^2\)</span> is evaluated on a grid of <span class="math notranslate nohighlight">\(v_\star\)</span> across <code class="docutils literal notranslate"><span class="pre">velocity_range</span></code>, in steps of <code class="docutils literal notranslate"><span class="pre">velocity_grid_step</span></code> (150 km s⁻¹), and the best point starts the fit. With <code class="docutils literal notranslate"><span class="pre">coarse_to_fine_grid</span></code> (default) the grid is scanned in two passes, coarse and then fine around the coarse minimum. <code class="docutils literal notranslate"><span class="pre">velocity_range</span></code> must contain the galaxy’s velocity relative to the frame the spectrum is in: for a spectrum still at redshift <span class="math notranslate nohighlight">\(z\)</span>, roughly <span class="math notranslate nohighlight">\(cz\)</span>.</p>
+</section>
+<section id="variable-projection">
+<h2>Variable projection<a class="headerlink" href="#variable-projection" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\chi^2\)</span> is minimised over <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> with the weights projected out: every evaluation at a trial <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> solves the linear problem exactly (<a class="reference internal" href="linear.html"><span class="std std-doc">The linear solve</span></a>), so the optimiser sees</p>
+<div class="math notranslate nohighlight">
+\[ \boldsymbol\rho(\boldsymbol\theta) = W^{1/2}\big(\mathbf f - A(\boldsymbol\theta)\,\hat{\mathbf w}(\boldsymbol\theta)\big), \qquad \hat{\mathbf w}(\boldsymbol\theta) = \arg\min_{\mathbf w\ge0}\chi^2(\boldsymbol\theta,\mathbf w), \]</div>
+<p>a residual of a handful of parameters instead of a hundred.</p>
+</section>
+<section id="projected-levenbergmarquardt">
+<h2>Projected Levenberg–Marquardt<a class="headerlink" href="#projected-levenbergmarquardt" title="Link to this heading">#</a></h2>
+<p>Each iteration solves</p>
+<div class="math notranslate nohighlight">
+\[ \big(J^{\sf T}J + \mu\,\mathrm{diag}(\mathbf s)^2\big)\,\boldsymbol\delta = -J^{\sf T}\boldsymbol\rho , \]</div>
+<p>with <span class="math notranslate nohighlight">\(J = \partial\boldsymbol\rho/\partial\boldsymbol\theta\)</span> and <span class="math notranslate nohighlight">\(\mathbf s\)</span> the running maximum of the columns’ norms (Moré’s scaling), and clips <span class="math notranslate nohighlight">\(\boldsymbol\theta + \boldsymbol\delta\)</span> into the bounds. A step is accepted if it lowers <span class="math notranslate nohighlight">\(\chi^2\)</span>; the damping <span class="math notranslate nohighlight">\(\mu\)</span> falls by a factor of 3 after a good step (gain ratio above 0.75) and rises by 3 after a poor or rejected one. The fit stops when the relative change in <span class="math notranslate nohighlight">\(\chi^2\)</span> is below <code class="docutils literal notranslate"><span class="pre">fit_tolerance</span></code> and the step is below <code class="docutils literal notranslate"><span class="pre">fit_tolerance</span></code> of the bounds’ width (after at least four iterations), when <span class="math notranslate nohighlight">\(\chi^2\)</span> has stagnated over five accepted steps, after ten consecutive rejections, or at <code class="docutils literal notranslate"><span class="pre">max_iterations</span></code> (200). A spaxel that stops at <code class="docutils literal notranslate"><span class="pre">max_iterations</span></code> is reported as not converged.</p>
+</section>
+<section id="the-exact-jacobian">
+<h2>The exact Jacobian<a class="headerlink" href="#the-exact-jacobian" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(J\)</span> is computed exactly, by the Golub–Pereyra variable-projection formula. With <span class="math notranslate nohighlight">\(P\)</span> the passive set of the weights and <span class="math notranslate nohighlight">\(G = A_P^{\sf T}A_P\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial\boldsymbol\rho}{\partial\theta_i} = -(I - \Pi_P)\,\frac{\partial A}{\partial\theta_i}\hat{\mathbf w} \;-\; A_P G^{-1}\Big[\Big(\frac{\partial A}{\partial\theta_i}\Big)^{\sf T}\boldsymbol\rho\Big]_P , \qquad \Pi_P = A_P G^{-1}A_P^{\sf T}, \]</div>
+<p>with <span class="math notranslate nohighlight">\(\partial A/\partial\theta_i\)</span> from the analytic derivatives of the broadening kernel and of the attenuation. On 64 MaNGA spaxels it gives the fit finite differences give (the largest change in any fitted value <span class="math notranslate nohighlight">\(5\times10^{-4}\)</span> km s⁻¹), 2.4 to 3.9 times faster.</p>
+</section>
+<section id="observed-and-intrinsic-dispersion">
+<h2>Observed and intrinsic dispersion<a class="headerlink" href="#observed-and-intrinsic-dispersion" title="Link to this heading">#</a></h2>
+<p>The fitted <span class="math notranslate nohighlight">\(\sigma_\star\)</span> is the broadening applied to the library: the quadrature sum of the stars’ intrinsic dispersion and the difference between the data’s and the library’s line-spread functions. When both resolutions are known, BRAIN reports the intrinsic dispersion,</p>
+<div class="math notranslate nohighlight">
+\[ \sigma_{\star,\rm intr} = \mathrm{sign}(x)\sqrt{|x|}, \qquad x = \sigma_{\rm obs}^2 - \Delta\sigma_{\rm inst}^2 , \]</div>
+<p>and an upper limit when the fit sits on the lower bound of <code class="docutils literal notranslate"><span class="pre">dispersion_range</span></code> or the instrumental difference alone exceeds what the fit applied (<a class="reference internal" href="emission-lines.html"><span class="std std-doc">Emission lines and resolution</span></a>).</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="linear.html"><span class="pager-dir">← Previous</span><span class="pager-title">The linear solve</span></a>
+        <a class="pager-link next" href="dust.html"><span class="pager-dir">Next →</span><span class="pager-title">Dust</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 15 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

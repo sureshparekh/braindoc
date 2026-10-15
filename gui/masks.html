@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Wavelength masks · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fitting a datacube" href="cube.html" />
+    <link rel="prev" title="Fitting a table of spectra" href="table.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab is-active" href="index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab" href="../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab is-active" href="index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The interface</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">The desktop interface</a></li>
+          <li><a class="nav-link" href="launch.html">Starting the interface</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Spectra</p>
+        <ul>
+          <li><a class="nav-link" href="spectrum.html">Fitting a spectrum</a></li>
+          <li><a class="nav-link" href="table.html">Fitting a table of spectra</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">Wavelength masks</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Datacubes</p>
+        <ul>
+          <li><a class="nav-link" href="cube.html">Fitting a datacube</a></li>
+          <li><a class="nav-link" href="prefit.html">Preparing a datacube</a></li>
+          <li><a class="nav-link" href="run.html">Running a datacube</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The model</p>
+        <ul>
+          <li><a class="nav-link" href="model.html">The model panel</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Results</p>
+        <ul>
+          <li><a class="nav-link" href="results.html">A fitted spectrum</a></li>
+          <li><a class="nav-link" href="viewer.html">Exploring a megacube</a></li>
+          <li><a class="nav-link" href="export.html">Exporting maps and runs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Interface</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Spectra</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="wavelength-masks">
+<h1>Wavelength masks<a class="headerlink" href="#wavelength-masks" title="Link to this heading">#</a></h1>
+<p>A wavelength mask leaves regions of the spectrum out of the fit, or makes them count more. Both workspaces have one: in the Spectrum workspace it is step <strong>3 Masks</strong>; in the Datacube workspace it is the <strong>Wavelength mask</strong> panel of step <strong>4 Masks</strong>, and it applies to every spaxel.</p>
+<section id="draw-a-region">
+<h2>Draw a region<a class="headerlink" href="#draw-a-region" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Drag</strong> across the spectrum, or across the thin strip below it, to mark a region. In the Datacube workspace, click a spaxel on the map first, then drag across its spectrum.</p></li>
+<li><p><strong>Right-click</strong> inside a region to remove it.</p></li>
+<li><p>Each new region takes the weight selected above the list:</p></li>
+</ul>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Weight</p></th>
+<th class="head"><p>Effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>exclude 0</strong></p></td>
+<td><p>the pixels are left out of the fit</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>normal 1</strong></p></td>
+<td><p>the pixels count as usual (Spectrum workspace only; useful to cut a hole in a wider region)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>emphasise 2</strong></p></td>
+<td><p>the pixels count double</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>The regions are listed under the weights, with their limits and weight, and shaded on the plot.</p>
+</section>
+<section id="the-buttons">
+<h2>The buttons<a class="headerlink" href="#the-buttons" title="Link to this heading">#</a></h2>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Button</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Load mask file…</strong></p></td>
+<td><p>reads a mask file: <code class="docutils literal notranslate"><span class="pre">.sm</span></code> or <code class="docutils literal notranslate"><span class="pre">.gm</span></code> (the number of regions on the first line, then <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">end</span> <span class="pre">weight</span></code> per line) or a plain list of <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">end</span> <span class="pre">weight</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Standard optical</strong></p></td>
+<td><p>adds the standard SDSS windows: sky residuals and the usual optical emission lines</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Save mask…</strong></p></td>
+<td><p>writes the regions as a <code class="docutils literal notranslate"><span class="pre">.sm</span></code> file, to reuse in another fit, in Python or on the command line</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Remove selected</strong></p></td>
+<td><p>removes the region selected in the list</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Clear all</strong></p></td>
+<td><p>removes every region</p></td>
+</tr>
+</tbody>
+</table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Masks apply in every mode. The <strong>Standard optical</strong> mask masks the usual emission lines, which is what <code class="docutils literal notranslate"><span class="pre">spop</span></code> needs; when fitting lines (<code class="docutils literal notranslate"><span class="pre">espop</span></code>, <code class="docutils literal notranslate"><span class="pre">nespop</span></code>), do not mask the lines you want measured.</p>
+</div>
+</section>
+<section id="the-same-mask-elsewhere">
+<h2>The same mask elsewhere<a class="headerlink" href="#the-same-mask-elsewhere" title="Link to this heading">#</a></h2>
+<p>A mask saved here is an ordinary file. Give it to the <code class="docutils literal notranslate"><span class="pre">mask</span></code> setting in Python or in a settings file, or with <code class="docutils literal notranslate"><span class="pre">--mask</span></code> to <code class="docutils literal notranslate"><span class="pre">brainsp</span> <span class="pre">cube</span></code> (<a class="reference internal" href="../python/masks.html"><span class="std std-doc">Wavelength masks</span></a>). The fitted wavelength range is not a mask: it is set in the <strong>Fitting range</strong> panel of the model (<a class="reference internal" href="model.html"><span class="std std-doc">The model panel</span></a>).</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="table.html"><span class="pager-dir">← Previous</span><span class="pager-title">Fitting a table of spectra</span></a>
+        <a class="pager-link next" href="cube.html"><span class="pager-dir">Next →</span><span class="pager-title">Fitting a datacube</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 15 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

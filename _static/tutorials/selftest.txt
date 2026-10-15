@@ -1,0 +1,260 @@
+brainsp self-test (full), working in /tmp/brainsp-c1mhx32m
+
+1. Environment
+  [PASS] brainsp                            2.0.0, Python 3.12.9, Linux
+  [PASS] numpy                              2.3.5
+  [PASS] scipy                              1.18.0
+  [PASS] astropy                            7.1.0
+  [PASS] matplotlib                         3.10.9
+  [PASS] yaml                               6.0.2
+  [PASS] PySide6                            6.11.1
+  [PASS] JAX                                0.10.0 on gpu [cuda:0]
+  [PASS] GPU computes                       NVIDIA GeForce RTX 3060, compute capability 8.6: float64 product correct
+
+2. Template libraries
+  [PASS] libraries found                    BasesGM_ref, M13, BasesGM
+  [PASS] BasesGM catalogue                  84 SSPs, 21 ages x 4 Z, 3540-6996 A
+  [PASS] M13 catalogue                      47 SSPs, 10 AGN components (FC0.25, FC0.50, FC0.75, ...)
+  [PASS] AGN continua                       7 templates
+
+3. Mock data
+  [PASS] mock spectra and 16 x 16 cube written 0.7 s
+
+4. Mock spectra
+2026-10-14 19:28:33,908 [INFO] Device: cuda:0 (gpu)
+2026-10-14 19:28:33,908 [INFO] Cube: 1x1, 3201 wavelengths [3700-6900 A] from FLUX
+2026-10-14 19:28:33,908 [INFO] Clipped to 3700-6900 A: 3201 wavelengths
+2026-10-14 19:28:34,019 [INFO] NATIVE pixels: data 3201 px kept as they are; model on a fine log grid of 4308 px at 43.45 km/s (x1 the narrowest data pixel), cubic projection over 5 fine px per data px at most; weights sum to 1.000000000-1.000000000
+2026-10-14 19:28:34,025 [INFO] SSPs: 84 templates
+2026-10-14 19:28:34,045 [INFO] Lines: 0 templates in the fit, 0 groups
+2026-10-14 19:28:34,182 [INFO] Preprocessing...
+2026-10-14 19:28:34,182 [INFO] Valid: 1/1 in 0.0s
+2026-10-14 19:28:34,182 [INFO] Outlier clipping: 1 clip-and-refit pass at 3 sigma of the larger of the error and the typical residual, every pass a complete refit
+2026-10-14 19:28:34,236 [INFO] Machine: 64 CPU threads on 32 cores available, 62 usable (all but two), 112 GB memory free
+2026-10-14 19:28:34,236 [INFO] GPU: NVIDIA GeForce RTX 3060, 28 SMs, reduced-rate FP64; 1 lanes
+2026-10-14 19:28:34,236 [INFO] JIT warmup...
+2026-10-14 19:28:34,236 [INFO] Solver: active_set | simplex False | max_iter 200 | ftol 1e-07 | xtol 1e-07 | cube fitter: fast
+2026-10-14 19:28:36,695 [INFO] JIT: 2.5s
+2026-10-14 19:28:36,695 [INFO] Batch: 1 | Batches: 1
+2026-10-14 19:28:36,695 [INFO] ============================================================
+2026-10-14 19:28:36,696 [INFO] Fitting 1 spaxels on GPU...
+2026-10-14 19:28:36,696 [INFO] Work queue: 1 lanes (a spaxel leaves its lane when it converges and the next one takes it)
+2026-10-14 19:28:36,883 [INFO]   1/1 spaxels, 5.3 spaxels/s, ETA 0s
+2026-10-14 19:28:37,537 [INFO] ============================================================
+2026-10-14 19:28:37,538 [INFO] Done: 0.8s (1.2 spaxels/s) | conv 1/1 | med chi2/Nl_eff 0.9868 | med chi2/(Nl_eff-n_par) 0.9880
+2026-10-14 19:28:37,538 [INFO]    Clipped 6 pixels over 1 spaxels, median 6 per spaxel, worst 6. Nl_eff, the chi2 above and adev are all over what is left.
+2026-10-14 19:28:37,662 [INFO] FLXOBS/FLXSYN on a linear grid: 3201 points, 3700.0-6900.0 A, step 1.000 A
+2026-10-14 19:28:37,724 [INFO] Formal errors of every product in 0.0s (median chi2 factor 1.00)
+  mock_old_population  (4.5 s, chi2/N 0.99)
+  [PASS]   stellar velocity [km/s]            149.090  truth   150.000  off  0.910  (<= 10)
+  [PASS]   stellar dispersion                 198.750  truth   200.000  off  0.6%  (<= 8%)
+  [PASS]   A_V [mag]                            0.207  truth     0.200  off  0.007  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.992  truth     9.983  off  0.009  (<= 0.15)
+2026-10-14 19:28:38,096 [INFO] Device: cuda:0 (gpu)
+2026-10-14 19:28:38,097 [INFO] Cube: 1x1, 3201 wavelengths [3700-6900 A] from FLUX
+2026-10-14 19:28:38,097 [INFO] Clipped to 3700-6900 A: 3201 wavelengths
+2026-10-14 19:28:38,206 [INFO] NATIVE pixels: data 3201 px kept as they are; model on a fine log grid of 4308 px at 43.45 km/s (x1 the narrowest data pixel), cubic projection over 5 fine px per data px at most; weights sum to 1.000000000-1.000000000
+2026-10-14 19:28:38,207 [INFO] SSPs: 84 templates
+2026-10-14 19:28:38,227 [INFO] Lines: 0 templates in the fit, 0 groups
+2026-10-14 19:28:38,301 [INFO] Preprocessing...
+2026-10-14 19:28:38,301 [INFO] Valid: 1/1 in 0.0s
+2026-10-14 19:28:38,301 [INFO] Outlier clipping: 1 clip-and-refit pass at 3 sigma of the larger of the error and the typical residual, every pass a complete refit
+2026-10-14 19:28:38,342 [INFO] Machine: 64 CPU threads on 32 cores available, 62 usable (all but two), 112 GB memory free
+2026-10-14 19:28:38,342 [INFO] GPU: NVIDIA GeForce RTX 3060, 28 SMs, reduced-rate FP64; 1 lanes
+2026-10-14 19:28:38,342 [INFO] JIT warmup...
+2026-10-14 19:28:38,343 [INFO] Solver: active_set | simplex False | max_iter 200 | ftol 1e-07 | xtol 1e-07 | cube fitter: fast
+2026-10-14 19:28:38,574 [INFO] JIT: 0.2s
+2026-10-14 19:28:38,574 [INFO] Batch: 1 | Batches: 1
+2026-10-14 19:28:38,574 [INFO] ============================================================
+2026-10-14 19:28:38,574 [INFO] Fitting 1 spaxels on GPU...
+2026-10-14 19:28:38,574 [INFO] Work queue: 1 lanes (a spaxel leaves its lane when it converges and the next one takes it)
+2026-10-14 19:28:38,750 [INFO]   1/1 spaxels, 5.7 spaxels/s, ETA 0s
+2026-10-14 19:28:38,762 [INFO] ============================================================
+2026-10-14 19:28:38,763 [INFO] Done: 0.2s (5.3 spaxels/s) | conv 1/1 | med chi2/Nl_eff 0.9631 | med chi2/(Nl_eff-n_par) 0.9643
+2026-10-14 19:28:38,763 [INFO]    Clipped 10 pixels over 1 spaxels, median 10 per spaxel, worst 10. Nl_eff, the chi2 above and adev are all over what is left.
+2026-10-14 19:28:38,772 [INFO] FLXOBS/FLXSYN on a linear grid: 3201 points, 3700.0-6900.0 A, step 1.000 A
+2026-10-14 19:28:38,777 [WARNING]    The age bins claim 65.3 per cent of the light in the median spaxel: 34.7 per cent sits on templates that fall in no bin, and is in no <pop>_light map. The bins and this template library do not cover the same ages.
+2026-10-14 19:28:38,779 [INFO] Formal errors of every product in 0.0s (median chi2 factor 1.00)
+  mock_young_mixture  (0.8 s, chi2/N 0.96)
+  [PASS]   stellar velocity [km/s]            -59.730  truth   -60.000  off  0.270  (<= 10)
+  [PASS]   stellar dispersion                  77.000  truth    80.000  off  3.7%  (<= 8%)
+  [PASS]   A_V [mag]                            0.590  truth     0.600  off  0.010  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.043  truth     9.035  off  0.007  (<= 0.15)
+2026-10-14 19:28:38,855 [INFO] Device: cuda:0 (gpu)
+2026-10-14 19:28:38,856 [INFO] Cube: 1x1, 3201 wavelengths [3700-6900 A] from FLUX
+2026-10-14 19:28:38,856 [INFO] Clipped to 3700-6900 A: 3201 wavelengths
+2026-10-14 19:28:38,858 [INFO] NATIVE pixels: data 3201 px kept as they are; model on a fine log grid of 4308 px at 43.45 km/s (x1 the narrowest data pixel), cubic projection over 5 fine px per data px at most; weights sum to 1.000000000-1.000000000
+2026-10-14 19:28:38,860 [INFO] SSPs: 84 templates
+2026-10-14 19:28:38,885 [INFO] Lines: 16 templates in the fit, 2 groups; 32 more measured after it
+2026-10-14 19:28:38,918 [INFO] Preprocessing...
+2026-10-14 19:28:38,919 [INFO] Valid: 1/1 in 0.0s
+2026-10-14 19:28:38,919 [INFO] Outlier clipping: 1 clip-and-refit pass at 3 sigma of the larger of the error and the typical residual, every pass a complete refit
+2026-10-14 19:28:38,957 [INFO] Machine: 64 CPU threads on 32 cores available, 62 usable (all but two), 112 GB memory free
+2026-10-14 19:28:38,957 [INFO] GPU: NVIDIA GeForce RTX 3060, 28 SMs, reduced-rate FP64; 1 lanes
+2026-10-14 19:28:38,957 [INFO] JIT warmup...
+2026-10-14 19:28:38,957 [INFO] Solver: active_set | simplex False | max_iter 200 | ftol 1e-07 | xtol 1e-07 | cube fitter: fast
+2026-10-14 19:28:41,318 [INFO] JIT: 2.4s
+2026-10-14 19:28:41,319 [INFO] Batch: 1 | Batches: 1
+2026-10-14 19:28:41,334 [INFO] Stellar kinematics: stars alone first, 52 line centres masked over +-1500 km/s (median 868/3201 pixels: the strong lines always, the others where detected); espop holds sigma_* and v_*, the nebular fit refines them
+2026-10-14 19:28:41,590 [INFO]    stars alone: converged 1/1, median sigma_* 86.9 km/s, v_* 39.7 km/s, 0 with sigma_* or v_* on a bound
+2026-10-14 19:28:41,590 [INFO] ============================================================
+2026-10-14 19:28:41,590 [INFO] Fitting 1 spaxels on GPU...
+2026-10-14 19:28:41,590 [INFO] Work queue: 1 lanes (a spaxel leaves its lane when it converges and the next one takes it)
+2026-10-14 19:28:41,889 [INFO]   1/1 spaxels, 3.3 spaxels/s, ETA 0s
+2026-10-14 19:28:42,536 [INFO] Population fit (espop): stars alone on the line-free pixels, lines then measured on data - continuum
+2026-10-14 19:28:42,640 [INFO]    lines masked in the population fit (median 643/3201 px, +-1500 km/s), then measured on data - continuum
+2026-10-14 19:28:43,620 [INFO] Lines: 16 in the fit, all 48 measured on data - continuum at the fitted kinematics
+2026-10-14 19:28:43,932 [INFO] ============================================================
+2026-10-14 19:28:43,932 [INFO] Done: 2.3s (0.4 spaxels/s) | conv 1/1 | med chi2/Nl_eff 0.9858 | med chi2/(Nl_eff-n_par) 0.9883
+2026-10-14 19:28:43,933 [INFO]    Clipped 7 pixels over 1 spaxels, median 7 per spaxel, worst 7. Nl_eff, the chi2 above and adev are all over what is left.
+2026-10-14 19:28:43,936 [INFO] FLXOBS/FLXSYN on a linear grid: 3201 points, 3700.0-6900.0 A, step 1.000 A
+2026-10-14 19:28:43,939 [INFO] Formal errors of every product in 0.0s (median chi2 factor 1.00)
+2026-10-14 19:28:44,348 [INFO] Line products: 52 lines in 0.4s
+  mock_star_forming_lines  (5.6 s, chi2/N 0.99)
+  [PASS]   stellar velocity [km/s]             39.060  truth    40.000  off  0.940  (<= 10)
+  [PASS]   stellar dispersion                  87.070  truth    90.000  off  3.3%  (<= 8%)
+  [PASS]   A_V [mag]                            0.467  truth     0.450  off  0.017  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    8.856  truth     8.875  off  0.020  (<= 0.15)
+  [PASS]   gas velocity [km/s]                 49.830  truth    50.000  off  0.170  (<= 15)
+  [PASS]   H-alpha flux (observed)              6.112  truth     6.000  off  1.9%  (<= 15%)
+2026-10-14 19:28:44,472 [INFO] Device: cuda:0 (gpu)
+2026-10-14 19:28:44,472 [INFO] Cube: 1x1, 3201 wavelengths [3700-6900 A] from FLUX
+2026-10-14 19:28:44,472 [INFO] Clipped to 3700-6900 A: 3201 wavelengths
+2026-10-14 19:28:44,474 [INFO] NATIVE pixels: data 3201 px kept as they are; model on a fine log grid of 4308 px at 43.45 km/s (x1 the narrowest data pixel), cubic projection over 5 fine px per data px at most; weights sum to 1.000000000-1.000000000
+2026-10-14 19:28:44,479 [INFO] SSPs: 91 templates, 7 of them featureless components carrying light but no mass
+2026-10-14 19:28:44,482 [INFO] Lines: 16 templates in the fit, 2 groups; 32 more measured after it
+2026-10-14 19:28:44,494 [INFO] Preprocessing...
+2026-10-14 19:28:44,494 [INFO] Valid: 1/1 in 0.0s
+2026-10-14 19:28:44,495 [INFO] Outlier clipping: 1 clip-and-refit pass at 3 sigma of the larger of the error and the typical residual, every pass a complete refit
+2026-10-14 19:28:44,546 [INFO] Machine: 64 CPU threads on 32 cores available, 62 usable (all but two), 112 GB memory free
+2026-10-14 19:28:44,546 [INFO] GPU: NVIDIA GeForce RTX 3060, 28 SMs, reduced-rate FP64; 1 lanes
+2026-10-14 19:28:44,546 [INFO] JIT warmup...
+2026-10-14 19:28:44,546 [INFO] Solver: active_set | simplex False | max_iter 200 | ftol 1e-07 | xtol 1e-07 | cube fitter: fast
+2026-10-14 19:28:46,942 [INFO] JIT: 2.4s
+2026-10-14 19:28:46,942 [INFO] Batch: 1 | Batches: 1
+2026-10-14 19:28:46,956 [INFO] Stellar kinematics: stars alone first, 52 line centres masked over +-1500 km/s (median 933/3201 pixels: the strong lines always, the others where detected); espop holds sigma_* and v_*, the nebular fit refines them
+2026-10-14 19:28:49,106 [INFO]    stars alone: converged 1/1, median sigma_* 179.6 km/s, v_* 0.8 km/s, 0 with sigma_* or v_* on a bound
+2026-10-14 19:28:49,106 [INFO] ============================================================
+2026-10-14 19:28:49,106 [INFO] Fitting 1 spaxels on GPU...
+2026-10-14 19:28:49,106 [INFO] Work queue: 1 lanes (a spaxel leaves its lane when it converges and the next one takes it)
+2026-10-14 19:28:49,398 [INFO]   1/1 spaxels, 3.4 spaxels/s, ETA 0s
+2026-10-14 19:28:49,978 [INFO] Population fit (espop): stars alone on the line-free pixels, lines then measured on data - continuum
+2026-10-14 19:28:50,100 [INFO]    lines masked in the population fit (median 629/3201 px, +-1500 km/s), then measured on data - continuum
+2026-10-14 19:28:51,149 [INFO] Lines: 16 in the fit, all 48 measured on data - continuum at the fitted kinematics
+2026-10-14 19:28:51,450 [INFO] ============================================================
+2026-10-14 19:28:51,450 [INFO] Done: 2.3s (0.4 spaxels/s) | conv 1/1 | med chi2/Nl_eff 0.9850 | med chi2/(Nl_eff-n_par) 0.9875
+2026-10-14 19:28:51,450 [INFO]    Clipped 4 pixels over 1 spaxels, median 4 per spaxel, worst 4. Nl_eff, the chi2 above and adev are all over what is left.
+2026-10-14 19:28:51,454 [INFO] FLXOBS/FLXSYN on a linear grid: 3201 points, 3700.0-6900.0 A, step 1.000 A
+2026-10-14 19:28:51,458 [INFO] Formal errors of every product in 0.0s (median chi2 factor 1.00)
+2026-10-14 19:28:51,572 [INFO] Line products: 52 lines in 0.1s
+  mock_seyfert_agn  (7.3 s, chi2/N 0.99)
+  [PASS]   stellar velocity [km/s]             -0.200  truth     0.000  off  0.200  (<= 10)
+  [PASS]   stellar dispersion                 179.040  truth   180.000  off  0.5%  (<= 8%)
+  [PASS]   A_V [mag]                            0.304  truth     0.300  off  0.004  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.851  truth     9.834  off  0.017  (<= 0.15)
+  [PASS]   AGN light fraction [%]              24.390  truth    25.000  off  0.610  (<= 8)
+  [PASS]   gas velocity [km/s]                -32.700  truth   -30.000  off  2.700  (<= 15)
+  [PASS]   H-alpha flux (observed)              4.110  truth     4.000  off  2.8%  (<= 15%)
+2026-10-14 19:28:51,783 [INFO] Device: cuda:0 (gpu)
+2026-10-14 19:28:51,783 [INFO] Cube: 1x1, 3297 wavelengths [3700-6900 A] from FLUX
+2026-10-14 19:28:51,783 [INFO] Clipped to 3700-6900 A: 3297 wavelengths
+2026-10-14 19:28:51,838 [INFO] NATIVE pixels: data 3297 px kept as they are; model on a fine log grid of 4437 px at 42.18 km/s (x1 the narrowest data pixel), cubic projection over 5 fine px per data px at most; weights sum to 1.000000000-1.000000000
+2026-10-14 19:28:51,844 [INFO] SSPs: 84 templates
+2026-10-14 19:28:51,846 [INFO] Lines: 0 templates in the fit, 0 groups
+2026-10-14 19:28:52,212 [INFO] Preprocessing...
+2026-10-14 19:28:52,213 [INFO] Valid: 1/1 in 0.0s
+2026-10-14 19:28:52,213 [INFO] Outlier clipping: 1 clip-and-refit pass at 3 sigma of the larger of the error and the typical residual, every pass a complete refit
+2026-10-14 19:28:52,262 [INFO] Machine: 64 CPU threads on 32 cores available, 62 usable (all but two), 112 GB memory free
+2026-10-14 19:28:52,262 [INFO] GPU: NVIDIA GeForce RTX 3060, 28 SMs, reduced-rate FP64; 1 lanes
+2026-10-14 19:28:52,262 [INFO] JIT warmup...
+2026-10-14 19:28:52,262 [INFO] Solver: active_set | simplex False | max_iter 200 | ftol 1e-07 | xtol 1e-07 | cube fitter: fast
+2026-10-14 19:28:54,614 [INFO] JIT: 2.4s
+2026-10-14 19:28:54,614 [INFO] Batch: 1 | Batches: 1
+2026-10-14 19:28:54,614 [INFO] ============================================================
+2026-10-14 19:28:54,614 [INFO] Fitting 1 spaxels on GPU...
+2026-10-14 19:28:54,614 [INFO] Work queue: 1 lanes (a spaxel leaves its lane when it converges and the next one takes it)
+2026-10-14 19:28:54,823 [INFO]   1/1 spaxels, 4.8 spaxels/s, ETA 0s
+2026-10-14 19:28:55,417 [INFO] ============================================================
+2026-10-14 19:28:55,417 [INFO] Done: 0.8s (1.2 spaxels/s) | conv 1/1 | med chi2/Nl_eff 0.9516 | med chi2/(Nl_eff-n_par) 0.9528
+2026-10-14 19:28:55,418 [INFO]    Clipped 9 pixels over 1 spaxels, median 9 per spaxel, worst 9. Nl_eff, the chi2 above and adev are all over what is left.
+2026-10-14 19:28:55,555 [INFO] FLXOBS/FLXSYN on a linear grid: 3201 points, 3700.0-6900.0 A, step 1.000 A
+2026-10-14 19:28:55,616 [INFO] Formal errors of every product in 0.0s (median chi2 factor 1.00)
+  mock_observed_frame  (4.3 s, chi2/N 0.95)
+  [PASS]   stellar velocity [km/s]            149.800  truth   150.000  off  0.200  (<= 10)
+  [PASS]   stellar dispersion                 199.560  truth   200.000  off  0.2%  (<= 8%)
+  [PASS]   A_V [mag]                            0.200  truth     0.200  off  0.000  (<= 0.1)
+  [PASS]   <log age>_L [dex]                    9.987  truth     9.983  off  0.004  (<= 0.15)
+  [PASS]   same v as the rest-frame twin      149.800  truth   149.090  off  0.710  (<= 5)
+  [PASS]   same A_V as the rest-frame twin      0.200  truth     0.207  off  0.007  (<= 0.05)
+
+5. Mock datacube (16 x 16)
+2026-10-14 19:28:56,111 [INFO] S/N map: mean(flux*sqrt(ivar)) over 4000-6000 A rest-frame (1761 of 2981 planes) -> SNMAP
+2026-10-14 19:28:56,113 [INFO] S/N mask: 172 of 256 spaxels above 3 -> SN_MASKS_3
+2026-10-14 19:28:56,114 [INFO] S/N mask: 119 of 256 spaxels above 10 -> SN_MASKS_10
+2026-10-14 19:28:56,114 [INFO] S/N mask: 36 of 256 spaxels above 20 -> SN_MASKS_20
+2026-10-14 19:28:56,122 [INFO] Device: cuda:0 (gpu)
+2026-10-14 19:28:56,130 [INFO] Cube: 16x16, 2981 wavelengths [3672-7293 A] from FLUX
+2026-10-14 19:28:56,130 [INFO] Selection: SN_MASKS_3 read as non-zero means fit (its THRESH card is BRAIN's S/N stage, 1 above the threshold) -- 172 spaxels selected
+2026-10-14 19:28:56,130 [INFO] Rest frame: dividing the wavelength axis by 1+z with z = 0.02 (3672-7293 A observed becomes 3600-7150 A rest)
+2026-10-14 19:28:56,133 [INFO] Clipped to 3700-6900 A: 2707 wavelengths
+2026-10-14 19:28:56,240 [INFO] NATIVE pixels: data 2707 px kept as they are; model on a fine log grid of 2714 px at 69.02 km/s (x1 the narrowest data pixel), cubic projection over 4 fine px per data px at most; weights sum to 1.000000000-1.000000000
+2026-10-14 19:28:56,245 [INFO] SSPs: 84 templates
+2026-10-14 19:28:56,270 [INFO] Lines: 16 templates in the fit, 2 groups; 32 more measured after it
+2026-10-14 19:28:56,497 [INFO] Preprocessing...
+2026-10-14 19:28:56,537 [INFO] Valid: 172/256 in 0.0s
+2026-10-14 19:28:56,538 [INFO] Outlier clipping: 1 clip-and-refit pass at 3 sigma of the larger of the error and the typical residual, every pass a complete refit
+2026-10-14 19:28:56,588 [INFO] Machine: 64 CPU threads on 32 cores available, 62 usable (all but two), 111 GB memory free
+2026-10-14 19:28:56,589 [INFO] GPU: NVIDIA GeForce RTX 3060, 28 SMs, reduced-rate FP64; 64 lanes
+2026-10-14 19:28:56,589 [INFO] JIT warmup...
+2026-10-14 19:28:56,589 [INFO] Solver: active_set | simplex False | max_iter 200 | ftol 1e-07 | xtol 1e-07 | cube fitter: fast
+2026-10-14 19:29:02,590 [INFO] JIT: 6.0s
+2026-10-14 19:29:02,591 [INFO] Batch: 64 | Batches: 3
+2026-10-14 19:29:02,633 [INFO] Stellar kinematics: stars alone first, 52 line centres masked over +-1500 km/s (median 809/2707 pixels: the strong lines always, the others where detected); espop holds sigma_* and v_*, the nebular fit refines them
+2026-10-14 19:29:17,641 [INFO]    stars alone: converged 172/172, median sigma_* 70.7 km/s, v_* 0.7 km/s, 2 with sigma_* or v_* on a bound
+2026-10-14 19:29:17,643 [INFO] ============================================================
+2026-10-14 19:29:17,643 [INFO] Fitting 172 spaxels on GPU...
+2026-10-14 19:29:17,643 [INFO] Work queue: 64 lanes (a spaxel leaves its lane when it converges and the next one takes it)
+2026-10-14 19:29:23,956 [INFO]   8/172 spaxels, 1.3 spaxels/s, ETA 129s
+2026-10-14 19:29:24,571 [INFO]   17/172 spaxels, 2.5 spaxels/s, ETA 63s
+2026-10-14 19:29:26,299 [INFO]   29/172 spaxels, 3.4 spaxels/s, ETA 43s
+2026-10-14 19:29:26,911 [INFO]   39/172 spaxels, 4.2 spaxels/s, ETA 32s
+2026-10-14 19:29:29,279 [INFO]   51/172 spaxels, 4.4 spaxels/s, ETA 28s
+2026-10-14 19:29:32,222 [INFO]   60/172 spaxels, 4.1 spaxels/s, ETA 27s
+2026-10-14 19:29:34,568 [INFO]   72/172 spaxels, 4.3 spaxels/s, ETA 24s
+2026-10-14 19:29:35,183 [INFO]   82/172 spaxels, 4.7 spaxels/s, ETA 19s
+2026-10-14 19:29:37,520 [INFO]   95/172 spaxels, 4.8 spaxels/s, ETA 16s
+2026-10-14 19:29:39,855 [INFO]   110/172 spaxels, 5.0 spaxels/s, ETA 13s
+2026-10-14 19:29:41,555 [INFO]   118/172 spaxels, 4.9 spaxels/s, ETA 11s
+2026-10-14 19:29:42,179 [INFO]   128/172 spaxels, 5.2 spaxels/s, ETA 8s
+2026-10-14 19:29:44,042 [INFO]   139/172 spaxels, 5.3 spaxels/s, ETA 6s
+2026-10-14 19:29:45,254 [INFO]   147/172 spaxels, 5.3 spaxels/s, ETA 5s
+2026-10-14 19:29:46,460 [INFO]   156/172 spaxels, 5.4 spaxels/s, ETA 3s
+2026-10-14 19:29:47,558 [INFO]   166/172 spaxels, 5.5 spaxels/s, ETA 1s
+2026-10-14 19:29:55,721 [INFO]   172/172 spaxels, 4.5 spaxels/s, ETA 0s
+2026-10-14 19:29:58,794 [INFO] Population fit (espop): stars alone on the line-free pixels, lines then measured on data - continuum
+2026-10-14 19:29:58,966 [INFO]    lines masked in the population fit (median 176/2707 px, +-1500 km/s), then measured on data - continuum
+2026-10-14 19:30:07,885 [INFO] Lines: 16 in the fit, all 48 measured on data - continuum at the fitted kinematics
+2026-10-14 19:30:08,478 [INFO] ============================================================
+2026-10-14 19:30:08,478 [INFO] Done: 50.8s (3.4 spaxels/s) | conv 172/172 | med chi2/Nl_eff 0.9600 | med chi2/(Nl_eff-n_par) 0.9629
+2026-10-14 19:30:08,479 [INFO]    Clipped 1020 pixels over 172 spaxels, median 6 per spaxel, worst 14. Nl_eff, the chi2 above and adev are all over what is left.
+2026-10-14 19:30:08,620 [INFO] FLXOBS/FLXSYN on a linear grid: 3199 points, 3701.0-6899.0 A, step 1.000 A
+2026-10-14 19:30:08,690 [WARNING]    The age bins claim 98.3 per cent of the light in the median spaxel: 1.7 per cent sits on templates that fall in no bin, and is in no <pop>_light map. The bins and this template library do not cover the same ages.
+2026-10-14 19:30:08,728 [INFO] Formal errors of every product in 0.0s (median chi2 factor 1.00)
+2026-10-14 19:30:12,334 [INFO] Line products: 52 lines in 3.6s
+WARNING: VerifyWarning: Card is too long, comment will be truncated. [astropy.io.fits.card]
+2026-10-14 19:30:12,367 [WARNING] VerifyWarning: Card is too long, comment will be truncated.
+  [PASS] megacube written                   76 s, mock_cube-BRAIN_MEGACUBE.fits
+  [PASS] spaxels fitted = S/N mask          172 fitted, 172 in SN_MASKS_3
+  [PASS] velocity map, median offset          0.060  (|.| <= 8), rms 6.129
+  [PASS] dispersion map, median offset       -5.647  (|.| <= 12), rms 12.272
+  [PASS] A_V map, median offset              -0.004  (|.| <= 0.08), rms 0.056
+  [PASS] velocity field correlation         r = 0.9982  (> 0.97)
+
+6. Outputs
+  [PASS] map export (png, fits)             4 files
+  [PASS] spectrum and SFH figures           /tmp/brainsp-c1mhx32m/plots
+  [PASS] exported run script validates      1 spectra, all valid. Output: /tmp/brainsp-c1mhx32m/brain_out
+
+======================================================================
+  ALL 50 CHECKS PASSED in 103 s. BRAIN is working.
+======================================================================
