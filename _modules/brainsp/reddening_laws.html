@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>brainsp.reddening_laws · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../../index.html">
+      <img class="brand-logo" src="../../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../../start/index.html">Get started</a>
+    <a class="tab" href="../../gui/index.html">Interface</a>
+    <a class="tab" href="../../python/index.html">Python</a>
+    <a class="tab" href="../../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../../science/index.html">Science</a>
+    <a class="tab" href="../../reference/index.html">Reference</a>
+    <a class="tab" href="../../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../../about.html">About</a>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <div class="body" role="main">
+        <h1>Source code for brainsp.reddening_laws</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.reddening_catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">LAWS</span><span class="p">,</span> <span class="n">LAW_NAMES</span><span class="p">,</span> <span class="n">describe</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_red_fitzpatrick</span><span class="p">(</span><span class="n">wavelength_angstroms</span><span class="p">,</span> <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper function for HZ2 (Seaton) and HZ3 (Fitzpatrick) laws.</span>
+<span class="sd">    Ported from SUBROUTINE red (lines 7384-7395).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ala</span> <span class="o">=</span> <span class="n">wavelength_angstroms</span> <span class="o">*</span> <span class="mf">1.0e-4</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ala</span>
+    
+    <span class="n">_c4</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">p</span> <span class="o">&lt;</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+        
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">c3</span> <span class="o">/</span> <span class="p">(((</span><span class="n">p</span> <span class="o">-</span> <span class="p">(</span><span class="n">al0</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">p</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">ga</span><span class="o">*</span><span class="n">ga</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">_c4</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.539</span> <span class="o">*</span> <span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0564</span> <span class="o">*</span> <span class="p">((</span><span class="n">p</span> <span class="o">-</span> <span class="mf">5.9</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+    
+    <span class="n">ff</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span><span class="o">*</span><span class="n">p</span> <span class="o">+</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span>
+    <span class="k">return</span> <span class="n">ff</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_linear_interp</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">w_query</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple linear interpolation for table lookups.&quot;&quot;&quot;</span>
+    <span class="n">ws_j</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
+    <span class="n">vals_j</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+    <span class="n">w_q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">w_query</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">w_q</span><span class="p">,</span> <span class="n">ws_j</span><span class="p">,</span> <span class="n">vals_j</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">vals_j</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">vals_j</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+
+<div class="viewcode-block" id="ccm_89_law">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.ccm_89_law">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ccm_89_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">rv</span><span class="o">=</span><span class="mf">3.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cardelli, Clayton &amp; Mathis (1989), q(lambda) = A_lambda / A_V = a + b/R_V.</span>
+
+<span class="sd">    CCM is a one-parameter family, and R_V sets its SHAPE through b/R_V, not</span>
+<span class="sd">    only its normalisation. R_V used to be fixed at 3.1 here, so a caller that</span>
+<span class="sd">    passed another R_V got the 3.1 curve scaled by R_V * E(B-V): against</span>
+<span class="sd">    the correct a + b/R_V, that was wrong by up to 11 per cent</span>
+<span class="sd">    in the correction at R_V = 5. The default is still 3.1, so every in-fit use</span>
+<span class="sd">    -- all of which pass no R_V -- is unchanged.</span>
+<span class="sd">    Ported from FUNCTION Cardelli_RedLaw.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">wl</span>
+    
+    <span class="n">y_fuv</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">8.0</span>
+    <span class="n">a_fuv</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.073</span> <span class="o">-</span> <span class="mf">0.628</span><span class="o">*</span><span class="n">y_fuv</span> <span class="o">+</span> <span class="mf">0.137</span><span class="o">*</span><span class="p">(</span><span class="n">y_fuv</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.070</span><span class="o">*</span><span class="p">(</span><span class="n">y_fuv</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">b_fuv</span> <span class="o">=</span> <span class="mf">13.670</span> <span class="o">+</span> <span class="mf">4.257</span><span class="o">*</span><span class="n">y_fuv</span> <span class="o">-</span> <span class="mf">0.420</span><span class="o">*</span><span class="p">(</span><span class="n">y_fuv</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.374</span><span class="o">*</span><span class="p">(</span><span class="n">y_fuv</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">q_fuv</span> <span class="o">=</span> <span class="n">a_fuv</span> <span class="o">+</span> <span class="n">b_fuv</span><span class="o">/</span><span class="n">rv</span>
+
+    <span class="n">y_bump</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">5.9</span>
+    <span class="n">fa</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">5.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04473</span><span class="o">*</span><span class="p">(</span><span class="n">y_bump</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.009779</span><span class="o">*</span><span class="p">(</span><span class="n">y_bump</span><span class="o">**</span><span class="mi">3</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">fb</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mf">0.2130</span><span class="o">*</span><span class="p">(</span><span class="n">y_bump</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1207</span><span class="o">*</span><span class="p">(</span><span class="n">y_bump</span><span class="o">**</span><span class="mi">3</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">a_uv</span> <span class="o">=</span> <span class="mf">1.752</span> <span class="o">-</span> <span class="mf">0.316</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.104</span><span class="o">/</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">4.67</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.341</span><span class="p">)</span> <span class="o">+</span> <span class="n">fa</span>
+    <span class="n">b_uv</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.090</span> <span class="o">+</span> <span class="mf">1.825</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">1.206</span><span class="o">/</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mf">4.62</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.263</span><span class="p">)</span> <span class="o">+</span> <span class="n">fb</span>
+    <span class="n">q_uv</span> <span class="o">=</span> <span class="n">a_uv</span> <span class="o">+</span> <span class="n">b_uv</span><span class="o">/</span><span class="n">rv</span>
+
+    <span class="n">y_opt</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">1.82</span>
+    <span class="n">a_opt</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="mf">0.17699</span><span class="o">*</span><span class="n">y_opt</span> <span class="o">-</span> <span class="mf">0.50447</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.02427</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.72085</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.01979</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.77530</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.32999</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>
+    <span class="n">b_opt</span> <span class="o">=</span> <span class="mf">1.41338</span><span class="o">*</span><span class="n">y_opt</span> <span class="o">+</span> <span class="mf">2.28305</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.07233</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">5.38434</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.62251</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mf">5.30260</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="o">-</span> <span class="mf">2.09002</span><span class="o">*</span><span class="p">(</span><span class="n">y_opt</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>
+    <span class="n">q_opt</span> <span class="o">=</span> <span class="n">a_opt</span> <span class="o">+</span> <span class="n">b_opt</span><span class="o">/</span><span class="n">rv</span>
+
+    <span class="n">a_ir</span> <span class="o">=</span> <span class="mf">0.574</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mf">1.61</span>
+    <span class="n">b_ir</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.527</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mf">1.61</span>
+    <span class="n">q_ir</span> <span class="o">=</span> <span class="n">a_ir</span> <span class="o">+</span> <span class="n">b_ir</span><span class="o">/</span><span class="n">rv</span>
+
+    <span class="n">q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">8.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">10.0</span><span class="p">),</span> <span class="n">q_fuv</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">3.3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">8.0</span><span class="p">),</span> <span class="n">q_uv</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">1.1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">3.3</span><span class="p">),</span> <span class="n">q_opt</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">q_ir</span><span class="p">,</span>
+        <span class="mf">0.0</span><span class="p">))))</span>
+
+    <span class="k">return</span> <span class="n">q</span></div>
+
+
+<div class="viewcode-block" id="cal_00_law">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.cal_00_law">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cal_00_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calzetti et al. (2000) - Starburst.</span>
+<span class="sd">    Ported from FUNCTION Calzetti_RedLaw.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">wl</span>
+    <span class="n">rv</span> <span class="o">=</span> <span class="mf">4.05</span>
+
+    <span class="n">q1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.659</span><span class="o">/</span><span class="n">rv</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">2.156</span> <span class="o">+</span> <span class="mf">1.509</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.198</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.011</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="mf">1.0</span>
+    <span class="n">q2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.659</span><span class="o">/</span><span class="n">rv</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">1.857</span> <span class="o">+</span> <span class="mf">1.040</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span>
+
+    <span class="n">q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">wl</span> <span class="o">&gt;=</span> <span class="mf">1200.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wl</span> <span class="o">&lt;=</span> <span class="mf">6300.0</span><span class="p">),</span> <span class="n">q1</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">wl</span> <span class="o">&gt;</span> <span class="mf">6300.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wl</span> <span class="o">&lt;=</span> <span class="mf">22000.0</span><span class="p">),</span> <span class="n">q2</span><span class="p">,</span>
+        <span class="mf">0.0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">q</span></div>
+
+
+<div class="viewcode-block" id="ccc_law">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.ccc_law">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ccc_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calzetti + Claus + Cid (Hybrid)</span>
+<span class="sd">    Ported from FUNCTION CCC_RedLaw.</span>
+<span class="sd">    Leitherer (2002) for FUV (&lt;1846), Calzetti (2000) for Optical/IR.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">wl</span>
+    <span class="n">rv</span> <span class="o">=</span> <span class="mf">4.05</span>
+    
+    <span class="n">q1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.472</span> <span class="o">+</span> <span class="mf">0.671</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">9.218e-3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.620e-3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="n">rv</span>
+    <span class="n">q2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.659</span><span class="o">/</span><span class="n">rv</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">2.156</span> <span class="o">+</span> <span class="mf">1.509</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.198</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.011</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="mf">1.0</span>
+    <span class="n">q3</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.659</span><span class="o">/</span><span class="n">rv</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">1.857</span> <span class="o">+</span> <span class="mf">1.040</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span>
+
+    <span class="n">q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">wl</span> <span class="o">&gt;=</span> <span class="mf">912.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wl</span> <span class="o">&lt;=</span> <span class="mf">1846.0</span><span class="p">),</span> <span class="n">q1</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">wl</span> <span class="o">&gt;</span> <span class="mf">1846.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wl</span> <span class="o">&lt;=</span> <span class="mf">6300.0</span><span class="p">),</span> <span class="n">q2</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">wl</span> <span class="o">&gt;</span> <span class="mf">6300.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wl</span> <span class="o">&lt;=</span> <span class="mf">31149.0</span><span class="p">),</span> <span class="n">q3</span><span class="p">,</span>
+        <span class="mf">0.0</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">q</span></div>
+
+
+
+<div class="viewcode-block" id="hz1_allen_mw">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.hz1_allen_mw">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hz1_allen_mw</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    HZ1: Allen (1976) - Milky Way.</span>
+<span class="sd">    Table lookup + linear interpolation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1000.</span><span class="p">,</span> <span class="mf">1110.</span><span class="p">,</span> <span class="mf">1250.</span><span class="p">,</span> <span class="mf">1430.</span><span class="p">,</span> <span class="mf">1670.</span><span class="p">,</span> <span class="mf">2000.</span><span class="p">,</span> <span class="mf">2220.</span><span class="p">,</span> <span class="mf">2500.</span><span class="p">,</span> <span class="mf">2850.</span><span class="p">,</span> <span class="mf">3330.</span><span class="p">,</span> 
+                    <span class="mf">3650.</span><span class="p">,</span> <span class="mf">4000.</span><span class="p">,</span> <span class="mf">4400.</span><span class="p">,</span> <span class="mf">5000.</span><span class="p">,</span> <span class="mf">5530.</span><span class="p">,</span> <span class="mf">6700.</span><span class="p">,</span> <span class="mf">9000.</span><span class="p">,</span> <span class="mf">10000.</span><span class="p">,</span> <span class="mf">20000.</span><span class="p">,</span> <span class="mf">100000.</span><span class="p">])</span>
+    <span class="n">amab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">2.30</span><span class="p">,</span> <span class="mf">1.97</span><span class="p">,</span> <span class="mf">1.69</span><span class="p">,</span> 
+                     <span class="mf">1.58</span><span class="p">,</span> <span class="mf">1.45</span><span class="p">,</span> <span class="mf">1.32</span><span class="p">,</span> <span class="mf">1.13</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mf">0.46</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+    
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">wab</span><span class="p">,</span> <span class="n">amab</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="hz2_seaton_mw">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.hz2_seaton_mw">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hz2_seaton_mw</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    HZ2: Seaton (1979) fit by Fitzpatrick (1986) - MW.</span>
+<span class="sd">    Hybrid: Formula for &lt; 1200, Table for &gt; 3650.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3650.</span><span class="p">,</span> <span class="mf">4000.</span><span class="p">,</span> <span class="mf">4400.</span><span class="p">,</span> <span class="mf">5000.</span><span class="p">,</span> <span class="mf">5530.</span><span class="p">,</span> <span class="mf">6700.</span><span class="p">,</span> <span class="mf">9000.</span><span class="p">,</span> <span class="mf">10000.</span><span class="p">,</span> <span class="mf">20000.</span><span class="p">,</span> <span class="mf">100000.</span><span class="p">])</span>
+    <span class="n">amab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.58</span><span class="p">,</span> <span class="mf">1.45</span><span class="p">,</span> <span class="mf">1.32</span><span class="p">,</span> <span class="mf">1.13</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mf">0.46</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+    
+    <span class="n">rv</span> <span class="o">=</span> <span class="mf">3.1</span>
+    <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span> <span class="o">=</span> <span class="mf">4.595</span><span class="p">,</span> <span class="mf">1.051</span>
+    <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mf">3.96</span><span class="p">,</span> <span class="mf">0.26</span>
+    
+    <span class="n">ff11</span> <span class="o">=</span> <span class="n">_red_fitzpatrick</span><span class="p">(</span><span class="mf">1100.</span><span class="p">,</span> <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+    <span class="n">ff12</span> <span class="o">=</span> <span class="n">_red_fitzpatrick</span><span class="p">(</span><span class="mf">1200.</span><span class="p">,</span> <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="p">(</span><span class="n">ff12</span> <span class="o">-</span> <span class="n">ff11</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    
+    <span class="n">ff_below1200</span> <span class="o">=</span> <span class="n">ff11</span> <span class="o">+</span> <span class="p">(</span><span class="n">wl</span> <span class="o">-</span> <span class="mf">1100.</span><span class="p">)</span><span class="o">*</span><span class="n">slope</span>
+    <span class="n">ff_formula</span> <span class="o">=</span> <span class="n">_red_fitzpatrick</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+    
+    <span class="n">q_below1200</span> <span class="o">=</span> <span class="n">ff_below1200</span> <span class="o">/</span> <span class="n">rv</span> <span class="o">+</span> <span class="mf">1.0</span>
+    <span class="n">q_formula</span> <span class="o">=</span> <span class="n">ff_formula</span> <span class="o">/</span> <span class="n">rv</span> <span class="o">+</span> <span class="mf">1.0</span>
+    <span class="n">q_table</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">wab</span><span class="p">,</span> <span class="n">amab</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="n">q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wl</span> <span class="o">&lt;</span> <span class="mf">1200.</span><span class="p">,</span> <span class="n">q_below1200</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wl</span> <span class="o">&lt;=</span> <span class="mf">3650.</span><span class="p">,</span> <span class="n">q_formula</span><span class="p">,</span>
+        <span class="n">q_table</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">q</span></div>
+
+
+<div class="viewcode-block" id="hz3_fitzpatrick_lmc">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.hz3_fitzpatrick_lmc">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hz3_fitzpatrick_lmc</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    HZ3: Fitzpatrick (1986) - LMC.</span>
+<span class="sd">    Hybrid: Formula &lt; 3330, Table &gt; 3330.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3330.</span><span class="p">,</span> <span class="mf">3650.</span><span class="p">,</span> <span class="mf">4000.</span><span class="p">,</span> <span class="mf">4400.</span><span class="p">,</span> <span class="mf">5000.</span><span class="p">,</span> <span class="mf">5530.</span><span class="p">,</span> <span class="mf">6700.</span><span class="p">,</span> <span class="mf">9000.</span><span class="p">,</span> <span class="mf">10000.</span><span class="p">,</span> <span class="mf">20000.</span><span class="p">,</span> <span class="mf">100000.</span><span class="p">])</span>
+    <span class="n">amab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.682</span><span class="p">,</span> <span class="mf">1.58</span><span class="p">,</span> <span class="mf">1.45</span><span class="p">,</span> <span class="mf">1.32</span><span class="p">,</span> <span class="mf">1.13</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mf">0.46</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+    
+    <span class="n">rv</span> <span class="o">=</span> <span class="mf">3.1</span>
+    <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span> <span class="o">=</span> <span class="mf">4.608</span><span class="p">,</span> <span class="mf">0.994</span>
+    <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.69</span><span class="p">,</span> <span class="mf">0.89</span><span class="p">,</span> <span class="mf">2.55</span><span class="p">,</span> <span class="mf">0.50</span>
+    
+    <span class="n">ff11</span> <span class="o">=</span> <span class="n">_red_fitzpatrick</span><span class="p">(</span><span class="mf">1100.</span><span class="p">,</span> <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+    <span class="n">ff12</span> <span class="o">=</span> <span class="n">_red_fitzpatrick</span><span class="p">(</span><span class="mf">1200.</span><span class="p">,</span> <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="p">(</span><span class="n">ff12</span> <span class="o">-</span> <span class="n">ff11</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    
+    <span class="n">ff_below1200</span> <span class="o">=</span> <span class="n">ff11</span> <span class="o">+</span> <span class="p">(</span><span class="n">wl</span> <span class="o">-</span> <span class="mf">1100.</span><span class="p">)</span><span class="o">*</span><span class="n">slope</span>
+    <span class="n">ff_formula</span> <span class="o">=</span> <span class="n">_red_fitzpatrick</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">al0</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+    
+    <span class="n">q_below1200</span> <span class="o">=</span> <span class="n">ff_below1200</span> <span class="o">/</span> <span class="n">rv</span> <span class="o">+</span> <span class="mf">1.0</span>
+    <span class="n">q_formula</span> <span class="o">=</span> <span class="n">ff_formula</span> <span class="o">/</span> <span class="n">rv</span> <span class="o">+</span> <span class="mf">1.0</span>
+    <span class="n">q_table</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">wab</span><span class="p">,</span> <span class="n">amab</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="n">q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wl</span> <span class="o">&lt;</span> <span class="mf">1200.</span><span class="p">,</span> <span class="n">q_below1200</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wl</span> <span class="o">&lt;=</span> <span class="mf">3330.</span><span class="p">,</span> <span class="n">q_formula</span><span class="p">,</span>
+        <span class="n">q_table</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">q</span></div>
+
+
+<div class="viewcode-block" id="hz4_prevot_smc">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.hz4_prevot_smc">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hz4_prevot_smc</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    HZ4: Prevot (1984) &amp; Bouchet (1985) - SMC.</span>
+<span class="sd">    Table lookup.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1275.</span><span class="p">,</span> <span class="mf">1330.</span><span class="p">,</span> <span class="mf">1385.</span><span class="p">,</span> <span class="mf">1435.</span><span class="p">,</span> <span class="mf">1490.</span><span class="p">,</span> <span class="mf">1545.</span><span class="p">,</span> <span class="mf">1595.</span><span class="p">,</span> <span class="mf">1647.</span><span class="p">,</span> <span class="mf">1700.</span><span class="p">,</span> <span class="mf">1755.</span><span class="p">,</span> 
+                    <span class="mf">1810.</span><span class="p">,</span> <span class="mf">1860.</span><span class="p">,</span> <span class="mf">1910.</span><span class="p">,</span> <span class="mf">2000.</span><span class="p">,</span> <span class="mf">2115.</span><span class="p">,</span> <span class="mf">2220.</span><span class="p">,</span> <span class="mf">2335.</span><span class="p">,</span> <span class="mf">2445.</span><span class="p">,</span> <span class="mf">2550.</span><span class="p">,</span> <span class="mf">2665.</span><span class="p">,</span> 
+                    <span class="mf">2778.</span><span class="p">,</span> <span class="mf">2890.</span><span class="p">,</span> <span class="mf">2995.</span><span class="p">,</span> <span class="mf">3105.</span><span class="p">,</span> <span class="mf">3704.</span><span class="p">,</span> <span class="mf">4255.</span><span class="p">,</span> <span class="mf">5291.</span><span class="p">,</span> <span class="mf">12500.</span><span class="p">,</span> <span class="mf">16500.</span><span class="p">,</span> <span class="mf">22000.</span><span class="p">])</span>
+    
+    <span class="n">amab</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">13.54</span><span class="p">,</span> <span class="mf">12.52</span><span class="p">,</span> <span class="mf">11.51</span><span class="p">,</span> <span class="mf">10.80</span><span class="p">,</span> <span class="mf">9.84</span><span class="p">,</span> <span class="mf">9.28</span><span class="p">,</span> <span class="mf">9.06</span><span class="p">,</span> <span class="mf">8.49</span><span class="p">,</span> <span class="mf">8.01</span><span class="p">,</span> <span class="mf">7.71</span><span class="p">,</span>
+                     <span class="mf">7.17</span><span class="p">,</span> <span class="mf">6.90</span><span class="p">,</span> <span class="mf">6.76</span><span class="p">,</span> <span class="mf">6.38</span><span class="p">,</span> <span class="mf">5.85</span><span class="p">,</span> <span class="mf">5.30</span><span class="p">,</span> <span class="mf">4.53</span><span class="p">,</span> <span class="mf">4.24</span><span class="p">,</span> <span class="mf">3.91</span><span class="p">,</span> <span class="mf">3.49</span><span class="p">,</span>
+                     <span class="mf">3.15</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">,</span> <span class="mf">2.65</span><span class="p">,</span> <span class="mf">2.29</span><span class="p">,</span> <span class="mf">1.81</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.36</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.47</span><span class="p">])</span>
+    
+    <span class="n">rv</span> <span class="o">=</span> <span class="mf">2.72</span>
+    
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">wab</span><span class="p">,</span> <span class="n">amab</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">amab</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">val</span> <span class="o">/</span> <span class="n">rv</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span>
+    
+    <span class="n">q</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">q</span></div>
+
+
+<div class="viewcode-block" id="hz5_calzetti_sb">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.hz5_calzetti_sb">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hz5_calzetti_sb</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    HZ5: Calzetti (1999) - SB.</span>
+<span class="sd">    Formula based.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">cal_00_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="gd03_law">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.gd03_law">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gd03_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s1">&#39;GD1&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gordon et al. (2003).</span>
+<span class="sd">    GD1: SMC Bar</span>
+<span class="sd">    GD2: LMC2 Supershell</span>
+<span class="sd">    GD3: LMC Average</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x_gordon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.455</span><span class="p">,</span> <span class="mf">0.606</span><span class="p">,</span> <span class="mf">0.800</span><span class="p">,</span> <span class="mf">1.235</span><span class="p">,</span> <span class="mf">1.538</span><span class="p">,</span> <span class="mf">1.818</span><span class="p">,</span> 
+                         <span class="mf">2.273</span><span class="p">,</span> <span class="mf">2.703</span><span class="p">,</span> <span class="mf">3.375</span><span class="p">,</span> <span class="mf">3.625</span><span class="p">,</span> <span class="mf">3.875</span><span class="p">,</span> <span class="mf">4.125</span><span class="p">,</span> <span class="mf">4.375</span><span class="p">,</span>
+                         <span class="mf">4.625</span><span class="p">,</span> <span class="mf">4.875</span><span class="p">,</span> <span class="mf">5.125</span><span class="p">,</span> <span class="mf">5.375</span><span class="p">,</span> <span class="mf">5.625</span><span class="p">,</span> <span class="mf">5.875</span><span class="p">,</span> <span class="mf">6.125</span><span class="p">,</span>
+                         <span class="mf">6.375</span><span class="p">,</span> <span class="mf">6.625</span><span class="p">,</span> <span class="mf">6.875</span><span class="p">,</span> <span class="mf">7.125</span><span class="p">,</span> <span class="mf">7.375</span><span class="p">,</span> <span class="mf">7.625</span><span class="p">,</span> <span class="mf">7.875</span><span class="p">,</span> 
+                         <span class="mf">8.125</span><span class="p">,</span> <span class="mf">8.375</span><span class="p">])</span>
+    
+    <span class="n">wl_table</span> <span class="o">=</span> <span class="mf">10000.0</span> <span class="o">/</span> <span class="n">x_gordon</span>
+    
+    <span class="k">if</span> <span class="n">variant</span> <span class="o">==</span> <span class="s1">&#39;GD1&#39;</span><span class="p">:</span>
+        <span class="n">q_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.016</span><span class="p">,</span> <span class="mf">0.169</span><span class="p">,</span> <span class="mf">0.131</span><span class="p">,</span> <span class="mf">0.567</span><span class="p">,</span> <span class="mf">0.801</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span> 
+                           <span class="mf">1.374</span><span class="p">,</span> <span class="mf">1.672</span><span class="p">,</span> <span class="mf">2.000</span><span class="p">,</span> <span class="mf">2.220</span><span class="p">,</span> <span class="mf">2.428</span><span class="p">,</span> <span class="mf">2.661</span><span class="p">,</span> <span class="mf">2.947</span><span class="p">,</span> 
+                           <span class="mf">3.161</span><span class="p">,</span> <span class="mf">3.293</span><span class="p">,</span> <span class="mf">3.489</span><span class="p">,</span> <span class="mf">3.637</span><span class="p">,</span> <span class="mf">3.866</span><span class="p">,</span> <span class="mf">4.013</span><span class="p">,</span> <span class="mf">4.243</span><span class="p">,</span> 
+                           <span class="mf">4.472</span><span class="p">,</span> <span class="mf">4.776</span><span class="p">,</span> <span class="mf">5.000</span><span class="p">,</span> <span class="mf">5.272</span><span class="p">,</span> <span class="mf">5.575</span><span class="p">,</span> <span class="mf">5.795</span><span class="p">,</span> <span class="mf">6.074</span><span class="p">,</span> 
+                           <span class="mf">6.297</span><span class="p">,</span> <span class="mf">6.436</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">variant</span> <span class="o">==</span> <span class="s1">&#39;GD2&#39;</span><span class="p">:</span>
+        <span class="n">q_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.101</span><span class="p">,</span> <span class="mf">0.097</span><span class="p">,</span> <span class="mf">0.299</span><span class="p">,</span> <span class="mf">0.5004</span><span class="p">,</span> <span class="mf">0.7600</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span> 
+                           <span class="mf">1.349</span><span class="p">,</span> <span class="mf">1.665</span><span class="p">,</span> <span class="mf">1.899</span><span class="p">,</span> <span class="mf">2.067</span><span class="p">,</span> <span class="mf">2.249</span><span class="p">,</span> <span class="mf">2.447</span><span class="p">,</span> <span class="mf">2.777</span><span class="p">,</span> 
+                           <span class="mf">2.922</span><span class="p">,</span> <span class="mf">2.921</span><span class="p">,</span> <span class="mf">2.812</span><span class="p">,</span> <span class="mf">2.805</span><span class="p">,</span> <span class="mf">2.863</span><span class="p">,</span> <span class="mf">2.932</span><span class="p">,</span> <span class="mf">3.060</span><span class="p">,</span> 
+                           <span class="mf">3.110</span><span class="p">,</span> <span class="mf">3.299</span><span class="p">,</span> <span class="mf">3.408</span><span class="p">,</span> <span class="mf">3.515</span><span class="p">,</span> <span class="mf">3.670</span><span class="p">,</span> <span class="mf">3.862</span><span class="p">,</span> <span class="mf">3.937</span><span class="p">,</span> 
+                           <span class="mf">4.055</span><span class="p">,</span> <span class="mf">3.969</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">variant</span> <span class="o">==</span> <span class="s1">&#39;GD3&#39;</span><span class="p">:</span>
+        <span class="n">q_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.030</span><span class="p">,</span> <span class="mf">0.186</span><span class="p">,</span> <span class="mf">0.257</span><span class="p">,</span> <span class="mf">0.4705</span><span class="p">,</span> <span class="mf">0.7457</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span>
+                           <span class="mf">1.293</span><span class="p">,</span> <span class="mf">1.518</span><span class="p">,</span> <span class="mf">1.786</span><span class="p">,</span> <span class="mf">1.969</span><span class="p">,</span> <span class="mf">2.149</span><span class="p">,</span> <span class="mf">2.391</span><span class="p">,</span> <span class="mf">2.771</span><span class="p">,</span>
+                           <span class="mf">2.967</span><span class="p">,</span> <span class="mf">2.846</span><span class="p">,</span> <span class="mf">2.646</span><span class="p">,</span> <span class="mf">2.565</span><span class="p">,</span> <span class="mf">2.566</span><span class="p">,</span> <span class="mf">2.598</span><span class="p">,</span> <span class="mf">2.607</span><span class="p">,</span>
+                           <span class="mf">2.668</span><span class="p">,</span> <span class="mf">2.787</span><span class="p">,</span> <span class="mf">2.874</span><span class="p">,</span> <span class="mf">2.983</span><span class="p">,</span> <span class="mf">3.118</span><span class="p">,</span> <span class="mf">3.231</span><span class="p">,</span> <span class="mf">3.374</span><span class="p">,</span>
+                           <span class="mf">3.366</span><span class="p">,</span> <span class="mf">3.467</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">q_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x_gordon</span><span class="p">)</span>
+        
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">wl_table</span><span class="p">)</span>
+    <span class="n">wl_sorted</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">wl_table</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="n">q_sorted</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">q_vals</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">wl_sorted</span><span class="p">,</span> <span class="n">q_sorted</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">q_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">q_sorted</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="gd24_law">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.gd24_law">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gd24_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gordon et al. (2024) - SMC Extinction Law.&quot;&quot;&quot;</span>
+    <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Lambda&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.112</span><span class="p">,</span> <span class="mf">0.117</span><span class="p">,</span> <span class="mf">0.122</span><span class="p">,</span> <span class="mf">0.127</span><span class="p">,</span> <span class="mf">0.132</span><span class="p">,</span> <span class="mf">0.138</span><span class="p">,</span> <span class="mf">0.144</span><span class="p">,</span> <span class="mf">0.150</span><span class="p">,</span> <span class="mf">0.156</span><span class="p">,</span> <span class="mf">0.163</span><span class="p">,</span> <span class="mf">0.169</span><span class="p">,</span> <span class="mf">0.176</span><span class="p">,</span> <span class="mf">0.184</span><span class="p">,</span> <span class="mf">0.192</span><span class="p">,</span> <span class="mf">0.200</span><span class="p">,</span> <span class="mf">0.208</span><span class="p">,</span> <span class="mf">0.217</span><span class="p">,</span> <span class="mf">0.226</span><span class="p">,</span> <span class="mf">0.235</span><span class="p">,</span> <span class="mf">0.245</span><span class="p">,</span> <span class="mf">0.255</span><span class="p">,</span> <span class="mf">0.266</span><span class="p">,</span> <span class="mf">0.277</span><span class="p">,</span> <span class="mf">0.289</span><span class="p">,</span> <span class="mf">0.301</span><span class="p">,</span> <span class="mf">0.363</span><span class="p">,</span> <span class="mf">0.438</span><span class="p">,</span> <span class="mf">0.544</span><span class="p">,</span> <span class="mf">1.231</span><span class="p">,</span> <span class="mf">1.622</span><span class="p">,</span> <span class="mf">2.174</span><span class="p">],</span>
+        <span class="s2">&quot;SMC Average&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">6.929</span><span class="p">,</span> <span class="mf">5.899</span><span class="p">,</span> <span class="mf">5.377</span><span class="p">,</span> <span class="mf">5.511</span><span class="p">,</span> <span class="mf">5.173</span><span class="p">,</span> <span class="mf">4.914</span><span class="p">,</span> <span class="mf">4.654</span><span class="p">,</span> <span class="mf">4.428</span><span class="p">,</span> <span class="mf">4.167</span><span class="p">,</span> <span class="mf">3.973</span><span class="p">,</span> <span class="mf">3.804</span><span class="p">,</span> <span class="mf">3.615</span><span class="p">,</span> <span class="mf">3.435</span><span class="p">,</span> <span class="mf">3.272</span><span class="p">,</span> <span class="mf">3.162</span><span class="p">,</span> <span class="mf">3.026</span><span class="p">,</span> <span class="mf">2.894</span><span class="p">,</span> <span class="mf">2.735</span><span class="p">,</span> <span class="mf">2.571</span><span class="p">,</span> <span class="mf">2.409</span><span class="p">,</span> <span class="mf">2.328</span><span class="p">,</span> <span class="mf">2.174</span><span class="p">,</span> <span class="mf">2.091</span><span class="p">,</span> <span class="mf">1.968</span><span class="p">,</span> <span class="mf">1.888</span><span class="p">,</span> <span class="mf">1.514</span><span class="p">,</span> <span class="mf">1.349</span><span class="p">,</span> <span class="mf">1.021</span><span class="p">,</span> <span class="mf">0.324</span><span class="p">,</span> <span class="mf">0.125</span><span class="p">,</span> <span class="mf">0.062</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">lmb</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;Lambda&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">10000</span> 
+    <span class="n">A</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;SMC Average&quot;</span><span class="p">])</span>
+    
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">jnp</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">lmb</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="get_k_lambda">
+<a class="viewcode-back" href="../../reference/modules/brainsp.reddening_laws.html#brainsp.reddening_laws.get_k_lambda">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_k_lambda</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">law_name</span><span class="o">=</span><span class="s2">&quot;GD24&quot;</span><span class="p">,</span> <span class="n">rv</span><span class="o">=</span><span class="mf">3.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the extinction curve value k(lambda) [or q(lambda) = A_lam/Av]</span>
+<span class="sd">    for the specified law.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">law_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;CCM&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">ccm_89_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">rv</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;CAL&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">cal_00_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;CCC&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">ccc_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;HZ1&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">hz1_allen_mw</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;HZ2&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">hz2_seaton_mw</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;HZ3&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">hz3_fitzpatrick_lmc</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;HZ4&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">hz4_prevot_smc</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;HZ5&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">hz5_calzetti_sb</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;GD1&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">gd03_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="s1">&#39;GD1&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;GD2&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">gd03_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="s1">&#39;GD2&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;GD3&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">gd03_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="s1">&#39;GD3&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;GD24&quot;</span><span class="p">:</span> <span class="k">return</span> <span class="n">gd24_law</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Unknown reddening law </span><span class="si">{</span><span class="n">law_name</span><span class="si">!r}</span><span class="s2">. Available: &quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">LAW_NAMES</span><span class="p">))</span></div>
+
+
+
+<span class="c1"># Compiled whole. Called eagerly, each jax.numpy operation above is a program</span>
+<span class="c1"># of its own -- about twenty for CCM, 1.1 s of compilation on a first fit --</span>
+<span class="c1"># where one jitted program compiles in 0.2 s. The arithmetic is the same</span>
+<span class="c1"># (fusion moves the last bit, 2e-16 of q at most). Called inside a fit, it</span>
+<span class="c1"># is inlined as before.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_jax</span>
+<span class="n">ccm_89_law</span> <span class="o">=</span> <span class="n">_jax</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">ccm_89_law</span><span class="p">)</span>
+<span class="n">get_k_lambda</span> <span class="o">=</span> <span class="n">_jax</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="n">get_k_lambda</span><span class="p">,</span> <span class="n">static_argnames</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;law_name&quot;</span><span class="p">,))</span>
+</pre></div>
+      </div>
+      <nav class="pager" aria-label="Previous and next page"><span></span>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../../"; window.BRAIN_SEARCH_INDEX = "../../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../../search.html";</script>
+<script src="../../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

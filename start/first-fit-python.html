@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Your first fit in Python · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Your first fit from a terminal" href="first-fit-cli.html" />
+    <link rel="prev" title="Your first fit in the interface" href="first-fit-gui.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab is-active" href="index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab" href="../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab is-active" href="index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Introduction</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">What BRAIN is</a></li>
+          <li><a class="nav-link" href="install.html">Installation</a></li>
+          <li><a class="nav-link" href="selftest.html">Check your installation</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Your first fit</p>
+        <ul>
+          <li><a class="nav-link" href="first-fit-gui.html">Your first fit in the interface</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">Your first fit in Python</a></li>
+          <li><a class="nav-link" href="first-fit-cli.html">Your first fit from a terminal</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Essentials</p>
+        <ul>
+          <li><a class="nav-link" href="concepts.html">Key concepts</a></li>
+          <li><a class="nav-link" href="modes.html">The three fitting modes</a></li>
+          <li><a class="nav-link" href="inputs.html">Your data</a></li>
+          <li><a class="nav-link" href="outputs.html">What a fit writes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Get started</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Your first fit</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="your-first-fit-in-python">
+<h1>Your first fit in Python<a class="headerlink" href="#your-first-fit-in-python" title="Link to this heading">#</a></h1>
+<p>A spectrum, a spectrum with emission lines and a datacube, each in a few lines of Python. The code below runs as it is, on the mock data BRAIN ships a generator for, and the output shown under each block is what it printed when this page was built.</p>
+<section id="some-data">
+<h2>Some data<a class="headerlink" href="#some-data" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+
+<span class="n">folder</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">mock</span><span class="o">.</span><span class="n">write_examples</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/you/.brainsp/examples
+</pre></div>
+</div>
+<p><a class="reference internal" href="../reference/modules/brainsp.mock.html#brainsp.mock.write_examples" title="brainsp.mock.write_examples"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.mock.write_examples()</span></code></a> writes five mock spectra (<code class="docutils literal notranslate"><span class="pre">spectra/*.spec</span></code>, each with a <code class="docutils literal notranslate"><span class="pre">.truth.json</span></code> holding the values it was built from), a table of per-spectrum corrections, an emission-line mask and a 16 × 16 mock datacube (<a class="reference internal" href="../python/mock.html"><span class="std std-doc">Mock data</span></a>). Calling it again reuses what is already there.</p>
+</section>
+<section id="fit-a-spectrum">
+<h2>Fit a spectrum<a class="headerlink" href="#fit-a-spectrum" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">/spectra/mock_old_population.spec&quot;</span><span class="p">,</span>
+                         <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;FitResult mock_old_population.spec: v0=149.09 km/s, sigma=198.75 km/s, AV=0.2067, chi2=0.98676&gt;
+</pre></div>
+</div>
+<p><a class="reference internal" href="../reference/generated/brainsp.fit_spectrum.html#brainsp.fit_spectrum" title="brainsp.fit_spectrum"><code class="xref py py-func docutils literal notranslate"><span class="pre">fit_spectrum()</span></code></a> fits the spectrum with every setting at its default (<code class="docutils literal notranslate"><span class="pre">spop</span></code>, BasesGM, all ages and metallicities), writes its files to <code class="docutils literal notranslate"><span class="pre">brain_out</span></code> and returns a <a class="reference internal" href="../reference/generated/brainsp.FitResult.html#brainsp.FitResult" title="brainsp.FitResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">FitResult</span></code></a>. <code class="docutils literal notranslate"><span class="pre">quiet=True</span></code> hides the progress log. The first fit in a Python session takes a few seconds longer, while JAX compiles the fit for this problem size; later fits of the same size reuse the compiled code.</p>
+</section>
+<section id="read-the-numbers">
+<h2>Read the numbers<a class="headerlink" href="#read-the-numbers" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">av</span><span class="p">)</span>                       <span class="c1"># km/s, km/s, mag</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">mean_metallicity_light</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">av_err</span><span class="p">)</span>                                  <span class="c1"># 1-sigma error of A_V</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>149.09 198.75 0.2067
+9.991865743882286 0.02193965077
+0.00420222
+</pre></div>
+</div>
+<p>The mock was built with <span class="math notranslate nohighlight">\(v_\star = 150\)</span> km s⁻¹, <span class="math notranslate nohighlight">\(\sigma_\star = 200\)</span> km s⁻¹, <span class="math notranslate nohighlight">\(A_V = 0.20\)</span>, a light-weighted mean age <span class="math notranslate nohighlight">\(\langle\log t\rangle_L = 9.98\)</span> and a light-weighted metallicity of 0.0221, which the fit recovers. The commonest attributes are:</p>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>What it is</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r.v0</span></code>, <code class="docutils literal notranslate"><span class="pre">r.sigma</span></code></p></td>
+<td><p>stellar velocity and observed dispersion, km s⁻¹</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">r.sigma_star</span></code></p></td>
+<td><p>the intrinsic stellar dispersion, km s⁻¹, or None when the instrument’s or the library’s resolution is unknown</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r.av</span></code>, <code class="docutils literal notranslate"><span class="pre">r.yav</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_V\)</span> and the young-star extra extinction <span class="math notranslate nohighlight">\(Y_V\)</span>, mag</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">r.mean_log_age_light</span></code>, <code class="docutils literal notranslate"><span class="pre">r.mean_log_age_mass</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\langle\log t\rangle\)</span> weighted by light and by mass</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r.mean_metallicity_light</span></code>, <code class="docutils literal notranslate"><span class="pre">r.mean_metallicity_mass</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\langle Z\rangle\)</span> weighted by light and by mass</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">r.chi2</span></code>, <code class="docutils literal notranslate"><span class="pre">r.adev</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\chi^2\)</span> per fitted pixel and the mean absolute deviation, per cent</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r.av_err</span></code>, <code class="docutils literal notranslate"><span class="pre">r.sigma_err</span></code>, <code class="docutils literal notranslate"><span class="pre">r.uncertainties</span></code></p></td>
+<td><p>1σ uncertainties; <code class="docutils literal notranslate"><span class="pre">uncertainties</span></code> holds them all</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">r.populations</span></code></p></td>
+<td><p>the population vector, one row per template</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r.wavelength</span></code>, <code class="docutils literal notranslate"><span class="pre">r.observed</span></code>, <code class="docutils literal notranslate"><span class="pre">r.model</span></code></p></td>
+<td><p>the spectra, as arrays</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><a class="reference internal" href="../python/results.html"><span class="std std-doc">Reading a spectrum’s results</span></a> lists every attribute.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">r.sigma_star</span></code> is None here because the mock’s files do not state the instrumental resolution and BasesGM’s do not state the library’s. Without both, BRAIN reports only the observed dispersion <code class="docutils literal notranslate"><span class="pre">r.sigma</span></code> and refuses to guess an intrinsic one. Give <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> to get it (<a class="reference internal" href="../science/emission-lines.html"><span class="std std-doc">Emission lines and resolution</span></a>).</p>
+</div>
+</section>
+<section id="draw-it">
+<h2>Draw it<a class="headerlink" href="#draw-it" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;spectrum.png&quot;</span><span class="p">)</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">sfh</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;sfh.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<img alt="The mock spectrum with the fitted model." src="../_images/q01_spectrum.png" />
+<figcaption>
+<p><span class="caption-text">The fit of the old-population mock: the data, the model and the residuals.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="Light and mass fractions against age." src="../_images/q01_sfh.png" />
+<figcaption>
+<p><span class="caption-text">Its star formation history, as the share of light and of mass in each age.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="fit-the-emission-lines">
+<h2>Fit the emission lines<a class="headerlink" href="#fit-the-emission-lines" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r2</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">/spectra/mock_star_forming_lines.spec&quot;</span><span class="p">,</span>
+                          <span class="n">nebular_mode</span><span class="o">=</span><span class="s2">&quot;espop&quot;</span><span class="p">,</span> <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>
+                          <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r2</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="s2">&quot;Halpha_6563&quot;</span><span class="p">])</span>     <span class="c1"># (flux, error)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r2</span><span class="o">.</span><span class="n">v_gas</span><span class="p">,</span> <span class="n">r2</span><span class="o">.</span><span class="n">sigma_gas</span><span class="p">)</span>      <span class="c1"># km/s</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(5.6537, 0.030439)
+49.83 57.98
+</pre></div>
+</div>
+<p>The gas of this mock moves at 50 km s⁻¹ with an intrinsic dispersion of 60 km s⁻¹. Any setting can be given by name, as here <code class="docutils literal notranslate"><span class="pre">nebular_mode</span></code> and <code class="docutils literal notranslate"><span class="pre">wavelength_scale</span></code> (<a class="reference internal" href="modes.html"><span class="std std-doc">The three fitting modes</span></a>). <code class="docutils literal notranslate"><span class="pre">r2.lines</span></code> holds every fitted line’s flux and its 1σ error, in units of the normalised spectrum times Å (<a class="reference internal" href="../reference/spectrum-files.html"><span class="std std-doc">Spectrum output files</span></a>).</p>
+</section>
+<section id="fit-a-datacube">
+<h2>Fit a datacube<a class="headerlink" href="#fit-a-datacube" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_cube</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">/cube/mock_cube.fits&quot;</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
+                        <span class="n">wavelength_scale</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">,</span>
+                        <span class="n">sn_mask</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">fit_sn_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="s2">&quot;Kinematics&quot;</span><span class="p">])</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;velocity.png&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdBu_r&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(16, 16)
+[&#39;Sigma_star&#39;, &#39;vrot_star&#39;]
+</pre></div>
+</div>
+<p><a class="reference internal" href="../reference/generated/brainsp.fit_cube.html#brainsp.fit_cube" title="brainsp.fit_cube"><code class="xref py py-func docutils literal notranslate"><span class="pre">fit_cube()</span></code></a> computes the signal-to-noise masks at S/N 3 and 10, fits the spaxels above 3, writes the megacube to <code class="docutils literal notranslate"><span class="pre">brain_ifu_out</span></code> and returns it opened as a <a class="reference internal" href="../reference/generated/brainsp.Megacube.html#brainsp.Megacube" title="brainsp.Megacube"><code class="xref py py-class docutils literal notranslate"><span class="pre">Megacube</span></code></a>. <code class="docutils literal notranslate"><span class="pre">cube.plane(name)</span></code> returns any map as a 2-D array, NaN where no spaxel was fitted.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/q01_velocity.png"><img alt="The stellar velocity map of the mock datacube." src="../_images/q01_velocity.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The stellar velocity field of the mock cube, as fitted.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="what-next">
+<h2>What next<a class="headerlink" href="#what-next" title="Link to this heading">#</a></h2>
+<p>Every tutorial also comes as a short script, ready to run: <a class="reference download internal" download="" href="../_downloads/d01f91ce2b2517a120f3ddac4bee09f1/brain_tutorials.zip"><code class="xref download docutils literal notranslate"><span class="pre">brain_tutorials.zip</span></code></a> (<a class="reference internal" href="../tutorials/index.html"><span class="std std-doc">Tutorials</span></a>).</p>
+<div class="cards" style="--cols:2"><a class="card" href="../python/index.html"><span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" class=""><path d="M8.5 8l-4.5 4 4.5 4M15.5 8l4.5 4-4.5 4M13.5 5.5l-3 13"/></svg></span><span class="card-title">The Python guide</span><span class="card-text">Every task, with the functions that do it: settings, corrections, many spectra, datacubes, results.</span></a><a class="card" href="../tutorials/index.html"><span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" class=""><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 6h6.5a3.5 3.5 0 0 1 0 7h-5a3.5 3.5 0 0 0 0 7H16"/></svg></span><span class="card-title">Tutorials</span><span class="card-text">Complete worked examples, with real output, each also a Python script ready to run.</span></a></div></section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="first-fit-gui.html"><span class="pager-dir">← Previous</span><span class="pager-title">Your first fit in the interface</span></a>
+        <a class="pager-link next" href="first-fit-cli.html"><span class="pager-dir">Next →</span><span class="pager-title">Your first fit from a terminal</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

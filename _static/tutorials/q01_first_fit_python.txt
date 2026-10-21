@@ -1,0 +1,17 @@
+/home/suresh/.brainsp/examples
+Plot saved to brain_out/mock_old_population_fit.pdf
+<FitResult mock_old_population.spec: v0=149.09 km/s, sigma=198.75 km/s, AV=0.2067, chi2=0.98676>
+brain_out/mock_old_population_summary.txt
+149.09 None 0.2067
+9.991865743882286 0.02193965077
+0.00420222 None
+Plot saved to brain_out/mock_star_forming_lines_fit.pdf
+(5.6537, 0.030439)
+49.83 57.98
+--- mock_cube.fits  (1 of 1)
+    [1/2] Signal-to-noise mask
+    [2/2] BRAIN fit
+    wrote brain_ifu_out/mock_cube-BRAIN_MEGACUBE.fits
+(16, 16)
+['Sigma_star', 'vrot_star']
+188.8

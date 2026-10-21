@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>CPUs and GPUs · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The command line" href="cli.html" />
+    <link rel="prev" title="A run as one file" href="scripts.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab is-active" href="index.html">Python</a>
+    <a class="tab" href="../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab is-active" href="index.html">Python</a>
+        <a class="sidebar-tab" href="../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">The library</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">The Python library</a></li>
+          <li><a class="nav-link" href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Spectra</p>
+        <ul>
+          <li><a class="nav-link" href="spectrum.html">Fitting one spectrum</a></li>
+          <li><a class="nav-link" href="spectra.html">Fitting many spectra</a></li>
+          <li><a class="nav-link" href="corrections.html">Corrections before the fit</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Datacubes</p>
+        <ul>
+          <li><a class="nav-link" href="cube.html">Fitting a datacube</a></li>
+          <li><a class="nav-link" href="prefit.html">Pre-fitting stages</a></li>
+          <li><a class="nav-link" href="campaigns.html">Many datacubes</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Results</p>
+        <ul>
+          <li><a class="nav-link" href="results.html">Reading a spectrum’s results</a></li>
+          <li><a class="nav-link" href="megacube.html">Reading a megacube</a></li>
+          <li><a class="nav-link" href="plots.html">Plots</a></li>
+          <li><a class="nav-link" href="uncertainties.html">Uncertainties</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Tools</p>
+        <ul>
+          <li><a class="nav-link" href="masks.html">Wavelength masks</a></li>
+          <li><a class="nav-link" href="libraries.html">Template libraries</a></li>
+          <li><a class="nav-link" href="mock.html">Mock data</a></li>
+          <li><a class="nav-link" href="scripts.html">A run as one file</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">CPUs and GPUs</a></li>
+          <li><a class="nav-link" href="cli.html">The command line</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Python</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Tools</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="cpus-and-gpus">
+<h1>CPUs and GPUs<a class="headerlink" href="#cpus-and-gpus" title="Link to this heading">#</a></h1>
+<p>BRAIN fits on the CPU or on NVIDIA GPUs, and sizes itself to the machine it finds: how many cores it may use, how many GPUs there are and how large they are. The device changes how long a fit takes, never its result: a fit on the CPU and the same fit on a GPU agree to rounding (10⁻⁵ at most, measured on every product of the three modes).</p>
+<section id="choose-the-device">
+<h2>Choose the device<a class="headerlink" href="#choose-the-device" title="Link to this heading">#</a></h2>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> (default)</p></td>
+<td><p>a GPU when JAX can see one, the CPU otherwise</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;cpu&quot;</span></code></p></td>
+<td><p>the CPU</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;gpu&quot;</span></code></p></td>
+<td><p>an NVIDIA GPU; an error if there is none</p></td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">set_device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>                      <span class="c1"># before the first fit of the session</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="s2">&quot;galaxy.spec&quot;</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;gpu&quot;</span><span class="p">)</span>   <span class="c1"># or on the first fit itself</span>
+</pre></div>
+</div>
+<p>JAX fixes its device the first time it is used in a process, so only the first fit of a Python session can choose; <code class="docutils literal notranslate"><span class="pre">set_device</span></code> raises an error if JAX already runs on another device. <code class="docutils literal notranslate"><span class="pre">JAX_PLATFORMS=cpu</span></code> in the environment is respected by <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>. The interface starts every fit in a fresh process, so its device menu always takes effect. On the command line, <code class="docutils literal notranslate"><span class="pre">--device</span></code> does the same.</p>
+</section>
+<section id="the-machine-as-brain-sees-it">
+<h2>The machine, as BRAIN sees it<a class="headerlink" href="#the-machine-as-brain-sees-it" title="Link to this heading">#</a></h2>
+<p>Every fit’s log starts with what BRAIN found and what it will use:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Machine: 64 CPU threads on 32 cores available, 62 usable (all but two), 110 GB memory free
+GPU: NVIDIA GeForce RTX 3060, 28 SMs, reduced-rate FP64; 64 lanes
+</pre></div>
+</div>
+</section>
+<section id="on-a-cpu">
+<h2>On a CPU<a class="headerlink" href="#on-a-cpu" title="Link to this heading">#</a></h2>
+<p>A single process cannot use a many-core CPU well for this problem, so BRAIN starts <strong>worker processes</strong>, each pinned to a core of its own, and every stage of the fit hands them its spectra or spaxels in small chunks as they come free: the stellar kinematics, the main fit, the weak lines, the population and nebular fits, and the uncertainties. The workers start once per run and stay warm from one datacube to the next.</p>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">cpu_workers</span></code></p></th>
+<th class="head"><p>Workers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> (default)</p></td>
+<td><p>one per physical core, within the core budget; no more than the free memory allows (about 1.2 GB each) and no more than the work</p></td>
+</tr>
+<tr class="row-odd"><td><p>a number</p></td>
+<td><p>that many, never more than the core budget</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>no workers: everything in one process</p></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The core budget is every core the process may use, minus two.</strong> BRAIN never uses more, so the machine stays responsive during a long run. “The cores the process may use” is what the operating system allows it (a SLURM allocation, <code class="docutils literal notranslate"><span class="pre">taskset</span></code>, a container’s limit), not every core of the node. BRAIN enforces the budget through the processor affinity of its processes, which also holds JAX’s own threads to it.</p>
+<p>Hyperthreads are left out by default: on a 180-spaxel mock cube, 30 workers on 30 physical cores fitted it in 120 s and 60 workers on their hyperthreads in 133 s.</p>
+</section>
+<section id="on-a-gpu">
+<h2>On a GPU<a class="headerlink" href="#on-a-gpu" title="Link to this heading">#</a></h2>
+<p>On a GPU the spaxels go through a <strong>work queue</strong>: a fixed number of lanes, each holding one spaxel, and a spaxel that has converged leaves its lane to the next. The number of lanes is sized from the card itself:</p>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Lanes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>the rule</p></td>
+<td><p>about two per streaming multiprocessor (SM), a power of two, as many as the card’s memory holds</p></td>
+</tr>
+<tr class="row-odd"><td><p>RTX 3060 (28 SMs, 12 GB)</p></td>
+<td><p>64 (measured: 32 lanes 4.8 spaxels s⁻¹, 64 lanes 5.2, 128 lanes 4.8)</p></td>
+</tr>
+<tr class="row-even"><td><p>RTX 5070 (48 SMs)</p></td>
+<td><p>128</p></td>
+</tr>
+<tr class="row-odd"><td><p>H100 (132 SMs, 80 GB)</p></td>
+<td><p>256</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>If the first compilation runs out of memory, the lanes are halved and it is retried. <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> (Python, settings) or <strong>Batch size</strong> (interface) fixes the number instead.</p>
+<p>BRAIN computes in double precision throughout, because the linear algebra of the fit is too ill-conditioned for single precision (condition numbers near 10¹⁰). Consumer GeForce cards run double precision at 1/32 to 1/64 of their single-precision rate, while data-centre cards (A100, H100, B100) run it at half rate, so the second kind gains far more than its memory alone suggests. The log says which kind the card is.</p>
+</section>
+<section id="several-gpus-several-cubes">
+<h2>Several GPUs, several cubes<a class="headerlink" href="#several-gpus-several-cubes" title="Link to this heading">#</a></h2>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>What BRAIN does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>several cubes, several GPU slots</p></td>
+<td><p>the cubes are dealt out to the slots, each a process of its own on one GPU, with its share of the card’s memory and of the CPU cores</p></td>
+</tr>
+<tr class="row-odd"><td><p>one cube, several GPU slots</p></td>
+<td><p>the cube’s spaxels are spread over one worker per slot; this process coordinates on the CPU</p></td>
+</tr>
+<tr class="row-even"><td><p>one ordinary GPU</p></td>
+<td><p>one slot: the cubes run one after another, as always</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>Slots default to one per GPU, two on a card of 40 GB or more; <code class="docutils literal notranslate"><span class="pre">gpu_slots=</span></code> on <a class="reference internal" href="../reference/generated/brainsp.CubePipeline.html#brainsp.CubePipeline.run" title="brainsp.CubePipeline.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> and <a class="reference internal" href="../reference/generated/brainsp.fit_cube.html#brainsp.fit_cube" title="brainsp.fit_cube"><code class="xref py py-func docutils literal notranslate"><span class="pre">fit_cube()</span></code></a>, or <code class="docutils literal notranslate"><span class="pre">--gpu-slots</span></code> on the command line, sets them (<a class="reference internal" href="campaigns.html"><span class="std std-doc">Many datacubes</span></a>). Megacubes from several slots are bit for bit those of a sequential run; one cube spread over GPUs agrees with the single-GPU fit to 5 × 10⁻⁵.</p>
+<p><strong>Many spectra.</strong> <a class="reference internal" href="../reference/generated/brainsp.fit_spectra.html#brainsp.fit_spectra" title="brainsp.fit_spectra"><code class="xref py py-func docutils literal notranslate"><span class="pre">fit_spectra()</span></code></a> fits the spectra that share settings, wavelengths and usable pixels as one cube, which keeps a GPU’s lanes full: six mock spectra took 16 s instead of 65 s on the RTX 3060 (<a class="reference internal" href="spectra.html"><span class="std std-doc">Fitting many spectra</span></a>).</p>
+</section>
+<section id="measured">
+<h2>Measured<a class="headerlink" href="#measured" title="Link to this heading">#</a></h2>
+<p>On one workstation (AMD Threadripper 2990WX, 32 cores, 64 threads; NVIDIA RTX 3060, 12 GB), with the workers and lanes BRAIN picks by default. The spectra and the 180-spaxel cube are mock data; the JWST cube is real (NIRSpec IFU, 1.57 to 2.35 µm, every spaxel above S/N 5, the M13 library with its AGN power laws and blackbodies, CCM dust, one 2σ clip-and-refit pass):</p>
+<div class="table-wrap"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>CPU</p></th>
+<th class="head"><p>GPU</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>one spectrum, <code class="docutils literal notranslate"><span class="pre">spop</span></code>, first fit (compiling)</p></td>
+<td><p>5.7 s</p></td>
+<td><p>5.9 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>one spectrum, <code class="docutils literal notranslate"><span class="pre">spop</span></code>, each later fit</p></td>
+<td><p>1.6 s</p></td>
+<td><p>0.6 s</p></td>
+</tr>
+<tr class="row-even"><td><p>one spectrum, <code class="docutils literal notranslate"><span class="pre">espop</span></code>, each later fit</p></td>
+<td><p>2.7 s</p></td>
+<td><p>1.2 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>180-spaxel cube, <code class="docutils literal notranslate"><span class="pre">espop</span></code>, every stage</p></td>
+<td><p>89 s (32 workers)</p></td>
+<td><p>90 s</p></td>
+</tr>
+<tr class="row-even"><td><p>JWST NIRSpec cube of a galaxy, 1274 spaxels, <code class="docutils literal notranslate"><span class="pre">spop</span></code>, M13 library, per spaxel</p></td>
+<td><p>44 ms (32 workers)</p></td>
+<td><p>45 ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>the same cube, start to finish (reading, compiling, fitting, writing)</p></td>
+<td><p>66 s</p></td>
+<td><p>69 s</p></td>
+</tr>
+<tr class="row-even"><td><p>6 spectra, <code class="docutils literal notranslate"><span class="pre">espop</span></code>, fitted together</p></td>
+<td><p></p></td>
+<td><p>16 s (65 s one at a time)</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="compilation-and-caches">
+<h2>Compilation and caches<a class="headerlink" href="#compilation-and-caches" title="Link to this heading">#</a></h2>
+<p>JAX compiles the fit the first time it meets a problem of a given size (pixels, templates, lines, mode), which takes seconds. The compiled code is cached on disk (<code class="docutils literal notranslate"><span class="pre">~/.cache/brain/jax</span></code>; <code class="docutils literal notranslate"><span class="pre">BRAIN_CACHE_DIR</span></code> moves it) and later runs load it in about half a second; the resampled templates are cached too. Keep the fitting range, the templates and the mode the same across a batch, and only the first fit pays. <code class="docutils literal notranslate"><span class="pre">brainsp</span> <span class="pre">clear-cache</span></code> empties both caches.</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="scripts.html"><span class="pager-dir">← Previous</span><span class="pager-title">A run as one file</span></a>
+        <a class="pager-link next" href="cli.html"><span class="pager-dir">Next →</span><span class="pager-title">The command line</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

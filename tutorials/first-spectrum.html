@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>A first spectrum · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Emission lines" href="emission-lines.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab is-active" href="index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab is-active" href="index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Start here</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">Tutorials</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Spectra</p>
+        <ul>
+          <li><a class="nav-link is-active" href="#" aria-current="page">A first spectrum</a></li>
+          <li><a class="nav-link" href="emission-lines.html">Emission lines</a></li>
+          <li><a class="nav-link" href="agn.html">An active nucleus</a></li>
+          <li><a class="nav-link" href="many-spectra.html">Many spectra</a></li>
+          <li><a class="nav-link" href="masks-settings.html">Masks and settings files</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Datacubes</p>
+        <ul>
+          <li><a class="nav-link" href="datacube.html">A datacube</a></li>
+          <li><a class="nav-link" href="megacube.html">Exploring a megacube</a></li>
+          <li><a class="nav-link" href="server.html">On a server or a cluster</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Interface</p>
+        <ul>
+          <li><a class="nav-link" href="gui-walkthrough.html">The interface, end to end</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Tutorials</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Spectra</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="a-first-spectrum">
+<h1>A first spectrum<a class="headerlink" href="#a-first-spectrum" title="Link to this heading">#</a></h1>
+<p>This tutorial fits the mock spectrum of an old, metal-rich stellar population, the kind of light an early-type galaxy emits, and checks every recovered number against the values the mock was built with: <span class="math notranslate nohighlight">\(v_\star = 150\)</span> km s⁻¹, <span class="math notranslate nohighlight">\(\sigma_\star = 200\)</span> km s⁻¹, <span class="math notranslate nohighlight">\(A_V = 0.20\)</span> and three populations of 5, 9 and 12.6 Gyr.</p>
+<p>The whole tutorial as one file, ready to run: <a class="reference download internal" download="" href="../_downloads/e8a08765d94fb23107dc7af48aaa4bc6/01_first_spectrum.py"><code class="xref download docutils literal notranslate"><span class="pre">01_first_spectrum.py</span></code></a>.</p>
+<section id="the-data">
+<h2>The data<a class="headerlink" href="#the-data" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+
+<span class="n">folder</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">mock</span><span class="o">.</span><span class="n">write_examples</span><span class="p">(</span><span class="s2">&quot;examples&quot;</span><span class="p">)</span>
+<span class="n">spectrum</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">/spectra/mock_old_population.spec&quot;</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="../reference/modules/brainsp.mock.html#brainsp.mock.write_examples" title="brainsp.mock.write_examples"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.mock.write_examples()</span></code></a> writes the five mock spectra and the mock datacube used by every tutorial (<a class="reference internal" href="../python/mock.html"><span class="std std-doc">Mock data</span></a>); it does nothing when they are already there.</p>
+</section>
+<section id="the-fit">
+<h2>The fit<a class="headerlink" href="#the-fit" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;fits&quot;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With no settings given, BRAIN fits with its defaults: the stars only (<code class="docutils literal notranslate"><span class="pre">spop</span></code>), the BasesGM library with all its 84 templates, between 3700 and 6900 Å.</p>
+</section>
+<section id="the-numbers-against-the-truth">
+<h2>The numbers, against the truth<a class="headerlink" href="#the-numbers-against-the-truth" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stellar velocity   v0    = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">v0</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2"> km/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;velocity dispersion sigma = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">sigma</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2"> km/s (observed)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;extinction         A_V   = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">av</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2"> mag&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;log age&gt;_L              = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;log age&gt;_M              = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">mean_log_age_mass</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;Z&gt;_L                    = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">mean_metallicity_light</span><span class="si">:</span><span class="s2">8.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chi2 / N_eff             = </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">chi2</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">truth</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">spectrum</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.spec&quot;</span><span class="p">,</span> <span class="s2">&quot;.truth.json&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">truth: v0 = </span><span class="si">{v}</span><span class="s2">, sigma = </span><span class="si">{sigma}</span><span class="s2">, A_V = </span><span class="si">{av}</span><span class="s2">, &lt;log age&gt;_L = &quot;</span>
+      <span class="s2">&quot;</span><span class="si">{mean_log_age_light:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">truth</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="the-populations">
+<h2>The populations<a class="headerlink" href="#the-populations" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">populations</span>
+<span class="n">used</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  x_j(%)  mass_j(%)   age (yr)      Z&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">used</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;mcor&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">10.3g</span><span class="si">}</span><span class="s2">  &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">files:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">summary_file</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">fitted_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="what-it-printed">
+<h2>What it printed<a class="headerlink" href="#what-it-printed" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Plot saved to fits/mock_old_population_fit.pdf
+&lt;FitResult mock_old_population.spec: v0=149.09 km/s, sigma=198.75 km/s, AV=0.2067, chi2=0.98676&gt;
+stellar velocity   v0    =   149.09 km/s
+velocity dispersion sigma =   198.75 km/s (observed)
+extinction         A_V   =    0.207 mag
+&lt;log age&gt;_L              =    9.992
+&lt;log age&gt;_M              =   10.017
+&lt;Z&gt;_L                    =   0.0219
+chi2 / N_eff             =    0.987
+
+truth: v0 = 150.0, sigma = 200.0, A_V = 0.2, &lt;log age&gt;_L = 9.983
+
+  x_j(%)  mass_j(%)   age (yr)      Z
+    7.63      4.15    5.01e+09  0.0190
+   20.73     18.48    8.91e+09  0.0190
+   48.19     55.15    1.26e+10  0.0190
+    2.96      1.85    5.01e+09  0.0315
+   20.15     20.33    8.91e+09  0.0315
+
+files:
+  fits/mock_old_population_summary.txt
+  fits/mock_old_population_fitted.txt
+</pre></div>
+</div>
+<p>The fit recovers the velocity to 1 km s⁻¹, the dispersion to 1 per cent and <span class="math notranslate nohighlight">\(A_V\)</span> to 0.007 mag, and the light-weighted mean age to 0.01 dex. The population vector puts the light in templates of 5, 9 and 12.6 Gyr, as the mock was built, though split between two metallicities: the age–metallicity degeneracy at work, which is why the mean age and metallicity are robust and single templates are not. <span class="math notranslate nohighlight">\(\chi^2\)</span> per pixel is 0.99, as it should be for a model that is right and errors that are honest.</p>
+</section>
+<section id="figures">
+<h2>Figures<a class="headerlink" href="#figures" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;t01_spectrum.png&quot;</span><span class="p">)</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;t01_zoom.png&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">5100</span><span class="p">,</span> <span class="mi">5400</span><span class="p">),</span> <span class="n">residuals</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">sfh</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;t01_sfh.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<img alt="The fitted old-population spectrum with its residuals." src="../_images/t01_spectrum.png" />
+<figcaption>
+<p><span class="caption-text">The fit of the old-population mock: the observed spectrum, the model, and the residuals in the lower panel.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="A zoom on the magnesium and iron region." src="../_images/t01_zoom.png" />
+<figcaption>
+<p><span class="caption-text">The same fit between 5100 and 5400 Å, around the Mg b triplet and the Fe lines that constrain the metallicity.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="Light and mass fractions against age." src="../_images/t01_sfh.png" />
+<figcaption>
+<p><span class="caption-text">The star formation history: the fraction of light (at 5500 Å) and of present mass in each age, summed over metallicity.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="what-next">
+<h2>What next<a class="headerlink" href="#what-next" title="Link to this heading">#</a></h2>
+<p>Tutorial 2 adds the emission lines of a star-forming galaxy: <a class="reference internal" href="emission-lines.html"><span class="std std-doc">Emission lines</span></a>.</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="index.html"><span class="pager-dir">← Previous</span><span class="pager-title">Tutorials</span></a>
+        <a class="pager-link next" href="emission-lines.html"><span class="pager-dir">Next →</span><span class="pager-title">Emission lines</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

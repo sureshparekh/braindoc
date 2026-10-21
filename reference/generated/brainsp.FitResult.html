@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>FitResult · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="read_megacube" href="brainsp.read_megacube.html" />
+    <link rel="prev" title="read_result" href="brainsp.read_result.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../../index.html">
+      <img class="brand-logo" src="../../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../../start/index.html">Get started</a>
+    <a class="tab" href="../../gui/index.html">Interface</a>
+    <a class="tab" href="../../python/index.html">Python</a>
+    <a class="tab" href="../../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../../science/index.html">Science</a>
+    <a class="tab is-active" href="../index.html">Reference</a>
+    <a class="tab" href="../../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../../science/index.html">Science</a>
+        <a class="sidebar-tab is-active" href="../index.html">Reference</a>
+        <a class="sidebar-tab" href="../../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Overview</p>
+        <ul>
+          <li><a class="nav-link" href="../index.html">Reference</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Python API</p>
+        <ul>
+          <li><a class="nav-link is-active" href="../api.html">Python API</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Files</p>
+        <ul>
+          <li><a class="nav-link" href="../settings.html">Settings</a></li>
+          <li><a class="nav-link" href="../spectrum-files.html">Spectrum output files</a></li>
+          <li><a class="nav-link" href="../megacube-files.html">Megacube files</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Command line</p>
+        <ul>
+          <li><a class="nav-link" href="../cli.html">Command line</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Help</p>
+        <ul>
+          <li><a class="nav-link" href="../troubleshooting.html">Troubleshooting</a></li>
+          <li><a class="nav-link" href="../changelog.html">Changes</a></li>
+          <li><a class="nav-link" href="../citing.html">Citing BRAIN</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Reference</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><a href="../api.html">Python API</a>
+      </nav>
+      <div class="body" role="main">
+        <section id="fitresult">
+<h1>FitResult<a class="headerlink" href="#fitresult" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.FitResult">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.</span></span><span class="sig-name descname"><span class="pre">FitResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summary_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fitted_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.FitResult" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The result of fitting one spectrum, read from the files BRAIN wrote.</p>
+<p>A fit writes two files: <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_summary.txt</span></code> (the fitted parameters,
+the population vector, the emission lines) and <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_fitted.txt</span></code> (the observed and model spectra, column by column).
+This object reads both.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>spectrum</strong><span class="classifier">str</span></dt><dd><p>The input spectrum.</p>
+</dd>
+<dt><strong>summary_file, fitted_file</strong><span class="classifier">str</span></dt><dd><p>The two output files.</p>
+</dd>
+<dt><strong>values</strong><span class="classifier">dict</span></dt><dd><p>Every <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">[label]</span></code> line of the summary, by label, as text.</p>
+</dd>
+<dt><strong>v0, sigma</strong><span class="classifier">float</span></dt><dd><p>Stellar velocity and velocity dispersion in km/s (<code class="docutils literal notranslate"><span class="pre">v0_min</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vd_min</span></code>; the dispersion is OBSERVED, including the instrument,
+unless <code class="docutils literal notranslate"><span class="pre">instrumental_resolution</span></code> was given; see
+<a class="reference internal" href="#brainsp.FitResult.sigma_star" title="brainsp.FitResult.sigma_star"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sigma_star</span></code></a>).</p>
+</dd>
+<dt><strong>sigma_star</strong><span class="classifier">float or None</span></dt><dd><p>The intrinsic stellar dispersion, when the instrumental resolution
+was known.</p>
+</dd>
+<dt><strong>av, yav</strong><span class="classifier">float</span></dt><dd><p>V-band extinction of the whole population and the extra extinction
+of the youngest components, in magnitudes.</p>
+</dd>
+<dt><strong>chi2, chi2_data, adev</strong><span class="classifier">float</span></dt><dd><p>Reduced chi-squared (with and without the penalty rows), and the
+mean absolute deviation in per cent.</p>
+</dd>
+<dt><strong>populations</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Structured array, one row per template: <code class="docutils literal notranslate"><span class="pre">x</span></code> (light fraction, per
+cent, at the normalisation wavelength), <code class="docutils literal notranslate"><span class="pre">mini</span></code> and <code class="docutils literal notranslate"><span class="pre">mcor</span></code>
+(initial and present mass fractions, per cent), <code class="docutils literal notranslate"><span class="pre">age</span></code> (yr), <code class="docutils literal notranslate"><span class="pre">Z</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mstars</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">stellar</span></code> (False for an AGN component).</p>
+</dd>
+<dt><strong>lines</strong><span class="classifier">dict</span></dt><dd><p>Emission-line fluxes and errors, <code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">(flux,</span> <span class="pre">error)}</span></code>, as the
+summary writes them: in units of the normalised spectrum times
+Angstrom, corrected for the stellar extinction (<a class="reference internal" href="#brainsp.FitResult.line_fluxes" title="brainsp.FitResult.line_fluxes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">line_fluxes()</span></code></a>
+converts them); empty in <code class="docutils literal notranslate"><span class="pre">spop</span></code>.
+Names are BRAIN’s (<code class="docutils literal notranslate"><span class="pre">&quot;Halpha_6563&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;[S</span> <span class="pre">II]_6716&quot;</span></code> …). The
+tied doublets appear as <code class="docutils literal notranslate"><span class="pre">&quot;[O</span> <span class="pre">III]_Doublet&quot;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&quot;[N</span> <span class="pre">II]_Doublet&quot;</span></code> (the strong line’s flux) and also under each
+member’s own name, at the fixed ratio.</p>
+</dd>
+<dt><strong>wavelength, observed, model, stellar, emission, error, residual</strong><span class="classifier">ndarray</span></dt><dd><p>The columns of the fitted-spectrum file.</p>
+</dd>
+<dt><a class="reference internal" href="#brainsp.FitResult.uncertainties" title="brainsp.FitResult.uncertainties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uncertainties</span></code></a><span class="classifier">dict</span></dt><dd><p>Every 1-sigma error the fit wrote, by the summary’s name of the quantity: <code class="docutils literal notranslate"><span class="pre">{&quot;AV_min&quot;:</span> <span class="pre">0.021,</span> <span class="pre">&quot;sigma_star&quot;:</span> <span class="pre">3.4,</span> <span class="pre">&quot;Mage_L&quot;:</span> <span class="pre">...}</span></code>.</p>
+</dd>
+<dt><a class="reference internal" href="#brainsp.FitResult.nebular" title="brainsp.FitResult.nebular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nebular</span></code></a><span class="classifier">dict</span></dt><dd><p>nespop’s nebular results, from the summary’s photoionisation block:</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">fit_spectrum</span><span class="p">(</span><span class="s2">&quot;galaxy.spec&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">sigma</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">av</span>
+<span class="go">(188.3, 47.55, 0.2171)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_light</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">mean_log_age_mass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">young</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">populations</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">1e8</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;galaxy_fit.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="brainsp.FitResult.error_message">
+<span class="sig-name descname"><span class="pre">error_message</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#brainsp.FitResult.error_message" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.FitResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summary_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fitted_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.FitResult.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.uncertainties">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">uncertainties</span></span><a class="headerlink" href="#brainsp.FitResult.uncertainties" title="Link to this definition">#</a></dt>
+<dd><p>Every 1-sigma error the fit wrote, by the summary’s name of the
+quantity: <code class="docutils literal notranslate"><span class="pre">{&quot;AV_min&quot;:</span> <span class="pre">0.021,</span> <span class="pre">&quot;sigma_star&quot;:</span> <span class="pre">3.4,</span> <span class="pre">&quot;Mage_L&quot;:</span> <span class="pre">...}</span></code>.
+NaN where the error is withheld (formal errors of a poor fit, or of
+a quantity only the bootstrap calibrates); empty when the fit wrote
+none. <a class="reference internal" href="#brainsp.FitResult.uncertainty_method" title="brainsp.FitResult.uncertainty_method"><code class="xref py py-attr docutils literal notranslate"><span class="pre">uncertainty_method</span></code></a> says how they were made.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.uncertainty_method">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">uncertainty_method</span></span><a class="headerlink" href="#brainsp.FitResult.uncertainty_method" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">&quot;formal&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;bootstrap&quot;</span></code> (<code class="docutils literal notranslate"><span class="pre">error_samples</span></code>), or None.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.v0_err">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">v0_err</span></span><a class="headerlink" href="#brainsp.FitResult.v0_err" title="Link to this definition">#</a></dt>
+<dd><p>1-sigma error of <a class="reference internal" href="#brainsp.FitResult.v0" title="brainsp.FitResult.v0"><code class="xref py py-attr docutils literal notranslate"><span class="pre">v0</span></code></a>, km/s (None when not written).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.sigma_err">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma_err</span></span><a class="headerlink" href="#brainsp.FitResult.sigma_err" title="Link to this definition">#</a></dt>
+<dd><p>1-sigma error of <a class="reference internal" href="#brainsp.FitResult.sigma" title="brainsp.FitResult.sigma"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sigma</span></code></a>, km/s.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.sigma_star_err">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma_star_err</span></span><a class="headerlink" href="#brainsp.FitResult.sigma_star_err" title="Link to this definition">#</a></dt>
+<dd><p>1-sigma error of <a class="reference internal" href="#brainsp.FitResult.sigma_star" title="brainsp.FitResult.sigma_star"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sigma_star</span></code></a>, km/s.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.av_err">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">av_err</span></span><a class="headerlink" href="#brainsp.FitResult.av_err" title="Link to this definition">#</a></dt>
+<dd><p>1-sigma error of <a class="reference internal" href="#brainsp.FitResult.av" title="brainsp.FitResult.av"><code class="xref py py-attr docutils literal notranslate"><span class="pre">av</span></code></a>, mag.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.yav_err">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">yav_err</span></span><a class="headerlink" href="#brainsp.FitResult.yav_err" title="Link to this definition">#</a></dt>
+<dd><p>1-sigma error of <a class="reference internal" href="#brainsp.FitResult.yav" title="brainsp.FitResult.yav"><code class="xref py py-attr docutils literal notranslate"><span class="pre">yav</span></code></a>, mag.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.v_gas_err">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">v_gas_err</span></span><a class="headerlink" href="#brainsp.FitResult.v_gas_err" title="Link to this definition">#</a></dt>
+<dd><p>1-sigma error of <a class="reference internal" href="#brainsp.FitResult.v_gas" title="brainsp.FitResult.v_gas"><code class="xref py py-attr docutils literal notranslate"><span class="pre">v_gas</span></code></a>, km/s.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.sigma_gas_err">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma_gas_err</span></span><a class="headerlink" href="#brainsp.FitResult.sigma_gas_err" title="Link to this definition">#</a></dt>
+<dd><p>1-sigma error of <a class="reference internal" href="#brainsp.FitResult.sigma_gas" title="brainsp.FitResult.sigma_gas"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sigma_gas</span></code></a>, km/s.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.v0">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">v0</span></span><a class="headerlink" href="#brainsp.FitResult.v0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.sigma">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma</span></span><a class="headerlink" href="#brainsp.FitResult.sigma" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.sigma_star">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma_star</span></span><a class="headerlink" href="#brainsp.FitResult.sigma_star" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.av">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">av</span></span><a class="headerlink" href="#brainsp.FitResult.av" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.yav">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">yav</span></span><a class="headerlink" href="#brainsp.FitResult.yav" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.chi2">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">chi2</span></span><a class="headerlink" href="#brainsp.FitResult.chi2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.chi2_data">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">chi2_data</span></span><a class="headerlink" href="#brainsp.FitResult.chi2_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.adev">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">adev</span></span><a class="headerlink" href="#brainsp.FitResult.adev" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.v_gas">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">v_gas</span></span><a class="headerlink" href="#brainsp.FitResult.v_gas" title="Link to this definition">#</a></dt>
+<dd><p>Velocity of the first kinematic group of emission lines, km/s.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.sigma_gas">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sigma_gas</span></span><a class="headerlink" href="#brainsp.FitResult.sigma_gas" title="Link to this definition">#</a></dt>
+<dd><p>Dispersion of the first kinematic group of lines, km/s: intrinsic
+when the instrumental resolution is known (the instrument is in the
+line model), observed otherwise; the summary’s label says which.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.nebular">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">nebular</span></span><a class="headerlink" href="#brainsp.FitResult.nebular" title="Link to this definition">#</a></dt>
+<dd><p>nespop’s nebular results, from the summary’s photoionisation block:
+<code class="docutils literal notranslate"><span class="pre">treatment</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;FC&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;NC&quot;</span></code>), <code class="docutils literal notranslate"><span class="pre">Q_eff</span></code> (Lyman-continuum
+photons of the fitted populations, normalised units), <code class="docutils literal notranslate"><span class="pre">Q_H_total</span></code>
+(apparent, as <code class="docutils literal notranslate"><span class="pre">Mcor_tot</span></code>), <code class="docutils literal notranslate"><span class="pre">tau</span></code> (H-beta predicted / measured),
+<code class="docutils literal notranslate"><span class="pre">AV_neb</span></code> (mag), <code class="docutils literal notranslate"><span class="pre">Te</span></code> (K), <code class="docutils literal notranslate"><span class="pre">ne</span></code> (cm^-3), <code class="docutils literal notranslate"><span class="pre">f_neb</span></code> (the
+nebular continuum’s fraction of the light at the normalisation
+wavelength) and <code class="docutils literal notranslate"><span class="pre">bpt_class</span></code>. Empty in spop and espop.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.mode">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#brainsp.FitResult.mode" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.flux_tot">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">flux_tot</span></span><a class="headerlink" href="#brainsp.FitResult.flux_tot" title="Link to this definition">#</a></dt>
+<dd><p>The model’s flux at the normalisation wavelength (input units).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.fobs_norm">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fobs_norm</span></span><a class="headerlink" href="#brainsp.FitResult.fobs_norm" title="Link to this definition">#</a></dt>
+<dd><p>The observed flux the spectrum was divided by (input units): what
+turns a normalised flux back into the input’s units. Summaries
+written before it was recorded fall back to Flux_tot, which differs
+from it by the sum of the light fractions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.mcor_tot">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mcor_tot</span></span><a class="headerlink" href="#brainsp.FitResult.mcor_tot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.mini_tot">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mini_tot</span></span><a class="headerlink" href="#brainsp.FitResult.mini_tot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.FitResult.line_fluxes">
+<span class="sig-name descname"><span class="pre">line_fluxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'input'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult.line_fluxes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.FitResult.line_fluxes" title="Link to this definition">#</a></dt>
+<dd><p>Emission-line fluxes, in the units asked for.</p>
+<p>The summary file holds fluxes relative to the normalised spectrum
+(continuum = 1 at the normalisation wavelength) and corrected for the
+stellar extinction relative to that wavelength. This converts them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>units</strong><span class="classifier">{“input”, “normalised”}</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&quot;input&quot;</span></code> multiplies by <code class="docutils literal notranslate"><span class="pre">fobs_norm</span></code>, giving flux in the units
+of the input spectrum times Angstrom; <code class="docutils literal notranslate"><span class="pre">&quot;normalised&quot;</span></code> leaves
+them as written.</p>
+</dd>
+<dt><strong>observed</strong><span class="classifier">bool</span></dt><dd><p>Undo the stellar-extinction correction, giving the flux as it
+arrives (still after any Galactic dereddening of the input).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p><code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">(flux,</span> <span class="pre">error)}</span></code>, doublets and their members included.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.mean_log_age_light">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_log_age_light</span></span><a class="headerlink" href="#brainsp.FitResult.mean_log_age_light" title="Link to this definition">#</a></dt>
+<dd><p>&lt;log t&gt;_L: the light-weighted mean of log10(age / yr).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.mean_log_age_mass">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_log_age_mass</span></span><a class="headerlink" href="#brainsp.FitResult.mean_log_age_mass" title="Link to this definition">#</a></dt>
+<dd><p>&lt;log t&gt;_M: the (present) mass-weighted mean of log10(age / yr).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.mean_metallicity_light">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_metallicity_light</span></span><a class="headerlink" href="#brainsp.FitResult.mean_metallicity_light" title="Link to this definition">#</a></dt>
+<dd><p>&lt;Z&gt;_L: light-weighted mean metallicity.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.mean_metallicity_mass">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">mean_metallicity_mass</span></span><a class="headerlink" href="#brainsp.FitResult.mean_metallicity_mass" title="Link to this definition">#</a></dt>
+<dd><p>&lt;Z&gt;_M: mass-weighted mean metallicity.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.agn_fraction">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">agn_fraction</span></span><a class="headerlink" href="#brainsp.FitResult.agn_fraction" title="Link to this definition">#</a></dt>
+<dd><p>Light fraction, in per cent, in components that are not stars.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.wavelength">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">wavelength</span></span><a class="headerlink" href="#brainsp.FitResult.wavelength" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.observed">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">observed</span></span><a class="headerlink" href="#brainsp.FitResult.observed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.model">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#brainsp.FitResult.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.stellar">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">stellar</span></span><a class="headerlink" href="#brainsp.FitResult.stellar" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.emission">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">emission</span></span><a class="headerlink" href="#brainsp.FitResult.emission" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.error">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#brainsp.FitResult.error" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="brainsp.FitResult.residual">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">residual</span></span><a class="headerlink" href="#brainsp.FitResult.residual" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.FitResult.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.FitResult.plot" title="Link to this definition">#</a></dt>
+<dd><p>The standard BRAIN figure of this fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">str, optional</span></dt><dd><p>Where to write it (<code class="docutils literal notranslate"><span class="pre">.pdf</span></code> or <code class="docutils literal notranslate"><span class="pre">.png</span></code>). By default beside the
+summary file, as <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;_fit.pdf</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The file written.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.FitResult.as_dict">
+<span class="sig-name descname"><span class="pre">as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/api.html#FitResult.as_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.FitResult.as_dict" title="Link to this definition">#</a></dt>
+<dd><p>The headline numbers, as a plain dictionary.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page"><span></span>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../../"; window.BRAIN_SEARCH_INDEX = "../../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../../search.html";</script>
+<script src="../../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

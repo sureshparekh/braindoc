@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Exploring a megacube · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="On a server or a cluster" href="server.html" />
+    <link rel="prev" title="A datacube" href="datacube.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../start/index.html">Get started</a>
+    <a class="tab" href="../gui/index.html">Interface</a>
+    <a class="tab" href="../python/index.html">Python</a>
+    <a class="tab is-active" href="index.html">Tutorials</a>
+    <a class="tab" href="../science/index.html">Science</a>
+    <a class="tab" href="../reference/index.html">Reference</a>
+    <a class="tab" href="../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../python/index.html">Python</a>
+        <a class="sidebar-tab is-active" href="index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Start here</p>
+        <ul>
+          <li><a class="nav-link" href="index.html">Tutorials</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Spectra</p>
+        <ul>
+          <li><a class="nav-link" href="first-spectrum.html">A first spectrum</a></li>
+          <li><a class="nav-link" href="emission-lines.html">Emission lines</a></li>
+          <li><a class="nav-link" href="agn.html">An active nucleus</a></li>
+          <li><a class="nav-link" href="many-spectra.html">Many spectra</a></li>
+          <li><a class="nav-link" href="masks-settings.html">Masks and settings files</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Datacubes</p>
+        <ul>
+          <li><a class="nav-link" href="datacube.html">A datacube</a></li>
+          <li><a class="nav-link is-active" href="#" aria-current="page">Exploring a megacube</a></li>
+          <li><a class="nav-link" href="server.html">On a server or a cluster</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Interface</p>
+        <ul>
+          <li><a class="nav-link" href="gui-walkthrough.html">The interface, end to end</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Tutorials</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><span>Datacubes</span>
+      </nav>
+      <div class="body" role="main">
+        <section class="tex2jax_ignore mathjax_ignore" id="exploring-a-megacube">
+<h1>Exploring a megacube<a class="headerlink" href="#exploring-a-megacube" title="Link to this heading">#</a></h1>
+<p>The megacube of the previous tutorial holds every map, every spaxel’s spectrum and population vector, and the emission-line diagnostics. This tutorial draws them, exports maps as files a paper or another program can use, and checks one spaxel’s populations against the truth.</p>
+<p>The whole tutorial as one file, ready to run: <a class="reference download internal" download="" href="../_downloads/3da70119114629b93bb40aa894169b2e/07_megacube.py"><code class="xref download docutils literal notranslate"><span class="pre">07_megacube.py</span></code></a>.</p>
+<section id="maps">
+<h2>Maps<a class="headerlink" href="#maps" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">read_megacube</span><span class="p">(</span><span class="s2">&quot;cube_out/mock_cube-BRAIN_MEGACUBE.fits&quot;</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">plots</span>
+
+<span class="n">P</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;t08_velocity.png&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdBu_r&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;full&quot;</span><span class="p">,</span>
+      <span class="n">title</span><span class="o">=</span><span class="s2">&quot;stellar velocity [km/s]&quot;</span><span class="p">)</span>
+<span class="n">P</span><span class="o">.</span><span class="n">maps</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;Sigma_star&quot;</span><span class="p">,</span> <span class="s2">&quot;Av&quot;</span><span class="p">,</span> <span class="s2">&quot;Mage_L&quot;</span><span class="p">,</span> <span class="s2">&quot;xo_light&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Halpha_6563  flux&quot;</span><span class="p">],</span> <span class="s2">&quot;t08_page.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/t08_velocity.png"><img alt="The stellar velocity map of the mock cube." src="../_images/t08_velocity.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The stellar velocity field, on a diverging colour map with the full range shown.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="Six maps on one page." src="../_images/t08_page.png" />
+<figcaption>
+<p><span class="caption-text">Six maps on one page: the stellar velocity and dispersion, <span class="math notranslate nohighlight">\(A_V\)</span>, the light-weighted mean age, the light of the old populations and the H<span class="math notranslate nohighlight">\(\alpha\)</span> flux.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="single-spaxels">
+<h2>Single spaxels<a class="headerlink" href="#single-spaxels" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">.</span><span class="n">spaxel</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;t08_spaxel_centre.png&quot;</span><span class="p">)</span>
+<span class="n">P</span><span class="o">.</span><span class="n">spaxel</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;t08_spaxel_ring.png&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">6480</span><span class="p">,</span> <span class="mi">6780</span><span class="p">))</span>
+<span class="n">P</span><span class="o">.</span><span class="n">sfh</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;t08_sfh_centre.png&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<img alt="The central spaxel's spectrum and model." src="../_images/t08_spaxel_centre.png" />
+<figcaption>
+<p><span class="caption-text">The central spaxel (row 8, column 8): the observed spectrum, the model and each emission line.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="A spaxel of the star-forming ring around H-alpha." src="../_images/t08_spaxel_ring.png" />
+<figcaption>
+<p><span class="caption-text">A spaxel of the star-forming ring, around H<span class="math notranslate nohighlight">\(\alpha\)</span> and [N II].</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="The central spaxel's star formation history." src="../_images/t08_sfh_centre.png" />
+<figcaption>
+<p><span class="caption-text">The central spaxel’s star formation history, in light and in mass.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="diagnostics">
+<h2>Diagnostics<a class="headerlink" href="#diagnostics" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">kind</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;BPT [N II]&quot;</span><span class="p">,</span> <span class="s2">&quot;BPT [S II]&quot;</span><span class="p">,</span> <span class="s2">&quot;WHAN&quot;</span><span class="p">):</span>
+    <span class="n">P</span><span class="o">.</span><span class="n">diagnostic</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;t08_</span><span class="si">{</span><span class="n">kind</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+<span class="n">P</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;BPT [N II]&quot;</span><span class="p">,</span> <span class="s2">&quot;t08_bpt_map.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id6">
+<img alt="The [N II] BPT diagram of every spaxel." src="../_images/t08_BPT_N_II.png" />
+<figcaption>
+<p><span class="caption-text">The [N II] BPT diagram of every fitted spaxel, coloured by class, with the Kewley et al. (2001), Kauffmann et al. (2003) and Cid Fernandes et al. (2010) curves.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
+<img alt="The WHAN diagram of every spaxel." src="../_images/t08_WHAN.png" />
+<figcaption>
+<p><span class="caption-text">The WHAN diagram (Cid Fernandes et al. 2011).</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="../_images/t08_bpt_map.png"><img alt="The BPT class of every spaxel as a map." src="../_images/t08_bpt_map.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The [N II] BPT class of every spaxel, as a map.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="export-maps-as-files">
+<h2>Export maps as files<a class="headerlink" href="#export-maps-as-files" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">export_maps</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;maps&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">,</span> <span class="s2">&quot;Sigma_star&quot;</span><span class="p">,</span> <span class="s2">&quot;Av&quot;</span><span class="p">],</span>
+                      <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;fits&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files</span><span class="p">))</span>
+<span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;maps/vrot_star.fits&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
+    <span class="n">h</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;CTYPE1&quot;</span><span class="p">]),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;CTYPE2&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</section>
+<section id="one-spaxel-s-populations-against-the-truth">
+<h2>One spaxel’s populations against the truth<a class="headerlink" href="#one-spaxel-s-populations-against-the-truth" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">light</span><span class="p">,</span> <span class="n">mass</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">populations</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">central spaxel: light in templates older than 5 Gyr:&quot;</span><span class="p">,</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">light</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">ages</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">light</span><span class="p">)]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5e9</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+<span class="n">truth</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;examples/cube/mock_cube.truth.fits&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;truth (old population light):&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">truth</span><span class="p">[</span><span class="s1">&#39;OLD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="what-it-printed">
+<h2>What it printed<a class="headerlink" href="#what-it-printed" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>maps/vrot_star.png
+maps/vrot_star.pdf
+maps/vrot_star.fits
+maps/Sigma_star.png
+maps/Sigma_star.pdf
+maps/Sigma_star.fits
+maps/Av.png
+maps/Av.pdf
+maps/Av.fits
+Filename: maps/vrot_star.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      26   (16, 16)   float64   
+  1  TRUST         1 ImageHDU        26   (16, 16)   uint8   
+&#39;RA---TAN&#39; &#39;DEC--TAN&#39;
+
+central spaxel: light in templates older than 5 Gyr: 75.0 %
+truth (old population light): 77.4 %
+</pre></div>
+</div>
+<p>Each exported FITS map carries the cube’s sky coordinates and a <code class="docutils literal notranslate"><span class="pre">TRUST</span></code> extension saying why a spaxel is not a measurement, so it can be read without the megacube. The central spaxel’s old light comes back at 75 per cent for 77 per cent built in.</p>
+</section>
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page">
+        <a class="pager-link prev" href="datacube.html"><span class="pager-dir">← Previous</span><span class="pager-title">A datacube</span></a>
+        <a class="pager-link next" href="server.html"><span class="pager-dir">Next →</span><span class="pager-title">On a server or a cluster</span></a>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../"; window.BRAIN_SEARCH_INDEX = "../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../search.html";</script>
+<script src="../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

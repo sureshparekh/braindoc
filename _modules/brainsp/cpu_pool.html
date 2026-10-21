@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>brainsp.cpu_pool · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../../index.html">
+      <img class="brand-logo" src="../../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../../start/index.html">Get started</a>
+    <a class="tab" href="../../gui/index.html">Interface</a>
+    <a class="tab" href="../../python/index.html">Python</a>
+    <a class="tab" href="../../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../../science/index.html">Science</a>
+    <a class="tab" href="../../reference/index.html">Reference</a>
+    <a class="tab" href="../../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../../about.html">About</a>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <div class="body" role="main">
+        <h1>Source code for brainsp.cpu_pool</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Worker processes for every stage of a datacube fit: on the CPU cores, or on</span>
+<span class="sd">several GPUs.</span>
+
+<span class="sd">One process cannot use a many-core CPU for this problem (XLA&#39;s threads speed</span>
+<span class="sd">up each spaxel&#39;s linear algebra a little, and a batch waits for its slowest</span>
+<span class="sd">spaxel), so on a CPU the spaxels go to worker processes, each pinned to a</span>
+<span class="sd">core of its own (fit_megacube_jax.pinned_to), never more than every core but</span>
+<span class="sd">two (fit_megacube_jax.cpu_budget).</span>
+
+<span class="sd">The pool sits behind the two functions every stage of the fit goes through,</span>
+<span class="sd">fast_cube.fit_queue_fast and fast_cube.run_rows: while a pool is installed</span>
+<span class="sd">(fast_cube.POOL), they split their spaxels into small chunks, the workers</span>
+<span class="sd">run the very same function on each chunk, and the results come back in the</span>
+<span class="sd">spaxels&#39; order. Spaxels are fitted independently, so the fit is the one a</span>
+<span class="sd">single process or a GPU gives, to rounding; the stars-alone kinematics, the</span>
+<span class="sd">main fit, the weak lines, the population and nebular fits and the errors all</span>
+<span class="sd">run on the workers.</span>
+
+<span class="sd">Workers start once per cube fit and stay warm between the stages. Arrays a</span>
+<span class="sd">call shares between its chunks (the templates, the line tables, the nebular</span>
+<span class="sd">model) are sent to each worker once, by the hash of their contents, and kept</span>
+<span class="sd">there; only the chunk&#39;s own rows travel with every call. A worker is</span>
+<span class="sd">`python -m brainsp.pool_worker`, never a re-run of the caller&#39;s script.</span>
+
+<span class="sd">On a machine with several GPUs a single cube is spread over them the same</span>
+<span class="sd">way (Pool(gpu_slots=...)): one worker per GPU, each running the queue with</span>
+<span class="sd">the lanes its card takes, while this process, on the CPU, only coordinates</span>
+<span class="sd">(the cube-wide decisions, the statistics, the megacube).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Arrays at least this large are sent once per worker and referred to by</span>
+<span class="c1"># hash afterwards; smaller ones travel with each call.</span>
+<span class="n">SHARE_BYTES</span> <span class="o">=</span> <span class="mi">4096</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_Ref</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An array a worker already holds (or is sent alongside), by hash.&quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;key&quot;</span><span class="p">,</span> <span class="s2">&quot;jax&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">jax</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jax</span> <span class="o">=</span> <span class="n">key</span><span class="p">,</span> <span class="n">jax</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">_Ref</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jax</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_array</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="vm">__module__</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span>
+        <span class="p">(</span><span class="s2">&quot;jax&quot;</span><span class="p">,</span> <span class="s2">&quot;jaxlib&quot;</span><span class="p">))</span>
+
+
+<div class="viewcode-block" id="strip">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.strip">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">strip</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">blobs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    obj with every large array replaced by a _Ref; the arrays go to `blobs`</span>
+<span class="sd">    (key -&gt; (array, is_jax)). Tuples (named ones included), lists and dicts</span>
+<span class="sd">    are walked; anything else is left as it is.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">_is_array</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">):</span>
+        <span class="n">is_jax</span> <span class="o">=</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">nbytes</span> <span class="o">&lt;</span> <span class="n">SHARE_BYTES</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_Small</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">is_jax</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">blake2b</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">digest_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">h</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">repr</span><span class="p">((</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">str</span><span class="p">,</span> <span class="n">is_jax</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+        <span class="n">blobs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">is_jax</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">_Ref</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">is_jax</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;_fields&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)(</span><span class="o">*</span><span class="p">[</span><span class="n">strip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">blobs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)(</span><span class="n">strip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">blobs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">strip</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">blobs</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="k">return</span> <span class="n">obj</span></div>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_Small</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A small array, carried with the call.&quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;jax&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">jax</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jax</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">jax</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">_Small</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jax</span><span class="p">))</span>
+
+
+<div class="viewcode-block" id="dress">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.dress">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">dress</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">store</span><span class="p">,</span> <span class="n">to_jax</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;strip, undone in the worker: _Ref from `store`, _Small converted.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">_Ref</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">store</span><span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">_Small</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">to_jax</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">jax</span> <span class="k">else</span> <span class="n">obj</span><span class="o">.</span><span class="n">a</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;_fields&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)(</span><span class="o">*</span><span class="p">[</span><span class="n">dress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">store</span><span class="p">,</span> <span class="n">to_jax</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)(</span><span class="n">dress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">store</span><span class="p">,</span> <span class="n">to_jax</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">dress</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">store</span><span class="p">,</span> <span class="n">to_jax</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="k">return</span> <span class="n">obj</span></div>
+
+
+
+<div class="viewcode-block" id="send">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.send">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">send</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">)</span>
+    <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&lt;Q&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+    <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">stream</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="receive">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.receive">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">receive</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">head</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">EOFError</span><span class="p">(</span><span class="s2">&quot;the worker closed its pipe&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">n</span><span class="p">,)</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&lt;Q&quot;</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">chunk</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">EOFError</span><span class="p">(</span><span class="s2">&quot;the worker closed its pipe&quot;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">+=</span> <span class="n">chunk</span>
+    <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">data</span><span class="p">))</span></div>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_Task</span><span class="p">:</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;fn&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="p">,</span> <span class="s2">&quot;kwargs&quot;</span><span class="p">,</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="s2">&quot;finished&quot;</span><span class="p">,</span> <span class="s2">&quot;result&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;error&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">finished</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fn</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">finished</span> <span class="o">=</span> <span class="n">index</span><span class="p">,</span> <span class="n">finished</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">done</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">finished</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Pool">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.Pool">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Pool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    n worker processes on the cores of cpu_budget(), one each.</span>
+
+<span class="sd">    map(fn, calls) runs ``fn(*args, **kwargs)`` for every (args, kwargs) in</span>
+<span class="sd">    `calls` on whichever worker is free, and returns the results in order.</span>
+<span class="sd">    fn is a module-level function, sent by name. Thread-safe: the nebular</span>
+<span class="sd">    fit runs its bins from several threads at once, and their chunks share</span>
+<span class="sd">    the workers.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gpu_slots</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        n_workers CPU workers, one core each; or, with gpu_slots (a list of</span>
+<span class="sd">        scheduler.slots()&#39; dicts), one worker per slot on its GPU, the CPU</span>
+<span class="sd">        cores dealt out among them, and the cards described in self.gpus</span>
+<span class="sd">        (core_count, memory_gb) for sizing their lanes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.fit_megacube_jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">pinned_to</span><span class="p">,</span> <span class="n">worker_cores</span>
+        <span class="n">cores</span> <span class="o">=</span> <span class="n">worker_cores</span><span class="p">()</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">MKL_NUM_THREADS</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                    <span class="n">OPENBLAS_NUM_THREADS</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
+        <span class="n">base</span><span class="p">[</span><span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">parent</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">base</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">p</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;gpu&quot;</span> <span class="k">if</span> <span class="n">gpu_slots</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gpu_slots</span><span class="p">)</span> <span class="k">if</span> <span class="n">gpu_slots</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_workers</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tasks</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_procs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threads</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state_version</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gpus</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_state</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;cpu&quot;</span><span class="p">:</span>
+                <span class="n">env</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">JAX_PLATFORMS</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">,</span>
+                           <span class="n">BRAIN_PRECOMPILE_THREADS</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+                <span class="n">mine</span> <span class="o">=</span> <span class="p">{</span><span class="n">cores</span><span class="p">[</span><span class="n">k</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">cores</span><span class="p">)]}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">slot</span> <span class="o">=</span> <span class="n">gpu_slots</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                <span class="n">env</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">JAX_PLATFORMS</span><span class="o">=</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="n">BRAIN_POOL_HELLO</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                           <span class="n">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">slot</span><span class="p">[</span><span class="s2">&quot;gpu&quot;</span><span class="p">]))</span>
+                <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fraction&quot;</span><span class="p">):</span>
+                    <span class="n">env</span><span class="p">[</span><span class="s2">&quot;XLA_PYTHON_CLIENT_MEM_FRACTION&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+                        <span class="n">slot</span><span class="p">[</span><span class="s2">&quot;fraction&quot;</span><span class="p">])</span>
+                <span class="n">mine</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">cores</span><span class="p">[</span><span class="n">k</span><span class="p">::</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">]</span> <span class="ow">or</span> <span class="n">cores</span><span class="p">)</span>
+            <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;brainsp.pool_worker&quot;</span><span class="p">],</span>
+                <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+                <span class="n">preexec_fn</span><span class="o">=</span><span class="p">(</span><span class="n">pinned_to</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">mine</span><span class="p">)))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mine</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+                            <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="o">=</span><span class="n">mine</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">sched_setaffinity</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="p">))))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_procs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_procs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span>
+                <span class="c1"># each GPU worker says what its card is before any work</span>
+                <span class="n">status</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">receive</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="s2">&quot;hello&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A GPU worker did not start: </span><span class="si">{</span><span class="n">info</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">gpus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_feed</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">proc</span><span class="p">,),</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Pool.lanes">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.Pool.lanes">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lanes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_pix</span><span class="p">,</span> <span class="n">n_fine</span><span class="p">,</span> <span class="n">n_ssp</span><span class="p">,</span> <span class="n">n_gas</span><span class="p">,</span> <span class="n">n_params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Lanes for each worker&#39;s queue: one on a CPU core; on the GPUs,</span>
+<span class="sd">        what the smallest card takes (estimate_lanes_fast).&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;cpu&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.fit_megacube_jax</span><span class="w"> </span><span class="kn">import</span> <span class="n">estimate_lanes_fast</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">estimate_lanes_fast</span><span class="p">(</span>
+            <span class="n">g</span><span class="p">[</span><span class="s2">&quot;memory_gb&quot;</span><span class="p">],</span> <span class="n">n_pix</span><span class="p">,</span> <span class="n">n_fine</span><span class="p">,</span> <span class="n">n_ssp</span><span class="p">,</span> <span class="n">n_gas</span><span class="p">,</span> <span class="n">n_params</span><span class="p">,</span>
+            <span class="n">device</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">SimpleNamespace</span><span class="p">(</span><span class="n">core_count</span><span class="o">=</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;core_count&quot;</span><span class="p">]))</span>
+            <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">gpus</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Pool.set_state">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.Pool.set_state">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send the module state the fit functions read (fast_cube.NATIVE, the</span>
+<span class="sd">        native-pixel operator; emission_lines.LINE_LSF, the instrument&#39;s</span>
+<span class="sd">        line width) to every worker before its next call. Called whenever</span>
+<span class="sd">        the fit sets them.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">emission_lines</span><span class="p">,</span> <span class="n">fast_cube</span>
+        <span class="n">nat</span> <span class="o">=</span> <span class="n">fast_cube</span><span class="o">.</span><span class="n">NATIVE</span>
+        <span class="n">nat</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span> <span class="k">if</span> <span class="n">nat</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span>
+               <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">v</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nat</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+        <span class="n">lsf</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span> <span class="k">if</span> <span class="n">emission_lines</span><span class="o">.</span><span class="n">LINE_LSF</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span>
+               <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">emission_lines</span><span class="o">.</span><span class="n">LINE_LSF</span><span class="p">))</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="p">(</span><span class="n">nat</span><span class="p">,</span> <span class="n">lsf</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_state_version</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proc</span><span class="p">):</span>
+        <span class="n">known</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">task</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tasks</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">task</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+                    <span class="n">state</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state_version</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">version</span><span class="p">:</span>
+                    <span class="c1"># a new fit: the worker drops the arrays of the last</span>
+                    <span class="c1"># (they are sent again as needed), so a pool kept over</span>
+                    <span class="c1"># many cubes does not grow</span>
+                    <span class="n">send</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="n">state</span><span class="p">))</span>
+                    <span class="n">version</span> <span class="o">=</span> <span class="n">v</span>
+                    <span class="n">known</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+                <span class="n">blobs</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">args</span> <span class="o">=</span> <span class="n">strip</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">blobs</span><span class="p">)</span>
+                <span class="n">kwargs</span> <span class="o">=</span> <span class="n">strip</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">blobs</span><span class="p">)</span>
+                <span class="n">new</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">b</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">blobs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">known</span><span class="p">}</span>
+                <span class="n">send</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;call&quot;</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">fn</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span>
+                                  <span class="n">task</span><span class="o">.</span><span class="n">fn</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">new</span><span class="p">))</span>
+                <span class="n">known</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+                <span class="n">status</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">receive</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;ok&quot;</span><span class="p">:</span>
+                    <span class="n">task</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">task</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;A CPU worker failed in </span><span class="si">{</span><span class="n">task</span><span class="o">.</span><span class="n">fn</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>          <span class="c1"># the worker died</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">err</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">read</span><span class="p">()[</span><span class="o">-</span><span class="mi">3000</span><span class="p">:]</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="k">pass</span>
+                <span class="n">task</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;A CPU worker stopped (</span><span class="si">{</span><span class="n">exc</span><span class="si">}</span><span class="s2">).</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">err</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">task</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_fail_rest</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">error</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="n">task</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fail_rest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A dead worker takes no more tasks; the others go on.&quot;&quot;&quot;</span>
+        <span class="n">alive</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threads</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">alive</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tasks</span><span class="o">.</span><span class="n">get_nowait</span><span class="p">()</span>
+                <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+                    <span class="k">return</span>
+                <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">t</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
+                    <span class="n">t</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Pool.map">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.Pool.map">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">calls</span><span class="p">,</span> <span class="n">on_done</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ``fn(*args, **kwargs)`` for each (args, kwargs) of `calls`, on the</span>
+<span class="sd">        workers; the results in the order of `calls`. on_done(i, result) is</span>
+<span class="sd">        called here, in the caller&#39;s thread, as each call finishes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;the CPU worker pool is closed&quot;</span><span class="p">)</span>
+        <span class="n">finished</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">_Task</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">finished</span><span class="p">)</span>
+                 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">calls</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tasks</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">finished</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">error</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">error</span> <span class="ow">or</span> <span class="n">t</span><span class="o">.</span><span class="n">error</span>
+            <span class="k">elif</span> <span class="n">on_done</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">error</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">on_done</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">error</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">error</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">result</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="Pool.close">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.Pool.close">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_procs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tasks</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_procs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">send</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">,))</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_procs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">proc</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">proc</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span></div>
+</div>
+
+
+
+<span class="c1"># While True, a fit leaves the pool it started running for the next one</span>
+<span class="c1"># (keep_warm): the workers, their compiled kernels and the arrays they hold</span>
+<span class="c1"># carry over from cube to cube.</span>
+<span class="n">KEEP</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<div class="viewcode-block" id="keep_warm">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.keep_warm">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">keep_warm</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ``with keep_warm():`` -- every cube fitted inside shares one pool, closed</span>
+<span class="sd">    on leaving. Spaxels are fitted independently, so a cube&#39;s fit does not</span>
+<span class="sd">    depend on what the workers fitted before it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">KEEP</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_was</span> <span class="o">=</span> <span class="n">KEEP</span>
+        <span class="n">KEEP</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exc</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">KEEP</span>
+        <span class="n">KEEP</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_was</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">KEEP</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">fast_cube</span>
+            <span class="k">if</span> <span class="n">fast_cube</span><span class="o">.</span><span class="n">POOL</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">fast_cube</span><span class="o">.</span><span class="n">POOL</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="n">fast_cube</span><span class="o">.</span><span class="n">POOL</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+
+<div class="viewcode-block" id="chunks">
+<a class="viewcode-back" href="../../reference/modules/brainsp.cpu_pool.html#brainsp.cpu_pool.chunks">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">chunks</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n_workers</span><span class="p">,</span> <span class="n">largest</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">per_worker</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Row ranges for n spaxels over n_workers: about `per_worker` chunks per</span>
+<span class="sd">    worker (so the last ones finish together), of at most `largest` rows.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">largest</span><span class="p">),</span>
+                      <span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">//</span> <span class="p">(</span><span class="n">per_worker</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_workers</span><span class="p">)))))</span>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">size</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span></div>
+
+</pre></div>
+      </div>
+      <nav class="pager" aria-label="Previous and next page"><span></span>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../../"; window.BRAIN_SEARCH_INDEX = "../../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../../search.html";</script>
+<script src="../../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

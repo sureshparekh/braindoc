@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>brainsp.libraries · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../../index.html">
+      <img class="brand-logo" src="../../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../../start/index.html">Get started</a>
+    <a class="tab" href="../../gui/index.html">Interface</a>
+    <a class="tab" href="../../python/index.html">Python</a>
+    <a class="tab" href="../../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../../science/index.html">Science</a>
+    <a class="tab" href="../../reference/index.html">Reference</a>
+    <a class="tab" href="../../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../../science/index.html">Science</a>
+        <a class="sidebar-tab" href="../../reference/index.html">Reference</a>
+        <a class="sidebar-tab" href="../../about.html">About</a>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <div class="body" role="main">
+        <h1>Source code for brainsp.libraries</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Template libraries: where they are, what is in them, how to add one.</span>
+
+<span class="sd">A *library* is a folder of single-stellar-population (SSP) spectra with a</span>
+<span class="sd">``CATALOGUE.txt`` that lists them, one per line::</span>
+
+<span class="sd">    # AGE_YR      Z         FILENAME                 SHORT_NAME   MSTARS   KIND</span>
+<span class="sd">    1.0e+06       0.019     bc03_z019_t1e6.dat       t1e6_z019    1.0      ssp</span>
+
+<span class="sd">Each template file holds two columns, wavelength in Angstrom (rest frame,</span>
+<span class="sd">air or vacuum as the library states) and flux per unit wavelength for the</span>
+<span class="sd">population, normalised as the library normalises it. ``MSTARS`` is the</span>
+<span class="sd">fraction of the initial mass still in stars (and remnants) at that age, used</span>
+<span class="sd">to turn light fractions into stellar masses; ``KIND`` is ``ssp`` for a stellar</span>
+<span class="sd">population and ``powerlaw`` for a featureless component such as an AGN</span>
+<span class="sd">continuum. Lines starting with ``#`` are comments.</span>
+
+<span class="sd">Libraries are looked up by name, in this order:</span>
+
+<span class="sd">1. a folder path given directly (absolute, or relative to the working</span>
+<span class="sd">   directory);</span>
+<span class="sd">2. every folder in the ``BRAINSP_LIBRARY_PATH`` environment variable</span>
+<span class="sd">   (separated by ``:`` on Linux and macOS, ``;`` on Windows);</span>
+<span class="sd">3. ``~/.brainsp/libraries`` (or ``$BRAINSP_HOME/libraries``), where</span>
+<span class="sd">   :func:`install` puts libraries added after installation;</span>
+<span class="sd">4. the libraries shipped inside the package (``BasesGM``, ``M13`` and</span>
+<span class="sd">   ``BC03``, the library the nebular mode nespop is validated with).</span>
+
+<span class="sd">So a library added later, however large, does not have to live inside the</span>
+<span class="sd">package: install it once with :func:`install`, or point</span>
+<span class="sd">``BRAINSP_LIBRARY_PATH`` at the folder that holds it, and refer to it by its</span>
+<span class="sd">folder name everywhere (``base_folder=&quot;MILES&quot;`` in the settings, the Library</span>
+<span class="sd">menu in the interface).</span>
+
+<span class="sd">The ``AGN`` folder shipped with the package is not a library: it holds the</span>
+<span class="sd">seven featureless continua that ``include_power_law`` adds to a library, and</span>
+<span class="sd">it is never offered as one. A library can carry its own AGN set instead, in</span>
+<span class="sd">an ``AGN`` sub-folder with a ``CATALOGUE.txt`` of the same layout (KIND</span>
+<span class="sd">``powerlaw``, ``blackbody``, ...): ``include_power_law`` then adds that set,</span>
+<span class="sd">and not the package&#39;s seven (:func:`agn_folder`). M13, for example, ships</span>
+<span class="sd">power laws and hot-dust blackbodies built for it.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">brainsp._paths</span><span class="w"> </span><span class="kn">import</span> <span class="n">LIBRARY_DIR</span><span class="p">,</span> <span class="n">USER_LIBRARY_DIR</span>
+
+<span class="n">CATALOGUE_NAME</span> <span class="o">=</span> <span class="s2">&quot;CATALOGUE.txt&quot;</span>
+<span class="n">AGN_NAME</span> <span class="o">=</span> <span class="s2">&quot;AGN&quot;</span>
+<span class="n">DEFAULT_LIBRARY</span> <span class="o">=</span> <span class="s2">&quot;BasesGM&quot;</span>
+
+<span class="c1"># The nebular mode (nespop) needs a library whose spectra reach below the</span>
+<span class="c1"># Lyman limit (911.76 A): the populations&#39; ionising photons are integrated</span>
+<span class="c1"># from there, and set the nebular continuum and the Case B lines. BC03 is</span>
+<span class="c1"># the library nespop has been validated with (independent PyNeb mocks, FADO</span>
+<span class="c1"># on the same base, MaNGA 8626-12704 and 8566-1901), and the one the</span>
+<span class="c1"># interface selects for it. Another library that reaches the Lyman limit can</span>
+<span class="c1"># be used, with a warning that it has not been.</span>
+<span class="n">NEBULAR_LIBRARY</span> <span class="o">=</span> <span class="s2">&quot;BC03&quot;</span>
+<span class="n">NEBULAR_VALIDATED</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">((</span><span class="n">NEBULAR_LIBRARY</span><span class="p">,))</span>
+
+
+<div class="viewcode-block" id="nebular_status">
+<a class="viewcode-back" href="../../reference/modules/brainsp.libraries.html#brainsp.libraries.nebular_status">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">nebular_status</span><span class="p">(</span><span class="n">name_or_folder</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Whether a library can run the nebular mode, nespop.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        ``status``: ``&quot;validated&quot;`` (it reaches the Lyman limit and nespop</span>
+<span class="sd">        has been validated with it), ``&quot;unvalidated&quot;`` (it reaches the Lyman</span>
+<span class="sd">        limit; nespop runs, untested with it) or ``&quot;unable&quot;`` (it does not:</span>
+<span class="sd">        its nebular continuum would be identically zero); ``name``;</span>
+<span class="sd">        ``reason``, a sentence saying which and why.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp</span><span class="w"> </span><span class="kn">import</span> <span class="n">io_utils</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.brain_settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_catalogue</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">path</span><span class="p">(</span><span class="n">name_or_folder</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">folder</span><span class="p">))</span>
+    <span class="n">ssp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">cov</span> <span class="o">=</span> <span class="n">io_utils</span><span class="o">.</span><span class="n">library_coverage</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">ssp</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot;nespop&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cov</span><span class="p">[</span><span class="s2">&quot;modes&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;unable&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not reach the Lyman limit at &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">io_utils</span><span class="o">.</span><span class="n">LYMAN_LIMIT_A</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> A, so it has no ionising photons &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;and its nebular continuum would be zero. nespop needs &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">NEBULAR_LIBRARY</span><span class="si">}</span><span class="s2"> (or another library reaching below &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">io_utils</span><span class="o">.</span><span class="n">LYMAN_LIMIT_A</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> A).&quot;</span><span class="p">)}</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">NEBULAR_VALIDATED</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;validated&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> reaches the Lyman limit; nespop is validated with it.&quot;</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;unvalidated&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> reaches the Lyman limit, so nespop runs, but it has been &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;validated only with </span><span class="si">{</span><span class="n">NEBULAR_LIBRARY</span><span class="si">}</span><span class="s2">: its ionising photons, and &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;so the nebular continuum and the Case B lines, are untested &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;with </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)}</span></div>
+
+
+
+<div class="viewcode-block" id="agn_folder">
+<a class="viewcode-back" href="../../reference/modules/brainsp.libraries.html#brainsp.libraries.agn_folder">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">agn_folder</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The AGN templates ``include_power_law`` adds to `library`.</span>
+
+<span class="sd">    The library&#39;s own set, ``&lt;library&gt;/AGN/CATALOGUE.txt``, when it has one;</span>
+<span class="sd">    otherwise the seven continua shipped with the package. With no library</span>
+<span class="sd">    given, the package&#39;s set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">library</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">own</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">(</span><span class="n">library</span><span class="p">),</span> <span class="n">AGN_NAME</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">own</span><span class="p">,</span> <span class="n">CATALOGUE_NAME</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">own</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">LIBRARY_DIR</span><span class="p">,</span> <span class="n">AGN_NAME</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="search_path">
+<a class="viewcode-back" href="../../reference/modules/brainsp.libraries.html#brainsp.libraries.search_path">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">search_path</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The folders searched for libraries, first match winning.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        ``BRAINSP_LIBRARY_PATH`` entries, then the per-user library folder,</span>
+<span class="sd">        then the package&#39;s own.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">folders</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BRAINSP_LIBRARY_PATH&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">folders</span> <span class="o">+=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="p">]</span>
+    <span class="n">folders</span> <span class="o">+=</span> <span class="p">[</span><span class="n">USER_LIBRARY_DIR</span><span class="p">,</span> <span class="n">LIBRARY_DIR</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">folders</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_library</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;True when `folder` has a catalogue listing at least one SSP.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">folder</span><span class="p">))</span> <span class="o">==</span> <span class="n">AGN_NAME</span> \
+            <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">folder</span><span class="p">)))</span> \
+            <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">LIBRARY_DIR</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">CATALOGUE_NAME</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.brain_settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_catalogue</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ssp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">SystemExit</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">ssp</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="available">
+<a class="viewcode-back" href="../../reference/modules/brainsp.libraries.html#brainsp.libraries.available">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">available</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The names of every library that can be used, in search order.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        Folder names, e.g. ``[&quot;BasesGM&quot;]``. A name found in two places is</span>
+<span class="sd">        listed once, for the place that wins.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import brainsp</span>
+<span class="sd">    &gt;&gt;&gt; brainsp.libraries.available()</span>
+<span class="sd">    [&#39;BasesGM&#39;, &#39;M13&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">search_path</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">root</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">_is_library</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span><span class="p">)):</span>
+                <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">names</span></div>
+
+
+
+<div class="viewcode-block" id="path">
+<a class="viewcode-back" href="../../reference/modules/brainsp.libraries.html#brainsp.libraries.path">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">path</span><span class="p">(</span><span class="n">name_or_folder</span><span class="o">=</span><span class="n">DEFAULT_LIBRARY</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The folder of a library, from its name or a path to it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name_or_folder : str</span>
+<span class="sd">        A library name such as ``&quot;BasesGM&quot;`` (a trailing ``/`` is ignored),</span>
+<span class="sd">        or a path to a folder holding a ``CATALOGUE.txt``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        Absolute path of the library folder.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    SystemExit</span>
+<span class="sd">        When no folder of that name holds a catalogue. The message lists the</span>
+<span class="sd">        libraries that are available and where they were looked for.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">given</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">name_or_folder</span> <span class="ow">or</span> <span class="n">DEFAULT_LIBRARY</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">given</span><span class="p">,</span> <span class="n">CATALOGUE_NAME</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">given</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">given</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">search_path</span><span class="p">():</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">CATALOGUE_NAME</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">No template library </span><span class="si">{</span><span class="n">given</span><span class="si">!r}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Available: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">available</span><span class="p">())</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Looked in: </span><span class="si">{</span><span class="n">given</span><span class="si">!r}</span><span class="s2">, then &quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">search_path</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Add a library with brainsp.libraries.install(folder), or set &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;BRAINSP_LIBRARY_PATH to the folder that holds it.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="info">
+<a class="viewcode-back" href="../../reference/modules/brainsp.libraries.html#brainsp.libraries.info">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">info</span><span class="p">(</span><span class="n">name_or_folder</span><span class="o">=</span><span class="n">DEFAULT_LIBRARY</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    What a library holds.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name_or_folder : str</span>
+<span class="sd">        Library name or folder.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        ``folder``; ``n_ssp``; ``ages_yr`` and ``metallicities`` (sorted);</span>
+<span class="sd">        ``extra`` (names of non-SSP components the library carries);</span>
+<span class="sd">        ``agn`` (the components ``include_power_law`` adds) and</span>
+<span class="sd">        ``agn_folder`` (where they are: the library&#39;s own ``AGN`` set, or</span>
+<span class="sd">        the package&#39;s);</span>
+<span class="sd">        ``wavelength_min`` and ``wavelength_max`` in Angstrom (the range</span>
+<span class="sd">        every template covers); ``reaches_lyman`` (True when every template</span>
+<span class="sd">        extends below the Lyman limit at 911.76 A, which the nebular</span>
+<span class="sd">        continuum mode ``nespop`` needs).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.brain_settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_catalogue</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">path</span><span class="p">(</span><span class="n">name_or_folder</span><span class="p">)</span>
+    <span class="n">ssp</span><span class="p">,</span> <span class="n">extra</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]),</span> <span class="n">comments</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="p">,</span>
+                          <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+        <span class="n">lo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+        <span class="n">hi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+    <span class="n">agn_dir</span> <span class="o">=</span> <span class="n">agn_folder</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">agn</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">agn_dir</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;folder&quot;</span><span class="p">:</span> <span class="n">folder</span><span class="p">,</span>
+        <span class="s2">&quot;n_ssp&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">ssp</span><span class="p">),</span>
+        <span class="s2">&quot;agn&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;short_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">agn</span><span class="p">],</span>
+        <span class="s2">&quot;agn_folder&quot;</span><span class="p">:</span> <span class="n">agn_dir</span><span class="p">,</span>
+        <span class="s2">&quot;ages_yr&quot;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;age_gyr&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">}),</span>
+        <span class="s2">&quot;metallicities&quot;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;metallicity&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span><span class="p">}),</span>
+        <span class="s2">&quot;extra&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;short_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">extra</span><span class="p">],</span>
+        <span class="s2">&quot;wavelength_min&quot;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="k">if</span> <span class="n">lo</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;wavelength_max&quot;</span><span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span> <span class="k">if</span> <span class="n">hi</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;reaches_lyman&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">max</span><span class="p">(</span><span class="n">lo</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">911.76</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="install">
+<a class="viewcode-back" href="../../reference/modules/brainsp.libraries.html#brainsp.libraries.install">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">install</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Copy a library into the per-user library folder, so it can be named.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    folder : str</span>
+<span class="sd">        A folder with a ``CATALOGUE.txt`` and the template files it lists.</span>
+<span class="sd">    name : str, optional</span>
+<span class="sd">        The name to install it under; the folder&#39;s own name by default.</span>
+<span class="sd">    overwrite : bool</span>
+<span class="sd">        Replace a library already installed under that name.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        Where the library now is (``~/.brainsp/libraries/&lt;name&gt;``).</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    SystemExit</span>
+<span class="sd">        If the folder is not a library, a file the catalogue names is</span>
+<span class="sd">        missing, or the name is taken and `overwrite` is False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">brainsp.brain_settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_catalogue</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">ssp</span><span class="p">,</span> <span class="n">extra</span> <span class="o">=</span> <span class="n">read_catalogue</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ssp</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2"> lists no SSP in its catalogue.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">ssp</span> <span class="o">+</span> <span class="n">extra</span>
+               <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]))]</span>
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2"> file(s) the catalogue names are &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;missing from </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">missing</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">folder</span><span class="p">))</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">USER_LIBRARY_DIR</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A library </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> is already installed at &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">; pass overwrite=True to replace it.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">USER_LIBRARY_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">target</span></div>
+
+</pre></div>
+      </div>
+      <nav class="pager" aria-label="Previous and next page"><span></span>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../../"; window.BRAIN_SEARCH_INDEX = "../../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../../search.html";</script>
+<script src="../../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>

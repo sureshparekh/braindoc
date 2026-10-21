@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>brainsp.megacube · BRAIN documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fonts/fonts.css?v=270d326a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/brain.css?v=46aa853c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments-brain.css?v=a97f3c42" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="../../_static/documentation_options.js?v=db988ed8"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=08e7b316"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="brainsp.reddening_laws" href="brainsp.reddening_laws.html" />
+    <link rel="prev" title="brainsp.corrections" href="brainsp.corrections.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* the theme before the first paint: the reader's choice, else the system */
+  (function () {
+    try {
+      var t = localStorage.getItem("brain-theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="icon" type="image/png" href="../../_static/favicon.png">
+  </head><body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></svg>
+    </button>
+    <a class="brand" href="../../index.html">
+      <img class="brand-logo" src="../../_static/brain-logo.png" alt="BRAIN" width="103" height="96">
+      <span class="brand-docs">Docs</span>
+    </a>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="../../start/index.html">Get started</a>
+    <a class="tab" href="../../gui/index.html">Interface</a>
+    <a class="tab" href="../../python/index.html">Python</a>
+    <a class="tab" href="../../tutorials/index.html">Tutorials</a>
+    <a class="tab" href="../../science/index.html">Science</a>
+    <a class="tab is-active" href="../index.html">Reference</a>
+    <a class="tab" href="../../about.html">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="search-btn" type="button" data-search-open aria-label="Search the documentation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <span class="search-label">Search</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: follows the system">
+      <svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+      <svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="gh-btn" href="https://github.com/sureshparekh/braindoc" aria-label="The documentation on GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.7c-2.6.6-3.2-1.2-3.2-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.3-1-4.3-4.6 0-1 .4-1.9 1-2.5-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.3 4.6.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5z"/></svg>
+    </a>
+  </div>
+</header>
+<div class="frame">
+  <aside class="sidebar" data-sidebar aria-label="Pages of this section">
+    <nav>
+      <div class="sidebar-tabs">
+        <a class="sidebar-tab" href="../../start/index.html">Get started</a>
+        <a class="sidebar-tab" href="../../gui/index.html">Interface</a>
+        <a class="sidebar-tab" href="../../python/index.html">Python</a>
+        <a class="sidebar-tab" href="../../tutorials/index.html">Tutorials</a>
+        <a class="sidebar-tab" href="../../science/index.html">Science</a>
+        <a class="sidebar-tab is-active" href="../index.html">Reference</a>
+        <a class="sidebar-tab" href="../../about.html">About</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Overview</p>
+        <ul>
+          <li><a class="nav-link" href="../index.html">Reference</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Python API</p>
+        <ul>
+          <li><a class="nav-link is-active" href="../api.html">Python API</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Files</p>
+        <ul>
+          <li><a class="nav-link" href="../settings.html">Settings</a></li>
+          <li><a class="nav-link" href="../spectrum-files.html">Spectrum output files</a></li>
+          <li><a class="nav-link" href="../megacube-files.html">Megacube files</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Command line</p>
+        <ul>
+          <li><a class="nav-link" href="../cli.html">Command line</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <p class="nav-group-title">Help</p>
+        <ul>
+          <li><a class="nav-link" href="../troubleshooting.html">Troubleshooting</a></li>
+          <li><a class="nav-link" href="../changelog.html">Changes</a></li>
+          <li><a class="nav-link" href="../citing.html">Citing BRAIN</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <div class="scrim" data-nav-close></div>
+  <main id="main" class="page">
+    <article class="article">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Reference</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><a href="../api.html">Python API</a>
+      </nav>
+      <div class="body" role="main">
+        <section id="module-brainsp.megacube">
+<span id="brainsp-megacube"></span><h1>brainsp.megacube<a class="headerlink" href="#module-brainsp.megacube" title="Link to this heading">#</a></h1>
+<p>Reading a BRAIN megacube, and the emission-line diagnostics drawn from it.</p>
+<p>A <em>megacube</em> is the FITS file BRAIN writes for a fitted datacube
+(<code class="docutils literal notranslate"><span class="pre">&lt;cube&gt;-BRAIN_MEGACUBE.fits</span></code>): the input cube’s own extensions, then the
+observed and synthetic spectra on a linear grid (<code class="docutils literal notranslate"><span class="pre">FLXOBS</span></code>, <code class="docutils literal notranslate"><span class="pre">FLXSYN</span></code>), the
+population vectors (<code class="docutils literal notranslate"><span class="pre">PoPVecsL</span></code>, <code class="docutils literal notranslate"><span class="pre">PoPVecsM</span></code>), the population maps and fit
+statistics (<code class="docutils literal notranslate"><span class="pre">PoPBins</span></code>), and, in a line-fitting mode, the emission-line
+products in the layout of Riffel et al. 2023 (<code class="docutils literal notranslate"><span class="pre">SOLUTION</span></code>, <code class="docutils literal notranslate"><span class="pre">FLUX_M</span></code>,
+<code class="docutils literal notranslate"><span class="pre">EQW_M</span></code> …). <a class="reference internal" href="#brainsp.megacube.Megacube" title="brainsp.megacube.Megacube"><code class="xref py py-class docutils literal notranslate"><span class="pre">Megacube</span></code></a> opens one and hands out any of its maps by
+name; <a class="reference internal" href="../generated/brainsp.read_megacube.html#brainsp.read_megacube" title="brainsp.read_megacube"><code class="xref py py-func docutils literal notranslate"><span class="pre">brainsp.read_megacube()</span></code></a> is the same thing.</p>
+<p>Nothing here fits anything or imports JAX or Qt, so it works on a machine
+with no display.</p>
+<p>The diagnostic curves, with their sources:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Kewley</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="mi">2001</span>     <span class="p">[</span><span class="n">N</span> <span class="n">II</span><span class="p">]</span> <span class="n">BPT</span> <span class="n">maximum</span> <span class="n">starburst</span>
+<span class="n">Kauffmann</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="mi">2003</span>  <span class="p">[</span><span class="n">N</span> <span class="n">II</span><span class="p">]</span> <span class="n">BPT</span> <span class="n">pure</span> <span class="n">star</span> <span class="n">formation</span><span class="p">,</span> <span class="n">to</span> <span class="n">its</span> <span class="n">asymptote</span>
+                       <span class="n">at</span> <span class="n">log</span> <span class="p">[</span><span class="n">N</span> <span class="n">II</span><span class="p">]</span><span class="o">/</span><span class="n">Halpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">Cid</span> <span class="n">Fernandes</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="mi">2010</span>   <span class="n">LINER</span> <span class="o">/</span> <span class="n">Seyfert</span> <span class="ow">in</span> <span class="n">the</span> <span class="p">[</span><span class="n">N</span> <span class="n">II</span><span class="p">]</span> <span class="n">BPT</span>
+<span class="n">Kewley</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="mi">2006</span>     <span class="p">[</span><span class="n">S</span> <span class="n">II</span><span class="p">]</span> <span class="n">BPT</span><span class="p">,</span> <span class="n">star</span> <span class="n">forming</span> <span class="ow">and</span> <span class="n">Seyfert</span> <span class="o">/</span> <span class="n">LINER</span>
+<span class="n">Cid</span> <span class="n">Fernandes</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span> <span class="mi">2011</span>   <span class="n">WHAN</span>
+</pre></div>
+</div>
+<p>A diagnostic is drawn only where every line it needs has a positive model
+flux. BRAIN does not yet write line-flux uncertainties, so there is no S/N
+cut on the lines: a weak line the fit placed at a small positive flux is
+classified like a strong one.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.megacube.kewley01">
+<span class="sig-prename descclassname"><span class="pre">brainsp.megacube.</span></span><span class="sig-name descname"><span class="pre">kewley01</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#kewley01"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.kewley01" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.megacube.kauffmann03">
+<span class="sig-prename descclassname"><span class="pre">brainsp.megacube.</span></span><span class="sig-name descname"><span class="pre">kauffmann03</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#kauffmann03"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.kauffmann03" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.megacube.cid10">
+<span class="sig-prename descclassname"><span class="pre">brainsp.megacube.</span></span><span class="sig-name descname"><span class="pre">cid10</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#cid10"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.cid10" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.megacube.bpt_nii_class">
+<span class="sig-prename descclassname"><span class="pre">brainsp.megacube.</span></span><span class="sig-name descname"><span class="pre">bpt_nii_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n2ha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">o3hb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#bpt_nii_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.bpt_nii_class" title="Link to this definition">#</a></dt>
+<dd><p>1 star forming, 2 composite, 3 LINER, 4 Seyfert, NaN undefined.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.megacube.bpt_sii_class">
+<span class="sig-prename descclassname"><span class="pre">brainsp.megacube.</span></span><span class="sig-name descname"><span class="pre">bpt_sii_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s2ha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">o3hb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#bpt_sii_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.bpt_sii_class" title="Link to this definition">#</a></dt>
+<dd><p>1 star forming, 2 LINER, 3 Seyfert, NaN undefined.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="brainsp.megacube.whan_class">
+<span class="sig-prename descclassname"><span class="pre">brainsp.megacube.</span></span><span class="sig-name descname"><span class="pre">whan_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n2ha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ew_ha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#whan_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.whan_class" title="Link to this definition">#</a></dt>
+<dd><p>1 star forming, 2 retired, 3 weak AGN, 4 strong AGN (Cid Fernandes 2011).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">brainsp.megacube.</span></span><span class="sig-name descname"><span class="pre">Megacube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A BRAIN megacube, read once, with its maps named and grouped.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">str</span></dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">*-BRAIN_MEGACUBE.fits</span></code> file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">str</span></dt><dd></dd>
+<dt><strong>shape</strong><span class="classifier">tuple of int</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">(n_y,</span> <span class="pre">n_x)</span></code>, the spatial shape.</p>
+</dd>
+<dt><strong>wave</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Rest-frame wavelength of <code class="docutils literal notranslate"><span class="pre">FLXOBS</span></code> and <code class="docutils literal notranslate"><span class="pre">FLXSYN</span></code>, in Angstrom.</p>
+</dd>
+<dt><strong>groups</strong><span class="classifier">dict</span></dt><dd><p>Map names by group: <code class="docutils literal notranslate"><span class="pre">&quot;Populations&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Kinematics&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;Fit</span> <span class="pre">quality&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Emission</span> <span class="pre">lines&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Diagnostics&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;Nebular&quot;</span></code> (nespop), <code class="docutils literal notranslate"><span class="pre">&quot;Line-spread</span> <span class="pre">function&quot;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&quot;Uncertainties&quot;</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;&lt;map&gt;</span> <span class="pre">error&quot;</span></code>, the 1-sigma error of each
+map the fit wrote one for).</p>
+</dd>
+<dt><strong>maps</strong><span class="classifier">dict</span></dt><dd><p>Every map name, with the extension and plane it is read from.</p>
+</dd>
+<dt><strong>lines</strong><span class="classifier">list of str</span></dt><dd><p>The emission lines fitted (empty in <code class="docutils literal notranslate"><span class="pre">spop</span></code>).</p>
+</dd>
+<dt><strong>ages</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Age of every template, in years, in population-vector order.</p>
+</dd>
+<dt><strong>status</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>1 where a spaxel was fitted, 0 where it was not.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">brainsp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">brainsp</span><span class="o">.</span><span class="n">read_megacube</span><span class="p">(</span><span class="s2">&quot;mock_cube-BRAIN_MEGACUBE.fits&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="s2">&quot;Kinematics&quot;</span><span class="p">]</span>
+<span class="go">[&#39;Sigma_star&#39;, &#39;vrot_star&#39;, &#39;Sigma_gas_g0&#39;, &#39;vrot_gas_g0&#39;, ...]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">velocity</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">plane</span><span class="p">(</span><span class="s2">&quot;vrot_star&quot;</span><span class="p">)</span>        <span class="c1"># 2-D array, NaN where unfitted</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obs</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">cube</span><span class="o">.</span><span class="n">spectrum</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.line_flux">
+<span class="sig-name descname"><span class="pre">line_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.line_flux"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.line_flux" title="Link to this definition">#</a></dt>
+<dd><p>One emission line’s flux map, from <code class="docutils literal notranslate"><span class="pre">FLUX_M</span></code>, or None if the line
+was not fitted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>A name from <code class="xref py py-attr docutils literal notranslate"><span class="pre">lines</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Halpha_6563&quot;</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray or None</dt><dd><p><code class="docutils literal notranslate"><span class="pre">(n_y,</span> <span class="pre">n_x)</span></code>, in the cube’s flux unit times Angstrom.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.diagnostic_inputs">
+<span class="sig-name descname"><span class="pre">diagnostic_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.diagnostic_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.diagnostic_inputs" title="Link to this definition">#</a></dt>
+<dd><p>The line ratios the diagnostic diagrams are drawn from.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n2, o3, s2, ew</strong><span class="classifier">numpy.ndarray or None</span></dt><dd><p>log [N II] 6583/H-alpha, log [O III] 5007/H-beta, log ([S II]
+6716 + 6731)/H-alpha and EW(H-alpha) in Angstrom (positive in
+emission), each <code class="docutils literal notranslate"><span class="pre">(n_y,</span> <span class="pre">n_x)</span></code> and NaN where a line it needs is
+not positive; None when the cube lacks the lines.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.names">
+<span class="sig-name descname"><span class="pre">names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.names" title="Link to this definition">#</a></dt>
+<dd><p>Every map this file can draw, in group order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.plane">
+<span class="sig-name descname"><span class="pre">plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.plane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.plane" title="Link to this definition">#</a></dt>
+<dd><p>One map as a 2-D array, NaN where the spaxel was not fitted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>A name from <a class="reference internal" href="#brainsp.megacube.Megacube.names" title="brainsp.megacube.Megacube.names"><code class="xref py py-meth docutils literal notranslate"><span class="pre">names()</span></code></a>, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;vrot_star&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;xyy_light&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;Halpha_6563</span>&#160; <span class="pre">flux&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Te&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;BPT</span> <span class="pre">[N</span> <span class="pre">II]&quot;</span></code> or an error,
+<code class="docutils literal notranslate"><span class="pre">&quot;Sigma_star</span> <span class="pre">error&quot;</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.spectrum">
+<span class="sig-name descname"><span class="pre">spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.spectrum" title="Link to this definition">#</a></dt>
+<dd><p>One spaxel’s observed and model spectra on <code class="xref py py-attr docutils literal notranslate"><span class="pre">wave</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>observed, model</strong><span class="classifier">numpy.ndarray</span></dt><dd></dd>
+<dt><strong>lines</strong><span class="classifier">list of (str, numpy.ndarray)</span></dt><dd><p>Each fitted emission line’s Gaussian profile, for lines with a
+positive amplitude.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.populations">
+<span class="sig-name descname"><span class="pre">populations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.populations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.populations" title="Link to this definition">#</a></dt>
+<dd><p>One spaxel’s population vector: light fractions, and mass
+fractions when the file has them, in <code class="xref py py-attr docutils literal notranslate"><span class="pre">ages</span></code> order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.numbers">
+<span class="sig-name descname"><span class="pre">numbers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.numbers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.numbers" title="Link to this definition">#</a></dt>
+<dd><p>Every PoPBins value at one spaxel, as {name: value}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brainsp.megacube.Megacube.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/brainsp/megacube.html#Megacube.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#brainsp.megacube.Megacube.close" title="Link to this definition">#</a></dt>
+<dd><p>Close the FITS file (the maps already read stay valid).</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+      </div>
+      <nav class="pager" aria-label="Previous and next page"><span></span>
+      </nav>
+      <footer class="page-foot">
+        <p>BRAIN · Suresh Parekh, UFRGS (<a href="https://www.if.ufrgs.br/~riffel/saffary/index.html">SAFFARY group</a>) · Last built 21 October 2026</p>
+      </footer>
+    </article>
+    <aside class="onpage" aria-label="On this page">
+      <p class="onpage-title">On this page</p>
+      <ul data-onpage></ul>
+    </aside>
+  </main>
+</div>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-label="Search">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+      <input type="search" placeholder="Search the documentation" autocomplete="off" spellcheck="false" data-search-input>
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint" data-search-hint>Type to search page titles, section headings and words.</p>
+  </div>
+</div>
+<script>window.BRAIN_TABS = {"start/": "Get started", "gui/": "Interface", "python/": "Python", "tutorials/": "Tutorials", "science/": "Science", "reference/": "Reference", "about": "About" };</script>
+<script>window.BRAIN_ROOT = "../../"; window.BRAIN_SEARCH_INDEX = "../../searchindex.js"; window.BRAIN_SEARCH_PAGE = "../../search.html";</script>
+<script src="../../_static/brain.js?v=6be4cd74" defer></script>
+  </body>
+</html>
